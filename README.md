@@ -7,7 +7,5 @@ Graduate level textbook on Several Complex Variables
 
 A free online textbook.  See http://www.jirka.org/scv/
 
-
-Note: Some of the shell scripts here are really for me
-and are really hacky ways to just do things.  Feel free to ignore
-them
+* publish.sh compiles the file to pdf
+* make-tar.sh makes a tarball
