@@ -1,5 +1,5 @@
 #!/bin/sh
-FILES=`sed 's:^/\([^/]*\)/.*$:\1:' < CVS/Entries | grep -v '^D$' | grep -v '.cvsignore' | fgrep -v 'publish.sh' | fgrep -v 'publish-mini.sh' | fgrep -v 'make-tar.sh' | fgrep -v 'make-tar-mini.sh' | fgrep -v 'scv-mini.tex'`
+FILES=`git ls-files | grep -v '.gitignore' | fgrep -v 'make-tar.sh'`
 
 rm -fR scv
 mkdir scv
