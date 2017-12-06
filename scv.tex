@@ -39,6 +39,7 @@
 \usepackage{microtype}
 \usepackage{cancel}
 \usepackage{framed}
+\usepackage{import}
 
 
 \usepackage{tikz}
@@ -317,9 +318,9 @@ Copyright \copyright 2014--2017 Ji{\v r}\'i Lebl
 %\begin{floatingfigure}{1.4in}
 %\vspace{-0.05in}
 \noindent
-\includegraphics[width=1.38in]{license}
+\includegraphics[width=1.38in]{figures/license}
 \quad
-\includegraphics[width=1.38in]{license2}
+\includegraphics[width=1.38in]{figures/license2}
 %\end{floatingfigure}
 
 \bigskip
@@ -1001,7 +1002,7 @@ picture by plotting just against the modulus of the variables:
 %\medskip
 
 \begin{center}
-\input polydisc.pdf_t
+\subimport*{figures/}{polydisc.pdf_t}
 \end{center}
 
 %\medskip
@@ -1258,7 +1259,7 @@ the unit bidisc we have:
 %\medskip
 
 \begin{center}
-\input polydisc-dist.pdf_t
+\subimport*{figures/}{polydisc-dist.pdf_t}
 \end{center}
 
 %\medskip
@@ -1698,7 +1699,7 @@ Here the picture is definitely more complicated than a polydisc:
 \medskip
 
 \begin{center}
-\input convergence-example-2.pdf_t
+\subimport*{figures/}{convergence-example-2.pdf_t}
 \end{center}
 \end{example}
 
@@ -2871,7 +2872,7 @@ setting $z' = s$,
 the zeros of $\xi \mapsto g(s,\xi)$ are isolated.
 
 \begin{center}
-\input riemann-ext-zeros.pdf_t
+\subimport*{figures/}{riemann-ext-zeros.pdf_t}
 \end{center}
 
 For $\snorm{z'} <
@@ -3156,7 +3157,7 @@ connected, such that for every $f \in \sO(U)$ there exists an $\widetilde{f} \in
 %\medskip
 
 \begin{center}
-\input domain-of-hol-def.pdf_t
+\subimport*{figures/}{domain-of-hol-def.pdf_t}
 \end{center}
 
 %\medskip
@@ -3252,7 +3253,7 @@ In $\C^2$ if $m=1$ and $k=1$, the figure looks like:
 \newcommand{\hartogstext}{\parbox[t]{2.5in}{In diagrams, often the Hartogs figure is
 drawn as:}}
 \begin{center}
-\input hartogs-figure.pdf_t
+\subimport*{figures/}{hartogs-figure.pdf_t}
 \end{center}
 
 %\medskip
@@ -3507,7 +3508,7 @@ certain theorems and arguments unnecessarily difficult.
 %\medskip
 
 \begin{center}
-\input deffun.pdf_t
+\subimport*{figures/}{deffun.pdf_t}
 \end{center}
 
 %\medskip
@@ -3783,7 +3784,7 @@ such that for points in $U$ we have $y > \varphi(x)$.
 %\medskip
 
 \begin{center}
-\input deffun-graph.pdf_t
+\subimport*{figures/}{deffun-graph.pdf_t}
 \end{center}
 
 %\medskip
@@ -4606,7 +4607,7 @@ $U$ is strongly pseudoconvex at $p$ if and only if $U'$ is strongly pseudoconvex
 \end{thm}
 
 \begin{center}
-\input bndry-bihol.pdf_t
+\subimport*{figures/}{bndry-bihol.pdf_t}
 \end{center}
 
 The only thing left is to observe that if
@@ -4976,7 +4977,7 @@ Also we make a ``picture'' the analytic discs giving the ``tomato can''.
 In the picture the $U$ is below its boundary $\partial U$, unlike usually.
 
 \begin{center}
-\input hartogs-figure-tomato.pdf_t
+\subimport*{figures/}{hartogs-figure-tomato.pdf_t}
 \end{center}
 
 The origin is in the hull of $H$, and so
@@ -5433,7 +5434,7 @@ $\frac{1}{0.5}e^{-1/\bigl(1-{(x/0.5)}^2\bigr)}$, and
 $\frac{1}{0.25}e^{-1/\bigl(1-{(x/0.25)}^2\bigr)}$.
 
 \begin{center}
-\includegraphics[width=3.0in]{graph-of-mollifier.pdf}
+\includegraphics[width=3.0in]{figures/graph-of-mollifier.pdf}
 \end{center}
 
 First $f$ is bounded above on compact sets as it is upper semicontinuous.
@@ -5823,7 +5824,7 @@ the following picture.  In the diagram the boundaries of the discs are
 denoted by the dark dots at the end of the segments.
 
 \begin{center}
-\input contprinc.pdf_t
+\subimport*{figures/}{contprinc.pdf_t}
 \end{center}
 
 \begin{defn}
@@ -5917,7 +5918,7 @@ subharmonic, then $\xi \mapsto - \log \rho(a+b\xi)$ is subharmonic and we are do
 Here is the setup, the disc is drawn as a line:
 
 \begin{center}
-\input distfun-hartogs.pdf_t
+\subimport*{figures/}{distfun-hartogs.pdf_t}
 \end{center}
 
 Suppose $\Delta \subset \C$ is a disc such that for all $\xi \in
@@ -6043,7 +6044,7 @@ the boundary of $W$ is marked by a thick gray line.  A point $q \in B$ is
 marked and a ball of radius $r/2$ around $q$ is dotted.
 
 \begin{center}
-\input hartogs-pseudoconvex-local.pdf_t
+\subimport*{figures/}{hartogs-pseudoconvex-local.pdf_t}
 \end{center}
 
 No point of distance $r/2$ from $q$ can be in $\partial W$, and 
@@ -6462,7 +6463,7 @@ K + \Delta = \bigcup_{q \in K} \Delta_r(q) \subset \subset U.
 \end{equation*}
 
 \begin{center}
-\input cart-thul-fig.pdf_t
+\subimport*{figures/}{cart-thul-fig.pdf_t}
 \end{center}
 
 If $f \in \sO(U)$, then there is an $M > 0$ such that $\sabs{f} \leq M$ on
@@ -8034,7 +8035,7 @@ and hence $r=0$ on $\partial D_-$.
 As $D \times W \cap M \subset K$, we have that $\partial D_- \subset K$.
 
 \begin{center}
-\input lewy-extension-figure.pdf_t
+\subimport*{figures/}{lewy-extension-figure.pdf_t}
 \end{center}
 
 As $p_j \to f$ uniformly on $K$ then $p_j \to f$ uniformly on
@@ -8474,7 +8475,7 @@ light gray area and holomorphic on the light gray and white area, it is also
 zero on the white area:
 
 \begin{center}
-\input dbarcpt-fig.pdf_t
+\subimport*{figures/}{dbarcpt-fig.pdf_t}
 \end{center}
 \end{proof}
 
@@ -8525,7 +8526,7 @@ extends uniquely to a holomorphic function on $U$.
 \end{thm}
 
 \begin{center}
-\input hartogs-fig.pdf_t
+\subimport*{figures/}{hartogs-fig.pdf_t}
 \end{center}
 
 The idea of the proof is extending in some way and then using the solution
@@ -10625,7 +10626,7 @@ Here is a plot in two real dimensions:
 %\begin{figure}[h!t]
 \begin{center}
 \medskip
-\input locallyredcurve.eepic
+\subimport*{figures/}{locallyredcurve.eepic}
 %\medskip
 %\caption{Locally reducible but globally irreducible curve.\label{fig:locallyredcurve}}
 \bigskip
@@ -10738,7 +10739,7 @@ plot in two real dimensions:
 \nopagebreak
 \begin{center}
 \medskip
-\input cusp.eepic
+\subimport*{figures/}{cusp.eepic}
 \bigskip
 \end{center}
 \end{samepage}
@@ -10796,7 +10797,7 @@ $\sigma^k$ is the identity we are back at $\alpha_1(\xi^k)$ and we have a
 well defined function.  This is our function $g(\xi)$.
 See the following figure for an example:
 \begin{center}
-\input puiseux.pdf_t
+\subimport*{figures/}{puiseux.pdf_t}
 \end{center}
 In the figure, $m = k = 4$, and the permutation takes 1 to 2, 2 to 3, 3 to 4,
 and 4 to 1.  As $\xi$ moves along the short circular arrow on the right, $\xi^4$
@@ -11176,7 +11177,7 @@ varieties that you proved as an exercise in the previous section.
 The picture would look as follows:
 \begin{center}
 \medskip
-\input forndied.pdf_t
+\subimport*{figures/}{forndied.pdf_t}
 \end{center}
 \end{proof}
 
