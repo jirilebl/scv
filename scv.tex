@@ -20,8 +20,8 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 %\usepackage{esint}
-\usepackage[pdftex]{graphicx}
-%\usepackage{color}
+\usepackage{graphicx}
+\usepackage{color}
 %\usepackage{graphics}
 \usepackage[headings]{fullpage}
 \usepackage{url}
@@ -29,10 +29,15 @@
 %\usepackage{floatflt}
 %\usepackage{wrapfig}
 \usepackage{makeidx}
-\usepackage[pdftex]{hyperref}
+\usepackage{hyperref} % do NOT set [ocgcolorlinks] here!
+
+%If you have an older tex installation you might need
+%to comment out the next line:
+\usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/createspace
+
 \usepackage[all]{hypcap}
 \usepackage[shortalphabetic,msc-links]{amsrefs}
-\usepackage[all]{xy}
+%\usepackage[all]{xy}
 \usepackage{nicefrac}
 \usepackage{mathdots}
 \usepackage{mathtools}
