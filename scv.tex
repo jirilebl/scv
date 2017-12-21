@@ -19,15 +19,11 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
-%\usepackage{esint}
 \usepackage{graphicx}
 \usepackage{color}
-%\usepackage{graphics}
 \usepackage[headings]{fullpage}
 \usepackage{url}
 \usepackage{varioref}
-%\usepackage{floatflt}
-%\usepackage{wrapfig}
 \usepackage{makeidx}
 \usepackage{hyperref} % do NOT set [ocgcolorlinks] here!
 
@@ -37,7 +33,6 @@
 
 \usepackage[all]{hypcap}
 \usepackage[shortalphabetic,msc-links]{amsrefs}
-%\usepackage[all]{xy}
 \usepackage{nicefrac}
 \usepackage{mathdots}
 \usepackage{mathtools}
@@ -174,15 +169,15 @@
 %\addtolength{\textheight}{2.13in}
 %\addtolength{\paperheight}{2.13in}
 
+\definecolor{mypersianblue}{rgb}{0.11, 0.22, 0.73}
+
 \hypersetup{
-    %colorlinks,
-    pdfborderstyle={/S/U/W 0.5},
-    %citecolor=black,
-    %filecolor=black,
-    %linkcolor=black,
-    %urlcolor=black,
+    pdfborderstyle={/S/U/W 0.5}, %this just in case ocg isn't there
+    citecolor=mypersianblue,
+    filecolor=mypersianblue,
+    linkcolor=mypersianblue,
+    urlcolor=mypersianblue,
     pdftitle={Tasty Bits of Several Complex Variables},
-    %pdftitle={Several Complex Variables, Math 6283},
     pdfsubject={Several Complex Variables},
     pdfkeywords={several complex variables, complex analysis},
     pdfauthor={Jiri Lebl}
@@ -357,11 +352,6 @@ base your own notes on it and reuse parts if you keep the license the
 same.  You can assume the license is either the CC-BY-NC-SA or CC-BY-SA,
 whichever is compatible with what you wish to do, your derivative works must
 use at least one of the licenses.
-%If you plan to use it commercially (sell it for more than just
-%duplicating cost), then you need to contact me and we will work something out.
-%If you are printing a course pack for your students, then it is fine if the 
-%duplication service is charging a fee for printing and selling the printed
-%copy.  I consider that duplicating cost.
 
 \bigskip
 
@@ -464,7 +454,7 @@ A subtle philosophical issue is that there are two square roots of $-1$.
 There are 
 two chickens running around in our yard, and because we like to
 know which is which, we catch one and write ``$i$'' on it.  If we happened
-to catch the other chicken, we would have gotten an exactly equivalent
+to have caught the other chicken, we would have gotten an exactly equivalent
 theory, which we could not tell apart from the original.
 
 Given a complex number $z$, its ``opposite'' is 
@@ -866,7 +856,7 @@ d \zeta
 \end{split}
 \end{equation*}
 In the last equality, we are allowed to 
-interchange the limit on the sum by Fubini theorem because
+interchange the limit on the sum by Fubini's theorem because
 for some fixed $M$
 \begin{equation*}
 \abs{
@@ -1139,7 +1129,7 @@ the Cauchy-Riemann equations.  However, the way we stated the
 definition makes it easier to apply.
 
 Above, we really derived the Cauchy integral formula in several variables.  To
-write the formula more concisely we apply the Fubini theorem to write it as
+write the formula more concisely we apply the Fubini's theorem to write it as
 a single integral.  We will write it down using differential forms.  If you
 are unfamiliar with differential forms, think of the integral
 as the iterated integral above.
