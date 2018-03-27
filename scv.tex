@@ -4,6 +4,8 @@
 %\documentclass[10pt,openany]{book}
 %\documentclass[8pt,openany]{extbook}
 
+%FIXME: for PRINT run for lulu or createspace, search for %PRINT
+
 %\usepackage{pdf14}
 
 \usepackage[T1]{fontenc}
@@ -22,6 +24,22 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage[headings]{fullpage}
+
+
+%PRINT (USE FOR PRINT)
+%\addtolength{\oddsidemargin}{0.2in}
+%\addtolength{\evensidemargin}{-0.2in}
+
+%PRINT (USE FOR PRINT)
+%Now cut page size a bit.  I'll run it through ghostcript anyway
+%to convert to the right size, but this is good for crown quatro
+%conversion, don't use for the full letter size versions
+%\addtolength{\paperwidth}{-0.3in}
+%\addtolength{\paperheight}{-1in}
+%\addtolength{\topmargin}{-0.5in}
+%\addtolength{\oddsidemargin}{-0.15in}
+%\addtolength{\evensidemargin}{-0.15in}
+
 \usepackage{url}
 \usepackage{varioref}
 \usepackage{makeidx}
@@ -29,6 +47,7 @@
 
 %If you have an older tex installation you might need
 %to comment out the next line:
+%PRINT (COMMENT OUT FOR PRINT)
 \usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/createspace
 
 \usepackage[all]{hypcap}
@@ -402,9 +421,6 @@ See \url{http://www.jirka.org/scv/} for more information
 This book is a polished version of my course notes for Math 6283, Several
 Complex Variables, given in
 Spring 2014 and then Spring 2016 semesters at Oklahoma State University.
-%I covered everything in
-%the book in the class though in a slightly different order, and a few things
-%in the book were changed after I lectured on them and changed my mind.
 Overall it should be enough material for a semester-long course, though that
 of course depends on the speed of the lecturer and the number of detours one
 takes.  There are quite a few
@@ -417,14 +433,10 @@ The prerequisites are a decent knowledge of vector calculus, basic
 real-analysis and a working knowledge of complex analysis in one variable.
 It should be accessible to beginning graduate students after a complex
 analysis course, although the background actually required is quite minimal.
- %(Cauchy formula albeit in \chapterref{ch:dbar}).
 
 This book is not meant as an exhaustive reference.  It is simply a whirlwind
 tour of several complex variables.  To find the list of the books useful for
 reference and further reading, see the end of the book.
-%  The
-%sections with a star are not necessary for subsequent material and may be
-%skipped at first reading.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -437,8 +449,6 @@ for real numbers, $\Z$ for integers, $\N = \{ 1,2,3,\ldots \}$ for natural
 numbers, $i = \sqrt{-1}$, etc\ldots  Throughout this book, we will use
 the standard terminology of \emph{\myindex{domain}} to mean connected open
 set.
-%We assume the reader has basic working knowledge of real
-%analysis and of complex analysis in one variable.
 
 As complex analysis deals with the complex numbers perhaps we should start
 with $\sqrt{-1}$.  We start with the real numbers, $\R$, and wish to add
@@ -469,9 +479,7 @@ which is really just the \emph{\myindex{Euclidean distance}}:
 \end{equation*}
 
 Complex analysis is the study of holomorphic (or complex analytic)
-functions. %which are generalizations of polynomials.  %So we ought to start with what these are.
-%We assume the reader has basic working knowledge of real
-%analysis and of complex analysis in one variable.
+functions.
 There is an awful lot one can do with polynomials, but sometimes they are
 just not enough.  For example, there is no polynomial function that solves
 the simplest of differential equations $f' = f$.  We need the exponential
@@ -507,22 +515,6 @@ What we usually mean is
 As long as the limit exists, we have a function.  You know all
 this; it is your one variable complex analysis.  We usually
 start with the functions and prove that we can expand into series.
-%Let us informally review some basic results from one variable.  
-
-%We identify $\C$ with $\R^2$ by
-%\begin{equation*}
-%z = x+iy,
-%\end{equation*}
-%where $z \in \C$, and $(x,y) \in \R^2$.  
-%The \emph{\myindex{complex conjugate}} of $z$ is defined as
-%\begin{equation*}
-%\bar{z} \overset{\text{def}}{=} x-iy.
-%\end{equation*}
-%The size of $z$ is measured by the so-called \emph{\myindex{modulus}},
-%which is really just the \emph{\myindex{Euclidean distance}}:
-%\begin{equation*}
-%\abs{z} \overset{\text{def}}{=} \sqrt{z \bar{z}} = \sqrt{x^2+y^2} .
-%\end{equation*}
 
 A function $f \colon U \subset \C \to \C$ can be written as $f(z) =
 u(x,y)+iv(x,y)$,
@@ -1042,8 +1034,6 @@ as in one variable we define the Wirtinger operators
 \frac{\partial}{\partial x_j} + i \frac{\partial}{\partial y_j}
 \right) .
 \end{align*}
-
-%We can now define holomorphic functions in several variables.
 
 \begin{defn}
 Let $U \subset
@@ -9620,7 +9610,7 @@ make sure that the germs are at the same point.
 \begin{exbox}
 \begin{exercise}
 Write down a rigorous definition of subset, union, and intersection of germs.
-Then check that what you did is well defined.
+Then check that what you did is well-defined.
 \end{exercise}
 \end{exbox}
 
@@ -9688,7 +9678,7 @@ behave a lot like zero sets of polynomials, and ideals in
 $\sO_p$ can be generated by Weierstrass polynomials.
 
 \begin{thm}[\myindex{Weierstrass preparation theorem}]
-Suppose $f \in \sO(U)$ for a domain $U \subset \C^{n-1} \times \C$
+Suppose $f \in \sO(U)$ for a domain $U \subset \C^{n-1} \times \C$,
 %$U = U' \times \Delta \subset \C^{n-1} \times \C$,
 %where $0 \in U'$ and
 %$\Delta$ is a disc centered at 0.
@@ -9824,7 +9814,7 @@ the Weierstrass polynomial $z_n - c_0(z')$.  That is, the zero set of
 $f$ is a graph of a holomorphic function.
 We can therefore think of the Weierstrass theorem as a generalization of the
 implicit function theorem to the case when $\frac{\partial f}{\partial z_n}$
-is zero.  We can still ``solve'' for $z_n$ but we will obtain $k$ solutions
+is zero.  We can still ``solve'' for $z_n$, but we obtain $k$ solutions
 that are the roots of the Weierstrass polynomial.
 
 \begin{example}
@@ -9920,9 +9910,9 @@ holomorphic in $U'$.
 \end{prop}
 
 The proposition shows that the regularity conclusion of the implicit
-function theorem holds under the conclusion that there exists some local
-solution for $z_n$.  This theorem holds only in the holomorphic
-functions and not for real-analytic functions.  For example $x^2-y^3 = 0$ has a
+function theorem holds under the hypothesis that there exists some local
+solution for $z_n$.  This result holds only for holomorphic
+functions and not for real-analytic functions.  For example, $x^2-y^3 = 0$ has a
 unique real solution $y = x^{2/3}$, but that function is not even
 differentiable.
 
@@ -10061,7 +10051,6 @@ simply connected if $E \not= \emptyset$.
 \sectionnewpage
 \section{The ring of germs} \label{sec:ring of germs}
 
-%Before we tackle varieties,
 Let us prove some basic properties of the
 ring of germs of holomorphic functions.
 
@@ -10069,9 +10058,12 @@ ring of germs of holomorphic functions.
 $\sO_p$ is Noetherian.
 \end{thm}
 
-Noetherian means that for any ideal $I \subset \sO_p$
+Noetherian means that every ideal is finitely generated.
+That is, for every ideal $I \subset \sO_p$
 there exist finitely many elements $f_1,\ldots,f_k \in I$ such that
-every $g \in I$ can be written as $g = c_1 f_1 + \cdots + c_k f_k$.
+every $g \in I$ can be written as $g = c_1 f_1 + \cdots + c_k f_k$,
+for $c_1,\ldots,c_k \in \sO_p$,
+that is $I = (f_1,\ldots,f_k)$.
 
 \begin{proof}
 Without loss of generality assume that $p$ is the origin.  The proof is by
@@ -10090,7 +10082,7 @@ By the division theorem,
 every element $f \in I$ is of the form $f = gq+r$ where $r$
 is a polynomial in $z_n$.  The function 
 $r$ is an element of ${}_{n-1}\sO_0[z_n]$ and $r \in I$.
-The set $J= I \cap {}_{n-1}\sO_0[z_n]$ is an ideal in the
+The set $J= {}_{n-1}\sO_0[z_n] \cap I$ is an ideal in the
 ring ${}_{n-1}\sO_0[z_n]$.  By the Hilbert basis theorem, as
 ${}_{n-1}\sO_0$ is Noetherian, the polynomial ring
 ${}_{n-1}\sO_0[z_n]$ is Noetherian.  Thus $J$ has finitely many generators.
@@ -10162,8 +10154,6 @@ ${}_{n}\sO_0$.
 \sectionnewpage
 \section{Varieties} \label{sec:varieties}
 
-%\subsection{Definition}
-
 If $f \colon U \to \C$
 is a function, let $Z_f = f^{-1}(0)$ denote the zero set as before.
 
@@ -10172,13 +10162,13 @@ Let $U \subset \C^n$ be an open set.  Let $X \subset U$ be a set such that
 near each point $p \in U$, there exists a neighborhood $N$ of $p$
 and a family of holomorphic functions $\sF$ defined on $N$ such that
 \begin{equation*}
-N \cap X = \{ z \in N : f(z) = 0 \text{ for all } f \in \sF \} 
+N \cap X = \bigl\{ z \in N : f(z) = 0 \text{ for all } f \in \sF \bigr\} 
 = \bigcap_{f \in \sF} Z_f .
 \end{equation*}
 Then $X$ is called a
 (\emph{complex} or \emph{complex analytic}) \emph{\myindex{variety}}\index{complex variety}\index{complex
 analytic variety}
-or a %(\emph{complex} or \emph{complex analytic})
+or a
 \emph{\myindex{subvariety}}\index{complex
 subvariety}\index{complex analytic subvariety} of $U$.
 Sometimes $X$ is also called an \emph{\myindex{analytic set}}.
@@ -10197,8 +10187,6 @@ is a subvariety of the unit ball $\{ z : \norm{z} < 1 \}$.
 
 The family $\sF$ of functions can always be taken to be finite by the
 Noetherian property of $\sO_p$.
-%To see this
-%fact we first need a little bit of algebra.
 We will work with germs of functions.  When $(f,p)$ is a germ of a function
 it makes sense to talk about the germ $(Z_f,p)$.  We take the zero
 set of some representative and look at its germ at $p$.
@@ -10213,7 +10201,7 @@ show that the germs $(Z_f,p)$ and $(Z_g,p)$ are the same.
 Let
 \begin{equation*}
 I_p(X) \overset{\text{def}}{=}
-\{ (f,p) \in \sO_p : (X,p) \subset (Z_f,p) \} .
+\bigl\{ (f,p) \in \sO_p : (X,p) \subset (Z_f,p) \bigr\} .
 \end{equation*}
 That is, $I_p(X)$ is the set of germs of holomorphic functions vanishing on
 $X$ near $p$.  It is not hard to show that $I_p(X)$ is an ideal.
@@ -10270,15 +10258,13 @@ the ideal $I_p(X)$.  Therefore, the study of subvarieties often
 involves the study of
 the various algebraic properties of the ideals of $\sO_p$.
 
-%\subsection{Regular points and dimension}
-
 Let us define the
 regular points of a variety and their dimension.
 If $f \colon U' \subset \C^k \to \C^{n-k}$ is a mapping, then
 by a graph of $f$ we mean the set in $U' \times \C^{n-k} \subset \C^k \times
 \C^{n-k}$ defined by
 \begin{equation*}
-\{ (z,w) \in U' \times \C^{n-k} : w=f(z) \} .
+\bigl\{ (z,w) \in U' \times \C^{n-k} : w=f(z) \bigr\} .
 \end{equation*}
 
 \begin{defn}
@@ -10307,10 +10293,7 @@ So $p \in X$ is a regular point if after perhaps a complex affine
 change of coordinates there is a neighborhood $U' \times U'' \subset \C^{k}
 \times \C^{n-k}$ of $p$ such that $X \cap (U' \times U'')
 =
-\{ (z,w) \in U' \times U'' : w=f(z) \}$.
-% where $p \in X \cap (U' \times U'')$.
-%In other words, $p$ is a regular point of $X$ (of dimension $k$) if 
-%$X$ is a $k$-dimensional complex manifold near $p$.
+\bigl\{ (z,w) \in U' \times U'' : w=f(z) \bigr\}$.
 Note that
 an isolated point of the variety
 is a regular point of dimension 0.
@@ -10410,13 +10393,11 @@ Then $Z_f$ is either empty, of pure codimension 1, or $Z_f = U$.
 Conversely, if $(X,p)$ is a germ of a pure codimension 1 variety, then
 there is a germ holomorphic function $f$ at $p$
 such that $(Z_f,p) = (X,p)$.  Furthermore $I_p(X)$ is generated by $(f,p)$.
-%Furthermore if $(X,p)$ is irreducible,
-%then $X_{\mathit{reg}}$ is connected.
 \end{thm}
 
 \begin{proof}
 We already proved all the relevant pieces of the first part of this
-theorem.  %It is the second part that is the main point.
+theorem.
 
 For the second part there has to a germ of a function that vanishes on
 $(X,p)$.  Suppose $p=0$ and that after a possible linear
@@ -10568,9 +10549,6 @@ $(f,p) \in I_p\bigl(V(I)\bigr)$, then $(f^k,p) \in I$ for some integer $k$.
 \subsection{Irreducibility, local parametrization, and the Puiseux
 theorem}
 
-%Before we talk about curves, let us define
-%irreducible varieties.
-
 \begin{defn}
 A germ of a complex variety $(X,p) \subset (\C^n,p)$ is said to be
 \emph{\myindex{reducible}} at $p$ if there exist
@@ -10614,25 +10592,21 @@ is connected.  Hint: previous exercise.
 
 \begin{example}
 The local and global behavior are different.  For example,
+the variety given by
 \begin{equation*}
 z_2^2 = z_1{(z_1-1)}^2
 \end{equation*}
-is irreducible in $\C^2$ (the regular points are connected) but locally
+is irreducible in $\C^2$ (the regular points are connected), but locally
 at the point
 $(1,0)$ it is reducible, where the variety is
 a union of two graphs: $z_2 = \pm \sqrt{z_1}(z_1-1)$.
 Here is a plot in two real dimensions:
 
-
-%\begin{figure}[h!t]
 \begin{center}
 \medskip
 \subimport*{figures/}{locallyredcurve.eepic}
-%\medskip
-%\caption{Locally reducible but globally irreducible curve.\label{fig:locallyredcurve}}
 \bigskip
 \end{center}
-%\end{figure}
 \end{example}
 
 
@@ -10707,8 +10681,6 @@ that is an $m$-to-1 map.
 Use \thmref{thm:discrthm}
 to prove the parametrization theorem if $(X,0)$ is
 of pure codimension 1.
-%defined by the vanishing of a single holomorphic function.  Do not
-%prove that $X'$ is connected.
 \end{exercise}
 \end{exbox}
 
@@ -10718,8 +10690,6 @@ to ensure that the set defined by $z_1=z_2=\cdots=z_k = 0$ intersected
 with $X$ is an isolated point at the origin.  This is precisely
 the same condition needed to apply Weierstrass preparation theorem in the case
 when $X$ is the zero set of a single function.
-
-%\subsection{One dimensional varieties and analytic discs}
 
 We saw hypersurfaces are the simpler cases of complex analytic
 subvarieties.  The other end of the spectrum, that is complex analytic
@@ -11090,7 +11060,6 @@ $p \in M$ there exists a neighborhood $U$ of $p$ with the following
 property:
 If $q \in M \cap U$ and
 $(X,q)$ is a germ of a (complex analytic) subvariety
-%of dimension at least $k$
 such that $(X,q) \subset (M,q)$,
 then there exists a (complex analytic) subvariety $Y \subset U$ (in
 particular a closed subset of $U$) such that $Y \subset M$ and $(X,q)
