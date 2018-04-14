@@ -1321,7 +1321,7 @@ dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n \\
 \end{equation*}
 We can also make sense of this notation, especially the notation $z^\alpha$,
 if $\alpha \in \Z^n$, although usually $\alpha$ is assumed to be $\N_0^n$.
-Furthermore, when we use $1$ as a vector it will mean $(1,1,\ldots,1)$.
+Furthermore, when we use $1$ as a vector it means $(1,1,\ldots,1)$.
 For example if $z \in \C^n$ then,
 \begin{equation*}
 1-z = (1-z_1,1-z_2,\ldots,1-z_n) .
@@ -1823,9 +1823,14 @@ Improve Liouville's theorem slightly.  A complex line though the origin is
 the image of a linear map $L \colon \C \to \C^n$.  a)~Prove that 
 for any collection of finitely many complex lines through the origin,
 there exists an entire nonconstant holomorphic function ($n \geq 2$)
-bounded on these complex lines.
-b)~Prove that if an entire holomorphic function is bounded on countable many
+bounded (hence constant) on these complex lines.
+b)~Prove that if an entire holomorphic function in $\C^2$ is bounded on
+countably many distinct
 complex lines through the origin then it is constant.
+c)~Find a nonconstant entire holomorphic function in $\C^3$ that is
+bounded on
+countably many distinct
+complex lines through the origin.
 \end{exercise}
 
 \begin{exercise}
@@ -3207,7 +3212,7 @@ Show that a convex domain in $\C^n$ is a domain of holomorphy.
 \end{exbox}
 
 In the following when we say $f \in \sO(U)$ extends holomorphically to $V$ where
-$U \subset V$, we will mean that there
+$U \subset V$, we mean that there
 exists a function $\widetilde{f} \in \sO(V)$ such that $f = \widetilde{f}$ on
 $U$.
 
@@ -3231,8 +3236,10 @@ Let $(z,w) = (z_1,\ldots,z_m,w_{1},\ldots,w_{k}) \in \C^m \times \C^k$ be the co
 $0 < a,b < 1$, let the set $H \subset \D^{m+k}$
 be defined by
 \begin{equation*}
-H = \{ (z,w) \in \D^{m+k} : \sabs{z_j} > a \text{ for $j=1,\ldots,m$ } \} \cup
-\{ (z,w) \in \D^{m+k} : \sabs{w_j} < b \text{ for $j=1,\ldots,k$ } \} .
+H = \bigl\{ (z,w) \in \D^{m+k} : \sabs{z_j} > a \text{ for $j=1,\ldots,m$ }
+\bigr\} \cup
+\bigl\{ (z,w) \in \D^{m+k} : \sabs{w_j} < b \text{ for $j=1,\ldots,k$ }
+\bigr\} .
 \end{equation*}
 If $f \in \sO(H)$, then $f$ extends holomorphically to $\D^{m+k}$.
 \end{thm}
@@ -3367,7 +3374,7 @@ extend the function $1/f$.
 \begin{exercise}[\myindex{Hartogs triangle}]\label{exercise:hartogstriangle}
 Let
 \begin{equation*}
-T = \{ (z_1,z_2) \in \D^2 : \sabs{z_2} < \sabs{z_1} \} .
+T = \bigl\{ (z_1,z_2) \in \D^2 : \sabs{z_2} < \sabs{z_1} \bigr\} .
 \end{equation*}
 Show that $T$ is a domain of holomorphy.  Then show that if
 \begin{equation*}
@@ -3387,7 +3394,7 @@ in all of $\C^2$.  Hint: Change coordinates before using Hartogs.
 \begin{exercise}
 Suppose 
 \begin{equation*}
-U = \{ (z,w) \in \D^2 : \nicefrac{1}{2} < \sabs{z} \} .
+U = \bigl\{ (z,w) \in \D^2 : \nicefrac{1}{2} < \sabs{z} \bigr\} .
 \end{equation*}
 Draw $U$.  
 Let $\gamma = \{ z : \sabs{z} = \nicefrac{3}{4} \}$ oriented positively.
@@ -3435,7 +3442,7 @@ while $U_2$ is defined by
 $\Re z_2 \not= 0$ and $\Im z_2 \not= 0$.
 
 The condition of being a domain of holomorphy,
-will require something more than just some real geometric condition on the
+requires something more than just some real geometric condition on the
 set.  In particular we have shown that the image of a domain of holomorphy
 via an orthonormal
 real-linear mapping 
@@ -3980,7 +3987,7 @@ the basis.
 \end{exbox}
 
 When talking about only holomorphic functions and holomorphic vectors,
-when we say derivative of $f$, we will mean the holomorphic part of the
+when we say derivative of $f$, we mean the holomorphic part of the
 derivative which we write as,
 \begin{equation*}
 D f(p) \colon T_p^{(1,0)} \C^n \to T_{f(p)}^{(1,0)} \C^m .
