@@ -309,7 +309,7 @@
 Ji{\v r}\'i Lebl\\[3ex]} 
 \today
 \\
-(version 2.2)
+(version 2.3)
 \end{minipage}}
 
 %\addtolength{\textwidth}{\centeroffset}
@@ -378,8 +378,8 @@ use at least one of the licenses.
 \textbf{Acknowledgements:}
 \\
 I would like to thank Debraj Chakrabarti, Anirban Dawn, Alekzander Malcom,
-John Treuer,
-Jianou Zhang, and other students in my class for pointing out typos/errors
+John Treuer, Jianou Zhang, Liz Vivas,
+and students in my classes for pointing out typos/errors
 and helpful suggestions. 
 
 \bigskip
@@ -488,7 +488,7 @@ Holomorphic functions are a generalization of polynomials,
 and to get there one leaves the land of algebra to arrive in the realm of
 analysis.
 
-Let us start with polynomials.  In one variable a polynomial in $z$ is
+Let us start with polynomials.  In one variable, a polynomial in $z$ is
 an expression of the form
 \begin{equation*}
 P(z) = \sum_{j=0}^d c_j z^j ,
@@ -513,7 +513,7 @@ What we usually mean is
 \sum_{j=0}^d c_j z^j .
 \end{equation*}
 As long as the limit exists, we have a function.  You know all
-this; it is your one variable complex analysis.  We usually
+this; it is your one-variable complex analysis.  We usually
 start with the functions and prove that we can expand into series.
 
 A function $f \colon U \subset \C \to \C$ can be written as $f(z) =
@@ -689,7 +689,7 @@ the Cauchy-Pompeiu integral formula.
 
 As a differential form $dz = dx + i dy$.  If you are uneasy
 about differential forms you probably defined this integral using
-the Riemann-Stieltjes integral in your one variable class.
+the Riemann-Stieltjes integral in your one-variable class.
 Let us write down the formula in terms of the standard Riemann integral
 in a special case.  Let
 \begin{equation*}
@@ -1483,8 +1483,7 @@ d \zeta
 {(z-a)}^{\alpha} .
 \end{split}
 \end{equation*}
-The last equality follows by Fubini just as it does in one
-variable.
+The last equality follows by Fubini just as it does in one variable.
 %because the convergence of the sum is uniform in
 %$\zeta \in \Gamma$ for a fixed $z$.
 
@@ -1514,7 +1513,7 @@ The converse follows by applying the Cauchy-Riemann equations to the series
 term-wise.  To do this you have to show that the term-by-term derivative
 series also converges uniformly on compact subsets.  It is left as an
 exercise.  Then you apply the well-known theorem from real analysis.
-The proof of this fact is very similar to one variable series that you know.
+The proof of this fact is very similar to one-variable series that you know.
 
 The conclusion also follows by restricting to one variable for each variable
 in turn, and then using the corresponding one-variable result.
@@ -1623,7 +1622,7 @@ Or
 \frac{\snorm{f}_\Gamma}{\rho^\alpha} .
 \end{equation*}
 
-As in one variable theory the Cauchy estimates prove the following
+As in one-variable theory the Cauchy estimates prove the following
 proposition.
 
 \begin{prop}
@@ -1813,7 +1812,7 @@ for all $z \in \overline{\D^n}$.
 \end{exercise}
 
 \begin{exercise}
-Apply the one variable Liouville's theorem to prove it for several variables.
+Apply the one-variable Liouville's theorem to prove it for several variables.
 That is, suppose $f \colon \C^n \to \C$ is holomorphic and bounded.
 Prove $f$ is constant.
 \end{exercise}
@@ -1848,7 +1847,7 @@ Suppose $\{ f_k \}$ is a sequence of nowhere zero
 holomorphic functions on a domain $U
 \subset \C^n$ converging uniformly on compact subsets to a function $f$.
 Show that either $f$ is identically zero, or that $f$ is nowhere zero.
-Hint: Feel free to use the one variable result.
+Hint: Feel free to use the one-variable result.
 \end{exercise}
 \end{exbox}
 
@@ -5656,10 +5655,10 @@ analogous properties.
 As an application of harmonic functions, let us prove 
 another useful theorem about zero sets of holomorphic functions,
 the theorem of
-Rad\'o.  It is sometimes covered in a one variable course, but it is often
+Rad\'o.  It is sometimes covered in a one-variable course, but it is often
 skipped.  It is very useful in several variables and the proof is a direct
-application of the one
-variable theory.  It is really a complementary theorem to the
+application of the one-variable theory.
+It is really a complementary theorem to the
 Riemann extension theorem, when on the one hand you know that the function is
 continuous and vanishes on the set you wish to extend across, but on the
 other hand you know nothing about this set.
@@ -5721,7 +5720,7 @@ The extension of the proof to several variables is left as an exercise.
 
 \begin{exbox}
 \begin{exercise}
-Use the one variable result to extend the theorem to several variables.
+Use the one-variable result to extend the theorem to several variables.
 \end{exercise}
 \end{exbox}
 
@@ -8257,7 +8256,7 @@ values of a holomorphic function.
 b)~Given arbitrary $\epsilon > 0$, find a $C^1$ function $f$ on the closed unit disc
 $\overline{\D}$,
 such that $\frac{\partial f}{\partial \bar{z}}$ is identically zero
-outside an $\epsilon$-neighbourhood of the origin, yet $f|_{\partial \D}$
+outside an $\epsilon$-neighborhood of the origin, yet $f|_{\partial \D}$
 are not boundary values of a holomorphic function.
 \end{exercise}
 
@@ -9557,6 +9556,9 @@ the context is clear.
 
 Germs are particularly useful for holomorphic functions because of the identity
 theorem.  The set of germs of complex valued functions always forms a ring.
+For example, to multiply $(f,p)$ and $(g,p)$, take two representatives
+$f$ and $g$ defined on a common neighborhood multiply them and
+then consider the germ $(fg,p)$.
 When the functions are holomorphic, the ring has many nice properties.
 The ring of germs is generally a ``nicer'' ring than the ring $\sO(U)$ for
 some open $U$.
@@ -9680,9 +9682,9 @@ polynomial of degree $k$ is $z^k$.
 
 The purpose of this section is to show that every holomorphic function
 in $\sO(U)$ is (up to a unit and a possible small rotation) a Weierstrass
-polynomial.  Consequently zero sets of holomorphic functions
-behave a lot like zero sets of polynomials, and ideals in
-$\sO_p$ can be generated by Weierstrass polynomials.
+polynomial.  So zero sets of holomorphic functions
+behave like zero sets of polynomials, and ideals in
+$\sO_p$ are generated by Weierstrass polynomials.
 
 \begin{thm}[\myindex{Weierstrass preparation theorem}]
 Suppose $f \in \sO(U)$ for a domain $U \subset \C^{n-1} \times \C$,
@@ -9694,7 +9696,7 @@ Suppose
 $z_n \mapsto f(0,z_n)$ is not identically zero near the origin
 and its order of vanishing at the origin is $k$.
 
-Then there exists an open $V = V' \times D \subset \C^{n-1} \times \C$
+Then there exists an open polydisc $V = V' \times D \subset \C^{n-1} \times \C$
 with $0 \in V \subset U$,
 a unique $u \in \sO(V)$, $u(z) \not=0$ for all $z \in V$, and a unique
 Weierstrass polynomial $P$ of degree $k$
@@ -9712,12 +9714,13 @@ of a degree $k$ monic polynomial whose coefficients depend holomorphically on $z
 
 \begin{proof}
 There exists a small disc $D \subset \C$ around zero such that
-$f(0,z_n)$ is not zero on $\overline{D} \setminus \{ 0 \}$.  By continuity
-we find a small polydisc $V = V' \times D$ such that
+$f(0,z_n) \not= 0$ for $z_n \in \overline{D} \setminus \{ 0 \}$.
+By continuity
+of $f$ we find a small polydisc $V = V' \times D$ such that
 $\overline{V} \subset U$ and $f$ is not zero on
 $V' \times \partial D$.
 
-The one variable argument principle implies that the number of zeros (with
+The one-variable argument principle implies that the number of zeros (with
 multiplicity) of $z_n
 \mapsto f(z',z_n)$ in $D$ is
 \begin{equation*}
@@ -9725,13 +9728,14 @@ multiplicity) of $z_n
 \int_{\partial D}
 \frac{\frac{\partial f}{\partial z_n} (z',z_n)}{f(z',z_n)} ~dz_n .
 \end{equation*}
-The number equals $k$ for all $z' \in V'$ by continuity.
+The number equals $k$ for all $z' \in V'$ by continuity (it is $k$
+when $z'=0$).
 Write%
 \footnote{In general you cannot make the
 functions $\alpha_k$ even continuous at all points.}
 the zeros as $\alpha_1(z'),\ldots,\alpha_k(z')$ (including
 multiplicity).  There is no particular order to the zeros,
-simply pick some order for every $z'$.
+pick some order for every $z'$.
 %The functions $\alpha_j$ may not be not be holomorphic or even continuous all points.
 %What we do is
 Write
@@ -9758,7 +9762,6 @@ s_m(z') = \sum_{j=1}^k \alpha_j{(z')}^m .
 Therefore, if we can show that $s_m$ are holomorphic, then $c_j$ are also
 holomorphic.
 
-%We use another theorem from one variable theory:
 A refinement of the argument principle says:
 If $h$ and $g$ are
 holomorphic functions on a disc $D$, continuous on $\overline{D}$,
@@ -9788,8 +9791,8 @@ formula on $\frac{f}{P}$ we write
 \begin{equation*}
 u(z',z_n) = \int_{\partial D} \frac{f(z',\zeta)}{P(z',\zeta)(\zeta-z_n)} \, d\zeta .
 \end{equation*}
-The function $u$ is holomorphic in $z'$ and $z_n$.  Furthermore from one
-variable theory we know that for each fixed $z'$ the function has no zeros
+The function $u$ is holomorphic in $z'$ and $z_n$.  Furthermore from
+one-variable theory we know that for each fixed $z'$ the function has no zeros
 as they cancel out exactly.
 \end{proof}
 
@@ -9825,9 +9828,10 @@ is zero.  We can still ``solve'' for $z_n$, but we obtain $k$ solutions
 that are the roots of the Weierstrass polynomial.
 
 \begin{example}
-A useful example to keep in mind is $f(z_1,z_2) = z_2^2 - z_1$.  For
-all $z_1$ except the origin there are two zeros.  For $z_1 = 0$, there
-is only one zero.
+A useful example to keep in mind is $f(z_1,z_2) = z_2^2 - z_1$,
+a Weierstrass polynomial in $z_2$.  
+For all $z_1$ except the origin there are two zeros, $\pm \sqrt{z_1}$.
+For $z_1 = 0$, there is only one zero.
 \end{example}
 
 There is an obvious statement of the preparation theorem for germs.
@@ -9855,14 +9859,14 @@ f = Pq + r .
 Do note that $r$ need not be a Weierstrass polynomial; it need not be monic
 nor do the coefficients need to vanish at the origin.  It is simply a
 polynomial in $z_n$ with coefficients that are holomorphic functions
-of $n-1$ variables.
+of the first $n-1$ variables.
 
 \begin{proof}
 The uniqueness is left as an exercise.  Assume we are working
 in a neighborhood $V = V' \times D$ for some small disc $D$
 such that $f$ and $P$ are continuous in $\overline{V}$,
 $P$ is not zero on $V' \times \partial D$, and the
-only zeros of $P(0,z_n)$ in $D$ are at the origin.  We write
+only zeros of $z_n \mapsto P(0,z_n)$ in $D$ are at the origin.  We write
 \begin{equation*}
 q(z',z_n) =
 \frac{1}{2\pi i} \int_{\partial D} \frac{f(z',\zeta)}{P(z',\zeta)(\zeta-z_n)}
@@ -10074,8 +10078,8 @@ that is $I = (f_1,\ldots,f_k)$.
 
 \begin{proof}
 Without loss of generality assume that $p$ is the origin.  The proof is by
-induction on dimension.  That ${}_1\sO_0$ is Noetherian is a simple one
-variable argument that is left as an exercise.
+induction on dimension.  That ${}_1\sO_0$ is Noetherian is a simple
+one-variable argument that is left as an exercise.
 
 For induction suppose ${}_{n-1}\sO_0$ is Noetherian.  If $I = \{ 0 \}$
 or if $I = \sO_p$, then the assertion is obvious.  Therefore, we assume
@@ -10256,10 +10260,10 @@ the \emph{\myindex{Nullstellensatz}}, says that if we take the variety defined b
 in an ideal $I$, and look at the ideal given by that variety we obtain the
 radical of $I$.  In more concise language the Nullstellensatz says
 $I_p\bigl(V(I)\bigr) = \sqrt{I}$.
-Therefore, germs of varieties are in
+Germs of varieties are in
 one-to-one correspondence with radical ideals of $\sO_p$.
 
-The local properties of a subvariety at $p$ are therefore
+The local properties of a subvariety at $p$ are 
 encoded in the properties of
 the ideal $I_p(X)$.  Therefore, the study of subvarieties often
 involves the study of
