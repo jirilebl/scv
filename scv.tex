@@ -9604,17 +9604,20 @@ Let $p$ be a point in a topological space $X$.
 We say that sets $A, B \subset X$ are equivalent
 if there exists a neighborhood $N$ of $p$
 such that $A \cap N = B \cap N$.
-
 An equivalence class of sets 
 is called a \emph{\myindex{germ of a set}} at $p$.
-Usually it is denoted by $(A,p)$, but we may simply say $A$ when
+Usually it is denoted by $(A,p)$, but we may write $A$ when
 the context is clear.
 \end{defn}
 
-The concept of $(X,p) \subset (Y,p)$ is defined in an obvious manner.
+The concept of $(X,p) \subset (Y,p)$ is defined in an obvious manner,
+that is, there exist representatives $X$ and $Y$, and a neighborhood $N$
+of $p$ such that $X \cap N \subset Y \cap N$.
 Similarly the intersection $(X,p) \cap (Y,p)$ and
-the union $(X,p) \cup (Y,p)$ can easily be defined.  The main point is to
-make sure that the germs are at the same point.
+the union $(X,p) \cup (Y,p)$ can easily be defined: we take the intersection
+and the union of representatives and then consider the germ of the result at $p$.
+%The main point is to
+%make sure that the germs are at the same point.
 
 \begin{exbox}
 \begin{exercise}
@@ -9630,16 +9633,17 @@ Write
 \begin{equation*}
 f(z) = \sum_{k=0}^\infty f_k(z-a),
 \end{equation*}
-where $f_k$ is a homogeneous polynomial of degree $k$.
-%, that is, $f_k(tz) = t^k f_k(z)$.
+where $f_k$ is a homogeneous polynomial of degree $k$,
+that is, $f_k(tz) = t^k f_k(z)$.
 
 \begin{defn}
-For $a \in \C^n$ such that $f$ is a holomorphic function defined near $a$,
+For $a \in \C^n$ and a function $f$ holomorphic in a neighborhood of $a$.
+If $f$ is not identically zero,
 define
 \begin{equation*}
-\ord_a f \overset{\text{def}}{=} \min \{ k \in \N_0 : f_k \not\equiv 0 \} ,
+\ord_a f \overset{\text{def}}{=} \min \{ k \in \N_0 : f_k \not\equiv 0 \} .
 \end{equation*}
-with the obvious definition that if $f \equiv 0$, then $\ord_a f = \infty$.
+If $f \equiv 0$, then define $\ord_a f = \infty$.
 The number $\ord_a f$ is called the \emph{\myindex{order of vanishing}} of $f$ at $a$.
 \end{defn}
 
@@ -9655,16 +9659,13 @@ at least one derivative of order $k$ that does not vanish at $a$.
 From one variable, you may remember that a holomorphic function 
 vanishing to order $k$ at 0 equals (locally) $z^k u(z)$ for a nonvanishing $u$.
 In several variables, there is a similar theorem, or in fact a pair of theorems,
-%which are basic tools in the subject,
 the so-called Weierstrass preparation and
 division theorems.
 
-%\subsection{The preparation theorem}
-
 \begin{defn}
-Let $U \subset \C^{n-1}$ be open.  Let $z' \in \C^{n-1}$ denote the
+Let $U \subset \C^{n-1}$ be open, and let $z' \in \C^{n-1}$ denote the
 coordinates.
-Suppose $P \in \sO(U)[z_n]$ is monic of degree $k$, that is,
+Suppose a polynomial $P \in \sO(U)[z_n]$ is monic of degree $k$, that is,
 \begin{equation*}
 P(z',z_n) = z_n^k + \sum_{j=0}^{k-1} c_j(z') \, z_n^j ,
 \end{equation*}
@@ -9713,7 +9714,7 @@ of a degree $k$ monic polynomial whose coefficients depend holomorphically on $z
 %g(z)$ where $g(0) \not= 0$.
 
 \begin{proof}
-There exists a small disc $D \subset \C$ around zero such that
+There exists a small disc $D \subset \C$ centered at zero such that
 $f(0,z_n) \not= 0$ for $z_n \in \overline{D} \setminus \{ 0 \}$.
 By continuity
 of $f$ we find a small polydisc $V = V' \times D$ such that
@@ -9728,8 +9729,9 @@ multiplicity) of $z_n
 \int_{\partial D}
 \frac{\frac{\partial f}{\partial z_n} (z',z_n)}{f(z',z_n)} ~dz_n .
 \end{equation*}
-The number equals $k$ for all $z' \in V'$ by continuity (it is $k$
-when $z'=0$).
+The above expression is an integer valued
+continuous function that is $k$ when $z'=0$,
+so it is $k$ for all $z' \in V'$.
 Write%
 \footnote{In general you cannot make the
 functions $\alpha_k$ even continuous at all points.}
@@ -9746,8 +9748,8 @@ P(z',z_n)
 =
 z_n^k + c_{k-1}(z') \, z_n^{k-1} + \cdots + c_0 (z') .
 \end{equation*}
-For a fixed $z'$, $P$ is uniquely defined as the order of roots did not
-matter.  It is
+For a fixed $z'$, $P$ is uniquely defined as the order of roots does not
+matter in its definition.  It is
 clear that
 $u$ and $P$ are unique if they exist (as holomorphic functions).
 
@@ -9755,7 +9757,7 @@ We will prove that $c_j(z')$ are holomorphic.  The functions $c_j$ are
 the elementary symmetric functions of the $\alpha_j$'s.  It is a standard
 %(and easy)
 theorem in algebra that the elementary symmetric functions are
-polynomials in the so-called power sum functions in the $\alpha_j$'s.
+polynomials in the so-called power sum functions in the $\alpha_j$'s:
 \begin{equation*}
 s_m(z') = \sum_{j=1}^k \alpha_j{(z')}^m .
 \end{equation*}
@@ -9773,7 +9775,7 @@ are the zeros of $g$ in $D$, then
 = \sum_{j=1}^k h(\alpha_j) .
 \end{equation*}
 
-We use the above formula and obtain that
+We use the above formula ($h(\xi) = \xi^m$ and $g(\xi)=f(z',\xi)$) and obtain that
 \begin{equation*}
 s_m(z') = 
 \sum_{j=1}^k \alpha_j{(z')}^m
@@ -9783,11 +9785,14 @@ s_m(z') =
 z_n^m
 \frac{\frac{\partial f}{\partial z_n} (z',z_n)}{f(z',z_n)} ~dz_n .
 \end{equation*}
-We differentiate under the integral to obtain that $s_m$
-is holomorphic. % (justification is left as an exercise).
+We differentiate under the integral
+with $\frac{\partial}{\partial\bar{z}_\ell}$
+for $\ell=1,\ldots,{n-1}$
+to obtain that $s_m$
+is holomorphic.
 
-Finally we wish to show that $P$ divides $f$ as claimed.  Using Cauchy
-formula on $\frac{f}{P}$ we write
+Finally we wish to show that $P$ divides $f$ as claimed.  The Cauchy
+formula on $\frac{f}{P}$ says
 \begin{equation*}
 u(z',z_n) = \int_{\partial D} \frac{f(z',\zeta)}{P(z',\zeta)(\zeta-z_n)} \, d\zeta .
 \end{equation*}
@@ -9818,14 +9823,14 @@ on the number $k$ in the theorem.  The order of vanishing for a certain
 variable may be larger than this lower bound.  If you however make a small
 linear change of coordinates you can ensure $k = \ord_0 f$.
 
-We think of Weierstrass preparation theorem as a generalization of
+The Weierstrass preparation theorem is a generalization of
 the implicit function theorem.  When $k=1$ in the theorem, then we obtain
 the Weierstrass polynomial $z_n - c_0(z')$.  That is, the zero set of 
 $f$ is a graph of a holomorphic function.
-We can therefore think of the Weierstrass theorem as a generalization of the
+Therefore the Weierstrass theorem is a generalization of the
 implicit function theorem to the case when $\frac{\partial f}{\partial z_n}$
-is zero.  We can still ``solve'' for $z_n$, but we obtain $k$ solutions
-that are the roots of the Weierstrass polynomial.
+is zero.  We can still ``solve'' for $z_n$, but we find $k$ solutions
+given as the roots of the obtained Weierstrass polynomial.
 
 \begin{example}
 A useful example to keep in mind is $f(z_1,z_2) = z_2^2 - z_1$,
@@ -9866,15 +9871,17 @@ The uniqueness is left as an exercise.  Assume we are working
 in a neighborhood $V = V' \times D$ for some small disc $D$
 such that $f$ and $P$ are continuous in $\overline{V}$,
 $P$ is not zero on $V' \times \partial D$, and the
-only zeros of $z_n \mapsto P(0,z_n)$ in $D$ are at the origin.  We write
+only zeros of $z_n \mapsto P(0,z_n)$ in $D$ are at the origin.  Write
 \begin{equation*}
 q(z',z_n) =
 \frac{1}{2\pi i} \int_{\partial D} \frac{f(z',\zeta)}{P(z',\zeta)(\zeta-z_n)}
 ~d\zeta .
 \end{equation*}
-By the assumptions on $D$ we see $q$ is holomorphic in $V$. 
-Writing $f$ using the Cauchy integral in the last variable and
-subtracting $Pq$ we obtain
+As $P$ is not zero on $V' \times \partial D$,
+the function $q$ is 
+is holomorphic in $V$ (differentiate under the integral). 
+Write $f$ using the Cauchy integral in the last variable and
+subtract $Pq$ to obtain
 \begin{equation*}
 r(z',z_n) = f(z',z_n) - P(z',z_n)q(z',z_n)
 =
@@ -9886,9 +9893,9 @@ We need to show $r$ is a polynomial in $z_n$ of degree less than
 $k$.  In the expression inside the integral the numerator is
 of the form $\sum_j h_j(z',\zeta)(\zeta^j-z_n^j)$ and is therefore
 divisible by $(\zeta-z_n)$.
-We perform the division.  The numerator was a polynomial of degree $k$ in
-$z_n$ and after the division is therefore a polynomial of degree $k-1$.
-We then use linearity of the integral
+We perform the division.  The numerator is a polynomial of degree $k$ in
+$z_n$ and after the division the numerator is a polynomial of degree $k-1$.
+Use linearity of the integral
 to integrate the coefficients of the polynomial.  Each coefficient is a
 holomorphic function and we are done.  Some coefficients may have
 integrated to zero, so we can only say that $r$ is a polynomial
@@ -9931,11 +9938,11 @@ differentiable.
 This is a local statement about $\alpha$ so we need only show
 that $\alpha$ is holomorphic near some point, which, without loss
 of generality, is the origin.
-We apply the preparation
+Apply the preparation
 theorem to find $f = u P$,
 where $P$ is a
 Weierstrass polynomial in $\sO(V')[z_n]$ for some $V' \subset U'$.
-We have
+As $\alpha$ is a geometrically unique root,
 \begin{equation*}
 P(z',z_n) = {\bigl(z_n-\alpha(z') \bigr)}^k = z_n^k - k \alpha(z') z_n^{k-1}
 + \cdots
@@ -9963,10 +9970,11 @@ f(z',z_n) = u(z',z_n) \prod_{j=1}^m {\bigl( z_n - \alpha_j(z') \bigr)}^{k_j}
 \end{equation*}
 \end{prop}
 
-The reason why can only define $\alpha_1$ through $\alpha_m$ locally (on a
-smaller domain) is that we do not know
-the order of $\alpha_1$ through $\alpha_m$ and the order could change if
-$U'$ is not simply connected.
+Why can only define $\alpha_1$ through $\alpha_m$ locally (on a
+smaller domain) as we do not know
+the order of $\alpha_1$ through $\alpha_m$, and the order could change 
+as we move around 
+$U'$ if it is not simply connected.
 
 \begin{exbox}
 \begin{exercise}
@@ -9987,8 +9995,8 @@ Suppose the zero set $f^{-1}(0)$ has no limit points
 on $U' \times \partial D$,
 and
 for each $z' \in U'$, the function $z_n \mapsto f(z',z_n)$ has
-at most $m < \infty$ geometrically distinct zeros (and has exactly $m$
-zeros somewhere).  Then there exists 
+at most $m < \infty$ geometrically distinct zeros, and has exactly $m$
+zeros somewhere.  Then there exists 
 a holomorphic function $\Delta \colon U' \to \C$, not identically zero, such
 that for every $z' \in U'$ not in $E = \Delta^{-1}(0)$,
 $z_n \mapsto f(z',z_n)$ has exactly $m$ geometrically distinct zeros in $D$.
