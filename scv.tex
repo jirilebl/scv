@@ -7440,7 +7440,8 @@ Find an explicit formula for $g$ without using mollifiers.
 
 Let
 \begin{equation*}
-K' = \{ (x,y') : \snorm{x} \leq \nicefrac{r}{4} , \snorm{y'} \leq d \} .
+K' = \bigl\{ (x,y') : \snorm{x} \leq \nicefrac{r}{4} , \snorm{y'} \leq d
+\bigr\} .
 \end{equation*}
 Let $K = z(K')$, that is the image of $K'$ under the mapping $z(x,y')$,
 as we will think of $z$ as a function of $(x,y')$.
@@ -7499,8 +7500,8 @@ $w\not=z$.
 %\end{equation*}
 Fix $y'$ with $0 < \snorm{y'} < d$ and let $D$ be defined by
 \begin{equation*}
-D = \{ (x,s) \in \R^n \times \R^{n-1} : \snorm{x} < r \text{ and } s = t y' \text{ for
-$t \in (0,1)$} \} .
+D = \bigl\{ (x,s) \in \R^n \times \R^{n-1} : \snorm{x} < r \text{ and } s = t y' \text{ for
+$t \in (0,1)$} \bigr\} .
 \end{equation*}
 $D$ is an $n+1$ dimensional ``cylinder.''  That is, we take a ball in the
 $x$ direction and then take a single fixed direction $y'$.  We orient $D$ in
@@ -7876,7 +7877,7 @@ f(\tilde{x},y')
 \det \left[\frac{\partial z}{\partial
 x}(\tilde{x},y')\right] d\xi .
 \end{equation*}
-Notice how in the exponent we actually had an expression for the derivative
+Notice how in the exponent we actually have an expression for the derivative
 in the $\xi$ direction with $y'$ fixed.  If $(\tilde{x},y') \in K'$, then
 $g(\tilde{x}) = 1$ and so we can ignore $g$.
 
@@ -7965,7 +7966,7 @@ a function holomorphic on $U$.
 \end{enumerate}
 \end{thm}
 
-In particular, note that if the Levi-form has eigenvalues of both signs,
+In particular, if the Levi-form has eigenvalues of both signs,
 then near $p$ the CR function is in fact a restriction of a holomorphic
 function on all of $U$.  The function $r$ can really be any defining
 function for $M$, either one can extend it to all of $U$ or we could take a
@@ -10174,7 +10175,7 @@ ${}_{n}\sO_0$.
 \sectionnewpage
 \section{Varieties} \label{sec:varieties}
 
-If $f \colon U \to \C$
+If $f \colon \Omega \to \C$
 is a function, let $Z_f = f^{-1}(0)$ denote the zero set as before.
 
 \begin{defn}
@@ -10191,7 +10192,7 @@ analytic variety}
 or a
 \emph{\myindex{subvariety}}\index{complex
 subvariety}\index{complex analytic subvariety} of $U$.
-Sometimes $X$ is also called an \emph{\myindex{analytic set}}.
+Sometimes $X$ is called an \emph{\myindex{analytic set}}.
 We say $X \subset U$ is a proper subvariety if $\emptyset \not= X \subsetneq
 U$.
 \end{defn}
@@ -10265,8 +10266,9 @@ then also ``cut out'' the subvariety.  When one says
 means that those functions generate the ideal, not just that their common
 zero set happens to be the variety.  A theorem that we will not prove here
 in full generality,
-the \emph{\myindex{Nullstellensatz}}, says that if we take the variety defined by functions
-in an ideal $I$, and look at the ideal given by that variety we obtain the
+the \emph{\myindex{Nullstellensatz}}, says that if we take the germ of
+a subvariety defined by functions
+in an ideal $I \subset \sO_p$, and look at the ideal given by that variety we obtain the
 radical of $I$.  In more concise language the Nullstellensatz says
 $I_p\bigl(V(I)\bigr) = \sqrt{I}$.
 Germs of varieties are in
@@ -10281,16 +10283,17 @@ the various algebraic properties of the ideals of $\sO_p$.
 Let us define the
 regular points of a variety and their dimension.
 If $f \colon U' \subset \C^k \to \C^{n-k}$ is a mapping, then
-by a graph of $f$ we mean the set in $U' \times \C^{n-k} \subset \C^k \times
+by a graph of $f$ we mean the set $\Gamma_f \subset U' \times \C^{n-k} \subset \C^k \times
 \C^{n-k}$ defined by
 \begin{equation*}
+\Gamma_f =
 \bigl\{ (z,w) \in U' \times \C^{n-k} : w=f(z) \bigr\} .
 \end{equation*}
 
 \begin{defn}
 Let $X \subset U \subset \C^n$ be a (complex) subvariety of $U$.  Let $p \in X$ be a
 point.  If there exists a (complex)
-affine change of coordinates such that near
+affine change of coordinates (translation, rotation) such that near
 $p$ the set $X$ can be written as a graph of a holomorphic
 mapping $f \colon U' \subset \C^k \to
 \C^{n-k}$ (for some $k \in \N_0$) then $p$ is a \emph{\myindex{regular point}} (or
@@ -10319,9 +10322,10 @@ an isolated point of the variety
 is a regular point of dimension 0.
 
 We also define dimension at a singular point.
-The set of regular points of a complex
-subvariety is open and dense in the subvariety.  Thus, a
-variety is regular at most points.  This of course means that the 
+It turns out that
+the set of regular points of a complex
+subvariety is open and dense in the subvariety; a
+variety is regular at most points.  Therefore, the 
 following definition does make sense.
 
 \begin{defn}
@@ -10330,8 +10334,9 @@ X$ be a point.  We define the \emph{\myindex{dimension}} of $X$ at $p$
 to be
 \begin{equation*}
 \dim_p X \overset{\text{def}}{=}
-\max \{ k \in \N_0 : \text{ $\forall$ neighborhoods
-$N$ of $p$, $\exists q \in N \cap X_{\mathit{reg}}$ with $\dim_q X = k$} \} .
+\max \bigl\{ k \in \N_0 : \text{ $\forall$ neighborhoods
+$N$ of $p$, $\exists q \in N \cap X_{\mathit{reg}}$ with $\dim_q X = k$}
+\bigr\} .
 \end{equation*}
 If $(X,p)$ is a germ, we say the dimension of $(X,p)$ is the dimension of
 $X$ at $p$.
