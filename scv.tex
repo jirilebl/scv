@@ -10595,20 +10595,20 @@ Else the subvariety $X$ is \emph{irreducible} in $U$.
 
 \begin{exbox}
 \begin{exercise}
-Prove $(X,p)$ is irreducible if and only if $I_p(X)$ is a prime ideal.
+Prove a germ of a complex variety $(X,p)$ is irreducible if and only if $I_p(X)$ is a prime ideal.
 Recall an ideal $I$ is prime if $ab \in I$ implies either $a \in I$ or $b
 \in I$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $(X,p)$ is of pure codimension 1.
+Suppose a germ of a complex variety $(X,p)$ is of pure codimension 1.
 Prove $(X,p)$ is irreducible if and only if there
 exists a representative of $X$ whose set or regular points
 is connected.  Hint: see the proof of \thmref{thm:codim1var}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $X \subset U$ is a subvariety of a domain $U \subset \C^n$
+Suppose $X \subset U$ is a complex subvariety of a domain $U \subset \C^n$
 of pure codimension 1.
 Prove $X$ is irreducible if and only if the set of regular points
 is connected.  Hint: previous exercise.
@@ -10616,14 +10616,14 @@ is connected.  Hint: previous exercise.
 \end{exbox}
 
 \begin{example}
-The local and global behavior are different.  For example,
+Local and global reducibility can be different.  For example,
 the variety given by
 \begin{equation*}
 z_2^2 = z_1{(z_1-1)}^2
 \end{equation*}
 is irreducible in $\C^2$ (the regular points are connected), but locally
 at the point
-$(1,0)$ it is reducible, where the variety is
+$(1,0)$ it is reducible.  There, the variety is
 a union of two graphs: $z_2 = \pm \sqrt{z_1}(z_1-1)$.
 Here is a plot in two real dimensions:
 
@@ -10638,7 +10638,7 @@ Here is a plot in two real dimensions:
 Each variety can be split into its irreducible parts.
 
 \begin{prop}
-Let $(X,p) \subset (\C^n,p)$ be a germ of a subvariety.  Then there exist
+Let $(X,p) \subset (\C^n,p)$ be a germ of a complex subvariety.  Then there exist
 finitely many irreducible subvarieties $(X_1,p),\ldots,(X_k,p)$ such that
 $(X_1,p) \cup \ldots \cup (X_k,p) = (X,p)$ and such that $(X_j,p)
 \not\subset (X_\ell,p)$ for all $j$ and $\ell$.  These are called the
@@ -10698,7 +10698,7 @@ for some integer $m$.
 \end{enumerate}
 \end{thm}
 
-An $m$-sheeted covering map in this case will be a local biholomorphism
+The $m$-sheeted covering map in this case is a local biholomorphism
 that is an $m$-to-1 map.
 
 \begin{exbox}
@@ -10717,7 +10717,7 @@ the same condition needed to apply Weierstrass preparation theorem in the case
 when $X$ is the zero set of a single function.
 
 We saw hypersurfaces are the simpler cases of complex analytic
-subvarieties.  The other end of the spectrum, that is complex analytic
+subvarieties.  At the other end of the spectrum, complex analytic
 subvarieties of dimension 1 are also easy to handle for different reasons.
 All complex
 analytic subvarieties of dimension 1 are locally just analytic discs.
@@ -10748,14 +10748,14 @@ the same way from the local parametrization theorem in higher dimensional
 spaces.  Of course, we only
 proved that theorem (or in fact you the reader did so in an exercise), for
 codimension 1 subvarieties, and therefore, we also only have a complete
-proof of the following also in $\C^2$.
+proof of the following in $\C^2$.
 
 \begin{thm}[\myindex{Puiseux}]
 Let $(z,w) \in \C \times \C^{n-1}$ be coordinates.
 Suppose $f \colon U \subset \C \times \C^{n-1} \to \C^\ell$
 is a holomorphic map such that
-$f(z,w) = 0$ defines a dimension 1 subvariety $X$ of $U$
-and $0 \in X$,
+$f(z,w) = 0$ defines a dimension 1 subvariety $X$ of $U$,
+$0 \in X$,
 and $w \mapsto f(0,w)$ has an isolated zero at the origin.
 
 Then there exists an integer $k$ and a holomorphic function $g$ defined near
@@ -10767,35 +10767,47 @@ f\bigl(\xi^k,g(\xi)\bigr) = 0 .
 \end{thm}
 
 \begin{proof}
-Assume $(X,0)$ without loss of generality is irreducible so that
-we can apply the local parametrization theorem
-We work in a disc $D \subset \C$ centered at the origin, such that the
-origin is the unique point of the discriminant set, that is the subvariety
-$E$.  Let $N = \{ z \in D : \Im z = 0 , \Re z \leq 0 \}$.
+without loss of generality
+assume $(X,0)$
+is irreducible so that
+the local parametrization theorem applies.
+We work in a small disc $D \subset \C$ centered at the origin, such that the
+origin is the unique point of the discriminant set (the subvariety
+$E$).  Let $N = \{ z \in D : \Im z = 0 , \Re z \leq 0 \}$.
 As $D \setminus N$ is simply connected we have the well-defined functions
 $\alpha_1(z),\ldots,\alpha_m(z)$ holomorphic on $D \setminus N$
 that are solutions to $f\bigl(z,\alpha_j(z)\bigr) = 0$.
-By analytic continuation, these functions continue across $N$ away from the
-origin and in fact must be one of the other roots (and by continuity the
-same root along the entire $N$).  Therefore there must be
-a permutation $\sigma$ on $m$ elements such that as we move
-counterclockwise from the upper half plane across $N$ to the lower half
-plane $\alpha_j(z)$ is continued as $\alpha_{\sigma(j)}(z)$.
-There exists some number $k$ (for example $k=m!$, but smaller numbers may
-work) such that $\sigma^k$ is the identity.  Therefore as $\xi$ goes around
-a circle, $\xi^k$ goes around a circle $k$ times.  We start with
-$\alpha_1(\xi^k)$ and move around the circle continuing analytically, we
-transition to $\alpha_{\sigma(1)}(\xi^k)$ after a sector of angle
-$\nicefrac{2\pi}{k}$ then
-$\alpha_{\sigma(\sigma(1))}(\xi^k)$, and so on.  After $k$ steps, that is as
-$\xi$ moved all the way around the circle, because
-$\sigma^k$ is the identity we are back at $\alpha_1(\xi^k)$ and we have a
-well defined function.  This is our function $g(\xi)$.
+These functions continue analytically across $N$ away from the
+origin.  The continuation equals one of the roots, e.g.\ $\alpha_j(z)$
+becomes $\alpha_\ell(z)$ (and by continuity it is the
+same root along the entire $N$).  So there is
+a permutation $\sigma$ on $m$ elements such that as $z$ moves
+counterclockwise around the origin from the upper half plane across $N$ to the lower half
+plane, $\alpha_j(z)$ is continued as $\alpha_{\sigma(j)}(z)$.
+There exists some number $k$ (e.g.\ $k=m!$) such that $\sigma^k$ is the identity.
+As $\xi$ goes around
+a circle around the origin, $\xi^k$ goes around the origin $k$ times.
+Start at a positive real $\xi$ and start defining a
+function $g(\xi)$ as
+$\alpha_1(\xi^k)$.
+Move $\xi$ around the origin counterclockwise continuing $g$ analytically.
+Divide the disc into sectors of angle $\nicefrac{2\pi}{k}$,
+whose boundaries are where $\xi^k \in N$.
+Transition to $\alpha_{\sigma(1)}(\xi^k)$ after we reach the boundary
+of the first sector, then to
+$\alpha_{\sigma(\sigma(1))}(\xi^k)$ after we reach the boundary of the next sector, and so on.
+After $k$ steps, that is as
+$\xi$ moved all the way around the circle,
+we are back at $\alpha_1(\xi^k)$,
+because
+$\sigma^k$ is the identity.
+So $g(\xi)$ is a well-defined function outside the origin.  Let
+$g(0) = 0$, and $g$ is holomorphic at 0 by the Riemann extension theorem.
 See the following figure for an example:
 \begin{center}
 \subimport*{figures/}{puiseux.pdf_t}
 \end{center}
-In the figure, $m = k = 4$, and the permutation takes 1 to 2, 2 to 3, 3 to 4,
+In the figure, $m = k = 4$, and the permutation $\sigma$ takes 1 to 2, 2 to 3, 3 to 4,
 and 4 to 1.  As $\xi$ moves along the short circular arrow on the right, $\xi^4$
 moves along the long circular arrow on the left.  The definition of $g$ is
 then given in the right hand diagram.
@@ -10842,14 +10854,14 @@ q$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $X \subset U$ is a subvariety of domain $U \subset \C^n$.
+Suppose $X \subset U$ is a subvariety of a domain $U \subset \C^n$.
 Suppose that for any two points $p$ and $q$ on $X$ there exists a finite sequence
 of points $p_0 = p, p_1, \ldots, p_k = q$ in $X$, and a sequence of analytic discs
 $\Delta_j \subset X$ such that $p_{j}$ and $p_{j-1}$ are in $\Delta_j$.
 \end{exercise}
 
 \begin{exercise}
-Prove a maximum principle using the above exercises.
+Prove a maximum principle using the above exercises:
 Suppose $X \subset U$ is an irreducible subvariety of an open set $U$,
 and suppose $f \colon U \to \R \cup \{ - \infty \}$
 is a plurisubharmonic function.  If the modulus of the restriction $f|_X$
@@ -10859,7 +10871,7 @@ at some point $p \in X$, then the restriction $f|_X$ is constant.
 
 \begin{exercise}
 Prove that an analytic disc (namely the image of the disc) in $\C^2$
-is a one dimensional complex subvariety.
+is a one-dimensional local complex variety.
 \end{exercise}
 \end{exbox}
 
