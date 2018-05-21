@@ -521,7 +521,7 @@ u(x,y)+iv(x,y)$,
 where $u$ and $v$ are real-valued.  Recall that
 $f$ is \emph{\myindex{holomorphic}}
 (or \emph{\myindex{complex analytic}}) if it satisfies the
-\emph{\myindex{Cauchy-Riemann equations}}:
+\emph{\myindex{Cauchy--Riemann equations}}:
 \begin{equation*}
 \frac{\partial u}{\partial x} = 
 \frac{\partial v}{\partial y} ,
@@ -612,7 +612,7 @@ parts are zero.  In other words if and only if
 + \frac{\partial u}{\partial y} = 0
 .
 \end{equation*}
-That is, the Cauchy-Riemann equations are satisfied.
+That is, the Cauchy--Riemann equations are satisfied.
 
 If $f$ is holomorphic,
 the derivative in $z$ is the standard complex derivative you know and love:
@@ -685,11 +685,11 @@ one complex variable and follows for example
 from Green's theorem (Stokes' theorem in two
 dimensions).  You can look forward to
 \thmref{thm:generalizedcauchy} for a proof of a more general formula,
-the Cauchy-Pompeiu integral formula.
+the Cauchy--Pompeiu integral formula.
 
 As a differential form $dz = dx + i dy$.  If you are uneasy
 about differential forms you probably defined this integral using
-the Riemann-Stieltjes integral in your one-variable class.
+the Riemann--Stieltjes integral in your one-variable class.
 Let us write down the formula in terms of the standard Riemann integral
 in a special case.  Let
 \begin{equation*}
@@ -1043,7 +1043,7 @@ a locally bounded function\footnote{For every $p \in U$, there is a
 neighborhood $N$ of $p$
 such that $f|_N$ is bounded.}.  Suppose the first partial derivatives
 exist and $f$ satisfies the
-\emph{\myindex{Cauchy-Riemann equations}}
+\emph{\myindex{Cauchy--Riemann equations}}
 \begin{equation*}
 \frac{\partial f}{\partial \bar{z}_j}  = 0 \qquad \text{for $j=1,2,\ldots,n$}.
 \end{equation*}
@@ -1115,7 +1115,7 @@ infinitely differentiable in those variables.
 
 In the definition of holomorphicity,
 we may have assumed $f$ was smooth and satisfies
-the Cauchy-Riemann equations.  However, the way we stated the
+the Cauchy--Riemann equations.  However, the way we stated the
 definition makes it easier to apply.
 
 Above, we really derived the Cauchy integral formula in several variables.  To
@@ -1509,7 +1509,7 @@ d \zeta .
 \end{equation*}
 Notice how strikingly similar the computation is to one variable.
 
-The converse follows by applying the Cauchy-Riemann equations to the series
+The converse follows by applying the Cauchy--Riemann equations to the series
 term-wise.  To do this you have to show that the term-by-term derivative
 series also converges uniformly on compact subsets.  It is left as an
 exercise.  Then you apply the well-known theorem from real analysis.
@@ -3123,7 +3123,7 @@ onto, and therefore $f(z) = az + b$ for $a \not= 0$.
 Let us also remark that while every injective holomorphic
 map of $f \colon \C \to \C$ is onto, the same is not true.
 In $\C^n$, $n \geq 2$, there exist so-called
-\emph{Fatou-Bieberbach domains}\index{Fatou-Bieberbach domain},
+\emph{Fatou--Bieberbach domains}\index{Fatou--Bieberbach domain},
 that is proper subsets of $\C^n$ that are biholomorphic to $\C^n$.
 
 
@@ -3272,7 +3272,7 @@ F(z,w)
 \frac{1}{{(2\pi i)}^m}
 \int_\Gamma \frac{f(\xi,w)}{\xi-z} \, d\xi .
 \end{equation*}
-Clearly $F$ is well defined on all of
+Clearly $F$ is well-defined on all of
 \begin{equation*}
 c\D^m \times \D^k
 \end{equation*}
@@ -3404,7 +3404,7 @@ F(z,w)
 \frac{1}{2\pi i}
 \int_\gamma \frac{f(\xi,w)}{\xi-z} \, d\xi
 \end{equation*}
-is well defined in
+is well-defined in
 $\bigl( (\nicefrac{3}{4}) \D \bigr) \times \D$, holomorphic where defined, yet
 it is not necessarily true that $F = f$ on the intersections of their
 domains.
@@ -3665,7 +3665,7 @@ This matrix is essentially the second fundamental form from Riemannian
 geometry in mild disguise (or perhaps it is the other way around).
 
 Notice that we cheated above a little bit since we have not proved that
-the notion is well defined.  In particular we may have more than
+the notion is well-defined.  In particular, we may have more than
 one defining function.
 
 \begin{exbox}
@@ -6005,8 +6005,8 @@ Hartogs pseudoconvex.
 
 The statement corresponding to \exerciseref{exercise:nestedunions} on nested unions
 for domains of holomorphy is
-the \emph{\myindex{Behnke-Stein theorem}}, which follows using this exercise and the solution
-of the Levi-problem.  Although historically Behnke-Stein was proved
+the \emph{\myindex{Behnke--Stein theorem}}, which follows using this exercise and the solution
+of the Levi-problem.  Although historically Behnke--Stein was proved
 independently and used to solve the Levi-problem.
 
 \exerciseref{exercise:biholHartogs} says that (Hartogs) pseudoconvexity is a
@@ -6161,7 +6161,7 @@ a_j \frac{\partial r}{\partial z_j} \Big|_q =
 0 .
 \end{equation*}
 Taking the orthogonal decomposition, $b$ is a scalar multiple of $\overline{\nabla_z r(q)}$.
-Then by Cauchy-Schwarz we find
+Then by Cauchy--Schwarz we find
 \begin{equation*}
 \abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
 =
@@ -6183,8 +6183,9 @@ $\snorm{\nabla_z r(q)} \geq \nicefrac{1}{3}$.  Therefore for such $q$,
 As $c = a+b$ is the orthogonal decomposition we have that $\snorm{c} \geq
 \snorm{b}$.
 
+\pagebreak[1]
 Next, let $M \geq 0$ be the operator norm of the Hessian matrix of $r$.
-Then again using Cauchy-Schwarz
+Again using Cauchy--Schwarz
 \begin{equation*}
 \begin{split}
 \sum_{j=1,\ell=1}^n
@@ -6422,8 +6423,8 @@ holomorphically convex
 then so are all the topological components of $U_1 \cap U_2$.
 \end{exercise}
 
-\begin{exercise}[Behnke-Stein again]
-\index{Behnke-Stein theorem}
+\begin{exercise}[Behnke--Stein again]
+\index{Behnke--Stein theorem}
 Show that the union $\bigcup_j U_j$ of a nested sequence of holomorphically
 convex domains $U_{j-1} \subset U_j \subset \C^n$ is holomorphically convex.
 \end{exercise}
@@ -6433,7 +6434,7 @@ Using an above exercise we see that $\C^n$ is both holomorphically convex and
 a domain of holomorphy.  In fact, these two notions are equivalent for all
 other domains in $\C^n$.
 
-\begin{thm}[Cartan-Thullen\index{Cartan-Thullen theorem}]
+\begin{thm}[Cartan--Thullen\index{Cartan--Thullen theorem}]
 \label{thm:cartthul}
 Let $U \subsetneq \C^n$ be a domain.  The following are equivalent:
 \begin{enumerate}[(i)]
@@ -6718,7 +6719,7 @@ the following lemma.
 Let $U \subset \C^n \times \C^n$ be a domain, let the coordinates be $(z,\zeta) \in \C^n \times
 \C^n$, let
 \begin{equation*}
-D = \{ (z,\zeta) \in \C^n \times \C^n : \zeta = \bar{z} \},
+D = \bigl\{ (z,\zeta) \in \C^n \times \C^n : \zeta = \bar{z} \bigr\},
 \end{equation*}
 and suppose $D \cap U \not= \emptyset$.
 Suppose $f,g \colon U \to \C$ be holomorphic functions such that
@@ -6770,7 +6771,7 @@ converges in a polydisc $\Delta_r(a) \subset \C^n$.
 By convergence we mean absolute
 convergence as we discussed before: that is,
 \begin{equation*}
-\sum_{\alpha,\beta} \sabs{c_{\alpha,\beta}} \sabs{z-a}^\alpha
+\sum_{\alpha,\beta} \sabs{c_{\alpha,\beta}} \, \sabs{z-a}^\alpha
 \sabs{\bar{z}-\bar{a}}^\beta
 \end{equation*}
 converges.
@@ -6791,7 +6792,7 @@ Suppose $U \subset \C^n$ is a domain and $f \colon U \to \C$ is
 real-analytic.
 Then there exists a domain $V \subset \C^n \times \C^n$ such that
 \begin{equation*}
-\{ (z,\zeta) : \zeta = \bar{z} \text{ and } z \in U \} \subset V ,
+\bigl\{ (z,\zeta) : \zeta = \bar{z} \text{ and } z \in U \bigr\} \subset V ,
 \end{equation*}
 and a unique holomorphic function $F \colon V \to \C$ such that
 $F(z,\bar{z}) = f(z,\bar{z})$ for all $z \in U$.
@@ -6916,7 +6917,7 @@ real-analytic function.
 
 The proof demonstrates a very simple application of complexification.  Many
 properties of holomorphic functions are easy to prove because
-holomorphic functions are solutions to certain PDE (the Cauchy-Riemann
+holomorphic functions are solutions to certain PDE (the Cauchy--Riemann
 equations).  However, there is no PDE
 that defines real-analytic functions, so complexification provides a useful
 tool to transfer certain properties of holomorphic functions to
@@ -7230,8 +7231,8 @@ we consider only smooth CR functions here, although the theorem holds even
 for continuous CR functions where the CR conditions are interpreted in the
 sense of distributions.
 
-\begin{thm}[Baouendi-Tr{\`e}ves]%
-\index{Baouendi-Tr{\`e}ves approximation theorem}
+\begin{thm}[Baouendi--Tr{\`e}ves]%
+\index{Baouendi--Tr{\`e}ves approximation theorem}
 Suppose $M \subset \C^n$ is a smooth real hypersurface.
 Let $p \in M$ be fixed and let $z=(z_1,\ldots,z_n)$ be holomorphic
 coordinates near $p$.
@@ -7269,13 +7270,13 @@ approximated uniformly by holomorphic polynomials on $S^1 \times \{ 0 \}$.
 \end{example}
 
 The technique of the above example will be used later in a more general
-situation, to extend CR functions using Baouendi-Tr{\`e}ves.
+situation, to extend CR functions using Baouendi--Tr{\`e}ves.
 
 \begin{remark}
 It is important to note the difference
-between Baouendi-Tr{\`e}ves (and similar theorems
+between Baouendi--Tr{\`e}ves (and similar theorems
 in complex analysis)
-and the Weierstrass approximation theorem.  In Baouendi-Tr{\`e}ves we obtain
+and the Weierstrass approximation theorem.  In Baouendi--Tr{\`e}ves we obtain
 approximation by holomorphic polynomials, while Weierstrass gives us
 polynomials in the real variables, or in $z$ and $\bar{z}$.  For example,
 via Weierstrass, any continuous function is uniformly approximable on $S^1$ via polynomials
@@ -7399,7 +7400,7 @@ real matrix such that $\snorm{B} < 1$.   Show that $I + iB \in W$.
 \end{exercise}
 \end{exbox}
 
-\begin{proof}[Proof of the theorem of Baouendi-Tr{\`e}ves]
+\begin{proof}[Proof of the theorem of Baouendi--Tr{\`e}ves]
 Suppose $M \subset \C^n$ is a smooth real hypersurface, and without loss
 of generality suppose $p=0 \in M$.
 Let $z=(z_1,\ldots,z_n)$ be the holomorphic coordinates, write $z=x+iy$,
@@ -7936,9 +7937,9 @@ by holomorphic polynomials on $K$.
 
 We will now apply the so-called ``technique of analytic discs'' together
 with
-Baouendi-Tr{\`e}ves to prove the
+Baouendi--Tr{\`e}ves to prove the
 Lewy extension theorem.  Lewy's original proof was different
-and predates Baouendi-Tr{\`e}ves.  A local extension theorem of this type
+and predates Baouendi--Tr{\`e}ves.  A local extension theorem of this type
 was first proved by Helmut Knesser in 1936.
 
 \begin{thm}[Lewy]%
@@ -8013,7 +8014,7 @@ has a positive definite Hessian (as a function of $z_1$ only) on $D$ and
 it is still strictly positive on $\partial D$.
 
 We wish to apply
-Baouendi-Tr{\`e}ves and so let $K$ be the compact neighborhood of the
+Baouendi--Tr{\`e}ves and so let $K$ be the compact neighborhood of the
 origin from the theorem.  Take $D$ and $W$ small enough such
 that $(D \times W) \cap M \subset K$.
 Find the polynomials $p_j$ that approximate $f$ uniformly on $K$.
@@ -8113,7 +8114,7 @@ a neighborhood of $p$.
 \begin{exercise}
 Let $M \subset \C^3$ be defined by $\Im w = \sabs{z_1}^2-\sabs{z_2}^2$.
 a) Show that an arbitrary compact subset $K \subset \subset M$ will work
-for the conclusion Baouendi-Tr{\`e}ves.  b) Use this to show that every
+for the conclusion Baouendi--Tr{\`e}ves.  b) Use this to show that every
 smooth CR function $f \colon M \to \C$ is a restriction of an entire holomorphic function
 $F \colon \C^3 \to \C$.
 \end{exercise}
@@ -8140,7 +8141,7 @@ Before we get into the $\bar{\partial}$-problem, let us prove a more general
 version of Cauchy's formula using Stokes' theorem\footnote{%
 We are really using Green's theorem which is the generalized
 Stokes' theorem in 2 dimensions.}.  Sometimes
-this is called the \emph{\myindex{Cauchy-Pompeiu integral formula}}.
+this is called the \emph{\myindex{Cauchy--Pompeiu integral formula}}.
 We will only need the theorem for smooth functions, but as it is often 
 applied in less regular contexts and it is just an application of Stokes
 theorem, let us state it that way.  In applications, the boundary is often
@@ -8619,8 +8620,8 @@ holomorphic.  If the zero set $f^{-1}(0)$ is not empty, it is not compact.
 \end{cor}
 
 We can also state a version of a theorem that is nowadays called
-\emph{\myindex{Hartogs-Bochner}}\footnote{What is called
-Hartogs-Bochner is 
+\emph{\myindex{Hartogs--Bochner}}\footnote{What is called
+Hartogs--Bochner is 
 the $C^1$ version of this theorem, and was proved by neither Hartogs nor
 Bochner, but by Martinelli in 1961.}
 although it was first stated
@@ -8653,17 +8654,17 @@ We now apply Hartogs.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The Bochner-Martinelli kernel}
+\section{The Bochner--Martinelli kernel}
 
 A generalization of
 the Cauchy's formula to several variables
-is called the Bochner-Martinelli integral formula,
+is called the Bochner--Martinelli integral formula,
 which in fact reduces 
 to Cauchy's formula when $n=1$.
 And just like for Cauchy's formula, we will prove the formula for all
 smooth functions using Stokes theorem.
 
-First let us define the \emph{\myindex{Bochner-Martinelli kernel}}:
+First let us define the \emph{\myindex{Bochner--Martinelli kernel}}:
 \begin{equation*}
 \omega(\zeta,z)
 \overset{\text{def}}{=}
@@ -8680,8 +8681,8 @@ d\bar{\zeta}_n \wedge d\zeta_n .
 The notation $\widehat{ d\bar{\zeta}_j }$ means that this term is
 simply left out.
 
-\begin{thm}[Bochner-Martinelli] \label{thm:bochnermartinelli}
-\index{Bochner-Martinelli integral formula}
+\begin{thm}[Bochner--Martinelli] \label{thm:bochnermartinelli}
+\index{Bochner--Martinelli integral formula}
 Let $U \subset \C^n$ be a bounded domain with smooth boundary and let
 $f \colon \overline{U} \to \C$ be a smooth function,
 then for $z \in U$:
@@ -8727,13 +8728,13 @@ d\bar{\zeta}_n \wedge d\zeta_n = {(2i)}^n dV .
 
 \begin{exbox}
 \begin{exercise}
-As for the Cauchy-Pompeiu formula,
+As for the Cauchy--Pompeiu formula,
 note the singularity in the second term, and prove that the integral still makes
 sense (the function is integrable).
 \end{exercise}
 
 \begin{exercise}
-Check that for $n=1$, the formula becomes the standard Cauchy-Pompeiu
+Check that for $n=1$, the formula becomes the standard Cauchy--Pompeiu
 formula.
 \end{exercise}
 \end{exbox}
@@ -8769,9 +8770,9 @@ Define
 It is not difficult to see that $d \eta = \partial \eta +
 \bar{\partial} \eta$ as before.
 
-\begin{proof}[Proof of Bochner-Martinelli]
+\begin{proof}[Proof of Bochner--Martinelli]
 The structure of the proof is essentially the same as that of
-the Cauchy-Pompeiu theorem for $n=1$, although some of the formulas are somewhat
+the Cauchy--Pompeiu theorem for $n=1$, although some of the formulas are somewhat
 more involved.
 
 Let $z \in U$ be fixed.  Suppose $r > 0$ is small enough such that
@@ -8851,7 +8852,7 @@ d \bigl( f(\zeta) \omega(\zeta,z) \bigr)
 \end{equation*}
 Again, due to the integrability, which you showed in an above exercise,
 the right hand side converges to the integral over $U$.
-Just as for the Cauchy-Pompeiu formula, we now need to show that the integral
+Just as for the Cauchy--Pompeiu formula, we now need to show that the integral
 over $\partial B_r(z)$ goes to $f(z)$ as $r \to 0$.
 
 So
@@ -9001,7 +9002,7 @@ n 2^n Mr \, dV
 Therefore, this term goes to zero as $r \to 0$.
 \end{proof}
 
-One drawback of the Bochner-Martinelli formula is that the kernel is not
+One drawback of the Bochner--Martinelli formula is that the kernel is not
 holomorphic in $z$ unless $n=1$.  That is, it does not simply produce
 holomorphic functions.  If we differentiate in $\bar{z}$ underneath the
 $\partial U$ integral, we do not necessarily obtain zero.
@@ -9026,7 +9027,7 @@ f(\zeta) \omega(\zeta,z)
 \begin{exercise}
 Suppose $f$ is holomorphic on a neighborhood of
 $\overline{B_r(z)}$.\\
-a) Using the Bochner-Martinelli formula, prove that
+a) Using the Bochner--Martinelli formula, prove that
 \begin{equation*}
 f(z) = \frac{1}{V\bigl(B_r(z)\bigr)} \int_{B_r(z)} f(\zeta) \, dV(\zeta)
 \end{equation*}
@@ -9035,7 +9036,7 @@ b) Use part a) to prove the maximum principle for holomorphic functions.
 \end{exercise}
 
 \begin{exercise}
-Use Bochner-Martinelli for the solution of $\bar{\partial}$ with compact
+Use Bochner--Martinelli for the solution of $\bar{\partial}$ with compact
 support.  That is, suppose $g$ is a smooth compactly supported $(0,1)$-form
 on $\C^n$, $n \geq 2$, $g = g_1 d\bar{z}_1 + \cdots + g_n d\bar{z}_n$
 $\frac{\partial g_k}{\partial \bar{z}_\ell} =
@@ -9071,7 +9072,7 @@ The inner product is the $L^2(U)$ inner product
 \linnprod{f}{g} \overset{\text{def}}{=} \int_U f(z) \overline{g(z)} \, dV .
 \end{equation*}
 %Clearly $\linnprod{f}{g}$ is sesquilinear and
-%by Cauchy-Schwarz, if $f$ and $g$ are in $A^2(U)$,
+%by Cauchy--Schwarz, if $f$ and $g$ are in $A^2(U)$,
 %\begin{equation*}
 %\begin{split}
 %\abs{\linnprod{f}{g}}^2 & = \abs{ \int_U f(z) \overline{g(z)} \, dV }^2
@@ -9106,7 +9107,7 @@ there exists a constant $C_K$, such that for any $f\in A^2(U)$ we have
 \begin{proof}
 As $K$ is compact there exists an $r > 0$ such that for all $z \in K$
 we have $\overline{\Delta_r(z)} \subset U$.  Fix $z \in K$,
-apply \exerciseref{exercise:averageDelta} and Cauchy-Schwarz again:
+apply \exerciseref{exercise:averageDelta} and Cauchy--Schwarz again:
 \begin{equation*}
 \begin{split}
 \abs{f(z)} &=
@@ -9160,7 +9161,7 @@ functional, that is take $K= \{ z \}$, then the linear operator
 \begin{equation*}
 f \mapsto f(z)
 \end{equation*}
-is a bounded linear functional.  By Riesz-Fisher theorem, there exists
+is a bounded linear functional.  By Riesz--Fisher theorem, there exists
 a $k_z \in A^2(U)$, such that
 \begin{equation*}
 f(z) = \linnprod{f}{k_z} .
@@ -10891,15 +10892,20 @@ in boundaries of domains says a lot about the geometry of the boundary.
 \begin{example}
 Let $M \subset \C^n$ be a smooth real hypersurface containing
 a complex hypersurface $X$ (zero set of a holomorphic function
-with nonzero derivative).
-In 
-$(z,w) \in \C^{n-1} \times \C$, we can write
-$X$ as $w=0$, and $M$ as
+with nonzero derivative), at some $p \in X \subset M$.
+Apply a local holomorphic change of coordinate at $p$, so
+that in the new coordinates
+$(z,w) \in \C^{n-1} \times \C$,
+$X$ is given by $w=0$, and $p$ is the origin.
+As $T_0 X \subset T_0 M$, we may rotate the $w$ coordinate
+so that $T_0 M = T_0 X \oplus \operatorname{span} \bigl\{
+\frac{\partial}{\partial \Re w}\big|_0 \bigr\}$,
+or in other words, $M$ is given by
 \begin{equation*}
 \Im w = \rho(z,\bar{z},\Re w) ,
 \end{equation*}
-after a local holomorphic change of coordinates.
-Therefore $\rho$
+where $d\rho = 0$.
+Then $\rho$
 is divisible by $\Re w$, that is,
 \begin{equation*}
 \Im w = (\Re w) \widetilde{\rho}(z,\bar{z},\Re w)  .
@@ -10918,7 +10924,8 @@ Levi-form:
 For any $\theta \in \R$,
 $M$ contains the complex line $L_\theta$,
 given by $z_1 = e^{i\theta} z_2$ and
-$w = 0$.  The union of those complex lines is not
+$w = 0$.  Note that in this case, the union $\bigcup_\theta L_\theta$ of those
+complex lines is not
 contained in some unique complex subvariety inside $M$.  Any complex
 subvariety that contains all $L_\theta$ must contain the hypersurface given
 by $w = 0$, which is not contained in $M$.
@@ -10955,16 +10962,17 @@ Suppose $M \subset U$,
 where $U \subset \C^n$ is a small domain with a defining function $r \colon
 U  \to \R$ for $M$.  That is, $r$ is a real-analytic function in $U$ such that
 $M = r^{-1}(0)$, but
-$dr \not= 0$ on $M$.  Furthermore let
+$dr \not= 0$ on $M$.  Define
 \begin{equation*}
-U^* = \{ z : \bar{z} \in U \} .
+U^* = \bigl\{ z \in \C^n : \bar{z} \in U \bigr\} .
 \end{equation*}
 Suppose $U$ is small enough so that the Taylor series for $r$
 converges in $U \times U^*$ when treating $z$ and $\bar{z}$ as separate
-variables, that is $r(z,w)$ is a well defined function on
-$U \times U^*$, therefore $r(z,w) = 0$ defines a complexification $\sM$
-in $U \times U^*$.  We will also assume that $U$ is small enough that
-$dr$ does not vanish on $\sM$ and furthermore that $\sM$ is connected.
+variables.  That is, $r(z,w)$ is a well-defined function on
+$U \times U^*$, and $r(z,w) = 0$ defines a complexification $\sM$
+in $U \times U^*$.  Assume also that $U$ is small enough that
+the complexified
+$dr$ does not vanish on $\sM$ and that $\sM$ is connected.
 
 Given $q \in U$,
 define the \emph{Segre variety}
@@ -10973,22 +10981,30 @@ define the \emph{Segre variety}
 \bigl\{ z \in U : r(z,\bar{q}) = 0 \bigr\} =
 \bigl\{ z \in U : (z,\bar{q}) \in \sM \bigr\} .
 \end{equation*}
-A priory the variety $\Sigma_p$ depends on $U$ and $r$, however since any
-real-analytic function $\widetilde{r}$ that complexifies to $U \times U^*$
-and vanishes on $M$ must also vanish on the complexification (and nowhere
-else) as we have seen
-before, the actual $r$ does not matter, as long as it is a defining function
-for $\sM$.  As long as $q \in M$, then we see that
-$q \in \Sigma_q(U,r)$, furthermore we see that the
-Segre variety is always a complex hypersurface.  It is not hard to see that
-if $U$ is a small set around $q$, the same $r$ will work there and we 
-must get the same complexification at least in a neighborhood of $q$.
-Therefore, the germ at $q \in U$ is well defined and we write
+A priory, the variety $\Sigma_p$ depends on $U$ and $r$.
+However, if $\widetilde{r}$ is a 
+real-analytic function that complexifies to $U \times U^*$
+and vanishes on $M$, it must also vanish on the complexification $\sM$.
+If $\widetilde{r}$ is a defining function as above,
+that is, $d\widetilde{r}$ does not vanish on its zero set
+and the zero set of the complexified $\widetilde{r}$ is connected
+in $U \times U^*$, then $\widetilde{r}(z,w) = 0$ also
+defines $\sM$.
+Hence the actual $r$ does not matter.
+As long as $q \in M$, then
+$q \in \Sigma_q(U,r)$, and furthermore the
+Segre variety is a complex hypersurface for every $q$.
+It is not hard to see that
+if $\widetilde{U}$ is a small neighborhood of $q$, the same $r$ is
+a defining function in
+$\widetilde{U}$ and we 
+get the same complexification in $\widetilde{U} \times \widetilde{U}^*$.
+So the germ at $q \in U$ is well-defined and we write
 \begin{equation*}
 \Sigma_q = \bigl( \Sigma_q(U,r) , q \bigr) .
 \end{equation*}
-That is, the germ at $q$.  This way we find that the Segre variety is
-well defined as a germ, and so often when one talks about $\Sigma_q$
+The Segre variety is
+well-defined as a germ, and so often when one talks about $\Sigma_q$
 without mentioning the $U$ or $r$, then one means some small enough
 representative of a Segre variety or the germ itself.
 
@@ -11008,7 +11024,7 @@ $w \in \Sigma_z(U,r)$.
 \begin{example}
 Suppose we start with the real-analytic hypersurface $M$ given by
 \begin{equation*}
-\Im w = (\Re w) \rho(z,\bar{z},\Re w) .
+\Im w = (\Re w) \rho(z,\bar{z},\Re w) ,
 \end{equation*}
 with $\rho$ vanishing at the origin.
 Rewriting in terms of $w$ and $\bar{w}$ we find
@@ -11019,7 +11035,7 @@ Rewriting in terms of $w$ and $\bar{w}$ we find
 Setting $\bar{z} = \bar{w} = 0$ we find 
 \begin{equation*}
 \frac{w}{2i} = \left(\frac{w}{2}\right)
-\rho\left(z,\bar{z},\frac{w}{2}\right) .
+\rho\left(z,0,\frac{w}{2}\right) .
 \end{equation*}
 As $\rho$ vanishes at the origin, then near the origin the equation 
 defines the complex hypersurface given by $w=0$.
@@ -11046,29 +11062,29 @@ of $\Sigma_p$ is defined, that is, we will assume that $\Sigma_p$ is
 a closed subset of $U$, and suppose $r(z,\bar{z})$ is the corresponding
 defining function.
 Let $\varphi \colon \D \to \C^n$ be the parametrization of $\Delta$
-with $\varphi(0) = p$.  We restrict $\varphi$ to a smaller disc around the
+with $\varphi(0) = p$.  We can restrict $\varphi$ to a smaller disc around the
 origin, and since we are only interested in the germ of $\Delta$ at $p$ this
 is sufficient (if there are multiple points of $\D$
-that go to $p$ we repeat the argument for each one).
-So let us assume without loss of generality that $\Delta \subset U$.
+that go to $p$, we repeat the argument for each one).
+So let us assume without loss of generality that $\varphi(\D) = \Delta \subset U$.
 Since $\Delta \subset M$ we have
 \begin{equation*}
 r\bigl(\varphi(\xi),\overline{\varphi(\xi)}\bigr) =
 r\bigl(\varphi(\xi),\bar{\varphi}(\bar{\xi})\bigr) = 0 .
 \end{equation*}
 This function is a real-analytic function of $\xi$ and therefore for some
-small neighborhood of the origin, it will complexify.  In fact it is not
-difficult to see that it complexifies to $\D \times \D$ as $\varphi(\xi) \in
-U$.  So we can treat $\xi$ and $\bar{\xi}$ as separate variables.  By
-complexification we find that the equation holds for all such independent
-$\xi$ and $\bar{\xi}$.  Set $\bar{\xi} = 0$ to obtain for all $\xi \in \D$
-that
+small neighborhood of the origin, it will complexify.  In fact it complexifies
+to $\D \times \D$ as $\varphi(\xi) \in U$ for all $\xi \in \D$.
+So we can treat $\xi$ and $\bar{\xi}$ as separate variables.  By
+complexification, the equation holds for all such independent
+$\xi$ and $\bar{\xi}$.  Set $\bar{\xi} = 0$ to obtain
 \begin{equation*}
 0 =
 r\bigl(\varphi(\xi),\bar{\varphi}(0)\bigr) =
-r\bigl(\varphi(\xi),\bar{p}\bigr) .
+r\bigl(\varphi(\xi),\bar{p}\bigr) 
+\qquad \text{for all $\xi \in \D$}.
 \end{equation*}
-In particular $\varphi(\D) \subset \Sigma_p$ and the result follows.
+In particular, $\varphi(\D) \subset \Sigma_p$ and the result follows.
 \end{proof}
 
 \begin{exbox}
@@ -11085,16 +11101,16 @@ pseudoconvex, then $M$ contains no analytic discs.
 \end{exbox}
 
 Let us end our discussion of Segre varieties by its perhaps most well-known
-application, the so-called Diederich-Forn\ae ss lemma.  Although
+application, the so-called Diederich--Forn\ae ss lemma.  Although
 we state it only for real-analytic hypersurfaces it works in greater generality.
 There are really two parts to it, although it is generally the corollary
-that is called the \emph{\myindex{Diederich-Forn\ae ss lemma}}.
+that is called the \emph{\myindex{Diederich--Forn\ae ss lemma}}.
 
 First, for real-analytic hypersurfaces each point has a fixed neighborhood
 such that germs of complex subvarieties contained in the hypersurface extend
 to said fixed neighborhood.
 
-\begin{thm}[Diederich-Forn\ae ss]
+\begin{thm}[Diederich--Forn\ae ss]
 Suppose $M \subset \C^n$ is a real-analytic hypersurface.  For every
 $p \in M$ there exists a neighborhood $U$ of $p$ with the following
 property:
@@ -11159,7 +11175,7 @@ $X \subset Y \subset Y'$.  Furthermore $r(z,\bar{z}) = 0$
 for all $z \in Y$ and so $Y \subset M$.
 \end{proof}
 
-\begin{cor}[Diederich-Forn\ae ss]
+\begin{cor}[Diederich--Forn\ae ss]
 Suppose $M \subset \C^n$ is a compact real-analytic hypersurface.
 Then there does not exist any point $q \in M$ such that
 there exists a germ of a positive dimensional (complex analytic) subvariety
