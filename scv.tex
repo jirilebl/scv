@@ -10875,30 +10875,31 @@ is a one-dimensional local complex variety.
 \end{exercise}
 \end{exbox}
 
-Because of the Puiseux theorem, when we are looking at germs of
-one dimensional complex
-varieties, we often simply parametrize them.  For 
-varieties of larger
-dimensions we can always find enough analytic curves through any point,
-and then we parametrize those curves.
+Using the Puiseux theorem, we often simply parametrize germs
+of one dimensional complex subvarieties.  
+And for larger dimensional varieties, we can find
+enough one dimensional curves through any point and parametrize those.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
 \section{Segre varieties and CR geometry} \label{sec:crgeomcr}
 
-We saw before that existence of analytic discs (and varieties)
+The existence of analytic discs (or subvarieties)
 in boundaries of domains says a lot about the geometry of the boundary.
 
 \begin{example}
-Suppose a smooth real hypersurface $M \subset \C^n$ contains a complex hypersurface $X$, that is,
-a zero set of a holomorphic function with nonvanishing derivative.  After
-changing variables, $M$ can be locally given by
+Let $M \subset \C^n$ be a smooth real hypersurface containing
+a complex hypersurface $X$ (zero set of a holomorphic function
+with nonzero derivative).
+In 
+$(z,w) \in \C^{n-1} \times \C$, we can write
+$X$ as $w=0$, and $M$ as
 \begin{equation*}
 \Im w = \rho(z,\bar{z},\Re w) ,
 \end{equation*}
-where $(z,w) \in \C^{n-1} \times \C$, and the 
-complex hypersurface is given by $w = 0$.  Therefore $\rho$
+after a local holomorphic change of coordinates.
+Therefore $\rho$
 is divisible by $\Re w$, that is,
 \begin{equation*}
 \Im w = (\Re w) \widetilde{\rho}(z,\bar{z},\Re w)  .
@@ -10926,7 +10927,8 @@ by $w = 0$, which is not contained in $M$.
 \begin{exbox}
 \begin{exercise}
 Let $M \subset \C^n$ be a real hypersurface.
-Show that if $M$ at $p$ contains a complex hypersurface of dimension more than
+Show that if $M$ at $p$ contains a complex submanifold of (complex)
+dimension more than
 $\frac{n-1}{2}$, then the Levi-form must be degenerate, that is, it must
 have at least one zero eigenvalue.
 \end{exercise}
@@ -10951,7 +10953,7 @@ work in the real-analytic setting and rely on complexification.
 Let $M \subset \C^n$ be a real-analytic hypersurface and $p \in M$.
 Suppose $M \subset U$,
 where $U \subset \C^n$ is a small domain with a defining function $r \colon
-U  \to \R$ for $M$.  That is $r$ is a real-analytic function in $U$ such that
+U  \to \R$ for $M$.  That is, $r$ is a real-analytic function in $U$ such that
 $M = r^{-1}(0)$, but
 $dr \not= 0$ on $M$.  Furthermore let
 \begin{equation*}
@@ -10967,8 +10969,9 @@ $dr$ does not vanish on $\sM$ and furthermore that $\sM$ is connected.
 Given $q \in U$,
 define the \emph{Segre variety}
 \begin{equation*}
-\Sigma_q(U,r) = \{ z \in U : r(z,\bar{q}) = 0 \} = \{ z \in U : (z,\bar{q})
-\in \sM \} .
+\Sigma_q(U,r) =
+\bigl\{ z \in U : r(z,\bar{q}) = 0 \bigr\} =
+\bigl\{ z \in U : (z,\bar{q}) \in \sM \bigr\} .
 \end{equation*}
 A priory the variety $\Sigma_p$ depends on $U$ and $r$, however since any
 real-analytic function $\widetilde{r}$ that complexifies to $U \times U^*$
