@@ -2329,7 +2329,8 @@ where $\overline{A}$ is the complex conjugate of $A$.  Thus
 Two domains $U \subset \C^n$ and $V \subset \C^n$ are said to be
 \emph{\myindex{biholomorphic}} if there exists a one-to-one and onto holomorphic map $f
 \colon U \to V$ such that $f^{-1}$ is holomorphic.
-The mapping $f$ is said to be a \emph{\myindex{biholomorphic map}} or a 
+The mapping $f$ is said to be a
+\emph{biholomorphic map}\index{map!biholomorphic} or a 
 \emph{\myindex{biholomorphism}}.
 \end{defn}
 
@@ -2366,7 +2367,7 @@ definition.
 
 \begin{defn}
 Suppose $f \colon X \to Y$ is a continuous map between two topological
-spaces.  Then $f$ is a \emph{\myindex{proper map}} if for every compact
+spaces.  Then $f$ is a \emph{\myindex{proper map}}\index{map!proper} if for every compact
 $K \subset \subset Y$, the set $f^{-1}(K)$ is compact.
 \end{defn}
 
@@ -3478,7 +3479,9 @@ domains are domains of holomorphy.
 %we will only define the notion for domains with smooth boundaries.
 
 \begin{defn} \label{def:hypersurface}
-A set $M \subset \R^n$ is a real $C^k$-smooth \emph{\myindex{hypersurface}}
+A set $M \subset \R^n$ is a real
+$C^k$-smooth \emph{\myindex{hypersurface}}%
+\index{Ck-smooth hypersurface@$C^k$-smooth hypersurface}
 if at each point
 $p \in M$, there exists a $k$-times continuously
 differentiable function $r \colon V \to
@@ -3487,15 +3490,17 @@ such that $M \cap V = \{ x \in V : r(x) = 0 \}$.  The function $r$ is
 called the \emph{\myindex{defining function}} (at $p$).
 
 A domain $U$ with
-\emph{\myindex{$C^k$-smooth boundary}}\index{smooth boundary}%
+\emph{$C^k$-smooth boundary}\index{smooth boundary}%
+\index{Ck-smooth boundary@$C^k$-smooth boundary}%
 \index{domain with smooth boundary}
 is a domain where
 $\partial U$ is a $C^k$-smooth hypersurface, where we further require
-for a defining function $r$ of $\partial U$ near some $p$, that $r < 0$ for points in $U$ and $r > 0$
+for a defining function $r$ of $\partial U$ near some $p$,
+that $r < 0$ for points in $U$ and $r > 0$
 for points not in $U$.
 
-If we say simply
-\emph{\myindex{smooth}} we mean $C^\infty$-smooth.
+If we say simply \emph{\myindex{smooth}},
+we mean $C^\infty$-smooth.\index{Cinfinity-smooth@$C^\infty$-smooth}
 \end{defn}
 
 For simplicity, in this book we generally deal with smooth
@@ -3657,7 +3662,7 @@ The matrix
 \right]_{j\ell}
 \end{equation*}
 is called the
-\emph{\myindex{the Hessian}} of $r$ at $p$.
+\emph{\myindex{Hessian}} of $r$ at $p$.
 So, $U$ is convex at $p \in \partial U$ if
 the Hessian
 of $r$ at $p$ as a bilinear form is positive definite (or positive
@@ -4206,7 +4211,7 @@ The matrix
 \right]_{j \ell}
 \end{equation*}
 is called the
-\emph{\myindex{the complex Hessian}} of $r$ at $p$.
+\emph{\myindex{complex Hessian}}\index{Hessian!complex} of $r$ at $p$.
 So, $U$ is pseudoconvex at $p \in \partial U$ if
 the Hessian
 of $r$ at $p$ as a sesquilinear form is positive definite (or positive
@@ -5133,7 +5138,7 @@ then for $z \in U$ we have
 \end{exbox}
 
 \begin{prop}[Maximum principle]
-\index{maximum principle for subharmonic functions}
+\index{maximum principle!subharmonic functions}
 Suppose $U \subset \C$ is a domain and $f \colon U \to \R \cup \{ -\infty \}$
 is subharmonic.  If $f$ attains a maximum in $U$ then $f$ is constant.
 \end{prop}
@@ -5322,7 +5327,7 @@ find out what is $f-F$.
 \end{exercise}
 
 \begin{exercise}
-Prove the \myindex{maximum principle for plurisubharmonic functions}.
+Prove the \myindex{maximum principle!plurisubharmonic functions}.
 That is, if $U \subset \C^n$ is a domain and $f \colon U \to \R \cup
 \{-\infty\}$ is
 plurisubharmonic and achieves a maximum at $p \in U$, then $f$ is constant.
@@ -5748,7 +5753,7 @@ respect to $\sF$, as the set
 \text{ for all $f \in \sF$ } \Bigr\} .
 \end{equation*}
 
-A domain $U$ is said to be \emph{\myindex{convex with respect to $\sF$}}
+A domain $U$ is said to be \emph{convex with respect to $\sF$}\index{convex!with respect to $\sF$}
 if for every $K \subset \subset U$, the hull $\widehat{K} \subset \subset U$.%
 \footnote{Recall that $\subset \subset$ means relatively compact.}
 \end{defn}
@@ -7112,7 +7117,7 @@ The statement about the CR vector fields then follows since those vector
 fields annihilate the defining function $\Phi(z,\bar{z},w)-\bar{w}$.
 \end{proof}
 
-\begin{prop}[Severi] \label{prop:severi}
+\begin{prop}[Severi] \label{prop:severi}\index{Severi's theorem}
 Suppose $M \subset \C^n$ is a real-analytic hypersurface and $p \in M$.
 For any real-analytic CR function $f \colon M \to \C$, there exists
 a holomorphic function $F \in \sO(U)$ for a neighborhood $U$ of $p$
@@ -8632,7 +8637,7 @@ Severi in 1931.
 %  Unfortunately the proof relies on the Hartogs phenomenon,
 %so one could say it was not really proved until about 10 years later.
 
-\begin{cor}[Severi]
+\begin{cor}[Severi]\index{Severi's theorem}
 Suppose $U \subset \C^n$, $n \geq 2$, is a bounded domain with connected real-analytic boundary and
 $f \colon \partial U \to \C$ is a real-analytic CR function.  Then
 there exists some neighborhood $U' \subset \C^n$ of $\overline{U}$
@@ -9230,8 +9235,8 @@ $\bar{\zeta}$ as the variable, then $K_U$ is a holomorphic function of
 $2n$ variables.
 
 \begin{example}
-\index{Bergman kernel for the unit disc}%
-\index{Szeg{\"o} kernel for the unit disc}%
+\index{Bergman kernel!unit disc}%
+\index{Szeg{\"o} kernel!unit disc}%
 Let us compute the Bergman kernel (and
 the Szeg{\"o} kernel of the next section while we're at it)
 explicitly for the
@@ -9490,7 +9495,7 @@ S_U(z,\bar{\zeta}) \overset{\text{def}}{=} \overline{s_z(\zeta)} ,
 \end{equation*}
 although for a fixed $z$ this is a function only defined almost everywhere
 as it is an element of $L^2(\partial U,d\sigma)$.
-The function $S_U$ is the \emph{\myindex{Szeg\"o kernel}}.
+The function $S_U$ is the \emph{\myindex{Szeg{\"o} kernel}}.
 If $f \in H^2(\partial U)$, then
 \begin{equation*}
 Pf(z) = \int_{\partial U} f(\zeta) \, S_U(z,\bar{\zeta}) \, d\sigma(\zeta) .
@@ -10863,8 +10868,9 @@ of points $p_0 = p, p_1, \ldots, p_k = q$ in $X$, and a sequence of analytic dis
 $\Delta_j \subset X$ such that $p_{j}$ and $p_{j-1}$ are in $\Delta_j$.
 \end{exercise}
 
-\begin{exercise}
-Prove a maximum principle using the above exercises:
+\begin{exercise}\label{exercise:maxprincsubvar}
+\index{maximum principle!subvarieties}
+Prove a \emph{maximum principle for subvarieties} using the above exercises:
 Suppose $X \subset U$ is an irreducible subvariety of an open set $U$,
 and suppose $f \colon U \to \R \cup \{ - \infty \}$
 is a plurisubharmonic function.  If the modulus of the restriction $f|_X$
@@ -11117,22 +11123,22 @@ Suppose $M \subset \C^n$ is a real-analytic hypersurface.  For every
 $p \in M$ there exists a neighborhood $U$ of $p$ with the following
 property:
 If $q \in M \cap U$ and
-$(X,q)$ is a germ of a (complex analytic) subvariety
+$(X,q)$ is a germ of a complex subvariety
 such that $(X,q) \subset (M,q)$,
-then there exists a (complex analytic) subvariety $Y \subset U$ (in
+then there exists a complex subvariety $Y \subset U$ (in
 particular a closed subset of $U$) such that $Y \subset M$ and $(X,q)
 \subset (Y,q)$.
 \end{thm}
 
 \begin{proof}
-Suppose $U$ is a polydisc centered at $p$
+Suppose $U$ is a polydisc centered at $p$,
 small enough so that the defining function
 $r$ of $M$ complexifies to $U \times U^*$ as above.
-Suppose $q$ is a point through which a positive dimensional subvariety
-passes.
-In fact, as most points of the subvariety are regular we 
-assume that $q$ is a regular point of $(X,q)$ (so $(X,q)$ is a germ of a
-complex submanifold).
+Suppose $q \in M \cap U$ is a point such that $(X,q)$ is a germ of a positive
+dimensional complex subvariety with $(X,q) \subset (M,q)$.
+Most points of a subvariety are regular, so
+without loss of generality assume $q$ is a regular point, that is,
+$(X,q)$ is a germ of a complex submanifold.
 Let $X$ be a representative of the germ $(X,q)$ such that $X \subset M$,
 and $X \subset U$, although we do not assume it is closed.
 
@@ -11180,13 +11186,13 @@ for all $z \in Y$ and so $Y \subset M$.
 \begin{cor}[Diederich--Forn\ae ss]
 Suppose $M \subset \C^n$ is a compact real-analytic hypersurface.
 Then there does not exist any point $q \in M$ such that
-there exists a germ of a positive dimensional (complex analytic) subvariety
+there exists a germ of a positive dimensional complex subvariety
 $(X,q)$ such that $(X,q) \subset (M,q)$.
 \end{cor}
 
 \begin{proof}
 Let $S \subset M$ be the set of points through which there exists 
-a complex analytic germ contained in $M$.
+a germ of a positive dimensional complex subvariety contained in $M$.
 As $M$, and hence $\overline{S}$, is compact,
 there must exist a point $p \in \overline{S}$
 that is furthest from
@@ -11194,14 +11200,14 @@ the origin.  After a rotation by a unitary and rescaling assume
 $p=(1,0,\ldots,0)$.  Let $U$ be the neighborhood from the previous
 theorem around $p$.  There exist germs of varieties in $M$ through points
 arbitrarily close to $p$.  So for any distance $\epsilon > 0$,
-there exists a subvariety $X \subset U$
-of positive dimension with $X \subset M$ that contains points that are
+there exists a subvariety $Y \subset U$ (in particular, $Y$ closed in $U$)
+of positive dimension with $Y \subset M$ that contains points 
 $\epsilon$ close to $p$.  Consider the function $\Re z_1$, whose modulus attains a
 strict maximum on $\overline{S}$ at $p$.  Because $\Re z_1$ achieves a maximum
 strictly smaller than 1 on $\partial U \cap \overline{S}$, for a small enough $\epsilon$,
 we would obtain a pluriharmonic function with a strict
-maximum on $X$, which is impossible by the maximum principle for
-varieties that you proved as an exercise in the previous section.
+maximum on $Y$, which is impossible by the maximum principle for
+varieties that you proved in \exerciseref{exercise:maxprincsubvar}.
 The picture would look as follows:
 \begin{center}
 \medskip
