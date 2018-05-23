@@ -2386,6 +2386,7 @@ replace $f$ by $g \colon \D \to \C$, still given by $g(z)=z^2$, the map is
 no longer proper.  Let us state the main result of this section.
 
 \begin{thm}[Rothstein 1935] \label{thm:Rothstein}
+\index{Rothstein's theorem}
 There exists no proper holomorphic mapping of the unit bidisc $\D^2 = \bD \times \bD
 \subset \C^2$ to the unit ball $\bB_2 \subset \C^2$.
 \end{thm}
@@ -2551,10 +2552,10 @@ a limit $g \colon \bD \to \overline{\bB}_2$.  As $(\zeta,w_k) \to
 and hence $g$ must be constant.
 
 Let $g_k'$ denote the derivative (we differentiate each component).
-The functions $g_k'$ converge (uniformly on compacts)
-to $g' = 0$, so for every fixed $\zeta \in \bD$,
+The functions $g_k'$ converge (uniformly on compact subsets)
+to $g' = 0$. So for every fixed $\zeta \in \bD$,
 $\frac{\partial f}{\partial z_1} (\zeta, w_k) \to 0$.
-Notice that this limit holds for all $e^{i\theta}$ and a subsequence of
+This limit holds for all $e^{i\theta}$ and a subsequence of
 an arbitrary sequence $\{ w_k \}$ where $w_k \to e^{i\theta}$.  The mapping that takes $w$ to
 $\frac{\partial f}{\partial z_1} (\zeta, w)$ therefore extends continuously
 to $\partial \D$ and is zero on the boundary.
@@ -2565,11 +2566,11 @@ $\frac{\partial f}{\partial z_2} \equiv 0$.  Therefore $f$ is constant,
 which is a contradiction as $f$ was proper.
 \end{proof}
 
-We saw that the reason why there is not even a proper mapping is the fact
+The proof says that the reason why there is not even a proper mapping is the fact
 that the boundary of the polydisc contained analytic discs, while
 the sphere did not.
-Similar proof extends to higher dimensions as well.  In fact, it is not hard
-to prove the following theorem.
+The proof extends easily to higher dimensions as well, and the proof
+of the generalization is left as an exercise.
 
 \begin{thm} \label{thm:nopropmapprodandnodisc}
 Let $U = U' \times U'' \subset \C^n \times \C^k$ and $V \subset \C^m$ be bounded
@@ -2961,7 +2962,7 @@ The points on an analytic set that are not regular are called
 \begin{exbox}
 \begin{exercise}
 Find all the regular points of the analytic set
-$X = \{ z \in \C^2 : z_1^2 = z_2^3 \}$.
+$X = \bigl\{ z \in \C^2 : z_1^2 = z_2^3 \bigr\}$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:connectedcomplement}
@@ -3037,7 +3038,7 @@ Suppose without loss of generality that $\frac{\partial f_1}{\partial z_1}$
 is nonzero at the origin and $f(0) = 0$.
 The map
 \begin{equation*}
-G(z_1,\ldots,z_n) = \bigl(f_1(z),z_2,\ldots,z_n)
+G(z_1,\ldots,z_n) = \bigl(f_1(z),z_2,\ldots,z_n\bigr)
 \end{equation*}
 is biholomorphic on a small neighborhood of the origin.
 The function $f \circ G^{-1}$ is holomorphic and one-to-one on a small
@@ -3823,7 +3824,7 @@ r\bigl(x,\varphi(x)\bigr)
 \frac{\partial r}{\partial x_j}
 +
 \frac{\partial r}{\partial y}
-\frac{\partial \varphi}{\partial x_j}
+\frac{\partial \varphi}{\partial x_j} .
 \end{equation*}
 At the origin,
 $\frac{\partial r}{\partial x_j}(0,0) = 0$ and
@@ -3841,7 +3842,7 @@ can be identified with the $x$ coordinates for the purposes of computation.
 Let $M$ be smooth for simplicity.
 We can write the hypersurface as
 \begin{equation*}
-y = \frac{1}{2}\, x^t H x + E(x)
+y = \frac{1}{2}\, x^t H x + E(x) ,
 \end{equation*}
 where $H$ is the Hessian matrix of $\varphi$ at the origin, that is $H = \left[
 \frac{\partial^2 \varphi}{\partial x_j \partial x_k} \big|_{0} \right]_{jk}$,
@@ -4777,7 +4778,7 @@ a {(\Im w')}^2
 +O(3) .
 \end{split}
 \end{equation*}
-Now the right hand side depends on $\Im w'$ so we have to apply the implicit
+The right hand side depends on $\Im w'$ so we have to apply the implicit
 function theorem to write the hypersurface as a graph again. We must solve
 for $\Im w'$.  The expression for $\Im w'$
 is $O(2)$, and therefore $-i\epsilon (\Im w')(z_1-\bar{z}_1)$ 
@@ -4901,9 +4902,10 @@ extends to a neighborhood of $p$.
 Pseudoconvex at $p$ means that all eigenvalues of the Levi-form are
 nonnegative.
 Therefore a domain of holomorphy must be pseudoconvex.
-The naming comes from the proof, and sometimes other theorems which use a
+The naming comes from the proof, and sometimes other theorems that use a
 similar proof using a ``tomato can'' of analytic discs are also called
-tomato can principle.  The general statement of the principle is that ``an
+a tomato can principle.
+The general statement of the principle is that ``an
 analytic function holomorphic in a neighborhood of the sides and the bottom
 of a tomato can extends to the inside.''
 
@@ -4948,15 +4950,15 @@ Define the Hartogs figure
 \begin{equation*}
 \begin{split}
 H =
-& \{ (z,w) : \lambda - \epsilon < \sabs{z_1} < \lambda + \epsilon
+& \bigl\{ (z,w) : \lambda - \epsilon < \sabs{z_1} < \lambda + \epsilon
 \text{ and }
 \sabs{z_j} < \epsilon \text{ for $j=2,\ldots,n-1$, and }
-\sabs{w-is} < s+\epsilon \} 
+\sabs{w-is} < s+\epsilon \bigr\} 
 \\
 &
 \cup 
-\{ (z,w) : \sabs{z_1} < \lambda + \epsilon \text{, and } \sabs{z_j} < \epsilon \text{ for $j=2,\ldots,n-1$, and }
-\sabs{w-is} < \epsilon \} .
+\bigl\{ (z,w) : \sabs{z_1} < \lambda + \epsilon \text{, and } \sabs{z_j} < \epsilon \text{ for $j=2,\ldots,n-1$, and }
+\sabs{w-is} < \epsilon \bigr\} .
 \end{split}
 \end{equation*}
 For small enough $\epsilon >0$, $H \subset U$.
@@ -5150,9 +5152,9 @@ f(a) \leq \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta .
 \end{equation*}
 In particular $f = f(a)$ almost everywhere on $\partial \Delta_r(a)$.
 By upper-semicontinuity it is true everywhere.  This was true for all $r$
-with $\overline{\Delta_r(a)} \subset U$, so $f=f(a)$ on $\Delta_r(a)$
+with $\overline{\Delta_r(a)} \subset U$, so $f=f(a)$ on $\Delta_r(a)$,
 and the set where $f=f(a)$ is open.  The set where an upper-semicontinuous
-function attains a maximum is closed, so $f=f(a)$ on $U$ as $U$ is
+function attains a maximum is closed.  So $f=f(a)$ on $U$ as $U$ is
 connected.
 \end{proof}
 
@@ -5846,7 +5848,7 @@ or the $r$-\emph{sublevel set}.
 The unit ball $\bB_n$ is Hartogs pseudoconvex.  The continuous
 function
 \begin{equation*}
-- \log ( 1-\snorm{z} ) 
+z \mapsto - \log ( 1-\snorm{z} ) 
 \end{equation*}
 is an exhaustion function, and it is easy to
 check directly that it is plurisubharmonic.
