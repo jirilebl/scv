@@ -309,7 +309,7 @@
 Ji{\v r}\'i Lebl\\[3ex]} 
 \today
 \\
-(version 2.3)
+(version 2.4)
 \end{minipage}}
 
 %\addtolength{\textwidth}{\centeroffset}
@@ -1175,7 +1175,8 @@ identify $z = x+iy$ as
 \end{equation*}
 If we took the natural orientation of $\R^{2n}$,
 we can possibly obtain two opposite orientations (if $n$ is even).
-The one we take as the natural orientation of $\C^n$ corresponds to
+The one we take as the natural orientation of $\C^n$ (in this book)
+corresponds to
 the second ordering above, that
 is, $(x_1,y_1,\ldots,x_n,y_n)$.  Both isomorphisms can be used
 in computation as long as they are used consistently, and the underlying
@@ -1237,6 +1238,7 @@ the set $\Gamma$, which is much smaller than the boundary of the polydisc
 $\partial \Delta$.  In fact, the $\Gamma$ is of real dimension $n$, while
 the boundary of the polydisc has dimension $2n-1$.
 
+\begin{samepage}
 The set $\Gamma = \partial \Delta_1 \times \cdots \times \partial \Delta_n$
 is called the \emph{\myindex{distinguished boundary}}.  For
 the unit bidisc we have:
@@ -1246,6 +1248,7 @@ the unit bidisc we have:
 \begin{center}
 \subimport*{figures/}{polydisc-dist.pdf_t}
 \end{center}
+\end{samepage}
 
 %\medskip
 
@@ -1320,7 +1323,7 @@ dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n \\
 \end{aligned}
 \end{equation*}
 We can also make sense of this notation, especially the notation $z^\alpha$,
-if $\alpha \in \Z^n$, although usually $\alpha$ is assumed to be $\N_0^n$.
+if $\alpha \in \Z^n$, although usually $\alpha$ is assumed to be in $\N_0^n$.
 Furthermore, when we use $1$ as a vector it means $(1,1,\ldots,1)$.
 For example if $z \in \C^n$ then,
 \begin{equation*}
@@ -3237,14 +3240,15 @@ Let $(z,w) = (z_1,\ldots,z_m,w_{1},\ldots,w_{k}) \in \C^m \times \C^k$ be the co
 $0 < a,b < 1$, let the set $H \subset \D^{m+k}$
 be defined by
 \begin{equation*}
-H = \bigl\{ (z,w) \in \D^{m+k} : \sabs{z_j} > a \text{ for $j=1,\ldots,m$ }
+H = \bigl\{ (z,w) \in \D^{m+k} : \sabs{z_j} > a ~\text{for $j=1,\ldots,m$}
 \bigr\} \cup
-\bigl\{ (z,w) \in \D^{m+k} : \sabs{w_j} < b \text{ for $j=1,\ldots,k$ }
+\bigl\{ (z,w) \in \D^{m+k} : \sabs{w_j} < b ~\text{for $j=1,\ldots,k$}
 \bigr\} .
 \end{equation*}
 If $f \in \sO(H)$, then $f$ extends holomorphically to $\D^{m+k}$.
 \end{thm}
 
+\begin{samepage}
 In $\C^2$ if $m=1$ and $k=1$, the figure looks like:
 
 %\medskip
@@ -3254,6 +3258,7 @@ drawn as:}}
 \begin{center}
 \subimport*{figures/}{hartogs-figure.pdf_t}
 \end{center}
+\end{samepage}
 
 %\medskip
 
@@ -3606,7 +3611,7 @@ A smooth %$C^k$-smooth
 \emph{\myindex{vector field}} in $T\R^n$ is an object of the form 
 \begin{equation*}
 X = \sum_{j=1}^n a_j
-\frac{\partial}{\partial x_j}
+\frac{\partial}{\partial x_j} ,
 \end{equation*}
 where $a_j$ are smooth %$C^k$-smooth
 functions.
@@ -3768,7 +3773,7 @@ Suppose $M \subset \R^n$ is a smooth hypersurface, %$C^k$-smooth hypersurface, $
 and $p \in M$.  Then after a rotation and translation, 
 $p$ is the origin and near the origin $M$ is defined by
 \begin{equation*}
-y = \varphi(x)
+y = \varphi(x) ,
 \end{equation*}
 where $(x,y) \in \R^{n-1} \times \R$ are our coordinates and
 $\varphi$ is a smooth %$C^k$
@@ -6141,13 +6146,13 @@ a_j \frac{\partial r}{\partial z_j} \Big|_q = 0 ,
 for all $q \in \partial U$ near $0$.
 If we translate $\partial U$ slightly in the $\Im z_n$ direction we still
 have a Levi pseudoconvex hypersurface.  That is, we
-look at the surface $r=s$ for small real $s$ and the condition is 
-satisfied for $r-s$.  As $\frac{\partial r}{\partial z_j} =
+look at the surface given by $r=s$ for a small real constant $s$.
+The condition \eqref{eq:psconvcond} is 
+satisfied for the function $r-s$ instead of $r$,
+as $\frac{\partial r}{\partial z_j} =
 \frac{\partial (r-s)}{\partial z_j}$ for all $j$ and the
-complex Hessians of $r$ and $r-s$ are equal,
-%As the complex Hessian of $r$ is just the complex Hessian of $\varphi$ with
-%a row and a column of zeros added,
-condition \eqref{eq:psconvcond} holds for $r$ for all $q \in U$ near $0$.
+complex Hessians of $r$ and $r-s$ are also equal.
+So condition \eqref{eq:psconvcond} holds for $r$ for all $q \in U$ near $0$.
 We will use $r$ to manufacture a plurisubharmonic exhaustion function, that
 is one with a semidefinite Hessian.  Therefore, we already
 have what we need in all but one direction.
@@ -6331,9 +6336,9 @@ $A=\frac{3^4 M^2}{4}$.  Thus
 \end{equation*}
 In other words, the complex Hessian
 of $f$ is positive semidefinite at all points $q \in U$ near $0$.
-The function $f(z)$ goes to infinity as $z$ approaches $\partial U$, so
-for every $t \in \R$ the $t$-sublevel set
-(set where $f(z) < t$) must be a positive
+The function $f(z)$ goes to infinity as $z$ approaches $\partial U$.
+So for every $t \in \R$, the $t$-sublevel set
+(the set where $f(z) < t$) must be a positive
 distance away from $\partial U$ near $0$.
 
 We have a local continuous plurisubharmonic
@@ -6585,7 +6590,7 @@ neighborhood of $p$.
 A common notation for real-analytic is $C^\omega$.
 \end{defn}
 
-Before discuss the connection to holomorphic functions let us prove a simple
+Before we discuss the connection to holomorphic functions let us prove a simple
 lemma.
 
 \begin{lemma}
@@ -6628,7 +6633,7 @@ the series
 converges whenever $\sabs{x_j-a_j} \leq r_j$ for all $j$.
 Here convergence is absolute convergence.  That is,
 \begin{equation*}
-\sum_{\alpha} \sabs{c_{\alpha}} \sabs{x-a}^\alpha
+\sum_{\alpha} \sabs{c_{\alpha}}\, \sabs{x-a}^\alpha
 \end{equation*}
 converges.
 If we replace $x_j \in \R$ with $z_j \in \C$ such that
@@ -9036,7 +9041,7 @@ Suppose $f$ is holomorphic on a neighborhood of
 $\overline{B_r(z)}$.\\
 a) Using the Bochner--Martinelli formula, prove that
 \begin{equation*}
-f(z) = \frac{1}{V\bigl(B_r(z)\bigr)} \int_{B_r(z)} f(\zeta) \, dV(\zeta)
+f(z) = \frac{1}{V\bigl(B_r(z)\bigr)} \int_{B_r(z)} f(\zeta) \, dV(\zeta) ,
 \end{equation*}
 where $V\bigl(B_r(z)\bigr)$ is the volume of $B_r(z)$.\\
 b) Use part a) to prove the maximum principle for holomorphic functions.
@@ -10550,7 +10555,7 @@ $r$ and $s$, then either $r=1$ or $s=1$.
 Suppose $f$ is a function holomorphic in a neighborhood of the origin with
 $z_n \mapsto f(0,z_n)$ being of finite order.  Show that
 \begin{equation*}
-f = u p_1^{d_1} p_2^{d_2} \cdots p_\ell^{d_\ell}
+f = u p_1^{d_1} p_2^{d_2} \cdots p_\ell^{d_\ell} ,
 \end{equation*}
 where $p_j$ are Weierstrass polynomials of degree $k_j$ that have
 generically (that is, on an open dense set) $k_j$ distinct roots
