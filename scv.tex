@@ -2120,14 +2120,15 @@ $x$ and $y$, where $z = x+iy$.
 \end{remark}
 
 \begin{remark}
-Another remark to make is that we could have swapped $z$ and $\bar{z}$, by
-just flipping the bars everywhere.  There is no difference between the two,
+Another remark is that we could have swapped $z$ and $\bar{z}$, by
+flipping the bars everywhere.  There is no difference between the two,
 they are twins in effect.  We just need to know which one is which.
 After all, it all starts with taking the two square roots of $-1$ and
-deciding which one is $i$.  There is no ``natural choice'' for that, but once
+deciding which one is $i$ (remember the chickens?).
+There is no ``natural choice'' for that, but once
 we make that choice we must be consistent.  And once we picked which
 root
-is $i$, we have also picked what is holomorphic and what is
+is $i$, we also picked what is holomorphic and what is
 antiholomorphic.  This is a subtle philosophical as much as a mathematical point.
 \end{remark}
 
@@ -2769,7 +2770,7 @@ By the uniqueness of the Taylor expansion,
 $e^{i\theta} f_j(z)  = e^{ij\theta} f_j(z)$, or
 $f_j(z)  = e^{i(j-1)\theta} f_j(z)$,
 for all $j$, all $z$, and all $\theta$.
-If $j\not=1$ we obtain that $f_j \equiv
+If $j\not=1$, we obtain that $f_j \equiv
 0$, which proves the claim.
 \end{proof}
 
@@ -3959,8 +3960,8 @@ Let us note what holomorphic functions do to these spaces.  Given a smooth
 mapping $f$ from $\C^n$ to $\C^m$, its derivative at $p \in \C^n$
 is a real-linear mapping $D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$.
 Given the basis above, this mapping is represented by
-the standard real Jacobian matrix, that is a real $2m$ by $2n$ matrix
-which we before also wrote as $D_\R f(p)$.
+the standard real Jacobian matrix, that is, a real $2m \times 2n$ matrix
+that we before wrote as $D_\R f(p)$.
 
 \begin{prop} \label{prop:holvectmap}
 Let $f \colon U \subset \C^n \to \C^m$ be a holomorphic function with
@@ -3998,7 +3999,7 @@ the basis.
 
 When talking about only holomorphic functions and holomorphic vectors,
 when we say derivative of $f$, we mean the holomorphic part of the
-derivative which we write as,
+derivative, which we write as
 \begin{equation*}
 D f(p) \colon T_p^{(1,0)} \C^n \to T_{f(p)}^{(1,0)} \C^m .
 \end{equation*}
@@ -5677,7 +5678,7 @@ other hand you know nothing about this set.
 
 \begin{thm}[Rad\'o] \index{Rad\'o's theorem}
 Let $U \subset \C^n$ be a domain and $f \colon U \to \C$ be a continuous
-function which is holomorphic on the set
+function that is holomorphic on the set
 \begin{equation*}
 U' = \{ z \in U : f(z) \not= 0 \} .
 \end{equation*}
@@ -5715,13 +5716,13 @@ t \log \abs{f(z)} \leq Pu(z)-u(z) \leq -t \log \abs{f(z)} .
 on $\overline{\Delta}$ for all $t > 0$.  Fixing $t \in \Delta'$ and letting
 $t \to 0$ shows that $Pu = u$ on $\Delta'$.  In the same way we find that if
 $v$ is the imaginary part of $f$, $Pv = v$ on $\Delta'$.  So we find that
-$\tilde{f} = Pu + i Pv$ equals $f$ on $\overline{\Delta'}$ which includes
+$\tilde{f} = Pu + i Pv$ equals $f$ on $\overline{\Delta'}$, which includes
 $\partial \Delta$.
 Let $W = \Delta \setminus \overline{\Delta'}$.  If
 this open set is empty we are finished.  If it is not empty,
 the continuous
 function $\tilde{f}-f$ is zero on $\overline{\Delta'}$, which includes
-the boundary of $\Delta$, so $\tilde{f}-f$ is zero on $\partial W$.
+the boundary of $\Delta$.  So $\tilde{f}-f$ is zero on $\partial W$.
 As $f$ is zero on $W$ then $\tilde{f}-f$ is holomorphic on $W$ and
 by the maximum principle it must be zero on $W$.  Thus
 $\tilde{f} = f$ everywhere and we are done.  The theorem is proved for
@@ -7020,7 +7021,7 @@ First let us prove that $f$ is smooth.  Given any $p \in M$ write $M$
 as $\Im w = \varphi(z,\bar{z},\Re w)$ for a smooth $\varphi$.
 Then $F\bigl(z,\Re w + i \varphi(z,\bar{z},\Re w) \bigr)$
 is clearly smooth as it is a composition of smooth functions.
-If both $M$ and $\varphi$ are real-analytic we obtain that 
+If both $M$ and $\varphi$ are real-analytic, we obtain that 
 $F\bigl(z,\Re w + i \varphi(z,\bar{z},\Re w) \bigr)$ is real-analytic, which
 we could also prove directly by complexifying as before.
 
@@ -8151,7 +8152,7 @@ W \to \C$ that does not extend to either side of $M$ at $p$.
 
 Before we get into the $\bar{\partial}$-problem, let us prove a more general
 version of Cauchy's formula using Stokes' theorem\footnote{%
-We are really using Green's theorem which is the generalized
+We are really using Green's theorem, which is the generalized
 Stokes' theorem in 2 dimensions.}.  Sometimes
 this is called the \emph{\myindex{Cauchy--Pompeiu integral formula}}.
 We will only need the theorem for smooth functions, but as it is often 
