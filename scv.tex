@@ -8622,7 +8622,9 @@ boundary.
 \end{exercise}
 \end{exbox}
 
-Consequently the zero set of a holomorphic function $f$ is never compact in
+One of many consequences of the Hartogs phenomenon is
+that
+the zero set of a holomorphic function $f$ is never compact in
 dimension 2 or higher.  If it
 were $\frac{1}{f}$ would provide a contradiction, see also
 \exerciseref{exercise:connectedcomplement}.
@@ -8655,8 +8657,15 @@ $F|_{\partial U} = f$.
 By Severi's result (\propref{prop:severi}) $f$ extends to a small neighborhood of $\partial U$
 near each point.  Because the local extension is unique for a hypersurface,
 we obtain an extension in a single neighborhood of $\partial U$.
-We can write this neighborhood as $U' \setminus K$ for some compact $K$.
-We now apply Hartogs.
+We write this neighborhood as $U' \setminus K$ for some compact $K$
+and a connected $U'$ such that $\overline{U} \subset U'$.
+Consider the topological components of $\C^n \setminus K$.  As
+$\partial U$ is connected and $U$ is bounded,
+the unbounded component of $\C^n \setminus K$ must contain all of $\partial U$.
+By boundedness of $U$, all the other components are
+relatively compact in $U$.  If we add them to $K$, then $K$
+is still compact and $U' \setminus K$ is connected.
+We apply the Hartogs phenomenon.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -8753,14 +8762,14 @@ formula.
 \end{exbox}
 
 We will, again, apply Stokes formula, but we need to apply it to forms of higher
-degree.  As before, we split the derivatives to the holomorphic and
+degree.  As before, we split the derivatives into the holomorphic and
 antiholomorphic parts.  We work with multiindices.  For $\alpha$ and $\beta$
 with $\abs{\alpha}=p$ and 
-$\abs{\beta}=q$, the differential form
+$\abs{\beta}=q$, a differential form
 \begin{equation*}
 \eta = 
 \sum_{\substack{\abs{\alpha}=p \\ \abs{\beta}=q}}
-\eta_{\alpha \beta} dz^\alpha \wedge d\bar{z}^\beta 
+\eta_{\alpha \beta} \, dz^\alpha \wedge d\bar{z}^\beta 
 \end{equation*}
 is called a \emph{\myindex{$(p,q)$-form}} or a differential form of
 \emph{\myindex{bidegree}} $(p,q)$.
@@ -8791,7 +8800,8 @@ more involved.
 Let $z \in U$ be fixed.  Suppose $r > 0$ is small enough such that
 $\overline{B_r(z)} \subset U$.  We orient $\partial U$ and $\partial B_r(z)$
 both positively.  Notice that 
-$f(\zeta) \omega(\zeta,z)$ has all the holomorphic $d\zeta_j$, therefore,
+$f(\zeta) \omega(\zeta,z)$ contains all the holomorphic $d\zeta_j$.
+Therefore,
 \begin{equation*}
 \begin{split}
 d \bigl( f(\zeta) \omega(\zeta,z) \bigr)
@@ -8841,7 +8851,7 @@ $d \bigl( f(\zeta) \omega(\zeta,z) \bigr) = \bar{\partial} f(\zeta) \wedge
 %=
 %\frac{1 - n \abs{\zeta_j-z_j}^2}{\norm{\zeta-z}^{2n}}
 %$$
-We apply Stokes as before
+We apply Stokes as before:
 \begin{equation*}
 \begin{split}
 \int_{\partial U}
@@ -8864,7 +8874,7 @@ d \bigl( f(\zeta) \omega(\zeta,z) \bigr)
 \end{split}
 \end{equation*}
 Again, due to the integrability, which you showed in an above exercise,
-the right hand side converges to the integral over $U$.
+the right hand side converges to the integral over $U$ as $r \to 0$.
 Just as for the Cauchy--Pompeiu formula, we now need to show that the integral
 over $\partial B_r(z)$ goes to $f(z)$ as $r \to 0$.
 
