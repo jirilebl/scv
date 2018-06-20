@@ -3658,7 +3658,9 @@ above is strict for all nonzero $X_p \in T_p \partial U$, then $U$ is said to be
 \emph{\myindex{strongly convex}} at $p$.
 
 The domain $U$ is \emph{convex} if it is convex at all $p \in \partial U$.
-Similarly $U$ is \emph{strongly convex} if it is strongly convex at all $p \in
+If $U$ is bounded\footnote{Matters are a little more complicated
+with the ``strong'' terminology if $U$ is unbounded.}, we say
+$U$ is \emph{strongly convex} if it is strongly convex at all $p \in
 \partial U$.
 \end{defn}
 
@@ -3861,8 +3863,8 @@ and $E$ is $O(3)$.  That is, $E(0) = 0$, and
 all first and second derivatives of $E$ vanish.  If we are dealing with a domain boundary
 $\partial U$, then
 we pick the rotation so that $y > \frac{1}{2}\,x^t H x + E(x)$ on $U$.
-It is an easy exercise to see that $U$ is convex at $p$ if
-$H$ positive semidefinite and strongly convex if $H$ is positive definite.
+It is an easy exercise to show that $U$ is convex at $p$ if
+$H$ positive semidefinite, and $U$ is strongly convex at $p$ if $H$ is positive definite.
 
 \begin{exbox}
 \begin{exercise}
@@ -4199,16 +4201,21 @@ If $U$ is pseudoconvex, but not strongly pseudoconvex at $p$, then we
 say that $U$ is \emph{\myindex{weakly pseudoconvex}}.
 
 The domain $U$ is pseudoconvex if it is pseudoconvex at all $p \in \partial U$.
-Similarly $U$ is strongly pseudoconvex if it is strongly pseudoconvex at all $p \in
-\partial U$.
+For a bounded\footnote{The definition for unbounded domains is not
+consistent in the literature.
+Sometimes \emph{\myindex{strictly pseudoconvex}} is used.} $U$, we say $U$ is strongly pseudoconvex if it is strongly pseudoconvex at all $p \in \partial U$.
 
-For $X_p \in T^{(1,0)}_p\partial U$, the expression
+For $X_p \in T^{(1,0)}_p\partial U$, the sesquilinear form
 \begin{equation*}
+\sL(X_p,X_p)
+=
 \sum_{j=1,\ell=1}^n
 \bar{a}_j a_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_p 
 \end{equation*}
-is called the \emph{\myindex{Levi-form}} at $p$.  So $U$ is pseudoconvex at
-$p \in \partial U$ if the Levi-form is positive (semi)definite at $p$.
+is called the \emph{\myindex{Levi-form}} at $p$.  So $U$ is pseudoconvex
+(resp.\ strongly pseudoconvex) at
+$p \in \partial U$ if the Levi-form is positive semidefinite
+(resp.\ positive definite) at $p$.
 \end{defn}
 
 The matrix
@@ -4219,9 +4226,9 @@ The matrix
 is called the
 \emph{\myindex{complex Hessian}}\index{Hessian!complex} of $r$ at $p$.
 So, $U$ is pseudoconvex at $p \in \partial U$ if
-the Hessian
-of $r$ at $p$ as a sesquilinear form is positive definite (or positive
-semidefinite) when restricted to tangent vectors in $T^{(1,0)}_p \partial U$.
+the complex Hessian
+of $r$ at $p$ as a sesquilinear form is positive (semi)definite
+when restricted to tangent vectors in $T^{(1,0)}_p \partial U$.
 
 Notice that the complex Hessian is not the full Hessian.
 Let us write down the full Hessian, using the
@@ -4270,8 +4277,9 @@ Hessian is the symmetric matrix
 \end{bmatrix}
 .
 \end{equation*}
-So the complex Hessian is the lower left, or the transpose of the upper right, block.  In
-particular it is a smaller matrix, and we also apply it only to a subspace 
+The complex Hessian is the lower left,
+or the transpose of the upper right, block.  In
+particular, it is a smaller matrix. And we also apply it only to a subspace 
 of the complexified tangent space.
 
 Let us illustrate the change of basis on one dimension.  The change of
@@ -4341,7 +4349,8 @@ Show that pseudoconvexity is not dependent on the defining function.
 \end{exercise}
 
 \begin{exercise}
-Show that a convex domain is pseudoconvex, and show that strongly convex
+Show that a convex domain is pseudoconvex, and show that (a bounded)
+strongly convex
 domain is strongly pseudoconvex.
 \end{exercise}
 
@@ -4351,7 +4360,7 @@ pseudoconvex at all nearby points.
 \end{exercise}
 \end{exbox}
 
-In particular the exercise says that the unit ball $\bB_n$ is
+In particular, the exercise says that the unit ball $\bB_n$ is
 strongly pseudoconvex as it is strongly convex.
 We are generally interested what happens under a holomorphic change of
 variables, that is, a biholomorphic mapping.  And as far as pseudoconvexity
@@ -4443,7 +4452,7 @@ but when we do, it will also mean that the ball is strictly pseudoconvex.
 
 Of course not the entire sphere gets transformed, the points where $Z_n=1$
 get sent to infinity.
-The hyper surface $\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$
+The hypersurface $\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$
 is sometimes called the \emph{\myindex{Lewy hypersurface}}, and in the
 literature some even say it \emph{is} the sphere\footnote{That is not in fact
 completely incorrect.  If you think of the sphere in the complex projective
@@ -6145,9 +6154,9 @@ The condition of Levi pseudoconvexity says
 a_j \frac{\partial r}{\partial z_j} \Big|_q = 0 ,
 \end{equation}
 for all $q \in \partial U$ near $0$.
-If we translate $\partial U$ slightly in the $\Im z_n$ direction we still
-have a Levi pseudoconvex hypersurface.  That is, we
-look at the surface given by $r=s$ for a small real constant $s$.
+If we translate $\partial U$ slightly in the $\Im z_n$ direction, we still
+have a Levi pseudoconvex boundary.  That is, we
+look at the hypersurface given by $r=s$ for a small real constant $s$.
 The condition \eqref{eq:psconvcond} is 
 satisfied for the function $r-s$ instead of $r$,
 as $\frac{\partial r}{\partial z_j} =
@@ -10965,7 +10974,8 @@ have at least one zero eigenvalue.
 \end{exercise}
 
 \begin{exercise}
-Let $M \subset \C^n$ be a pseudoconvex real hypersurface.
+Let $M \subset \C^n$ be a pseudoconvex real hypersurface
+(one side of $M$ is pseudoconvex).
 Suppose $M$ at $p$ contains a dimension $k$ complex submanifold $X$.
 Show that the Levi-form has at least $k$ zero eigenvalues.
 \end{exercise}
@@ -11096,8 +11106,10 @@ Since $\Delta \subset M$ we have
 r\bigl(\varphi(\xi),\overline{\varphi(\xi)}\bigr) =
 r\bigl(\varphi(\xi),\bar{\varphi}(\bar{\xi})\bigr) = 0 .
 \end{equation*}
-This function is a real-analytic function of $\xi$ and therefore for some
-small neighborhood of the origin, it will complexify.  In fact it complexifies
+The function $\xi \mapsto
+r\bigl(\varphi(\xi),\bar{\varphi}(\bar{\xi})\bigr)$ is a real-analytic
+function of $\xi$, and therefore for some
+small neighborhood of the origin, it complexifies.  In fact it complexifies
 to $\D \times \D$ as $\varphi(\xi) \in U$ for all $\xi \in \D$.
 So we can treat $\xi$ and $\bar{\xi}$ as separate variables.  By
 complexification, the equation holds for all such independent
@@ -11113,13 +11125,15 @@ In particular, $\varphi(\D) \subset \Sigma_p$ and the result follows.
 
 \begin{exbox}
 \begin{exercise}
-Show that if a real-analytic real hypersurface $M \subset \C^n$ is strictly pseudoconvex and $p \in M$, then $\Sigma_p \cap
+Show that if a real-analytic real hypersurface $M \subset \C^n$ is strongly
+pseudoconvex at $p \in M$ (one side of $M$ is strongly pseudoconvex at $p$),
+then $\Sigma_p \cap
 (M,p) = \{p\}$ (as germs).
 \end{exercise}
 
 \begin{exercise}
 Use the proposition and the above exercise to show that if a real-analytic
-real hypersurface $M$ is strictly 
+real hypersurface $M$ is strongly 
 pseudoconvex, then $M$ contains no analytic discs.
 \end{exercise}
 \end{exbox}
@@ -11179,7 +11193,7 @@ and $X \subset U$, although we do not assume it is closed.
 %for a $b$ such that $r(b,\bar{a}) = 0$,
 %and $a \in X$ that is $a \in M$.
 
-Let us assume $X$ is a holomorphic
+Assume $X$ is a holomorphic
 image of an open subset $V \subset \C^k$ via a holomorphic surjective mapping $\varphi \colon V \to
 X$.  Since $r\bigl(\varphi(\xi),\overline{\varphi(\xi)}\bigr) = 0$
 for all $\xi \in V$, then we may treat $\xi$ and $\bar{\xi}$ separately.
