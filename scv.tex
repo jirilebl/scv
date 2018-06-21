@@ -681,7 +681,7 @@ d \zeta .
 \end{thm}
 
 The Cauchy formula is the essential ingredient we need from the study of
-one complex variable and follows for example
+one complex variable and follows, for example,
 from Green's theorem (Stokes' theorem in two
 dimensions).  You can look forward to
 \thmref{thm:generalizedcauchy} for a proof of a more general formula,
@@ -695,10 +695,10 @@ in a special case.  Let
 \begin{equation*}
 \D
 \overset{\text{def}}{=}
-\{ z : \sabs{z} < 1 \} ,
+\bigl\{ z \in \C : \sabs{z} < 1 \bigr\} ,
 \end{equation*}
 be the \emph{\myindex{unit disc}}.  The boundary is the unit circle
-$\partial \D = \{ z : \sabs{z} = 1 \}$ oriented positively, that is, counterclockwise.   We parametrize $\partial \D$
+$\partial \D = \bigl\{ z \in \C : \sabs{z} = 1 \bigr\}$ oriented positively, that is, counterclockwise.   We parametrize $\partial \D$
 by $e^{it}$, where $t$ goes from 0 to $2\pi$.  If $\zeta = e^{it}$,
 then $d\zeta = ie^{it}dt$, and
 \begin{equation*}
@@ -719,7 +719,7 @@ with
 path or surface integrals try to think about how you would parametrize the path and
 write the integral as an integral any calculus student would recognize.
 
-I venture a guess that 90\% of what you learned in a complex analysis
+I venture a guess that 90\% of what you learned in a one-variable complex analysis
 course (depending on who taught it)
 is more or less a straightforward consequence of the Cauchy
 integral formula.
@@ -782,7 +782,7 @@ Given $a \in \C$ and $\rho > 0$ define the disc of radius $\rho$ around $a$
 \begin{equation*}
 \Delta_\rho(a)
 \overset{\text{def}}{=}
-\{ z : \sabs{z-a} < \rho \} .
+\bigl\{ z \in \C : \sabs{z-a} < \rho \bigr\} .
 \end{equation*}
 Suppose $U \subset \C$ is a domain, $f \colon U \to \C$ is holomorphic,
 $a \in U$, and $\overline{\Delta_\rho(a)} \subset U$ (that is, the closure
@@ -957,7 +957,8 @@ For $\rho = (\rho_1,\ldots,\rho_n)$ where $\rho_j > 0$ and $a \in \C^n$,
 define
 a \emph{\myindex{polydisc}}
 \begin{equation*}
-\Delta_\rho(a)  \overset{\text{def}}{=} \{ z \in \C^n : \sabs{z_j - a_j} < \rho_j \} .
+\Delta_\rho(a)  \overset{\text{def}}{=}
+\bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho_j \bigr\} .
 \end{equation*}
 We call $a$ the
 \emph{center}\index{center of a polydisc}
@@ -969,14 +970,14 @@ of the polydisc $\Delta_\rho(a)$.
 If $\rho > 0$ is a number then
 \begin{equation*}
 \Delta_\rho(a)  \overset{\text{def}}{=}
-\{ z \in \C^n : \sabs{z_j - a_j} < \rho \} .
+\bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho \bigr\} .
 \end{equation*}
 
 As there is the unit disc $\D$ in one variable, so is there
 the \emph{\myindex{unit polydisc}} in several variables:
 \begin{equation*}
 \D^n = \D \times \D \times \cdots \times \D = \Delta_1(0) = 
-\{ z \in \C^n : \sabs{z_j} < 1 \} .
+\bigl\{ z \in \C^n : \sabs{z_j} < 1 \bigr\} .
 \end{equation*}
 \end{defn}
 
@@ -1013,12 +1014,12 @@ This norm agrees with the standard Euclidean norm on $\R^{2n}$.
 We define balls as in $\R^{2n}$:
 \begin{equation*}
 B_\rho(a)  \overset{\text{def}}{=}
-\{ z \in \C^n : \snorm{z - a} < \rho \} ,
+\bigl\{ z \in \C^n : \snorm{z - a} < \rho \bigr\} ,
 \end{equation*}
 And we define the unit ball as
 \begin{equation*}
 \bB_n \overset{\text{def}}{=} B_1(0) =
-\{ z \in \C^n : \snorm{z} < 1 \} .
+\bigl\{ z \in \C^n : \snorm{z} < 1 \bigr\} .
 \end{equation*}
 
 To define holomorphic functions,
@@ -1114,7 +1115,7 @@ infinitely differentiable in those variables.
 \end{proof}
 
 In the definition of holomorphicity,
-we may have assumed $f$ was smooth and satisfies
+we may have assumed $f$ is smooth and satisfies
 the Cauchy--Riemann equations.  However, the way we stated the
 definition makes it easier to apply.
 
@@ -1184,7 +1185,9 @@ orientation is kept in mind.
 
 \begin{thm}[Cauchy integral formula]
 \index{Cauchy integral formula in several variables}\index{Cauchy formula}
-Let $\Delta$ be a polydisc centered at $a \in \C^n$.  Suppose
+Let $\Delta \subset \C^n$ be a polydisc. 
+% centered at $a \in \C^n$.
+Suppose
 $f \colon \overline{\Delta} \to \C$ is a continuous function
 holomorphic in $\Delta$.
 Write $\Gamma = \partial \Delta_1 \times \cdots \times \partial \Delta_n$
@@ -1288,13 +1291,14 @@ special about the holomorphic category.
 
 As you noticed, writing out all the components can be a pain.  It would become
 even more painful later on.  Just as we write 
-vectors as $z$ instead of $(z_1,z_2,\ldots,z_n)$ we similarly
-define notation to deal with the formulas as above.
+vectors as $z$ instead of $(z_1,z_2,\ldots,z_n)$, we similarly
+define the so-called
+\emph{\myindex{multi-index notation}}
+to deal with formulas such as the ones above.
 
-We will often use
-the so-called \emph{\myindex{multi-index notation}}.
-Let $\alpha \in \N_0^n$, where $\N_0 = \N \cup \{ 0\}$,
-be a vector of nonnegative integers.  We write
+Let $\alpha \in \N_0^n$
+be a vector of nonnegative integers (where $\N_0 = \N \cup \{ 0\}$).
+We write
 \begin{equation*}
 \begin{aligned}
 z^\alpha & \overset{\text{def}}{=} z_1^{\alpha_1}z_2^{\alpha_2} \cdots z_n^{\alpha_n} \\
@@ -1323,7 +1327,8 @@ dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n \\
 \end{aligned}
 \end{equation*}
 We can also make sense of this notation, especially the notation $z^\alpha$,
-if $\alpha \in \Z^n$, although usually $\alpha$ is assumed to be in $\N_0^n$.
+if $\alpha \in \Z^n$, that is, if it includes negative integers,
+although usually $\alpha$ is assumed to be in $\N_0^n$.
 Furthermore, when we use $1$ as a vector it means $(1,1,\ldots,1)$.
 For example if $z \in \C^n$ then,
 \begin{equation*}
@@ -1355,7 +1360,7 @@ talk about conditional convergence.  When we say the series
 converges, we mean absolutely.
 Fortunately power series converge
 absolutely, and so the ordering does not matter.  You have to admit that the
-above is far nicer to write than for example for 3 variables writing
+above is far nicer to write than, for example, for 3 variables writing
 \begin{equation*}
 \sum_{j=0}^\infty
 \sum_{k=0}^\infty
@@ -1363,7 +1368,7 @@ above is far nicer to write than for example for 3 variables writing
 c_{jk\ell} z_1^jz_2^kz_3^\ell .
 \end{equation*}
 
-We will often write just
+We often write just
 \begin{equation*}
 \sum_{\alpha} c_\alpha {z}^\alpha ,
 \end{equation*}
@@ -1659,17 +1664,20 @@ that the domain of convergence is the unit polydisc, but more
 complicated examples are easy to find.
 
 \begin{example}
-The power series
+In $\C^2$, the power series
 \begin{equation*}
 \sum_{k=0}^\infty z_1 z_2^k
 \end{equation*}
 converges absolutely on the set
 \begin{equation*}
-\{ z : \sabs{z_2} < 1 \} \cup \{ z : z_1 = 0 \} ,
+\bigl\{ z \in \C^2 : \sabs{z_2} < 1 \bigr\}
+\cup
+\bigl\{ z \in \C^2 : z_1 = 0 \bigr\} ,
 \end{equation*}
 and nowhere else.
-This set is not quite a polydisc.  It is not even an open set, and
-is not a closure of the domain of convergence.
+This set is not quite a polydisc.  It is neither an open set nor a closed set,
+and its closure is not the closure of the domain of convergence,
+which is the set $\bigl\{ z \in \C^2 : \sabs{z_2} < 1 \bigr\}$.
 \end{example}
 
 \begin{example}
@@ -1679,7 +1687,7 @@ The power series
 \end{equation*}
 converges absolutely exactly on the set
 \begin{equation*}
-\{ z : \sabs{z_1 z_2} < 1 \} .
+\bigl\{ z \in \C^2 : \sabs{z_1 z_2} < 1 \bigr\} .
 \end{equation*}
 Here the picture is definitely more complicated than a polydisc:
 
@@ -3188,7 +3196,8 @@ In $\C$, every domain is a domain of holomorphy.
 \end{exercise}
 
 \begin{exercise}
-If $U_j \subset \C^n$ are domains of holomorphy, then the intersection
+If $U_j \subset \C^n$ are domains of holomorphy (possibly an infinite set of
+domains), then the intersection
 \begin{equation*}
 \bigcap_{j} U_j
 \end{equation*}
@@ -3225,7 +3234,7 @@ $U$.
 Do note that the subtlety of the definition of domain of holomorphy is that it does not
 necessarily talk about functions extending to a larger set, since we must
 take into account single-valuedness.  For example, let $f$ be the principal branch
-of the logarithm defined on $U = \C \setminus \{ z : \Im z = 0, \Re z \leq 0
+of the logarithm defined on $U = \C \setminus \{ z \in \C : \Im z = 0, \Re z \leq 0
 \}$.  We can define locally an extension from one side through the boundary
 of the domain, but we cannot define an extension on a larger set that
 contains $U$.  This example should be motivation why we need $V$ to possibly
@@ -3268,7 +3277,7 @@ drawn as:}}
 Pick a $c \in (a,1)$.  Let
 \begin{equation*}
 \Gamma =
-\{ z \in \D^{m} : \sabs{z_j} = c \text{ for $j=1,\ldots,m$ } \}.
+\bigl\{ z \in \D^{m} : \sabs{z_j} = c \text{ for $j=1,\ldots,m$ } \bigr\}.
 \end{equation*}
 That is, $\Gamma$ is the distinguished boundary of $c \D^m$,
 a polydisc centered at 0 of radius $c$ in $\C^m$.
@@ -3364,9 +3373,10 @@ The singlevaluedness of the extension is the key point that makes the
 general proof harder.
 
 Notice the surprising fact that any holomorphic function on
+the shell
 \begin{equation*}
-\bB_n \setminus \overline{B_{1-\epsilon}(0)} = \{ z \in \C^n : 1-\epsilon <
-\snorm{z} < 1 \}
+\bB_n \setminus \overline{B_{1-\epsilon}(0)} =
+\bigl\{ z \in \C^n : 1-\epsilon < \snorm{z} < 1 \bigr\}
 \end{equation*}
 for any $\epsilon > 0$ automatically
 extends to a holomorphic function of $\bB_n$.  We need $n > 1$.
@@ -3404,7 +3414,7 @@ Suppose
 U = \bigl\{ (z,w) \in \D^2 : \nicefrac{1}{2} < \sabs{z} \bigr\} .
 \end{equation*}
 Draw $U$.  
-Let $\gamma = \{ z : \sabs{z} = \nicefrac{3}{4} \}$ oriented positively.
+Let $\gamma = \bigl\{ z \in \C : \sabs{z} = \nicefrac{3}{4} \bigr\}$ oriented positively.
 If $f \in \sO(U)$, then show that the function
 \begin{equation*}
 F(z,w)
@@ -3437,7 +3447,7 @@ By
 that
 $U_1 = \C^2 \setminus \R^2$
 is not a domain of holomorphy.  On the other hand
-$U_2 = \C^2 \setminus \{ z : z_2 = 0 \}$ is a domain of holomorphy;
+$U_2 = \C^2 \setminus \{ z \in \C^2 : z_2 = 0 \}$ is a domain of holomorphy;
 simply
 use $f(z) = \frac{1}{z_2}$ as the function that cannot extend.
 Therefore $U_1$ and $U_2$ are very different as far as complex variables are
@@ -3526,7 +3536,7 @@ Notice that the definition for a smooth boundary is not just that the
 boundary is a smooth hypersurface, that is not enough.  It also says that 
 one side of that hypersurface is in $U$ and one side is not in $U$.  That is
 because if the derivative of $r$ never vanishes, then $r$ must have
-different signs on different sides of $\{ x : r(x) = 0 \}$.  The
+different signs on different sides of $\{ x \in V : r(x) = 0 \}$.  The
 verification of this fact is left to the reader (Hint: look at where the
 gradient points to).
 
@@ -3571,10 +3581,10 @@ exercises.
 \begin{exbox}
 \begin{exercise}
 If $r$ and $\tilde{r}$ are two smooth defining functions for $M$ at $p$,
-show that there exists a nonzero smooth function $g$ such that
-$\tilde{r} = g r$.
-Hint: First assume that $r=x_n$, so that $M$ is simply the set $x_n = 0$,
-then show that there exists a $g$ such that $\tilde{r} = x_n g$.  Then think
+show that there exists a nonvanishing smooth function $g$ such that
+$\tilde{r} = g r$ (in a neighborhood of $p$).
+Hint: First assume $r=x_n$, so that $M$ is the set $x_n = 0$,
+and find a $g$ such that $\tilde{r} = x_n g$.  Then think
 about a local change of variables that makes $M$ into $x_n$.  Hint for the
 hint: Notice
 the basic calculus fact that if $f(0) = 0$ and $f$ is smooth then
@@ -3583,8 +3593,9 @@ and $\int_0^1 f'(ts) \,dt$ is a smooth function of $s$.
 \end{exercise}
 
 \begin{exercise}
-Show that $T_pM$ is independent of which defining function we take.  That is
-prove that if $\tilde{r}$ is another defining function for $M$ at $p$, then
+Show that $T_pM$ is independent of which defining function we take.  That
+is,
+prove that if $r$ and $\tilde{r}$ are defining functions for $M$ at $p$, then
 $\sum a_j \frac{\partial r}{\partial x_j} \Big|_p = 0$
 if and only if
 $\sum a_j \frac{\partial \tilde{r}}{\partial x_j} \Big|_p = 0$.
@@ -3605,7 +3616,8 @@ natural identification $\R^n \times \R^n \cong T\R^n$, that is,
 \sum_{j=1}^n a_j \frac{\partial}{\partial x_j} \Big|_p \in T\R^n .
 \end{equation*}
 The topology and smooth structure on $T\R^n$ comes from this identification.
-The wording ``bundle'' comes from the natural projection $\pi \colon T\R^n
+The wording ``bundle'' (a bundle of fibers)
+comes from the natural projection $\pi \colon T\R^n
 \to \R^n$, where fibers are $\pi^{-1}(p) = T_p\R^n$.
 
 A smooth %$C^k$-smooth
@@ -3624,7 +3636,7 @@ Usually we write $X_p$ rather than $X(p)$.
 To be more fancy we could
 say $X$ is a \emph{\myindex{section}} of $T \R^n$.
 
-Similarly 
+Similarly,
 \begin{equation*}
 TM = \bigcup_{p \in M} T_p M
 \end{equation*}
@@ -4028,10 +4040,11 @@ T^{(0,1)} \C^n ,
 \end{equation*}
 by taking the disjoint unions, and we have vector fields in these bundles.
 
-Given a real smooth hypersurface $M \subset \C^n$ we can take
+Given a real smooth hypersurface $M \subset \C^n$ let us describe
 $\C \otimes T_pM$.  Let $r$ be a real-valued defining function of
 $M$ at $p$.  A vector $X_p \in \C \otimes T_pM$
-is a vector in $\C \otimes T_p\C^n$ such that $X_p r = 0$ at $p$.  That is,
+is a vector in $\C \otimes T_p\C^n$ such that at $p$ we have
+$X_p r = 0$.  That is,
 write
 \begin{equation*}
 X_p = \sum_{j=1}^n
@@ -4054,9 +4067,9 @@ a_j
 b_j
 \frac{\partial r}{\partial \bar{z}_j} \Big|_p
 \right)
-= 0 ,
+= 0 .
 \end{equation*}
-for a defining function $r$ of $M$ at $p$.
+%for a defining function $r$ of $M$ at $p$.
 Therefore, $\C \otimes T_p M$ is a $2n-1$ dimensional complex vector space.
 We decompose 
 $\C \otimes T_p M$ as
@@ -4073,12 +4086,12 @@ T_p^{(0,1)} M \overset{\text{def}}{=} \bigl( \C \otimes T_pM \bigr) \cap
 \bigl( T_p^{(0,1)} \C^n \bigr) .
 \end{equation*}
 The $B_p$ is just the ``left-over'' and we really need to
-include it otherwise even the dimensions will not work out.
+include it otherwise the dimensions cannot possibly work out.
 
 Do make sure that you understand what all the objects are.  The space
 $T_pM$ is a real vector space; $\C \otimes T_pM$, $T_p^{(1,0)}M$,
-$T_p^{(0,1)} M$, and $B_p$ are complex vector spaces.  Before we have that
-these are all vector bundles, we must have that their dimensions do not vary
+$T_p^{(0,1)} M$, and $B_p$ are complex vector spaces.  To see that
+these are all vector bundles, we must show that their dimensions do not vary
 from point to point.  The easiest way to see this fact is to write down
 convenient local coordinates.  First, let us see what a biholomorphic map
 does to the holomorphic and antiholomorphic vectors.  A biholomorphic map
@@ -4092,8 +4105,8 @@ and $U \subset \C^n$ is a neighborhood of $p$.
 Let $f \colon U \to \C^n$ be a biholomorphic map.  Let $D_\C f(p)$ be
 the complexified real derivative as before.  Then
 \begin{equation*}
-D_\C f(p)\bigl(T_p^{(1,0)}M\bigr) = T_{f(p)}^{(1,0)}f(M), \qquad
-D_\C f(p)\bigl(T_p^{(0,1)}M\bigr) = T_{f(p)}^{(0,1)}f(M).
+D_\C f(p)\Bigl(T_p^{(1,0)}M\Bigr) = T_{f(p)}^{(1,0)}f(M), \qquad
+D_\C f(p)\Bigl(T_p^{(0,1)}M\Bigr) = T_{f(p)}^{(0,1)}f(M).
 \end{equation*}
 That is, the spaces are isomorphic as complex vector spaces.
 \end{prop}
@@ -4102,8 +4115,8 @@ That is, the spaces are isomorphic as complex vector spaces.
 Without loss of generality assume that $M \subset U$.
 The proof is simply the application of \propref{prop:holvectmap}.  We have
 \begin{multline*}
-D_\C f(p)\bigl(T_p^{(1,0)}\C^n\bigr) = T_{f(p)}^{(1,0)}\C^n, \quad 
-D_\C f(p)\bigl(T_p^{(0,1)}\C^n\bigr) = T_{f(p)}^{(0,1)}\C^n, \quad
+D_\C f(p)\Bigl(T_p^{(1,0)}\C^n\Bigr) = T_{f(p)}^{(1,0)}\C^n, \quad 
+D_\C f(p)\Bigl(T_p^{(0,1)}\C^n\Bigr) = T_{f(p)}^{(0,1)}\C^n, \quad
 \text{and} \\
 D_\C f(p)\bigl(\C \otimes T_pM\bigr) =\C \otimes  T_{f(p)}f(M) .
 \end{multline*}
@@ -4216,6 +4229,8 @@ is called the \emph{\myindex{Levi-form}} at $p$.  So $U$ is pseudoconvex
 (resp.\ strongly pseudoconvex) at
 $p \in \partial U$ if the Levi-form is positive semidefinite
 (resp.\ positive definite) at $p$.
+The Levi-form can be defined for any real hypersurface $M$,
+although one has to decide which side of $M$ is ``the inside.''
 \end{defn}
 
 The matrix
@@ -4229,6 +4244,11 @@ So, $U$ is pseudoconvex at $p \in \partial U$ if
 the complex Hessian
 of $r$ at $p$ as a sesquilinear form is positive (semi)definite
 when restricted to tangent vectors in $T^{(1,0)}_p \partial U$.
+For example, the unit ball $\bB_n$ is
+strongly pseudoconvex as can be seen by
+computing the 
+Levi-form directly from $r(z,\bar{z}) = \snorm{z}^2-1$, that is,
+the complex Hessian of $r$ is the identity matrix.
 
 Notice that the complex Hessian is not the full Hessian.
 Let us write down the full Hessian, using the
@@ -4338,6 +4358,10 @@ transpose of $A$.
 In other words, $A$
 transforms the complex Hessian $L$ as $A^* L A$, that is, by $*$-congruence.
 
+While the Levi-form depends on the defining function,
+the inertia (the number of positive, negative, and zero
+eigenvalues) is independent of $r$ (see exercise below).
+
 \begin{exbox}
 \begin{exercise}
 If $r$ is real-valued, then the complex Hessian of $r$ is Hermitian, that
@@ -4345,7 +4369,11 @@ is, the matrix is equal to its conjugate transpose.
 \end{exercise}
 
 \begin{exercise}
-Show that pseudoconvexity is not dependent on the defining function.
+Show that pseudoconvexity of $U$ at $p \in \partial U$ is not dependent
+on the defining function.
+(In fact the inertia
+%, the number of positive negative and zero eigenvalues,
+of the Levi-form does not depend on $r$.)
 \end{exercise}
 
 \begin{exercise}
@@ -4360,8 +4388,6 @@ pseudoconvex at all nearby points.
 \end{exercise}
 \end{exbox}
 
-In particular, the exercise says that the unit ball $\bB_n$ is
-strongly pseudoconvex as it is strongly convex.
 We are generally interested what happens under a holomorphic change of
 variables, that is, a biholomorphic mapping.  And as far as pseudoconvexity
 is concerned we are interested in local changes of coordinates as
@@ -4475,12 +4501,12 @@ on the sets described above.
 \end{exercise}
 \end{exbox}
 
-Let us compute what happens to the Hessian of $r$ under a biholomorphic change
+Let us see how the Hessian of $r$ changes under a biholomorphic change
 of coordinates.  That is, let $f \colon U \to V$ be a biholomorphic map
 between two domains in $\C^n$, and let $r \colon V \to \R$ be a smooth
 function with nonvanishing derivative.  Let us compute the Hessian of
-$r \circ f$.  Let us compute first what happens to the non-mixed derivatives.
-As we have to apply chain rule twice let us write the
+$r \circ f$.  We first compute what happens to the non-mixed derivatives.
+As we have to apply chain rule twice we write the
 derivatives as functions.  That is, $r$ is a function of $z$ and $\bar{z}$,
 $f$ is a function of $z$, and $\bar{f}$ is a function of $\bar{z}$.
 
@@ -6371,7 +6397,7 @@ define the
 \begin{equation*}
 \widehat{K}_U \overset{\text{def}}{=} \Bigl\{ z \in U : \sabs{f(z)} \leq
 \sup_{w\in K} \sabs{f(w)}
-\text{ for all $f \in \sO(U)$ } \Bigr\} .
+\text{ for all $f \in \sO(U)$}  \Bigr\} .
 \end{equation*}
 The domain $U$ is \emph{\myindex{holomorphically convex}} if whenever
 $K \subset \subset U$, then $\widehat{K}_U \subset \subset U$.
@@ -6398,8 +6424,8 @@ See \exerciseref{exercise:modholplush}.
 
 \begin{exercise}
 Compute the hull
-$\widehat{K}_{\D^n}$ of the set $K = \{ z \in \D^n : \sabs{z_j} =
-\lambda_j \text{ for } j=1,\ldots,n \}$ where $0 \leq \lambda_j < 1$.
+$\widehat{K}_{\D^n}$ of the set $K = \bigl\{ z \in \D^n : \sabs{z_j} =
+\lambda_j \text{ for } j=1,\ldots,n \bigr\}$, where $0 \leq \lambda_j < 1$.
 Prove that the unit polydisc is holomorphically convex.
 \end{exercise}
 
@@ -6414,7 +6440,8 @@ Prove that the Hartogs figure is not holomorphically convex.
 
 \begin{exercise}
 Let $U \subset \C^n$ be a domain and $f \in \sO(U)$.  Show that if
-$U$ is holomorphically convex then $\widetilde{U} = U \setminus \{ z : f(z) = 0 \}$
+$U$ is holomorphically convex then
+$\widetilde{U} = \{ z \in U : f(z) \not= 0 \}$
 is holomorphically convex.  
 Hint: first see \exerciseref{exercise:connectedcomplement}.
 \end{exercise}
@@ -9203,7 +9230,7 @@ Define the \emph{\myindex{Bergman kernel}} for $U$ as
 K_U(z,\bar{\zeta}) \overset{\text{def}}{=} \overline{k_z(\zeta)} .
 \end{equation*}
 The function $K_U$ is defined as $(z,\bar{\zeta})$ vary over
-$U \times U^*$, where $U^* = \{ \zeta : \bar{\zeta} \in U \}$.
+$U \times U^*$, where $U^* = \{ \zeta \in \C^n : \bar{\zeta} \in U \}$.
 
 Then for all $f \in A^2(U)$ we have
 \begin{equation} \label{eq:repropropBergman}
@@ -9788,10 +9815,10 @@ clear that
 $u$ and $P$ are unique if they exist (as holomorphic functions).
 
 We will prove that $c_j(z')$ are holomorphic.  The functions $c_j$ are
-the elementary symmetric functions of the $\alpha_j$'s.  It is a standard
+the elementary symmetric functions of the $\alpha_j$s.  It is a standard
 %(and easy)
 theorem in algebra that the elementary symmetric functions are
-polynomials in the so-called power sum functions in the $\alpha_j$'s:
+polynomials in the so-called power sum functions in the $\alpha_j$s:
 \begin{equation*}
 s_m(z') = \sum_{j=1}^k \alpha_j{(z')}^m .
 \end{equation*}
@@ -10235,9 +10262,10 @@ we replace ``near each point $p \in U$'' with ``near each point $p \in
 X$.''  We get a slightly different concept, and $X$ is said to be a
 \emph{\myindex{local variety}}.  A local variety $X$ is a subvariety of
 some neighborhood of $X$, but it is not necessarily closed in $U$.  As a
-simple example, the set $X = \{ z \in \C^2 : z_1 = 0, \abs{z_2} < 1 \}$ is a
+simple example, the set
+$X = \bigl\{ z \in \C^2 : z_1 = 0, \abs{z_2} < 1 \bigr\}$ is a
 local variety, but not a subvariety of $\C^2$.  On the other hand $X$
-is a subvariety of the unit ball $\{ z : \norm{z} < 1 \}$.
+is a subvariety of the unit ball $\bigl\{ z \in \C^2 : \norm{z} < 1 \bigr\}$.
 
 The family $\sF$ of functions can always be taken to be finite by the
 Noetherian property of $\sO_p$.
