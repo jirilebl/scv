@@ -5949,8 +5949,8 @@ $\Rightarrow$
 For $c \in \C^n$ with $\snorm{c}=1$, let us define
 \begin{equation*}
 \rho_c(z) =
-\sup \{ \lambda > 0 : z+ \lambda t c \in U \text{ for all $\sabs{t} <
-1$} \} .
+\sup \bigl\{ \lambda > 0 :
+z+ \lambda t c \in U \text{ for all $\sabs{t} < 1$} \bigr\} .
 \end{equation*}
 So $\rho_c(z)$ is the radius of the largest affine disc centered at $z$
 in the direction $c$ that still lies in $U$.
@@ -6111,8 +6111,8 @@ $\epsilon > 0$ such that $- \log \, \operatorname{dist}(z, \partial U)$
 is plurisubharmonic if $\operatorname{dist}(z, \partial U) < 2\epsilon$.
 The function
 \begin{equation*}
-\varphi(z) = \max \{
-- \log \, \operatorname{dist}(z, \partial U) , - \log \epsilon \} 
+\varphi(z) = \max \bigl\{
+- \log \, \operatorname{dist}(z, \partial U) , - \log \epsilon \bigr\} 
 \end{equation*}
 is a continuous plurisubharmonic exhaustion function.  The proof for
 unbounded $U$ requires some function of $\snorm{z}^2$ rather than a constant
@@ -6152,7 +6152,7 @@ by
 \Im z_n > - \sabs{z_1}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{z_j}^2 + O(3) .
 \end{equation*}
 For some small fixed $\lambda > 0$, the
-analytic discs defined by $\varphi(\xi) = (\lambda \xi, 0, \cdots, 0, is)$
+analytic discs defined by $\xi \mapsto (\lambda \xi, 0, \cdots, 0, is)$
 are in $U$ for all small enough $s > 0$.  As the origin
 is in their limit set,
 %we found a family of analytic discs in $U$
@@ -6778,8 +6778,8 @@ $f=g$ on $D \cap U$.  Then $f=g$ on all of $U$.
 The set $D$ is sometimes called the \emph{\myindex{diagonal}}.
 
 \begin{proof}
-Again assume without loss of generality $g=0$.
-Whenever $(z,\bar{z}) \in U$ we have $f(z,\bar{z}) = 0$, that is really
+Again assume without loss of generality that $g=0$.
+Whenever $(z,\bar{z}) \in U$, we have $f(z,\bar{z}) = 0$, which is really
 $f$ composed with the map that takes $z$ to $(z,\bar{z})$.  Using the chain rule
 \begin{equation*}
 0 =
@@ -6881,7 +6881,7 @@ identities\footnote{Such as $4 \linnprod{z}{w} =
 recover $A$ and therefore the sesquilinear form $\linnprod{Az}{w}$ for
 $z,w\in \C^n$, by simply knowing the values of
 \begin{equation*}
-\linnprod{Az}{z} = z^*Az = \sum_{j,k=1}^n a_{jk} \bar{z}_j z_k 
+\linnprod{Az}{z} = z^*Az = \sum_{j,k=1}^n a_{jk} \, \bar{z}_j z_k 
 \end{equation*}
 for all $z \in \C^n$.  In fact, under the hood \propref{prop:complexificationpt2} is
 polarization in an infinite
@@ -6904,7 +6904,8 @@ e^{-1/x^2} & \text{if $x > 0$,} \\
 \end{cases}
 \end{equation*}
 The function
-$f \colon \R \to \R$ is $C^\infty$, $f^{(k)}(0) = 0$ for all $k$, and so its Taylor series at the origin does
+$f \colon \R \to \R$ is $C^\infty$ and $f^{(k)}(0) = 0$ for all $k$.
+So the Taylor series of $f$ at the origin does
 not converge to $f$ in any neighborhood of the origin.  It converges to the
 zero function but not to $f$.
 \end{example}
@@ -6925,7 +6926,7 @@ y = \varphi(x) ,
 where $\varphi$ is real-analytic.
 \end{defn}
 
-Compare this definition to \defnref{def:hypersurface}.  In fact we could
+Compare this definition to \defnref{def:hypersurface}.  In fact, we could
 define a real-analytic hypersurface as in 
 \defnref{def:hypersurface} and then prove an analogue of
 \lemmaref{lemma:realgraphcoords} to show that this would be identical to the
@@ -6988,7 +6989,7 @@ $z_0$ whose real part is $\varphi$.
 \section{CR functions}
 
 We first need to know what it means for a function $f \colon X \to \C$
-to be smooth if $X$ is not an open set, for example a hypersurface.
+to be smooth if $X$ is not an open set, for example if $X$ is a hypersurface.
 
 \begin{defn}
 Let $X \subset \R^n$ be a set.
