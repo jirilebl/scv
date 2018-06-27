@@ -31,6 +31,7 @@
 %\addtolength{\evensidemargin}{-0.2in}
 
 %PRINT (USE FOR PRINT)
+%FIXME: DON'T USE THIS, BETTER LEAVE LARGER MARGINS FOR NOW
 %Now cut page size a bit.  I'll run it through ghostcript anyway
 %to convert to the right size, but this is good for crown quatro
 %conversion, don't use for the full letter size versions
@@ -309,7 +310,7 @@
 Ji{\v r}\'i Lebl\\[3ex]} 
 \today
 \\
-(version 2.4)
+(version 2.3)
 \end{minipage}}
 
 %\addtolength{\textwidth}{\centeroffset}
@@ -327,8 +328,9 @@ Typeset in \LaTeX.
 \bigskip
 
 \noindent
-Copyright \copyright 2014--2017 Ji{\v r}\'i Lebl
+Copyright \copyright 2014--2018 Ji{\v r}\'i Lebl
 
+%PRINT
 %\noindent
 %ISBN 978-1-365-09557-3
 
@@ -491,7 +493,7 @@ analysis.
 Let us start with polynomials.  In one variable, a polynomial in $z$ is
 an expression of the form
 \begin{equation*}
-P(z) = \sum_{j=0}^d c_j z^j ,
+P(z) = \sum_{j=0}^d c_j \, z^j ,
 \end{equation*}
 where $c_j \in \C$.  The number $d$ is called the
 \emph{degree}\index{degree of a polynomial}
@@ -501,16 +503,16 @@ $P(z)$, so we have a function $P \colon \C \to \C$.
 
 We try to write
 \begin{equation*}
-f(z) = \sum_{j=0}^\infty c_j z^j
+f(z) = \sum_{j=0}^\infty c_j \, z^j
 \end{equation*}
 and all is very fine, until we wish to know what $f(z)$ is for some number
 $z \in \C$.
 What we usually mean is
 \begin{equation*}
-\sum_{j=0}^\infty c_j z^j
+\sum_{j=0}^\infty c_j \, z^j
 =
 \lim_{d\to\infty}
-\sum_{j=0}^d c_j z^j .
+\sum_{j=0}^d c_j \, z^j .
 \end{equation*}
 As long as the limit exists, we have a function.  You know all
 this; it is your one-variable complex analysis.  We usually
