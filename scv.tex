@@ -3326,8 +3326,9 @@ Let us state a simple but useful case of the so-called
 \emph{\myindex{Hartogs phenomenon}}.
 
 \begin{cor}
-Let $U \subset \C^n$, $n \geq 2$, be a domain and $p \in U$.  Then every $f \in \sO(U
-\setminus \{ p \} )$ extends holomorphically to $U$.
+Let $U \subset \C^n$, $n \geq 2$, be a domain and $p \in U$.
+Then every $f \in \sO(U \setminus \{ p \} )$
+extends holomorphically to $U$.
 %In particular, holomorphic functions
 %in several variables have no isolated zeros.
 \end{cor}
@@ -3384,11 +3385,12 @@ the shell
 for any $\epsilon > 0$ automatically
 extends to a holomorphic function of $\bB_n$.  We need $n > 1$.
 The extension result decisively does not work in one dimension; for
-example take $1/z$.  Notice that if $n \geq 2$, then if $f \in \sO(\bB_n)$
+example take $\nicefrac{1}{z}$.
+Notice that if $n \geq 2$, then if $f \in \sO(\bB_n)$
 the set of its zeros must 
 ``touch the boundary'' or be empty.  If the set of zeros was in fact
 compact in $\bB_n$, then we could try to
-extend the function $1/f$.
+extend the function $\nicefrac{1}{f}$.
 
 \begin{exbox}
 \begin{exercise}[\myindex{Hartogs triangle}]\label{exercise:hartogstriangle}
@@ -3505,7 +3507,7 @@ if at each point
 $p \in M$, there exists a $k$-times continuously
 differentiable function $r \colon V \to
 \R$, defined in a neighborhood $V$ of $p$ with nonvanishing derivative
-such that $M \cap V = \{ x \in V : r(x) = 0 \}$.  The function $r$ is
+such that $M \cap V = \bigl\{ x \in V : r(x) = 0 \bigr\}$.  The function $r$ is
 called the \emph{\myindex{defining function}} (at $p$).
 
 A domain $U$ with
@@ -3784,7 +3786,8 @@ strongly convex at all points except the origin, where it is just convex
 \end{exbox}
 
 For computations it is often useful to use a more convenient
-defining function.
+defining function.  We say a smooth function is $O(\ell)$ at a point $p$,
+if all its derivatives of order $0, 1, \ldots,  \ell-1$ vanish at $p$.
 
 \begin{lemma} \label{lemma:realgraphcoords}
 Suppose $M \subset \R^n$ is a smooth hypersurface, %$C^k$-smooth hypersurface, $k \geq 1$,
@@ -4134,7 +4137,7 @@ applying a unitary matrix are biholomorphic changes of coordinates.
 \begin{prop}
 Suppose $M \subset \C^n$ is a smooth real hypersurface, $p \in M$.
 After a translation and rotation via a unitary
-matrix, $p=0$ and near the origin
+matrix, $p=0$, and near the origin
 $M$ is written in variables $(z,w) \in \C^{n-1}
 \times \C$ as
 \begin{equation*}
@@ -4965,8 +4968,7 @@ near $p$, $U$ is given by
 \Im w > -\sabs{z_1}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{z_j}^2 +
 E(z_1,z',\bar{z}_1,\bar{z}',\Re w) ,
 \end{equation*}
-where $\epsilon_j = -1,0,1$, $E$ is $O(3)$, and $z' =
-(z_2,\ldots,z_{n-1})$.
+where $z' = (z_2,\ldots,z_{n-1})$, $\epsilon_j = -1,0,1$, and $E$ is $O(3)$.
 We embed an analytic disc via
 $\xi \overset{\varphi}{\mapsto} (\lambda \xi, 0, 0, \ldots, 0)$ for some small $\lambda > 0$.
 %That is we can
@@ -8039,8 +8041,9 @@ $\Omega$ of the origin as
 \Im w = \sabs{z_1}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{z_j}^2 +
 E(z_1,z',\bar{z}_1,\bar{z}',\Re w) ,
 \end{equation*}
-where $\epsilon_j = -1,0,1$, $E$ is $O(3)$, and $z' =
-(z_2,\ldots,z_{n-1})$.  Let $\Omega_-$ be given by
+where $z' = (z_2,\ldots,z_{n-1})$, $\epsilon_j = -1,0,1$,
+and $E$ is $O(3)$.
+Let $\Omega_-$ be given by
 \begin{equation*}
 0 > r = \sabs{z_1}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{z_j}^2 +
 E(z_1,z',\bar{z}_1,\bar{z}',\Re w) - \Im w .
