@@ -698,7 +698,7 @@ dimensions).  You can look forward to
 the Cauchy--Pompeiu integral formula.
 
 As a differential form $dz = dx + i dy$.  If you are uneasy
-about differential forms you probably defined this integral using
+about differential forms, you probably defined this integral using
 the Riemann--Stieltjes integral in your one-variable class.
 Let us write down the formula in terms of the standard Riemann integral
 in a special case.  Let
@@ -726,7 +726,7 @@ dt .
 %It is useful to keep this in mind.
 If you are not completely comfortable
 with
-path or surface integrals try to think about how you would parametrize the path and
+path or surface integrals, try to think about how you would parametrize the path and
 write the integral as an integral any calculus student would recognize.
 
 I venture a guess that 90\% of what you learned in a one-variable complex analysis
@@ -977,7 +977,7 @@ and $\rho$ the
 or simply the
 \emph{radius}\index{radius of a polydisc}
 of the polydisc $\Delta_\rho(a)$.
-If $\rho > 0$ is a number then
+If $\rho > 0$ is a number, then
 \begin{equation*}
 \Delta_\rho(a)  \overset{\text{def}}{=}
 \bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho \bigr\} .
@@ -1177,15 +1177,15 @@ can then be integrated on a so-called $k$-chain, for example a
 $k$-dimensional surface.  The wedge product takes care of the orientation.
 
 At this point we need to talk about orientation in $\C^n$.  There are really two
-natural real-linear isomorphisms of $\C^n$ and $\R^{2n}$.  That is we
+natural real-linear isomorphisms of $\C^n$ and $\R^{2n}$.  That is, we
 identify $z = x+iy$ as
 \begin{equation*}
 (x,y) = (x_1,\ldots,x_n,y_1,\ldots,y_n) \qquad
 \text{or} \qquad
 (x_1,y_1,x_2,y_2,\ldots,x_n,y_n) .
 \end{equation*}
-If we took the natural orientation of $\R^{2n}$,
-we can possibly obtain two opposite orientations (if $n$ is even).
+If we take the natural orientation of $\R^{2n}$,
+it is possible we obtain (if $n$ is even) two opposite orientations on $\C^n$.
 The one we take as the natural orientation of $\C^n$ (in this book)
 corresponds to
 the second ordering above, that
@@ -1387,7 +1387,7 @@ and therefore all the powers are nonnegative.
 
 To begin, we need the \emph{\myindex{geometric series in several variables}}.
 If 
-$z \in \D^n$ (unit polydisc) then
+$z \in \D^n$ (unit polydisc), then
 \begin{equation*}
 \begin{split}
 \frac{1}{1-z} & =
@@ -2316,11 +2316,14 @@ f(a)$ of a smooth function is positive, then the function preserves
 orientation.  In particular, holomorphic maps preserve orientation.
 
 \begin{proof}
-The statement is simply about matrices.  We have a complex $n \times n$
-matrix $A$, that we rewrite as a real $2n \times 2n$ matrix $B$ by using the
-identity $z=x+iy$.  If we change basis from $(x,y)$ to $(z,\bar{z})$ that is
-$(x+iy,x-iy)$, we are really just changing a basis via a matrix $M$ as
-$M^{-1} B M$.  Then we notice
+The statement is simply about matrices.
+We rewrite the complex $n \times n$
+matrix $A$ as a real $2n \times 2n$ matrix $B$ using the
+identity $z=x+iy$.
+When we change basis from $(x,y)$ to $(z,\bar{z})$,
+that is
+$(x+iy,x-iy)$, then we are really just changing the basis via a matrix $M$ as
+$M^{-1} B M$.  We notice
 \begin{equation*}
 M^{-1} B M =
 \begin{bmatrix}
@@ -2407,7 +2410,8 @@ function, then clearly $f$ is proper,
 but not every proper map is invertible.  For
 example, the map $f \colon \D \to \D$ given by $f(z) = z^2$ is proper, but
 not invertible.  The codomain of $f$ is important.  If we 
-replace $f$ by $g \colon \D \to \C$, still given by $g(z)=z^2$, the map is
+replace $f$ by $g \colon \D \to \C$, still given by $g(z)=z^2$,
+then the map is
 no longer proper.  Let us state the main result of this section.
 
 \begin{thm}[Rothstein 1935] \label{thm:Rothstein}
@@ -2479,7 +2483,7 @@ unitary matrix) we assume that
 $g(0) = (1,0,0,\ldots,0)$.  We look at the first component
 and notice that $g_1(0) = 1$.  If a sum of
 positive numbers is less than or equal to 1,
-they all are, and hence $\sabs{g_1(z)} \leq 1$.  By maximum principle
+then they all are, and hence $\sabs{g_1(z)} \leq 1$.  By maximum principle
 we have that $g_1(z) = 1$ for all $z \in \D$.  But then $g_j(z) = 0$
 for all $j=2,\ldots,n$ and all $z \in \D$.  Therefore $g$ is constant and
 thus not an analytic disc.
@@ -2870,9 +2874,10 @@ $\varphi \colon \C \to \C^n$ defined by
 $\varphi(\xi) = a\xi + b$, for two vectors $a,b \in \C^n$.
 If $L$ goes through a point $p \in N$, that is say $b=p$,
 then $g \circ \varphi$ is
-holomorphic function of one variable.  It either is identically zero, or
+holomorphic function of one variable.  The function $g \circ \varphi$
+is either identically zero, or
 the zero at $\xi=0$ is isolated.
-If it would be identically zero for all lines going through
+If $g \circ \varphi$ would be identically zero for all lines going through
 $p$, then $g$ would be identically zero in a neighborhood of $p$ and hence
 everywhere in $U$.  So there is one line $L$ such that $L \cap N$ has $p$
 as an isolated point.
@@ -3046,7 +3051,7 @@ Write the zero set of $J_f$ near $q$ as
 z_n = g(z_1,\ldots,z_{n-1})
 \end{equation*}
 for some holomorphic $g$.
-If we prove the theorem near $q$ we are done.  So without loss of generality
+If we prove the theorem near $q$, we are done.  So without loss of generality
 we can assume that $q=0$ and that $U$ is a
 small neighborhood of $0$.  The map
 \begin{equation*}
@@ -3080,13 +3085,13 @@ is one-to-one holomorphic mapping of a neighborhood of the origin in
 $\C^{n-1}$ to $\C^{n-1}$.  By induction hypothesis, the Jacobian determinant of
 $\varphi$ is nowhere zero.
 
-If we differentiate $f \circ G^{-1}$ we notice 
-$D(f \circ G^{-1}) = Df \circ D(G^{-1})$
-so at the origin
+If we differentiate $f \circ G^{-1}$, we notice 
+$D(f \circ G^{-1}) = Df \circ D(G^{-1})$.
+So at the origin
 \begin{equation*}
 \det D(f \circ G^{-1}) = \bigl(\det Df\bigr) \bigl(\det D(G^{-1})\bigr) = 0.
 \end{equation*}
-We obtain a contradiction as at the origin
+We obtain a contradiction, as at the origin
 \begin{equation*}
 \det 
 D(f \circ G^{-1})
@@ -3373,7 +3378,7 @@ then $t x + (1-t)y \in K$.} subset:
 Suppose $U \subset \C^n$, $n \geq 2$, be a domain and $K \subset \subset U$
 is a compact geometrically
 convex subset.
-If $f \in \sO(U \setminus K)$
+If $f \in \sO(U \setminus K)$,
 then $f$ extends to be holomorphic in $U$.
 Hint: Find a nice point on $\partial K$ and try extending a little bit.
 Then make sure your extension is single-valued.
@@ -3594,8 +3599,8 @@ exercises.
 
 \begin{exbox}
 \begin{exercise}
-If $r$ and $\tilde{r}$ are two smooth defining functions for $M$ at $p$,
-show that there exists a nonvanishing smooth function $g$ such that
+Let $r$ and $\tilde{r}$ be two smooth defining functions for $M$ at $p$.
+Show that there exists a nonvanishing smooth function $g$ such that
 $\tilde{r} = g r$ (in a neighborhood of $p$).
 Hint: First assume $r=x_n$, so that $M$ is the set $x_n = 0$,
 and find a $g$ such that $\tilde{r} = x_n g$.  Then think
@@ -3711,7 +3716,7 @@ one defining function.
 \begin{exbox}
 \begin{exercise}
 Show that the definition of convexity is independent of the defining
-function.  Hint: If $\tilde{r}$ is another defining function near $p$
+function.  Hint: If $\tilde{r}$ is another defining function near $p$,
 then there is a function $g > 0$ such that $\tilde{r} = g r$.
 \end{exercise}
 
@@ -4908,7 +4913,7 @@ That is, $q$ is a sesquilinear form.  Since $q$ is real-valued the matrix
 $C = [ c_{jk} ]$ must be Hermitian.  In linear algebra notation,
 $q(z,\bar{z}) = z^*Cz$, where the $*$ denotes the conjugate transpose,
 and we think of $z$ as a column vector.
-If $T$ is a linear transformation on the $z$ variables we
+If $T$ is a linear transformation on the $z$ variables, we
 obtain ${(Tz)}^*CTz = z^* ( T^*CT) z$.  Thus, we normalize $C$
 up to $*$-congruence.  A Hermitian matrix
 is $*$-congruent to a diagonal matrix with only $1$s, $-1$s, and $0$s on the
@@ -4954,8 +4959,10 @@ the harder direction is to show that a pseudoconvex domain is a domain of
 holomorphy.
 
 \begin{thm}[Tomato can principle\index{tomato can principle}] \label{thm:tomatocan}
-If $U \subset \C^n$ is a smoothly bounded domain and at some point $p \in
-\partial U$, the Levi-form has a negative eigenvalue, then $U$ is not
+Suppose
+$U \subset \C^n$ is a smoothly bounded domain and at some point $p \in
+\partial U$ the Levi-form has a negative eigenvalue.
+Then $U$ is not
 a domain of holomorphy.  In particular, every holomorphic function on $U$
 extends to a neighborhood of $p$.
 \end{thm}
@@ -5195,7 +5202,7 @@ then for $z \in U$ we have
 \begin{prop}[Maximum principle]
 \index{maximum principle!subharmonic functions}
 Suppose $U \subset \C$ is a domain and $f \colon U \to \R \cup \{ -\infty \}$
-is subharmonic.  If $f$ attains a maximum in $U$ then $f$ is constant.
+is subharmonic.  If $f$ attains a maximum in $U$, then $f$ is constant.
 \end{prop}
 
 \begin{proof}
@@ -5296,7 +5303,7 @@ is a family of subharmonic functions.  Let
 \begin{equation*}
 \varphi(z) = \sup_\alpha f_\alpha(z) .
 \end{equation*}
-If the family is finite then $\varphi$ is subharmonic.
+If the family is finite, then $\varphi$ is subharmonic.
 If the family is infinite and we assume that $\varphi(z) \not= \infty$ for
 all $z$ and that $\varphi$
 is upper-semicontinuous, then $\varphi$ is subharmonic.
@@ -5738,7 +5745,7 @@ Then $f \in \sO(U)$.
 First assume $n=1$.  As the theorem is local, it is
 enough to prove it for a small disc $\Delta$ such that $f$ is continuous
 on the closure $\overline{\Delta}$, let $\Delta'$ be the part of the disc
-where $f$ is nonzero as before.  If $\Delta'$ is empty then we are done as
+where $f$ is nonzero as before.  If $\Delta'$ is empty, then we are done as
 $f$ is just identically zero and hence holomorphic.
 
 %Let us first show $\overline{\Delta'} = \overline{\Delta}$. Suppose
@@ -5877,7 +5884,7 @@ $\bigcup_\alpha \Delta_\alpha \subset \subset U$ by convexity.
 \end{proof}
 
 Let us illustrate the failure of the continuity principle.  If the domain
-is not convex with respect to plurisubharmonic functions then you could have
+is not convex with respect to plurisubharmonic functions, then you could have
 discs (denoted by straight line segments) that approach the boundary as in
 the following picture.  In the diagram the boundaries of the discs are
 denoted by the dark dots at the end of the segments.
@@ -6000,7 +6007,7 @@ to saying that whenever $\sabs{t} < 1$ then
 (a+b\xi)+cte^{-f(\xi)} \in U .
 \end{equation*}
 This statement holds when $\xi \in \partial \Delta$.  If we prove that it also
-holds for $\xi \in \Delta$ then we are finished.
+holds for $\xi \in \Delta$, then we are finished.
 
 We think of $\varphi_t(\xi) = 
 (a+b\xi)+cte^{-f(\xi)}$ as a closed analytic disc with boundary inside
@@ -6120,7 +6127,7 @@ positive radius around every $p \in \partial U$, so we have a
 plurisubharmonic
 exhaustion function near the boundary.
 
-If $U$ is bounded then $\partial U$ is compact.  So there is some
+If $U$ is bounded, then $\partial U$ is compact.  So there is some
 $\epsilon > 0$ such that $- \log \, \operatorname{dist}(z, \partial U)$
 is plurisubharmonic if $\operatorname{dist}(z, \partial U) < 2\epsilon$.
 The function
@@ -6393,7 +6400,7 @@ distance away from $\partial U$ near $0$.
 
 We have a local continuous plurisubharmonic
 exhaustion function for $U$ near $p$.  If we intersect
-with a small ball $B$ centered at $p$ we get that $U \cap B$ is
+with a small ball $B$ centered at $p$, then we get that $U \cap B$ is
 Hartogs pseudoconvex.  This is true at all
 $p \in \partial U$, so $U$ is Hartogs pseudoconvex.
 \end{proof}
@@ -8164,8 +8171,8 @@ Write down an explicit formula for the extension $F$.
 \end{exercise}
 
 \begin{exercise}
-If $M \subset \C^3$ is defined by $\Im w = \sabs{z_1}^2-\sabs{z_2}^2 + O(3)$
-defines a smooth hypersurface and $f$ is a real-valued smooth CR function on $M$.  Show
+Suppose a smooth hypersurface $M \subset \C^3$ is defined by $\Im w = \sabs{z_1}^2-\sabs{z_2}^2 + O(3)$
+and $f$ is a real-valued smooth CR function on $M$.  Show
 that $\sabs{f}$ does not attain a maximum at the origin.
 \end{exercise}
 
@@ -8245,7 +8252,7 @@ d\zeta \wedge d\bar{\zeta}
 (- 2 i ) dx \wedge dy = (-2i) dA .
 \end{equation*}
 
-If $f$ is holomorphic the second term is zero and we
+If $f$ is holomorphic, then the second term is zero, and we
 obtain the standard Cauchy formula.
 
 \begin{exbox}
@@ -8678,12 +8685,12 @@ One of many consequences of the Hartogs phenomenon is
 that
 the zero set of a holomorphic function $f$ is never compact in
 dimension 2 or higher.  If it
-were $\frac{1}{f}$ would provide a contradiction, see also
+were compact, $\frac{1}{f}$ would provide a contradiction, see also
 \exerciseref{exercise:connectedcomplement}.
 
 \begin{cor}
 Suppose $U \subset \C^n$, $n \geq 2$, is a domain and $f \colon U \to \C$ is
-holomorphic.  If the zero set $f^{-1}(0)$ is not empty, it is not compact.
+holomorphic.  If the zero set $f^{-1}(0)$ is not empty, then it is not compact.
 \end{cor}
 
 We can also state a version of a theorem that is nowadays called
@@ -9898,8 +9905,8 @@ Show that elementary symmetric functions are polynomials in the power sums.
 
 The order of vanishing of $f$ at the origin is only a lower bound
 on the number $k$ in the theorem.  The order of vanishing for a certain
-variable may be larger than this lower bound.  If you however make a small
-linear change of coordinates you can ensure $k = \ord_0 f$.
+variable may be larger than this lower bound.  If you, however, make a small
+linear change of coordinates, you can ensure $k = \ord_0 f$.
 
 The Weierstrass preparation theorem is a generalization of
 the implicit function theorem.  When $k=1$ in the theorem, then we obtain
@@ -10209,7 +10216,7 @@ irreducible elements of $\sO_p$.
 \begin{proof}
 Again assume $p$ is the origin and induct on the dimension.
 The one dimensional statement is again
-an exercise.  If ${}_{n-1}\sO_0$ is a UFD then
+an exercise.  If ${}_{n-1}\sO_0$ is a UFD, then
 ${}_{n-1}\sO_0[z_n]$ is a UFD by the Gauss lemma.
 
 Take $f \in {}_n\sO_0$.  After perhaps a linear change of coordinates
@@ -10374,7 +10381,8 @@ point.  If there exists a (complex)
 affine change of coordinates (translation, rotation) such that near
 $p$ the set $X$ can be written as a graph of a holomorphic
 mapping $f \colon U' \subset \C^k \to
-\C^{n-k}$ (for some $k \in \N_0$) then $p$ is a \emph{\myindex{regular point}} (or
+\C^{n-k}$ (for some $k \in \N_0$),
+then $p$ is a \emph{\myindex{regular point}} (or
 \emph{\myindex{simple point}}) of $X$ and
 the \emph{dimension}\index{dimension at a regular point}
 of $X$ at $p$ is $k$ or $\dim_p X = k$.
