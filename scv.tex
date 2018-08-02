@@ -1957,7 +1957,7 @@ $U \subset \C^n$ and $V \subset \C^m$ are open sets and suppose
 $f \colon U \to V$, and $g \colon V \to \C$ are differentiable
 functions (mappings).  Write the variables as
 $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
-\subset \C^m$.  Then for any $j=1,\ldots,n$ we have
+\subset \C^m$.  Then for any $j=1,\ldots,n$, we have
 \begin{equation} \label{eq:chainrule}
 \frac{\partial}{\partial z_j} \left[ g \circ f \right]
 =
@@ -2171,7 +2171,7 @@ Then the composition $g \circ f$ is holomorphic.
 \begin{proof}
 The proof is almost trivial by chain rule.
 Again let $g$ be a function of $w \in V$ and $f$ be a function of $z \in U$.
-For any $j = 1,\ldots,n$ and any $p=1,\ldots,k$ we compute
+For any $j = 1,\ldots,n$ and any $p=1,\ldots,k$, we compute
 \begin{equation*}
 \frac{\partial}{\partial \bar{z}_j} \left[ g_p \circ f \right]
 =
@@ -2188,13 +2188,15 @@ For any $j = 1,\ldots,n$ and any $p=1,\ldots,k$ we compute
 \end{equation*}
 \end{proof}
 
-Let us also state the chain rule for holomorphic functions then.
-Again suppose 
+For holomorphic functions the chain rule simplifies, and formally looks
+like the familiar vector calculus rule.
+Suppose again
 $U \subset \C^n$ and $V \subset \C^m$ are open sets and 
 $f \colon U \to V$, and $g \colon V \to \C$ are holomorphic.
 And again let the variables be named
 $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
-\subset \C^m$.  In formula \eqref{eq:chainrule} for the $z_j$ derivative we notice that 
+\subset \C^m$.  In formula \eqref{eq:chainrule} for the $z_j$ derivative
+notice that 
 the $\bar{w}_j$ derivative of $g$ is zero and the $z_j$ derivative of
 $\bar{f}_\ell$ is also zero because $f$ and $g$ are holomorphic.
 Therefore for any $j=1,\ldots,n$,
@@ -2277,7 +2279,7 @@ Df(a) \overset{\text{def}}{=}
 \end{equation*}
 Sometimes the notation $f'(a) = Df(a)$ is used.
 
-Using the holomorphic chain rule, as in the theory of real functions we get
+Using the holomorphic chain rule, as in the theory of real functions, we get
 that the derivative of the composition is the composition of derivatives
 (multiplied as matrices).
 
@@ -2314,7 +2316,8 @@ the holomorphic Jacobian determinant or the standard real Jacobian
 determinant $\det D_\R f(a)$.  Recall from vector calculus that
 if the real Jacobian determinant $\det D_\R
 f(a)$ of a smooth function is positive, then the function preserves
-orientation.  In particular, holomorphic maps preserve orientation.
+orientation.  In particular, the proposition
+says that holomorphic maps preserve orientation.
 
 \begin{proof}
 The statement is simply about matrices.
