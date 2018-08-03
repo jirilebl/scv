@@ -969,7 +969,7 @@ define
 a \emph{\myindex{polydisc}}
 \begin{equation*}
 \Delta_\rho(a)  \overset{\text{def}}{=}
-\bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho_j \bigr\} .
+\bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho_j ~\text{for $j=1,\ldots,n$} \bigr\} .
 \end{equation*}
 We call $a$ the
 \emph{center}\index{center of a polydisc}
@@ -981,14 +981,14 @@ of the polydisc $\Delta_\rho(a)$.
 If $\rho > 0$ is a number, then
 \begin{equation*}
 \Delta_\rho(a)  \overset{\text{def}}{=}
-\bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho \bigr\} .
+\bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho ~\text{for $j=1,\ldots,n$} \bigr\} .
 \end{equation*}
 
 As there is the unit disc $\D$ in one variable, so is there
 the \emph{\myindex{unit polydisc}} in several variables:
 \begin{equation*}
 \D^n = \D \times \D \times \cdots \times \D = \Delta_1(0) = 
-\bigl\{ z \in \C^n : \sabs{z_j} < 1 \bigr\} .
+\bigl\{ z \in \C^n : \sabs{z_j} < 1 ~\text{for $j=1,\ldots,n$} \bigr\} .
 \end{equation*}
 \end{defn}
 
@@ -2369,7 +2369,8 @@ The mapping $f$ is said to be a
 %We will see later that the inverse being holomorphic is automatic as it is
 %in one variable, but we digress.
 
-One of the main questions in complex analysis is to classify domains up
+As function theory on two biholomorphic domains is the same,
+one of the main questions in complex analysis is to classify domains up
 to biholomorphic transformations.  In one variable, there is the rather
 striking theorem due to Riemann:
 
@@ -2385,9 +2386,9 @@ the disc only.
 There is simply no such theorem in several variables.
 We will show momentarily that the unit ball and the polydisc,
 \begin{equation*}
-\bB_n = \{ z \in \C^n : \snorm{z} < 1 \}
+\bB_n = \bigl\{ z \in \C^n : \snorm{z} < 1 \bigr\}
 \qquad \text{and} \qquad
-\D^n = \{ z \in \C^n : \sabs{z_j} < 1 \} ,
+\D^n = \bigl\{ z \in \C^n : \sabs{z_j} < 1 ~\text{for $j=1,\ldots,n$} \bigr\} ,
 \end{equation*}
 are \emph{not} equivalent.  Both are simply
 connected (have no holes), and they are the two most obvious generalizations
@@ -2988,7 +2989,7 @@ Points where $N$ is written as a graph of a holomorphic mapping are called
 since $N$ is a graph of a single holomorphic function, they are called
 regular points of (complex) dimension $n-1$, or (complex) codimension 1.
 The set of regular points is what is called an
-$n-1$ dimensional \emph{\myindex{complex submanifold}}.  It is also a real
+$(n-1)$-dimensional \emph{\myindex{complex submanifold}}.  It is also a real
 submanifold of real dimension $2n-2$.
 The points on an analytic set that are not regular are called
 \emph{singular points}\index{singular point}.
@@ -3298,7 +3299,7 @@ drawn as:}}
 Pick a $c \in (a,1)$.  Let
 \begin{equation*}
 \Gamma =
-\bigl\{ z \in \D^{m} : \sabs{z_j} = c \text{ for $j=1,\ldots,m$ } \bigr\}.
+\bigl\{ z \in \D^{m} : \sabs{z_j} = c ~\text{for $j=1,\ldots,m$ } \bigr\}.
 \end{equation*}
 That is, $\Gamma$ is the distinguished boundary of $c \D^m$,
 a polydisc centered at 0 of radius $c$ in $\C^m$.
@@ -3475,7 +3476,7 @@ simply
 use $f(z) = \frac{1}{z_2}$ as the function that cannot extend.
 Therefore $U_1$ and $U_2$ are very different as far as complex variables are
 concerned, yet they are the same set if we ignore the complex structure.
-They are both simply a 4 dimensional real vector space minus a 2 dimensional
+They are both simply a 4-dimensional real vector space minus a 2-dimensional
 real vector subspace.  That is, $U_1$ is defined by
 $\Im z_1 \not= 0$ and $\Im z_2 \not= 0$,
 while $U_2$ is defined by
@@ -3596,9 +3597,9 @@ to $M$ at $p$ if
 X_p r = 0, \qquad \text{or in other words} \qquad
 \sum_{j=1}^n a_j \frac{\partial r}{\partial x_j} \Big|_p = 0 .
 \end{equation*}
-The space of tangent vectors to $M$ is written as $T_p M$.  Notice that the
-space $T_pM$ is an $n-1$ dimensional real vector space.  Also notice that
-the definition is independent of the choice of $r$ by the next two
+The space of tangent vectors to $M$ is denoted by $T_p M$.  The
+space $T_pM$ is an $(n-1)$-dimensional real vector space.  
+The definition of $T_pM$ is independent of the choice of $r$ by the next two
 exercises.
 
 \begin{exbox}
@@ -3737,7 +3738,7 @@ Let us look at an example.  Let us prove that the unit disc in $\R^2$ is
 convex (actually strongly convex).  Let $x,y$ be our coordinates and then
 our defining function is $r(x,y) = x^2+y^2-1$.
 
-The tangent space to the circle is one dimensional, so we simply need to
+The tangent space to the circle is one-dimensional, so we simply need to
 find a single nonzero tangent vector at each point.
 Notice that $\nabla r = (2x,2y)$, so it is easy to check that
 %the tangent space at $p = (x,y)$ on the
@@ -3952,7 +3953,7 @@ $T_p\C^n = T_p\R^{2n}$.  We write
 \frac{\partial}{\partial y_n}\Big|_p \right\} .
 \end{equation*}
 That is, we simply replace all the real coefficients with complex ones.  
-The space $\C \otimes T_p\C^n$ is a $2n$ dimensional complex vector space.
+The space $\C \otimes T_p\C^n$ is a $2n$-dimensional complex vector space.
 Once
 we do that we notice that
 $\frac{\partial}{\partial z_j}\big|_p$, and
@@ -4011,9 +4012,9 @@ Then we naturally
 extend the derivative to $D_\C f(p) \colon \C \otimes T_p\C^n \to \C \otimes  T_{f(p)}
 \C^m$.  Then
 \begin{equation*}
-D_\C f(p)\bigl(T_p^{(1,0)} \C^n\bigr) \subset T_{f(p)}^{(1,0)} \C^m
+D_\C f(p)\Bigl(T_p^{(1,0)} \C^n\Bigr) \subset T_{f(p)}^{(1,0)} \C^m
 \qquad \text{and} \qquad
-D_\C f(p)\bigl(T_p^{(0,1)} \C^n\bigr) \subset T_{f(p)}^{(0,1)} \C^m .
+D_\C f(p)\Bigl(T_p^{(0,1)} \C^n\Bigr) \subset T_{f(p)}^{(0,1)} \C^m .
 \end{equation*}
 
 If $f$ is a biholomorphism, then $D_\C f(p)$ restricted to $T_p^{(1,0)} \C^n$
@@ -4094,7 +4095,7 @@ b_j
 = 0 .
 \end{equation*}
 %for a defining function $r$ of $M$ at $p$.
-Therefore, $\C \otimes T_p M$ is a $2n-1$ dimensional complex vector space.
+Therefore, $\C \otimes T_p M$ is a $(2n-1)$-dimensional complex vector space.
 We decompose 
 $\C \otimes T_p M$ as
 \begin{equation*}
@@ -4484,13 +4485,13 @@ i\frac{1+Z_n}{1-Z_n}}
 Therefore $\sabs{Z_1}^2 + \cdots + \sabs{Z_n}^2 = 1$ if and only if $\Im w =
 \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$.
 As the map takes the point $(0,\ldots,0,-1)$ to the origin, we can
-think of
+think of the set given by
 \begin{equation*}
 \Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2 
 \end{equation*}
-as the local holomorphic coordinates at $(0,\ldots,0,-1)$ (by symmetry
+as the sphere in local holomorphic coordinates at $(0,\ldots,0,-1)$ (by symmetry
 of the sphere we could have done this at any point by rotation).
-The inside of the sphere is taken to
+The inside of the sphere is taken to the set given by
 \begin{equation*}
 \Im w > \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2 .
 \end{equation*}
@@ -4504,9 +4505,9 @@ Of course not the entire sphere gets transformed, the points where $Z_n=1$
 get sent to infinity.
 The hypersurface $\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$
 is sometimes called the \emph{\myindex{Lewy hypersurface}}, and in the
-literature some even say it \emph{is} the sphere\footnote{That is not in fact
-completely incorrect.  If you think of the sphere in the complex projective
-space,
+literature some even say it \emph{is} the sphere\footnote{That is not, in
+fact, completely incorrect.
+If you think of the sphere in the complex projective space,
 we have simply looked a the sphere in a different coordinate patch.}.
 
 As an aside,
@@ -4940,7 +4941,7 @@ Prove the above lemma.  Hint: See the proof of \lemmaref{lemma:normformquad}.
 \end{exercise}
 \end{exbox}
 
-The Narasimhan lemma only works at points of strong
+Narasimhan's lemma only works at points of strong
 pseudoconvexity.  For weakly pseudoconvex points the situation is far more
 complicated.
 
@@ -5181,10 +5182,10 @@ f(a) \leq \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta .
 \end{equation*}
 \end{prop}
 
-Do note that for the sub-mean-value property we may have to use 
-Lebesgue integral to be able to integrate a upper-semicontinuous function.
-On first reading, you can only think of continuous subharmonic
-functions and not much is lost.
+For the sub-mean-value property you may have to use 
+the Lebesgue integral to integrate an upper-semicontinuous function.
+On first reading, fell free to think of continuous subharmonic
+functions and not much will be lost.
 %Although continuous subharmonic functions are generally enough for this class.
 
 \begin{exbox}
@@ -5305,7 +5306,7 @@ Finish the proof of the above proposition.
 Suppose $U \subset \C$ is a domain and $f_\alpha \colon U \to \R \cup \{ -\infty \}$
 is a family of subharmonic functions.  Let
 \begin{equation*}
-\varphi(z) = \sup_\alpha f_\alpha(z) .
+\varphi(z) = \sup_\alpha\, f_\alpha(z) .
 \end{equation*}
 If the family is finite, then $\varphi$ is subharmonic.
 If the family is infinite and we assume that $\varphi(z) \not= \infty$ for
@@ -6909,8 +6910,7 @@ $z,w\in \C^n$, by simply knowing the values of
 \linnprod{Az}{z} = z^*Az = \sum_{j,k=1}^n a_{jk} \, \bar{z}_j z_k 
 \end{equation*}
 for all $z \in \C^n$.  In fact, under the hood \propref{prop:complexificationpt2} is
-polarization in an infinite
-dimensional Hilbert space, but we digress.
+polarization in an infinite-dimensional Hilbert space, but we digress.
 \end{remark}
 
 The idea of treating $\bar{z}$ as a separate variable is very powerful, and
@@ -7101,7 +7101,7 @@ Take the smooth function $f \colon \R \to \R$ we defined before
 that is not real-analytic at the origin.
 Take $M \subset \C^2$ be the set defined by $\Im z_2 = 0$, this is a
 real-analytic real hypersurface.  Clearly
-$T_p^{(0,1)} M$ is one complex dimensional and at each point
+$T_p^{(0,1)} M$ is one-complex-dimensional and at each point
 $\frac{\partial}{\partial \bar{z}_1}$ is tangent and therefore spans
 $T_p^{(0,1)} M$.  Define $g \colon M \to \C$ by
 \begin{equation*}
@@ -7268,7 +7268,7 @@ for $(z,w) \in \C^{n-1} \times \C$, and where $\varphi$ is $O(2)$.
 Next fix any small $z$.  Considering $f$ as a function of $w$
 defined on
 $\Im w \geq \varphi(z,\bar{z},\Re w)$ we obtain from the corresponding
-one dimensional result that $f$ is identically zero inside the domain.
+one-dimensional result that $f$ is identically zero inside the domain.
 As this held for every fixed $z$ it holds in an open set of $U$ and by
 identity it holds everywhere.
 \end{proof}
@@ -7579,7 +7579,7 @@ Fix $y'$ with $0 < \snorm{y'} < d$ and let $D$ be defined by
 D = \bigl\{ (x,s) \in \R^n \times \R^{n-1} : \snorm{x} < r \text{ and } s = t y' \text{ for
 $t \in (0,1)$} \bigr\} .
 \end{equation*}
-$D$ is an $n+1$ dimensional ``cylinder.''  That is, we take a ball in the
+$D$ is an $(n+1)$-dimensional ``cylinder.''  That is, we take a ball in the
 $x$ direction and then take a single fixed direction $y'$.  We orient $D$ in
 the standard way as if it sat in the $(x,t)$ variables in $\R^n \times \R$.
 Via Stokes' theorem we get
@@ -9219,21 +9219,22 @@ dV(\xi)}
 A sequence $\{ f_j \}$ of functions converging in $L^2(U)$ to some $f \in
 L^2(U)$ converges uniformly on compact sets.  Therefore $f \in \sO(U)$.
 Therefore $A^2(U)$ is a closed subspace, and hence complete.
-For a bounded domain $A^2(U)$ is always infinite dimensional, see exercise
+For a bounded domain $A^2(U)$ is always infinite-dimensional, see exercise
 below.  However, there do exist unbounded domains for which either 
-$A^2(U)$ is trivial (just the zero function) or even finite dimensional.
+$A^2(U)$ is trivial (just the zero function) or even finite-dimensional.
 
 \begin{exbox}
 \begin{exercise}
-Show that if $U \subset \C^n$ is bounded, then $A^2(U)$ is infinite
-dimensional.
+Show that if $U \subset \C^n$ is bounded, then $A^2(U)$ is
+infinite-dimensional.
 \end{exercise}
 
 \begin{exercise}
 a) Show that $A^2(\C^n)$ is trivial. \\
 b) Show that $A^2(\D \times \C)$ is trivial. \\
-c) Find an example of an unbounded domain $U$ for which $A^2(U)$ is infinite
-dimensional.  Hint: Think in one dimension for simplicity.
+c) Find an example of an unbounded domain $U$ for which $A^2(U)$ is
+infinite-dimensional.
+Hint: Think in one dimension for simplicity.
 \end{exercise}
 
 \begin{exercise}
@@ -9547,7 +9548,7 @@ $H^2(\partial \bB_n)$.
 
 \begin{exercise}
 Show that for any bounded $U \subset \C^n$ with smooth boundary,
-$H^2(\partial U)$ is infinite dimensional.
+$H^2(\partial U)$ is infinite-dimensional.
 \end{exercise}
 \end{exbox}
 
@@ -10219,7 +10220,7 @@ irreducible elements of $\sO_p$.
 
 \begin{proof}
 Again assume $p$ is the origin and induct on the dimension.
-The one dimensional statement is again
+The one-dimensional statement is again
 an exercise.  If ${}_{n-1}\sO_0$ is a UFD, then
 ${}_{n-1}\sO_0[z_n]$ is a UFD by the Gauss lemma.
 
@@ -10587,7 +10588,7 @@ z_4 & z_5 & z_6
 \end{bmatrix}
 < 2
 \end{equation*}
-is a pure 4 dimensional subvariety of $\C^6$ and the defining equations are
+is a pure 4-dimensional subvariety of $\C^6$ and the defining equations are
 $z_1z_5-z_2z_4 = 0$,
 $z_1z_6-z_3z_4 = 0$, and
 $z_2z_6-z_3z_5 = 0$.  Let us state without proof that the unique singular point is the origin and there exist
@@ -10834,7 +10835,7 @@ plot in two real dimensions:
 
 The following theorem is often stated only in $\C^2$ for zero sets of
 a single function although it follows in
-the same way from the local parametrization theorem in higher dimensional
+the same way from the local parametrization theorem in higher-dimensional
 spaces.  Of course, we only
 proved that theorem (or in fact you the reader did so in an exercise), for
 codimension 1 subvarieties, and therefore, we also only have a complete
@@ -10967,9 +10968,9 @@ is a one-dimensional local complex variety.
 \end{exbox}
 
 Using the Puiseux theorem, we often simply parametrize germs
-of one dimensional complex subvarieties.  
-And for larger dimensional varieties, we can find
-enough one dimensional curves through any point and parametrize those.
+of one-dimensional complex subvarieties.  
+And for larger-dimensional varieties, we can find
+enough one-dimensional curves through any point and parametrize those.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -11221,8 +11222,8 @@ particular a closed subset of $U$) such that $Y \subset M$ and $(X,q)
 Suppose $U$ is a polydisc centered at $p$,
 small enough so that the defining function
 $r$ of $M$ complexifies to $U \times U^*$ as above.
-Suppose $q \in M \cap U$ is a point such that $(X,q)$ is a germ of a positive
-dimensional complex subvariety with $(X,q) \subset (M,q)$.
+Suppose $q \in M \cap U$ is a point such that $(X,q)$ is a germ of a
+positive-dimensional complex subvariety with $(X,q) \subset (M,q)$.
 Most points of a subvariety are regular, so
 without loss of generality assume $q$ is a regular point, that is,
 $(X,q)$ is a germ of a complex submanifold.
@@ -11273,13 +11274,13 @@ for all $z \in Y$ and so $Y \subset M$.
 \begin{cor}[Diederich--Forn\ae ss]
 Suppose $M \subset \C^n$ is a compact real-analytic hypersurface.
 Then there does not exist any point $q \in M$ such that
-there exists a germ of a positive dimensional complex subvariety
+there exists a germ of a positive-dimensional complex subvariety
 $(X,q)$ such that $(X,q) \subset (M,q)$.
 \end{cor}
 
 \begin{proof}
 Let $S \subset M$ be the set of points through which there exists 
-a germ of a positive dimensional complex subvariety contained in $M$.
+a germ of a positive-dimensional complex subvariety contained in $M$.
 As $M$, and hence $\overline{S}$, is compact,
 there must exist a point $p \in \overline{S}$
 that is furthest from
