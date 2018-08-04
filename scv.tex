@@ -698,9 +698,9 @@ dimensions).  You can look forward to
 \thmref{thm:generalizedcauchy} for a proof of a more general formula,
 the Cauchy--Pompeiu integral formula.
 
-As a differential form, $dz = dx + i dy$.  If you are uneasy
+As a differential form, $dz = dx + i \, dy$.  If you are uneasy
 about differential forms, you probably defined this integral using
-the Riemann--Stieltjes integral in your one-variable class.
+the Riemann--Stieltjes integral in your one-complex-variable class.
 Let us write down the formula in terms of the standard Riemann integral
 in a special case.  Let
 \begin{equation*}
@@ -709,7 +709,7 @@ in a special case.  Let
 \bigl\{ z \in \C : \sabs{z} < 1 \bigr\} ,
 \end{equation*}
 be the \emph{\myindex{unit disc}}.  The boundary is the unit circle
-$\partial \D = \bigl\{ z \in \C : \sabs{z} = 1 \bigr\}$ oriented positively, that is, counterclockwise.   We parametrize $\partial \D$
+$\partial \D = \bigl\{ z \in \C : \sabs{z} = 1 \bigr\}$ oriented positively, that is, counterclockwise.   Parametrize $\partial \D$
 by $e^{it}$, where $t$ goes from 0 to $2\pi$.  If $\zeta = e^{it}$,
 then $d\zeta = ie^{it}dt$, and
 \begin{equation*}
@@ -724,10 +724,10 @@ d \zeta
 \frac{f(e^{it}) e^{it} }{e^{it}-z}
 dt .
 \end{equation*}
-%It is useful to keep this in mind.
 If you are not completely comfortable
 with
-path or surface integrals, try to think about how you would parametrize the path and
+path %or surface
+integrals, try to think about how you would parametrize the path, and
 write the integral as an integral any calculus student would recognize.
 
 I venture a guess that 90\% of what you learned in a one-variable complex analysis
@@ -736,14 +736,14 @@ is more or less a straightforward consequence of the Cauchy
 integral formula.
 An important theorem from one variable that follows from
 the Cauchy formula is the \emph{\myindex{maximum principle}},
-which has several versions, let us give the simplest one.
+which has several versions.  Let us give the simplest one.
 
 \begin{thm}[Maximum principle]
 Suppose $U \subset \C$ is a domain and $f \colon U \to \C$
-holomorphic function.
+is a holomorphic function.
 If
 \begin{equation*}
-\sup_{z \in U} \sabs{f(z)} = f(z_0)
+\sup_{z \in U} \, \sabs{f(z)} = f(z_0)
 \end{equation*}
 for some $z_0 \in U$, then $f$ is constant ($f \equiv f(z_0)$).
 \end{thm}
@@ -765,16 +765,17 @@ y^2} = 0 .
 \end{equation*}
 If
 \begin{equation*}
-\sup_{z \in U} h(z) = h(z_0)
+\sup_{z \in U} \, h(z) = h(z_0)
 \end{equation*}
 for some $z_0 \in U$, then $h$ is constant ($h \equiv h(z_0)$).
 \end{thm}
 
-In one variable if $f = u+iv$ is holomorphic then $u$ and $v$
+In one variable, if $f = u+iv$ is holomorphic then $u$ and $v$
 are harmonic.  Locally, any harmonic function is
-the real (or imaginary) part of a holomorphic function, so studying 
+the real (or imaginary) part of a holomorphic function, so in
+one complex variable, studying 
 harmonic functions is almost equivalent to studying holomorphic
-functions in one complex variable.  Things are decidedly different
+functions.  Things are decidedly different
 two or more variables.
 
 \medskip
@@ -789,7 +790,7 @@ since $\frac{\partial f}{\partial \bar{z}} = 0$.
 
 Let us see the proof using the Cauchy integral formula as we will
 require this computation in several variables as well.
-Given $a \in \C$ and $\rho > 0$ define the disc of radius $\rho$ around $a$
+Given $a \in \C$ and $\rho > 0$, define the disc of radius $\rho$ around $a$
 \begin{equation*}
 \Delta_\rho(a)
 \overset{\text{def}}{=}
@@ -817,7 +818,7 @@ the geometric series
 \frac{\zeta-a}{\zeta-z}
 \end{equation*}
 converges absolutely uniformly for $(z,\zeta) \in \overline{\Delta_{\rho'}(a)}
-\times \partial \Delta_\rho(a)$.  In particular the
+\times \partial \Delta_\rho(a)$.  In particular, the
 series converges uniformly in $z$ on compact subsets of $\Delta_{\rho}(a)$. 
 
 Let $\gamma$
@@ -1084,6 +1085,7 @@ f(z) =
 \frac{1}{2\pi i}
 \int_{\partial \Delta_1}
 \frac{f(\zeta_1,z_2,\ldots,z_n)}{\zeta_1-z_1}
+\,
 d \zeta_1 .
 \end{equation*}
 Apply it again on the second variable, again orienting
@@ -1146,9 +1148,9 @@ $d x_j \bigl( \frac{\partial}{\partial x_k} \bigr) = 0$ if $j \not= k$.  Therefo
 $z_j = x_j + i y_j$ and
 $\bar{z}_j = x_j - i y_j$,
 \begin{equation*}
-d z_j = d x_j + i d y_j , 
+d z_j = d x_j + i \, d y_j , 
 \qquad
-d \bar{z}_j = d x_j - i d y_j . 
+d \bar{z}_j = d x_j - i \, d y_j . 
 \end{equation*}
 One can check that as expected,
 \begin{equation*}
@@ -1165,8 +1167,8 @@ d \bar{z}_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = \delta_j^k
 where $\delta_{j}^k$ is the Kronecker delta, that is, $\delta_j^j = 1$,
 and $\delta_j^k = 0$ if $j \not= k$.  One-forms are objects of the form
 \begin{equation*}
-\sum_{j=1}^n \alpha_j d z_j + 
-\beta_j d \bar{z}_j ,
+\sum_{j=1}^n \alpha_j \, d z_j + 
+\beta_j \, d \bar{z}_j ,
 \end{equation*}
 where $\alpha_j$ and $\beta_j$ are functions (of $z$).
 Also recall the wedge product $\omega \wedge \eta$ is anti-commutative on the
