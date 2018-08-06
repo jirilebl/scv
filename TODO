@@ -3,5 +3,8 @@ Next minor edition:
   https://github.com/jirilebl/scv/commit/18438d398643f05019fd143443ef8ec858bf4ae2
 
 Next larger edition
-* Add appendinx on basic notation, and integral forms
+* Add appendix on basic notation, smooth functions, etc... perhaps
+* Add appendix differential forms and integration including Stokes,
+  no need to prove Stokes I don't think, but at least state it.
+* Add appendix with the basic one-variable theorems used
 * Add notation index
