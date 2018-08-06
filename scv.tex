@@ -1730,10 +1730,12 @@ Show that the domain of convergence is a polydisc.
 \end{exercise}
 \end{exbox}
 
-Suppose a domain $U \subset \C^n$ is such that if $z \in U$, then $w \in U$
-whenever $\sabs{z_j} = \sabs{w_j}$ for all $j$.  Such a $U$ is called a
-\emph{\myindex{Reinhardt domain}}.  The domains we were drawing so far have
-been Reinhardt domains, they are exactly the domains that you can
+Suppose $U \subset \C^n$ is a domain is such that if $z \in U$
+and
+$\sabs{z_j} = \sabs{w_j}$ for all $j$, then $w \in U$.
+Such a $U$ is called a
+\emph{\myindex{Reinhardt domain}}.  The domains we were drawing so far are
+Reinhardt domains, they are exactly the domains that you can
 draw by plotting what happens for the moduli of the variables.
 A domain is called a \emph{\myindex{complete Reinhardt domain}} if whenever
 $z \in U$ then for $r = (r_1,\ldots,r_n)$ where $r_j = \sabs{z_j}$
@@ -1795,7 +1797,7 @@ on $\Delta_1$ and its modulus attains the maximum
 at the center.  Therefore it is constant by maximum principle in one variable,
 that is, $f(z_1,a_2,\ldots,a_n)  = f(a)$ for all $z_1 \in \Delta_1$.  For
 any fixed $z_1
-\in \Delta_1$ consider the function
+\in \Delta_1$, consider the function
 \begin{equation*}
 z_2 \mapsto f(z_1,z_2,a_3,\ldots,a_n)  .
 \end{equation*}
@@ -8292,9 +8294,9 @@ Via Stokes we get
 The second equality follows because holomorphic derivatives in $\zeta$
 will have a $d\zeta$ and when we wedge with $d\zeta$ we just get zero.
 We now wish to let the radius $r$ go to zero.
-Via the exercise above we have that 
+Via the exercise above,
 $\frac{\frac{\partial f}{\partial \bar{\zeta}}(\zeta)}{\zeta-z} \, d\bar{\zeta} \wedge d\zeta$
-is integrable over all of $U$ and therefore
+is integrable over all of $U$.  Therefore,
 \begin{equation*}
 \lim_{r \to 0}
 \int_{U \setminus \Delta_r(z)} \frac{\frac{\partial f}{\partial
@@ -8307,9 +8309,9 @@ is integrable over all of $U$ and therefore
 \int_{U} \frac{\frac{\partial f}{\partial
 \bar{\zeta}}(\zeta)}{\zeta-z} \, d\zeta \wedge d\bar{\zeta} .
 \end{equation*}
-The second equality is just swapping the order of the $d\zeta$ and
+The second equality is simply swapping the order of the $d\zeta$ and
 $d\bar{\zeta}$.
-Next by continuity of $f$ we get
+By continuity of $f$, we find
 \begin{equation*}
 \lim_{r \to 0}
 \frac{1}{2\pi i}
@@ -8751,7 +8753,7 @@ to Cauchy's formula when $n=1$.
 And just like for Cauchy's formula, we will prove the formula for all
 smooth functions using Stokes theorem.
 
-First let us define the \emph{\myindex{Bochner--Martinelli kernel}}:
+First, let us define the \emph{\myindex{Bochner--Martinelli kernel}}:
 \begin{equation*}
 \omega(\zeta,z)
 \overset{\text{def}}{=}
@@ -8798,7 +8800,7 @@ is the one corresponding to the volume form
 \begin{equation*}
 dV = dx_1 \wedge dy_1 \wedge dx_2 \wedge dy_2 \wedge \cdots \wedge dx_n \wedge dy_n .
 \end{equation*}
-With this orientation we find that
+With this orientation,
 \begin{equation*}
 d\zeta_1 \wedge d\bar{\zeta}_1 \wedge
 d\zeta_2 \wedge d\bar{\zeta}_2 \wedge
@@ -9178,7 +9180,7 @@ The inner product is the $L^2(U)$ inner product
 %\end{equation*}
 %So $A^2(U)$ is an inner product space.
 We need to prove that $A^2(U)$ is
-complete, then it will be a Hilbert space.  We first
+complete, in other words that it is a Hilbert space.  We first
 have to prove that we can bound
 the uniform norm on compact sets via the $A^2(U)$ norm.
 
@@ -9220,7 +9222,7 @@ dV(\xi)}
 
 A sequence $\{ f_j \}$ of functions converging in $L^2(U)$ to some $f \in
 L^2(U)$ converges uniformly on compact sets.  Therefore $f \in \sO(U)$.
-Therefore $A^2(U)$ is a closed subspace, and hence complete.
+Consequently, $A^2(U)$ is a closed subspace of $L^2(U)$, and hence complete.
 For a bounded domain $A^2(U)$ is always infinite-dimensional, see exercise
 below.  However, there do exist unbounded domains for which either 
 $A^2(U)$ is trivial (just the zero function) or even finite-dimensional.
