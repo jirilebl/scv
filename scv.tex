@@ -628,8 +628,10 @@ parts are zero.  In other words if and only if
 \end{equation*}
 That is, the Cauchy--Riemann equations are satisfied.
 
-If $f$ is holomorphic,
-the derivative in $z$ is the standard complex derivative you know and love:
+Another, and more common, way to define a holomorphic function is to say that
+the complex derivative at each point exists.  If $f'$ exists
+at every point, it equals the derivative in $z$.
+%If $f$ is holomorphic, the derivative in $z$ is the standard complex derivative you know and love:
 \begin{equation*}
 \frac{\partial f}{\partial z} (z_0)
 =
@@ -712,16 +714,16 @@ dimensions).  You can look forward to
 the Cauchy--Pompeiu integral formula.
 
 As a differential form, $dz = dx + i \, dy$.  If you are uneasy
-about differential forms, you probably defined this integral using
+about differential forms, you probably defined this directly integral using
 the Riemann--Stieltjes integral in your one-complex-variable class.
 Let us write down the formula in terms of the standard Riemann integral
-in a special case.  Let
+in a special case.  Take the \emph{\myindex{unit disc}}
 \begin{equation*}
 \D
 \overset{\text{def}}{=}
-\bigl\{ z \in \C : \sabs{z} < 1 \bigr\} ,
+\bigl\{ z \in \C : \sabs{z} < 1 \bigr\} .
 \end{equation*}
-be the \emph{\myindex{unit disc}}.  The boundary is the unit circle
+The boundary is the unit circle
 $\partial \D = \bigl\{ z \in \C : \sabs{z} = 1 \bigr\}$ oriented positively, that is, counterclockwise.   Parametrize $\partial \D$
 by $e^{it}$, where $t$ goes from 0 to $2\pi$.  If $\zeta = e^{it}$,
 then $d\zeta = ie^{it}dt$, and
@@ -964,7 +966,8 @@ Consequently,
 
 \section{Onto several variables} \label{sec:ontosevvar}
 
-Let $\C^n$ denote the
+Let $\C^n = \overbrace{\C \times \C \times \cdots \times \C}^{\text{$n$
+times}}$ denote the $n$-dimensional
 \emph{\myindex{complex Euclidean space}}\index{Euclidean space}.  We denote
 by $z = (z_1,z_2,\ldots,z_n)$ the coordinates of $\C^n$.
 Let $x =
@@ -1047,38 +1050,46 @@ And we define the unit ball as
 \bigl\{ z \in \C^n : \snorm{z} < 1 \bigr\} .
 \end{equation*}
 
-To define holomorphic functions,
-as in one variable we define the Wirtinger operators
-\begin{align*}
-\frac{\partial}{\partial z_j} &  \overset{\text{def}}{=}
+\begin{defn}
+Let $U \subset
+\C^n$ be an open set.  A
+function
+$f \colon U \to \C$ is \emph{\myindex{holomorphic}} if
+it is \emph{locally bounded}%
+\index{locally bounded function}\footnote{For
+every $p \in U$, there is a neighborhood $N$ of $p$
+such that $f|_N$ is bounded.}
+%A deep result of Hartogs, which we skip, says that
+%we do not need to assume $f$ to be locally bounded.}
+and holomorphic in each variable separately;
+if it is complex differentiable in each variable separately:
+\begin{equation*}
+\lim_{\xi \in \C \to 0} \frac{f(z_1,\ldots,z_k+\xi,\ldots,z_n) - f(z)}{\xi}
+\quad \text{exists for all $z \in U$ and all $k=1,2,\ldots,n$}.
+\end{equation*}
+\end{defn}
+
+As in one variable we define the Wirtinger operators
+\begin{equation*}
+\frac{\partial}{\partial z_j}  \overset{\text{def}}{=}
 \frac{1}{2} \left(
 \frac{\partial}{\partial x_j} - i \frac{\partial}{\partial y_j}
 \right) ,
-\\
-\frac{\partial}{\partial \bar{z}_j} &  \overset{\text{def}}{=}
+\qquad
+\frac{\partial}{\partial \bar{z}_j}  \overset{\text{def}}{=}
 \frac{1}{2} \left(
 \frac{\partial}{\partial x_j} + i \frac{\partial}{\partial y_j}
 \right) .
-\end{align*}
-
-\begin{defn}
-Let $U \subset
-\C^n$ be an open set, and let $f \colon U \to \C$ be
-\index{locally bounded function}
-a locally bounded function\footnote{For every $p \in U$, there is a
-neighborhood $N$ of $p$
-such that $f|_N$ is bounded.}.  Suppose the first partial derivatives
-exist and $f$ satisfies the
+\end{equation*}
+An alternative definition is to say that a continuously
+differentiable function $f \colon U \to \C$ is
+\emph{holomorphic} if
+it satisifies the
 \emph{\myindex{Cauchy--Riemann equations}}
 \begin{equation*}
 \frac{\partial f}{\partial \bar{z}_j}  = 0 \qquad \text{for $j=1,2,\ldots,n$}.
 \end{equation*}
-We then say $f$ is \emph{\myindex{holomorphic}}.
-\end{defn}
-
-In other words, $f$ is holomorphic if it is holomorphic in each variable
-separately as a function of one variable.  Let us first prove that we may as
-well have assumed differentiability in the definition.
+Due to the following proposition, this alternative definition is just as good.
 
 \begin{prop}
 Let $U \subset \C^n$ be a domain and
@@ -1300,7 +1311,7 @@ $\sabs{f(z)}$ achieves its maximum on $\Gamma$.
 \end{exercise}
 
 \begin{exercise}
-Show that differentiable
+Show that in the real setting, differentiable
 in each variable separately does not imply differentiable even in
 the case where the function is locally bounded.
 Show that $\frac{xy}{x^2+y^2}$ is a
