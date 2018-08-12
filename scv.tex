@@ -527,11 +527,14 @@ As long as the limit exists, we have a function.  You know all
 this; it is your one-variable complex analysis.  We usually
 start with the functions and prove that we can expand into series.
 
-A function $f \colon U \subset \C \to \C$ can be written as $f(z) =
+Let $U \subset \C$ be open and write
+a function $f \colon U \to \C$ as $f(z) =
 u(x,y)+iv(x,y)$,
-where $u$ and $v$ are real-valued.  Recall that
+for real-valued $u$ and $v$.
+Recall that
 $f$ is \emph{\myindex{holomorphic}}
-(or \emph{\myindex{complex analytic}}) if it satisfies the
+(or \emph{\myindex{complex analytic}}) if it is continuously differentiable
+and satisfies the
 \emph{\myindex{Cauchy--Riemann equations}}:
 \begin{equation*}
 \frac{\partial u}{\partial x} = 
@@ -646,7 +649,17 @@ We can compute it as
 +
 \frac{i}{2}
 \left( \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}
-\right) .
+\right) 
+=
+\frac{\partial u}{\partial x} 
++ i \frac{\partial v}{\partial x}
+=
+i \left(
+\frac{\partial u}{\partial y}
++ i
+\frac{\partial v}{\partial y} 
+\right)
+.
 \end{equation*}
 
 A function on $\C$ is really a function defined on
