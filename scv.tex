@@ -442,12 +442,13 @@ can help or even be required to solve later exercises.
 
 The prerequisites are a decent knowledge of vector calculus, basic
 real-analysis, and a working knowledge of complex analysis in one variable.
-It should be accessible to beginning graduate students after a complex
-analysis course, although the background actually required is quite minimal.
+It is accessible to beginning graduate students after a complex
+analysis course, and the background actually required is quite minimal.
 
 This book is not meant as an exhaustive reference.  It is simply a whirlwind
-tour of several complex variables.  To find a list of books useful for
-reference and further reading, see the end of the book.
+tour of several complex variables.  See the end of the book
+for a list of books useful for
+reference and further reading.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -516,7 +517,7 @@ f(z) = \sum_{j=0}^\infty c_j \, z^j
 \end{equation*}
 and all is very fine, until we wish to know what $f(z)$ is for some number
 $z \in \C$.
-What we usually mean is
+We usually mean 
 \begin{equation*}
 \sum_{j=0}^\infty c_j \, z^j
 =
@@ -527,15 +528,25 @@ As long as the limit exists, we have a function.  You know all
 this; it is your one-variable complex analysis.  We usually
 start with the functions and prove that we can expand into series.
 
-Let $U \subset \C$ be open and write
-a function $f \colon U \to \C$ as $f(z) =
-u(x,y)+iv(x,y)$,
-for real-valued $u$ and $v$.
-Recall that
-$f$ is \emph{\myindex{holomorphic}}
-(or \emph{\myindex{complex analytic}}) if it is continuously differentiable
-and satisfies the
-\emph{\myindex{Cauchy--Riemann equations}}:
+Let $U \subset \C$ be open.  A function $f \colon U \to \C$
+is \emph{\myindex{holomorphic}}
+(or \emph{\myindex{complex analytic}}) if it is
+\emph{\myindex{complex differentiable}} at every point,
+that is, if
+\begin{equation*}
+f'(z_0)
+=
+\lim_{w \to z_0} \frac{f(w)-f(z_0)}{w-z_0} 
+%=
+%\lim_{\xi \to 0} \frac{f(z_0+\xi)-f(z_0)}{\xi} 
+\qquad \text{exists for all $z_0 \in U$.}
+\end{equation*}
+Importantly, the limit is taken with respect to
+complex $w$.
+Another vantage point is to start with a continuously 
+differentiable\footnote{Holomorphic functions end up being infinitely
+differentiable anyway, so this hypothesis is not overly restrictive.} $f$, and say that $f$ is holomorphic if it satisfies
+the \emph{\myindex{Cauchy--Riemann equations}}:
 \begin{equation*}
 \frac{\partial u}{\partial x} = 
 \frac{\partial v}{\partial y} ,
@@ -544,9 +555,7 @@ and satisfies the
 -
 \frac{\partial v}{\partial x} .
 \end{equation*}
-An easier way to understand these equations is to
-define the following formal differential operators (the
-so-called \emph{\myindex{Wirtinger operators}}):
+The so-called \emph{\myindex{Wirtinger operators}},
 \begin{equation*}
 \frac{\partial}{\partial z}
 \overset{\text{def}}{=}
@@ -563,8 +572,10 @@ so-called \emph{\myindex{Wirtinger operators}}):
 \frac{\partial}{\partial x} + i
 \frac{\partial}{\partial y}
 \right)
-.
+,
 \end{equation*}
+provide an easier way to understnd the
+Cauchy--Riemann equations.
 These operators are determined by insisting
 \begin{equation*}
 \frac{\partial}{\partial z} z = 1, \quad
@@ -614,7 +625,7 @@ Let us check:
 \right) .
 \end{equation*}
 This expression is zero if and only if the real parts and the imaginary
-parts are zero.  In other words if and only if
+parts are zero.  In other words %if and only if
 \begin{equation*}
 \frac{\partial u}{\partial x} 
 - \frac{\partial v}{\partial y}
@@ -628,10 +639,10 @@ parts are zero.  In other words if and only if
 \end{equation*}
 That is, the Cauchy--Riemann equations are satisfied.
 
-Another, and more common, way to define a holomorphic function is to say that
-the complex derivative at each point exists.  If $f'$ exists
-at every point, it equals the derivative in $z$.
-%If $f$ is holomorphic, the derivative in $z$ is the standard complex derivative you know and love:
+%Another common way to define a holomorphic function is to say that
+%the complex derivative at each point exists.  If $f'$ exists
+%at every point, it equals the derivative in $z$.
+If $f$ is holomorphic, the derivative in $z$ is the standard complex derivative you know and love:
 \begin{equation*}
 \frac{\partial f}{\partial z} (z_0)
 =
@@ -706,8 +717,8 @@ d \zeta .
 \end{equation*}
 \end{thm}
 
-The Cauchy formula is the essential ingredient we need from the study of
-one complex variable and follows, for example,
+The Cauchy formula is the essential ingredient we need from 
+one complex variable.  It follows, for example,
 from Green's theorem (Stokes' theorem in two
 dimensions).  You can look forward to
 \thmref{thm:generalizedcauchy} for a proof of a more general formula,
@@ -782,7 +793,7 @@ If
 \begin{equation*}
 \sup_{z \in U} \, h(z) = h(z_0)
 \end{equation*}
-for some $z_0 \in U$, then $h$ is constant ($h \equiv h(z_0)$).
+for some $z_0 \in U$, then $h$ is constant, that is, $h \equiv h(z_0)$.
 \end{thm}
 
 In one variable, if $f = u+iv$ is holomorphic then $u$ and $v$
@@ -911,14 +922,14 @@ c_j =
 d \zeta  .
 \end{equation*}
 
-For a set $K$ denote the \emph{\myindex{supremum norm}}
+For a set $K$ denote the \emph{\myindex{supremum norm}}:
 \begin{equation*}
 \snorm{f}_K
 \overset{\text{def}}{=}
 \sup_{z \in K} \sabs{f(z)} .
 \end{equation*}
 By a brute force estimation we obtain the very useful
-\emph{\myindex{Cauchy estimates}}
+\emph{\myindex{Cauchy estimates}}:
 \begin{equation*}
 \sabs{c_j} = 
 \abs{
@@ -1061,15 +1072,16 @@ every $p \in U$, there is a neighborhood $N$ of $p$
 such that $f|_N$ is bounded.}
 %A deep result of Hartogs, which we skip, says that
 %we do not need to assume $f$ to be locally bounded.}
-and holomorphic in each variable separately;
-if it is complex differentiable in each variable separately:
+and holomorphic in each variable separately.
+In particular, if
+$f$ is complex differentiable in each variable separately:
 \begin{equation*}
 \lim_{\xi \in \C \to 0} \frac{f(z_1,\ldots,z_k+\xi,\ldots,z_n) - f(z)}{\xi}
-\quad \text{exists for all $z \in U$ and all $k=1,2,\ldots,n$}.
+\qquad \text{exists for all $z \in U$ and all $k=1,2,\ldots,n$}.
 \end{equation*}
 \end{defn}
 
-As in one variable we define the Wirtinger operators
+As in one variable, we define the \emph{\myindex{Wirtinger operators}}
 \begin{equation*}
 \frac{\partial}{\partial z_j}  \overset{\text{def}}{=}
 \frac{1}{2} \left(
@@ -1312,10 +1324,11 @@ $\sabs{f(z)}$ achieves its maximum on $\Gamma$.
 
 \begin{exercise}
 Show that in the real setting, differentiable
-in each variable separately does not imply differentiable even in
-the case where the function is locally bounded.
-Show that $\frac{xy}{x^2+y^2}$ is a
-locally bounded function in $\R^2$, that is differentiable
+in each variable separately does not imply differentiable even if
+the function is locally bounded.
+Let $f(x,y) = \frac{xy}{x^2+y^2}$ outside the origin
+and $f(0,0) = 0$.  Prove that $f$ is a
+locally bounded function in $\R^2$, which is differentiable
 in each variable separately (all partial derivatives exist), but 
 the function is not even continuous.  There is something very
 special about the holomorphic category.
