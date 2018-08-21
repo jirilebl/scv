@@ -843,9 +843,11 @@ the geometric series
 =
 \frac{\zeta-a}{\zeta-z}
 \end{equation*}
-converges absolutely uniformly for $(z,\zeta) \in \overline{\Delta_{\rho'}(a)}
-\times \partial \Delta_\rho(a)$.  In particular, the
-series converges uniformly in $z$ on compact subsets of $\Delta_{\rho}(a)$. 
+converges uniformly absolutely for $(z,\zeta) \in \overline{\Delta_{\rho'}(a)}
+\times \partial \Delta_\rho(a)$ (that is, $\sum {\bigl\lvert
+\frac{z-a}{\zeta-a} \bigr\rvert}^j$
+converges uniformly).  In particular, the
+series converges uniformly absolutely in $z$ on compact subsets of $\Delta_{\rho}(a)$. 
 
 Let $\gamma$
 be the curve going around 
@@ -982,7 +984,7 @@ times}}$ denote the $n$-dimensional
 \emph{\myindex{complex Euclidean space}}\index{Euclidean space}.  We denote
 by $z = (z_1,z_2,\ldots,z_n)$ the coordinates of $\C^n$.
 Let $x =
-(x_1,x_2,\ldots,x_n)$ and $y = (y_1,y_2,\ldots,y_n)$ denote the coordinates in
+(x_1,x_2,\ldots,x_n)$ and $y = (y_1,y_2,\ldots,y_n)$ denote coordinates in
 $\R^n$.
 We 
 identify $\C^n$ with $\R^n \times \R^n = \R^{2n}$ by letting
@@ -1403,13 +1405,31 @@ such a series as
 \begin{equation*}
 \sum_{\alpha \in \N_0^n} c_\alpha {z}^\alpha .
 \end{equation*}
+When it is clear
+from context that we are talking about a power series
+and therefore all the powers are nonnegative,
+we often write just
+\begin{equation*}
+\sum_{\alpha} c_\alpha {z}^\alpha .
+\end{equation*}
+
 It is important to note what this means.  The sum does not
-have some natural ordering.  We are summing over $\alpha \in \N_0$ and there
-just is not any natural ordering.  So it does not make sense to
+have some natural ordering.  We are summing over $\alpha \in \N_0$, and there
+is no natural ordering of $\N_0$.  So it makes no sense to
 talk about conditional convergence.  When we say the series
-converges, we mean absolutely.
+\emph{converges}%
+\index{power series convergence}%
+\index{convergence of power series}, we mean absolutely.
 Fortunately power series converge
-absolutely, and so the ordering does not matter.  You have to admit that the
+absolutely, and so the ordering does not matter.
+We say a power series $\sum_\alpha c_\alpha z^\alpha$
+\emph{\myindex{converges uniformly absolutely}}
+\index{uniform absolute convergence}
+for $z \in X$ when $\sum_\alpha \sabs{c_\alpha z^\alpha}$
+converges uniformly for $z \in X$.
+
+
+You have to admit that the
 above is far nicer to write than, for example, for 3 variables writing
 \begin{equation*}
 \sum_{j=0}^\infty
@@ -1418,14 +1438,7 @@ above is far nicer to write than, for example, for 3 variables writing
 c_{jk\ell} z_1^jz_2^kz_3^\ell .
 \end{equation*}
 
-We often write just
-\begin{equation*}
-\sum_{\alpha} c_\alpha {z}^\alpha ,
-\end{equation*}
-when it is clear from context that we are talking about a power series
-and therefore all the powers are nonnegative.
-
-To begin, we need the \emph{\myindex{geometric series in several variables}}.
+We first need the \emph{\myindex{geometric series in several variables}}.
 If 
 $z \in \D^n$ (unit polydisc), then
 \begin{equation*}
@@ -1458,11 +1471,14 @@ $z \in \D^n$ (unit polydisc), then
 \sum_{\alpha} z^\alpha .
 \end{split}
 \end{equation*}
-The convergence is uniform and absolute on compact subsets of the unit
+The series converges uniformly absolutely
+%(that is, $\sum_\alpha \sabs{z^\alpha}$ converges uniformly)
+on all compact subsets of the unit
 polydisc:  Any compact set in the unit
-polydisc is contained in a polydisc $\Delta$ centered at 0 of radius $1-\epsilon$
-for some $\epsilon > 0$.  The convergence is uniform on $\Delta$ (in
-fact on the closure of $\Delta$).  This claim follows by simply noting the
+polydisc is contained in a closed polydisc $\overline{\Delta}$
+centered at 0 of radius $1-\epsilon$
+for some $\epsilon > 0$.  The convergence is uniformly absolute on 
+$\overline{\Delta}$.  This claim follows by simply noting the
 same fact for each factor is true in one dimension.
 
 We now prove that holomorphic functions are precisely those having
@@ -1472,13 +1488,13 @@ a power series expansion.
 Let $\Delta = \Delta_\rho(a) \subset \C^n$ be a polydisc.
 Suppose $f \colon \overline{\Delta} \to \C$ is continuous and
 holomorphic on $\Delta$.  Then on $\Delta$, $f$ is equal to a power series 
-converging uniformly on compact subsets of $\Delta$:
+converging uniformly absolutely on compact subsets of $\Delta$:
 \begin{equation} \label{holfunc:ps}
 f(z) = \sum_{\alpha} c_\alpha {(z-a)}^\alpha .
 \end{equation}
 
 Conversely, if $f$ is defined by \eqref{holfunc:ps} converging
-uniformly on compact subsets of $\Delta$, then $f$ is holomorphic on
+uniformly absolutely on compact subsets of $\Delta$, then $f$ is holomorphic on
 $\Delta$.
 \end{thm}
 
@@ -1545,8 +1561,9 @@ The last equality follows by Fubini just as it does in one variable.
 %because the convergence of the sum is uniform in
 %$\zeta \in \Gamma$ for a fixed $z$.
 
-Uniform convergence (as $z$ moves) on compact subsets of the final series follows from the
-uniform convergence of the geometric series.  It is also a direct
+Uniform absolute convergence (as $z$ moves) on compact subsets of the final
+series follows from the
+uniform absolute convergence of the geometric series.  It is also a direct
 consequence of the Cauchy estimates below.
 
 We have shown that
@@ -1569,7 +1586,7 @@ Notice how strikingly similar the computation is to one variable.
 
 The converse follows by applying the Cauchy--Riemann equations to the series
 term-wise.  To do this you have to show that the term-by-term derivative
-series also converges uniformly on compact subsets.  It is left as an
+series also converges uniformly absolutely on compact subsets.  It is left as an
 exercise.  Then you apply the well-known theorem from real analysis.
 The proof of this fact is very similar to one-variable series that you know.
 
@@ -1579,8 +1596,9 @@ in turn, and then using the corresponding one-variable result.
 
 \begin{exbox}
 \begin{exercise}
-Prove the claim above that if a power series converges uniformly on compact
-subsets of a polydisc $\Delta$, then the term by term derivative converges.
+Prove the claim above that if a power series converges uniformly absolutely
+on compact subsets of a polydisc $\Delta$, then the term by term derivative
+converges.
 Do the proof without using the analogous result for single variable series.
 \end{exercise}
 \end{exbox}
@@ -1739,7 +1757,7 @@ converges absolutely exactly on the set
 \begin{equation*}
 \bigl\{ z \in \C^2 : \sabs{z_1 z_2} < 1 \bigr\} .
 \end{equation*}
-Here the picture is definitely more complicated than a polydisc:
+The picture is definitely more complicated than a polydisc:
 
 \medskip
 
