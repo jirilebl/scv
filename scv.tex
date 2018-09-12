@@ -506,7 +506,7 @@ an expression of the form
 \begin{equation*}
 P(z) = \sum_{j=0}^d c_j \, z^j ,
 \end{equation*}
-where $c_j \in \C$.  The number $d$ is called the
+where $c_j \in \C$ and $c_d \not= 0$.  The number $d$ is called the
 \emph{degree}\index{degree of a polynomial}
 of the
 polynomial $P$.  We can plug in some number $z$ and simply compute
@@ -889,7 +889,8 @@ d \zeta
 \end{split}
 \end{equation*}
 In the last equality, we are allowed to 
-interchange the limit on the sum with the integral by Fubini's theorem because
+interchange the limit on the sum with the integral either
+by Fubini's theorem or by uniform convergencce because
 for some fixed $M$
 \begin{equation*}
 \abs{
@@ -982,7 +983,7 @@ Consequently,
 
 Let $\C^n = \overbrace{\C \times \C \times \cdots \times \C}^{\text{$n$
 times}}$ denote the $n$-dimensional
-\emph{\myindex{complex Euclidean space}}\index{Euclidean space}.  We denote
+\emph{\myindex{complex Euclidean space}}\index{Euclidean space}.  Denote
 by $z = (z_1,z_2,\ldots,z_n)$ the coordinates of $\C^n$.
 Let $x =
 (x_1,x_2,\ldots,x_n)$ and $y = (y_1,y_2,\ldots,y_n)$ denote coordinates in
@@ -990,17 +991,17 @@ $\R^n$.
 We 
 identify $\C^n$ with $\R^n \times \R^n = \R^{2n}$ by letting
 $z = x+iy$.
-Just as in one complex variable we write $\bar{z} = x-iy$.
+As in one complex variable we write $\bar{z} = x-iy$.
 We call $z$ the \emph{\myindex{holomorphic coordinates}}
 and $\bar{z}$ the \emph{\myindex{antiholomorphic coordinates}}.
 
 \begin{defn}
-For $\rho = (\rho_1,\ldots,\rho_n)$ where $\rho_j > 0$ and $a \in \C^n$,
+For $\rho = (\rho_1,\rho_2,\ldots,\rho_n)$ where $\rho_j > 0$ and $a \in \C^n$,
 define
 a \emph{\myindex{polydisc}}
 \begin{equation*}
 \Delta_\rho(a)  \overset{\text{def}}{=}
-\bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho_j ~\text{for $j=1,\ldots,n$} \bigr\} .
+\bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho_j ~\text{for $j=1,2,\ldots,n$} \bigr\} .
 \end{equation*}
 We call $a$ the
 \emph{center}\index{center of a polydisc}
@@ -1012,20 +1013,21 @@ of the polydisc $\Delta_\rho(a)$.
 If $\rho > 0$ is a number, then
 \begin{equation*}
 \Delta_\rho(a)  \overset{\text{def}}{=}
-\bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho ~\text{for $j=1,\ldots,n$} \bigr\} .
+\bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho ~\text{for $j=1,2,\ldots,n$} \bigr\} .
 \end{equation*}
+In two variables, a polydisc is sometimes called a \emph{\myindex{bidisc}}.
 
 As there is the unit disc $\D$ in one variable, so is there
 the \emph{\myindex{unit polydisc}} in several variables:
 \begin{equation*}
 \D^n = \D \times \D \times \cdots \times \D = \Delta_1(0) = 
-\bigl\{ z \in \C^n : \sabs{z_j} < 1 ~\text{for $j=1,\ldots,n$} \bigr\} .
+\bigl\{ z \in \C^n : \sabs{z_j} < 1 ~\text{for $j=1,2,\ldots,n$} \bigr\} .
 \end{equation*}
 \end{defn}
 
 In more than one complex dimension, it is difficult to draw exact pictures
 for lack of real dimensions on our paper.
-We can visualize a polydisc in two variables (a \emph{\myindex{bidisc}})
+We visualize the unit polydisc in two variables
 by drawing the following
 picture by plotting just against the modulus of the variables:
 
@@ -1041,7 +1043,8 @@ Recall the
 \emph{\myindex{Euclidean inner product}} on $\C^n$
 \begin{equation*}
 \linnprod{z}{w} \overset{\text{def}}{=} %z \cdot \bar{w}
-z_1 \bar{w}_1 + \cdots +
+z_1 \bar{w}_1 +
+z_2 \bar{w}_2 + \cdots +
 z_n \bar{w}_n .
 \end{equation*}
 Using the inner product we obtain the standard
@@ -1049,16 +1052,17 @@ Using the inner product we obtain the standard
 \begin{equation*}
 \snorm{z}  \overset{\text{def}}{=} \sqrt{\linnprod{z}{z}}
 =
-\sqrt{\sabs{z_1}^2 + \cdots +
+\sqrt{\sabs{z_1}^2 +
+\sabs{z_2}^2 + \cdots +
 \sabs{z_n}^2} .
 \end{equation*}
 This norm agrees with the standard Euclidean norm on $\R^{2n}$.
-We define balls as in $\R^{2n}$:
+We define \emph{balls}\index{ball} as in $\R^{2n}$:
 \begin{equation*}
 B_\rho(a)  \overset{\text{def}}{=}
 \bigl\{ z \in \C^n : \snorm{z - a} < \rho \bigr\} ,
 \end{equation*}
-And we define the unit ball as
+And we define the \emph{\myindex{unit ball}} as
 \begin{equation*}
 \bB_n \overset{\text{def}}{=} B_1(0) =
 \bigl\{ z \in \C^n : \snorm{z} < 1 \bigr\} .
@@ -1076,12 +1080,14 @@ such that $f|_N$ is bounded.}
 %A deep result of Hartogs, which we skip, says that
 %we do not need to assume $f$ to be locally bounded.}
 and holomorphic in each variable separately.
-In particular, if
-$f$ is complex differentiable in each variable separately:
+In other words, $f$ is holomorphic if it is locally bounded
+and complex differentiable in each variable separately:
 \begin{equation*}
 \lim_{\xi \in \C \to 0} \frac{f(z_1,\ldots,z_k+\xi,\ldots,z_n) - f(z)}{\xi}
 \qquad \text{exists for all $z \in U$ and all $k=1,2,\ldots,n$}.
 \end{equation*}
+In this book, however, the words ``differentiable'' and ``derivative'' refer
+to real differentiability.
 \end{defn}
 
 As in one variable, we define the \emph{\myindex{Wirtinger operators}}
@@ -9705,7 +9711,7 @@ the context is clear.
 \end{defn}
 
 Germs are particularly useful for holomorphic functions because of the identity
-theorem.  The set of germs of complex valued functions always forms a ring.
+theorem.  The set of germs of complex-valued functions always forms a ring.
 For example, to multiply $(f,p)$ and $(g,p)$, take two representatives
 $f$ and $g$ defined on a common neighborhood multiply them and
 then consider the germ $(fg,p)$.
@@ -9879,7 +9885,7 @@ multiplicity) of $z_n
 \int_{\partial D}
 \frac{\frac{\partial f}{\partial z_n} (z',z_n)}{f(z',z_n)} ~dz_n .
 \end{equation*}
-The above expression is an integer valued
+The above expression is an integer-valued
 continuous function that is $k$ when $z'=0$,
 so it is $k$ for all $z' \in V'$.
 Write%
