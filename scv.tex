@@ -3074,7 +3074,7 @@ connected.
 \end{exbox}
 
 Let us now prove that a one-to-one holomorphic
-mapping is biholomorphic, a theorem definitely not true in the
+mapping is biholomorphic, a result definitely not true in the
 smooth setting: $x \mapsto x^3$ is smooth, one-to-one, onto map
 of $\R$ to $\R$, but the inverse is not differentiable.
 
@@ -3100,8 +3100,13 @@ a special case of the implicit function theorem.
 The trick is to show that $J_f$ happens to be nonzero
 everywhere.
 
-In one complex dimension, every holomorphic function can in
-the proper local holomorphic coordinates written as $z^d$ for $d=0,1,2,\ldots$.
+In one complex dimension, every holomorphic function $f$ can in
+the proper local holomorphic coordinates (and up to adding a constant)
+written as $z^d$ for $d=0,1,2,\ldots$:
+Near a $z_0 \in \C$,
+there exists a constant $c$ and a local biholomorphic $g$
+with $g(z_0) = 0$ such that
+$f(z) = c + {\bigl( g(z) \bigr)}^d$.
 Such a simple result
 does not hold in several variables in general, but if the mapping is
 locally one-to-one then the present theorem says that such a mapping can be
@@ -3777,7 +3782,7 @@ So, $U$ is convex at $p \in \partial U$ if
 the Hessian
 of $r$ at $p$ as a bilinear form is positive definite (or positive
 semidefinite) when restricted to tangent vectors in $T_p \partial U$.
-This matrix is essentially the second fundamental form from Riemannian
+Essentially, this matrix is the second fundamental form from Riemannian
 geometry in mild disguise (or perhaps it is the other way around).
 
 Notice that we cheated above a little bit since we have not proved that
@@ -6494,8 +6499,9 @@ define the
 The domain $U$ is \emph{\myindex{holomorphically convex}} if whenever
 $K \subset \subset U$, then $\widehat{K}_U \subset \subset U$.
 In other words, $U$ is holomorphically convex if it is convex with
-respect to moduli of holomorphic functions on $U$.\footnote{It is common to use $\widehat{K}_U$ rather than just $\widehat{K}$
-to emphasize the dependence on $U$.}
+respect to moduli of holomorphic functions on $U$.\footnote{Sometimes simply
+$\widehat{K}$ is used, but we use
+$\widehat{K}_U$ to emphasize the dependence on $U$.}
 \end{defn}
 
 
