@@ -1199,7 +1199,7 @@ d z_j = d x_j + i \, d y_j ,
 \qquad
 d \bar{z}_j = d x_j - i \, d y_j . 
 \end{equation*}
-One can check that as expected,
+As expected,
 \begin{equation*}
 \begin{array}{lll}
 d z_j \left( \frac{\partial}{\partial z_k} \right) = \delta_j^k ,
@@ -1320,7 +1320,7 @@ donut.  Whereas the set $\partial \D^2 =
 (\partial \D \times \overline{\D}) \cup
 (\overline{\D} \times \partial \D)$ is the union of two filled donuts, or more
 precisely it is both the inside and the outside of the donut put together,
-and these two things meet on the surface of the donut.  So you can see the
+and these two things meet on the surface of the donut.  So the
 set $\Gamma$ is quite small in comparison to the entire boundary.
 
 \begin{exbox}
@@ -2723,12 +2723,13 @@ several variables.  It says that for a bounded domain, it is enough to know
 that a self mapping is the identity at a single point to show that it is the
 identity everywhere.  As there are quite a few theorems named for Cartan,
 this one is often referred to as the
-\emph{\myindex{Cartan's uniqueness theorem}}.  It can be very useful in
+\emph{\myindex{Cartan's uniqueness theorem}}.  It is very useful in
 computing the automorphism groups of certain domains.
-An \emph{\myindex{automorphism}} of $U$ is a biholomorphic map from $U$ to $U$.
+An \emph{\myindex{automorphism}} of $U$ is a biholomorphic map from $U$ onto $U$.
 Automorphisms form a group under composition, called the
-\emph{\myindex{automorphism group}}.  As an
-exercise, you will use the theorem to compute the automorphism groups of $\bB_n$ and $\D^n$.
+\emph{\myindex{automorphism group}}.  As 
+exercises,
+you will use the theorem to compute the automorphism groups of $\bB_n$ and $\D^n$.
 
 \begin{thm}[Cartan]
 Suppose $U \subset \C^n$ is a bounded domain, $a \in U$, $f \colon U \to U$ is a
@@ -2841,7 +2842,7 @@ V$, and $f \colon U \to V$ is
 a biholomorphic map such that $f(0) = 0$.  Then $f$ is linear.
 \end{cor}
 
-For example $\bB_n$ is circular and bounded, so a biholomorphism of $\bB_n$
+For example, $\bB_n$ is circular and bounded, so a biholomorphism of $\bB_n$
 (an automorphism)
 that fixes the origin is linear.  Similarly a polydisc centered at zero is
 also circular and bounded.
@@ -2849,7 +2850,7 @@ also circular and bounded.
 \begin{proof}
 The map $g(z) = f^{-1}\bigl(e^{-i\theta}f(e^{i\theta} z)\bigr)$ is an
 automorphism of $U$ and via the
-chain-rule, $g'(0) = I$.  Therefore
+chain-rule, $g'(0) = I$.  Therefore,
 $f^{-1}\bigl(e^{-i\theta}f(e^{i\theta} z)\bigr) = z$, or in other words
 \begin{equation*}
 f(e^{i\theta} z) = e^{i\theta}f(z) .
@@ -3017,7 +3018,7 @@ for a holomorphic function $g$.
 
 \begin{proof}
 Once we show that one regular point $p$ exists, then a whole
-neighborhood of $p$ in $N$ are regular points.  We would be done
+neighborhood of $p$ in $N$ are regular points.  We would then be done
 since we can
 repeat the procedure on any neighborhood of any point of $N$.
 
@@ -3130,7 +3131,7 @@ z_n = g(z_1,\ldots,z_{n-1})
 \end{equation*}
 for some holomorphic $g$.
 If we prove the theorem near $q$, we are done.  So without loss of generality
-we can assume that $q=0$ and that $U$ is a
+we assume that $q=0$ and that $U$ is a
 small neighborhood of $0$.  The map
 \begin{equation*}
 F(z_1,\ldots,z_n) = \bigl(z_1,z_2,\ldots,z_{n-1},z_n-g(z_1,\ldots,z_{n-1}) \bigr)
@@ -3194,7 +3195,7 @@ such that the inverse $f^{-1} \colon f(\R) \to \R$ is not continuous.
 \end{exercise}
 \end{exbox}
 
-We can now state a well-known and as yet unsolved conjecture (and most
+We now state a well-known and as yet unsolved conjecture (and most
 likely ridiculously hard to solve):
 the \emph{\myindex{Jacobian conjecture}}.
 This conjecture is a converse to the above
@@ -3283,6 +3284,7 @@ so $\widetilde{f}$ must blow up (in particular it cannot be holomorphic) at
 $p$.  The contradiction shows that no $V$ and $W$ exist.
 \end{example}
 
+\pagebreak[2]
 In one dimension this notion has no real content.  Every domain is a domain
 of holomorphy.
 
@@ -3309,7 +3311,7 @@ a) Given $p \in \partial \bB_n$, find a function $f$ holomorphic on
 $\bB_n$,
 $C^\infty$-smooth on $\overline{\bB_n}$, that does not extend past $p$.
 Hint: For the principal branch of $\sqrt{\cdot}$ the function $\xi \mapsto
-e^{-1/\sqrt{\xi}}$ is holomorphic for $\Re \xi > 0$ and can be extended to
+e^{-1/\sqrt{\xi}}$ is holomorphic for $\Re \xi > 0$ and extends to
 be continuous (even smooth) on all of $\Re \xi \geq 0$.\\
 b) Find a function $f$ holomorphic on $\bB_n$
 that does not extend past any point of
@@ -3331,8 +3333,8 @@ Do note that the subtlety of the definition of domain of holomorphy is that it d
 necessarily talk about functions extending to a larger set, since we must
 take into account single-valuedness.  For example, let $f$ be the principal branch
 of the logarithm defined on $U = \C \setminus \{ z \in \C : \Im z = 0, \Re z \leq 0
-\}$.  We can define locally an extension from one side through the boundary
-of the domain, but we cannot define an extension on a larger set that
+\}$.  We can locally define an extension from one side through the boundary
+of the domain, but we cannot define an extension on a open set that
 contains $U$.  This example should be motivation why we need $V$ to possibly
 be a subset of $U \cap W$, and why $W$ need not include all of $U$.
 \end{remark}
@@ -3341,7 +3343,7 @@ In several dimensions not every domain is a domain of holomorphy.  We have
 the following theorem.  The domain $H$ in the theorem is called the
 \emph{\myindex{Hartogs figure}}.
 
-\begin{thm}
+\begin{thm} \label{thm:extensionhartogsfigure}
 Let $(z,w) = (z_1,\ldots,z_m,w_{1},\ldots,w_{k}) \in \C^m \times \C^k$ be the coordinates.  For two numbers
 $0 < a,b < 1$, let the set $H \subset \D^{m+k}$
 be defined by
@@ -3429,13 +3431,14 @@ extends holomorphically to $U$.
 \begin{proof}
 Without loss of generality,
 by translating and scaling (those operations are after all holomorphic),
-we can assume that $p = (\frac{3}{4},0,\ldots,0)$
+we assume that $p = (\frac{3}{4},0,\ldots,0)$
 and the unit polydisc $\D^n$ is contained in $U$.  We fit a Hartogs figure $H$
 in $U$
 by letting $m=1$ and $k=n-1$, writing $\C^n = \C^{1} \times \C^{n-1}$,
 and taking $a = b = \frac{1}{2}$.
-Then $H \subset U$, and $p \in \D^n \setminus H$.  By applying the extension
-theorem we know that $f$ extends to be holomorphic at $p$.
+Then $H \subset U$, and $p \in \D^n \setminus H$.
+\thmref{thm:extensionhartogsfigure} says that
+$f$ extends to be holomorphic at $p$.
 \end{proof}
 
 A consequence of this result is that holomorphic functions in several
@@ -3583,7 +3586,7 @@ holomorphy, then $U \times V$ is a domain of holomorphy.
 
 In particular, the exercise says that
 given any domain $U \subset \C$ and any domain $V \subset \C$, the domain
-$U \times V$ is a domain of holomorphy in two variables.  The domains
+$U \times V$ is a domain of holomorphy in $\C^2$.  The domains
 $U$ and $V$, and therefore $U \times V$ can be spectacularly non-convex.
 But we should not discard convexity completely, there is a notion of
 \emph{pseudoconvexity}, which vaguely means ``convexity in the 
@@ -3630,7 +3633,7 @@ certain theorems and arguments unnecessarily difficult.
 
 %\medskip
 
-Notice that the definition for a smooth boundary is not just that the
+Notice that the definition of a domain with smooth boundary is not just that the
 boundary is a smooth hypersurface, that is not enough.  It also says that 
 one side of that hypersurface is in $U$ and one side is not in $U$.  That is
 because if the derivative of $r$ never vanishes, then $r$ must have
@@ -3964,7 +3967,7 @@ r}{\partial y}(0,0) < 0$.
 The advantage of this representation is that the tangent plane at $p$
 can be identified with the $x$ coordinates for the purposes of computation.
 Let $M$ be smooth for simplicity.
-We can write the hypersurface as
+We write the equation of the hypersurface as
 \begin{equation*}
 y = \frac{1}{2}\, x^t H x + E(x) ,
 \end{equation*}
@@ -4582,7 +4585,7 @@ is sometimes called the \emph{\myindex{Lewy hypersurface}}, and in the
 literature some even say it \emph{is} the sphere\footnote{That is not, in
 fact, completely incorrect.
 If you think of the sphere in the complex projective space,
-we have simply looked a the sphere in a different coordinate patch.}.
+we are simply looking at the sphere in a different coordinate patch.}.
 
 As an aside,
 the hypersurface 
@@ -4720,7 +4723,7 @@ algebra then says that the number of positive, negative, and zero
 eigenvalues of $D^*HD$ is the same as that for $H$.  The
 eigenvalues might have changed, but their sign did not.
 
-In particular if $H$ is positive definite, then $D^*HD$ is positive
+In particular, if $H$ is positive definite, then $D^*HD$ is positive
 definite.  If a smooth hypersurface $M$ is given by $r=0$, then $f^{-1}(M)$ is
 a smooth hypersurface given by $r \circ f = 0$.
 The holomorphic derivative of $f$ (given by $D$)
@@ -4764,23 +4767,23 @@ but that is pseudoconvex.
 \end{exercise}
 \end{exbox}
 
-In fact, we proved a stronger result.  We proved that the inertia
+We proved a stronger result than the theorem.  We proved that the inertia
 of the Levi-form is invariant under a biholomorphic change of coordinates.
-Let us put this together with the other observations we made above.
-We find the normal form for the
+We will put this together with the other observations we made above.
+We will find the normal form for the
 quadratic part of the defining equation for a smooth real hypersurface under biholomorphic transformations.
 It is possible to do better than the following lemma, but it is not possible
 to get rid of the dependence on $\Re w$ except in the quadratic
 terms.
 
-We will use the \emph{\myindex{big-oh notation}}.
+We use the \emph{\myindex{big-oh notation}}.
 A smooth function is $O(k)$ (or ``$O(k)$ at the origin'' to be
 precise), if
 the function and its first, second, \ldots, $(k-1)$th
 derivatives vanish at the origin.
 For example, if $E$ is $O(3)$ at the origin
 then $E(0)=0$, and its first and second derivatives vanish.
-Often to simplify notation we write
+Often we write
 $O(3)$ instead of $E$ to denote any function in $O(3)$ to simplify notation.
 
 \begin{lemma} \label{lemma:normformquad}
@@ -5224,7 +5227,7 @@ Show that for a $C^2$ function $f \colon U \subset \C \to \R$,
 Use this fact to show that $f$ is harmonic if and only if it is
 (locally) the real or imaginary part
 of a holomorphic function.
-Hint: Key is to be able to find an antiderivative of a holomorphic function.
+Hint: The key is to be able to find an antiderivative of a holomorphic function.
 \end{exercise}
 \end{exbox}
 
@@ -10823,7 +10826,8 @@ reducible.  After finitely many steps you must come to a stop as you cannot
 have an infinite ascending chain of ideals since $\sO_p$ is Noetherian.
 \end{proof}
 
-For a germ of a variety defined by the vanishing of a single holomorphic function, 
+For a germ of a variety defined by the vanishing of
+a single holomorphic function,
 the UFD property of ${}_{n}\sO_p$ gives the irreducible
 components.  You found this factorization in an exercise above.
 
