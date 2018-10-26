@@ -381,7 +381,7 @@ use at least one of the licenses.
 \bigskip
 
 \noindent
-\textbf{Acknowledgements:}
+\textbf{Acknowledgments:}
 \\
 I would like to thank Debraj Chakrabarti, Anirban Dawn, Alekzander Malcom,
 John Treuer, Jianou Zhang, Liz Vivas, Trevor Fancher,
@@ -467,7 +467,7 @@ set.
 
 As complex analysis deals with the complex numbers, perhaps we should start
 with $\sqrt{-1}$.  We start with the real numbers, $\R$, and wish to add
-$\sqrt{-1}$ into our field.  We call this square root $i$, and write the
+$\sqrt{-1}$ into our field.  We call this square root $i$, and we write the
 complex numbers, $\C$, by
 identifying 
 $\C$ with $\R^2$ using
@@ -493,11 +493,11 @@ which is really just the \emph{\myindex{Euclidean distance}}:
 \abs{z} \overset{\text{def}}{=} \sqrt{z \bar{z}} = \sqrt{x^2+y^2} .
 \end{equation*}
 
-Complex analysis is the study of holomorphic (or complex analytic)
+Complex analysis is the study of holomorphic (or complex-analytic)
 functions.
 There is an awful lot one can do with polynomials, but sometimes they are
 just not enough.  For example, there is no polynomial function that solves
-the simplest of differential equations $f' = f$.  We need the exponential
+the simplest of differential equations, $f' = f$.  We need the exponential
 function, which is holomorphic.  
 Holomorphic functions are a generalization of polynomials,
 and to get there one leaves the land of algebra to arrive in the realm of
@@ -518,7 +518,7 @@ We try to write
 \begin{equation*}
 f(z) = \sum_{j=0}^\infty c_j \, z^j
 \end{equation*}
-and all is very fine, until we wish to know what $f(z)$ is for some number
+and all is very fine until we wish to know what $f(z)$ is for some number
 $z \in \C$.
 We usually mean 
 \begin{equation*}
@@ -533,8 +533,8 @@ start with the functions and prove that we can expand into series.
 
 Let $U \subset \C$ be open.  A function $f \colon U \to \C$
 is \emph{\myindex{holomorphic}}
-(or \emph{\myindex{complex analytic}}) if it is
-\emph{\myindex{complex differentiable}} at every point,
+(or \emph{\myindex{complex-analytic}}) if it is
+\emph{\myindex{complex-differentiable}} at every point,
 that is, if
 \begin{equation*}
 f'(z_0)
@@ -577,7 +577,7 @@ The so-called \emph{\myindex{Wirtinger operators}},
 \right)
 ,
 \end{equation*}
-provide an easier way to understnd the
+provide an easier way to understand the
 Cauchy--Riemann equations.
 These operators are determined by insisting
 \begin{equation*}
@@ -709,7 +709,7 @@ the \emph{\myindex{Cauchy integral formula}}\index{Cauchy formula}.
 Let $U \subset \C$ be a domain where $\partial U$ is a piecewise smooth
 simple closed curve (a Jordan curve).  Let $f \colon \overline{U} \to \C$ be a continuous function,
 holomorphic in $U$.
-Orient $\partial U$ positively (going around counter clockwise).
+Orient $\partial U$ positively (going around counter-clockwise).
 Then for $z \in U$:
 \begin{equation*}
 f(z) =
@@ -738,7 +738,8 @@ in a special case.  Take the \emph{\myindex{unit disc}}
 \bigl\{ z \in \C : \sabs{z} < 1 \bigr\} .
 \end{equation*}
 The boundary is the unit circle
-$\partial \D = \bigl\{ z \in \C : \sabs{z} = 1 \bigr\}$ oriented positively, that is, counterclockwise.   Parametrize $\partial \D$
+$\partial \D = \bigl\{ z \in \C : \sabs{z} = 1 \bigr\}$ oriented positively,
+that is, counter-clockwise.   Parametrize $\partial \D$
 by $e^{it}$, where $t$ goes from 0 to $2\pi$.  If $\zeta = e^{it}$,
 then $d\zeta = ie^{it}dt$, and
 \begin{equation*}
@@ -892,7 +893,7 @@ d \zeta
 \end{equation*}
 In the last equality, we are allowed to 
 interchange the limit on the sum with the integral either
-by Fubini's theorem or by uniform convergencce because
+by Fubini's theorem or by uniform convergence because
 for some fixed $M$
 \begin{equation*}
 \abs{
@@ -993,7 +994,7 @@ $\R^n$.
 We 
 identify $\C^n$ with $\R^n \times \R^n = \R^{2n}$ by letting
 $z = x+iy$.
-As in one complex variable we write $\bar{z} = x-iy$.
+As in one complex variable, we write $\bar{z} = x-iy$.
 We call $z$ the \emph{\myindex{holomorphic coordinates}}
 and $\bar{z}$ the \emph{\myindex{antiholomorphic coordinates}}.
 
@@ -1083,7 +1084,7 @@ such that $f|_N$ is bounded.}
 %we do not need to assume $f$ to be locally bounded.}
 and holomorphic in each variable separately.
 In other words, $f$ is holomorphic if it is locally bounded
-and complex differentiable in each variable separately:
+and complex-differentiable in each variable separately:
 \begin{equation*}
 \lim_{\xi \in \C \to 0} \frac{f(z_1,\ldots,z_k+\xi,\ldots,z_n) - f(z)}{\xi}
 \qquad \text{exists for all $z \in U$ and all $k=1,2,\ldots,n$}.
@@ -1107,7 +1108,7 @@ As in one variable, we define the \emph{\myindex{Wirtinger operators}}
 An alternative definition is to say that a continuously
 differentiable function $f \colon U \to \C$ is
 \emph{holomorphic} if
-it satisifies the
+it satisfies the
 \emph{\myindex{Cauchy--Riemann equations}}
 \begin{equation*}
 \frac{\partial f}{\partial \bar{z}_j}  = 0 \qquad \text{for $j=1,2,\ldots,n$}.
@@ -1223,10 +1224,10 @@ one-forms,
 that is, for one-forms $\omega$ and $\eta$,
 $\omega \wedge \eta = - \eta \wedge \omega$.  A wedge product of two
 one-forms is a two-form, and so on.  A $k$-form is an object that 
-can then be integrated on a so-called $k$-chain, for example a
+can then be integrated on a so-called $k$-chain, for example, a
 $k$-dimensional surface.  The wedge product takes care of the orientation.
 
-At this point we need to talk about orientation in $\C^n$.  There are really two
+At this point, we need to talk about orientation in $\C^n$.  There are really two
 natural real-linear isomorphisms of $\C^n$ and $\R^{2n}$.  That is, we
 identify $z = x+iy$ as
 \begin{equation*}
@@ -1513,7 +1514,7 @@ We write
 $\Gamma = \partial \Delta_1 \times \cdots \times \partial \Delta_n$
 and orient it positively.
 Take $z \in \Delta$ and $\zeta \in \Gamma$.
-As in one variable we write the kernel of the Cauchy
+As in one variable, we write the kernel of the Cauchy
 formula as
 \begin{equation*}
 \frac{1}{\zeta-z} =
@@ -1707,7 +1708,7 @@ Or
 \frac{\snorm{f}_\Gamma}{\rho^\alpha} .
 \end{equation*}
 
-As in one-variable theory the Cauchy estimates prove the following
+As in one-variable theory, the Cauchy estimates prove the following
 proposition.
 
 \begin{prop}
@@ -2196,7 +2197,7 @@ The $\bar{z}$ derivative works similarly.
 
 Because of the proposition,
 when we deal with arbitrary possibly
-nonholomorphic functions we often write $f(z,\bar{z})$ and treat them as
+non-holomorphic functions we often write $f(z,\bar{z})$ and treat them as
 functions of $z$ and $\bar{z}$.
 
 \begin{remark}
@@ -2227,7 +2228,7 @@ is said to be holomorphic if each component is holomorphic.  That
 is, if $f = (f_1,\ldots,f_m)$ then each $f_j$ is a holomorphic function.
 \end{defn}
 
-As in one variable the composition of holomorphic functions (mappings) is
+As in one variable, the composition of holomorphic functions (mappings) is
 holomorphic.
 
 \begin{thm}
@@ -2473,7 +2474,7 @@ $K \subset \subset Y$, the set $f^{-1}(K)$ is compact.
 
 The notation ``$\subset \subset$'' is a common notation for compact, or relatively
 compact subset.  Often the distinction between compact and relatively
-compact is not important, for example in the above definition we can replace
+compact is not important, for example, in the above definition we can replace
 compact with relatively compact.
 
 Vaguely, ``proper'' means that ``boundary goes to the boundary.''
@@ -2630,7 +2631,7 @@ A more general version of the above characterization of proper maps is the follo
 \begin{exercise}
 Let $f \colon X \to Y$ be a continuous function of locally compact Hausdorff topological spaces.
 Let $X_\infty$ and $Y_\infty$ be the 
-one-point-compactifications of $X$ and $Y$.
+one-point compactifications of $X$ and $Y$.
 Then $f$ is a proper map if and only if it extends as a continuous map
 $f_\infty \colon X_\infty \to Y_\infty$ by letting
 $f_\infty |_X = f$ and
@@ -3450,7 +3451,7 @@ through $p$ (not even continuously let alone holomorphically),
 and we obtain a contradiction.
 
 The extension works in an even more surprising fashion.  We could
-take out a very large set, for example any geometrically
+take out a very large set, for example, any geometrically
 convex\footnote{By geometrically convex we mean the classical
 definition of convex: $K$ is convex if given any two $x,y \in K$ and $t \in [0,1]$,
 then $t x + (1-t)y \in K$.} subset:
@@ -3469,7 +3470,7 @@ Then make sure your extension is single-valued.
 
 Convexity of $K$ is not needed; we only need that $U\setminus K$
 is connected, however, the proof is much harder.
-The singlevaluedness of the extension is the key point that makes the
+The single-valuedness of the extension is the key point that makes the
 general proof harder.
 
 Notice the surprising fact that any holomorphic function on
@@ -7092,7 +7093,7 @@ $z_0$ whose real part is $\varphi$.
 \section{CR functions}
 
 We first need to know what it means for a function $f \colon X \to \C$
-to be smooth if $X$ is not an open set, for example if $X$ is a hypersurface.
+to be smooth if $X$ is not an open set, for example, if $X$ is a hypersurface.
 
 \begin{defn}
 Let $X \subset \R^n$ be a set.
@@ -9389,7 +9390,7 @@ K_U(\zeta,\bar{z}) . \qedhere
 \end{equation*}
 \end{proof}
 
-In partricular, by the proposition $K_U$ is analytic; thinking of
+In particular, by the proposition $K_U$ is analytic; thinking of
 $\bar{\zeta}$ as the variable, then $K_U$ is a holomorphic function of
 $2n$ variables.
 
@@ -10354,11 +10355,11 @@ N \cap X = \bigl\{ z \in N : f(z) = 0 \text{ for all } f \in \sF \bigr\}
 = \bigcap_{f \in \sF} Z_f .
 \end{equation*}
 Then $X$ is called a
-(\emph{complex} or \emph{complex analytic}) \emph{\myindex{variety}}\index{complex variety}\index{complex
-analytic variety}
+(\emph{complex} or \emph{complex-analytic})
+\emph{\myindex{variety}}\index{complex variety}\index{complex-analytic variety}
 or a
 \emph{\myindex{subvariety}}\index{complex
-subvariety}\index{complex analytic subvariety} of $U$.
+subvariety}\index{complex-analytic subvariety} of $U$.
 Sometimes $X$ is called an \emph{\myindex{analytic set}}.
 We say $X \subset U$ is a proper subvariety if $\emptyset \not= X \subsetneq
 U$.
@@ -10886,11 +10887,10 @@ with $X$ is an isolated point at the origin.  This is precisely
 the same condition needed to apply Weierstrass preparation theorem in the case
 when $X$ is the zero set of a single function.
 
-We saw hypersurfaces are the simpler cases of complex analytic
-subvarieties.  At the other end of the spectrum, complex analytic
+We saw hypersurfaces are the simpler cases of complex-analytic
+subvarieties.  At the other end of the spectrum, complex-analytic
 subvarieties of dimension 1 are also easy to handle for different reasons.
-All complex
-analytic subvarieties of dimension 1 are locally just analytic discs.
+All complex-analytic subvarieties of dimension 1 are locally just analytic discs.
 In fact, they are locally the one-to-one holomorphic images of discs
 and so they have a natural topological manifold structure even at singular
 points.
@@ -10952,7 +10952,7 @@ origin.  The continuation equals one of the roots, e.g.\ $\alpha_j(z)$
 becomes $\alpha_\ell(z)$ (and by continuity it is the
 same root along the entire $N$).  So there is
 a permutation $\sigma$ on $m$ elements such that as $z$ moves
-counterclockwise around the origin from the upper half plane across $N$ to the lower half
+counter-clockwise around the origin from the upper half plane across $N$ to the lower half
 plane, $\alpha_j(z)$ is continued as $\alpha_{\sigma(j)}(z)$.
 There exists some number $k$ (e.g.\ $k=m!$) such that $\sigma^k$ is the identity.
 As $\xi$ goes around
@@ -10960,7 +10960,7 @@ a circle around the origin, $\xi^k$ goes around the origin $k$ times.
 Start at a positive real $\xi$ and start defining a
 function $g(\xi)$ as
 $\alpha_1(\xi^k)$.
-Move $\xi$ around the origin counterclockwise continuing $g$ analytically.
+Move $\xi$ around the origin counter-clockwise continuing $g$ analytically.
 Divide the disc into sectors of angle $\nicefrac{2\pi}{k}$,
 whose boundaries are where $\xi^k \in N$.
 Transition to $\alpha_{\sigma(1)}(\xi^k)$ after we reach the boundary
@@ -11118,8 +11118,8 @@ Show that the Levi-form has at least $k$ zero eigenvalues.
 \end{exercise}
 
 \begin{exercise}
-Find an example of a real hypersurface $M \subset \C^n$ that contains a unique complex
-analytic subvariety through a point $p$ and this subvariety is singular.
+Find an example of a real hypersurface $M \subset \C^n$ that contains a unique
+complex-analytic subvariety through a point $p$ and this subvariety is singular.
 \end{exercise}
 \end{exbox}
 
