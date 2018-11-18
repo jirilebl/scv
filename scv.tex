@@ -6724,8 +6724,8 @@ point $p \in \partial U$.
 
 \begin{defn}
 Let $U \subset \R^n$ be open.
-A function $f \colon U \to \C$ is said to be
-\emph{\myindex{real-analytic}} (sometimes just \emph{analytic} if
+A function $f \colon U \to \C$ is 
+\emph{\myindex{real-analytic}} (or simply \emph{analytic} if
 clear from context) if at each point $p \in U$, the function $f$
 has a convergent power series that converges (absolutely) to $f$ in some
 neighborhood of $p$.
@@ -6744,9 +6744,11 @@ $f=g$ on $U \cap \R^n$.  Then $f=g$ on all of $U$.
 
 \begin{proof}
 By taking $f-g$ we can assume that $g=0$.
-Let $z = x+iy$ as usual and $\R^n$ is given by $y=0$,
-and let us assume that $f = 0$ on $y=0$.
-At every point $p \in \R^n \cap U$, 
+Let $z = x+iy$ as usual so that $\R^n$ is given by $y=0$.
+Our assumption is that $f = 0$ when $y=0$,
+so the derivative of $f$ with respect to $x_j$ is zero.
+So when $y=0$,
+the Cauchy--Riemann equations say
 \begin{equation*}
 0 = \frac{\partial f}{\partial x_j} =
 -i \frac{\partial f}{\partial y_j} .
@@ -6755,8 +6757,9 @@ Therefore, on $y=0$,
 \begin{equation*}
 \frac{\partial f }{\partial z_j} = 0 .
 \end{equation*}
-Since the holomorphic function $\frac{\partial f }{\partial z_j} = 0$ on $y=0$, then
-by induction all derivatives of $f$ at $p$ vanish, it has a zero 
+The derivative $\frac{\partial f }{\partial z_j}$ is holomorphic
+and $\frac{\partial f }{\partial z_j} = 0$ on $y=0$.  Then
+by induction all derivatives of $f$ at $p \in \R^n \cap U$ vanish, it has a zero 
 power series.  Hence $f$ is identically zero in a neighborhood of
 $p$ in $\C^n$ and by the identity theorem it is zero on all of $U$.
 \end{proof}
