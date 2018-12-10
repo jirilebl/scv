@@ -4785,9 +4785,10 @@ but that is pseudoconvex.
 
 We proved a stronger result than the theorem.  We proved that the inertia
 of the Levi-form is invariant under a biholomorphic change of coordinates.
-We will put this together with the other observations we made above.
-We will find the normal form for the
-quadratic part of the defining equation for a smooth real hypersurface under biholomorphic transformations.
+Putting this together with the other observations we made above,
+we will find the normal form for the
+quadratic part of the defining equation for a smooth real hypersurface
+under biholomorphic transformations.
 It is possible to do better than the following lemma, but it is not possible
 to get rid of the dependence on $\Re w$ except in the quadratic
 terms.
@@ -4942,8 +4943,9 @@ a {(\Im w')}^2
 +O(3) .
 \end{split}
 \end{equation*}
-The right hand side depends on $\Im w'$ so we have to apply the implicit
-function theorem to write the hypersurface as a graph again. We must solve
+The right hand side depends on $\Im w'$, so we apply the implicit
+function theorem to write the hypersurface as a graph again.
+We solve
 for $\Im w'$.  The expression for $\Im w'$
 is $O(2)$, and therefore $-i\epsilon (\Im w')(z_1-\bar{z}_1)$ 
 and $a{(\Im w')}^2$ are (at least) $O(3)$.
@@ -4957,10 +4959,10 @@ Next we
 apply the computation in \eqref{eq:nonmixedderschangeofcoords}.
 %where the $n$th variable will be $w'$ or $w''$ instead of $z_n$,
 %depending if we are in the domain of $r$ or not.
-We again change variables in the $w'$, that is, we fix the $z$s and we set
+We again change variables in the $w'$; we fix the $z$s and we set
 $w' = w'' + g(z)$, where $g$ is $O(2)$.  
 That is, the biholomorphic mapping is
-$f_j(z,w'') = z_j$ and $f_n(z,w'') = w'' +g(z)$.
+$f_j(z,w'') = z_j$ for $j=1,\ldots,n-1$, and $f_n(z,w'') = w'' +g(z)$.
 We let $r = - \Im w' + q(z,\bar{z}) + E(z,\bar{z},\Re w')$, so
 $r$ is a function of $(z_1,\ldots,z_{n-1},w')$ and
 $f$ and $(r \circ f)$ are functions of $(z_1,\ldots,z_{n-1},w'')$
@@ -4989,7 +4991,7 @@ $j,k=1,\ldots,n-1$ we get
 \frac{1}{2i} 
 \frac{\partial^2 g}{\partial z_j \partial z_k} \Big|_0 .
 \end{equation*}
-Where $\delta_{j}^k$ is the Kronecker delta, that is, $\delta_j^j = 1$,
+Here $\delta_{j}^k$ is the Kronecker delta, that is, $\delta_j^j = 1$,
 and $\delta_j^k = 0$ if $j \not= k$.  Notice the $q$ on the right hand
 side.
 Pick the $z_j z_k$ coefficient in $g$
@@ -5041,7 +5043,7 @@ complicated.
 \medskip
 
 
-Let us prove an easy direction of the famous 
+Let us prove the easy direction of the famous 
 \emph{\myindex{Levi-problem}}.  The Levi-problem was a long standing
 problem%
 \footnote{E.\ E.\ Levi stated the problem in 1911, but it was not completely
@@ -5067,16 +5069,16 @@ extends to a neighborhood of $p$.
 
 Pseudoconvex at $p$ means that all eigenvalues of the Levi-form are
 nonnegative.
-Therefore a domain of holomorphy must be pseudoconvex.
-The naming comes from the proof, and sometimes other theorems that use a
-similar proof using a ``tomato can'' of analytic discs are also called
-a tomato can principle.
+The theorem says that a domain of holomorphy must be pseudoconvex.
+The theorem's name comes from the proof, and sometimes other theorems using a
+similar proof of a ``tomato can'' of analytic discs are called
+tomato can principles.
 The general statement of the principle is that ``an
 analytic function holomorphic in a neighborhood of the sides and the bottom
 of a tomato can extends to the inside.''
 
 \begin{proof}
-Applying what we know, we change variables so that $p = 0$, and
+We change variables so that $p = 0$, and
 near $p$, $U$ is given by
 \begin{equation*}
 \Im w > -\sabs{z_1}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{z_j}^2 +
@@ -5105,7 +5107,7 @@ $\varphi(\xi) \in U$.  By picking $\lambda$ small enough, we have
 $\varphi(\overline{\D}\setminus\{0\}) \subset U$.
 
 As $\varphi(\partial \D)$ is compact we can ``wiggle it a little'' and
-still stay in $U$.  In particular, for small enough $s > 0$, the disc
+find discs in $U$.  In particular, for small enough $s > 0$, the disc
 \begin{equation*}
 \xi \overset{\varphi_s}{\mapsto} (\lambda \xi, 0, 0, \ldots, 0, i s) 
 \end{equation*}
@@ -5226,7 +5228,7 @@ Let us
 go through some basic results on harmonic and subharmonic
 functions that you have seen in detail in your one-variable class.
 Consequently we leave some of these results as exercises.
-Notice that in this section (and not just here)
+In this section (and not just here)
 we will often write $f(z)$ for a function
 even if it is not holomorphic.
 
@@ -5250,7 +5252,7 @@ Hint: The key is to be able to find an antiderivative of a holomorphic function.
 It follows from the exercise that
 a harmonic function is infinitely differentiable, and by 
 applying
-the Cauchy formula on a disc we obtain the following proposition.
+the Cauchy (or Poisson) formula on a disc we obtain the following proposition.
 
 \begin{prop}[Mean-value property and sub-mean-value property]
 \index{mean-value property}
