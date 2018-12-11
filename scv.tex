@@ -5242,17 +5242,81 @@ Show that for a $C^2$ function $f \colon U \subset \C \to \R$,
 \begin{equation*}
 \frac{\partial^2}{\partial \bar{z}\partial z} f = \frac{1}{4} \nabla^2 f .
 \end{equation*}
-Use this fact to show that $f$ is harmonic if and only if it is
+Use this to show that $f$ is harmonic if and only if it is
 (locally) the real or imaginary part
 of a holomorphic function.
-Hint: The key is to be able to find an antiderivative of a holomorphic function.
+Hint: The key is finding an antiderivative of a holomorphic function.
 \end{exercise}
 \end{exbox}
 
 It follows from the exercise that
-a harmonic function is infinitely differentiable, and by 
-applying
-the Cauchy (or Poisson) formula on a disc we obtain the following proposition.
+a harmonic function is infinitely differentiable.
+It is often useful to find a harmonic function given boundary values.
+This problem is usually called the \emph{\myindex{Dirichlet problem}}.
+The proof of the following special case is contained in the exercises
+following the theorem.
+
+\begin{thm} \label{thm:dirichsol}
+Let $\D \subset \C$ be the unit disc.  Let the
+\emph{\myindex{Poisson kernel}} for the unit disc be defined by
+\begin{equation*}
+P_r(\theta) = \frac{1}{2\pi} \frac{1-r^2}{1+r^2-2r \cos \theta} .
+\end{equation*}
+Given any continuous function $u \colon \partial \D \to \C$, the function
+$\tilde{u} \colon \overline{\D} \to \C$ defined by
+\begin{equation*}
+\tilde{u}(re^{i\theta})
+=
+\int_{-\pi}^\pi u(e^{i\varphi}) P_r(\theta-\varphi) \, d\varphi
+\quad \text{if $r < 1$} \qquad \text{and} \qquad
+\tilde{u}(e^{i\theta}) = u(e^{i\theta}),
+\end{equation*}
+is harmonic in $\D$ and continuous on $\overline{D}$.
+%  Further as $z \in \D$ tends to $z_0 \in \partial \D$,
+%$\tilde{u}(z)$ tends to $u(z_0)$.  In other words,
+%$\tilde{u}$ extends to a continuous function on $\overline{D}$.
+\end{thm}
+
+%In other words, there exists a continuous function $\tilde{u}$ defined on
+%the closed disc, which is harmonic inside and is equal to $u$
+%on $\partial \D$.
+
+\begin{exbox}
+\begin{exercise}
+a)~Prove $P_r(\theta) > 0$ for all $0 \leq r < 1$ and all $\theta$.\\
+b)~Prove $\int_{-\pi}^{\pi} P_r(\theta) \, d\theta = 1$.\\
+c)~Prove for any given $\delta > 0$,
+$\sup \{P_r(\theta) : \delta \leq \abs{\theta} \leq \pi \} \to 0$ as
+$r \to 1$.
+\end{exercise}
+
+\begin{exercise}
+Prove \thmref{thm:dirichsol} using the following guideline:
+a)~Poisson kernel is harmonic
+as a function of $z=re^{i\theta}$, and hence
+$\tilde{u}$ is harmonic.
+b)~$P_r$ acts like an
+approximate identity: prove that
+$\tilde{u}(re^{i\theta}) \to u(e^{i\theta})$ uniformly as
+$r \to 1$ (Hint: split the integral to $[-\delta,\delta]$ and the rest
+and use the previous exercise).
+c)~Prove that $\tilde{u}(z)$ tends to $u(z_0)$ as $z \in \D \to z_0 \partial
+\D$.
+\end{exercise}
+
+\begin{exercise}
+State and prove a version of \thmref{thm:dirichsol} for an arbitrary disc
+$\Delta_r(a)$.
+\end{exercise}
+\end{exbox}
+
+The Poisson kernel can be used as a reproducing kernel for
+holomorphic functions, as holomorphic functions are harmonic (their real and
+imaginary parts are).
+A Poisson kernel also exists for higher dimensions, and has
+analogous properties.
+The solution to the Dirichlet problem using the Poisson kernel leads to
+the following proposition.
 
 \begin{prop}[Mean-value property and sub-mean-value property]
 \index{mean-value property}
@@ -5496,6 +5560,7 @@ plurisubharmonic and achieves a maximum at $p \in U$, then $f$ is constant.
 \end{exercise}
 \end{exbox}
 
+\begin{samepage}
 \begin{prop}
 A $C^2$-smooth function $f \colon U \subset \C^n \to \R$ is plurisubharmonic
 if and only if the complex Hessian matrix
@@ -5507,6 +5572,7 @@ if and only if the complex Hessian matrix
 is positive semidefinite at every
 point.
 \end{prop}
+\end{samepage}
 
 \begin{proof}
 Fix a point $p$, and after translation assume $p=0$.
@@ -5779,48 +5845,6 @@ exercise.
 \end{exercise}
 \end{exbox}
 
-It is often useful to find a harmonic function given boundary values.
-The proof of the following special case is contained in the exercises
-following the theorem.
-
-\begin{thm}
-Let $\D \subset \C$ be the unit disc.  Let the
-\emph{\myindex{Poisson kernel}} for the unit disc be defined by
-\begin{equation*}
-P_r(\theta) = \frac{1}{2\pi} \frac{1-r^2}{1+r^2-2r \cos \theta} .
-\end{equation*}
-Given any continuous function $u \colon \partial \D \to \C$, the function
-$\tilde{u} \colon \D \to \C$ defined by
-\begin{equation}
-\tilde{u}(re^{i\theta})
-=
-\int_{-\pi}^\pi u(e^{i\varphi}) P_r(\theta-\varphi) \, d\varphi
-\end{equation}
-is harmonic.  Further as $z \in \D$ tends to $z_0 \in \partial \D$,
-$\tilde{u}(z)$ tends to $u(z_0)$.
-\end{thm}
-
-\begin{exbox}
-\begin{exercise}
-a)~Prove $P_r(\theta) > 0$ for all $0 \leq r < 1$ and all $\theta$.\\
-b)~Prove $\int_{-\pi}^{\pi} P_r(\theta) \, d\theta = 1$.\\
-c)~Prove for any given $\delta > 0$,
-$\sup \{P_r(\theta) : \delta \leq \abs{\theta} \leq \pi \} \to 0$ as
-$r \to 1$.
-\end{exercise}
-
-\begin{exercise}
-Prove the above theorem.  Hint: First, the Poisson kernel is harmonic,
-and second it acts like an
-approximate identity as $r \to 1$.  Use the above properties.
-\end{exercise}
-\end{exbox}
-
-The Poisson kernel can sometimes be used as a reproducing kernel for
-holomorphic functions, as holomorphic functions are harmonic.
-A Poisson kernel also exists for higher dimensions, and has
-analogous properties.
-
 As an application of harmonic functions, let us prove 
 another useful theorem about zero sets of holomorphic functions,
 the theorem of
@@ -5853,8 +5877,9 @@ $f$ is just identically zero and hence holomorphic.
 %after composing with an automorphism of the disc
 
 Let $u$ be the real part of $f$.  On $\Delta'$, $u$ is a harmonic function.
-Let $Pu$ be the Poisson integral of $u$.  Hence $Pu$ has the same boundary
-values as $u$ and is harmonic in all of $\Delta$.  Consider the function
+Let $Pu$ be the Poisson integral of $u$ on $\Delta$.  Hence $Pu$
+equals $u$ on $\partial \Delta$, and $Pu$ is harmonic in all of $\Delta$.
+Consider the function
 $Pu(z) - u(z)$ on $\overline{\Delta}$.  The function is zero
 on $\partial \Delta$ and it is harmonic on $\Delta'$.  By rescaling $f$
 we can without loss of generality assume that $\abs{f(z)} < 1$ for all $z
@@ -5923,9 +5948,9 @@ if for every $K \subset \subset U$, the hull $\widehat{K} \subset \subset U$.%
 Clearly $K \subset \widehat{K}$.  The key is to show that $\widehat{K}$
 is not ``too large'' for $U$.
 Keep in mind that the functions in $\sF$ are defined on $U$, so $\widehat{K}$
-depends on $U$ not just on $K$.  A common mistake is to consider functions defined
+depends on $U$ not just on $K$.  An easy mistake is to consider functions defined
 on a larger set, obtaining a smaller $\sF$ and hence a larger
-$\widehat{K}$.  Sometimes it may be useful to use $\widehat{K}_{\sF}$ to
+$\widehat{K}$.  Sometimes it is useful to write $\widehat{K}_{\sF}$ to
 denote the dependence on $\sF$, especially when talking about several different
 hulls.
 %We will instead explicitly say so in words to avoid too much notation.
