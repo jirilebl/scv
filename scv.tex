@@ -2562,8 +2562,8 @@ contains no analytic discs.
 \end{prop}
 
 \begin{proof}
-Suppose we have a holomorphic function $g \colon \D \to \C^n$
-such that the image of $g$ is inside the unit sphere.  In other words
+Suppose there is a holomorphic function $g \colon \D \to \C^n$
+such that the image $g(\D)$ is inside the unit sphere.  In other words
 \begin{equation*}
 \snorm{g(z)}^2 = \sabs{g_1(z)}^2 + \sabs{g_2(z)}^2 + \cdots + \sabs{g_n(z)}^2 = 1
 \end{equation*}
@@ -2572,8 +2572,9 @@ unitary matrix) we assume that
 $g(0) = (1,0,0,\ldots,0)$.  We look at the first component
 and notice that $g_1(0) = 1$.  If a sum of
 positive numbers is less than or equal to 1,
-then they all are, and hence $\sabs{g_1(z)} \leq 1$.  By maximum principle
-we have that $g_1(z) = 1$ for all $z \in \D$.  But then $g_j(z) = 0$
+then they all are, and hence $\sabs{g_1(z)} \leq 1$.  Maximum principle
+says
+that $g_1(z) = 1$ for all $z \in \D$.  But then $g_j(z) = 0$
 for all $j=2,\ldots,n$ and all $z \in \D$.  Therefore $g$ is constant and
 thus not an analytic disc.
 \end{proof}
@@ -2657,7 +2658,7 @@ $f_\infty |_X = f$ and
 We now have all the lemmas needed to prove the theorem of Rothstein.
 
 \begin{proof}[Proof of \thmref{thm:Rothstein}]
-Suppose we have a proper holomorphic map $f \colon \D^2
+Suppose there is a proper holomorphic map $f \colon \D^2
 \to \bB_2$.
 Fix some $e^{i\theta}$ in the boundary of the disc $\bD$.  Take a sequence
 $w_k \in \bD$ such that $w_k \to e^{i\theta}$.   The functions
@@ -3286,7 +3287,7 @@ connected, such that for every $f \in \sO(U)$ there exists an $\widetilde{f} \in
 
 \begin{example}
 The unit ball $\bB_n \subset \C^n$ is a domain of holomorphy.  Proof: 
-Suppose we have $V$, $W$, and $\widetilde{f}$ as in the definition.  As $W$ is
+Consider $V$, $W$, and $\widetilde{f}$ as in the definition.  As $W$ is
 connected and open, it is path connected.  There exist
 points in $W$ that are not in $\bB_n$, so there
 is a path $\gamma$ in $W$ that goes
@@ -3325,7 +3326,10 @@ Show that a polydisc in $\C^n$ is a domain of holomorphy.
 \begin{exercise}
 a) Given $p \in \partial \bB_n$, find a function $f$ holomorphic on
 $\bB_n$,
-$C^\infty$-smooth on $\overline{\bB_n}$, that does not extend past $p$.
+$C^\infty$-smooth on $\overline{\bB_n}$ (all real partial derivatives of
+all orders extend
+continuously to $\overline{\bB_n}$), that does not extend past $p$
+as a holomorphic function.
 Hint: For the principal branch of $\sqrt{\cdot}$ the function $\xi \mapsto
 e^{-1/\sqrt{\xi}}$ is holomorphic for $\Re \xi > 0$ and extends to
 be continuous (even smooth) on all of $\Re \xi \geq 0$.\\
@@ -3753,6 +3757,7 @@ Usually we write $X_p$ rather than $X(p)$.
 To be more fancy we could
 say $X$ is a \emph{\myindex{section}} of $T \R^n$.
 
+%FIXME FIXME1: smooth functions on hypersurface!
 Similarly,
 \begin{equation*}
 TM = \bigcup_{p \in M} T_p M
@@ -5255,21 +5260,25 @@ It is often useful to find a harmonic function given boundary values.
 This problem is usually called the \emph{\myindex{Dirichlet problem}}.
 The proof of the following special case is contained in the exercises
 following the theorem.
+Let the
+\emph{\myindex{Poisson kernel}} for the unit disc $\D \subset \C$ be defined by
+\begin{equation*}
+P_r(\theta)
+= \frac{1}{2\pi} \frac{1-r^2}{1+r^2-2r \cos \theta}
+= \frac{1}{2\pi}
+\operatorname{Re} \left( \frac{1+re^{i\theta}}{1-re^{i\theta}}\right) ,
+\qquad \text{for $0 \leq r < 1$.}
+\end{equation*}
 
 \begin{thm} \label{thm:dirichsol}
-Let $\D \subset \C$ be the unit disc.  Let the
-\emph{\myindex{Poisson kernel}} for the unit disc be defined by
-\begin{equation*}
-P_r(\theta) = \frac{1}{2\pi} \frac{1-r^2}{1+r^2-2r \cos \theta} .
-\end{equation*}
 Given any continuous function $u \colon \partial \D \to \C$, the function
-$\tilde{u} \colon \overline{\D} \to \C$ defined by
+$Pu \colon \overline{\D} \to \C$ defined by
 \begin{equation*}
-\tilde{u}(re^{i\theta})
+Pu(re^{i\theta})
 =
 \int_{-\pi}^\pi u(e^{i\varphi}) P_r(\theta-\varphi) \, d\varphi
 \quad \text{if $r < 1$} \qquad \text{and} \qquad
-\tilde{u}(e^{i\theta}) = u(e^{i\theta}),
+Pu(e^{i\theta}) = u(e^{i\theta}),
 \end{equation*}
 is harmonic in $\D$ and continuous on $\overline{D}$.
 %  Further as $z \in \D$ tends to $z_0 \in \partial \D$,
@@ -5294,13 +5303,13 @@ $r \to 1$.
 Prove \thmref{thm:dirichsol} using the following guideline:
 a)~Poisson kernel is harmonic
 as a function of $z=re^{i\theta} \in \D$, and hence
-$\tilde{u}$ is harmonic.
+$Pu$ is harmonic.
 b)~$P_r$ acts like an
 approximate identity: prove that
-$\tilde{u}(re^{i\theta}) \to u(e^{i\theta})$ uniformly as
+$Pu(re^{i\theta}) \to u(e^{i\theta})$ uniformly as
 $r \to 1$ (Hint: split the integral to $[-\delta,\delta]$ and the rest
 and use the previous exercise).
-c)~Prove that $\tilde{u}(z)$ tends to $u(z_0)$ as
+c)~Prove that $Pu(z)$ tends to $u(z_0)$ as
 $z \in \D \to z_0 \in \partial \D$.
 \end{exercise}
 
@@ -5310,7 +5319,7 @@ $\Delta_r(a)$.
 \end{exercise}
 \end{exbox}
 
-The Poisson kernel can be used as a reproducing kernel for
+The Poisson kernel is also used as a reproducing kernel for
 holomorphic functions, as holomorphic functions are harmonic (their real and
 imaginary parts are).
 A Poisson kernel also exists for higher dimensions, and has
@@ -5494,7 +5503,8 @@ Prove that if $\varphi \colon \R \to \R$ is a monotonically increasing convex fu
 %Recall from complex analysis in one variable that harmonic functions were
 %precisely (locally) the real and imaginary parts of holomorphic functions.
 There are too many
-harmonic functions in $\C^n$.  To get the real and imaginary parts of holomorphic functions in $\C^n$
+harmonic functions in $\C^n$.  To get the real and imaginary parts of
+holomorphic functions in $\C^n$,
 we require a smaller class of functions than all harmonic functions.
 
 \begin{defn}
