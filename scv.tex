@@ -23,16 +23,24 @@
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{color}
+
+% Remove page numbers on chapter opens
+% must come before fullpage
+\usepackage{nopageno}
+
 \usepackage[headings]{fullpage}
 
+% smaller margins top/bottom margins
+\addtolength{\textheight}{0.8in}
+\addtolength{\topmargin}{-0.3in}
 
-%PRINT (USE FOR PRINT)
-% NOT FOR THE COILBOUND lettersized version, there, large margins are good.
+%PRINT
+%First offset even/odd pages a bit
+% not for the coil bound full letter size one
 %\addtolength{\oddsidemargin}{0.2in}
 %\addtolength{\evensidemargin}{-0.2in}
 
-%PRINT (USE FOR PRINT)
-%FIXME: DON'T USE THIS, BETTER LEAVE LARGER MARGINS FOR NOW
+%PRINT
 %Now cut page size a bit.  I'll run it through ghostcript anyway
 %to convert to the right size, but this is good for crown quatro
 %conversion, don't use for the full letter size versions
@@ -42,9 +50,11 @@
 %\addtolength{\oddsidemargin}{-0.15in}
 %\addtolength{\evensidemargin}{-0.15in}
 
+
 \usepackage{url}
 \usepackage{varioref}
-\usepackage{makeidx}
+\usepackage{imakeidx}
+\PassOptionsToPackage{hyphens}{url}
 \usepackage{hyperref} % do NOT set [ocgcolorlinks] here!
 
 %If you have an older tex installation you might need
@@ -66,18 +76,21 @@
 \usepackage{tikz}
 \usepackage{rotating}
 
+\usepackage{cellspace}
+\usepackage[toc,nopostdot,sort=use,nomain,automake]{glossaries}
+
 % Times
 %%\usepackage{txfonts}
 % Times, but symbol/cm/ams math fonts
-\usepackage{mathptmx}
+%\usepackage{mathptmx}
 % But we do want helvetica for sans
-\usepackage{helvet}
+%\usepackage{helvet}
 
 % Nicer times, perhaps use this but it changes the pagination etc.,
 % and it really needs to be checked if it works well.
 % Should be done for the next big version
-%\usepackage[tighter,defaultsups]{newtxtext}
-%\usepackage[vvarbb]{newtxmath}
+\usepackage[tighter,defaultsups]{newtxtext}
+\usepackage[vvarbb]{newtxmath}
 
 
 % useful
@@ -288,6 +301,12 @@
 \newcommand{\corref}[1]{\hyperref[#1]{Corollary~\ref*{#1}}}
 \newcommand{\defnref}[1]{\hyperref[#1]{Definition~\ref*{#1}}}
 
+% List of Symbols/Notation
+\newglossary[nlg]{notation}{not}{ntn}{List of Notation}
+
+\loadglsentries{notations}
+\makeglossaries
+
 \begin{document}
 
 \ifpdf
@@ -314,7 +333,7 @@
 Ji{\v r}\'i Lebl\\[3ex]} 
 \today
 \\
-(version 2.4)
+(version 3.0)
 \end{minipage}}
 
 %\addtolength{\textwidth}{\centeroffset}
@@ -459,9 +478,12 @@ reference and further reading.
 
 
 Let us start with some standard notation.
-We use $\C$ for the complex numbers, $\R$
-for real numbers, $\Z$ for integers, $\N = \{ 1,2,3,\ldots \}$ for natural
-numbers, $i = \sqrt{-1}$, etc.  Throughout this book, we will use
+We use \glsadd{not:C} $\C$ for the complex numbers, \glsadd{not:R} $\R$
+for real numbers,
+\glsadd{not:Z} $\Z$ for integers,
+\glsadd{not:N} $\N = \{ 1,2,3,\ldots \}$ for natural
+numbers,
+\glsadd{not:i} $i = \sqrt{-1}$, etc.  Throughout this book, we will use
 the standard terminology of \emph{\myindex{domain}} to mean connected open
 set.
 
@@ -484,11 +506,13 @@ theory, which we could not tell apart from the original.
 
 Given a complex number $z$, its ``opposite'' is 
 the \emph{\myindex{complex conjugate}} of $z$ and is defined as
+\glsadd{not:conj}
 \begin{equation*}
 \bar{z} \overset{\text{def}}{=} x-iy.
 \end{equation*}
 The size of $z$ is measured by the so-called \emph{\myindex{modulus}},
 which is really just the \emph{\myindex{Euclidean distance}}:
+\glsadd{not:mod}
 \begin{equation*}
 \abs{z} \overset{\text{def}}{=} \sqrt{z \bar{z}} = \sqrt{x^2+y^2} .
 \end{equation*}
@@ -580,6 +604,7 @@ The so-called \emph{\myindex{Wirtinger operators}},
 provide an easier way to understand the
 Cauchy--Riemann equations.
 These operators are determined by insisting
+\glsadd{not:wirt}
 \begin{equation*}
 \frac{\partial}{\partial z} z = 1, \quad
 \frac{\partial}{\partial z} \bar{z} = 0, \quad
@@ -716,9 +741,17 @@ f(z) =
 \frac{1}{2\pi i}
 \int_{\partial U}
 \frac{f(\zeta)}{\zeta-z}
+\,
 d \zeta .
 \end{equation*}
 \end{thm}
+
+%The path integral for a smooth path $\gamma \colon [a,b] \to \C$ is defined as
+%\begin{equation*}
+%\int_\gamma f(z) \, dz
+%=
+%\int_a^b f\bigl(\gamma(t)\bigr) \gamma'(t) \, dt .
+%\end{equation*}
 
 The Cauchy formula is the essential ingredient we need from 
 one complex variable.  It follows, for example,
@@ -727,11 +760,12 @@ dimensions).  You can look forward to
 \thmref{thm:generalizedcauchy} for a proof of a more general formula,
 the Cauchy--Pompeiu integral formula.
 
-As a differential form, $dz = dx + i \, dy$.  If you are uneasy
+As a differential form, \glsadd{not:dz} $dz = dx + i \, dy$.  If you are uneasy
 about differential forms, you probably defined this directly integral using
 the Riemann--Stieltjes integral in your one-complex-variable class.
 Let us write down the formula in terms of the standard Riemann integral
 in a special case.  Take the \emph{\myindex{unit disc}}
+\glsadd{not:D}
 \begin{equation*}
 \D
 \overset{\text{def}}{=}
@@ -747,11 +781,13 @@ f(z) =
 \frac{1}{2\pi i}
 \int_{\partial \D}
 \frac{f(\zeta)}{\zeta-z}
+\,
 d \zeta 
 =
 \frac{1}{2\pi}
 \int_0^{2\pi}
 \frac{f(e^{it}) e^{it} }{e^{it}-z}
+\,
 dt .
 \end{equation*}
 If you are not completely comfortable
@@ -789,6 +825,7 @@ property of harmonic functions.
 \begin{thm}[Maximum principle]
 Let $U \subset \C$ be a domain and $h \colon U \to \R$
 harmonic, that is,
+\glsadd{not:laplacian}
 \begin{equation*}
 \nabla^2 h = \frac{\partial^2 h}{\partial x^2} + \frac{\partial^2 h}{\partial
 y^2} = 0 .
@@ -821,6 +858,7 @@ since $\frac{\partial f}{\partial \bar{z}} = 0$.
 Let us see the proof using the Cauchy integral formula as we will
 require this computation in several variables as well.
 Given $a \in \C$ and $\rho > 0$, define the disc of radius $\rho$ around $a$
+\glsadd{not:disc}
 \begin{equation*}
 \Delta_\rho(a)
 \overset{\text{def}}{=}
@@ -828,7 +866,7 @@ Given $a \in \C$ and $\rho > 0$, define the disc of radius $\rho$ around $a$
 \end{equation*}
 Suppose $U \subset \C$ is a domain, $f \colon U \to \C$ is holomorphic,
 $a \in U$, and $\overline{\Delta_\rho(a)} \subset U$ (that is, the closure
-of the disc is in $U$, and so its boundary is also in $U$).
+of the disc is in $U$, and so its boundary $\partial \Delta_\rho(a)$ is also in $U$).
 
 For $z \in \Delta_\rho(a)$ and $\zeta \in \partial \Delta_\rho(a)$, 
 \begin{equation*}
@@ -930,6 +968,7 @@ d \zeta  .
 \end{equation*}
 
 For a set $K$ denote the \emph{\myindex{supremum norm}}:
+\glsadd{not:supnorm}
 \begin{equation*}
 \snorm{f}_K
 \overset{\text{def}}{=}
@@ -1002,6 +1041,7 @@ and $\bar{z}$ the \emph{\myindex{antiholomorphic coordinates}}.
 For $\rho = (\rho_1,\rho_2,\ldots,\rho_n)$ where $\rho_j > 0$ and $a \in \C^n$,
 define
 a \emph{\myindex{polydisc}}
+\glsadd{not:disc}
 \begin{equation*}
 \Delta_\rho(a)  \overset{\text{def}}{=}
 \bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho_j ~\text{for $j=1,2,\ldots,n$} \bigr\} .
@@ -1044,6 +1084,7 @@ picture by plotting just against the modulus of the variables:
 
 Recall the
 \emph{\myindex{Euclidean inner product}} on $\C^n$
+\glsadd{not:hermprod}
 \begin{equation*}
 \linnprod{z}{w} \overset{\text{def}}{=} %z \cdot \bar{w}
 z_1 \bar{w}_1 +
@@ -1052,6 +1093,7 @@ z_n \bar{w}_n .
 \end{equation*}
 Using the inner product we obtain the standard
 \emph{\myindex{Euclidean norm}} on $\C^n$
+\glsadd{not:eucnorm}
 \begin{equation*}
 \snorm{z}  \overset{\text{def}}{=} \sqrt{\linnprod{z}{z}}
 =
@@ -1061,11 +1103,13 @@ Using the inner product we obtain the standard
 \end{equation*}
 This norm agrees with the standard Euclidean norm on $\R^{2n}$.
 We define \emph{balls}\index{ball} as in $\R^{2n}$:
+\glsadd{not:ball}
 \begin{equation*}
 B_\rho(a)  \overset{\text{def}}{=}
 \bigl\{ z \in \C^n : \snorm{z - a} < \rho \bigr\} ,
 \end{equation*}
 And we define the \emph{\myindex{unit ball}} as
+\glsadd{not:unitball}
 \begin{equation*}
 \bB_n \overset{\text{def}}{=} B_1(0) =
 \bigl\{ z \in \C^n : \snorm{z} < 1 \bigr\} .
@@ -1094,6 +1138,7 @@ to real differentiability.
 \end{defn}
 
 As in one variable, we define the \emph{\myindex{Wirtinger operators}}
+\glsadd{not:wirt}
 \begin{equation*}
 \frac{\partial}{\partial z_j}  \overset{\text{def}}{=}
 \frac{1}{2} \left(
@@ -1202,6 +1247,7 @@ such that when $d x_j \bigl( \frac{\partial}{\partial x_j} \bigr) = 1$ and
 $d x_j \bigl( \frac{\partial}{\partial x_k} \bigr) = 0$ if $j \not= k$.  Therefore because
 $z_j = x_j + i y_j$ and
 $\bar{z}_j = x_j - i y_j$,
+\glsadd{not:dz}\glsadd{not:dzbar}
 \begin{equation*}
 d z_j = d x_j + i \, d y_j , 
 \qquad
@@ -3469,6 +3515,7 @@ $U \setminus \{ p \}$.  It would not be possible to extend $f$
 through $p$ (not even continuously let alone holomorphically),
 and we obtain a contradiction.
 
+\pagebreak[2]
 The extension works in an even more surprising fashion.  We could
 take out a very large set, for example, any geometrically
 convex\footnote{By geometrically convex we mean the classical
@@ -3750,14 +3797,13 @@ X = \sum_{j=1}^n a_j
 where $a_j$ are smooth %$C^k$-smooth
 functions.
 That is, $X$ is a function
-$X \colon \R^n \to T\R^n$ such that $X(p) \in T_p \R^n$, and the vectors vary 
+$X \colon V \subset \R^n \to T\R^n$ such that $X(p) \in T_p \R^n$, and the vectors vary 
 %$C^k$-smoothly.
 smoothly.
 Usually we write $X_p$ rather than $X(p)$.
 To be more fancy we could
 say $X$ is a \emph{\myindex{section}} of $T \R^n$.
 
-%FIXME FIXME1: smooth functions on hypersurface!
 Similarly,
 \begin{equation*}
 TM = \bigcup_{p \in M} T_p M
@@ -11442,6 +11488,24 @@ The picture would look as follows:
 \ldots and that is how using sheep's bladders can prevent
 earthquakes!
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Results from one complex variable} \label{ap:onevarresults}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{FIXME}
+
+FIXME
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -11647,6 +11711,37 @@ earthquakes!
 \clearpage  
 \phantomsection
 \addcontentsline{toc}{chapter}{\indexname}  
+\microtypesetup{protrusion=false}
 \printindex
+\microtypesetup{protrusion=true}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+% automake on glossaries doesn't work if the index is before the glossary.
+% That's why the List of Notation is last, no other reason.  Problem is
+% that printindex does a clearpage which screws up the delayed write18
+% that glossaries sets up
+%
+
+\begingroup
+\renewcommand{\pagelistname}{Page}
+\setglossarystyle{long3colheader}
+% correctly set up with cellspace
+\renewenvironment{theglossary}%
+  {\setlength\cellspacetoplimit{4pt}
+   \setlength\cellspacebottomlimit{4pt}
+   \setlength\LTleft{0pt}
+   \setlength\LTright{0pt}
+   \markboth{LIST OF NOTATION}{LIST OF NOTATION}
+   \begin{longtable}{Sl @{\extracolsep{\fill}} Sl @{\extracolsep{\fill}} Sl}}%
+  {\end{longtable}}%
+\cleardoublepage
+\microtypesetup{protrusion=false}
+\printglossary[type=notation] 
+\microtypesetup{protrusion=true}
+\endgroup
 
 \end{document}

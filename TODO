@@ -1,12 +1,9 @@
-Next minor edition:
-* 
-
 Next larger edition
 * Add appendix on basic notation, smooth functions, etc... perhaps
 * Add appendix differential forms and integration including Stokes,
   no need to prove Stokes I don't think, but at least state it.
-* Add appendix with the basic one-variable theorems used
-* Add notation index
+* Finish appendix with the basic one-variable theorems used
+* Finish notation index
 * Maybe rewrite the one-variable section to be more formal and do that
   instead of the appendix above?  Perhaps move the proof of Cauchy-Pompeiu
   here?
