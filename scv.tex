@@ -91,6 +91,7 @@
 % Should be done for the next big version
 \usepackage[tighter,defaultsups]{newtxtext}
 \usepackage[vvarbb]{newtxmath}
+\usepackage[mathscr]{euscript} % but we want the nice fancy script fonts
 
 
 % useful
@@ -157,26 +158,26 @@
 \newcommand{\RP}{{\mathbb{RP}}}
 \newcommand{\HP}{{\mathbb{HP}}}
 \newcommand{\OP}{{\mathbb{OP}}}
-\newcommand{\sA}{{\mathcal{A}}}
-\newcommand{\sB}{{\mathcal{B}}}
-\newcommand{\sC}{{\mathcal{C}}}
-\newcommand{\sF}{{\mathcal{F}}}
-\newcommand{\sG}{{\mathcal{G}}}
-\newcommand{\sH}{{\mathcal{H}}}
-\newcommand{\sM}{{\mathcal{M}}}
-\newcommand{\sO}{{\mathcal{O}}}
-\newcommand{\sP}{{\mathcal{P}}}
-\newcommand{\sQ}{{\mathcal{Q}}}
-\newcommand{\sR}{{\mathcal{R}}}
-\newcommand{\sS}{{\mathcal{S}}}
-\newcommand{\sI}{{\mathcal{I}}}
-\newcommand{\sL}{{\mathcal{L}}}
-\newcommand{\sK}{{\mathcal{K}}}
-\newcommand{\sU}{{\mathcal{U}}}
-\newcommand{\sV}{{\mathcal{V}}}
-\newcommand{\sX}{{\mathcal{X}}}
-\newcommand{\sY}{{\mathcal{Y}}}
-\newcommand{\sZ}{{\mathcal{Z}}}
+\newcommand{\sA}{{\mathscr{A}}}
+\newcommand{\sB}{{\mathscr{B}}}
+\newcommand{\sC}{{\mathscr{C}}}
+\newcommand{\sF}{{\mathscr{F}}}
+\newcommand{\sG}{{\mathscr{G}}}
+\newcommand{\sH}{{\mathscr{H}}}
+\newcommand{\sM}{{\mathscr{M}}}
+\newcommand{\sO}{{\mathscr{O}}}
+\newcommand{\sP}{{\mathscr{P}}}
+\newcommand{\sQ}{{\mathscr{Q}}}
+\newcommand{\sR}{{\mathscr{R}}}
+\newcommand{\sS}{{\mathscr{S}}}
+\newcommand{\sI}{{\mathscr{I}}}
+\newcommand{\sL}{{\mathscr{L}}}
+\newcommand{\sK}{{\mathscr{K}}}
+\newcommand{\sU}{{\mathscr{U}}}
+\newcommand{\sV}{{\mathscr{V}}}
+\newcommand{\sX}{{\mathscr{X}}}
+\newcommand{\sY}{{\mathscr{Y}}}
+\newcommand{\sZ}{{\mathscr{Z}}}
 \newcommand{\fS}{{\mathfrak{S}}}
 
 \newcommand{\interior}{\operatorname{int}}
@@ -811,6 +812,7 @@ If
 \begin{equation*}
 \sup_{z \in U} \, \sabs{f(z)} = f(z_0)
 \end{equation*}
+\glsadd{not:identeq}
 for some $z_0 \in U$, then $f$ is constant ($f \equiv f(z_0)$).
 \end{thm}
 
@@ -901,6 +903,7 @@ f(z)
 \frac{1}{2\pi i}
 \int_{\gamma}
 \frac{f(\zeta)}{\zeta-z}
+\,
 d \zeta 
 \\
 & =
@@ -908,6 +911,7 @@ d \zeta
 \int_{\gamma}
 \frac{f(\zeta)}{\zeta-a}
 \frac{\zeta-a}{\zeta-z}
+\,
 d \zeta 
 \\
 & =
@@ -916,6 +920,7 @@ d \zeta
 \frac{f(\zeta)}{\zeta-a}
 \sum_{j=0}^\infty
 {\left(\frac{z-a}{\zeta-a}\right)}^j
+\,
 d \zeta 
 \\
 & =
@@ -924,6 +929,7 @@ d \zeta
 \frac{1}{2\pi i}
 \int_{\gamma}
 \frac{f(\zeta)}{{(\zeta-a)}^{j+1}}
+\,
 d \zeta 
 \right)
 {(z-a)}^j .
@@ -964,6 +970,7 @@ c_j =
 \frac{1}{2\pi i}
 \int_{\gamma}
 \frac{f(\zeta)}{{(\zeta-a)}^{j+1}}
+\,
 d \zeta  .
 \end{equation*}
 
@@ -982,12 +989,14 @@ By a brute force estimation we obtain the very useful
 \frac{1}{2\pi i}
 \int_{\gamma}
 \frac{f(\zeta)}{{(\zeta-a)}^{j+1}}
+\,
 d \zeta 
 }
 \leq
 \frac{1}{2\pi}
 \int_{\gamma}
 \frac{\snorm{f}_{\gamma}}{\rho^{j+1}}
+\,
 \sabs{d \zeta} 
 =
 \frac{\snorm{f}_{\gamma}}{\rho^{j}} .
@@ -1000,6 +1009,7 @@ We differentiate Cauchy's formula $j$ times,
 \frac{1}{2\pi i}
 \int_{\gamma}
 \frac{j! f(\zeta)}{{(\zeta-z)}^{j+1}}
+\,
 d \zeta  ,
 \end{equation*}
 and therefore
@@ -1265,6 +1275,7 @@ d \bar{z}_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = \delta_j^k
 ,
 \end{array}
 \end{equation*}
+\glsadd{not:kronecker}
 where $\delta_{j}^k$ is the Kronecker delta, that is, $\delta_j^j = 1$,
 and $\delta_j^k = 0$ if $j \not= k$.  One-forms are objects of the form
 \begin{equation*}
@@ -1413,8 +1424,15 @@ define the so-called
 to deal with formulas such as the ones above.
 
 Let $\alpha \in \N_0^n$
-be a vector of nonnegative integers (where $\N_0 = \N \cup \{ 0\}$).
+be a vector of nonnegative integers
+\glsadd{not:N0}
+(where $\N_0 = \N \cup \{ 0\}$).
 We write
+\glsadd{not:zalpha}
+\glsadd{not:dzmulti}
+\glsadd{not:absalpha}
+\glsadd{not:alphabang}
+\glsadd{not:alphader}
 \begin{equation*}
 \begin{aligned}
 z^\alpha & \overset{\text{def}}{=} z_1^{\alpha_1}z_2^{\alpha_2} \cdots z_n^{\alpha_n} \\
@@ -1473,6 +1491,7 @@ When it is clear
 from context that we are talking about a power series
 and therefore all the powers are nonnegative,
 we often write just
+\glsadd{not:zalphasum}
 \begin{equation*}
 \sum_{\alpha} c_\alpha {z}^\alpha .
 \end{equation*}
@@ -1616,6 +1635,7 @@ d \zeta
 \frac{1}{{(2\pi i)}^n}
 \int_{\Gamma}
 \frac{f(\zeta)}{{(\zeta-a)}^{\alpha+1}}
+\,
 d \zeta 
 \right)
 {(z-a)}^{\alpha} .
@@ -1644,6 +1664,7 @@ c_\alpha
 \frac{1}{{(2\pi i)}^n}
 \int_{\Gamma}
 \frac{f(\zeta)}{{(\zeta-z)}^{\alpha+1}}
+\,
 d \zeta .
 \end{equation*}
 Notice how strikingly similar the computation is to one variable.
@@ -1934,8 +1955,9 @@ a neighborhood of $\overline{\Delta}$.  Prove
 \begin{equation*}
 f(a) =
 \frac{1}{V(\Delta)}
-\int_{\Delta} f(\zeta) \, dV(\zeta) .
+\int_{\Delta} f(\zeta) \, dV(\zeta) ,
 \end{equation*}
+where $V(\Delta)$ is the volume of $\Delta$ and $dV$ is the volume measure.
 That is, $f(a)$ is an average of the values on a polydisc centered at $a$.
 \end{exercise}
 
@@ -2005,6 +2027,7 @@ naturally a ring under pointwise addition and multiplication.
 
 \begin{defn}
 Let $U \subset \C^n$ be an open set.
+\glsadd{not:O}
 Define $\sO(U)$ to be the \emph{\myindex{ring of holomorphic functions}}.
 The letter $\sO$ is used to recognize the fundamental contribution to
 several complex variables by
@@ -2295,6 +2318,7 @@ holomorphic.
 \begin{thm}
 Let $U \subset \C^n$ and $V \subset \C^m$ be open sets and suppose
 $f \colon U \to V$ and $g \colon V \to \C^k$ are both holomorphic.
+\glsadd{not:composition}
 Then the composition $g \circ f$ is holomorphic.
 \end{thm}
 
@@ -2401,6 +2425,7 @@ For a $U \subset \C^n$, a holomorphic mapping $f \colon U \to \C^m$,
 and a point $a \in U$,
 define the holomorphic derivative, sometimes called the
 \emph{\myindex{Jacobian matrix}},
+\glsadd{not:Df}
 \begin{equation*}
 Df(a) \overset{\text{def}}{=}
 \left[
@@ -2432,7 +2457,9 @@ Prove the proposition.
 
 \begin{prop}
 Let $U \subset \C^n$ be open sets and 
-$f \colon U \to \C^n$ be holomorphic.  If we let $D_\R f (a)$ be the real
+$f \colon U \to \C^n$ be holomorphic.
+\glsadd{not:DRf}
+If we let $D_\R f (a)$ be the real
 Jacobian matrix of $f$ (a $2n \times 2n$ real matrix), then
 \begin{equation*}
 \abs{\det D f(a) }^2 = 
@@ -2489,7 +2516,9 @@ where $\overline{A}$ is the complex conjugate of $A$.  Thus
 \begin{defn}
 Two domains $U \subset \C^n$ and $V \subset \C^n$ are said to be
 \emph{\myindex{biholomorphic}} if there exists a one-to-one and onto holomorphic map $f
-\colon U \to V$ such that $f^{-1}$ is holomorphic.
+\colon U \to V$ such that the inverse
+\glsadd{not:inverse}
+$f^{-1} \colon V \to U$ is holomorphic.
 The mapping $f$ is said to be a
 \emph{biholomorphic map}\index{map!biholomorphic} or a 
 \emph{\myindex{biholomorphism}}.
@@ -2530,6 +2559,8 @@ definition.
 \begin{defn}
 Suppose $f \colon X \to Y$ is a continuous map between two topological
 spaces.  Then $f$ is a \emph{\myindex{proper map}}\index{map!proper} if for every compact
+\glsadd{not:compact}
+\glsadd{not:pullback}
 $K \subset \subset Y$, the set $f^{-1}(K)$ is compact.
 \end{defn}
 
@@ -2603,6 +2634,7 @@ lying entirely inside the boundary.  On the other hand for the ball
 we have the following proposition.
 
 \begin{prop}
+\glsadd{not:unitsphere}
 The unit sphere $S^{2n-1} = \partial \bB_n \subset \C^n$ 
 contains no analytic discs.
 \end{prop}
@@ -3664,6 +3696,7 @@ domains are domains of holomorphy.
 
 \begin{defn} \label{def:hypersurface}
 A set $M \subset \R^n$ is a real
+\glsadd{not:Ck}
 $C^k$-smooth \emph{\myindex{hypersurface}}%
 \index{Ck-smooth hypersurface@$C^k$-smooth hypersurface}
 if at each point
@@ -3683,8 +3716,14 @@ for a defining function $r$ of $\partial U$ near some $p$,
 that $r < 0$ for points in $U$ and $r > 0$
 for points not in $U$.
 
-If we say simply \emph{\myindex{smooth}},
-we mean $C^\infty$-smooth.\index{Cinfinity-smooth@$C^\infty$-smooth}
+If we say simply \emph{\myindex{smooth}}\footnote{%
+While $C^\infty$ is the common definition of \emph{smooth}, not everyone
+always means
+the same thing by the word \emph{smooth}.  I have seen it mean
+differentiable, $C^1$, piecewise-$C^1$, $C^\infty$, holomorphic, \ldots},
+\glsadd{not:Cinfty}
+we mean $C^\infty$-smooth,\index{Cinfinity-smooth@$C^\infty$-smooth}
+that is, the $r$ above is infinitely differentiable.
 \end{defn}
 
 For simplicity, in this book we generally deal with smooth
@@ -3715,6 +3754,7 @@ single global defining function for every domain, but we have no need of this.
 
 \begin{defn}
 For any $p \in \R^n$, the set of tangent vectors $T_p \R^n$ is given by
+\glsadd{not:realtangentspace}
 \begin{equation*}
 T_p \R^n = \operatorname{span}_{\R} \left\{
 \frac{\partial}{\partial x_1}\Big|_p,
@@ -3727,6 +3767,7 @@ X_p = \sum_{j=1}^n a_j
 \frac{\partial}{\partial x_j}\Big|_p ,
 \end{equation*}
 for real numbers $a_j$.
+\glsadd{not:evalpartial}
 An object $\frac{\partial}{\partial x_j}\Big|_p$ is a linear functional
 on the space of smooth functions:
 when applied to a smooth function $g$ it gives
@@ -3741,6 +3782,7 @@ to $M$ at $p$ if
 X_p r = 0, \qquad \text{or in other words} \qquad
 \sum_{j=1}^n a_j \frac{\partial r}{\partial x_j} \Big|_p = 0 .
 \end{equation*}
+\glsadd{not:realtangentspace}
 The space of tangent vectors to $M$ is denoted by $T_p M$.  The
 space $T_pM$ is an $(n-1)$-dimensional real vector space.  
 The definition of $T_pM$ is independent of the choice of $r$ by the next two
@@ -3771,6 +3813,7 @@ $\sum a_j \frac{\partial \tilde{r}}{\partial x_j} \Big|_p = 0$.
 \end{exbox}
 
 The disjoint union
+\glsadd{not:realtangentbundle}
 \begin{equation*}
 T\R^n = \bigcup_{p \in \R^n} T_p \R^n
 \end{equation*}
@@ -3805,6 +3848,7 @@ To be more fancy we could
 say $X$ is a \emph{\myindex{section}} of $T \R^n$.
 
 Similarly,
+\glsadd{not:realtangentbundle}
 \begin{equation*}
 TM = \bigcup_{p \in M} T_p M
 \end{equation*}
@@ -3884,7 +3928,9 @@ our defining function is $r(x,y) = x^2+y^2-1$.
 
 The tangent space to the circle is one-dimensional, so we simply need to
 find a single nonzero tangent vector at each point.
-Notice that $\nabla r = (2x,2y)$, so it is easy to check that
+Notice that the gradient
+\glsadd{not:gradient}
+$\nabla r = (2x,2y)$, so it is easy to check that
 %the tangent space at $p = (x,y)$ on the
 %circle, that is when $x^2+y^2 = 1$, is composed of vectors
 %\begin{equation*}
@@ -3949,8 +3995,15 @@ strongly convex at all points except the origin, where it is just convex
 \end{exbox}
 
 For computations it is often useful to use a more convenient
-defining function.  We say a smooth function is $O(\ell)$ at a point $p$,
+defining function.
+\glsadd{not:Ol}
+We use the \emph{\myindex{big-oh notation}}.
+We say a smooth function is $O(\ell)$ at a point $p$ (usually the origin),
 if all its derivatives of order $0, 1, \ldots,  \ell-1$ vanish at $p$.
+For example, if $f$ is $O(3)$ at the origin
+then $f(0)=0$, and its first and second derivatives vanish.
+%Often we write
+%$O(3)$ instead of $f$ to denote any function in $O(3)$ to simplify notation.
 
 \begin{lemma} \label{lemma:realgraphcoords}
 Suppose $M \subset \R^n$ is a smooth hypersurface, %$C^k$-smooth hypersurface, $k \geq 1$,
@@ -4083,10 +4136,11 @@ holomorphy.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Holomorphic vectors, the Levi-form, and pseudoconvexity}
+\section{Holomorphic vectors, the Levi form, and pseudoconvexity}
 
 As $\C^n$ is identified with $\R^{2n}$ using $z=x+iy$, we have
 $T_p\C^n = T_p\R^{2n}$.  We write
+\glsadd{not:complexifiedtangentspace}
 \begin{equation*}
 \C \otimes T_p\C^n
 = \operatorname{span}_{\C} \left\{
@@ -4113,6 +4167,8 @@ T_p\C^n$, and in fact:
 \frac{\partial}{\partial \bar{z}_n}\Big|_p \right\} .
 \end{equation*}
 Define
+\glsadd{not:holtangentspace}
+\glsadd{not:aholtangentspace}
 \begin{equation*}
 T_p^{(1,0)} \C^n \overset{\text{def}}{=}
 \operatorname{span}_{\C} \left\{
@@ -4152,6 +4208,7 @@ $p \in U$.
 Suppose 
 $D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$
 is the real derivative of $f$ at $p$.
+\glsadd{not:DCf}
 Then we naturally
 extend the derivative to $D_\C f(p) \colon \C \otimes T_p\C^n \to \C \otimes  T_{f(p)}
 \C^m$.  Then
@@ -4183,6 +4240,7 @@ the basis.
 When talking about only holomorphic functions and holomorphic vectors,
 when we say derivative of $f$, we mean the holomorphic part of the
 derivative, which we write as
+\glsadd{not:Df}
 \begin{equation*}
 D f(p) \colon T_p^{(1,0)} \C^n \to T_{f(p)}^{(1,0)} \C^m .
 \end{equation*}
@@ -4388,17 +4446,18 @@ consistent in the literature.
 Sometimes \emph{\myindex{strictly pseudoconvex}} is used.} $U$, we say $U$ is strongly pseudoconvex if it is strongly pseudoconvex at all $p \in \partial U$.
 
 For $X_p \in T^{(1,0)}_p\partial U$, the sesquilinear form
+\glsadd{not:Leviform}
 \begin{equation*}
 \sL(X_p,X_p)
 =
 \sum_{j=1,\ell=1}^n
 \bar{a}_j a_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_p 
 \end{equation*}
-is called the \emph{\myindex{Levi-form}} at $p$.  So $U$ is pseudoconvex
+is called the \emph{\myindex{Levi form}} at $p$.  So $U$ is pseudoconvex
 (resp.\ strongly pseudoconvex) at
-$p \in \partial U$ if the Levi-form is positive semidefinite
+$p \in \partial U$ if the Levi form is positive semidefinite
 (resp.\ positive definite) at $p$.
-The Levi-form can be defined for any real hypersurface $M$,
+The Levi form can be defined for any real hypersurface $M$,
 although one has to decide which side of $M$ is ``the inside.''
 \end{defn}
 
@@ -4416,7 +4475,7 @@ when restricted to tangent vectors in $T^{(1,0)}_p \partial U$.
 For example, the unit ball $\bB_n$ is
 strongly pseudoconvex as can be seen by
 computing the 
-Levi-form directly from $r(z,\bar{z}) = \snorm{z}^2-1$, that is,
+Levi form directly from $r(z,\bar{z}) = \snorm{z}^2-1$, that is,
 the complex Hessian of $r$ is the identity matrix.
 
 Notice that the complex Hessian is not the full Hessian.
@@ -4527,7 +4586,7 @@ transpose of $A$.
 In other words, $A$
 transforms the complex Hessian $L$ as $A^* L A$, that is, by $*$-congruence.
 
-While the Levi-form depends on the defining function,
+While the Levi form depends on the defining function,
 the inertia (the number of positive, negative, and zero
 eigenvalues) is independent of $r$ (see exercise below).
 
@@ -4542,7 +4601,7 @@ Show that pseudoconvexity of $U$ at $p \in \partial U$ is not dependent
 on the defining function.
 (In fact the inertia
 %, the number of positive negative and zero eigenvalues,
-of the Levi-form does not depend on $r$.)
+of the Levi form does not depend on $r$.)
 \end{exercise}
 
 \begin{exercise}
@@ -4564,7 +4623,7 @@ pseudoconvexity is a local property.
 
 \begin{example}
 Let us change variables to show how we write $\bB_n$ in different
-local holomorphic coordinates where the Levi-form is displayed nicely.
+local holomorphic coordinates where the Levi form is displayed nicely.
 Let $\bB_n$ be defined in the variables $Z = (Z_1,\ldots,Z_n) \in \C^n$
 by $\snorm{Z} = 1$.
 
@@ -4640,7 +4699,7 @@ The inside of the sphere is taken to the set given by
 \Im w > \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2 .
 \end{equation*}
 
-In these new coordinates, the Levi-form is just the identity matrix at the
+In these new coordinates, the Levi form is just the identity matrix at the
 origin.  In particular the domain is strictly pseudoconvex.
 We have not yet proved that pseudoconvexity is a biholomorphic invariant,
 but when we do, it will also mean that the ball is strictly pseudoconvex.
@@ -4835,7 +4894,7 @@ but that is pseudoconvex.
 \end{exbox}
 
 We proved a stronger result than the theorem.  We proved that the inertia
-of the Levi-form is invariant under a biholomorphic change of coordinates.
+of the Levi form is invariant under a biholomorphic change of coordinates.
 Putting this together with the other observations we made above,
 we will find the normal form for the
 quadratic part of the defining equation for a smooth real hypersurface
@@ -4844,15 +4903,17 @@ It is possible to do better than the following lemma, but it is not possible
 to get rid of the dependence on $\Re w$ except in the quadratic
 terms.
 
-We use the \emph{\myindex{big-oh notation}}.
-A smooth function is $O(k)$ (or ``$O(k)$ at the origin'' to be
-precise), if
-the function and its first, second, \ldots, $(k-1)$th
-derivatives vanish at the origin.
-For example, if $E$ is $O(3)$ at the origin
-then $E(0)=0$, and its first and second derivatives vanish.
+Recall that $O(k)$ at the origin means
+a function that together with its derivatives up to order $k-1$ vanish.
+%We use the \emph{\myindex{big-oh notation}}.
+%A smooth function is $O(k)$ (or ``$O(k)$ at the origin'' to be
+%precise), if
+%the function and its first, second, \ldots, $(k-1)$th
+%derivatives vanish at the origin.
+%For example, if $E$ is $O(3)$ at the origin
+%then $E(0)=0$, and its first and second derivatives vanish.
 Often we write
-$O(3)$ instead of $E$ to denote any function in $O(3)$ to simplify notation.
+$O(k)$ to denote any function in $O(k)$ to simplify notation.
 
 \begin{lemma} \label{lemma:normformquad}
 Let $M$ be a smooth real hypersurface in $\C^n$ and $p \in M$.  Then there
@@ -4864,7 +4925,7 @@ and $M$ to the manifold given by
 E(z,\bar{z},\Re w) ,
 \end{equation*}
 where $E$ is $O(3)$ at the origin.
-Here $\alpha$ is the number of positive eigenvalues of the Levi-form at $p$,
+Here $\alpha$ is the number of positive eigenvalues of the Levi form at $p$,
 $\beta$ is the number of negative eigenvalues, and $\alpha+\beta \leq
 n-1$.
 \end{lemma}
@@ -5062,7 +5123,9 @@ q(z,\bar{z}) = \sum_{j,k=1}^{n-1} c_{jk} z_j \bar{z}_k .
 \end{equation*}
 That is, $q$ is a sesquilinear form.  Since $q$ is real-valued the matrix
 $C = [ c_{jk} ]$ must be Hermitian.  In linear algebra notation,
-$q(z,\bar{z}) = z^*Cz$, where the $*$ denotes the conjugate transpose,
+$q(z,\bar{z}) = z^*Cz$,
+\glsadd{not:star}
+where the $*$ denotes the conjugate transpose,
 and we think of $z$ as a column vector.
 If $T$ is a linear transformation on the $z$ variables, we
 obtain ${(Tz)}^*CTz = z^* ( T^*CT) z$.  Thus, we normalize $C$
@@ -5112,13 +5175,13 @@ holomorphy.
 \begin{thm}[Tomato can principle\index{tomato can principle}] \label{thm:tomatocan}
 Suppose
 $U \subset \C^n$ is a smoothly bounded domain and at some point $p \in
-\partial U$ the Levi-form has a negative eigenvalue.
+\partial U$ the Levi form has a negative eigenvalue.
 Then $U$ is not
 a domain of holomorphy.  In particular, every holomorphic function on $U$
 extends to a neighborhood of $p$.
 \end{thm}
 
-Pseudoconvex at $p$ means that all eigenvalues of the Levi-form are
+Pseudoconvex at $p$ means that all eigenvalues of the Levi form are
 nonnegative.
 The theorem says that a domain of holomorphy must be pseudoconvex.
 The theorem's name comes from the proof, and sometimes other theorems using a
@@ -5136,7 +5199,7 @@ near $p$, $U$ is given by
 E(z_1,z',\bar{z}_1,\bar{z}',\Re w) ,
 \end{equation*}
 where $z' = (z_2,\ldots,z_{n-1})$, $\epsilon_j = -1,0,1$, and $E$ is $O(3)$.
-We embed an analytic disc via
+We embed an analytic disc via the map
 $\xi \overset{\varphi}{\mapsto} (\lambda \xi, 0, 0, \ldots, 0)$ for some small $\lambda > 0$.
 %That is we can
 %think of simply setting $z_2$ through $z_n$ and $w$ to 0.
@@ -5308,6 +5371,7 @@ The proof of the following special case is contained in the exercises
 following the theorem.
 Let the
 \emph{\myindex{Poisson kernel}} for the unit disc $\D \subset \C$ be defined by
+\glsadd{not:Pr}
 \begin{equation*}
 P_r(\theta)
 = \frac{1}{2\pi} \frac{1-r^2}{1+r^2-2r \cos \theta}
@@ -5571,6 +5635,7 @@ $a,b \in \C^n$, the function
 \xi \mapsto f(a+b\xi)
 \end{equation*}
 is subharmonic (whenever $a+b\xi \in U$).
+\glsadd{not:PSH}
 The notation $PSH(U)$ is used to denote these functions.
 \end{defn}
 
@@ -5715,6 +5780,8 @@ $g_\epsilon$ is the $\epsilon$-ball.  Both are nonnegative.  Choose $C$ so that
 \qquad \text{ and therefore } \qquad
 \int_{\C^n} g_\epsilon\, dV = 1 .
 \end{equation*}
+\glsadd{not:dV}
+Here $dV$ is the volume measure.
 The function $g$ only depends on $\snorm{z}$.  To get an idea of
 how these functions look, consider the following graphs of the
 functions $e^{-1/(1-x^2)}$,
@@ -5732,6 +5799,7 @@ we assume that $f$ is locally bounded.
 
 For $z \in U_\epsilon$, we define $f_\epsilon$ as
 the convolution with $g_\epsilon$:
+\glsadd{not:convolution}
 \begin{equation*}
 f_\epsilon(z) = (f * g_\epsilon)(z) =
 \int_{\C^n} f(w) g_\epsilon (z-w) \, dV(w) =
@@ -5991,6 +6059,7 @@ Let $\sF$ be a class of (extended\footnote{%
 By extended reals we mean $\R \cup \{ -\infty,\infty\}$.})-real-valued functions defined on $U \subset \R^n$.  If $K
 \subset U$, define $\widehat{K}$, the \emph{\myindex{hull}} of $K$ with
 respect to $\sF$, as the set
+\glsadd{not:Khat}
 \begin{equation*}
 \widehat{K} \overset{\text{def}}{=} \Bigl\{ z \in U : f(z) \leq \sup_{w\in K} f(w)
 \text{ for all $f \in \sF$ } \Bigr\} .
@@ -6077,7 +6146,7 @@ denoted by the dark dots at the end of the segments.
 \begin{defn}
 Let $U \subset \C^n$ be a domain.  An $f \colon U \to \R$ is an \emph{\myindex{exhaustion function}} for $U$ if
 \begin{equation*}
-\{ z \in U : f(z) < r \} \subset \subset U
+\bigl\{ z \in U : f(z) < r \bigr\} \subset \subset U
 \qquad \text{for every $r \in \R$.}
 \end{equation*}
 
@@ -6096,7 +6165,7 @@ or the $r$-\emph{sublevel set}.
 The unit ball $\bB_n$ is Hartogs pseudoconvex.  The continuous
 function
 \begin{equation*}
-z \mapsto - \log ( 1-\snorm{z} ) 
+z \mapsto - \log \bigl( 1-\snorm{z} \bigr) 
 \end{equation*}
 is an exhaustion function, and it is easy to
 check directly that it is plurisubharmonic.
@@ -6297,8 +6366,11 @@ marked and a ball of radius $\nicefrac{r}{2}$ around $q$ is dotted.
 No point of distance $\nicefrac{r}{2}$ from $q$ can be in $\partial W$, and 
 the distance of $q$ to $\partial U$ is at most $\nicefrac{r}{2}$ as $p \in \partial U$
 and $p$ is the center of $B$.
+\glsadd{not:dist}
 Let $\operatorname{dist}(x,y)$ denote the
-distance function.  Then for $z \in B \cap U$
+euclidean distance function\footnote{If either $x$ and/or $y$ are sets
+of points we take the infimum of the euclidean distance over all the points.}.
+Then for $z \in B \cap U$
 \begin{equation*}
 - \log \, \operatorname{dist}(z, \partial U) = 
 - \log \, \operatorname{dist}\bigl(z, \partial (U \cap W)\bigr).
@@ -6596,6 +6668,7 @@ $p \in \partial U$, so $U$ is Hartogs pseudoconvex.
 Let $U \subset \C^n$ be a domain.  For a set $K \subset U$,
 define the
 \emph{\myindex{holomorphic hull}}
+\glsadd{not:KhatU}
 \begin{equation*}
 \widehat{K}_U \overset{\text{def}}{=} \Bigl\{ z \in U : \sabs{f(z)} \leq
 \sup_{w\in K} \sabs{f(w)}
@@ -6644,7 +6717,7 @@ Prove that the Hartogs figure is not holomorphically convex.
 \begin{exercise}
 Let $U \subset \C^n$ be a domain and $f \in \sO(U)$.  Show that if
 $U$ is holomorphically convex then
-$\widetilde{U} = \{ z \in U : f(z) \not= 0 \}$
+$\widetilde{U} = \bigl\{ z \in U : f(z) \not= 0 \bigr\}$
 is holomorphically convex.  
 Hint: first see \exerciseref{exercise:connectedcomplement}.
 \end{exercise}
@@ -6827,6 +6900,7 @@ A function $f \colon U \to \C$ is
 clear from context) if at each point $p \in U$, the function $f$
 has a convergent power series that converges (absolutely) to $f$ in some
 neighborhood of $p$.
+\glsadd{not:Comega}
 A common notation for real-analytic is $C^\omega$.
 \end{defn}
 
@@ -7298,7 +7372,7 @@ $g$ on $M$.
 \begin{exbox}
 \begin{exercise}
 Suppose $M \subset \C^n$ is a smooth hypersurface
-and $f \colon M \to \C$ a CR function that is a restriction
+and $f \colon M \to \C$ is a CR function that is a restriction
 of a holomorphic function $F \colon U \to \C$ defined in
 some neighborhood $U \subset \C^n$ of $M$.  Show that $F$ is unique,
 that is if $G \colon U \to \C$ is another holomorphic function such that
@@ -7560,6 +7634,7 @@ function is CR to show that we get an approximation even for other $y$.
 
 In the formulas below, given any vector $v = (v_1,\ldots,v_n)$,
 it will be useful to write
+\glsadd{not:bracketsquare}
 \begin{equation*}
 [v]^2 \overset{\text{def}}{=} v_1^2 + \cdots + v_n^2 .
 \end{equation*}
@@ -8210,30 +8285,30 @@ Then:
 
 \begin{enumerate}[(i)]
 \item
-If the Levi-form with respect to $r$ has a positive eigenvalue at $p$, then
+If the Levi form with respect to $r$ has a positive eigenvalue at $p$, then
 $f$ extends to a holomorphic function on $U_-$ continuous up to $M$.
 \item
-If the Levi-form with respect to $r$ has a negative eigenvalue at $p$, then
+If the Levi form with respect to $r$ has a negative eigenvalue at $p$, then
 $f$ extends to a holomorphic function on $U_+$ continuous up to $M$.
 \item
-If the Levi-form with respect to $r$ has eigenvalues of both signs at $p$, then any smooth
+If the Levi form with respect to $r$ has eigenvalues of both signs at $p$, then any smooth
 CR $f$ extends to
 a function holomorphic on $U$.
 \end{enumerate}
 \end{thm}
 
-In particular, if the Levi-form has eigenvalues of both signs,
+In particular, if the Levi form has eigenvalues of both signs,
 then near $p$ the CR function is in fact a restriction of a holomorphic
 function on all of $U$.  The function $r$ can really be any defining
 function for $M$, either one can extend it to all of $U$ or we could take a
 smaller $U$ such that $r$ is defined on $U$.  As we have noticed before,
 once we pick sides (where $r$ is positive and where it is negative), then
 the number of positive eigenvalues and the number of negative eigenvalues of
-the Levi-form is fixed.  Taking a different $r$ can at most flip $U_-$
+the Levi form is fixed.  Taking a different $r$ can at most flip $U_-$
 and $U_+$, but the conclusion of the theorem is exactly the same.
 
 \begin{proof}
-Without loss of generality, it is enough to suppose the Levi-form has one positive eigenvalue to prove the
+Without loss of generality, it is enough to suppose the Levi form has one positive eigenvalue to prove the
 first two items, otherwise just take $-r$.
 Suppose $p = 0$ and $M$ is given in some neighborhood
 $\Omega$ of the origin as
@@ -8316,7 +8391,7 @@ We state the next corollary for a strongly convex domain, even though it
 holds with far more generality.  We will prove it for strongly pseudoconvex
 domains.  In fact, a bounded domain with smooth
 boundary and connected complement
-will work without any assumptions on the Levi-form, but 
+will work without any assumptions on the Levi form, but 
 a different approach would have to be taken.
 
 \begin{cor}
@@ -8362,7 +8437,7 @@ that $\sabs{f}$ does not attain a maximum at the origin.
 
 \begin{exercise}
 Suppose $M \subset \C^n$, $n \geq 3$, is a real-analytic hypersurface
-such that the Levi-form at $p \in M$ has eigenvalues of both signs.
+such that the Levi form at $p \in M$ has eigenvalues of both signs.
 Show that every smooth CR function $f$ on $M$ is in fact real-analytic in
 a neighborhood of $p$.
 \end{exercise}
@@ -8424,6 +8499,7 @@ d\zeta \wedge d\bar{\zeta} .
 \end{equation*}
 \end{thm}
 
+\glsadd{not:dA}
 If $\zeta = x+iy$, then the standard orientation on $\C$ is the one
 corresponding to the area form $dA = dx \wedge dy$.
 Then $d\zeta \wedge d\bar{\zeta}$ is the area form up to a scalar.
@@ -8543,6 +8619,7 @@ d\zeta \wedge d\bar{\zeta}
 \section{Simple case of the \texorpdfstring{$\bar{\partial}$}{dbar}-problem}
 
 For a smooth function $\psi$ we have the exterior derivative
+\glsadd{not:dpsi}
 \begin{equation*}
 d \psi =
 \frac{\partial \psi}{\partial z_1} dz_1 + \cdots +
@@ -8552,6 +8629,8 @@ d \psi =
 \frac{\partial \psi}{\partial \bar{z}_n} d\bar{z}_n .
 \end{equation*}
 Let us give a name to the two parts of the derivative:
+\glsadd{not:d}
+\glsadd{not:dbar}
 \begin{equation*}
 \partial \psi \overset{\text{def}}{=}
 \frac{\partial \psi}{\partial z_1} dz_1 + \cdots +
@@ -8943,6 +9022,7 @@ d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
 d\bar{\zeta}_n \wedge d\zeta_n .
 \end{equation*}
+\glsadd{not:hatremove}
 The notation $\widehat{ d\bar{\zeta}_j }$ means that this term is
 simply left out.
 
@@ -8973,6 +9053,7 @@ no canonical orientation of $\C^n$, and
 not all authors follow this (perhaps more prevalent) convention.}
 %more prevalent.}
 is the one corresponding to the volume form
+\glsadd{not:dV}
 \begin{equation*}
 dV = dx_1 \wedge dy_1 \wedge dx_2 \wedge dy_2 \wedge \cdots \wedge dx_n \wedge dy_n .
 \end{equation*}
@@ -9018,6 +9099,8 @@ $\abs{\beta}=q$, a differential form
 is called a \emph{\myindex{$(p,q)$-form}} or a differential form of
 \emph{\myindex{bidegree}} $(p,q)$.
 Define
+\glsadd{not:d}
+\glsadd{not:dbar}
 \begin{equation*}
 \partial \eta \overset{\text{def}}{=}
 \sum_{\substack{\abs{\alpha}=p \\ \abs{\beta}=q}}
@@ -9322,11 +9405,14 @@ Hint: look at the previous proof.
 \section{The Bergman kernel}
 
 Let $U \subset \C^n$ be a domain.  Define
+\glsadd{not:A2}
+\glsadd{not:L2}
 \begin{equation*}
 A^2(U) \overset{\text{def}}{=} \sO(U) \cap L^2(U) .
 \end{equation*}
 That is, let $A^2(U)$ denote the space
 of holomorphic functions $f \in \sO(U)$ such that
+\glsadd{not:L2norm}
 \begin{equation*}
 \snorm{f}_{A^2(U)}^2 \overset{\text{def}}{=} \snorm{f}_{L^2(U)}^2
 = \int_U \sabs{f(z)}^2 dV < \infty .
@@ -9335,6 +9421,7 @@ The space $A^2(U)$ is called the
 \emph{\myindex{Bergman space}} of $U$.
 The inner product is the $L^2(U)$ inner product
 %Define an inner product on $A^2(U)$ via
+\glsadd{not:L2innprod}
 \begin{equation*}
 \linnprod{f}{g} \overset{\text{def}}{=} \int_U f(z) \overline{g(z)} \, dV .
 \end{equation*}
@@ -9388,7 +9475,7 @@ dV(\xi)}
 \\
 & =
 \frac{1}{\pi^{n/2} r^n}
-\snorm{f}_{A^2\bigl(\Delta_r(z)\bigr)} 
+\snorm{f}_{A^2(\Delta_r(z))} 
 \leq
 \frac{1}{\pi^{n/2} r^n}
 \snorm{f}_{A^2(U)} . \qedhere
@@ -11181,14 +11268,14 @@ is divisible by $\Re w$, that is,
 \begin{equation*}
 \Im w = (\Re w) \widetilde{\rho}(z,\bar{z},\Re w)  .
 \end{equation*}
-So the Levi-form at the origin must vanish,
-that is the Levi-form of $M$ vanishes on $M \cap X$.
+So the Levi form at the origin must vanish,
+that is the Levi form of $M$ vanishes on $M \cap X$.
 \end{example}
 
 \begin{example}
-The vanishing of the Levi-form is not necessary if the complex varieties in
+The vanishing of the Levi form is not necessary if the complex varieties in
 $M$ are small.  Consider $M\subset \C^3$ with a nondegenerate (but not definite)
-Levi-form:
+Levi form:
 \begin{equation*}
 \Im w = \abs{z_1}^2-\abs{z_2}^2 .
 \end{equation*}
@@ -11207,7 +11294,7 @@ by $w = 0$, which is not contained in $M$.
 Let $M \subset \C^n$ be a real hypersurface.
 Show that if $M$ at $p$ contains a complex submanifold of (complex)
 dimension more than
-$\frac{n-1}{2}$, then the Levi-form must be degenerate, that is, it must
+$\frac{n-1}{2}$, then the Levi form must be degenerate, that is, it must
 have at least one zero eigenvalue.
 \end{exercise}
 
@@ -11215,7 +11302,7 @@ have at least one zero eigenvalue.
 Let $M \subset \C^n$ be a pseudoconvex real hypersurface
 (one side of $M$ is pseudoconvex).
 Suppose $M$ at $p$ contains a dimension $k$ complex submanifold $X$.
-Show that the Levi-form has at least $k$ zero eigenvalues.
+Show that the Levi form has at least $k$ zero eigenvalues.
 \end{exercise}
 
 \begin{exercise}
