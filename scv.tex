@@ -293,6 +293,8 @@
 \newcommand{\tableref}[1]{\hyperref[#1]{Table~\ref*{#1}}}
 \newcommand{\chapterref}[1]{\hyperref[#1]{chapter~\ref*{#1}}}
 \newcommand{\Chapterref}[1]{\hyperref[#1]{Chapter~\ref*{#1}}}
+\newcommand{\appendixref}[1]{\hyperref[#1]{appendix~\ref*{#1}}}
+\newcommand{\Appendixref}[1]{\hyperref[#1]{Appendix~\ref*{#1}}}
 \newcommand{\sectionref}[1]{\hyperref[#1]{section~\ref*{#1}}}
 \newcommand{\exerciseref}[1]{\hyperref[#1]{Exercise~\ref*{#1}}}
 \newcommand{\exampleref}[1]{\hyperref[#1]{Example~\ref*{#1}}}
@@ -517,6 +519,24 @@ which is really just the \emph{\myindex{Euclidean distance}}:
 \begin{equation*}
 \abs{z} \overset{\text{def}}{=} \sqrt{z \bar{z}} = \sqrt{x^2+y^2} .
 \end{equation*}
+
+If $z = x+iy \in \C$ for $x,y \in \R$, then $x$ is called the
+\emph{\myindex{real part}} and $y$ is called the
+\emph{\myindex{imaginary part}} and we write
+\glsadd{not:real}
+\glsadd{not:imag}
+\begin{equation*}
+\Re z = 
+\Re (x+iy) =
+\frac{z+\bar{z}}{2}
+= x, \qquad 
+\Im z = 
+\Im (x+iy) =
+\frac{z-\bar{z}}{2i}
+=
+y .
+\end{equation*}
+
 
 A function $f \colon U \subset \R^n \to \C$ for an open set $U$
 is said to be continuously differentiable, or $C^1$ if the first (real)
@@ -821,10 +841,11 @@ course (depending on who taught it)
 is more or less a straightforward consequence of the Cauchy
 integral formula.
 An important theorem from one variable that follows from
-the Cauchy formula is the \emph{\myindex{maximum principle}},
+the Cauchy formula is the
+\emph{\myindex{maximum modulus principle}}\index{maximum principle},
 which has several versions.  Let us give the simplest one.
 
-\begin{thm}[Maximum principle]
+\begin{thm}[Maximum modulus principle]
 Suppose $U \subset \C$ is a domain and $f \colon U \to \C$
 is a holomorphic function.
 If
@@ -1023,6 +1044,8 @@ d \zeta
 
 We differentiate Cauchy's formula $j$ times,
 \begin{equation*}
+f^{(j)}(z)
+=
 \frac{\partial^j f}{\partial z^j} (z)
 =
 \frac{1}{2\pi i}
@@ -1033,14 +1056,22 @@ d \zeta  ,
 \end{equation*}
 and therefore
 \begin{equation*}
-j! c_j = \frac{\partial^j f}{\partial z^j}(a) .
+j! \, c_j =
+f^{(j)}(a)
+=
+\frac{\partial^j f}{\partial z^j}(a) .
 \end{equation*}
 Consequently,
 \begin{equation*}
+\abs{f^{(j)}(a)}
+=
 \abs{\frac{\partial^j f}{\partial z^j}(a)}
 \leq
 \frac{j! \snorm{f}_{\gamma}}{\rho^{j}} .
 \end{equation*}
+
+For further review of one variable results useful in this book,
+see \appendixref{ap:onevarresults}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1454,9 +1485,10 @@ We write
 \glsadd{not:alphader}
 \begin{equation*}
 \begin{aligned}
-z^\alpha & \overset{\text{def}}{=} z_1^{\alpha_1}z_2^{\alpha_2} \cdots z_n^{\alpha_n} \\
-\frac{1}{z} & \overset{\text{def}}{=} \frac{1}{z_1z_2 \cdots z_n} \\
-dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n \\
+z^\alpha & \overset{\text{def}}{=} z_1^{\alpha_1}z_2^{\alpha_2} \cdots
+z_n^{\alpha_n} , \\
+\frac{1}{z} & \overset{\text{def}}{=} \frac{1}{z_1z_2 \cdots z_n} , \\
+dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n , \\
 %\sabs{\alpha} & \overset{\text{def}}{=} \alpha_1 + \alpha_2 + \cdots + \alpha_n \\
 %\alpha! & \overset{\text{def}}{=} \alpha_1!\alpha_2! \cdots \alpha_n! \\
 %\frac{\partial^{\sabs{\alpha}}}{\partial z^\alpha} & \overset{\text{def}}{=}
@@ -1470,13 +1502,15 @@ dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n \\
 %z^\alpha & \overset{\text{def}}{=} z_1^{\alpha_1}z_2^{\alpha_2} \cdots z_n^{\alpha_n} \\
 %\frac{1}{z} & \overset{\text{def}}{=} \frac{1}{z_1z_2 \cdots z_n} \\
 %dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n \\
-\sabs{\alpha} & \overset{\text{def}}{=} \alpha_1 + \alpha_2 + \cdots + \alpha_n \\
-\alpha! & \overset{\text{def}}{=} \alpha_1!\alpha_2! \cdots \alpha_n! \\
+\sabs{\alpha} & \overset{\text{def}}{=} \alpha_1 + \alpha_2 + \cdots +
+\alpha_n , \\
+\alpha! & \overset{\text{def}}{=} \alpha_1!\alpha_2! \cdots \alpha_n! , \\
 \frac{\partial^{\sabs{\alpha}}}{\partial z^\alpha} & \overset{\text{def}}{=}
 \frac{\partial^{\alpha_1}}{\partial z_1^{\alpha_1}}
 \frac{\partial^{\alpha_2}}{\partial z_2^{\alpha_2}}
 \cdots
 \frac{\partial^{\alpha_n}}{\partial z_n^{\alpha_n}}
+.
 \end{aligned}
 \end{equation*}
 We can also make sense of this notation, especially the notation $z^\alpha$,
@@ -2446,7 +2480,8 @@ define the holomorphic derivative, sometimes called the
 \emph{\myindex{Jacobian matrix}},
 \glsadd{not:Df}
 \begin{equation*}
-Df(a) \overset{\text{def}}{=}
+Df(a)
+\overset{\text{def}}{=}
 \left[
 \frac{\partial f_j}{\partial z_k} (a)
 \right]_{jk} .
@@ -5314,6 +5349,7 @@ much harder to prove without that hypothesis.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Harmonic, subharmonic, and plurisubharmonic functions}
+\label{sec:harmonic}
 
 %Let us briefly touch on plurisubharmonic functions and their relation to
 %pseudoconvexity.
@@ -8129,7 +8165,7 @@ points where they are not defined.
 
 \begin{proof}
 The change of variables formula implies
-\begin{equation}
+\begin{equation*}
 dx_1  \wedge
 \cdots \wedge
 dx_{n-1}
@@ -8139,7 +8175,7 @@ dx_{n-1}
 d_x z(x,y')
 =
 \det \left[\frac{\partial z}{\partial x}(x,y')\right] dx ,
-\end{equation}
+\end{equation*}
 where $\left[\frac{\partial z}{\partial x}(x,y)\right]$ is the matrix
 corresponding to the derivative of the mapping $z$ with respect to the $x$
 variables evaluated at $(x,y')$.
@@ -11646,6 +11682,222 @@ earthquakes!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\section{FIXME}
+
+Let us review the results from one complex variable that may be useful for
+reading this book.
+The reader should first look through \sectionref{sec:motivation}
+for basic notation and motivation, although we will review some of the
+results again here.
+
+A piecewise $C^1$-path in $\C$
+is a continuous function $\gamma \colon [a,b] \to \C$,
+that is continuously differentiable except at finitely many points,
+such that one-sided limits of $\gamma'$ exist at all points of $[a,b]$.
+By abuse of notation, when $\gamma$ is used as a set, then we mean
+the image
+$\gamma\bigl([a,b]\bigr)$.
+For a continuous function $f \colon \gamma \to \C$, define
+\glsadd{not:pathint}
+\begin{equation*}
+\int_\gamma f(z) \, dz 
+\overset{\text{def}}{=}
+\int_a^b f\bigl(\gamma(t)\bigr) \gamma'(t) \, dt .
+\end{equation*}
+As $\gamma'$ is only undefined at finitely many points and is otherwise
+continuous, this is well defined.
+
+A path is \emph{closed}\index{closed path}
+if $\gamma(a) = \gamma(b)$,
+and a path is \emph{simple}\index{simple path}
+if $\gamma|_{[a,b]}$ is one-to-one
+with the possible exception of $\gamma(a) = \gamma(b)$.
+
+For an open $U \subset \C$,
+a function $f \colon U \to \C$ is holomorphic if it is complex
+differentiable at every point.
+As in the introduction, we have the following version of Cauchy integral
+formula.
+
+\begin{thm}[Cauchy integral formula]
+Let $U \subset \C$ be a domain where $\partial U$ is a piecewise $C^1$
+simple closed curve (a Jordan curve).  Let $f \colon \overline{U} \to \C$ be a continuous function,
+holomorphic in $U$.
+Orient $\partial U$ positively (going around counter-clockwise).
+Then for $z \in U$:
+\begin{equation*}
+f(z) =
+\frac{1}{2\pi i}
+\int_{\partial U}
+\frac{f(\zeta)}{\zeta-z}
+\,
+d \zeta .
+\end{equation*}
+\end{thm}
+
+As we saw in the introduction, a holomorphic function has a power series.
+
+\begin{prop}
+If $U \subset \C$ is a domain, and $f \colon U \to \C$ holomorphic,
+then $f$ is infinitely differentiable, and if $\Delta_\rho(p) \subset \C$
+is a disc, then $f$ has a power series that
+converges absolutely uniformly on compact subsets of $\Delta_\rho(p)$:
+\begin{equation*}
+f(z) = \sum_{k=0}^\infty c_k {(z-p)}^k ,
+\end{equation*}
+where given a $\gamma$ that is a simple closed curve once counterclockwise
+around $p$ inside $\Delta_\rho(p)$,
+\begin{equation*}
+c_k = \frac{f^{(k)}(p)}{k!} =
+\frac{k!}{2\pi i}
+\int_{\gamma}
+\frac{f(\zeta)}{{(\zeta-z)}^{k+1}}
+\,
+d \zeta  .
+\end{equation*}
+\end{prop}
+
+\emph{\myindex{Cauchy estimates}} follow:  If $M$
+is the maximum of $\sabs{f}$ on the circle $\partial \Delta_r(p)$, then
+\begin{equation*}
+\sabs{c_k} \leq \frac{M}{r^k} .
+\end{equation*}
+Conversely, if a power series satisfies the Cauchy estimates,
+it will converge on $\Delta_r(p)$.
+
+And if a holomorphic function has a power series it satisfies the
+identity theorem:
+
+\begin{thm}[Identity]\index{identity theorem}
+If $U \subset \C$ is a domain, and $f \colon U \to \C$ holomorphic
+such that the zero set $f^{-1}(0)$ has a limit point in $U$, then
+$f \equiv 0$.
+\end{thm}
+
+The real and imaginary parts $u$ and $v$ of a holomorphic function $f =
+u+iv$ are harmonic, that is
+they satisfy $\nabla^2 u = \nabla^2 v = 0$, where $\nabla^2$ is the
+Laplacian.
+A domain $U$ is \emph{\myindex{simply connected}} if every simple closed curve
+is homotopic in $U$ to a constant, in other words, if the domain has no
+holes.  For example a disc is simply connected.
+
+\begin{prop}
+If $U \subset \C$ is a simply connected domain and $u \colon U \to \R$
+is harmonic, then there exists a harmonic function $v \colon U \to \R$
+such that $f = u+iv$ is holomorphic.
+\end{prop}
+
+The function $v$ is called the \emph{\myindex{harmonic conjugate}} of
+$u$.  For further review of harmonic functions see
+\sectionref{sec:harmonic} on harmonic functions.
+We have the following versions of the maximum principle.
+
+\begin{thm}[Maximum principles]\index{maximum principle}
+Suppose $U \subset \C$ is a domain.
+\begin{enumerate}[(i)]
+\item
+If $f \colon U \to \C$ is holomorphic and $\sabs{f}$
+achieves a local maximum in $U$, then $f$ is constant.
+\item
+If $U$ is bounded and $f \colon \overline{U} \to \C$ is holomorphic in $U$
+and continuous, then then $\sabs{f}$ achieves its maximum on $\partial U$.
+\item
+If $f \colon U \to \R$ is harmonic 
+achieves a local maximum or a minimum in $U$, then $f$ is constant.
+\item
+If $U$ is bounded and $f \colon \overline{U} \to \R$ is harmonic in $U$
+and continuous, then then $f$ achieves its maximum and minimum on $\partial U$.
+\end{enumerate}
+\end{thm}
+
+The maximum principle immediately implies the following lemma.
+
+\begin{lemma}[Schwarz's lemma]\index{Schwarz's lemma}
+Suppose $f \colon \D \to \C$ is holomorphic and $f(0) = 0$,
+then 
+\begin{enumerate}[(i)]
+\item $\sabs{f(z)} \leq \sabs{z}$, and
+\item $\sabs{f'(0)} \leq 1$.
+\end{enumerate}
+Furthermore, if $\sabs{f(z)} = \sabs{z}$ for any $z \in \D$
+or $\sabs{f'(0)} = 1$, then $f(z) =
+e^{i\theta} z$ for some $\theta \in \R$.
+\end{lemma}
+
+The above theorem is actually quite general.
+
+\begin{thm}[Riemann mapping theorem]\index{Riemann mapping theorem}
+If $U \subset \C$ is a simply connected domain such that $U \neq \C$,
+then $U$ is biholomorphic to $\D$.  In fact, given $z_0 \in U$
+there exists a unique biholomorphic $f \colon U \to \D$
+such that $f'(z_0) > 0$, and furthermore this $f$
+maximizes $\sabs{f'(z_0)}$ among all holomorphic maps to the disc $\D$.
+\end{thm}
+
+Schwarz's Lemma can also be used to classify the automorphisms of the disc
+(and hence any simply connected domain).  That is let
+$\operatorname{Aut(\D)}$ denote the group of biholomorphic self maps of the
+disc to itself.
+
+\begin{prop}
+If $f \in \operatorname{Aut}(\D)$ then there exists an $a \in \D$
+and $\theta \in \R$ such that
+\begin{equation*}
+f(z) = e^{i\theta} \frac{z-a}{1-\bar{a}z} .
+\end{equation*}
+\end{prop}
+
+Convergence of holomorphic functions is the same as for continuous
+functions.  Sometimes this is called \emph{\myindex{normal convergence}}.
+
+\begin{prop}
+Suppose $U \subset \C$ is a domain, and $f_k \colon U \to \C$
+a sequence of holomorphic functions which converge uniformly
+on compact subsets of $U$ to $f \colon U \to \C$.  Then $f$ is holomorphic.
+\end{prop}
+
+Holomorphic functions satisfy a Heine--Borel-like theorem:
+
+\begin{thm}[Montel]\index{Monte's theorem}
+If $U \subset \C$ is a domain and
+$f_n \subset U \to \C$ is a sequence of holomorphic functions
+that is uniformly bounded on compact subsets of $U$,
+then there exists a subsequence converging uniformly on compact subsets
+of $U$.
+\end{thm}
+
+A sequence of holomorphic functions cannot create or delete zeros out of thin air:
+
+\begin{thm}[Hurwitz]\index{Hurwitz's theorem}
+If $U \subset \C$ is a domain and
+$f_n \subset U \to \C$ is a sequence of holomorphic functions
+converging uniformly on compact subsets of $U$ to $f \colon U \to \C$.
+If $f$ is not identically zero and $z_0$ is a zero of $f$,
+then there exists a disc $\Delta_r(z_0)$ and an $N$, such that
+for all $n \geq N$, $f_n$ has the same number of zeros (counting
+multiplicity) in $\Delta_r(z_0)$ as $f$ (counting multiplicity).
+\end{thm}
+
+A common application, and sometimes the way
+the theorem is stated, is that if $f_n$ have no zeros in $U$, then
+either the limit $f$ is identically zero, or it also has no zeros.
+
+A function $f \colon \C \to \C$ that is holomorphic is
+\emph{\myindex{entire}}.
+
+\begin{thm}[Liouville]
+If $f$ is entire and bounded, then $f$ is constant.
+\end{thm}
+
+FIXME: dividing zeros,
+
+FIXME: isolated singularities / Laurent series
+
+FIXME: argument principle (with poles), Rouch\`e
+
+
+
+FIXME: Runge?
 
 FIXME
 
