@@ -518,6 +518,25 @@ which is really just the \emph{\myindex{Euclidean distance}}:
 \abs{z} \overset{\text{def}}{=} \sqrt{z \bar{z}} = \sqrt{x^2+y^2} .
 \end{equation*}
 
+A function $f \colon U \subset \R^n \to \C$ for an open set $U$
+is said to be continuously differentiable, or $C^1$ if the first (real)
+partial derivatives exist and are continuous.
+\glsadd{not:Ck}
+Similarly, it is $C^k$ or \emph{$C^k$-smooth}
+\index{Ck-smooth function@$C^k$-smooth function}
+if the first $k$ partial derivatives all exist and are differentiable.
+\glsadd{not:Cinfty}
+Finally, a function is said to be $C^\infty$ or simply
+\emph{smooth}\index{smooth function}\footnote{%
+While $C^\infty$ is the common definition of \emph{smooth}, not everyone
+always means
+the same thing by the word \emph{smooth}.  I have seen it mean
+differentiable, $C^1$, piecewise-$C^1$, $C^\infty$, holomorphic, \ldots}
+if it is \emph{\myindex{infinitely differentiable}},
+or in other words, if it is $C^k$ for all $k \in \N$.
+
+\medskip
+
 Complex analysis is the study of holomorphic (or complex-analytic)
 functions.
 There is an awful lot one can do with polynomials, but sometimes they are
@@ -2023,7 +2042,7 @@ Hint: Feel free to use the one-variable result.
 
 Let us define some notation for the set of holomorphic functions.
 At the same time, we notice that the set of holomorphic functions is
-naturally a ring under pointwise addition and multiplication.
+naturally a commutative ring under pointwise addition and multiplication.
 
 \begin{defn}
 Let $U \subset \C^n$ be an open set.
@@ -3707,20 +3726,17 @@ such that $M \cap V = \bigl\{ x \in V : r(x) = 0 \bigr\}$.  The function $r$ is
 called the \emph{\myindex{defining function}} (at $p$).
 
 A domain $U$ with
-\emph{$C^k$-smooth boundary}\index{smooth boundary}%
+\emph{$C^k$-smooth boundary}%
 \index{Ck-smooth boundary@$C^k$-smooth boundary}%
-\index{domain with smooth boundary}
 is a domain where
 $\partial U$ is a $C^k$-smooth hypersurface, where we further require
 for a defining function $r$ of $\partial U$ near some $p$,
 that $r < 0$ for points in $U$ and $r > 0$
 for points not in $U$.
 
-If we say simply \emph{\myindex{smooth}}\footnote{%
-While $C^\infty$ is the common definition of \emph{smooth}, not everyone
-always means
-the same thing by the word \emph{smooth}.  I have seen it mean
-differentiable, $C^1$, piecewise-$C^1$, $C^\infty$, holomorphic, \ldots},
+If we say simply
+\index{domain with smooth boundary}
+\emph{smooth}\index{smooth boundary},
 \glsadd{not:Cinfty}
 we mean $C^\infty$-smooth,\index{Cinfinity-smooth@$C^\infty$-smooth}
 that is, the $r$ above is infinitely differentiable.
@@ -9483,7 +9499,8 @@ dV(\xi)}
 \end{equation*}
 \end{proof}
 
-A sequence $\{ f_j \}$ of functions converging in $L^2(U)$ to some $f \in
+A sequence $\{ f_j \}$ of functions in $A^2(U)$
+converging in $L^2(U)$ to some $f \in
 L^2(U)$ converges uniformly on compact sets.  Therefore $f \in \sO(U)$.
 Consequently, $A^2(U)$ is a closed subspace of $L^2(U)$, and hence complete.
 For a bounded domain $A^2(U)$ is always infinite-dimensional, see exercise
@@ -9522,6 +9539,7 @@ a $k_z \in A^2(U)$, such that
 f(z) = \linnprod{f}{k_z} .
 \end{equation*}
 Define the \emph{\myindex{Bergman kernel}} for $U$ as
+\glsadd{not:Bergmanker}
 \begin{equation*}
 K_U(z,\bar{\zeta}) \overset{\text{def}}{=} \overline{k_z(\zeta)} .
 \end{equation*}
@@ -9800,7 +9818,10 @@ $f \in C(\overline{U}) \cap \sO(U)$ to $\partial U$ is a continuous function
 and hence $f|_{\partial U}$ is in $L^2(\partial U,d\sigma)$, where $d\sigma$
 is the surface measure on $\partial U$.  Taking a closure
 of these restrictions in $L^2(\partial U)$ obtains the Hilbert space
-$H^2(\partial U)$.  The inner product in this case is the $L^2(\partial U,
+$H^2(\partial U)$,
+\glsadd{not:H2}
+which is called the \emph{\myindex{Hardy space}}.
+The inner product in this case is the $L^2(\partial U,
 d\sigma)$ inner product:
 \begin{equation*}
 \linnprod{f}{g} \overset{\text{def}}{=} \int_{\partial U} f(z)
@@ -9838,6 +9859,7 @@ H^2(\partial U)$ such that
 Pf(z) = \linnprod{f}{s_z} .
 \end{equation*}
 Hence for $z \in U$ and $\zeta \in \partial U$ we define
+\glsadd{not:Szegoker}
 \begin{equation*}
 S_U(z,\bar{\zeta}) \overset{\text{def}}{=} \overline{s_z(\zeta)} ,
 \end{equation*}
@@ -9907,12 +9929,14 @@ $\Omega$ of $p$ such that $f|_\Omega = g|_\Omega$.
 
 An equivalence class of functions defined in a neighborhood of $p$
 is called a \emph{\myindex{germ of a function}}.
+\glsadd{not:germf}
 Usually it is denoted by $(f,p)$, but we simply say $f$ when
 the context is clear.
 \end{defn}
 
 Germs are particularly useful for holomorphic functions because of the identity
-theorem.  The set of germs of complex-valued functions always forms a ring.
+theorem.  The set of germs of complex-valued functions always forms a
+commutative ring.
 For example, to multiply $(f,p)$ and $(g,p)$, take two representatives
 $f$ and $g$ defined on a common neighborhood multiply them and
 then consider the germ $(fg,p)$.
@@ -9921,9 +9945,20 @@ The ring of germs is generally a ``nicer'' ring than the ring $\sO(U)$ for
 some open $U$.
 
 \begin{defn}
-Let $p \in \C^n$.  Write
+Let $p \in \C^n$.
+\glsadd{not:ringofgerms}
+Write
 ${}_n\sO_p = \sO_p$ as the ring of germs at $p$ of holomorphic functions.
 \end{defn}
+
+Given a commutative ring $R$,
+recall that an \emph{\myindex{ideal}} $I \subset R$ is
+a subset such that $f g \in I$ whenever $f \in R$ and $g \in I$.
+An ideal $I$ is generated by $f_1,\ldots,f_k$
+if $I$ is the smallest ideal containing $f_1,\ldots,f_k$.  We then usually
+\glsadd{not:ideal}
+write $I = (f_1,\ldots,f_n)$.  A \emph{\myindex{principal ideal}}
+is an ideal generated by a single element, that is, $(f)$.
 
 \begin{exbox}
 \begin{exercise}
@@ -9949,7 +9984,9 @@ $(f)$ be the ideal generated by $f$.  Prove $(f) = \sO_p$.\\
 b) Let $m = (z_1,\ldots,z_n)$ be the ideal generated by the coordinate
 functions.  Show that if $f$ vanishes at the origin, then $f \in m$.
 \\
-c) Show that if $I \subsetneq \sO_p$ is a proper ideal then
+c) Show that if $I \subsetneq \sO_p$ is a \emph{\myindex{proper ideal}}
+(ideal such that $I
+\not= \sO_p$) then
 $I \subset m$, that is $m$ is a \emph{\myindex{maximal ideal}}.
 \end{exercise}
 \end{exbox}
@@ -9963,6 +10000,7 @@ if there exists a neighborhood $N$ of $p$
 such that $A \cap N = B \cap N$.
 An equivalence class of sets 
 is called a \emph{\myindex{germ of a set}} at $p$.
+\glsadd{not:germA}
 Usually it is denoted by $(A,p)$, but we may write $A$ when
 the context is clear.
 \end{defn}
@@ -9997,6 +10035,7 @@ that is, $f_k(tz) = t^k f_k(z)$.
 For $a \in \C^n$ and a function $f$ holomorphic in a neighborhood of $a$.
 If $f$ is not identically zero,
 define
+\glsadd{not:ord}
 \begin{equation*}
 \ord_a f \overset{\text{def}}{=} \min \{ k \in \N_0 : f_k \not\equiv 0 \} .
 \end{equation*}
@@ -10022,6 +10061,7 @@ division theorems.
 \begin{defn}
 Let $U \subset \C^{n-1}$ be open, and let $z' \in \C^{n-1}$ denote the
 coordinates.
+\glsadd{not:polyinOU}
 Suppose a polynomial $P \in \sO(U)[z_n]$ is monic of degree $k$, that is,
 \begin{equation*}
 P(z',z_n) = z_n^k + \sum_{j=0}^{k-1} c_j(z') \, z_n^j ,
@@ -10029,6 +10069,7 @@ P(z',z_n) = z_n^k + \sum_{j=0}^{k-1} c_j(z') \, z_n^j ,
 where $c_j$ are holomorphic functions defined on $U$.
 Further suppose $c_j(0) = 0$ for all $j$.  Then $P$ is
 called a \emph{\myindex{Weierstrass polynomial}} of degree $k$.
+\glsadd{not:polyinO0}
 If the $c_j$ are germs in $\sO_0 = {}_{n-1}\sO_0$, then $P \in \sO_0[z_n]$ and
 $P$ is a \emph{\myindex{germ of a Weierstrass polynomial}}.
 \end{defn}
@@ -10417,8 +10458,8 @@ coincide.
 
 \begin{exbox}
 \begin{exercise}
-Prove that if $f \in \sO(U)$, then $U \setminus Z_f$ is not simply
-connected if $Z_f$ is nonempty.  In particular, in the theorem, $U' \setminus E$ is not
+Prove that if $f \in \sO(U)$, then $U \setminus f^{-1}(0)$ is not simply
+connected if $f^{-1}(0)$ is nonempty.  In particular, in the theorem, $U' \setminus E$ is not
 simply connected if $E \not= \emptyset$.
 \end{exercise}
 \end{exbox}
@@ -10435,7 +10476,7 @@ ring of germs of holomorphic functions.
 $\sO_p$ is Noetherian.
 \end{thm}
 
-Noetherian means that every ideal is finitely generated.
+\emph{\myindex{Noetherian}} means that every ideal is finitely generated.
 That is, for every ideal $I \subset \sO_p$
 there exist finitely many elements $f_1,\ldots,f_k \in I$ such that
 every $g \in I$ can be written as $g = c_1 f_1 + \cdots + c_k f_k$,
@@ -10474,13 +10515,16 @@ Find all the ideals in ${}_1\sO_0$.
 
 \begin{exercise}
 Finish the proof by proving
-${}_1\sO_0$ is Noetherian.  In fact, prove that it is a principal ideal domain
-(PID)\@.  Then prove that if $n > 1$, then ${}_n\sO_p$ is not a PID\@.
+${}_1\sO_0$ is Noetherian.  In fact, prove that it is a
+\emph{\myindex{principal ideal domain}}\index{PID}
+(PID)\@, in other words, every ideal is generated by a single element.
+Then prove that if $n > 1$, then ${}_n\sO_p$ is not a PID\@.
 \end{exercise}
 \end{exbox}
 
 \begin{thm}
-$\sO_p$ is a unique factorization domain (UFD)\@.  That is, up to a
+$\sO_p$ is a \emph{\myindex{unique factorization domain}}\index{UFD}
+(UFD)\@.  That is, up to a
 multiplication by a unit, every element has a unique factorization into
 irreducible elements of $\sO_p$.
 \end{thm}
@@ -10531,8 +10575,9 @@ ${}_{n}\sO_0$.
 \sectionnewpage
 \section{Varieties} \label{sec:varieties}
 
-If $f \colon \Omega \to \C$
-is a function, let $Z_f = f^{-1}(0)$ denote the zero set as before.
+If $f \colon U \to \C$
+\glsadd{not:Zf}
+is a function, let $Z_f = f^{-1}(0) \subset U$ denote the zero set of $f$.
 
 \begin{defn}
 Let $U \subset \C^n$ be an open set.  Let $X \subset U$ be a set such that
@@ -10577,6 +10622,7 @@ show that the germs $(Z_f,p)$ and $(Z_g,p)$ are the same.
 \end{exbox}
 
 Let
+\glsadd{not:idealfromset}
 \begin{equation*}
 I_p(X) \overset{\text{def}}{=}
 \bigl\{ (f,p) \in \sO_p : (X,p) \subset (Z_f,p) \bigr\} .
@@ -10587,11 +10633,13 @@ $X$ near $p$.  It is not hard to show that $I_p(X)$ is an ideal.
 Every ideal in $\sO_p$ is finitely generated.
 Let $I \subset \sO_p$ be an ideal generated by $f_1,f_2,\ldots,f_k$.
 Write
+\glsadd{not:vanishingset}
 \begin{equation*}
 V(I) \overset{\text{def}}{=}
 (Z_{f_1},p) \cap (Z_{f_2},p) \cap \cdots \cap (Z_{f_k},p) .
 \end{equation*}
-That is, the germ of the variety cut out by the elements of $I$, every
+That is, $V(I)$ is the germ of the variety cut out by the elements of $I$,
+since every
 element of $I$ vanishes on the points where all the generators vanish.
 
 \begin{exbox}
@@ -10665,8 +10713,10 @@ a \emph{\myindex{complex manifold}}, or
 As the ambient dimension is $n$ we say $X$ is of
 \emph{\myindex{codimension}} $n-k$ at $p$.
 
+\glsadd{not:Xreg}
 The set of regular points of $X$ will be denoted by $X_{\mathit{reg}}$.  Any
 point that is not regular is \emph{singular}\index{singular point}.
+\glsadd{not:Xsing}
 The set of singular points of $X$ is denoted by $X_{\mathit{sing}}$.
 \end{defn}
 
@@ -10690,6 +10740,7 @@ following definition does make sense.
 Let $X \subset U \subset \C^n$ be a (complex) subvariety of $U$.  Let $p \in
 X$ be a point.  We define the \emph{\myindex{dimension}} of $X$ at $p$
 to be
+\glsadd{not:dimpX}
 \begin{equation*}
 \dim_p X \overset{\text{def}}{=}
 \max \bigl\{ k \in \N_0 : \text{ $\forall$ neighborhoods
@@ -10700,14 +10751,15 @@ If $(X,p)$ is a germ, we say the dimension of $(X,p)$ is the dimension of
 $X$ at $p$.
 
 The dimension of the entire subvariety $X$ is defined to be
+\glsadd{not:dimX}
 \begin{equation*}
 \dim X \overset{\text{def}}{=}
 \max_{p \in X} \dim_p X .
 \end{equation*}
 
 We say that $X$ is of \emph{\myindex{pure dimension}} $k$ if at
-all points $p$, dimension of $X$ at $p$ is $k$.  For a germ,
-we say $(X,p)$ is of pure dimension $k$ if there exists a representative
+all points $p$, dimension of $X$ at $p$ is $k$.  
+We say a germ $(X,p)$ is of pure dimension $k$ if there exists a representative
 of $X$ that is of pure dimension $k$.
 We define the word \emph{codimension} as before, that is, the
 ambient dimension minus the dimension of $X$.
@@ -10913,7 +10965,7 @@ polynomials will be the irreducible factors in the factorization of $f$.
 
 \begin{exercise}
 Suppose $(X,p)$ is a germ of a pure codimension 1 subvariety.  Show that
-the ideal $I_p(X)$ is a principal ideal (has a single generator)
+the ideal $I_p(X)$ is a principal ideal (has a single generator).
 \end{exercise}
 
 \begin{exercise}
@@ -10948,13 +11000,15 @@ $X_1$ and $X_2$ of $U$ with
 $X_1 \not\subset X_2$ and
 $X_2 \not\subset X_1$ such that
 $X = X_1 \cup X_2$.
-Else the subvariety $X$ is \emph{irreducible} in $U$.
+Otherwise, the subvariety $X$ is \emph{irreducible} in $U$.
 \end{defn}
 
 \begin{exbox}
 \begin{exercise}
-Prove a germ of a complex variety $(X,p)$ is irreducible if and only if $I_p(X)$ is a prime ideal.
-Recall an ideal $I$ is prime if $ab \in I$ implies either $a \in I$ or $b
+Prove a germ of a complex variety $(X,p)$ is irreducible
+if and only if $I_p(X)$ is a prime ideal.
+Recall an ideal $I$ is \emph{prime}\index{prime ideal}
+if $ab \in I$ implies either $a \in I$ or $b
 \in I$.
 \end{exercise}
 
@@ -11322,6 +11376,7 @@ where $U \subset \C^n$ is a small domain with a defining function $r \colon
 U  \to \R$ for $M$.  That is, $r$ is a real-analytic function in $U$ such that
 $M = r^{-1}(0)$, but
 $dr \not= 0$ on $M$.  Define
+\glsadd{not:Ustar}
 \begin{equation*}
 U^* = \bigl\{ z \in \C^n : \bar{z} \in U \bigr\} .
 \end{equation*}
@@ -11335,6 +11390,7 @@ $dr$ does not vanish on $\sM$ and that $\sM$ is connected.
 
 Given $q \in U$,
 define the \emph{Segre variety}
+\glsadd{not:Segrevar}
 \begin{equation*}
 \Sigma_q(U,r) =
 \bigl\{ z \in U : r(z,\bar{q}) = 0 \bigr\} =
