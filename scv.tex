@@ -11682,15 +11682,13 @@ earthquakes!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\section{FIXME}
-
-Let us review the results from one complex variable that may be useful for
+Let us review some results from one complex variable that may be useful for
 reading this book.
 The reader should first look through \sectionref{sec:motivation}
 for basic notation and motivation, although we will review some of the
 results again here.
 
-A piecewise $C^1$-path (or curve)\index{path}\index{curve} in $\C$
+A piecewise-$C^1$ path (or curve)\index{path}\index{curve} in $\C$
 is a continuous function $\gamma \colon [a,b] \to \C$,
 that is continuously differentiable except at finitely many points,
 such that one-sided limits of $\gamma'$ exist at all points of $[a,b]$.
@@ -11705,7 +11703,7 @@ For a continuous function $f \colon \gamma \to \C$, define
 \int_a^b f\bigl(\gamma(t)\bigr) \gamma'(t) \, dt .
 \end{equation*}
 As $\gamma'$ is only undefined at finitely many points and is otherwise
-continuous, this is well-defined.  Similarly one defines the more general
+continuous, the integral is well-defined.  Similarly one defines the more general
 path integral in $dz = dx + i\,dy$ and $d\bar{z} = dx - i\, dy$.
 Let
 $z = \gamma(t) = \gamma_1(t) + i \, \gamma_2(t) = x + i\, y$
@@ -11761,18 +11759,18 @@ f(z) = e^z = e^{x+iy} = e^x \bigl( \cos y + i \sin(y) \bigr) .
 \end{equation*}
 
 As in the introduction, we have the following version of Cauchy integral
-formula.  A bounded domain has piecewise smooth $C^1$ boundary if $\partial U$
-is composed of piecewise smooth paths, and at point $p \in \partial U$,
+formula.  A bounded domain has piecewise-$C^1$ boundary if $\partial U$
+is composed of piecewise-$C^1$ paths, and at point $p \in \partial U$,
 every disc $\Delta_\rho(p)$ contains points from $U$ and points from the
-complement of $\overline{U}$.  If the parametrization is such that
-whenever at each point where the parametrization is differentiable,
+complement of $\overline{U}$.  If 
+at each point where the parametrization of $\partial U$ is differentiable,
 the domain is on the left ($\gamma'(t)$ rotated by $\pi/2$ points into the
 domain), then the boundary is \emph{\myindex{positively oriented}}.
 
 \pagebreak[2]
 
 \begin{thm}[Cauchy integral formula]
-Let $U \subset \C$ be a bounded domain with piecewise $C^1$-smooth boundary
+Let $U \subset \C$ be a bounded domain with piecewise-$C^1$ boundary
 $\partial U$ oriented positively, and let
 $f \colon \overline{U} \to \C$ be a continuous function
 holomorphic in $U$.
@@ -11791,11 +11789,11 @@ The theorem follows from Green's theorem, which is the Stokes theorem
 in two dimensions, although in the versions we state, one needs to
 approximate the domain by smaller domains from the inside to insure
 the partial derivatives are bounded.  See
-\thmref{thm:generalizedcauchy}.  Let us state the Green's theorem using
+\thmref{thm:generalizedcauchy}.  Let us state Green's theorem using
 the $dz$ and $d\bar{z}$ for completeness:
 
 \begin{thm}[Green's theorem]\index{Green's theorem} \label{thm:greens}
-Let $U \subset \C$ be a bounded domain with piecewise $C^1$-smooth boundary
+Let $U \subset \C$ be a bounded domain with piecewise-$C^1$ boundary
 $\partial U$ oriented positively, and let
 $f \colon \overline{U} \to \C$ be a continuous function
 with bounded continuous partial derivatives in $U$.
@@ -11844,7 +11842,7 @@ converges absolutely uniformly on compact subsets of $\Delta_\rho(p)$:
 \begin{equation*}
 f(z) = \sum_{k=0}^\infty c_k {(z-p)}^k ,
 \end{equation*}
-where given a $\gamma$ that is a simple closed (piecewise $C^1$)
+where given a $\gamma$ that is a simple closed (piecewise-$C^1$)
 path once counterclockwise
 around $p$ inside $\Delta_\rho(p)$,
 \begin{equation*}
@@ -11873,7 +11871,7 @@ is Liouville's theorem:
 If $f$ is entire and bounded, then $f$ is constant.
 \end{thm}
 
-And if a holomorphic function has a power series it satisfies the
+And as a holomorphic function has a power series it satisfies the
 identity theorem:
 
 \begin{thm}[Identity]\index{identity theorem}
@@ -11970,7 +11968,8 @@ maximizes $\sabs{f'(z_0)}$ among all holomorphic maps to the disc $\D$.
 
 Schwarz's Lemma can also be used to classify the automorphisms of the disc
 (and hence any simply connected domain).  That is let
-$\operatorname{Aut(\D)}$ denote the group of biholomorphic self maps of the
+$\operatorname{Aut(\D)}$ denote the group of biholomorphic (both $f$ and
+$f^{-1}$ are holomorphic) self maps of the
 disc to itself.
 
 \begin{prop}
@@ -11981,23 +11980,23 @@ f(z) = e^{i\theta} \frac{z-a}{1-\bar{a}z} .
 \end{equation*}
 \end{prop}
 
-Speaking of automorphisms, they are easy to classify.  We have the following
+Speaking of automorphisms.  We have the following
 version of inverse function theorem.
 
 \begin{thm}
 Suppose $U$ and $V$ are open sets.
 \begin{enumerate}[(i)]
 \item
-If $f \colon U \to V$ is holomorphic and bijective (one-to-one and onto).
-Then $f'(z) \not= 0$ for all $z \in V$, and $f^{-1} \colon V \to U$
+If $f \colon U \to V$ is holomorphic and bijective (one-to-one and onto),
+then $f'(z) \not= 0$ for all $z \in V$, and $f^{-1} \colon V \to U$
 is holomorphic.  If $f(p) = q$, then
 \begin{equation*}
 \left(f^{-1}\right)(q) = \frac{1}{f'(p)} .
 \end{equation*}
 \item
-Conversely, if $f \colon U \to V$ is holomorphic, $f(p) = q$,
-and $f'(p) \not= 0$.  Then there exists a neighbourhood $W$ of $q$
-and a holomorphic function $g \colon W \to U$ which is
+If $f \colon U \to V$ is holomorphic, $f(p) = q$,
+and $f'(p) \not= 0$, then there exists a neighbourhood $W$ of $q$
+and a holomorphic function $g \colon W \to U$ that is
 one-to-one and $f\bigl(g(z)\bigr) = z$ for all $z \in W$.
 \end{enumerate}
 \end{thm}
@@ -12006,7 +12005,7 @@ The Riemann mapping theorem actually follows from the following
 theorem about existence of branches of the logarithm.
 
 \begin{thm}
-Suppose $U \colon \C$ is a simply connected domain, and $f \colon U \to \C$
+Suppose $U \subset \C$ is a simply connected domain, and $f \colon U \to \C$
 is a holomorphic function without zeros in $U$.  Then there exists a
 holomorphic function $L \colon U \to \C$ such that
 \begin{equation*}
@@ -12170,7 +12169,7 @@ such that
 f(z) = \sum_{k=-\infty}^\infty c_k {(z-p)}^k ,
 \end{equation*}
 converges absolutely uniformly on compact subsets of $\Delta$.  If $\gamma$
-is a simple closed (piecewise $C^1$) path going once counterclockwise around
+is a simple closed (piecewise-$C^1$) path going once counterclockwise around
 $p$ in $\Delta$, then
 \begin{equation*}
 c_k = 
@@ -12209,7 +12208,7 @@ function with zeros at the poles of $f$, we see that poles are also
 isolated.  Zeros and poles of  can be counted fairly easily.
 
 \begin{thm}[Argument principle]\index{argument principle}
-Suppose $U \subset \C$ is a domain, and $\gamma$ is a piecewise $C^1$
+Suppose $U \subset \C$ is a domain, and $\gamma$ is a piecewise-$C^1$
 simple closed path in $U$ such that the interior of $\gamma$ is in $U$.
 Suppose that $f \colon U \to \bP^1$ is a meromorphic function with no zeros
 or poles on $\gamma$.
@@ -12241,7 +12240,7 @@ Furthermore, if $g \colon U \to \C$ is holomorphic, and $\#(p)$ is the order
 Another useful way to count zeros is Rouch\`e's theorem.
 
 \begin{thm}[Rouch\`e]\index{Rouch\`e's theorem}
-Suppose $U \subset \C$ is a domain, and $\gamma$ is a piecewise $C^1$
+Suppose $U \subset \C$ is a domain, and $\gamma$ is a piecewise-$C^1$
 simple closed path in $U$ such that the interior of $\gamma$ is in $U$.
 Suppose that $f \colon U \to \C$ and $g \colon U \to \C$
 are meromorphic functions such that
@@ -12256,6 +12255,15 @@ inside $\gamma$ (up to multiplicity).
 In the classical statement of the theorem the weaker
 inequality $\sabs{f(z)-g(z)} < \sabs{f(z)}$ is used.
 Also notice that the inequality precludes any zeros on $\gamma$ itself.
+
+One theorem from algebra that is important in complex analysis, and becomes
+perhaps even more impportant in several variables is the fundamental theorem
+of algebra.
+
+\begin{thm}[Fundamental theorem of algebra]\index{fundamental theorem of algebra}
+If $P \colon \C \to \C$ is a polynomial of degree $k$, then $P$
+has exactly $k$ roots (zeros) in $\C$ counted with multiplicity.
+\end{thm}
 
 \medskip
 
@@ -12277,7 +12285,7 @@ such that
 \end{equation*}
 \end{thm}
 
-A surprising ``version'' of Runge which is a generalization of the
+Perhaps a surprising generalization of the
 classical Weierstrass approximation theorem (and which does not follow from
 Runge) is the Mergelyan's theorem.
 
@@ -12294,8 +12302,8 @@ such that
 \end{equation*}
 \end{thm}
 
-The reason why the theorem is much stronger is that $K$ may have only a
-small interior.  Using a closed interval $K=[a,b]$ of the real line we
+The reason why the theorem is much stronger than Runge is that $K$ may have only a
+small or no interior.  Using a closed interval $K=[a,b]$ of the real line we
 recover the Weierstrass approximation theorem.
 
 There are many other useful theorems in one complex variable, and we could
