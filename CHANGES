@@ -1,0 +1,11 @@
+* new slightly different font
+* slightly more general Cauchy-Pompeiou
+* add Re/Im notation in 0.1
+* add $C^k$ and $C^\infty$ and smooth in 0.1 since its needed all over.
+* Add a bit more algebra detail and make sure to point out the rings are commutative
+* add appendix on one variable stuff
+* move all the $O(\ell)$ explanation into one place
+* add list of notations
+* add minor clarifications throughout
+* add note on integrability in 1.1
+* Move the solution of Dirichlet problem up in 2.4 so that it can be used.  This renumbers the exercises in 2.4

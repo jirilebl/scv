@@ -772,7 +772,7 @@ the \emph{\myindex{Cauchy integral formula}}\index{Cauchy formula}.
 
 \begin{thm}[Cauchy integral formula]
 Let $U \subset \C$ be a bounded domain where $\partial U$ is a piecewise smooth
-simple closed curve (a Jordan curve).  Let $f \colon \overline{U} \to \C$ be a continuous function,
+simple closed path (a Jordan curve).  Let $f \colon \overline{U} \to \C$ be a continuous function,
 holomorphic in $U$.
 Orient $\partial U$ positively (going around counter-clockwise).
 Then for $z \in U$:
@@ -934,7 +934,7 @@ converges uniformly).  In particular, the
 series converges uniformly absolutely in $z$ on compact subsets of $\Delta_{\rho}(a)$. 
 
 Let $\gamma$
-be the curve going around 
+be the path going around 
 $\partial \Delta_\rho(a)$ once in the positive direction.  Compute
 \begin{equation*}
 \begin{split}
@@ -8523,7 +8523,7 @@ W \to \C$ that does not extend to either side of $M$ at $p$.
 Before we get into the $\bar{\partial}$-problem, let us prove a more general
 version of Cauchy's formula using Stokes' theorem\footnote{%
 We are really using Green's theorem, which is the generalized
-Stokes' theorem in 2 dimensions.}.  Sometimes
+Stokes' theorem in 2 dimensions, see \thmref{thm:greens}.}.  Sometimes
 this is called the \emph{\myindex{Cauchy--Pompeiu integral formula}}.
 We will only need the theorem for smooth functions, but as it is often 
 applied in less regular contexts and it is just an application of Stokes
@@ -8533,7 +8533,8 @@ only piecewise smooth, and again that is all we need for Stokes.
 \begin{thm} \label{thm:generalizedcauchy}
 Let $U \subset \C$ be a bounded domain with piecewise $C^1$-smooth boundary
 $\partial U$ oriented positively, and let
-$f \colon \overline{U} \to \C$ be a $C^1$-smooth function.
+$f \colon \overline{U} \to \C$ be a continuous function
+with bounded continuous partial derivatives in $U$.
 Then for $z \in U$:
 \begin{equation*}
 f(z) =
@@ -11689,7 +11690,7 @@ The reader should first look through \sectionref{sec:motivation}
 for basic notation and motivation, although we will review some of the
 results again here.
 
-A piecewise $C^1$-path in $\C$
+A piecewise $C^1$-path (or curve)\index{path}\index{curve} in $\C$
 is a continuous function $\gamma \colon [a,b] \to \C$,
 that is continuously differentiable except at finitely many points,
 such that one-sided limits of $\gamma'$ exist at all points of $[a,b]$.
@@ -11704,7 +11705,40 @@ For a continuous function $f \colon \gamma \to \C$, define
 \int_a^b f\bigl(\gamma(t)\bigr) \gamma'(t) \, dt .
 \end{equation*}
 As $\gamma'$ is only undefined at finitely many points and is otherwise
-continuous, this is well defined.
+continuous, this is well-defined.  Similarly one defines the more general
+path integral in $dz = dx + i\,dy$ and $d\bar{z} = dx - i\, dy$.
+Let
+$z = \gamma(t) = \gamma_1(t) + i \, \gamma_2(t) = x + i\, y$
+parametrize the path.  Then
+\begin{equation*}
+\begin{split}
+\int_\gamma f(z) \, dz + g(z) \, d\bar{z}
+& =
+\int_\gamma
+\Bigl(f\bigl(x+i\, y\bigr) + g\bigl(x+i\, y\bigr) \Bigr) \, dx
++
+i \, \Bigl( f\bigl(x+i\, y\bigr) - g\bigl(x+i\, y\bigr) \Bigr) \, dy
+\\
+& =
+\int_a^b
+\Bigl(
+f\bigl(\gamma(t)\bigr) \gamma'(t)
++
+f\bigl(\gamma(t)\bigr) \overline{\gamma'(t)}
+\Bigr) \, dt
+\\
+& =
+\int_a^b
+\biggl(
+\Bigl(f\bigl(\gamma(t)\bigr) + g\bigl(\gamma(t)\bigr) \Bigr) \,
+\gamma_1'(t)
++
+i \, \Bigl( f\bigl(\gamma(t)\bigr) - g\bigl(\gamma(t)\bigr) \Bigr)
+\gamma_2'(t)
+\biggr)
+\, dt .
+\end{split}
+\end{equation*}
 
 A path is \emph{closed}\index{closed path}
 if $\gamma(a) = \gamma(b)$,
@@ -11714,15 +11748,34 @@ with the possible exception of $\gamma(a) = \gamma(b)$.
 
 For an open $U \subset \C$,
 a function $f \colon U \to \C$ is holomorphic if it is complex
-differentiable at every point.
+differentiable at every point, that is
+\begin{equation*}
+f'(z) = \lim_{h \in \C \to 0} \frac{f(z+h) - f(z)}{h}
+\end{equation*}
+exists for all $z \in U$.  For example, polynomials and rational
+functions in $z$ are holomorphic.  One of the most important examples
+is the solution to the differential equation $f'(z) = f(z)$, $f(0) = 1$, that is
+the complex exponential, defined in the entire complex plane.
+\begin{equation*}
+f(z) = e^z = e^{x+iy} = e^x \bigl( \cos y + i \sin(y) \bigr) .
+\end{equation*}
+
 As in the introduction, we have the following version of Cauchy integral
-formula.
+formula.  A bounded domain has piecewise smooth $C^1$ boundary if $\partial U$
+is composed of piecewise smooth paths, and at point $p \in \partial U$,
+every disc $\Delta_\rho(p)$ contains points from $U$ and points from the
+complement of $\overline{U}$.  If the parametrization is such that
+whenever at each point where the parametrization is differentiable,
+the domain is on the left ($\gamma'(t)$ rotated by $\pi/2$ points into the
+domain), then the boundary is \emph{\myindex{positively oriented}}.
+
+\pagebreak[2]
 
 \begin{thm}[Cauchy integral formula]
-Let $U \subset \C$ be a bounded domain where $\partial U$ is a piecewise $C^1$
-simple closed curve (a Jordan curve).  Let $f \colon \overline{U} \to \C$ be a continuous function,
+Let $U \subset \C$ be a bounded domain with piecewise $C^1$-smooth boundary
+$\partial U$ oriented positively, and let
+$f \colon \overline{U} \to \C$ be a continuous function
 holomorphic in $U$.
-Orient $\partial U$ positively (going around counter-clockwise).
 Then for $z \in U$:
 \begin{equation*}
 f(z) =
@@ -11732,6 +11785,53 @@ f(z) =
 \,
 d \zeta .
 \end{equation*}
+\end{thm}
+
+The theorem follows from Green's theorem, which is the Stokes theorem
+in two dimensions, although in the versions we state, one needs to
+approximate the domain by smaller domains from the inside to insure
+the partial derivatives are bounded.  See
+\thmref{thm:generalizedcauchy}.  Let us state the Green's theorem using
+the $dz$ and $d\bar{z}$ for completeness:
+
+\begin{thm}[Green's theorem]\index{Green's theorem} \label{thm:greens}
+Let $U \subset \C$ be a bounded domain with piecewise $C^1$-smooth boundary
+$\partial U$ oriented positively, and let
+$f \colon \overline{U} \to \C$ be a continuous function
+with bounded continuous partial derivatives in $U$.
+Then
+\begin{multline*}
+\int_{\partial U} f(z) \, dz + g(z) \, d\bar{z}
+=
+\int_{U} d \bigl( f(z) \, dz + g(z) \, d\bar{z} \bigr)
+=
+\int_{U}
+\left(
+\frac{\partial g}{\partial z}
+-
+\frac{\partial f}{\partial \bar{z}}
+\right)
+\, dz \wedge d\bar{z}
+\\
+=
+(-2i)
+\int_{U}
+\left(
+\frac{\partial g}{\partial z}
+-
+\frac{\partial f}{\partial \bar{z}}
+\right)
+\, dx \wedge dy 
+=
+(-2i)
+\int_{U}
+\left(
+\frac{\partial g}{\partial z}
+-
+\frac{\partial f}{\partial \bar{z}}
+\right)
+\, dA.
+\end{multline*}
 \end{thm}
 
 As we saw in the introduction, a holomorphic function has a power series.
@@ -11744,7 +11844,8 @@ converges absolutely uniformly on compact subsets of $\Delta_\rho(p)$:
 \begin{equation*}
 f(z) = \sum_{k=0}^\infty c_k {(z-p)}^k ,
 \end{equation*}
-where given a $\gamma$ that is a simple closed curve once counterclockwise
+where given a $\gamma$ that is a simple closed (piecewise $C^1$)
+path once counterclockwise
 around $p$ inside $\Delta_\rho(p)$,
 \begin{equation*}
 c_k = \frac{f^{(k)}(p)}{k!} =
@@ -11764,6 +11865,14 @@ is the maximum of $\sabs{f}$ on the circle $\partial \Delta_r(p)$, then
 Conversely, if a power series satisfies the Cauchy estimates,
 it will converge on $\Delta_r(p)$.
 
+A function $f \colon \C \to \C$ that is holomorphic is
+\emph{\myindex{entire}}.  An immediate application of Cauchy estimates
+is Liouville's theorem:
+
+\begin{thm}[Liouville]\index{Liouville's theorem}
+If $f$ is entire and bounded, then $f$ is constant.
+\end{thm}
+
 And if a holomorphic function has a power series it satisfies the
 identity theorem:
 
@@ -11773,11 +11882,34 @@ such that the zero set $f^{-1}(0)$ has a limit point in $U$, then
 $f \equiv 0$.
 \end{thm}
 
+Another consequence  of the Cauchy integral formula is that there is
+a differential equation characterizing holomorphic functions.
+
+\begin{prop}[Cauchy--Riemann equations]
+Given a domain $U \subset \C$,
+a function $f \colon U \to \C$ is holomorphic if and only if
+$f$ is continuously differentiable and
+\begin{equation*}
+\frac{\partial f}{\partial \bar{z}} = 0 \qquad \text{on $U$.}
+\end{equation*}
+\end{prop}
+
+Yet another consequence of the Cauchy formula (and one can make an argument
+that everything in this section is just a consequence of the Cauchy formula)
+is the open mapping theorem.
+
+\begin{thm}[Open mapping theorem]\index{open mapping theorem}
+Suppose $U \subset \C$ is open and
+$f \colon U \to \C$ is holomorphic.  Then $f$ is an open mapping, that is,
+$f(V)$ is open whenever $V$ is open.
+\end{thm}
+
 The real and imaginary parts $u$ and $v$ of a holomorphic function $f =
 u+iv$ are harmonic, that is
 they satisfy $\nabla^2 u = \nabla^2 v = 0$, where $\nabla^2$ is the
 Laplacian.
-A domain $U$ is \emph{\myindex{simply connected}} if every simple closed curve
+A domain $U$ is \emph{\myindex{simply connected}} if every simple closed
+path
 is homotopic in $U$ to a constant, in other words, if the domain has no
 holes.  For example a disc is simply connected.
 
@@ -11812,6 +11944,8 @@ and continuous, then then $f$ achieves its maximum and minimum on $\partial U$.
 
 The maximum principle immediately implies the following lemma.
 
+\pagebreak[2]
+
 \begin{lemma}[Schwarz's lemma]\index{Schwarz's lemma}
 Suppose $f \colon \D \to \C$ is holomorphic and $f(0) = 0$,
 then 
@@ -11844,6 +11978,81 @@ If $f \in \operatorname{Aut}(\D)$ then there exists an $a \in \D$
 and $\theta \in \R$ such that
 \begin{equation*}
 f(z) = e^{i\theta} \frac{z-a}{1-\bar{a}z} .
+\end{equation*}
+\end{prop}
+
+Speaking of automorphisms, they are easy to classify.  We have the following
+version of inverse function theorem.
+
+\begin{thm}
+Suppose $U$ and $V$ are open sets.
+\begin{enumerate}[(i)]
+\item
+If $f \colon U \to V$ is holomorphic and bijective (one-to-one and onto).
+Then $f'(z) \not= 0$ for all $z \in V$, and $f^{-1} \colon V \to U$
+is holomorphic.  If $f(p) = q$, then
+\begin{equation*}
+\left(f^{-1}\right)(q) = \frac{1}{f'(p)} .
+\end{equation*}
+\item
+Conversely, if $f \colon U \to V$ is holomorphic, $f(p) = q$,
+and $f'(p) \not= 0$.  Then there exists a neighbourhood $W$ of $q$
+and a holomorphic function $g \colon W \to U$ which is
+one-to-one and $f\bigl(g(z)\bigr) = z$ for all $z \in W$.
+\end{enumerate}
+\end{thm}
+
+The Riemann mapping theorem actually follows from the following
+theorem about existence of branches of the logarithm.
+
+\begin{thm}
+Suppose $U \colon \C$ is a simply connected domain, and $f \colon U \to \C$
+is a holomorphic function without zeros in $U$.  Then there exists a
+holomorphic function $L \colon U \to \C$ such that
+\begin{equation*}
+e^L = f .
+\end{equation*}
+In particular, we can take roots:
+for any $k \in \N$, there exists a holomorphic function
+$g \colon U \to \C$ such that
+\begin{equation*}
+g^k = f .
+\end{equation*}
+\end{thm}
+
+Zeros of holomorphic functions
+can be divided out in one variable, and moreover zeros
+of holomorphic functions are of finite order unless
+the function is identically zero.
+
+\begin{prop}
+Suppose $U \subset \C$ is a domain and
+$f \colon U \to \C$ is holomorphic, not identically zero, and $f(p) = 0$
+for some $p \in U$.  There exists a $k \in \N$ and
+a holomorhic function $g \colon U \to \C$,
+such that $g(p) \not= 0$ and
+\begin{equation*}
+f(z) = {(z-p)}^k g(z) \qquad \text{for all $z \in U$.}
+\end{equation*}
+\end{prop}
+
+The number $k$ above is called the \emph{order}\index{order of a zero}
+or \emph{multiplicity}\index{multiplicity of a zero}
+of the zero at $p$.
+We can use this fact and the existence of roots to show that every
+holomorphic function is locally really like $z^k$.  The function $\varphi$
+below can be thought of as a local change of coordinates.
+
+\begin{prop}
+Suppose $U \subset \C$ is a domain and
+$f \colon U \to \C$ is holomorphic, not identically zero, and $p \in U$.
+Then there exists a $k \in \N$,
+a neighbourhood $V \subset U$ of $p$,  and
+a holomorphic function $\varphi \colon V \to \C$ with 
+$\varphi'(p) \not= 0$, such that
+\begin{equation*}
+{\bigl(\varphi(z)\bigr)}^k = f(z) - f(p)
+\qquad \text{for all $z \in V$.}
 \end{equation*}
 \end{prop}
 
@@ -11882,24 +12091,172 @@ A common application, and sometimes the way
 the theorem is stated, is that if $f_n$ have no zeros in $U$, then
 either the limit $f$ is identically zero, or it also has no zeros.
 
-A function $f \colon \C \to \C$ that is holomorphic is
-\emph{\myindex{entire}}.
 
-\begin{thm}[Liouville]
-If $f$ is entire and bounded, then $f$ is constant.
+If $U \subset \C$ is open, $p \in U$, and
+$f \colon U \setminus \{ p \} \to \C$ is holomorphic we say that
+$f$ has an \emph{\myindex{isolated singularity}} at $p$. 
+An isolated singularity is \emph{removable}\index{removable singularity}
+if 
+there exists a holomorphic function $F \colon U \to \C$
+such that $f(z) = F(z)$ for all $z \in U \setminus \{ p \}$.
+An isolated singularity is a \emph{\myindex{pole}} if 
+\begin{equation*}
+\lim_{z \to p} f(z) = \infty \qquad \text{(that is
+$\sabs{f(z)} \to \infty$ as $\sabs{z} \to \infty$)}.
+\end{equation*}
+Otherwise the singularity is said to be
+\emph{essential}\index{essential singularity}.
+
+The first statement of the following proposition is
+usually called the \emph{\myindex{Riemann extension theorem}}.
+
+\pagebreak[2]
+\begin{prop}
+Suppose $U \subset \C$ is a domain, $p \in U$,
+and $f \colon U \setminus \{p\} \to \C$ holomorphic.
+\begin{enumerate}[(i)]
+\item
+If $f$ is bounded (near $p$ is enough), then $p$ is a removable singularity.
+\item
+If $p$ is a pole, there exists a $k \in \N$ such that
+\begin{equation*}
+g(z) = {(z-p)}^k f(z)
+\end{equation*}
+is bounded near $p$ and hence $g$ has a removable singularity at $p$.
+\end{enumerate}
+\end{prop}
+
+The number $k$ above is called the \emph{order}\index{order of a pole}
+of the pole.  There is a certain symmetry between zeros and poles.
+If $f$ has a zero of order $k$, then $\frac{1}{f}$ has a pole of order $k$.
+And if $f$ has a pole of order $k$ at $p$, then $\frac{1}{f}$
+has a removable singularity, and the extended function has a zero of order
+$k$.
+
+An function with an essential singularity actually achieves essentially
+every value.  A weak version of this result (and an easy to prove one)
+is the \emph{\myindex{Casorati--Weierstrass theorem}}, which states
+that if $f$ has an essential singularity at $p$,
+then for any neighbourhood $W$ of $p$, $f(W \setminus \{p\})$ is dense in
+$\C$.  Let us state the much stronger theorem of Picard.
+
+\begin{thm}[Picard's big theorem]\index{Picard's big theorem}
+Suppose $U \subset \C$ is open and $f \colon U \setminus \{ p \} \to \C$
+is holomorphic and has an essential singularity at $p$.  Then for any
+neighbourhood $W$ of $p$, $f(W \setminus \{ p \})$ is either $\C$
+or $\C$ minus a point.
 \end{thm}
 
-FIXME: dividing zeros,
+In particular, a function with an essential singularity is very wild.
+It achieves every value (except possibly one) infinitely often.
+An example is $e^{1/z}$ that does not achieve 0.
+Since we have stated the big theorem, we can state the little theorem:
 
-FIXME: isolated singularities / Laurent series
+\begin{thm}[Picard's little theorem]\index{Picard's little theorem}
+If $f \colon \C \to \C$ is holomorphic
+then
+$f(\C)$ is either $\C$ or $\C$ minus a point.
+\end{thm}
 
-FIXME: argument principle (with poles), Rouch\`e
+Isolated singularities can be characterized via the
+\emph{\myindex{Laurent series}}.
 
+\begin{prop}
+If $\Delta \subset \C$ is a disc centered at $p \in \C$,
+and $f \colon \Delta \setminus \{p\} \to \C$ holomorphic,
+then there exists a double sequence $\{ c_{k} \}_{k = -\infty}^\infty$
+such that
+\begin{equation*}
+f(z) = \sum_{k=-\infty}^\infty c_k {(z-p)}^k ,
+\end{equation*}
+converges absolutely uniformly on compact subsets of $\Delta$.  If $\gamma$
+is a simple closed (piecewise $C^1$) path going once counterclockwise around
+$p$ in $\Delta$, then
+\begin{equation*}
+c_k = 
+\frac{k!}{2\pi i}
+\int_{\gamma}
+\frac{f(\zeta)}{{(\zeta-z)}^{k+1}}
+\,
+d \zeta  .
+\end{equation*}
+The singularity at $p$ is
+\begin{enumerate}[(i)]
+\item removable if $c_k = 0$ for all $k < 0$.
+\item pole of order $\ell$ if $c_k = 0$ for all $k < -\ell$ and $c_{-\ell}
+\not= 0$.
+\item essential if for every exist infinitely negative $k$
+such that $c_k \not= 0$.
+\end{enumerate}
+\end{prop}
 
+\pagebreak[2]
+
+Let $\bP^1 = \C \cup \{\infty\}$ be the \emph{\myindex{Riemann sphere}}
+A function $f \colon U \to \bP^1$ is called \emph{\myindex{meromorphic}},
+if it is not
+identically $\infty$, and the points $U \setminus f^{-1}(\infty)$ are poles.
+So any holomorphic function with poles is meromorphic.  A
+meromorphic function is one that can locally be written as a quotient of
+holomorphic functions.
+
+The identity theorem says that zeros of a holomorphic $f$ have no limit
+points, and so are isolated points.  Since $\frac{1}{f}$ is a meromorphic
+function with zeros at the poles of $f$, we see that poles are also
+isolated.  Zeros and poles of  can be counted fairly easily.
+
+\begin{thm}[Argument principle]\index{argument principle}
+Suppose $U \subset \C$ is a domain, and $\gamma$ is a piecewise $C^1$
+simple closed path in $U$ such that the interior of $\gamma$ is in $U$.
+Suppose that $f \colon U \to \bP^1$ is a meromorphic function with no zeros
+or poles on $\gamma$.
+Then
+\begin{equation*}
+\frac{1}{2\pi i}
+\int_\gamma \frac{f'(z)}{f(z)} \, dz
+= N - P ,
+\end{equation*}
+where $N$ is the number of zeros of $f$ inside $\gamma$ and $P$ is the
+number of poles, both counted with multiplicity.
+
+Furthermore, if $g \colon U \to \C$ is holomorphic, and $\#(p)$ is the order
+(multiplicity) of a zero or pole at $p$, then
+\begin{equation*}
+\frac{1}{2\pi i}
+\int_\gamma g(z) \frac{f'(z)}{f(z)} \, dz
+=
+\sum_{p \in f^{-1}(0)}
+\#(p) \, g(p)
+\quad
+-
+\quad
+\sum_{p \in f^{-1}(\infty)}
+\#(p) \, g(p) .
+\end{equation*}
+\end{thm}
+
+Another useful way to count zeros is Rouch\`e's theorem.
+
+\begin{thm}[Rouch\`e]\index{Rouch\`e's theorem}
+Suppose $U \subset \C$ is a domain, and $\gamma$ is a piecewise $C^1$
+simple closed path in $U$ such that the interior of $\gamma$ is in $U$.
+Suppose that $f \colon U \to \C$ and $g \colon U \to \C$
+are meromorphic functions such that
+\begin{equation*}
+\sabs{f(z)-g(z)} < \sabs{f(z)}+\sabs{g(z)}
+\end{equation*}
+for all $z \in \gamma$.  Then $f$ and $g$
+have the same number of zeros
+inside $\gamma$ (up to multiplicity).
+\end{thm}
+
+In the classical statement of the theorem the weaker
+inequality $\sabs{f(z)-g(z)} < \sabs{f(z)}$ is used.
+Also notice that the inequality precludes any zeros on $\gamma$ itself.
 
 FIXME: Runge?
 
-FIXME
+FIXME: Weierstrass?
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
