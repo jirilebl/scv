@@ -12192,7 +12192,10 @@ such that $c_k \not= 0$.
 
 \pagebreak[2]
 
-Let $\bP^1 = \C \cup \{\infty\}$ be the \emph{\myindex{Riemann sphere}}
+Let $\bP^1 = \C \cup \{\infty\}$ be the \emph{\myindex{Riemann sphere}}.
+The topology on $\bP^1$ can be given by insisting that
+the function $\frac{1}{z}$ is a homeomorphism
+by letting $\frac{1}{\infty} = 0$ and $\frac{1}{0} = \infty$.
 A function $f \colon U \to \bP^1$ is called \emph{\myindex{meromorphic}},
 if it is not
 identically $\infty$, and the points $U \setminus f^{-1}(\infty)$ are poles.
@@ -12254,9 +12257,54 @@ In the classical statement of the theorem the weaker
 inequality $\sabs{f(z)-g(z)} < \sabs{f(z)}$ is used.
 Also notice that the inequality precludes any zeros on $\gamma$ itself.
 
-FIXME: Runge?
+\medskip
 
-FIXME: Weierstrass?
+The set of rational functions is dense in the space of holomorphic
+functions, and we even have control over where the poles need to be.
+Note that a nonconstant polynomial has a ``pole at infinity'' meaning 
+$P(z) \to \infty$ as $z \to \infty$.  Letting $\bP^1$ again be the Riemman
+sphere, we have Runge's approximation theorem.
+
+\begin{thm}[Runge]\index{Runge's approximation theorem}
+Suppose $U \subset \C$ is a domain and $A \subset \bP^1 \setminus U$
+is a set containing at least one point from each component of
+$\bP^1 \setminus U$.  Suppose $f \colon U \to \C$ is holomorphic.
+Then for any $\epsilon > 0$ and any compact
+$K \subset \subset U$, there exists a rational function $R$ with poles in $A$
+such that
+\begin{equation*}
+\sabs{R(z) - f(z)} < \epsilon \qquad \text{for all $z \in K$}.
+\end{equation*}
+\end{thm}
+
+A surprising ``version'' of Runge which is a generalization of the
+classical Weierstrass approximation theorem (and which does not follow from
+Runge) is the Mergelyan's theorem.
+
+\begin{thm}[Mergelyan]\index{Mergelyan's theorem}
+Suppose $K \subset \subset \C$ is a compact set such that $\C \setminus K$
+is connected and
+$f \colon K \to \C$ is a continuous function that is
+holomorphic in the interior $K^\circ$.
+Then for any $\epsilon > 0$ and any compact
+$K \subset \subset U$, there exists a polynomial $P$
+such that
+\begin{equation*}
+\sabs{P(z) - f(z)} < \epsilon \qquad \text{for all $z \in K$}.
+\end{equation*}
+\end{thm}
+
+The reason why the theorem is much stronger is that $K$ may have only a
+small interior.  Using a closed interval $K=[a,b]$ of the real line we
+recover the Weierstrass approximation theorem.
+
+There are many other useful theorems in one complex variable, and we could
+spend a lot of time listing them all.
+However, hopefully the above listing is useful
+as a refresher for the reader of the most common results, some of which are
+used in this book.
+
+%FIXME: Weierstrass?
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
