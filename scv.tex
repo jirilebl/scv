@@ -7627,11 +7627,12 @@ p_j(z) \to f(z)
 \end{thm}
 
 A key point is that $K$ cannot be chosen arbitrarily, it depends on $p$ and $M$.
-On the other hand it does not depend on $f$.  So given $M$ and $p \in M$
+On the other hand it does not depend on $f$.  Given $M$ and $p \in M$
 there is a $K$ such that \emph{every} CR function on $M$ is approximated
 uniformly on $K$ by polynomials.  The theorem also applies in $n=1$ (in one
-dimension), although in that case it follows from the more general Mergelyan
-theorem.
+dimension), although in that case it follows from the much more general
+theorem of Mergelyan
+(see \thmref{thm:mergelyan}).
 
 \begin{example}
 Let us show that $K$ cannot possibly be arbitrary.  Let us give an example
@@ -12169,7 +12170,7 @@ such that
 f(z) = \sum_{k=-\infty}^\infty c_k {(z-p)}^k ,
 \end{equation*}
 converges absolutely uniformly on compact subsets of $\Delta$.  If $\gamma$
-is a simple closed (piecewise-$C^1$) path going once counterclockwise around
+is a simple closed piecewise-$C^1$ path going once counterclockwise around
 $p$ in $\Delta$, then
 \begin{equation*}
 c_k = 
@@ -12181,10 +12182,10 @@ d \zeta  .
 \end{equation*}
 The singularity at $p$ is
 \begin{enumerate}[(i)]
-\item removable if $c_k = 0$ for all $k < 0$.
-\item pole of order $\ell$ if $c_k = 0$ for all $k < -\ell$ and $c_{-\ell}
+\item \emph{removable} if $c_k = 0$ for all $k < 0$.
+\item \emph{pole} of order $\ell$ if $c_k = 0$ for all $k < -\ell$ and $c_{-\ell}
 \not= 0$.
-\item essential if for every exist infinitely negative $k$
+\item \emph{essential} if for every exist infinitely negative $k$
 such that $c_k \not= 0$.
 \end{enumerate}
 \end{prop}
@@ -12237,6 +12238,9 @@ Furthermore, if $g \colon U \to \C$ is holomorphic, and $\#(p)$ is the order
 \end{equation*}
 \end{thm}
 
+We avoided introducing winding numbers by making $\gamma$ a simple closed curve,
+so the above statement may be slightly different than what you have seen in
+your one-variable course.
 Another useful way to count zeros is Rouch\`e's theorem.
 
 \begin{thm}[Rouch\`e]\index{Rouch\`e's theorem}
@@ -12261,11 +12265,9 @@ perhaps even more impportant in several variables is the fundamental theorem
 of algebra.
 
 \begin{thm}[Fundamental theorem of algebra]\index{fundamental theorem of algebra}
-If $P \colon \C \to \C$ is a polynomial of degree $k$, then $P$
+If $P \colon \C \to \C$ is a nonzero polynomial of degree $k$, then $P$
 has exactly $k$ roots (zeros) in $\C$ counted with multiplicity.
 \end{thm}
-
-\medskip
 
 The set of rational functions is dense in the space of holomorphic
 functions, and we even have control over where the poles need to be.
@@ -12286,10 +12288,12 @@ such that
 \end{thm}
 
 Perhaps a surprising generalization of the
-classical Weierstrass approximation theorem (and which does not follow from
-Runge) is the Mergelyan's theorem.
+classical Weierstrass approximation theorem,
+and one of my favourite one-variable theorems,
+is Mergelyan's theorem.
+It may be good to note that Mergelyan does not follow from Runge.
 
-\begin{thm}[Mergelyan]\index{Mergelyan's theorem}
+\begin{thm}[Mergelyan]\index{Mergelyan's theorem} \label{thm:mergelyan}
 Suppose $K \subset \subset \C$ is a compact set such that $\C \setminus K$
 is connected and
 $f \colon K \to \C$ is a continuous function that is
@@ -12302,15 +12306,34 @@ such that
 \end{equation*}
 \end{thm}
 
-The reason why the theorem is much stronger than Runge is that $K$ may have only a
+The reason why the theorem is perhaps
+surprising is that $K$ may have only a
 small or no interior.  Using a closed interval $K=[a,b]$ of the real line we
 recover the Weierstrass approximation theorem.
+
+Another very interesting and useful theorem getting the opposite inequality from
+Schwarz, and one which is often not covered in a one-variable
+course is the Koebe $\frac{1}{4}$-theorem.  It is very useful to try to
+think of why no such theorem could possibly be true for just smooth
+functions.  At first glance the theorem should seem quite counter intuitive,
+and at second glance, it should seem outright outrageous.
+
+\begin{thm}[Koebe quarter theorem]\index{Koebe quarter theorem}\index{Koebe
+$\frac{1}{4}$-theorem}
+Suppose $f \colon \D \to \C$ is holomorphic and injective.  Then
+$f(\D)$ contains a disc centered at $f(0)$ and radius $\frac{f'(0)}{4}$.
+\end{thm}
+
+\begin{center}
+* * *
+\end{center}
 
 There are many other useful theorems in one complex variable, and we could
 spend a lot of time listing them all.
 However, hopefully the above listing is useful
 as a refresher for the reader of the most common results, some of which are
-used in this book.
+used in this book, some of which are useful in the exercises, and some of
+which are just too interesting not to mention.
 
 %FIXME: Weierstrass?
 
