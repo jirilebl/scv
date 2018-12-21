@@ -481,12 +481,12 @@ reference and further reading.
 
 
 Let us start with some standard notation.
-We use \glsadd{not:C} $\C$ for the complex numbers, \glsadd{not:R} $\R$
+We use \glsadd{not:C}$\C$ for the complex numbers, \glsadd{not:R}$\R$
 for real numbers,
-\glsadd{not:Z} $\Z$ for integers,
-\glsadd{not:N} $\N = \{ 1,2,3,\ldots \}$ for natural
+\glsadd{not:Z}$\Z$ for integers,
+\glsadd{not:N}$\N = \{ 1,2,3,\ldots \}$ for natural
 numbers,
-\glsadd{not:i} $i = \sqrt{-1}$, etc.  Throughout this book, we will use
+\glsadd{not:i}$i = \sqrt{-1}$, etc.  Throughout this book, we will use
 the standard terminology of \emph{\myindex{domain}} to mean connected open
 set.
 
@@ -509,13 +509,13 @@ theory, which we could not tell apart from the original.
 
 Given a complex number $z$, its ``opposite'' is 
 the \emph{\myindex{complex conjugate}} of $z$ and is defined as
-\glsadd{not:conj}
+\glsadd{not:conj}%
 \begin{equation*}
 \bar{z} \overset{\text{def}}{=} x-iy.
 \end{equation*}
 The size of $z$ is measured by the so-called \emph{\myindex{modulus}},
 which is really just the \emph{\myindex{Euclidean distance}}:
-\glsadd{not:mod}
+\glsadd{not:mod}%
 \begin{equation*}
 \abs{z} \overset{\text{def}}{=} \sqrt{z \bar{z}} = \sqrt{x^2+y^2} .
 \end{equation*}
@@ -523,8 +523,8 @@ which is really just the \emph{\myindex{Euclidean distance}}:
 If $z = x+iy \in \C$ for $x,y \in \R$, then $x$ is called the
 \emph{\myindex{real part}} and $y$ is called the
 \emph{\myindex{imaginary part}} and we write
-\glsadd{not:real}
-\glsadd{not:imag}
+\glsadd{not:real}%
+\glsadd{not:imag}%
 \begin{equation*}
 \Re z = 
 \Re (x+iy) =
@@ -541,11 +541,11 @@ y .
 A function $f \colon U \subset \R^n \to \C$ for an open set $U$
 is said to be continuously differentiable, or $C^1$ if the first (real)
 partial derivatives exist and are continuous.
-\glsadd{not:Ck}
+\glsadd{not:Ck}%
 Similarly, it is $C^k$ or \emph{$C^k$-smooth}
 \index{Ck-smooth function@$C^k$-smooth function}
 if the first $k$ partial derivatives all exist and are differentiable.
-\glsadd{not:Cinfty}
+\glsadd{not:Cinfty}%
 Finally, a function is said to be $C^\infty$ or simply
 \emph{smooth}\index{smooth function}\footnote{%
 While $C^\infty$ is the common definition of \emph{smooth}, not everyone
@@ -644,7 +644,7 @@ The so-called \emph{\myindex{Wirtinger operators}},
 provide an easier way to understand the
 Cauchy--Riemann equations.
 These operators are determined by insisting
-\glsadd{not:wirt}
+\glsadd{not:wirt}%
 \begin{equation*}
 \frac{\partial}{\partial z} z = 1, \quad
 \frac{\partial}{\partial z} \bar{z} = 0, \quad
@@ -656,6 +656,11 @@ The function $f$ is holomorphic if and only if
 \begin{equation*}
 \frac{\partial f}{\partial \bar{z}} = 0 .
 \end{equation*}
+That seems a far nicer statement of the Cauchy--Riemann equations, and it is
+now just one complex equation.  It says
+a function is holomorphic if and only if it depends on $z$ but not on
+$\bar{z}$ (tough perhaps that might not make a whole lot of sense at first
+glance).
 Let us check:
 \begin{equation*}
 \frac{\partial f}{\partial \bar{z}} 
@@ -800,12 +805,13 @@ dimensions).  You can look forward to
 \thmref{thm:generalizedcauchy} for a proof of a more general formula,
 the Cauchy--Pompeiu integral formula.
 
-As a differential form, \glsadd{not:dz} $dz = dx + i \, dy$.  If you are uneasy
-about differential forms, you probably defined this directly integral using
+As a differential form, \glsadd{not:dz}$dz = dx + i \, dy$.  If you are uneasy
+about differential forms, you probably defined the path integral above
+directly integral using
 the Riemann--Stieltjes integral in your one-complex-variable class.
 Let us write down the formula in terms of the standard Riemann integral
 in a special case.  Take the \emph{\myindex{unit disc}}
-\glsadd{not:D}
+\glsadd{not:D}%
 \begin{equation*}
 \D
 \overset{\text{def}}{=}
@@ -842,7 +848,8 @@ is more or less a straightforward consequence of the Cauchy
 integral formula.
 An important theorem from one variable that follows from
 the Cauchy formula is the
-\emph{\myindex{maximum modulus principle}}\index{maximum principle},
+\emph{\myindex{maximum modulus principle}} (or just
+the \emph{\myindex{maximum principle})},
 which has several versions.  Let us give the simplest one.
 
 \begin{thm}[Maximum modulus principle]
@@ -852,7 +859,7 @@ If
 \begin{equation*}
 \sup_{z \in U} \, \sabs{f(z)} = f(z_0)
 \end{equation*}
-\glsadd{not:identeq}
+\glsadd{not:identeq}%
 for some $z_0 \in U$, then $f$ is constant ($f \equiv f(z_0)$).
 \end{thm}
 
@@ -867,7 +874,7 @@ property of harmonic functions.
 \begin{thm}[Maximum principle]
 Let $U \subset \C$ be a domain and $h \colon U \to \R$
 harmonic, that is,
-\glsadd{not:laplacian}
+\glsadd{not:laplacian}%
 \begin{equation*}
 \nabla^2 h = \frac{\partial^2 h}{\partial x^2} + \frac{\partial^2 h}{\partial
 y^2} = 0 .
@@ -885,7 +892,7 @@ the real (or imaginary) part of a holomorphic function, so in
 one complex variable, studying 
 harmonic functions is almost equivalent to studying holomorphic
 functions.  Things are decidedly different
-two or more variables.
+in two or more variables.
 
 \medskip
 
@@ -900,7 +907,7 @@ since $\frac{\partial f}{\partial \bar{z}} = 0$.
 Let us see the proof using the Cauchy integral formula as we will
 require this computation in several variables as well.
 Given $a \in \C$ and $\rho > 0$, define the disc of radius $\rho$ around $a$
-\glsadd{not:disc}
+\glsadd{not:disc}%
 \begin{equation*}
 \Delta_\rho(a)
 \overset{\text{def}}{=}
@@ -1015,7 +1022,7 @@ d \zeta  .
 \end{equation*}
 
 For a set $K$ denote the \emph{\myindex{supremum norm}}:
-\glsadd{not:supnorm}
+\glsadd{not:supnorm}%
 \begin{equation*}
 \snorm{f}_K
 \overset{\text{def}}{=}
@@ -1101,7 +1108,7 @@ and $\bar{z}$ the \emph{\myindex{antiholomorphic coordinates}}.
 For $\rho = (\rho_1,\rho_2,\ldots,\rho_n)$ where $\rho_j > 0$ and $a \in \C^n$,
 define
 a \emph{\myindex{polydisc}}
-\glsadd{not:disc}
+\glsadd{not:disc}%
 \begin{equation*}
 \Delta_\rho(a)  \overset{\text{def}}{=}
 \bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho_j ~\text{for $j=1,2,\ldots,n$} \bigr\} .
@@ -1144,7 +1151,7 @@ picture by plotting just against the modulus of the variables:
 
 Recall the
 \emph{\myindex{Euclidean inner product}} on $\C^n$
-\glsadd{not:hermprod}
+\glsadd{not:hermprod}%
 \begin{equation*}
 \linnprod{z}{w} \overset{\text{def}}{=} %z \cdot \bar{w}
 z_1 \bar{w}_1 +
@@ -1153,7 +1160,7 @@ z_n \bar{w}_n .
 \end{equation*}
 Using the inner product we obtain the standard
 \emph{\myindex{Euclidean norm}} on $\C^n$
-\glsadd{not:eucnorm}
+\glsadd{not:eucnorm}%
 \begin{equation*}
 \snorm{z}  \overset{\text{def}}{=} \sqrt{\linnprod{z}{z}}
 =
@@ -1163,13 +1170,13 @@ Using the inner product we obtain the standard
 \end{equation*}
 This norm agrees with the standard Euclidean norm on $\R^{2n}$.
 We define \emph{balls}\index{ball} as in $\R^{2n}$:
-\glsadd{not:ball}
+\glsadd{not:ball}%
 \begin{equation*}
 B_\rho(a)  \overset{\text{def}}{=}
 \bigl\{ z \in \C^n : \snorm{z - a} < \rho \bigr\} ,
 \end{equation*}
 And we define the \emph{\myindex{unit ball}} as
-\glsadd{not:unitball}
+\glsadd{not:unitball}%
 \begin{equation*}
 \bB_n \overset{\text{def}}{=} B_1(0) =
 \bigl\{ z \in \C^n : \snorm{z} < 1 \bigr\} .
@@ -1198,7 +1205,7 @@ to real differentiability.
 \end{defn}
 
 As in one variable, we define the \emph{\myindex{Wirtinger operators}}
-\glsadd{not:wirt}
+\glsadd{not:wirt}%
 \begin{equation*}
 \frac{\partial}{\partial z_j}  \overset{\text{def}}{=}
 \frac{1}{2} \left(
@@ -1307,7 +1314,7 @@ such that when $d x_j \bigl( \frac{\partial}{\partial x_j} \bigr) = 1$ and
 $d x_j \bigl( \frac{\partial}{\partial x_k} \bigr) = 0$ if $j \not= k$.  Therefore because
 $z_j = x_j + i y_j$ and
 $\bar{z}_j = x_j - i y_j$,
-\glsadd{not:dz}\glsadd{not:dzbar}
+\glsadd{not:dz}\glsadd{not:dzbar}%
 \begin{equation*}
 d z_j = d x_j + i \, d y_j , 
 \qquad
@@ -1325,7 +1332,7 @@ d \bar{z}_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = \delta_j^k
 ,
 \end{array}
 \end{equation*}
-\glsadd{not:kronecker}
+\glsadd{not:kronecker}%
 where $\delta_{j}^k$ is the Kronecker delta, that is, $\delta_j^j = 1$,
 and $\delta_j^k = 0$ if $j \not= k$.  One-forms are objects of the form
 \begin{equation*}
@@ -1475,14 +1482,14 @@ to deal with formulas such as the ones above.
 
 Let $\alpha \in \N_0^n$
 be a vector of nonnegative integers
-\glsadd{not:N0}
+\glsadd{not:N0}%
 (where $\N_0 = \N \cup \{ 0\}$).
 We write
-\glsadd{not:zalpha}
-\glsadd{not:dzmulti}
-\glsadd{not:absalpha}
-\glsadd{not:alphabang}
-\glsadd{not:alphader}
+\glsadd{not:zalpha}%
+\glsadd{not:dzmulti}%
+\glsadd{not:absalpha}%
+\glsadd{not:alphabang}%
+\glsadd{not:alphader}%
 \begin{equation*}
 \begin{aligned}
 z^\alpha & \overset{\text{def}}{=} z_1^{\alpha_1}z_2^{\alpha_2} \cdots
@@ -1544,7 +1551,7 @@ When it is clear
 from context that we are talking about a power series
 and therefore all the powers are nonnegative,
 we often write just
-\glsadd{not:zalphasum}
+\glsadd{not:zalphasum}%
 \begin{equation*}
 \sum_{\alpha} c_\alpha {z}^\alpha .
 \end{equation*}
@@ -2080,7 +2087,7 @@ naturally a commutative ring under pointwise addition and multiplication.
 
 \begin{defn}
 Let $U \subset \C^n$ be an open set.
-\glsadd{not:O}
+\glsadd{not:O}%
 Define $\sO(U)$ to be the \emph{\myindex{ring of holomorphic functions}}.
 The letter $\sO$ is used to recognize the fundamental contribution to
 several complex variables by
@@ -2091,7 +2098,7 @@ See \url{https://en.wikipedia.org/wiki/Kiyoshi_Oka}}.
 
 \begin{exbox}
 \begin{exercise}
-Prove that $\sO(U)$ is actually a ring with the operations
+Prove that $\sO(U)$ is actually a commutative ring with the operations
 \begin{equation*}
 (f+g)(z) = f(z)+g(z), \qquad (fg)(z) = f(z)g(z) .
 \end{equation*}
@@ -2133,6 +2140,12 @@ In two variables one can no longer think of a meromorphic function $F$ simply
 taking on the value of $\infty$, when the denominator vanishes.  Show that $F(z,w) = \nicefrac{z}{w}$ achieves all values of $\C$
 in every neighborhood of the origin.  The origin is called
 a \emph{\myindex{point of indeterminacy}}.
+\end{exercise}
+
+\begin{exercise}
+Prove that zeros (and so poles) are never isolated in $\C^n$ for $n \geq 2$.
+In particular, consider $z_1 \mapsto f(z_1,z_2,\ldots,z_n)$ as you move
+$z_2,\ldots,z_n$ around, and use for example Hurwitz.
 \end{exercise}
 \end{exbox}
 
@@ -2371,7 +2384,7 @@ holomorphic.
 \begin{thm}
 Let $U \subset \C^n$ and $V \subset \C^m$ be open sets and suppose
 $f \colon U \to V$ and $g \colon V \to \C^k$ are both holomorphic.
-\glsadd{not:composition}
+\glsadd{not:composition}%
 Then the composition $g \circ f$ is holomorphic.
 \end{thm}
 
@@ -2478,7 +2491,7 @@ For a $U \subset \C^n$, a holomorphic mapping $f \colon U \to \C^m$,
 and a point $a \in U$,
 define the holomorphic derivative, sometimes called the
 \emph{\myindex{Jacobian matrix}},
-\glsadd{not:Df}
+\glsadd{not:Df}%
 \begin{equation*}
 Df(a)
 \overset{\text{def}}{=}
@@ -2512,7 +2525,7 @@ Prove the proposition.
 \begin{prop}
 Let $U \subset \C^n$ be open sets and 
 $f \colon U \to \C^n$ be holomorphic.
-\glsadd{not:DRf}
+\glsadd{not:DRf}%
 If we let $D_\R f (a)$ be the real
 Jacobian matrix of $f$ (a $2n \times 2n$ real matrix), then
 \begin{equation*}
@@ -2571,7 +2584,7 @@ where $\overline{A}$ is the complex conjugate of $A$.  Thus
 Two domains $U \subset \C^n$ and $V \subset \C^n$ are said to be
 \emph{\myindex{biholomorphic}} if there exists a one-to-one and onto holomorphic map $f
 \colon U \to V$ such that the inverse
-\glsadd{not:inverse}
+\glsadd{not:inverse}%
 $f^{-1} \colon V \to U$ is holomorphic.
 The mapping $f$ is said to be a
 \emph{biholomorphic map}\index{map!biholomorphic} or a 
@@ -2613,8 +2626,8 @@ definition.
 \begin{defn}
 Suppose $f \colon X \to Y$ is a continuous map between two topological
 spaces.  Then $f$ is a \emph{\myindex{proper map}}\index{map!proper} if for every compact
-\glsadd{not:compact}
-\glsadd{not:pullback}
+\glsadd{not:compact}%
+\glsadd{not:pullback}%
 $K \subset \subset Y$, the set $f^{-1}(K)$ is compact.
 \end{defn}
 
@@ -2688,7 +2701,7 @@ lying entirely inside the boundary.  On the other hand for the ball
 we have the following proposition.
 
 \begin{prop}
-\glsadd{not:unitsphere}
+\glsadd{not:unitsphere}%
 The unit sphere $S^{2n-1} = \partial \bB_n \subset \C^n$ 
 contains no analytic discs.
 \end{prop}
@@ -2858,7 +2871,7 @@ Blaschke product).  Hint: Consider the set $f^{-1}(0)$.
 \end{samepage}
 \end{exbox}
 
-In several dimensions when $\D$ is replaced by a ball,
+In several dimensions, when $\D$ is replaced by a ball,
 this question (what are the proper maps)
 becomes much more involved, and when the dimensions of the balls are
 different, it is not solved in general.
@@ -3593,7 +3606,7 @@ Then $H \subset U$, and $p \in \D^n \setminus H$.
 $f$ extends to be holomorphic at $p$.
 \end{proof}
 
-A consequence of this result is that holomorphic functions in several
+This result provides another reason why holomorphic functions in several
 variables have no isolated zeros.  That is, suppose $U \subset \C^n$,
 $n \geq 2$, and $f \in \sO(U)$ with $f$ being zero only at $p$, that
 is $f^{-1}(0) = \{ p \}$.  Then $\frac{1}{f}$ would be holomorphic in
@@ -3750,7 +3763,7 @@ domains are domains of holomorphy.
 
 \begin{defn} \label{def:hypersurface}
 A set $M \subset \R^n$ is a real
-\glsadd{not:Ck}
+\glsadd{not:Ck}%
 $C^k$-smooth \emph{\myindex{hypersurface}}%
 \index{Ck-smooth hypersurface@$C^k$-smooth hypersurface}
 if at each point
@@ -3772,7 +3785,7 @@ for points not in $U$.
 If we say simply
 \index{domain with smooth boundary}
 \emph{smooth}\index{smooth boundary},
-\glsadd{not:Cinfty}
+\glsadd{not:Cinfty}%
 we mean $C^\infty$-smooth,\index{Cinfinity-smooth@$C^\infty$-smooth}
 that is, the $r$ above is infinitely differentiable.
 \end{defn}
@@ -3805,7 +3818,7 @@ single global defining function for every domain, but we have no need of this.
 
 \begin{defn}
 For any $p \in \R^n$, the set of tangent vectors $T_p \R^n$ is given by
-\glsadd{not:realtangentspace}
+\glsadd{not:realtangentspace}%
 \begin{equation*}
 T_p \R^n = \operatorname{span}_{\R} \left\{
 \frac{\partial}{\partial x_1}\Big|_p,
@@ -3818,7 +3831,7 @@ X_p = \sum_{j=1}^n a_j
 \frac{\partial}{\partial x_j}\Big|_p ,
 \end{equation*}
 for real numbers $a_j$.
-\glsadd{not:evalpartial}
+\glsadd{not:evalpartial}%
 An object $\frac{\partial}{\partial x_j}\Big|_p$ is a linear functional
 on the space of smooth functions:
 when applied to a smooth function $g$ it gives
@@ -3833,7 +3846,7 @@ to $M$ at $p$ if
 X_p r = 0, \qquad \text{or in other words} \qquad
 \sum_{j=1}^n a_j \frac{\partial r}{\partial x_j} \Big|_p = 0 .
 \end{equation*}
-\glsadd{not:realtangentspace}
+\glsadd{not:realtangentspace}%
 The space of tangent vectors to $M$ is denoted by $T_p M$.  The
 space $T_pM$ is an $(n-1)$-dimensional real vector space.  
 The definition of $T_pM$ is independent of the choice of $r$ by the next two
@@ -3864,7 +3877,7 @@ $\sum a_j \frac{\partial \tilde{r}}{\partial x_j} \Big|_p = 0$.
 \end{exbox}
 
 The disjoint union
-\glsadd{not:realtangentbundle}
+\glsadd{not:realtangentbundle}%
 \begin{equation*}
 T\R^n = \bigcup_{p \in \R^n} T_p \R^n
 \end{equation*}
@@ -3899,7 +3912,7 @@ To be more fancy we could
 say $X$ is a \emph{\myindex{section}} of $T \R^n$.
 
 Similarly,
-\glsadd{not:realtangentbundle}
+\glsadd{not:realtangentbundle}%
 \begin{equation*}
 TM = \bigcup_{p \in M} T_p M
 \end{equation*}
@@ -3980,7 +3993,7 @@ our defining function is $r(x,y) = x^2+y^2-1$.
 The tangent space to the circle is one-dimensional, so we simply need to
 find a single nonzero tangent vector at each point.
 Notice that the gradient
-\glsadd{not:gradient}
+\glsadd{not:gradient}%
 $\nabla r = (2x,2y)$, so it is easy to check that
 %the tangent space at $p = (x,y)$ on the
 %circle, that is when $x^2+y^2 = 1$, is composed of vectors
@@ -4047,7 +4060,7 @@ strongly convex at all points except the origin, where it is just convex
 
 For computations it is often useful to use a more convenient
 defining function.
-\glsadd{not:Ol}
+\glsadd{not:Ol}%
 We use the \emph{\myindex{big-oh notation}}.
 We say a smooth function is $O(\ell)$ at a point $p$ (usually the origin),
 if all its derivatives of order $0, 1, \ldots,  \ell-1$ vanish at $p$.
@@ -4191,7 +4204,7 @@ holomorphy.
 
 As $\C^n$ is identified with $\R^{2n}$ using $z=x+iy$, we have
 $T_p\C^n = T_p\R^{2n}$.  We write
-\glsadd{not:complexifiedtangentspace}
+\glsadd{not:complexifiedtangentspace}%
 \begin{equation*}
 \C \otimes T_p\C^n
 = \operatorname{span}_{\C} \left\{
@@ -4218,8 +4231,8 @@ T_p\C^n$, and in fact:
 \frac{\partial}{\partial \bar{z}_n}\Big|_p \right\} .
 \end{equation*}
 Define
-\glsadd{not:holtangentspace}
-\glsadd{not:aholtangentspace}
+\glsadd{not:holtangentspace}%
+\glsadd{not:aholtangentspace}%
 \begin{equation*}
 T_p^{(1,0)} \C^n \overset{\text{def}}{=}
 \operatorname{span}_{\C} \left\{
@@ -4259,7 +4272,7 @@ $p \in U$.
 Suppose 
 $D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$
 is the real derivative of $f$ at $p$.
-\glsadd{not:DCf}
+\glsadd{not:DCf}%
 Then we naturally
 extend the derivative to $D_\C f(p) \colon \C \otimes T_p\C^n \to \C \otimes  T_{f(p)}
 \C^m$.  Then
@@ -4291,7 +4304,7 @@ the basis.
 When talking about only holomorphic functions and holomorphic vectors,
 when we say derivative of $f$, we mean the holomorphic part of the
 derivative, which we write as
-\glsadd{not:Df}
+\glsadd{not:Df}%
 \begin{equation*}
 D f(p) \colon T_p^{(1,0)} \C^n \to T_{f(p)}^{(1,0)} \C^m .
 \end{equation*}
@@ -4497,7 +4510,7 @@ consistent in the literature.
 Sometimes \emph{\myindex{strictly pseudoconvex}} is used.} $U$, we say $U$ is strongly pseudoconvex if it is strongly pseudoconvex at all $p \in \partial U$.
 
 For $X_p \in T^{(1,0)}_p\partial U$, the sesquilinear form
-\glsadd{not:Leviform}
+\glsadd{not:Leviform}%
 \begin{equation*}
 \sL(X_p,X_p)
 =
@@ -5175,7 +5188,7 @@ q(z,\bar{z}) = \sum_{j,k=1}^{n-1} c_{jk} z_j \bar{z}_k .
 That is, $q$ is a sesquilinear form.  Since $q$ is real-valued the matrix
 $C = [ c_{jk} ]$ must be Hermitian.  In linear algebra notation,
 $q(z,\bar{z}) = z^*Cz$,
-\glsadd{not:star}
+\glsadd{not:star}%
 where the $*$ denotes the conjugate transpose,
 and we think of $z$ as a column vector.
 If $T$ is a linear transformation on the $z$ variables, we
@@ -5423,7 +5436,7 @@ The proof of the following special case is contained in the exercises
 following the theorem.
 Let the
 \emph{\myindex{Poisson kernel}} for the unit disc $\D \subset \C$ be defined by
-\glsadd{not:Pr}
+\glsadd{not:Pr}%
 \begin{equation*}
 P_r(\theta)
 = \frac{1}{2\pi} \frac{1-r^2}{1+r^2-2r \cos \theta}
@@ -5687,7 +5700,7 @@ $a,b \in \C^n$, the function
 \xi \mapsto f(a+b\xi)
 \end{equation*}
 is subharmonic (whenever $a+b\xi \in U$).
-\glsadd{not:PSH}
+\glsadd{not:PSH}%
 The notation $PSH(U)$ is used to denote these functions.
 \end{defn}
 
@@ -5832,7 +5845,7 @@ $g_\epsilon$ is the $\epsilon$-ball.  Both are nonnegative.  Choose $C$ so that
 \qquad \text{ and therefore } \qquad
 \int_{\C^n} g_\epsilon\, dV = 1 .
 \end{equation*}
-\glsadd{not:dV}
+\glsadd{not:dV}%
 Here $dV$ is the volume measure.
 The function $g$ only depends on $\snorm{z}$.  To get an idea of
 how these functions look, consider the following graphs of the
@@ -5851,7 +5864,7 @@ we assume that $f$ is locally bounded.
 
 For $z \in U_\epsilon$, we define $f_\epsilon$ as
 the convolution with $g_\epsilon$:
-\glsadd{not:convolution}
+\glsadd{not:convolution}%
 \begin{equation*}
 f_\epsilon(z) = (f * g_\epsilon)(z) =
 \int_{\C^n} f(w) g_\epsilon (z-w) \, dV(w) =
@@ -6111,7 +6124,7 @@ Let $\sF$ be a class of (extended\footnote{%
 By extended reals we mean $\R \cup \{ -\infty,\infty\}$.})-real-valued functions defined on $U \subset \R^n$.  If $K
 \subset U$, define $\widehat{K}$, the \emph{\myindex{hull}} of $K$ with
 respect to $\sF$, as the set
-\glsadd{not:Khat}
+\glsadd{not:Khat}%
 \begin{equation*}
 \widehat{K} \overset{\text{def}}{=} \Bigl\{ z \in U : f(z) \leq \sup_{w\in K} f(w)
 \text{ for all $f \in \sF$ } \Bigr\} .
@@ -6418,7 +6431,7 @@ marked and a ball of radius $\nicefrac{r}{2}$ around $q$ is dotted.
 No point of distance $\nicefrac{r}{2}$ from $q$ can be in $\partial W$, and 
 the distance of $q$ to $\partial U$ is at most $\nicefrac{r}{2}$ as $p \in \partial U$
 and $p$ is the center of $B$.
-\glsadd{not:dist}
+\glsadd{not:dist}%
 Let $\operatorname{dist}(x,y)$ denote the
 euclidean distance function\footnote{If either $x$ and/or $y$ are sets
 of points we take the infimum of the euclidean distance over all the points.}.
@@ -6720,7 +6733,7 @@ $p \in \partial U$, so $U$ is Hartogs pseudoconvex.
 Let $U \subset \C^n$ be a domain.  For a set $K \subset U$,
 define the
 \emph{\myindex{holomorphic hull}}
-\glsadd{not:KhatU}
+\glsadd{not:KhatU}%
 \begin{equation*}
 \widehat{K}_U \overset{\text{def}}{=} \Bigl\{ z \in U : \sabs{f(z)} \leq
 \sup_{w\in K} \sabs{f(w)}
@@ -6952,7 +6965,7 @@ A function $f \colon U \to \C$ is
 clear from context) if at each point $p \in U$, the function $f$
 has a convergent power series that converges (absolutely) to $f$ in some
 neighborhood of $p$.
-\glsadd{not:Comega}
+\glsadd{not:Comega}%
 A common notation for real-analytic is $C^\omega$.
 \end{defn}
 
@@ -7687,7 +7700,7 @@ function is CR to show that we get an approximation even for other $y$.
 
 In the formulas below, given any vector $v = (v_1,\ldots,v_n)$,
 it will be useful to write
-\glsadd{not:bracketsquare}
+\glsadd{not:bracketsquare}%
 \begin{equation*}
 [v]^2 \overset{\text{def}}{=} v_1^2 + \cdots + v_n^2 .
 \end{equation*}
@@ -8553,7 +8566,7 @@ d\zeta \wedge d\bar{\zeta} .
 \end{equation*}
 \end{thm}
 
-\glsadd{not:dA}
+\glsadd{not:dA}%
 If $\zeta = x+iy$, then the standard orientation on $\C$ is the one
 corresponding to the area form $dA = dx \wedge dy$.
 Then $d\zeta \wedge d\bar{\zeta}$ is the area form up to a scalar.
@@ -8673,7 +8686,7 @@ d\zeta \wedge d\bar{\zeta}
 \section{Simple case of the \texorpdfstring{$\bar{\partial}$}{dbar}-problem}
 
 For a smooth function $\psi$ we have the exterior derivative
-\glsadd{not:dpsi}
+\glsadd{not:dpsi}%
 \begin{equation*}
 d \psi =
 \frac{\partial \psi}{\partial z_1} dz_1 + \cdots +
@@ -8683,8 +8696,8 @@ d \psi =
 \frac{\partial \psi}{\partial \bar{z}_n} d\bar{z}_n .
 \end{equation*}
 Let us give a name to the two parts of the derivative:
-\glsadd{not:d}
-\glsadd{not:dbar}
+\glsadd{not:d}%
+\glsadd{not:dbar}%
 \begin{equation*}
 \partial \psi \overset{\text{def}}{=}
 \frac{\partial \psi}{\partial z_1} dz_1 + \cdots +
@@ -9076,7 +9089,7 @@ d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
 d\bar{\zeta}_n \wedge d\zeta_n .
 \end{equation*}
-\glsadd{not:hatremove}
+\glsadd{not:hatremove}%
 The notation $\widehat{ d\bar{\zeta}_j }$ means that this term is
 simply left out.
 
@@ -9107,7 +9120,7 @@ no canonical orientation of $\C^n$, and
 not all authors follow this (perhaps more prevalent) convention.}
 %more prevalent.}
 is the one corresponding to the volume form
-\glsadd{not:dV}
+\glsadd{not:dV}%
 \begin{equation*}
 dV = dx_1 \wedge dy_1 \wedge dx_2 \wedge dy_2 \wedge \cdots \wedge dx_n \wedge dy_n .
 \end{equation*}
@@ -9153,8 +9166,8 @@ $\abs{\beta}=q$, a differential form
 is called a \emph{\myindex{$(p,q)$-form}} or a differential form of
 \emph{\myindex{bidegree}} $(p,q)$.
 Define
-\glsadd{not:d}
-\glsadd{not:dbar}
+\glsadd{not:d}%
+\glsadd{not:dbar}%
 \begin{equation*}
 \partial \eta \overset{\text{def}}{=}
 \sum_{\substack{\abs{\alpha}=p \\ \abs{\beta}=q}}
@@ -9459,14 +9472,14 @@ Hint: look at the previous proof.
 \section{The Bergman kernel}
 
 Let $U \subset \C^n$ be a domain.  Define
-\glsadd{not:A2}
-\glsadd{not:L2}
+\glsadd{not:A2}%
+\glsadd{not:L2}%
 \begin{equation*}
 A^2(U) \overset{\text{def}}{=} \sO(U) \cap L^2(U) .
 \end{equation*}
 That is, let $A^2(U)$ denote the space
 of holomorphic functions $f \in \sO(U)$ such that
-\glsadd{not:L2norm}
+\glsadd{not:L2norm}%
 \begin{equation*}
 \snorm{f}_{A^2(U)}^2 \overset{\text{def}}{=} \snorm{f}_{L^2(U)}^2
 = \int_U \sabs{f(z)}^2 dV < \infty .
@@ -9475,7 +9488,7 @@ The space $A^2(U)$ is called the
 \emph{\myindex{Bergman space}} of $U$.
 The inner product is the $L^2(U)$ inner product
 %Define an inner product on $A^2(U)$ via
-\glsadd{not:L2innprod}
+\glsadd{not:L2innprod}%
 \begin{equation*}
 \linnprod{f}{g} \overset{\text{def}}{=} \int_U f(z) \overline{g(z)} \, dV .
 \end{equation*}
@@ -9577,7 +9590,7 @@ a $k_z \in A^2(U)$, such that
 f(z) = \linnprod{f}{k_z} .
 \end{equation*}
 Define the \emph{\myindex{Bergman kernel}} for $U$ as
-\glsadd{not:Bergmanker}
+\glsadd{not:Bergmanker}%
 \begin{equation*}
 K_U(z,\bar{\zeta}) \overset{\text{def}}{=} \overline{k_z(\zeta)} .
 \end{equation*}
@@ -9857,7 +9870,7 @@ and hence $f|_{\partial U}$ is in $L^2(\partial U,d\sigma)$, where $d\sigma$
 is the surface measure on $\partial U$.  Taking a closure
 of these restrictions in $L^2(\partial U)$ obtains the Hilbert space
 $H^2(\partial U)$,
-\glsadd{not:H2}
+\glsadd{not:H2}%
 which is called the \emph{\myindex{Hardy space}}.
 The inner product in this case is the $L^2(\partial U,
 d\sigma)$ inner product:
@@ -9897,7 +9910,7 @@ H^2(\partial U)$ such that
 Pf(z) = \linnprod{f}{s_z} .
 \end{equation*}
 Hence for $z \in U$ and $\zeta \in \partial U$ we define
-\glsadd{not:Szegoker}
+\glsadd{not:Szegoker}%
 \begin{equation*}
 S_U(z,\bar{\zeta}) \overset{\text{def}}{=} \overline{s_z(\zeta)} ,
 \end{equation*}
@@ -9967,7 +9980,7 @@ $\Omega$ of $p$ such that $f|_\Omega = g|_\Omega$.
 
 An equivalence class of functions defined in a neighborhood of $p$
 is called a \emph{\myindex{germ of a function}}.
-\glsadd{not:germf}
+\glsadd{not:germf}%
 Usually it is denoted by $(f,p)$, but we simply say $f$ when
 the context is clear.
 \end{defn}
@@ -9984,7 +9997,7 @@ some open $U$.
 
 \begin{defn}
 Let $p \in \C^n$.
-\glsadd{not:ringofgerms}
+\glsadd{not:ringofgerms}%
 Write
 ${}_n\sO_p = \sO_p$ as the ring of germs at $p$ of holomorphic functions.
 \end{defn}
@@ -9994,7 +10007,7 @@ recall that an \emph{\myindex{ideal}} $I \subset R$ is
 a subset such that $f g \in I$ whenever $f \in R$ and $g \in I$.
 An ideal $I$ is generated by $f_1,\ldots,f_k$
 if $I$ is the smallest ideal containing $f_1,\ldots,f_k$.  We then usually
-\glsadd{not:ideal}
+\glsadd{not:ideal}%
 write $I = (f_1,\ldots,f_n)$.  A \emph{\myindex{principal ideal}}
 is an ideal generated by a single element, that is, $(f)$.
 
@@ -10038,7 +10051,7 @@ if there exists a neighborhood $N$ of $p$
 such that $A \cap N = B \cap N$.
 An equivalence class of sets 
 is called a \emph{\myindex{germ of a set}} at $p$.
-\glsadd{not:germA}
+\glsadd{not:germA}%
 Usually it is denoted by $(A,p)$, but we may write $A$ when
 the context is clear.
 \end{defn}
@@ -10073,7 +10086,7 @@ that is, $f_k(tz) = t^k f_k(z)$.
 For $a \in \C^n$ and a function $f$ holomorphic in a neighborhood of $a$.
 If $f$ is not identically zero,
 define
-\glsadd{not:ord}
+\glsadd{not:ord}%
 \begin{equation*}
 \ord_a f \overset{\text{def}}{=} \min \{ k \in \N_0 : f_k \not\equiv 0 \} .
 \end{equation*}
@@ -10099,7 +10112,7 @@ division theorems.
 \begin{defn}
 Let $U \subset \C^{n-1}$ be open, and let $z' \in \C^{n-1}$ denote the
 coordinates.
-\glsadd{not:polyinOU}
+\glsadd{not:polyinOU}%
 Suppose a polynomial $P \in \sO(U)[z_n]$ is monic of degree $k$, that is,
 \begin{equation*}
 P(z',z_n) = z_n^k + \sum_{j=0}^{k-1} c_j(z') \, z_n^j ,
@@ -10107,7 +10120,7 @@ P(z',z_n) = z_n^k + \sum_{j=0}^{k-1} c_j(z') \, z_n^j ,
 where $c_j$ are holomorphic functions defined on $U$.
 Further suppose $c_j(0) = 0$ for all $j$.  Then $P$ is
 called a \emph{\myindex{Weierstrass polynomial}} of degree $k$.
-\glsadd{not:polyinO0}
+\glsadd{not:polyinO0}%
 If the $c_j$ are germs in $\sO_0 = {}_{n-1}\sO_0$, then $P \in \sO_0[z_n]$ and
 $P$ is a \emph{\myindex{germ of a Weierstrass polynomial}}.
 \end{defn}
@@ -10614,7 +10627,7 @@ ${}_{n}\sO_0$.
 \section{Varieties} \label{sec:varieties}
 
 If $f \colon U \to \C$
-\glsadd{not:Zf}
+\glsadd{not:Zf}%
 is a function, let $Z_f = f^{-1}(0) \subset U$ denote the zero set of $f$.
 
 \begin{defn}
@@ -10660,7 +10673,7 @@ show that the germs $(Z_f,p)$ and $(Z_g,p)$ are the same.
 \end{exbox}
 
 Let
-\glsadd{not:idealfromset}
+\glsadd{not:idealfromset}%
 \begin{equation*}
 I_p(X) \overset{\text{def}}{=}
 \bigl\{ (f,p) \in \sO_p : (X,p) \subset (Z_f,p) \bigr\} .
@@ -10671,7 +10684,7 @@ $X$ near $p$.  It is not hard to show that $I_p(X)$ is an ideal.
 Every ideal in $\sO_p$ is finitely generated.
 Let $I \subset \sO_p$ be an ideal generated by $f_1,f_2,\ldots,f_k$.
 Write
-\glsadd{not:vanishingset}
+\glsadd{not:vanishingset}%
 \begin{equation*}
 V(I) \overset{\text{def}}{=}
 (Z_{f_1},p) \cap (Z_{f_2},p) \cap \cdots \cap (Z_{f_k},p) .
@@ -10751,10 +10764,10 @@ a \emph{\myindex{complex manifold}}, or
 As the ambient dimension is $n$ we say $X$ is of
 \emph{\myindex{codimension}} $n-k$ at $p$.
 
-\glsadd{not:Xreg}
+\glsadd{not:Xreg}%
 The set of regular points of $X$ will be denoted by $X_{\mathit{reg}}$.  Any
 point that is not regular is \emph{singular}\index{singular point}.
-\glsadd{not:Xsing}
+\glsadd{not:Xsing}%
 The set of singular points of $X$ is denoted by $X_{\mathit{sing}}$.
 \end{defn}
 
@@ -10778,7 +10791,7 @@ following definition does make sense.
 Let $X \subset U \subset \C^n$ be a (complex) subvariety of $U$.  Let $p \in
 X$ be a point.  We define the \emph{\myindex{dimension}} of $X$ at $p$
 to be
-\glsadd{not:dimpX}
+\glsadd{not:dimpX}%
 \begin{equation*}
 \dim_p X \overset{\text{def}}{=}
 \max \bigl\{ k \in \N_0 : \text{ $\forall$ neighborhoods
@@ -10789,7 +10802,7 @@ If $(X,p)$ is a germ, we say the dimension of $(X,p)$ is the dimension of
 $X$ at $p$.
 
 The dimension of the entire subvariety $X$ is defined to be
-\glsadd{not:dimX}
+\glsadd{not:dimX}%
 \begin{equation*}
 \dim X \overset{\text{def}}{=}
 \max_{p \in X} \dim_p X .
@@ -11414,7 +11427,7 @@ where $U \subset \C^n$ is a small domain with a defining function $r \colon
 U  \to \R$ for $M$.  That is, $r$ is a real-analytic function in $U$ such that
 $M = r^{-1}(0)$, but
 $dr \not= 0$ on $M$.  Define
-\glsadd{not:Ustar}
+\glsadd{not:Ustar}%
 \begin{equation*}
 U^* = \bigl\{ z \in \C^n : \bar{z} \in U \bigr\} .
 \end{equation*}
@@ -11428,7 +11441,7 @@ $dr$ does not vanish on $\sM$ and that $\sM$ is connected.
 
 Given $q \in U$,
 define the \emph{Segre variety}
-\glsadd{not:Segrevar}
+\glsadd{not:Segrevar}%
 \begin{equation*}
 \Sigma_q(U,r) =
 \bigl\{ z \in U : r(z,\bar{q}) = 0 \bigr\} =
@@ -11697,7 +11710,7 @@ By abuse of notation, when $\gamma$ is used as a set, then we mean
 the image
 $\gamma\bigl([a,b]\bigr)$.
 For a continuous function $f \colon \gamma \to \C$, define
-\glsadd{not:pathint}
+\glsadd{not:pathint}%
 \begin{equation*}
 \int_\gamma f(z) \, dz 
 \overset{\text{def}}{=}
