@@ -776,18 +776,20 @@ One of the most important theorems in one variable is
 the \emph{\myindex{Cauchy integral formula}}\index{Cauchy formula}.
 
 \begin{thm}[Cauchy integral formula]
-Let $U \subset \C$ be a bounded domain where $\partial U$ is a piecewise smooth
+Let $U \subset \C$ be a bounded domain where the boundary $\partial U$
+is a piecewise smooth
 simple closed path (a Jordan curve).  Let $f \colon \overline{U} \to \C$ be a continuous function,
 holomorphic in $U$.
 Orient $\partial U$ positively (going around counter-clockwise).
-Then for $z \in U$:
+Then
 \begin{equation*}
 f(z) =
 \frac{1}{2\pi i}
 \int_{\partial U}
 \frac{f(\zeta)}{\zeta-z}
 \,
-d \zeta .
+d \zeta 
+\qquad \text{for all $z \in U$.}
 \end{equation*}
 \end{thm}
 
@@ -1345,7 +1347,7 @@ one-forms,
 that is, for one-forms $\omega$ and $\eta$,
 $\omega \wedge \eta = - \eta \wedge \omega$.  A wedge product of two
 one-forms is a two-form, and so on.  A $k$-form is an object that 
-can then be integrated on a so-called $k$-chain, for example, a
+can be integrated on a so-called $k$-chain, for example, a
 $k$-dimensional surface.  The wedge product takes care of the orientation.
 
 At this point, we need to talk about orientation in $\C^n$.  There are really two
@@ -1362,7 +1364,7 @@ two opposite orientations on $\C^n$.
 The one we take as the natural orientation of $\C^n$ (in this book)
 corresponds to
 the second ordering above, that
-is, $(x_1,y_1,\ldots,x_n,y_n)$.  Both isomorphisms can be used
+is, $(x_1,y_1,\ldots,x_n,y_n)$.  Both isomorphisms may be used
 in computation as long as they are used consistently, and the underlying
 orientation is kept in mind.
 
@@ -1866,14 +1868,14 @@ Let $W \subset \C^n$ be the set where a power series converges
 such that it diverges on the complement.  The interior of $W$
 is called the
 \emph{\myindex{domain of convergence}}.
-In one variable, every domain of convergence is a disc, and hence it can be
+In one variable, every domain of convergence is a disc, and hence it is
 described with a single number (the radius).
 In several variables, the domain where a series
 converges is not as easy to describe.
 %We content ourselves for now with
 %a few simple examples.
-For the geometric series it is easy to see
-that the domain of convergence is the unit polydisc, but more
+For the multivariable geometric series 
+the domain of convergence is the unit polydisc, but more
 complicated examples are easy to find.
 
 \begin{example}
@@ -2482,8 +2484,8 @@ f\bigl(z,g(z)\bigr) = 0 .
 \begin{exbox}
 \begin{exercise}
 Prove the holomorphic implicit function theorem above.
-Hint: Check that you can use the normal implicit function theorem for $C^1$
-functions, and then show that the $g$ you obtain is holomorphic.
+Hint: Check that the normal implicit function theorem for $C^1$
+functions applies, and then show that the $g$ you obtain is holomorphic.
 \end{exercise}
 \end{exbox}
 
@@ -3185,8 +3187,8 @@ since we can
 repeat the procedure on any neighborhood of any point of $N$.
 
 Since $f$ is not identically zero, then not all derivatives of $f$
-can vanish identically on $N$.  So pick a derivative of order $k$
-such that all derivatives of order less than $k$ vanish identically on $N$.
+vanish identically on $N$.  Pick a derivative of $f$ of order $k$
+such that all derivatives of $f$ order less than $k$ vanish identically on $N$.
 We obtain a function $h \colon U \to \C$, holomorphic, and such that 
 without loss of generality the $z_n$ derivative does not vanish identically
 on $N$.  Then there is some point $p \in N$ such that $\frac{\partial
@@ -3567,7 +3569,7 @@ $z$ as long as $z \in c\D^m$.
 When $\sabs{w_j} < b$ for all $j$, then we know that $F(z,w) = f(z,w)$
 for all $z \in c \D^m$.  Therefore, $F$ and $f$ are equal on an open subset
 of $H$, and hence they are equal everywhere where their domains intersect.
-It is now easy to see that combining $F$ and $f$ we obtain a holomorphic
+Combining $F$ and $f$ we obtain a holomorphic
 function on all of $\D^{m+k}$ that extends $f$.
 \end{proof}
 
@@ -3575,7 +3577,8 @@ The theorem is used
 in many situations to extend holomorphic functions.
 We usually need to
 translate, scale, 
-rotate (apply a unitary), and even take more general biholomorphic mappings
+rotate (apply a unitary matrix),
+and even take more general biholomorphic mappings
 of $H$, to place it wherever we need it.  The corresponding polydisc---or the image of
 the polydisc under the appropriate biholomorphic mapping if one was
 used---to which all holomorphic functions on $H$ extend is denoted
@@ -3664,7 +3667,7 @@ Show that $T$ is a domain of holomorphy.  Then show that if
 \begin{equation*}
 \widetilde{T} = T \cup B_{\epsilon}(0)
 \end{equation*}
-for arbitrarily small $\epsilon > 0$, then $\widetilde{T}$ is not a domain
+for an arbitrarily small $\epsilon > 0$, then $\widetilde{T}$ is not a domain
 of holomorphy.  In fact, every function holomorphic on $\widetilde{T}$
 extends to a holomorphic function of $\D^2$.
 \end{exercise}
@@ -4062,10 +4065,10 @@ For computations it is often useful to use a more convenient
 defining function.
 \glsadd{not:Ol}%
 We use the \emph{\myindex{big-oh notation}}.
-We say a smooth function is $O(\ell)$ at a point $p$ (usually the origin),
+A smooth function is $O(\ell)$ at a point $p$ (usually the origin),
 if all its derivatives of order $0, 1, \ldots,  \ell-1$ vanish at $p$.
 For example, if $f$ is $O(3)$ at the origin
-then $f(0)=0$, and its first and second derivatives vanish.
+then $f(0)=0$, and its first and second derivatives vanish at the origin.
 %Often we write
 %$O(3)$ instead of $f$ to denote any function in $O(3)$ to simplify notation.
 
@@ -4214,12 +4217,11 @@ $T_p\C^n = T_p\R^{2n}$.  We write
 \frac{\partial}{\partial x_n}\Big|_p ,
 \frac{\partial}{\partial y_n}\Big|_p \right\} .
 \end{equation*}
-That is, we simply replace all the real coefficients with complex ones.  
+We simply replace all the real coefficients with complex ones.  
 The space $\C \otimes T_p\C^n$ is a $2n$-dimensional complex vector space.
-Once
-we do that we notice that
-$\frac{\partial}{\partial z_j}\big|_p$, and
-$\frac{\partial}{\partial \bar{z}_j}\big|_p$ are both in $\C \otimes
+Both
+$\frac{\partial}{\partial z_j}\big|_p$ and
+$\frac{\partial}{\partial \bar{z}_j}\big|_p$ are in $\C \otimes
 T_p\C^n$, and in fact:
 \begin{equation*}
 \C \otimes T_p\C^n
@@ -4311,14 +4313,14 @@ D f(p) \colon T_p^{(1,0)} \C^n \to T_{f(p)}^{(1,0)} \C^m .
 That is, $Df(p)$ is the restriction of $D_\C f(p)$ to $T_p^{(1,0)} \C^n$.
 In other words,
 if we have specific coordinates in mind, the
-holomorphic derivative of $f \colon \C^{n} \to \C^m$ can be represented
+holomorphic derivative of $f \colon \C^{n} \to \C^m$ is represented
 as the $m \times n$ Jacobian matrix
 \begin{equation*}
 \left[
 \frac{\partial f_j}{\partial z_k}
 \right]_{jk} ,
 \end{equation*}
-that we have seen before and that we have before also represented by
+which we have seen before and which was also represented by
 $Df(p)$.
 
 Similarly as before we define the tangent bundles
@@ -4376,19 +4378,19 @@ T_p^{(1,0)} M \overset{\text{def}}{=} \bigl( \C \otimes T_pM \bigr) \cap
 T_p^{(0,1)} M \overset{\text{def}}{=} \bigl( \C \otimes T_pM \bigr) \cap
 \bigl( T_p^{(0,1)} \C^n \bigr) .
 \end{equation*}
-The $B_p$ is just the ``left-over'' and we really need to
-include it otherwise the dimensions cannot possibly work out.
+The $B_p$ is just the ``left-over'' and we need to
+include it as otherwise the dimensions cannot possibly work out.
 
-Do make sure that you understand what all the objects are.  The space
+Make sure that you understand what all the objects are.  The space
 $T_pM$ is a real vector space; $\C \otimes T_pM$, $T_p^{(1,0)}M$,
 $T_p^{(0,1)} M$, and $B_p$ are complex vector spaces.  To see that
 these are all vector bundles, we must show that their dimensions do not vary
 from point to point.  The easiest way to see this fact is to write down
 convenient local coordinates.  First, let us see what a biholomorphic map
 does to the holomorphic and antiholomorphic vectors.  A biholomorphic map
-$f$ is a diffeomorphism.  And if a real hypersurface $M$ is near $p$ defined
-by a function $r$, then the image $f(M)$ is near $f(p)$ defined by
-$r \circ f^{-1}$.
+$f$ is a diffeomorphism.  And if a real hypersurface $M$ is defined
+by a function $r$ near $p$, then the image $f(M)$ is defined by
+$r \circ f^{-1}$ near $f(p)$.
 
 \begin{prop}
 Suppose $M \subset \C^n$ is a smooth real hypersurface, $p \in M$,
@@ -4429,22 +4431,22 @@ $M$ is written in variables $(z,w) \in \C^{n-1}
 \Im w = \varphi(z,\bar{z},\Re w) ,
 \end{equation*}
 with the $\varphi(0)$  and $d\varphi(0) = 0$.  Consequently
-\begin{align*}
+\begin{gather*}
 T_0^{(1,0)} M
-& = \operatorname{span}_{\C} \left\{
+= \operatorname{span}_{\C} \left\{
 \frac{\partial}{\partial z_1}\Big|_0,
 \ldots,
 \frac{\partial}{\partial z_{n-1}}\Big|_0 \right\} ,
-\\
+\qquad
 T_0^{(0,1)} M
-& = \operatorname{span}_{\C} \left\{
+= \operatorname{span}_{\C} \left\{
 \frac{\partial}{\partial \bar{z}_1}\Big|_0,
 \ldots,
 \frac{\partial}{\partial \bar{z}_{n-1}}\Big|_0 \right\} ,
 \\
-B_0 & = \operatorname{span}_{\C} \left\{
+B_0 = \operatorname{span}_{\C} \left\{
 \frac{\partial}{\partial (\Re w)}\Big|_0 \right\} .
-\end{align*}
+\end{gather*}
 In particular,
 $\dim_\C T_p^{(1,0)} M = \dim_\C T_p^{(0,1)} M = n-1$ and 
 $\dim_\C B_p = 1$.
@@ -4453,6 +4455,8 @@ If $M$ is the boundary of a domain $U$ with smooth boundary,
 the rotation can be chosen so that
 $\Im w > \varphi(z,\bar{z},\Re w)$ on $U$.
 \end{prop}
+
+\pagebreak[2]
 
 \begin{proof}
 We apply a translation to put $p=0$ and in the
@@ -4542,12 +4546,11 @@ computing the
 Levi form directly from $r(z,\bar{z}) = \snorm{z}^2-1$, that is,
 the complex Hessian of $r$ is the identity matrix.
 
-Notice that the complex Hessian is not the full Hessian.
+We remakr that the complex Hessian is not the full Hessian.
 Let us write down the full Hessian, using the
 basis of $\frac{\partial}{\partial z}$s and
-$\frac{\partial}{\partial \bar{z}}$s.  Then the
-full 
-Hessian is the symmetric matrix
+$\frac{\partial}{\partial \bar{z}}$s.  It is
+the symmetric matrix
 \begin{equation*}
 \begin{bmatrix}
 \frac{\partial^2 r}{\partial z_1 \partial z_1}
@@ -4595,8 +4598,8 @@ particular, it is a smaller matrix. And we also apply it only to a subspace
 of the complexified tangent space.
 
 Let us illustrate the change of basis on one dimension.  The change of
-variables is left to student for higher dimensions.  Therefore let $z =
-x+iy$ be in $\C$:
+variables is left to student for higher dimensions.  Let $z =
+x+iy$ be in $\C$ and we denote by $T$ the change of basis matrix:
 \begin{equation*}
 T = 
 \begin{bmatrix}
@@ -11182,7 +11185,7 @@ when $X$ is the zero set of a single function.
 
 We saw hypersurfaces are the simpler cases of complex-analytic
 subvarieties.  At the other end of the spectrum, complex-analytic
-subvarieties of dimension 1 are also easy to handle for different reasons.
+subvarieties of dimension 1 are also easier to handle for different reasons.
 All complex-analytic subvarieties of dimension 1 are locally just analytic discs.
 In fact, they are locally the one-to-one holomorphic images of discs
 and so they have a natural topological manifold structure even at singular
@@ -11687,6 +11690,76 @@ earthquakes!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \appendix
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Basic notation} \label{ap:basicnotation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%FIXME: add to notation index
+
+%FIXME: Is this overly too nitpicky to include?
+
+Let us just quickly review some of the basic notation that we use in this
+book, that is perhaps not described elsewhere.
+We use $\C$, $\R$ for complex and real numbers, and $i$ for imaginary unit
+(a square root of $-1$).  We use
+$\N = \{ 1,2,3, \ldots \}$ for 
+the natural numbers, 
+$\N_0 = \{ 0,1,2,3, \ldots \}$ for the zero-based natural numbers,
+and $\Z$ for all integers.
+
+The notation $f \colon X \to Y$ means a function with domain $X$ and
+codomain $Y$.  By $f(S)$ we mean the direct image of $S$ by $f$.
+We use the notation $f^{-1}$ for the inverse image of sets and
+single points, and when the mapping is bijective (one-to-one and onto)
+then we use it for the inverse mapping.  So for example $f^{-1}(T)$ for
+a set $T \subset Y$ denotes all the points of $X$ that $f$ maps to $T$.
+Similarly $f^{-1}(q)$ could denote all the points that map to $q$,
+but if the mapping is bijective then it would just mean the unique point
+mapping to $q$.
+
+If we wish to define a function without necessarily giving it a name, we use
+the notation
+\begin{equation*}
+x \mapsto F(x)
+\end{equation*}
+where $F(x)$ would generally be some formula giving the output.
+
+The notation $f|_S$ means the restriction of $f$ to $S$, that is,
+it is a function
+$f|_S \colon S \to Y$ such that $f|_S(x) = f(x)$ for all $x \in S$.
+
+We denote the set subtraction by $A \setminus B$, meaning all elements of
+$A$ which are not in $B$.
+We denote the complement of a set by $X^c$.  In this case, the ambient set
+should be clear.  So, for example, if $X \subset \C$ naturally,
+then $X^c = \C \setminus X$.
+
+The topological closure of a set $S$ is denoted by $\overline{S}$, its
+boundary is denoted by $\partial S$.  If $S$ is relatively compact subset of $X$
+(its closure in $X$ is compact) or compact we write $S \subset \subset X$.
+
+When we wish to say that two functions are identically equal, we write
+$f \equiv g$.  This means that $f(x) = g(x)$ for all $x$ in the domain.
+
+The notation $f \circ g$ denotes the composition defined by $x \mapsto
+f\bigl(g(x)\bigr)$.
+
+We will write
+$$
+X
+\overset{\text{def}}{=}
+Y
+$$
+to define $X$ to be $Y$ rather than just show equality.
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
