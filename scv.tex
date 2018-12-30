@@ -5126,13 +5126,13 @@ The right hand side depends on $\Im w'$, so we apply the implicit
 function theorem to write the hypersurface as a graph again.
 We solve
 for $\Im w'$.  The expression for $\Im w'$
-is $O(2)$, and therefore $-i\epsilon (\Im w')(z_1-\bar{z}_1)$ 
-and $a{(\Im w')}^2$ are (at least) $O(3)$.
-Therefore we write $M$ as a graph:
+is $O(2)$, and therefore $-i\epsilon (\Im w')(z_1-\bar{z}_1)+a{(\Im w')}^2$
+is $O(3)$.
+So if we write $M$ as a graph:
 \begin{equation*}
 \Im w' = q(z,\bar{z}) + E(z,\bar{z},\Re w'),
 \end{equation*}
-where $E$ is $O(3)$.
+then $E$ is $O(3)$.
 
 Next we 
 apply the computation in \eqref{eq:nonmixedderschangeofcoords}.
@@ -5362,6 +5362,48 @@ much harder to prove without that hypothesis.
 \end{exercise}
 \end{exbox}
 
+Just as a flat hyperplane is the ``degenerate'' case of normal convexity.
+There is similarly a flat case of pseudoconvexity.  A smooth hypersurface
+$M \subset \C^n$ is \emph{\myindex{Levi-flat}} if the Levi form
+vanishes at every point of $M$.  A zero matrix is both positive semidefinite
+and positive seminegative, so both sides of $M$ are pseudoconvex.
+Conversely the only hypersurface that is pseudoconvex from both sides must
+be Levi-flat.
+
+\begin{exbox}
+\begin{exercise}
+Suppose $U = V \times \C^{n-1} \subset \C^n$, where $V$ is a smoothly
+bounded domain in $\C$.  Show that $U$ is a smoothly bounded domain with
+Levi-flat boundary.
+\end{exercise}
+
+\begin{exercise}
+Prove that a real hyperplane is Levi-flat.
+\end{exercise}
+
+\begin{exercise}
+Let $f \in \sO(U)$ for some domain $U \subset \C^n$.
+Let $M = \bigl\{ z \in U : \Im f(z) = 0 \bigr\}$.  Show that
+if $df(p) \not=0$ for some $p \in M$, then near $p$,
+$M$ is a Levi-flat hypersurface.
+\end{exercise}
+
+
+\begin{exercise}
+Suppose $M \subset \C^n$ is a smooth Levi-flat hypersurface
+and $p \in M$.
+Suppose a complex line $L$ is tangent to $M$ at $p$.
+Prove that $p$ is not an isolated point of $L \cap M$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \C^n$ is a smoothly bounded domain with Levi-flat
+boundary.  Show that $U$ is not bounded.
+Hint: If $U$ were bounded, consider the point on $\partial U$ furtherst from
+the origin.
+\end{exercise}
+\end{exbox}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Harmonic, subharmonic, and plurisubharmonic functions}
@@ -5478,15 +5520,15 @@ $r \to 1$.
 \end{exercise}
 
 \begin{exercise}
-Prove \thmref{thm:dirichsol} using the following guideline:
+Prove \thmref{thm:dirichsol} using the following guideline:\\
 a)~Poisson kernel is harmonic
 as a function of $z=re^{i\theta} \in \D$, and hence
-$Pu$ is harmonic.
+$Pu$ is harmonic.\\
 b)~$P_r$ acts like an
 approximate identity: prove that
 $Pu(re^{i\theta}) \to u(e^{i\theta})$ uniformly as
 $r \to 1$ (Hint: split the integral to $[-\delta,\delta]$ and the rest
-and use the previous exercise).
+and use the previous exercise).\\
 c)~Prove that $Pu(z)$ tends to $u(z_0)$ as
 $z \in \D \to z_0 \in \partial \D$.
 \end{exercise}
@@ -5505,6 +5547,7 @@ analogous properties.
 The solution to the Dirichlet problem using the Poisson kernel leads to
 the following proposition.
 
+\pagebreak[2]
 \begin{prop}[Mean-value property and sub-mean-value property]
 \index{mean-value property}
 \index{sub-mean-value property}
