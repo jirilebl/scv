@@ -23,6 +23,7 @@
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{chngcntr}
 
 % Remove page numbers on chapter opens
 % must come before fullpage
@@ -8915,15 +8916,17 @@ That $\psi$ has compact support follows because $g_1$ has compact
 support and by analytic continuation.  In particular, $\psi$ is
 holomorphic for very large $z$ since $\bar{\partial} \psi = g = 0$ when $z$
 is large.  When $z_2,\ldots,z_n$ are large, then $\psi$ is identically zero
-simply from its definition.  By analytic continuation then $\psi$ is
-identically zero for all large $z$.  See the following diagram, where we use
-analytic continuation to show that as $\psi$ is holomorphic and zero on the
-light gray area and holomorphic on the light gray and white area, it is also
-zero on the white area:
+simply from its definition.  See the following diagram:
 
 \begin{center}
 \subimport*{figures/}{dbarcpt-fig.pdf_t}
 \end{center}
+
+As $\bar{\partial} \psi = 0$ on the light gray and white areas in the
+diagram, $\psi$ is holomorphic there. As $\psi$ is zero on the light
+gray region it is zero also on the white region by analytic continuation.
+That is, $\psi$ is zero on the unbounded component of the set where $g=0$,
+that is, $\psi$ has compact support.
 \end{proof}
 
 The first part of the proof still works when $n=1$, so we do get a solution
@@ -11734,6 +11737,9 @@ earthquakes!
 
 \appendix
 
+% No sections in appendixes
+\counterwithin{thm}{chapter}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -11920,7 +11926,8 @@ in two dimensions, although in the versions we state, one needs to
 approximate the domain by smaller domains from the inside to insure
 the partial derivatives are bounded.  See
 \thmref{thm:generalizedcauchy}.  Let us state Green's theorem using
-the $dz$ and $d\bar{z}$ for completeness:
+the $dz$ and $d\bar{z}$ for completeness.  See \appendixref{ap:diffforms}
+for a quick overview of differential forms.
 
 \begin{thm}[Green's theorem]\index{Green's theorem} \label{thm:greens}
 Let $U \subset \C$ be a bounded domain with piecewise-$C^1$ boundary
@@ -11931,7 +11938,7 @@ Then
 \begin{multline*}
 \int_{\partial U} f(z) \, dz + g(z) \, d\bar{z}
 =
-\int_{U} d \bigl( f(z) \, dz + g(z) \, d\bar{z} \bigr)
+\int_{U} d \Bigl( f(z) \, dz + g(z) \, d\bar{z} \Bigr)
 =
 \int_{U}
 \left(
@@ -11992,6 +11999,8 @@ is the maximum of $\sabs{f}$ on the circle $\partial \Delta_r(p)$, then
 \end{equation*}
 Conversely, if a power series satisfies the Cauchy estimates,
 it will converge on $\Delta_r(p)$.
+
+\pagebreak[2]
 
 A function $f \colon \C \to \C$ that is holomorphic is
 \emph{\myindex{entire}}.  An immediate application of Cauchy estimates
@@ -12467,6 +12476,63 @@ used in this book, some of which are useful in the exercises, and some of
 which are just too interesting not to mention.
 
 %FIXME: Weierstrass?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Differential forms and Stokes' theorem} \label{ap:diffforms}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+As differential forms come up quite a bit, let us overview their definition
+and state the Stokes' theorem.  We will not prove anything here.
+For a more complete introduction to differential forms
+see Rudin~\cite{Rudin:principles}.
+
+The short story about differential forms is that a $k$-form is an object
+that can be integrated (summed) over a $k$-dimensional object,
+taking orientation into account.
+For simplicity, as in most of this book,
+everything in this appendix will be stated for smooth
+($C^\infty$) objects to avoid worrying about how much regularity is needed.
+
+The main point of differential forms is to find the proper context for the
+Fundamental Theorem of Calculus
+\begin{equation*}
+\int_a^b f'(x) \, dx = f(b)-f(a) .
+\end{equation*}
+We interpret both sides as integration.  The left hand side is an integral
+of the $1$-form $f'\, dx$ over the $1$-dimensional interval $[a,b]$
+and the right hand side is an integral of the $0$-form, that is function,
+$f$ over the $0$-dimensional (two-point) set $\{ a, b \}$.  Both sides
+consider orientation, $[a,b]$ is integrated from $a$ to $b$,
+$\{a\}$ is oriented negatively and 
+$\{b\}$ is oriented positively.  The two-point set
+$\{a,b\}$ is the boundary of $[a,b]$, and the orientation of $\{ a,b \}$
+is induced by $[a,b]$.
+
+FIXME: define manifold / manifold with boundary,
+define orientation
+
+FIXME: define $k$-form
+
+FIXME: define evaluation of $k$-form
+
+FIXME
+
+\begin{thm}[Stokes]
+Suppose $\Omega \subset \R^n$ is a
+compact smooth oriented $(k+1)$-dimensional manifold-with-boundary,
+$\partial \Omega$ has the induced orientation,
+and $\omega$ is a smooth $k$-form defined on
+$\Omega$.  Then
+\begin{equation*}
+\int_{\partial \Omega} \omega = \int_{\Omega} d\omega .
+\end{equation*}
+\end{thm}
+
+FIXME
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
