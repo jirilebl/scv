@@ -3779,7 +3779,7 @@ called the \emph{\myindex{defining function}} (at $p$).
 
 A domain $U$ with
 \emph{$C^k$-smooth boundary}%
-\index{Ck-smooth boundary@$C^k$-smooth boundary}%
+\index{Ck-smooth boundary@$C^k$-smooth boundary}
 is a domain where
 $\partial U$ is a $C^k$-smooth hypersurface, where we further require
 for a defining function $r$ of $\partial U$ near some $p$,
@@ -11797,7 +11797,7 @@ earthquakes!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Basic notation} \label{ap:basicnotation}
+\chapter{Basic notation and terminology} \label{ap:basicnotation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -11844,6 +11844,11 @@ then $X^c = \C \setminus X$.
 The topological closure of a set $S$ is denoted by $\overline{S}$, its
 boundary is denoted by $\partial S$.  If $S$ is relatively compact subset of $X$
 (its closure in $X$ is compact) or compact we write $S \subset \subset X$.
+
+A function $f \colon U \to \C$ is said to be \emph{\myindex{compactly
+supported}} if
+the \emph{\myindex{support}}, that is the set
+$\overline{\{ p \in U : f(p) \not= 0 \}}$, is compact.
 
 When we wish to say that two functions are identically equal, we write
 $f \equiv g$.  This means that $f(x) = g(x)$ for all $x$ in the domain.
@@ -12187,7 +12192,7 @@ is holomorphic.  If $f(p) = q$, then
 \end{equation*}
 \item
 If $f \colon U \to V$ is holomorphic, $f(p) = q$,
-and $f'(p) \not= 0$, then there exists a neighbourhood $W$ of $q$
+and $f'(p) \not= 0$, then there exists a neighborhood $W$ of $q$
 and a holomorphic function $g \colon W \to U$ that is
 one-to-one and $f\bigl(g(z)\bigr) = z$ for all $z \in W$.
 \end{enumerate}
@@ -12238,7 +12243,7 @@ below can be thought of as a local change of coordinates.
 Suppose $U \subset \C$ is a domain and
 $f \colon U \to \C$ is holomorphic, not identically zero, and $p \in U$.
 Then there exists a $k \in \N$,
-a neighbourhood $V \subset U$ of $p$,  and
+a neighborhood $V \subset U$ of $p$,  and
 a holomorphic function $\varphi \colon V \to \C$ with 
 $\varphi'(p) \not= 0$, such that
 \begin{equation*}
@@ -12328,13 +12333,13 @@ An function with an essential singularity actually achieves essentially
 every value.  A weak version of this result (and an easy to prove one)
 is the \emph{\myindex{Casorati--Weierstrass theorem}}, which states
 that if $f$ has an essential singularity at $p$,
-then for any neighbourhood $W$ of $p$, $f(W \setminus \{p\})$ is dense in
+then for any neighborhood $W$ of $p$, $f(W \setminus \{p\})$ is dense in
 $\C$.  Let us state the much stronger theorem of Picard.
 
 \begin{thm}[Picard's big theorem]\index{Picard's big theorem}
 Suppose $U \subset \C$ is open and $f \colon U \setminus \{ p \} \to \C$
 is holomorphic and has an essential singularity at $p$.  Then for any
-neighbourhood $W$ of $p$, $f(W \setminus \{ p \})$ is either $\C$
+neighborhood $W$ of $p$, $f(W \setminus \{ p \})$ is either $\C$
 or $\C$ minus a point.
 \end{thm}
 
@@ -12565,8 +12570,195 @@ $\{b\}$ is oriented positively.  The two-point set
 $\{a,b\}$ is the boundary of $[a,b]$, and the orientation of $\{ a,b \}$
 is induced by $[a,b]$.
 
-FIXME: define manifold / manifold with boundary,
-define orientation
+Let us define the objects over which we integrate, that is,
+smooth submanifolds of $\R^n$.
+Our model for a $k$-dimensional manifold-with-boundary
+is the upper-half-space and its boundary:
+\begin{equation*}
+\bH^k
+\overset{\text{def}}{=}
+\{ x \in \R^k : x_k \geq 0 \} ,
+\qquad
+\partial \bH^k
+\overset{\text{def}}{=}
+\{ x \in \R^k : x_k = 0 \} ,
+\end{equation*}
+
+\begin{defn}
+Let $M \subset \R^n$ have the induced subspace topology.
+Let $k \in \N_0$.
+Let $M$ have the property that
+for each $p \in M$, there exists a neighborhood $W \subset \R^n$ of $p$,
+a point $q \in \bH^k$, a neighborhood $U \subset \bH^k$ of $q$, 
+and a smooth one-to-one open mapping $\varphi \colon U \to M$ such that
+$\varphi(q) = p$, 
+$D\varphi$ has rank $k$ at all points, and $\varphi(U) = M \cap W$.
+Then $M$ is an
+\emph{\myindex{embedded manifold-with-boundary}}\index{manifold-with-boundary}
+of dimension $k$.
+The map $\varphi$ is called a
+\emph{\myindex{local parametrization}}\index{parametrization}.
+If $q$ is such that $q_k = 0$ (the last component is zero), then
+$p = \varphi(q)$ is a boundary point.  Let $\partial M$ denote the set
+of boundary points.  If $\partial M = \emptyset$, then we say
+$M$ is simply an \emph{\myindex{embedded manifold}}\index{manifold}.
+\end{defn}
+
+More correctly we may call $M$ a \emph{\myindex{submanifold}} rather than a
+\emph{manifold}.
+The word \emph{embedded} has to do with the topology on $M$, and this
+has to do with the condition $\varphi(U) = M \cap W$ and $\varphi$ being open.
+The condition means that $\varphi$ is a homeomorphism onto $M \cap W$.
+It is important that $W$ is an open set in $\R^n$.  For our
+purposes here, all manifolds will be embedded.
+We have also made some economy in the definition.  If $q$ is not on the
+boundary of $\bH^k$, then we might as well have used $\R^k$ instead of
+$\bH^k$.
+A manifold is something that is locally like $\R^k$, and if it has a
+boundary, then near the boundary it is locally like $\bH^k$ near a point
+of $\partial \bH^k$.
+
+We also remark that manifolds are often defined in reverse rather than by
+parametrizations, that is, by starting with the (relatively) open sets $M \cap W$,
+and the maps $\varphi^{-1}$, calling those \emph{\myindex{charts}},
+and calling the entire set of charts an \emph{\myindex{atlas}}.
+The particular version of the definition we have chosen makes 
+it easy to evaluate integrals in the same way that parametrizing curves
+makes it easy to evaluate integrals.
+
+Examples of such manifolds are for example domains with smooth boundaries
+as we have defined them in \defnref{def:hypersurface}.  The domain is $M$
+and $\partial M$ is the boundary of the domain.
+And really it is the key application for our purposes.
+Another example are smooth curves.
+
+It is rather easy to prove that if $M$ is an embedded manifold-with-boundary
+of dimension $k$ then $\partial M$ is also an embedded manifold of dimension
+$k-1$.  Simply restrict the parametrizations to the boundary of $\bH^k$.
+
+We also need to define an orientation.
+
+\begin{defn}
+Let $M \subset \R^n$ be an embedded manifold-with-boundary of dimension $k
+\geq 2$.  Suppose
+that a set of parametrizations can be chosen such that
+each point of $M$ is in the image of one of the parametrizations,
+and
+if
+$\varphi \colon U \to M$ and $\widetilde{\varphi} \colon \widetilde{U} \to
+M$ are two parametrizations such
+that $\varphi(U) \cap \widetilde{\varphi}(\widetilde{U}) \not= \emptyset$, then the 
+\emph{\myindex{transition map}} (automatically smooth) defined by
+\begin{equation*}
+{\widetilde{\varphi}}^{~{-1}} \circ \varphi
+\end{equation*}
+on $\varphi^{-1}\bigl(\varphi(U) \cap \widetilde{\varphi}(\widetilde{U})\bigr)$ (in other
+words, wherever it makes sense) is orientation preserving, that is 
+\begin{equation*}
+\det D\bigl({\widetilde{\varphi}}^{~{-1}} \circ \varphi \bigr) > 0 
+\end{equation*}
+at all points.
+The set of such parametrizations is the orientation on $M$.
+
+If $M$ is oriented, then the restrictions of the parametrizations
+to $\partial \bH^k$ gives an orientation on $\partial M$.  We say
+this is the induced orientation on $\partial M$.
+\end{defn}
+
+For dimensions $k=0$ (isolated points) and $k=1$ (curves) we must define
+orientation differently.  For $k=0$, we simply give a each point an
+orientation of $+$ or $-$.  For $k=1$, we need to allow parametrization by
+open subsets not only of $\bH^1 = [0,\infty)$, but also $-\bH^1 = (-\infty,0]$.
+The definition is the same otherwise.  To define the orientation
+of the boundary, if the boundary point corresponds to the $0$ in
+$[0,\infty)$ we will give this boundary point the orientation
+$-$, and if it corresponds to the $0$ in $(-\infty,0]$, then
+we give this point the orientation $+$.  The reason for this complication is
+that unlike in $\R^k$ for $k \geq 2$, the set $\bH^1 = [0,\infty)$ cannot be
+``rotated'' (in $\R^1$) or mapped via an orientation preserving map onto
+$-\bH^1 = (-\infty,0]$, but in $\R^2$ the upper-half-plane $\bH^2$ can
+be rotated to the lower-half-plane $-\bH^2 = \{ x \in \R^2 : x_2 \leq 0 \}$.
+For computations, it is often useful for compact curves
+with endpoints (boundary) to just give one
+parametrization from $[0,1]$ or perhaps $[a,b]$, then $a$ corresponds to the
+$-$ and $b$ corresponds to the $+$.
+
+The fact that the transition map is smooth does require a proof, which is a
+good exercise in basic analysis.  It requires a bit of care at boundary
+points.
+
+An orientation will allow us to have a well-defined integral on $M$, just
+like a curve needs to be oriented in order to define a line integral.
+However, unlike for curves, not every manifold of dimension
+more than one is \emph{orientable}, that is, admits an orientation.
+A classical non-orientable example is the M\"obius strip.
+
+\medskip
+
+Now that we know what we integrate ``on,'' let us figure out what ``it'' is
+that we integrate.  Let us start with $0$-forms.
+We define $0$-forms as smooth functions (possibly complex-valued).
+Sometimes we need a function defined on just a manifold.  A function $f$ defined
+on a manifold $M$ is smooth when $f \circ \varphi$ is smooth on $U$
+for every parametrization $\varphi \colon U \to M$.  Equivalently,
+one can prove that $f$ is the restriction of some smooth function
+defined on some neighbourhood of $M$ in $\R^n$.
+
+A $0$-form $\omega$ defined on a $0$-dimensional oriented manifold $M$
+is integrated as
+\begin{equation*}
+\int_M \omega
+\overset{\text{def}}{=}
+\sum_{p \in M} \epsilon_p \omega(p) ,
+\end{equation*}
+where $\epsilon_p$ is the orientation of $p$ given as $+1$ or $-1$.
+To avoid problems of integrability, 
+one can really just assume that $\omega$ is compactly supported (it is
+nonzero on at most finitely many points of $M$) or that $M$ is compact (it
+is a finite set).
+
+The correct definition of a $1$-form is that it is a ``smooth section'' of
+the dual of the vector bundle $T \R^n$.  That is, it is something that eats
+a vector field, and spits out a function.  The $1$-form
+$dx_k$ is supposed to be the object that does
+\begin{equation*}
+dx_k\left(
+\frac{\partial}{\partial x_k}
+\right)
+=
+1,
+\qquad
+dx_k\left(
+\frac{\partial}{\partial x_j}
+\right)
+=
+0 \quad \text{if $j\not=k$}.
+\end{equation*}
+For our purposes here, just suppose that a $1$-form
+in $\R^n$ is an object of the form
+\begin{equation*}
+\omega = g_1 dx_1 + g_2 dx_2 + \cdots + g_n dx_n ,
+\end{equation*}
+where $g_1, g_2, \ldots, g_n$ are smooth functions.  That is, a $1$-form is
+at each point a linear combination of $dx_1, dx_2, \ldots, dx_n$ that
+varies smoothly from point to point.
+So suppose that $M$ is a one-dimensional manifold
+(possibly with boundary), further suppose that $\varphi \colon U \to M$
+is a parametrization of $M$ and $g_j$ is supported in $\varphi(U)$
+then
+\begin{equation*}
+\int_M \omega
+\overset{\text{def}}{=}
+\sum_{j=1}^n
+\int_U g_j\bigl( \varphi(t) \bigr) \varphi_j'(t) \, dt ,
+\end{equation*}
+where the integral $\int_U$ is evaluated with the usual positive orientation
+(left to right) as $U \subset \R$, and $\varphi_j$ is the $j$th component
+of $\varphi$.
+
+
+FIXME: ... partition of unity nonsense
+
 
 FIXME: define $k$-form
 
@@ -12575,7 +12767,7 @@ FIXME: define evaluation of $k$-form
 FIXME
 
 \begin{thm}[Stokes]
-Suppose $\Omega \subset \R^n$ is a
+Suppose $\Omega \subset \R^n$ is an embedded
 compact smooth oriented $(k+1)$-dimensional manifold-with-boundary,
 $\partial \Omega$ has the induced orientation,
 and $\omega$ is a smooth $k$-form defined on
@@ -12585,7 +12777,14 @@ $\Omega$.  Then
 \end{equation*}
 \end{thm}
 
-FIXME
+One can get away with less regularity, including ``corners,''
+and this can be proved by various
+approximation theorems, but this would require a more complicated statement
+and more complicated definitions.  In $\R^2$, it is easy to state
+in more generality, see \thmref{thm:greens}.
+
+Another way to state stokes is to not assume that $\Omega$ is compact, but
+instead assume that $\omega$ has compact support.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
