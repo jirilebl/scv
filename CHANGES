@@ -8,7 +8,10 @@
 * add note on integrability in 1.1
 * Add exercise 1.2.17
 * Add definition of Levi-flat to end of 2.3 and add exercises 2.3.13-2.3.17
-* Move the solution of Dirichlet problem up in 2.4 so that it can be used.  This renumbers the exercises in 2.4
+** Move the solution of Dirichlet problem up in 2.4 so that it can be used.  This renumbers the exercises in 2.4
+* Add figure to proof of Cauchy-Pompeiu
+* Add note (and exercise) on well-definedness of dimension, and some rewording in 6.4.
+** Add three exercises in 6.4 renumbering all exercises in 6.4 after 6.4.4
 * Add a very short Appendix A on basic notation, which may not be totally standard
 * Add Appendix B on one variable stuff
 * Add Appendix C on differential forms and Stokes' theorem

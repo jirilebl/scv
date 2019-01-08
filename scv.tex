@@ -1080,7 +1080,7 @@ Consequently,
 \frac{j! \snorm{f}_{\gamma}}{\rho^{j}} .
 \end{equation*}
 
-For further review of one variable results useful in this book,
+For further review of one-variable results useful in this book,
 see \appendixref{ap:onevarresults}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -4685,7 +4685,7 @@ pseudoconvex at all nearby points.
 \end{exbox}
 
 We are generally interested what happens under a holomorphic change of
-variables, that is, a biholomorphic mapping.  And as far as pseudoconvexity
+coordinates, that is, a biholomorphic mapping.  And as far as pseudoconvexity
 is concerned we are interested in local changes of coordinates as
 pseudoconvexity is a local property.
 
@@ -4985,7 +4985,7 @@ $O(k)$ to denote any function in $O(k)$ to simplify notation.
 
 \begin{lemma} \label{lemma:normformquad}
 Let $M$ be a smooth real hypersurface in $\C^n$ and $p \in M$.  Then there
-exists a local holomorphic change of coordinates taking $p$ to the origin
+exists a local biholomorphic change of coordinates taking $p$ to the origin
 and $M$ to the manifold given by
 \begin{equation*}
 \Im w = \sum_{j=1}^\alpha \sabs{z_j}^2 - \sum_{j=\alpha+1}^{\alpha+\beta}
@@ -5208,7 +5208,7 @@ proposition.
 Knesser in 1936.}]
 Suppose $U \subset \C^n$ is a domain with smooth boundary.
 If $U$ is strongly
-pseudoconvex at $p \in \partial U$, then there exists a local holomorphic change of
+pseudoconvex at $p \in \partial U$, then there exists a local biholomorphic change of
 coordinates fixing $p$ such that in these new coordinates $U$ is strongly convex in a neighborhood of $p$.
 \end{lemma}
 
@@ -8565,8 +8565,8 @@ $F \colon \C^3 \to \C$.
 
 \begin{exercise}
 Find an $M \subset \C^n$, $n \geq 2$, such that near some $p \in M$,
-for every neighborhood $W$ of $p$ in $M$.  There is a CR function $f \colon
-W \to \C$ that does not extend to either side of $M$ at $p$.
+for every neighborhood $W$ of $p$ in $M$, there is a CR function $f \colon
+W \to \C$ that does not extend holomorphically to either side of $M$ at $p$.
 \end{exercise}
 \end{exbox}
 
@@ -8582,16 +8582,14 @@ W \to \C$ that does not extend to either side of $M$ at $p$.
 \index{generalized Cauchy integral formula}
 
 Before we get into the $\bar{\partial}$-problem, let us prove a more general
-version of Cauchy's formula using Stokes' theorem\footnote{%
-We are really using Green's theorem, which is the generalized
-Stokes' theorem in 2 dimensions, see \thmref{thm:greens}.}.  Sometimes
-this is called the \emph{\myindex{Cauchy--Pompeiu integral formula}}.
+version of Cauchy's formula using Stokes' theorem (really Green's theorem).
+This version is called the \emph{\myindex{Cauchy--Pompeiu integral formula}}.
 We will only need the theorem for smooth functions, but as it is often 
-applied in less regular contexts and it is just an application of Stokes
+applied in less regular contexts and it is just an application of Stokes'
 theorem, let us state it that way.  In applications, the boundary is often
 only piecewise smooth, and again that is all we need for Stokes.
 
-\begin{thm} \label{thm:generalizedcauchy}
+\begin{thm}[Cauchy--Pompeiu] \label{thm:generalizedcauchy}
 Let $U \subset \C$ be a bounded domain with piecewise $C^1$-smooth boundary
 $\partial U$ oriented positively, and let
 $f \colon \overline{U} \to \C$ be a continuous function
@@ -8621,7 +8619,7 @@ That is,
 \begin{equation*}
 d\zeta \wedge d\bar{\zeta}
 =
-(dx+idy)\wedge (dx-idy)
+(dx+i\,dy)\wedge (dx-i\,dy)
 =
 (- 2 i ) dx \wedge dy = (-2i) dA .
 \end{equation*}
@@ -8644,9 +8642,18 @@ term?  Notice that would lead to an impossible result.
 \end{exbox}
 
 \begin{proof}
-Fix $z \in U$.  Let $\Delta_r(z)$ be a small disc such that
+Fix $z \in U$.  We wish to apply Stokes' theorem\footnote{%
+We are really using Green's theorem, which is the generalized
+Stokes' theorem in 2 dimensions, see \thmref{thm:greens}.},
+but the integrand is not smooth at $z$.
+Let $\Delta_r(z)$ be a small disc such that
 $\Delta_r(z) \subset
-\subset U$.
+\subset U$.  Stokes now applies on $U \setminus \Delta_r(z)$.
+
+\begin{center}
+\subimport*{figures/}{cauchy-pompeiu.pdf_t}
+\end{center}
+
 Via Stokes we get
 \begin{equation*}
 \int_{\partial U} \frac{f(\zeta)}{\zeta-z}\,  d\zeta - 
@@ -8705,7 +8712,7 @@ b)~Given arbitrary $\epsilon > 0$, find a $C^1$ function $f$ on the closed unit 
 $\overline{\D}$,
 such that $\frac{\partial f}{\partial \bar{z}}$ is identically zero
 outside an $\epsilon$-neighborhood of the origin, yet $f|_{\partial \D}$
-are not boundary values of a holomorphic function.
+are not the boundary values of a holomorphic function.
 \end{exercise}
 
 \begin{exercise}
@@ -8732,7 +8739,7 @@ d\zeta \wedge d\bar{\zeta}
 
 \section{Simple case of the \texorpdfstring{$\bar{\partial}$}{dbar}-problem}
 
-For a smooth function $\psi$ we have the exterior derivative
+For a smooth function $\psi$, consider the exterior derivative
 \glsadd{not:dpsi}%
 \begin{equation*}
 d \psi =
@@ -9504,7 +9511,8 @@ b) Use part a) to prove the maximum principle for holomorphic functions.
 \begin{exercise}
 Use Bochner--Martinelli for the solution of $\bar{\partial}$ with compact
 support.  That is, suppose $g$ is a smooth compactly supported $(0,1)$-form
-on $\C^n$, $n \geq 2$, $g = g_1 d\bar{z}_1 + \cdots + g_n d\bar{z}_n$
+on $\C^n$, $n \geq 2$, $g = g_1 d\bar{z}_1 + \cdots + g_n d\bar{z}_n$,
+and
 $\frac{\partial g_k}{\partial \bar{z}_\ell} =
 \frac{\partial g_\ell}{\partial \bar{z}_k}$ for all $k, \ell$.
 Prove that
@@ -10774,7 +10782,8 @@ in full generality,
 the \emph{\myindex{Nullstellensatz}}, says that if we take the germ of
 a subvariety defined by functions
 in an ideal $I \subset \sO_p$, and look at the ideal given by that variety we obtain the
-radical of $I$.  In more concise language the Nullstellensatz says
+radical\footnote{The radical of $I$ is defined as $\sqrt{I} \overset{\text{def}}{=} \{ f : f^m \in I, \text{ for
+some } m \}$.} of $I$.  In more concise language the Nullstellensatz says
 $I_p\bigl(V(I)\bigr) = \sqrt{I}$.
 Germs of varieties are in
 one-to-one correspondence with radical ideals of $\sO_p$.
@@ -10787,22 +10796,32 @@ the various algebraic properties of the ideals of $\sO_p$.
 
 Let us define the
 regular points of a variety and their dimension.
-If $f \colon U' \subset \C^k \to \C^{n-k}$ is a mapping, then
-by a graph of $f$ we mean the set $\Gamma_f \subset U' \times \C^{n-k} \subset \C^k \times
+By a graph of a mapping
+$f \colon U' \subset \C^k \to \C^{n-k}$
+we mean the set $\Gamma_f \subset U' \times \C^{n-k} \subset \C^k \times
 \C^{n-k}$ defined by
+\glsadd{not:graph}%
 \begin{equation*}
-\Gamma_f =
+\Gamma_f \overset{\text{def}}{=}
 \bigl\{ (z,w) \in U' \times \C^{n-k} : w=f(z) \bigr\} .
 \end{equation*}
 
 \begin{defn}
-Let $X \subset U \subset \C^n$ be a (complex) subvariety of $U$.  Let $p \in X$ be a
-point.  If there exists a (complex)
+Let $X \subset U \subset \C^n$ be a (complex) subvariety of an open set $U$.  Let $p \in X$ be a
+point.  Suppose there exists a (complex)
 affine change of coordinates (translation, rotation) such that near
 $p$ the set $X$ can be written as a graph of a holomorphic
-mapping $f \colon U' \subset \C^k \to
-\C^{n-k}$ (for some $k \in \N_0$),
-then $p$ is a \emph{\myindex{regular point}} (or
+mapping.
+% $f \colon U' \subset \C^k \to
+%\C^{n-k}$ (for some $k \in \N_0$).
+That is, after an affine change of coordinates,
+there is a neighborhood $U' \times U'' \subset \C^{k}
+\times \C^{n-k}$ of $p$, where $k \in \N_0$, such that
+\begin{equation*}
+X \cap (U' \times U'') = \Gamma_f
+\end{equation*}
+for some holomorphic mapping $f \colon U' \to \C^{n-k}$.
+Then $p$ is a \emph{\myindex{regular point}} (or
 \emph{\myindex{simple point}}) of $X$ and
 the \emph{dimension}\index{dimension at a regular point}
 of $X$ at $p$ is $k$ or $\dim_p X = k$.
@@ -10820,21 +10839,47 @@ point that is not regular is \emph{singular}\index{singular point}.
 The set of singular points of $X$ is denoted by $X_{\mathit{sing}}$.
 \end{defn}
 
-So $p \in X$ is a regular point if after perhaps a complex affine
-change of coordinates there is a neighborhood $U' \times U'' \subset \C^{k}
-\times \C^{n-k}$ of $p$ such that $X \cap (U' \times U'')
-=
-\bigl\{ (z,w) \in U' \times U'' : w=f(z) \bigr\}$.
-Note that
-an isolated point of the variety
-is a regular point of dimension 0.
+%So $p \in X$ is a regular point if after perhaps a complex affine
+%change of coordinates, 
+%there is a neighborhood $U' \times U'' \subset \C^{k}
+%\times \C^{n-k}$ of $p$ such that
+%$X \cap (U' \times U'')
+%=
+%\Gamma_f$ for some holomorphic mapping $f \colon U' \to \C^{n-k}$.
+%%\bigl\{ (z,w) \in U' \times U'' : w=f(z) \bigr\}$.
+A couple of remarks are in order, a single $X$ can have
+regular points of several different dimensions, although if a point
+is of dimension $k$, then all nearby points are of dimension $k$
+as the same $U'$ and $U''$ works.
+Any isolated point of $X$ is automatically a regular point of dimension
+0.
+
+Final remark is that dimension is well-defined.  We leave it as an exercise.
+
+\begin{exbox}
+\begin{exercise}
+Prove that if $p$ is a regular point of a subvariety $X \subset U \subset
+\C^n$ of a domain $U$, then the dimension is well-defined.  Hint: if there were two possible
+$U'$ of different dimension (possibly different affine coordinates), construct a map
+from one such $U'$ to another such $U'$ with nonvanishing derivative.
+\end{exercise}
+
+\begin{exercise}
+Show that if $p$ is a regular point of dimension $k$ of a subvariety $X$, show that there
+exists a local biholomorphic change of coordinates, which put $p$ to the
+origin, and near $0$, $X$ is given by $w=0$, where $(z,w) \in \C^{k} \times
+\C^{n-k}$.  In other words, if we allow a biholomorphic change of
+coordinates, we can let $f=0$ in the definition.
+\end{exercise}
+\end{exbox}
 
 We also define dimension at a singular point.
-It turns out that
+A fact that we will not prove in general is that
 the set of regular points of a complex
 subvariety is open and dense in the subvariety; a
 variety is regular at most points.  Therefore, the 
-following definition does make sense.
+following definition makes sense without resorting to
+the convention that $\max \emptyset = -\infty$.
 
 \begin{defn}
 Let $X \subset U \subset \C^n$ be a (complex) subvariety of $U$.  Let $p \in
@@ -10864,6 +10909,14 @@ of $X$ that is of pure dimension $k$.
 We define the word \emph{codimension} as before, that is, the
 ambient dimension minus the dimension of $X$.
 \end{defn}
+
+\begin{exbox}
+\begin{exercise}
+Suppose that $X \subset U \subset \C^n$ is a subvariety
+of a domain $U$, such that $X_{reg}$ is connected.  Show that $X$ is of
+pure dimension.
+\end{exercise}
+\end{exbox}
 
 
 We have the following theorem, which we
@@ -11405,7 +11458,7 @@ in boundaries of domains says a lot about the geometry of the boundary.
 Let $M \subset \C^n$ be a smooth real hypersurface containing
 a complex hypersurface $X$ (zero set of a holomorphic function
 with nonzero derivative), at some $p \in X \subset M$.
-Apply a local holomorphic change of coordinate at $p$, so
+Apply a local biholomorphic change of coordinates at $p$, so
 that in the new coordinates
 $(z,w) \in \C^{n-1} \times \C$,
 $X$ is given by $w=0$, and $p$ is the origin.
