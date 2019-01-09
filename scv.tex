@@ -11842,7 +11842,9 @@ should be clear.  So, for example, if $X \subset \C$ naturally,
 then $X^c = \C \setminus X$.
 
 The topological closure of a set $S$ is denoted by $\overline{S}$, its
-boundary is denoted by $\partial S$.  If $S$ is relatively compact subset of $X$
+boundary is denoted by
+\glsadd{not:boundary}%
+$\partial S$.  If $S$ is relatively compact subset of $X$
 (its closure in $X$ is compact) or compact we write $S \subset \subset X$.
 
 A function $f \colon U \to \C$ is said to be \emph{\myindex{compactly
@@ -11851,17 +11853,20 @@ the \emph{\myindex{support}}, that is the set
 $\overline{\{ p \in U : f(p) \not= 0 \}}$, is compact.
 
 When we wish to say that two functions are identically equal, we write
+\glsadd{not:identeq}%
 $f \equiv g$.  This means that $f(x) = g(x)$ for all $x$ in the domain.
 
-The notation $f \circ g$ denotes the composition defined by $x \mapsto
+The notation
+\glsadd{not:composition}%
+$f \circ g$ denotes the composition defined by $x \mapsto
 f\bigl(g(x)\bigr)$.
 
-We will write
-$$
+We write
+\begin{equation*}
 X
 \overset{\text{def}}{=}
 Y
-$$
+\end{equation*}
 to define $X$ to be $Y$ rather than just show equality.
 
 
@@ -11939,7 +11944,7 @@ if $\gamma|_{[a,b]}$ is one-to-one
 with the possible exception of $\gamma(a) = \gamma(b)$.
 
 For an open $U \subset \C$,
-a function $f \colon U \to \C$ is holomorphic if it is complex
+a function $f \colon U \to \C$ is \emph{holomorphic} if it is complex
 differentiable at every point, that is
 \begin{equation*}
 f'(z) = \lim_{h \in \C \to 0} \frac{f(z+h) - f(z)}{h}
@@ -11947,7 +11952,7 @@ f'(z) = \lim_{h \in \C \to 0} \frac{f(z+h) - f(z)}{h}
 exists for all $z \in U$.  For example, polynomials and rational
 functions in $z$ are holomorphic.  One of the most important examples
 is the solution to the differential equation $f'(z) = f(z)$, $f(0) = 1$, that is
-the complex exponential, defined in the entire complex plane.
+the complex exponential, defined in the entire complex plane:
 \begin{equation*}
 f(z) = e^z = e^{x+iy} = e^x \bigl( \cos y + i \sin(y) \bigr) .
 \end{equation*}
@@ -11968,7 +11973,7 @@ Let $U \subset \C$ be a bounded domain with piecewise-$C^1$ boundary
 $\partial U$ oriented positively, and let
 $f \colon \overline{U} \to \C$ be a continuous function
 holomorphic in $U$.
-Then for $z \in U$:
+Then for $z \in U$,
 \begin{equation*}
 f(z) =
 \frac{1}{2\pi i}
@@ -11979,13 +11984,13 @@ d \zeta .
 \end{equation*}
 \end{thm}
 
-The theorem follows from Green's theorem, which is the Stokes theorem
+The theorem follows from Green's theorem, which is the Stokes' theorem
 in two dimensions, although in the versions we state, one needs to
 approximate the domain by smaller domains from the inside to insure
 the partial derivatives are bounded.  See
 \thmref{thm:generalizedcauchy}.  Let us state Green's theorem using
 the $dz$ and $d\bar{z}$ for completeness.  See \appendixref{ap:diffforms}
-for a quick overview of differential forms.
+for an overview of differential forms.
 
 \begin{thm}[Green's theorem]\index{Green's theorem} \label{thm:greens}
 Let $U \subset \C$ be a bounded domain with piecewise-$C^1$ boundary
@@ -12543,8 +12548,11 @@ which are just too interesting not to mention.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As differential forms come up quite a bit, let us overview their definition
-and state the Stokes' theorem.  We will not prove anything here.
+Differential forms come up quite a bit, especially
+in \chapterref{ch:dbar} and \chapterref{ch:integralkernels}.
+Let us overview their definition
+and state Stokes' theorem.  No proofs are given, this is just a bare bones
+guide.
 For a more complete introduction to differential forms
 see Rudin~\cite{Rudin:principles}.
 
@@ -12562,7 +12570,7 @@ Fundamental Theorem of Calculus
 \end{equation*}
 We interpret both sides as integration.  The left hand side is an integral
 of the $1$-form $f'\, dx$ over the $1$-dimensional interval $[a,b]$
-and the right hand side is an integral of the $0$-form, that is function,
+and the right hand side is an integral of the $0$-form, that is a  function,
 $f$ over the $0$-dimensional (two-point) set $\{ a, b \}$.  Both sides
 consider orientation, $[a,b]$ is integrated from $a$ to $b$,
 $\{a\}$ is oriented negatively and 
@@ -12590,7 +12598,9 @@ Let $k \in \N_0$.
 Let $M$ have the property that
 for each $p \in M$, there exists a neighborhood $W \subset \R^n$ of $p$,
 a point $q \in \bH^k$, a neighborhood $U \subset \bH^k$ of $q$, 
-and a smooth one-to-one open mapping $\varphi \colon U \to M$ such that
+and a smooth one-to-one open\footnote{By open, we mean that $\varphi(V)$ is
+a relatively open set of $M$ for every open set $V \subset U$.}
+mapping $\varphi \colon U \to M$ such that
 $\varphi(q) = p$, 
 $D\varphi$ has rank $k$ at all points, and $\varphi(U) = M \cap W$.
 Then $M$ is an
@@ -12599,7 +12609,9 @@ of dimension $k$.
 The map $\varphi$ is called a
 \emph{\myindex{local parametrization}}\index{parametrization}.
 If $q$ is such that $q_k = 0$ (the last component is zero), then
-$p = \varphi(q)$ is a boundary point.  Let $\partial M$ denote the set
+$p = \varphi(q)$ is a \emph{boundary point}\index{boundary of a manifold}.
+\glsadd{not:boundary}%
+Let $\partial M$ denote the set
 of boundary points.  If $\partial M = \emptyset$, then we say
 $M$ is simply an \emph{\myindex{embedded manifold}}\index{manifold}.
 \end{defn}
@@ -12669,8 +12681,8 @@ at all points.
 The set of such parametrizations is the orientation on $M$.
 
 If $M$ is oriented, then the restrictions of the parametrizations
-to $\partial \bH^k$ gives an orientation on $\partial M$.  We say
-this is the induced orientation on $\partial M$.
+to $\partial \bH^k$ give an orientation on $\partial M$.  We say
+this is the \emph{\myindex{induced orientation}} on $\partial M$.
 \end{defn}
 
 For dimensions $k=0$ (isolated points) and $k=1$ (curves) we must define
@@ -12750,17 +12762,18 @@ in $\R^n$ is an object of the form
 where $g_1, g_2, \ldots, g_n$ are smooth functions.  That is, a $1$-form is
 at each point a linear combination of $dx_1, dx_2, \ldots, dx_n$ that
 varies smoothly from point to point.
-So suppose that $M$ is a one-dimensional manifold
+Suppose that $M$ is a one-dimensional manifold
 (possibly with boundary), further suppose that $\varphi \colon U \to M$
-is a parametrization of $M$ and $g_j$ is supported in $\varphi(U)$
-then
+is a parametrization of $M$ and $g_j$ is supported in $\varphi(U)$.
+Define
 \begin{equation*}
 \int_M \omega
 \overset{\text{def}}{=}
 \sum_{j=1}^n
 \int_U g_j\bigl( \varphi(t) \bigr) \varphi_j'(t) \, dt ,
 \end{equation*}
-where the integral $\int_U$ is evaluated with the usual positive orientation
+where the integral $\int_U \cdots \, dt$
+is evaluated with the usual positive orientation
 (left to right) as $U \subset \R$, and $\varphi_j$ is the $j$th component
 of $\varphi$.
 
@@ -12773,47 +12786,51 @@ as a locally finite sum
 where each $\omega_\ell$ has support in a single chart, that is
 the image of a single
 parametrization.  By locally finite, we mean that on each compact
-neighborhood only finitely many $\omega_\ell$ are nonzero.  Then
-we define
+neighborhood only finitely many $\omega_\ell$ are nonzero.  
+Define
 \begin{equation*}
 \int_M \omega
 \overset{\text{def}}{=}
 \sum_{\ell}
 \int_M \omega_\ell .
 \end{equation*}
-Of course only if this sum actually exists.  For example, if $\omega$ is
-compactly supported then this sum is only finite.
+The definition makes sense only
+if this sum actually exists.  For example, if $\omega$ is
+compactly supported then this sum is only finite, and so it exists.
 
 Higher degree forms are constructed out of $1$-forms and $0$-forms
 by the so called wedge product.  Given a $k$-form $\omega$
 and an $\ell$-form $\eta$,
+\glsadd{not:wedge}%
 \begin{equation*}
 \omega \wedge \eta
 \end{equation*}
-is a $(k+\ell)$-form.  The product should be bilinear at each point, so
-if $f$ and $g$ are smooth functions then
+is a $(k+\ell)$-form.  Require the wedge product to be bilinear at each point:
+if $f$ and $g$ are smooth functions, then
 \begin{equation*}
 (f \omega + g \eta) \wedge \xi =
 f (\omega \wedge \xi) + g (\eta \wedge \xi)
 , \qquad
+\text{and}
+\qquad
 \omega \wedge (f \eta + g \xi) = 
 f (\omega \wedge \eta ) +
 g ( \omega \wedge \xi) . 
 \end{equation*}
-The wedge product is not commutative, in fact, it is 
-anticommutative on $1$-forms, if $\omega$ and $\eta$ are $1$-forms
+The wedge product is not commutative; we require it to be 
+anticommutative on $1$-forms. If $\omega$ and $\eta$ are $1$-forms,
 then
 \begin{equation*}
-\omega \wedge \eta = - \omega \wedge \eta .
+\omega \wedge \eta = - \eta \wedge \omega .
 \end{equation*}
-This negative will keep track of orinetation for us.
-In general, when $\omega$ is a $k$-form and $\eta$ is an $\ell$-form then
-we will get
+The negative keeps track of orinetation for us.
+When $\omega$ is a $k$-form and $\eta$ is an $\ell$-form then
+we get
 \begin{equation*}
-\omega \wedge \eta = {(-1)}^{k\ell} \omega \wedge \eta .
+\omega \wedge \eta = {(-1)}^{k\ell} \eta \wedge \omega .
 \end{equation*}
 
-With these requirements we start wedging together the basis $1$-forms to
+We wedge together the basis $1$-forms to
 get all $k$-forms.
 A $k$-form is then an expression
 \begin{equation*}
@@ -12830,8 +12847,8 @@ dx_{j_2} \wedge
 dx_{j_k}  ,
 \end{equation*}
 where $g_{j_1,\ldots,j_k}$ are smooth functions.
-But we can simplify even more.  Since we said that the wedge
-is anticommutative on $1$-forms so
+But we can simplify even more.  Since the wedge
+is anticommutative on $1$-forms,
 \begin{equation*}
 dx_j \wedge dx_m = 
 -dx_m \wedge dx_j
@@ -12847,13 +12864,13 @@ $dx_{j_1} \wedge
 dx_{j_2} \wedge
 \cdots \wedge
 dx_{j_k}$ 
-is either zero if any of the $j_1,\ldots,j_k$ are equal, and by
+is either zero if any two indices from $j_1,\ldots,j_k$ are equal, and by
 swapping we can make any nonzero such form into
 $\pm dx_{j_1} \wedge
 dx_{j_2} \wedge
 \cdots \wedge
 dx_{j_k}$, where $j_1 < j_2 < \cdots < j_k$.
-Therefore a $k$-form can always be written as
+Thus, a $k$-form can always be written as
 \begin{equation*}
 \omega =
 \sum_{1 \leq j_1 < j_2 < \cdots < j_k \leq n}
@@ -12865,9 +12882,9 @@ dx_{j_2} \wedge
 dx_{j_k}  .
 \end{equation*}
 
-So suppose that $M$ is a $k$-dimensional manifold
-(possibly with boundary), further suppose that $\varphi \colon U \to M$
-is a parametrization of $M$ and $g_{j_1,\ldots,j_k}$
+Consider $M$ is a $k$-dimensional manifold
+(possibly with boundary), suppose that $\varphi \colon U \to M$
+is a parametrization of $M$ and $\omega$ (that is each $g_{j_1,\ldots,j_k}$)
 is supported in $\varphi(U)$.  Denote by $t \in U \subset \R^k$
 the coordinates on $U$.  Then define
 \begin{equation*}
@@ -12905,16 +12922,263 @@ Then
 Again, the sum has to exist, such as when $\omega$ is compactly supported
 and the sum is finite.
 
-FIXME: example(s)
+Notice that the only nontrivial differential forms on $\R^n$
+are $0,1,2,\ldots,n$ forms.  And in fact, the only $n$-form is given
+as
+\begin{equation*}
+f(x) \,
+dx_1 \wedge dx_2 \wedge \cdots \wedge dx_n .
+\end{equation*}
+The form $dx_1 \wedge dx_2 \wedge \cdots \wedge dx_n$ is called the
+volume form integrating it over a domain (an $n$ dimensional manifold)
+gives the standard volume integral.
+
+More generally one defines integration of $k$-forms over $k$-chains,
+which are just linear combinations of smooth manifolds, but we do not
+need that level of generality.
+
+\medskip
+
+In computations, we can avoid sets of zero measure ($k$-dimensional),
+so we can ignore the boundary of the manifold.  Similarly if we parametrize
+several subsets leaving out a small set.
+Let us give a couple of examples of computations.
+
+\begin{example}
+Consider the circle $S^1 \subset
+\R^2$.  We use a parametrization $\varphi \colon (-\pi,\pi) \to S^1$
+where $\varphi(t) = \bigl(\cos(t),\sin(t)\bigr)$, so the circle is oriented
+counterclockwise.
+Let $\omega(x_1,x_2) = P(x_1,x_2) \, dx_1 + Q(x_1,x_2) \, dx_2$, then
+\begin{equation*}
+\int_{S^1} \omega =
+\int_{-\pi}^{\pi} 
+\Bigl(
+P\bigl(\cos(t),\sin(t)\bigr) \bigl(-\sin(t)\bigr)  +
+Q\bigl(\cos(t),\sin(t)\bigr) \cos(t) \Bigr) \, dt .
+\end{equation*}
+We can ignore the point $(-1,0)$ as a single point is of $1$-dimensional
+measure zero.
+\end{example}
+
+\begin{example}
+Consider a domain $U \subset \R^n$, then $U$ is an oriented manifold.
+We use the parametrization $\varphi \colon U \to U$, where $\varphi(x) =
+x$.  Then
+\begin{equation*}
+\int_U f(x) \, dx_1 \wedge dx_2 \wedge \cdots \wedge dx_n
+=
+\int_U f(x) \, dx_1 \, dx_2 \,  \cdots \, dx_n
+=
+\int_U f(x) \, dV ,
+\end{equation*}
+where $dV$ is the standard volume measure.
+\end{example}
+
+\begin{example}
+Finally consider $M$
+the upper hemisphere of the unit sphere $S^2 \subset \R^3$ as a manifold
+with boundary.  That is consider
+\begin{equation*}
+M = \bigl\{ x \in \R^3 : x_1^2+x_2^2+x_3^2=1, x_3 \geq 0 \bigr\} .
+\end{equation*}
+The boundary is then is the circle in the $(x_1,x_2)$-plane:
+\begin{equation*}
+\partial M = \bigl\{ x \in \R^3 : x_1^2+x_2^2=1, x_3 = 0 \bigr\} .
+\end{equation*}
+Consider the parametrization of $M$ using the spherical coordinates
+\begin{equation*}
+\varphi(\theta,\psi) =
+\bigl(\cos(\theta) \sin(\psi),
+ \sin(\theta) \sin(\psi),
+ \cos(\psi)\bigr)
+\end{equation*}
+for $U$ given by $-\pi < \theta < \pi$, $0 < \psi \leq \nicefrac{\pi}{2}$.  After
+a rotation this is a subset of a half-plane with the points corresponding to
+$\psi = \nicefrac{\pi}{2}$ corresponding to boundary points.  We miss the
+points where $\theta = \pi$, including the point $(0,0,1)$, but the set of
+those points is a $1$-dimensional curve, and so a set of $2$-dimensional
+measure zero, and so for the purposes of integration we can ignore it.
+Let
+\begin{equation*}
+\omega(x_1,x_2,x_3) =
+P(x_1,x_2,x_3) \, dx_1 \wedge dx_2
++ Q(x_1,x_2,x_3) \, dx_1 \wedge dx_3
++ R(x_1,x_2,x_3) \, dx_2 \wedge dx_3 .
+\end{equation*}
+Then
+\begin{multline*}
+\int_M \omega = 
+\int_{-\pi}^\pi
+\int_{0}^{\pi/2}
+\biggl[
+P\bigl(\varphi(\theta,\psi)\bigr) \biggl(
+\frac{\partial \varphi_1}{\partial \theta}
+\frac{\partial \varphi_2}{\partial \psi}
+-
+\frac{\partial \varphi_2}{\partial \theta}
+\frac{\partial \varphi_1}{\partial \psi}
+\biggr)
++
+Q\bigl(\varphi(\theta,\psi)\bigr) \biggl(
+\frac{\partial \varphi_1}{\partial \theta}
+\frac{\partial \varphi_3}{\partial \psi}
+-
+\frac{\partial \varphi_3}{\partial \theta}
+\frac{\partial \varphi_1}{\partial \psi}
+\biggr)
+\\
++
+R\bigl(\varphi(\theta,\psi)\bigr) \biggl(
+\frac{\partial \varphi_2}{\partial \theta}
+\frac{\partial \varphi_3}{\partial \psi}
+-
+\frac{\partial \varphi_3}{\partial \theta}
+\frac{\partial \varphi_2}{\partial \psi}
+\biggr)
+\biggr]\, d\theta \, d\psi
+\\
+=
+\int_{-\pi}^\pi
+\int_{0}^{\pi/2}
+\Bigl(
+P\bigl(\cos(\theta)\sin(\psi),\sin(\theta)\sin(\psi),\cos(\psi)\bigr)
+\bigl(-\cos(\psi)\sin(\psi) \bigr)
+\\
++
+Q\bigl(\cos(\theta)\sin(\psi),\sin(\theta)\sin(\psi),\cos(\psi)\bigr)
+\sin(\theta)\sin^2(\psi)
+\\
++
+R\bigl(\cos(\theta)\sin(\psi),\sin(\theta)\sin(\psi),\cos(\psi)\bigr) 
+\bigl(-\cos(\theta)\sin^2(\psi)\bigr)
+\Bigr)
+\,
+d\theta
+\,
+d\psi .
+\end{multline*}
+
+The induced orientation on the boundary $\partial M$
+is the counterclockwise orientation used in the example above
+because that is the parametrization we get when we restrict
+to the boundary, $\varphi(\theta,\nicefrac{\pi}{2}) =
+\bigl(\cos(\theta),\sin(\theta),0\bigr)$.
+\end{example}
+
+\medskip
+
+The derivative on $k$-forms is the
+\emph{\myindex{exterior derivative}},
+which is a linear operator that eats $k$-forms and spits out
+$(k+1)$-forms.  For
+\begin{equation*}
+\omega =
+g_{j_1,\ldots,j_k}
+\,
+dx_{j_1} \wedge
+dx_{j_2} \wedge
+\cdots \wedge
+dx_{j_k}  ,
+\end{equation*}
+define the exterior derivative $d\omega$ as
+\glsadd{not:dpsi}%
+\begin{equation*}
+d\omega
+\overset{\text{def}}{=} 
+dg_{j_1,\ldots,j_k}
+\wedge
+dx_{j_1} \wedge
+dx_{j_2} \wedge
+\cdots \wedge
+dx_{j_k}  =
+\sum_{\ell=1}^n
+\frac{\partial g_{j_1,\ldots,j_k}}{\partial x_\ell} \,
+dx_\ell \wedge
+dx_{j_1} \wedge
+dx_{j_2} \wedge
+\cdots \wedge
+dx_{j_k} .
+\end{equation*}
+Then we define $d$ on every $k$-form by extending it linearly.
+
+For example
+\begin{multline*}
+d \left(
+P \, dx_3 \wedge dx_2
++
+Q \, dx_3 \wedge dx_1
++
+R \, dx_1 \wedge dx_2
+\right)
+\\
+=
+\frac{\partial P}{\partial x_1} \, dx_1 \wedge dx_3 \wedge dx_2
++
+\frac{\partial Q}{\partial x_2} \, dx_2 \wedge dx_3 \wedge dx_1
++
+\frac{\partial R}{\partial x_3} \, dx_3 \wedge dx_1 \wedge dx_2
+\\
+=
+\left(
+\frac{\partial P}{\partial x_1}
+-
+\frac{\partial Q}{\partial x_2} 
++
+\frac{\partial R}{\partial x_3}
+\right) \, dx_1 \wedge dx_2 \wedge dx_3 .
+\end{multline*}
+You will recognize the divergence of the vector field $(P,Q,R)$ from vector
+calculus.
+All the various derivative operations in $\R^3$ from vector calculus make an
+appearance.
+If $\omega$ is a $0$-form in $\R^3$, then $d\omega$ is like the gradient.
+If $\omega$ is a $1$-form in $\R^3$, then $d\omega$ is like the curl.
+If $\omega$ is a $2$-form in $\R^3$, then $d\omega$ is like the divergence.
+
+\medskip
+
+Something to notice is that
+\begin{equation*}
+d(d\omega) = 0 
+\end{equation*}
+for every $\omega$,
+which follows because partial derivatives commute.  In particular, we get a
+so-called complex.  That is
+let $\Lambda^k(M)$ denote the $k$-forms on an $n$-dimensional manifold $M$,
+then we get the complex
+\begin{equation*}
+\Lambda^0(M)
+\overset{d}{\to}
+\Lambda^1(M)
+\overset{d}{\to}
+\Lambda^2(M)
+\overset{d}{\to}
+\cdots
+\overset{d}{\to}
+\Lambda^n(M)
+\overset{d}{\to}
+0 .
+\end{equation*}
+As a remark, once can study the topology of $M$
+by computing cohomology groups of $M$ from this complex, which in turn
+is really talking about global solvability of the differential
+equation $d\omega = \eta$ for an unknown $\omega$.  There are variations
+on this idea and one appears in \chapterref{ch:dbar}, but we digress.
+
+\medskip
+
+Let us now state the \emph{\myindex{Stokes' theorem}} or the
+\emph{\myindex{generalized Stokes' theorem}}.
 
 \begin{thm}[Stokes]
-Suppose $\Omega \subset \R^n$ is an embedded
+Suppose $M \subset \R^n$ is an embedded
 compact smooth oriented $(k+1)$-dimensional manifold-with-boundary,
-$\partial \Omega$ has the induced orientation,
+$\partial M$ has the induced orientation,
 and $\omega$ is a smooth $k$-form defined on
-$\Omega$.  Then
+$M$.  Then
 \begin{equation*}
-\int_{\partial \Omega} \omega = \int_{\Omega} d\omega .
+\int_{\partial M} \omega = \int_{M} d\omega .
 \end{equation*}
 \end{thm}
 
@@ -12924,8 +13188,14 @@ approximation theorems, but this would require a more complicated statement
 and more complicated definitions.  In $\R^2$, it is easy to state
 in more generality, see \thmref{thm:greens}.
 
-Another way to state stokes is to not assume that $\Omega$ is compact, but
-instead assume that $\omega$ has compact support.
+%Another way to state Stokes is to not assume that $\Omega$ is compact, but
+%instead assume that $\omega$ has compact support.
+
+A final note is that the classical Stokes' theorem is just the generalized
+Stokes' theorem with $n=3$, $k=2$.  Classically instead of writing it
+using differential forms the line integral is an integral of a vector field
+instead of a $1$-form $\omega$ 
+$\omega$ and writing the derivative $d\omega$ using the curl operator.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
