@@ -12604,6 +12604,14 @@ of boundary points.  If $\partial M = \emptyset$, then we say
 $M$ is simply an \emph{\myindex{embedded manifold}}\index{manifold}.
 \end{defn}
 
+The situation for a boundary point and an interior point is depicted in the
+following diagram.  Note that $W$ is a bigger neighborhood in $\R^n$ than
+the image $\varphi(U)$.
+
+\begin{center}
+\subimport*{figures/}{manif-bound.pdf_t}
+\end{center}
+
 More correctly we may call $M$ a \emph{\myindex{submanifold}} rather than a
 \emph{manifold}.
 The word \emph{embedded} has to do with the topology on $M$, and this
@@ -12702,7 +12710,7 @@ Sometimes we need a function defined on just a manifold.  A function $f$ defined
 on a manifold $M$ is smooth when $f \circ \varphi$ is smooth on $U$
 for every parametrization $\varphi \colon U \to M$.  Equivalently,
 one can prove that $f$ is the restriction of some smooth function
-defined on some neighbourhood of $M$ in $\R^n$.
+defined on some neighborhood of $M$ in $\R^n$.
 
 A $0$-form $\omega$ defined on a $0$-dimensional oriented manifold $M$
 is integrated as
@@ -12756,15 +12764,148 @@ where the integral $\int_U$ is evaluated with the usual positive orientation
 (left to right) as $U \subset \R$, and $\varphi_j$ is the $j$th component
 of $\varphi$.
 
+Generally, a $1$-form has support bigger than just $\varphi(U)$.  In this
+case, one needs to use a so-called partition of unity to write $\omega$
+as a locally finite sum
+\begin{equation*}
+\omega = \sum_{\ell} \omega_\ell ,
+\end{equation*}
+where each $\omega_\ell$ has support in a single chart, that is
+the image of a single
+parametrization.  By locally finite, we mean that on each compact
+neighborhood only finitely many $\omega_\ell$ are nonzero.  Then
+we define
+\begin{equation*}
+\int_M \omega
+\overset{\text{def}}{=}
+\sum_{\ell}
+\int_M \omega_\ell .
+\end{equation*}
+Of course only if this sum actually exists.  For example, if $\omega$ is
+compactly supported then this sum is only finite.
 
-FIXME: ... partition of unity nonsense
+Higher degree forms are constructed out of $1$-forms and $0$-forms
+by the so called wedge product.  Given a $k$-form $\omega$
+and an $\ell$-form $\eta$,
+\begin{equation*}
+\omega \wedge \eta
+\end{equation*}
+is a $(k+\ell)$-form.  The product should be bilinear at each point, so
+if $f$ and $g$ are smooth functions then
+\begin{equation*}
+(f \omega + g \eta) \wedge \xi =
+f (\omega \wedge \xi) + g (\eta \wedge \xi)
+, \qquad
+\omega \wedge (f \eta + g \xi) = 
+f (\omega \wedge \eta ) +
+g ( \omega \wedge \xi) . 
+\end{equation*}
+The wedge product is not commutative, in fact, it is 
+anticommutative on $1$-forms, if $\omega$ and $\eta$ are $1$-forms
+then
+\begin{equation*}
+\omega \wedge \eta = - \omega \wedge \eta .
+\end{equation*}
+This negative will keep track of orinetation for us.
+In general, when $\omega$ is a $k$-form and $\eta$ is an $\ell$-form then
+we will get
+\begin{equation*}
+\omega \wedge \eta = {(-1)}^{k\ell} \omega \wedge \eta .
+\end{equation*}
 
+With these requirements we start wedging together the basis $1$-forms to
+get all $k$-forms.
+A $k$-form is then an expression
+\begin{equation*}
+\omega =
+\sum_{j_1=1}^n
+\sum_{j_2=1}^n
+\cdots
+\sum_{j_k=1}^n
+g_{j_1,\ldots,j_k}
+\,
+dx_{j_1} \wedge
+dx_{j_2} \wedge
+\cdots \wedge
+dx_{j_k}  ,
+\end{equation*}
+where $g_{j_1,\ldots,j_k}$ are smooth functions.
+But we can simplify even more.  Since we said that the wedge
+is anticommutative on $1$-forms so
+\begin{equation*}
+dx_j \wedge dx_m = 
+-dx_m \wedge dx_j
+,
+\qquad
+\text{and}
+\qquad
+dx_j \wedge dx_j = 0 .
+\end{equation*}
+In other words,
+every form 
+$dx_{j_1} \wedge
+dx_{j_2} \wedge
+\cdots \wedge
+dx_{j_k}$ 
+is either zero if any of the $j_1,\ldots,j_k$ are equal, and by
+swapping we can make any nonzero such form into
+$\pm dx_{j_1} \wedge
+dx_{j_2} \wedge
+\cdots \wedge
+dx_{j_k}$, where $j_1 < j_2 < \cdots < j_k$.
+Therefore a $k$-form can always be written as
+\begin{equation*}
+\omega =
+\sum_{1 \leq j_1 < j_2 < \cdots < j_k \leq n}
+g_{j_1,\ldots,j_k}
+\,
+dx_{j_1} \wedge
+dx_{j_2} \wedge
+\cdots \wedge
+dx_{j_k}  .
+\end{equation*}
 
-FIXME: define $k$-form
+So suppose that $M$ is a $k$-dimensional manifold
+(possibly with boundary), further suppose that $\varphi \colon U \to M$
+is a parametrization of $M$ and $g_{j_1,\ldots,j_k}$
+is supported in $\varphi(U)$.  Denote by $t \in U \subset \R^k$
+the coordinates on $U$.  Then define
+\begin{equation*}
+\int_M \omega
+\overset{\text{def}}{=}
+\sum_{1 \leq j_1 < j_2 < \cdots < j_k \leq n}
+\int_U
+g_{j_1,\ldots,j_k}(t)
+\det D (\varphi_{j_1},\varphi_{j_2},\ldots,\varphi_{j_k})
+\,
+dt
+\end{equation*}
+where the integral $\int_U \cdots\, dt$ is evaluated in the
+usual orientation on $\R^k$ with $dt$ the standard
+measure on $\R^k$ (think $dt = dt_1 dt_2 \cdots dt_n$), and
+$D (\varphi_{j_1},\varphi_{j_2},\ldots,\varphi_{j_k})$
+denotes the derivative of the mapping whose $\ell$th component
+is $\varphi_{j_\ell}$.
 
-FIXME: define evaluation of $k$-form
+Now similarly as before, if $\omega$ is not supported in a
+single chart, then write
+\begin{equation*}
+\omega = \sum_{\ell} \omega_\ell 
+\end{equation*}
+as a locally finite sum,
+where each $\omega_\ell$ has support in a single chart
+parametrization.
+Then
+\begin{equation*}
+\int_M \omega
+\overset{\text{def}}{=}
+\sum_{\ell}
+\int_M \omega_\ell .
+\end{equation*}
+Again, the sum has to exist, such as when $\omega$ is compactly supported
+and the sum is finite.
 
-FIXME
+FIXME: example(s)
 
 \begin{thm}[Stokes]
 Suppose $\Omega \subset \R^n$ is an embedded
