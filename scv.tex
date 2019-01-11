@@ -12394,17 +12394,18 @@ such that $c_k \not= 0$.
 \pagebreak[2]
 
 Let $\bP^1 = \C \cup \{\infty\}$ be the \emph{\myindex{Riemann sphere}}.
-The topology on $\bP^1$ can be given by insisting that
+The topology on $\bP^1$ is given by insisting that
 the function $\frac{1}{z}$ is a homeomorphism
+of $\bP^1$ to itself,
 by letting $\frac{1}{\infty} = 0$ and $\frac{1}{0} = \infty$.
 A function $f \colon U \to \bP^1$ is called \emph{\myindex{meromorphic}},
 if it is not
 identically $\infty$, and the points $U \setminus f^{-1}(\infty)$ are poles.
-So any holomorphic function with poles is meromorphic.  A
-meromorphic function is one that can locally be written as a quotient of
+In other words, a holomorphic function with poles is meromorphic.
+A meromorphic function is one that can locally be written as a quotient of
 holomorphic functions.
 
-The identity theorem says that zeros of a holomorphic $f$ have no limit
+The identity theorem says that zeros of a nonconstant holomorphic $f$ have no limit
 points, and so are isolated points.  Since $\frac{1}{f}$ is a meromorphic
 function with zeros at the poles of $f$, we see that poles are also
 isolated.  Zeros and poles of  can be counted fairly easily.
@@ -12516,7 +12517,7 @@ Another very interesting and useful theorem getting the opposite inequality from
 Schwarz, and one which is often not covered in a one-variable
 course is the Koebe $\frac{1}{4}$-theorem.  It is very useful to try to
 think of why no such theorem could possibly be true for just smooth
-functions.  At first glance the theorem should seem quite counter intuitive,
+functions.  At first glance the theorem should seem quite counterintuitive,
 and at second glance, it should seem outright outrageous.
 
 \begin{thm}[Koebe quarter theorem]\index{Koebe quarter theorem}\index{Koebe
@@ -13168,8 +13169,9 @@ on this idea and one appears in \chapterref{ch:dbar}, but we digress.
 
 \medskip
 
-Let us now state the \emph{\myindex{Stokes' theorem}} or the
-\emph{\myindex{generalized Stokes' theorem}}.
+Let us now state \emph{\myindex{Stokes' theorem}} or the sometimes
+called \emph{\myindex{generalized Stokes' theorem}} to distinguish it
+from the classical Stokes' theorem, which is a special case.
 
 \begin{thm}[Stokes]
 Suppose $M \subset \R^n$ is an embedded
@@ -13192,10 +13194,10 @@ in more generality, see \thmref{thm:greens}.
 %instead assume that $\omega$ has compact support.
 
 A final note is that the classical Stokes' theorem is just the generalized
-Stokes' theorem with $n=3$, $k=2$.  Classically instead of writing it
+Stokes' theorem with $n=3$, $k=2$.  Classically instead of 
 using differential forms the line integral is an integral of a vector field
-instead of a $1$-form $\omega$ 
-$\omega$ and writing the derivative $d\omega$ using the curl operator.
+instead of a $1$-form
+$\omega$, and its derivative $d\omega$ is the curl operator.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
