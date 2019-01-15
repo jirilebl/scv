@@ -1,15 +1,19 @@
 * New slightly different font
-* Slightly more general Cauchy-Pompeiou
+* Slightly more general Cauchy-Pompeiu
 * Add Re/Im notation in 0.1
 * Add $C^k$ and $C^\infty$ and smooth in 0.1 since its needed all over.
 * Add a bit more algebra detail and make sure to point out the rings are commutative
 * Move all the $O(\ell)$ explanation into one place
-* clarifications and rewordings throughout
-* add note on integrability in 1.1
+* Clarifications and rewordings throughout
+* Add picture of unit ball in two dimensions
+* Equations renumbered in chapter 1
+* Add note on integrability in 1.1
 * Add exercise 1.2.17
+** Add two exercises in 1.4, which renumbers the other exercises.
 * Add definition of Levi-flat to end of 2.3 and add exercises 2.3.13-2.3.17
 ** Move the solution of Dirichlet problem up in 2.4 so that it can be used.  This renumbers the exercises in 2.4
 * Add figure to proof of Cauchy-Pompeiu
+* Add explanation of why simply connectedness is important for global definition of roots after Proposition 6.2.6
 * Add note (and exercise) on well-definedness of dimension, and some rewording in 6.4.
 ** Add three exercises in 6.4 renumbering all exercises in 6.4 after 6.4.4
 * Add a very short Appendix A on basic notation, which may not be totally standard

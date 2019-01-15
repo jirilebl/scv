@@ -470,11 +470,18 @@ The prerequisites are a decent knowledge of vector calculus, basic
 real-analysis, and a working knowledge of complex analysis in one variable.
 It is accessible to beginning graduate students after a complex
 analysis course, and the background actually required is quite minimal.
+Towards the end of the course (mainly \chapterref{ch:integralkernels}),
+differential forms will be useful, and
+in the final chapter, \chapterref{ch:analyticvarieties},
+we will use some basic ring theory from algebra.
 
 This book is not meant as an exhaustive reference.  It is simply a whirlwind
 tour of several complex variables.  See the end of the book
-for a list of books useful for
-reference and further reading.
+for a \hyperref[ch:furtherreading]{list of books} useful for
+reference and further reading.  There are also two appendices for
+a list of useful one-variable results and overview of differential forms,
+see \appendixref{ap:onevarresults} and
+\appendixref{ap:diffforms}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -561,7 +568,7 @@ or in other words, if it is $C^k$ for all $k \in \N$.
 Complex analysis is the study of holomorphic (or complex-analytic)
 functions.
 There is an awful lot one can do with polynomials, but sometimes they are
-just not enough.  For example, there is no polynomial function that solves
+just not enough.  For example, there is no nonzero polynomial function that solves
 the simplest of differential equations, $f' = f$.  We need the exponential
 function, which is holomorphic.  
 Holomorphic functions are a generalization of polynomials,
@@ -613,7 +620,8 @@ Importantly, the limit is taken with respect to
 complex $w$.
 Another vantage point is to start with a continuously 
 differentiable\footnote{Holomorphic functions end up being infinitely
-differentiable anyway, so this hypothesis is not overly restrictive.} $f$, and say that $f$ is holomorphic if it satisfies
+differentiable anyway, so this hypothesis is not overly restrictive.} $f$,
+and say that $f = u + i\, v$ is holomorphic if it satisfies
 the \emph{\myindex{Cauchy--Riemann equations}}:
 \begin{equation*}
 \frac{\partial u}{\partial x} = 
@@ -660,7 +668,7 @@ The function $f$ is holomorphic if and only if
 That seems a far nicer statement of the Cauchy--Riemann equations, and it is
 now just one complex equation.  It says
 a function is holomorphic if and only if it depends on $z$ but not on
-$\bar{z}$ (tough perhaps that might not make a whole lot of sense at first
+$\bar{z}$ (perhaps that might not make a whole lot of sense at first
 glance).
 Let us check:
 \begin{equation*}
@@ -810,7 +818,7 @@ the Cauchy--Pompeiu integral formula.
 
 As a differential form, \glsadd{not:dz}$dz = dx + i \, dy$.  If you are uneasy
 about differential forms, you probably defined the path integral above
-directly integral using
+directly using
 the Riemann--Stieltjes integral in your one-complex-variable class.
 Let us write down the formula in terms of the standard Riemann integral
 in a special case.  Take the \emph{\myindex{unit disc}}
@@ -860,7 +868,7 @@ Suppose $U \subset \C$ is a domain and $f \colon U \to \C$
 is a holomorphic function.
 If
 \begin{equation*}
-\sup_{z \in U} \, \sabs{f(z)} = f(z_0)
+\sup_{z \in U} \, \sabs{f(z)} = \sabs{f(z_0)}
 \end{equation*}
 \glsadd{not:identeq}%
 for some $z_0 \in U$, then $f$ is constant ($f \equiv f(z_0)$).
@@ -987,8 +995,9 @@ d \zeta
 \end{equation*}
 In the last equality, we are allowed to 
 interchange the limit on the sum with the integral either
-by Fubini's theorem or by uniform convergence because
-for some fixed $M$
+by Fubini's theorem or by uniform convergence:
+$z$ is fixed and if $M$ is the supremum of $\frac{f(\zeta)}{\zeta-a}$,
+then
 \begin{equation*}
 \abs{
 \frac{f(\zeta)}{\zeta-a}
@@ -1031,7 +1040,7 @@ For a set $K$ denote the \emph{\myindex{supremum norm}}:
 \overset{\text{def}}{=}
 \sup_{z \in K} \sabs{f(z)} .
 \end{equation*}
-By a brute force estimation we obtain the very useful
+By a brute force estimation, we obtain the very useful
 \emph{\myindex{Cauchy estimates}}:
 \begin{equation*}
 \sabs{c_j} = 
@@ -1185,6 +1194,18 @@ And we define the \emph{\myindex{unit ball}} as
 \bigl\{ z \in \C^n : \snorm{z} < 1 \bigr\} .
 \end{equation*}
 
+A ball centered at the origin
+can also be pictured by plotting against the modulus of the
+variables since the inequality defining the ball only
+depends on the moduli of the variables.
+Not every domain can be drawn like this, but those that can
+are called \emph{\myindex{Reinhardt domain}}, more on this later.
+Here is a picture of $\bB_2$:
+
+\begin{center}
+\subimport*{figures/}{ball.pdf_t}
+\end{center}
+
 \begin{defn}
 Let $U \subset
 \C^n$ be an open set.  A
@@ -1267,7 +1288,7 @@ d \zeta_1 .
 \end{equation*}
 
 Applying the formula $n$ times we obtain
-\begin{equation*}
+\begin{equation} \label{interatedcauchy:eq}
 f(z) =
 \frac{1}{{(2\pi i)}^n}
 \int_{\partial \Delta_1}
@@ -1281,7 +1302,7 @@ d \zeta_n
 d \zeta_2
 \,
 d \zeta_1 .
-\end{equation*}
+\end{equation}
 As $f$ is bounded on the compact set
 $\partial \Delta_1 \times \cdots \times \partial \Delta_n$,
 we find that $f$ is continuous in $\Delta$.
@@ -1297,12 +1318,12 @@ parts of the $z_j$ variables, and the integrand is
 infinitely differentiable in those variables.
 \end{proof}
 
-In the definition of holomorphicity,
-we may have assumed $f$ is smooth and satisfies
-the Cauchy--Riemann equations.  However, the way we stated the
-definition makes it easier to apply.
+%In the definition of holomorphicity,
+%we may have assumed $f$ is smooth and satisfies
+%the Cauchy--Riemann equations.  However, the way we stated the
+%definition makes it easier to apply.
 
-Above, we really derived the Cauchy integral formula in several variables.  To
+Above in \eqref{iteratedcauchy:eq}, we really derived the Cauchy integral formula in several variables.  To
 write the formula more concisely we apply the Fubini's theorem to write it as
 a single integral.  We will write it down using differential forms.  If you
 are unfamiliar with differential forms, think of the integral
@@ -1325,16 +1346,26 @@ d \bar{z}_j = d x_j - i \, d y_j .
 \end{equation*}
 As expected,
 \begin{equation*}
-\begin{array}{lll}
 d z_j \left( \frac{\partial}{\partial z_k} \right) = \delta_j^k ,
-& \quad &
-d z_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = 0 , \\
+\qquad
+d z_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = 0 ,
+\qquad
 d \bar{z}_j \left( \frac{\partial}{\partial z_k} \right) = 0 ,
-& \quad &
+\qquad
 d \bar{z}_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = \delta_j^k
 ,
-\end{array}
 \end{equation*}
+%\begin{equation*}
+%\begin{array}{lll}
+%d z_j \left( \frac{\partial}{\partial z_k} \right) = \delta_j^k ,
+%& \quad &
+%d z_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = 0 , \\
+%d \bar{z}_j \left( \frac{\partial}{\partial z_k} \right) = 0 ,
+%& \quad &
+%d \bar{z}_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = \delta_j^k
+%,
+%\end{array}
+%\end{equation*}
 \glsadd{not:kronecker}%
 where $\delta_{j}^k$ is the Kronecker delta, that is, $\delta_j^j = 1$,
 and $\delta_j^k = 0$ if $j \not= k$.  One-forms are objects of the form
@@ -2145,7 +2176,7 @@ in every neighborhood of the origin.  The origin is called
 a \emph{\myindex{point of indeterminacy}}.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:noisolatedzeros}
 Prove that zeros (and so poles) are never isolated in $\C^n$ for $n \geq 2$.
 In particular, consider $z_1 \mapsto f(z_1,z_2,\ldots,z_n)$ as you move
 $z_2,\ldots,z_n$ around, and use for example Hurwitz.
@@ -2585,7 +2616,9 @@ where $\overline{A}$ is the complex conjugate of $A$.  Thus
 
 \begin{defn}
 Two domains $U \subset \C^n$ and $V \subset \C^n$ are said to be
-\emph{\myindex{biholomorphic}} if there exists a one-to-one and onto holomorphic map $f
+\emph{\myindex{biholomorphic}} or
+\emph{\myindex{biholomorphically equivalent}}
+if there exists a one-to-one and onto holomorphic map $f
 \colon U \to V$ such that the inverse
 \glsadd{not:inverse}%
 $f^{-1} \colon V \to U$ is holomorphic.
@@ -2608,6 +2641,17 @@ If $U \subset \C$ is a simply connected domain such that $U \neq \C$,
 then $U$ is biholomorphic to $\D$.
 \end{thm}
 
+\begin{equation*}
+\begin{array}{lll}
+d z_j \left( \frac{\partial}{\partial z_k} \right) = \delta_j^k ,
+& \quad &
+d z_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = 0 , \\
+d \bar{z}_j \left( \frac{\partial}{\partial z_k} \right) = 0 ,
+& \quad &
+d \bar{z}_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = \delta_j^k
+,
+\end{array}
+\end{equation*}
 In one variable, a topological property on $U$ is enough to classify a whole
 class of domains.  It is one of the reasons why studying the disc is so
 important in one variable, and why many theorems are stated for
@@ -2619,9 +2663,21 @@ We will show momentarily that the unit ball and the polydisc,
 \qquad \text{and} \qquad
 \D^n = \bigl\{ z \in \C^n : \sabs{z_j} < 1 ~\text{for $j=1,\ldots,n$} \bigr\} ,
 \end{equation*}
-are \emph{not} equivalent.  Both are simply
+are \emph{not} biholomorphically equivalent.  Both are simply
 connected (have no holes), and they are the two most obvious generalizations
-of the disc to several dimensions.  Let us stick with $n=2$.
+of the disc to several dimensions.  They are homeomorphic, that is, topology
+does not see any difference.
+
+\begin{exbox}
+\begin{exercise}
+Prove that there exists a \emph{\myindex{homeomorphism}} $f \colon \bB_n \to
+\D^n$,
+that is, $f$ is a bijection, and both $f$ and $f^{-1}$ are continuous.
+\end{exercise}
+\end{exbox}
+
+
+   Let us stick with $n=2$.
 Instead of proving that $\bB_2$ and
 $\D^2$ are inequivalent we will prove a stronger theorem.  First a
 definition.
@@ -2840,7 +2896,8 @@ The proof extends easily to higher dimensions as well, and the proof
 of the generalization is left as an exercise.
 
 \begin{thm} \label{thm:nopropmapprodandnodisc}
-Let $U = U' \times U'' \subset \C^n \times \C^k$ and $V \subset \C^m$ be bounded
+Let $U = U' \times U'' \subset \C^n \times \C^k$, $n,k \geq 1$, and $V
+\subset \C^m$, $m \geq 1$, be bounded
 domains such that $\partial V$ contains no analytic discs.
 Then there exist no proper
 holomorphic mappings $f \colon U \to V$.
@@ -2861,7 +2918,6 @@ of the domains.
 There is a fun exercise in one dimension about proper maps of discs:
 
 \begin{exbox}
-\begin{samepage}
 \begin{exercise}
 Let $f \colon \bD \to \bD$ be a proper holomorphic  map.  Then
 \begin{equation*}
@@ -2871,13 +2927,20 @@ e^{i\theta} \prod_{j=1}^k \frac{z-a_j}{1-\bar{a_j} z} ,
 for some real $\theta$ and some $a_j \in \bD$ (that is, $f$ is a finite
 Blaschke product).  Hint: Consider the set $f^{-1}(0)$.
 \end{exercise}
-\end{samepage}
 \end{exbox}
 
 In several dimensions, when $\D$ is replaced by a ball,
 this question (what are the proper maps)
 becomes much more involved, and when the dimensions of the balls are
 different, it is not solved in general.
+
+\begin{exbox}
+\begin{exercise}
+Suppose $f \colon U \to \bD$ be a proper holomorphic  map where $U \subset
+\C^n$.  Prove that $n=1$.  Hint: Consider the same idea as in
+\exerciseref{exercise:noisolatedzeros}.
+\end{exercise}
+\end{exbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -10151,7 +10214,7 @@ If $f \equiv 0$, then define $\ord_a f = \infty$.
 The number $\ord_a f$ is called the \emph{\myindex{order of vanishing}} of $f$ at $a$.
 \end{defn}
 
-In other words, if the order of vanishing of $f$ at $a$ is $k$, than all
+In other words, if the order of vanishing of $f$ at $a$ is $k$, then all
 partial derivatives of order less than $k$ vanish at $a$, and there exists
 at least one derivative of order $k$ that does not vanish at $a$.
 
@@ -10338,7 +10401,7 @@ implicit function theorem to the case when $\frac{\partial f}{\partial z_n}$
 is zero.  We can still ``solve'' for $z_n$, but we find $k$ solutions
 given as the roots of the obtained Weierstrass polynomial.
 
-\begin{example}
+\begin{example} \label{sqrt:example}
 A useful example to keep in mind is $f(z_1,z_2) = z_2^2 - z_1$,
 a Weierstrass polynomial in $z_2$.  
 For all $z_1$ except the origin there are two zeros, $\pm \sqrt{z_1}$.
@@ -10477,11 +10540,27 @@ f(z',z_n) = u(z',z_n) \prod_{j=1}^m {\bigl( z_n - \alpha_j(z') \bigr)}^{k_j}
 \end{equation*}
 \end{prop}
 
-Why can only define $\alpha_1$ through $\alpha_m$ locally (on a
+We can only define $\alpha_1$ through $\alpha_m$ locally (on a
 smaller domain) as we do not know
 the order of $\alpha_1$ through $\alpha_m$, and the order could change 
 as we move around 
-$U'$ if it is not simply connected.
+$U'$ if it is not simply connected.  If $U'$ is simply connected, then
+the functions can be defined globally by analytic continuation.
+For an example where $U'$ is not simply connected,
+recall \exampleref{sqrt:example}. Consider $U' = \C \setminus \{ 0 \}$ and
+think $D=\C$ rather than a disc for simplicity.  Then $U'$ is not simply
+connected, and there do not exist continuous functions
+$\alpha_1(z_1)$ and
+$\alpha_2(z_1)$ that are roots
+of the Weierstrass polynomial, that is
+$z_2^2 - z_1 =
+\bigl(z_2-\alpha_1(z_1) \bigr)
+\bigl(z_2-\alpha_2(z_1) \bigr)$.
+These would be the two square roots of $z_1$, and there is no continuous
+(let alone holomorphic) square root defined in $\C \setminus \{ 0 \}$.
+You can however define such roots on some smaller simply connected subset of $U'$, for
+example, on any disc $\Delta \subset U'$.
+
 
 \begin{exbox}
 \begin{exercise}
@@ -11168,7 +11247,7 @@ if $ab \in I$ implies either $a \in I$ or $b
 \begin{exercise}
 Suppose a germ of a complex variety $(X,p)$ is of pure codimension 1.
 Prove $(X,p)$ is irreducible if and only if there
-exists a representative of $X$ whose set or regular points
+exists a representative of $X$ whose set of regular points
 is connected.  Hint: see the proof of \thmref{thm:codim1var}.
 \end{exercise}
 
@@ -11249,7 +11328,7 @@ together is left as an exercise).
 
 \begin{thm}[\myindex{Local parametrization theorem}]
 \label{localparthm}
-Let $(X,0)$ an irreducible germ of a complex variety of dimension $k$
+Let $(X,0)$ be an irreducible germ of a complex variety of dimension $k$
 in $\C^n$.  Let $X$ denote a representative of the germ.
 Then after a linear change of coordinates, we let
 $\pi \colon \C^n \to \C^k$ be the projection onto the first $k$
@@ -13217,7 +13296,7 @@ $\omega$, and its derivative $d\omega$ is the curl operator.
 \phantomsection
 \addcontentsline{toc}{chapter}{Further reading}
 \markboth{FURTHER READING}{FURTHER READING}
-\begin{bibchapter}[Further Reading]
+\begin{bibchapter}[Further Reading] \label{ch:furtherreading}
 
 %Here we list useful books for extra reading.
 
