@@ -732,8 +732,9 @@ f'(z_0)
 =
 \lim_{w \to z_0} \frac{f(w)-f(z_0)}{w-z_0} .
 \end{equation*}
-We can compute it as
+That's because 
 \begin{equation*}
+\begin{split}
 \frac{\partial f}{\partial z} 
 =
 \frac{1}{2}
@@ -748,13 +749,19 @@ We can compute it as
 =
 \frac{\partial u}{\partial x} 
 + i \frac{\partial v}{\partial x}
+& =
+\frac{\partial f}{\partial x}
+\\
 =
-i \left(
+\frac{1}{i} \left(
 \frac{\partial u}{\partial y}
 + i
 \frac{\partial v}{\partial y} 
 \right)
+& =
+\frac{\partial f}{\partial (iy)}
 .
+\end{split}
 \end{equation*}
 
 A function on $\C$ is really a function defined on
@@ -948,8 +955,9 @@ the geometric series
 converges uniformly absolutely for $(z,\zeta) \in \overline{\Delta_{\rho'}(a)}
 \times \partial \Delta_\rho(a)$ (that is, $\sum {\bigl\lvert
 \frac{z-a}{\zeta-a} \bigr\rvert}^j$
-converges uniformly).  In particular, the
-series converges uniformly absolutely in $z$ on compact subsets of $\Delta_{\rho}(a)$. 
+converges uniformly).
+%In particular, the
+%series converges uniformly absolutely in $z$ on compact subsets of $\Delta_{\rho}(a)$. 
 
 Let $\gamma$
 be the path going around 
@@ -996,7 +1004,8 @@ d \zeta
 In the last equality, we are allowed to 
 interchange the limit on the sum with the integral either
 by Fubini's theorem or by uniform convergence:
-$z$ is fixed and if $M$ is the supremum of $\frac{f(\zeta)}{\zeta-a}$,
+$z$ is fixed and if $M$ is the supremum of $\abs{\frac{f(\zeta)}{\zeta-a}} =
+\frac{\sabs{f(\zeta)}}{\rho}$ on $\partial \Delta_\rho(a)$,
 then
 \begin{equation*}
 \abs{
@@ -1110,7 +1119,8 @@ Let $x =
 (x_1,x_2,\ldots,x_n)$ and $y = (y_1,y_2,\ldots,y_n)$ denote coordinates in
 $\R^n$.
 We 
-identify $\C^n$ with $\R^n \times \R^n = \R^{2n}$ by letting
+identify $\C^n$ with
+$\R^{2n}$ by letting
 $z = x+iy$.
 As in one complex variable, we write $\bar{z} = x-iy$.
 We call $z$ the \emph{\myindex{holomorphic coordinates}}
@@ -1162,7 +1172,7 @@ picture by plotting just against the modulus of the variables:
 %\medskip
 
 Recall the
-\emph{\myindex{Euclidean inner product}} on $\C^n$
+\emph{\myindex{Euclidean inner product}} on $\C^n$:
 \glsadd{not:hermprod}%
 \begin{equation*}
 \linnprod{z}{w} \overset{\text{def}}{=} %z \cdot \bar{w}
@@ -1170,8 +1180,8 @@ z_1 \bar{w}_1 +
 z_2 \bar{w}_2 + \cdots +
 z_n \bar{w}_n .
 \end{equation*}
-Using the inner product we obtain the standard
-\emph{\myindex{Euclidean norm}} on $\C^n$
+The inner product gives us the standard
+\emph{\myindex{Euclidean norm}} on $\C^n$:
 \glsadd{not:eucnorm}%
 \begin{equation*}
 \snorm{z}  \overset{\text{def}}{=} \sqrt{\linnprod{z}{z}}
@@ -1181,13 +1191,13 @@ Using the inner product we obtain the standard
 \sabs{z_n}^2} .
 \end{equation*}
 This norm agrees with the standard Euclidean norm on $\R^{2n}$.
-We define \emph{balls}\index{ball} as in $\R^{2n}$:
+Define \emph{balls}\index{ball} as in $\R^{2n}$:
 \glsadd{not:ball}%
 \begin{equation*}
 B_\rho(a)  \overset{\text{def}}{=}
 \bigl\{ z \in \C^n : \snorm{z - a} < \rho \bigr\} ,
 \end{equation*}
-And we define the \emph{\myindex{unit ball}} as
+And define the \emph{\myindex{unit ball}} as
 \glsadd{not:unitball}%
 \begin{equation*}
 \bB_n \overset{\text{def}}{=} B_1(0) =
@@ -1214,7 +1224,9 @@ $f \colon U \to \C$ is \emph{\myindex{holomorphic}} if
 it is \emph{locally bounded}%
 \index{locally bounded function}\footnote{For
 every $p \in U$, there is a neighborhood $N$ of $p$
-such that $f|_N$ is bounded.}
+such that $f|_N$ is bounded.  It is a deep result of Hartogs that we might
+in fact just drop ``locally bounded'' from the definition and obtain the same
+set of functions.}
 %A deep result of Hartogs, which we skip, says that
 %we do not need to assume $f$ to be locally bounded.}
 and holomorphic in each variable separately.
@@ -1252,7 +1264,7 @@ it satisfies the
 Due to the following proposition, this alternative definition is just as good.
 
 \begin{prop}
-Let $U \subset \C^n$ be a domain and
+Let $U \subset \C^n$ be an open set and
 suppose $f \colon U \to \C$ is holomorphic.  Then $f$ is infinitely
 differentiable.
 \end{prop}
@@ -1288,7 +1300,7 @@ d \zeta_1 .
 \end{equation*}
 
 Applying the formula $n$ times we obtain
-\begin{equation} \label{interatedcauchy:eq}
+\begin{equation} \label{iteratedcauchy:eq}
 f(z) =
 \frac{1}{{(2\pi i)}^n}
 \int_{\partial \Delta_1}
@@ -1306,16 +1318,17 @@ d \zeta_1 .
 As $f$ is bounded on the compact set
 $\partial \Delta_1 \times \cdots \times \partial \Delta_n$,
 we find that $f$ is continuous in $\Delta$.
-Then we simply differentiate underneath the
-integral.  We can do so because $f$ is bounded on 
+We may differentiate underneath the
+integral, because $f$ is bounded on 
 $\partial \Delta_1 \times \cdots \times \partial \Delta_n$
 and so are the derivatives of the integrand
-with respect to $z$ as long as
+with respect to $x_j$ and $y_j$, where $z_j=x_j+i y_j$, as long as
 $z$ is a positive distance away from
 $\partial \Delta_1 \times \cdots \times \partial \Delta_n$.
-We are really differentiating only in the real and imaginary
-parts of the $z_j$ variables, and the integrand is
-infinitely differentiable in those variables.
+We may differentiate as many times as we wish.
+%We are really differentiating only in the real and imaginary
+%parts of the $z_j$ variables, and the integrand is
+%infinitely differentiable in those variables.
 \end{proof}
 
 %In the definition of holomorphicity,
@@ -2937,7 +2950,7 @@ different, it is not solved in general.
 \begin{exbox}
 \begin{exercise}
 Suppose $f \colon U \to \bD$ be a proper holomorphic  map where $U \subset
-\C^n$.  Prove that $n=1$.  Hint: Consider the same idea as in
+\C^n$ is a domain.  Prove that $n=1$.  Hint: Consider the same idea as in
 \exerciseref{exercise:noisolatedzeros}.
 \end{exercise}
 \end{exbox}
