@@ -609,15 +609,16 @@ is \emph{\myindex{holomorphic}}
 \emph{\myindex{complex-differentiable}} at every point,
 that is, if
 \begin{equation*}
-f'(z_0)
-=
-\lim_{w \to z_0} \frac{f(w)-f(z_0)}{w-z_0} 
+f'(z)
 %=
-%\lim_{\xi \to 0} \frac{f(z_0+\xi)-f(z_0)}{\xi} 
-\qquad \text{exists for all $z_0 \in U$.}
+%\lim_{w \in \C \to z} \frac{f(w)-f(z_0)}{w-z} 
+=
+\lim_{\xi \in \C \to 0} \frac{f(z+\xi)-f(z)}{\xi} 
+\qquad \text{exists for all $z \in U$.}
 \end{equation*}
 Importantly, the limit is taken with respect to
-complex $w$.
+complex %$w$ or
+$\xi$.
 Another vantage point is to start with a continuously 
 differentiable\footnote{Holomorphic functions end up being infinitely
 differentiable anyway, so this hypothesis is not overly restrictive.} $f$,
@@ -746,19 +747,19 @@ That's because
 \frac{i}{2}
 \left( \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}
 \right) 
-=
+& =
 \frac{\partial u}{\partial x} 
 + i \frac{\partial v}{\partial x}
-& =
+ =
 \frac{\partial f}{\partial x}
 \\
-=
+& =
 \frac{1}{i} \left(
 \frac{\partial u}{\partial y}
 + i
 \frac{\partial v}{\partial y} 
 \right)
-& =
+ =
 \frac{\partial f}{\partial (iy)}
 .
 \end{split}

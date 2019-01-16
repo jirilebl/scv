@@ -1,6 +1,7 @@
 * New slightly different font
 * Slightly more general Cauchy-Pompeiu
 * Add Re/Im notation in 0.1
+* Make difference quotient in 0.1 look like the one in 1.1 for consistency.
 * Add $C^k$ and $C^\infty$ and smooth in 0.1 since its needed all over.
 * Add a bit more algebra detail and make sure to point out the rings are commutative
 * Move all the $O(\ell)$ explanation into one place
