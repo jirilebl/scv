@@ -1073,7 +1073,8 @@ d \zeta
 \frac{\snorm{f}_{\gamma}}{\rho^{j}} .
 \end{equation*}
 
-We differentiate Cauchy's formula $j$ times,
+We differentiate Cauchy's formula $j$ times (using the Wirtinger
+$\frac{\partial}{\partial z}$ operator),
 \begin{equation*}
 f^{(j)}(z)
 =
@@ -1093,13 +1094,23 @@ f^{(j)}(a)
 \frac{\partial^j f}{\partial z^j}(a) .
 \end{equation*}
 Consequently,
+This estimate says that we can control derivatives of $f$
+by the size of the function.  This is one of the key properties of
+holomorphic functions, and the reason why the proper topology for
+the set of holomorphic functions is the same as the topology for continuous functions.
 \begin{equation*}
-\abs{f^{(j)}(a)}
+\babs{f^{(j)}(a)}
 =
 \abs{\frac{\partial^j f}{\partial z^j}(a)}
 \leq
 \frac{j! \snorm{f}_{\gamma}}{\rho^{j}} .
 \end{equation*}
+This estimate says that we can control derivatives of $f$ by the size of the
+function.  This is one of the key properties of holomorphic functions, and
+the reason why the proper topology for the set of holomorphic functions is
+the same as the topology for continuous functions.  Consequently,
+obstructions to solving problems in complex analysis are often topological
+in character.
 
 For further review of one-variable results useful in this book,
 see \appendixref{ap:onevarresults}.
@@ -1580,7 +1591,7 @@ We can also make sense of this notation, especially the notation $z^\alpha$,
 if $\alpha \in \Z^n$, that is, if it includes negative integers,
 although usually $\alpha$ is assumed to be in $\N_0^n$.
 Furthermore, when we use $1$ as a vector it means $(1,1,\ldots,1)$.
-For example if $z \in \C^n$ then,
+For example, if $z \in \C^n$ then,
 \begin{equation*}
 1-z = (1-z_1,1-z_2,\ldots,1-z_n) .
 \end{equation*}
@@ -1613,8 +1624,8 @@ we often write just
 \end{equation*}
 
 It is important to note what this means.  The sum does not
-have some natural ordering.  We are summing over $\alpha \in \N_0$, and there
-is no natural ordering of $\N_0$.  So it makes no sense to
+have a natural ordering.  We are summing over $\alpha \in \N_0^n$, and there
+is no natural ordering of $\N_0^n$.  So it makes no sense to
 talk about conditional convergence.  When we say the series
 \emph{converges}%
 \index{power series convergence}%
@@ -1692,19 +1703,19 @@ converging uniformly absolutely on compact subsets of $\Delta$:
 f(z) = \sum_{\alpha} c_\alpha {(z-a)}^\alpha .
 \end{equation}
 
-Conversely, if $f$ is defined by \eqref{holfunc:ps} converging
+Conversely, if $f \colon \Delta \to \C$ is defined by \eqref{holfunc:ps} converging
 uniformly absolutely on compact subsets of $\Delta$, then $f$ is holomorphic on
 $\Delta$.
 \end{thm}
 
 \begin{proof}
-First assume $f$ is holomorphic.
-We write
+First assume a continuous $f \colon \overline{\Delta} \to \C$ is holomorphic
+on $\Delta$.
+Write
 $\Gamma = \partial \Delta_1 \times \cdots \times \partial \Delta_n$
 and orient it positively.
 Take $z \in \Delta$ and $\zeta \in \Gamma$.
-As in one variable, we write the kernel of the Cauchy
-formula as
+As in one variable, write the Cauchy kernel as
 \begin{equation*}
 \frac{1}{\zeta-z} =
 \frac{1}{\zeta-a}\frac{1}{\left(1-\frac{z-a}{\zeta-a}\right)} =
@@ -1714,7 +1725,7 @@ formula as
 \end{equation*}
 The multivariable geometric series is a product of geometric series
 in one variable, and geometric series in one variable
-is uniformly absolutely convergent on compact subsets of the unit disc.
+are uniformly absolutely convergent on compact subsets of the unit disc.
 Therefore the series
 above converges uniformly absolutely for $z$ in compact subsets of $\Delta$
 and $\zeta \in \Gamma$.
@@ -1757,7 +1768,7 @@ d \zeta
 {(z-a)}^{\alpha} .
 \end{split}
 \end{equation*}
-The last equality follows by Fubini just as it does in one variable.
+The last equality follows by Fubini or uniform convergence just as it does in one variable.
 %because the convergence of the sum is uniform in
 %$\zeta \in \Gamma$ for a fixed $z$.
 
@@ -1785,7 +1796,7 @@ d \zeta .
 \end{equation*}
 Notice how strikingly similar the computation is to one variable.
 
-The converse follows by applying the Cauchy--Riemann equations to the series
+The converse statement follows by applying the Cauchy--Riemann equations to the series
 term-wise.  To do this you have to show that the term-by-term derivative
 series also converges uniformly absolutely on compact subsets.  It is left as an
 exercise.  Then you apply the well-known theorem from real analysis.
@@ -1798,13 +1809,14 @@ in turn, and then using the corresponding one-variable result.
 \begin{exbox}
 \begin{exercise}
 Prove the claim above that if a power series converges uniformly absolutely
-on compact subsets of a polydisc $\Delta$, then the term by term derivative
+on compact subsets of a polydisc $\Delta$, then the term-by-term derivative
 converges.
 Do the proof without using the analogous result for single variable series.
 \end{exercise}
 \end{exbox}
 
-Using Leibniz rule, as long as $z \in \Delta$ and not on the boundary,
+Using the Leibniz rule (taking derivatives under the integral),
+as long as $z \in \Delta$ and not on the boundary,
 we can differentiate under the integral.  Let us do a single derivative to
 get the idea:
 \begin{equation*}
@@ -1873,7 +1885,7 @@ Therefore
 \alpha! \, c_\alpha = 
 \frac{\partial^{\sabs{\alpha}} f}{\partial z^\alpha} (a) .
 \end{equation*}
-And as before, we obtain the \emph{\myindex{Cauchy estimates}}:
+As before, we obtain the \emph{\myindex{Cauchy estimates}}:
 \begin{equation*}
 \abs{\frac{\partial^{\sabs{\alpha}}f}{\partial z^\alpha}(a)}
 =
@@ -2133,7 +2145,7 @@ Suppose $\{ f_k \}$ is a sequence of nowhere zero
 holomorphic functions on a domain $U
 \subset \C^n$ converging uniformly on compact subsets to a function $f$.
 Show that either $f$ is identically zero, or that $f$ is nowhere zero.
-Hint: Feel free to use the one-variable result.
+Hint: Feel free to use the \hyperref[thm:onevarhurwitz]{one-variable result}.
 \end{exercise}
 \end{exbox}
 
@@ -2201,7 +2213,8 @@ a \emph{\myindex{point of indeterminacy}}.
 \begin{exercise} \label{exercise:noisolatedzeros}
 Prove that zeros (and so poles) are never isolated in $\C^n$ for $n \geq 2$.
 In particular, consider $z_1 \mapsto f(z_1,z_2,\ldots,z_n)$ as you move
-$z_2,\ldots,z_n$ around, and use for example Hurwitz.
+$z_2,\ldots,z_n$ around, and use for example
+\hyperref[thm:onevarhurwitz]{Hurwitz}.
 \end{exercise}
 \end{exbox}
 
@@ -2215,9 +2228,11 @@ When you apply a conjugate to a holomorphic function you get a so-called
 function that does not depend on $z$, but only on $\bar{z}$.  Given a
 holomorphic function $f$, we define the function
 $\bar{f}$ by $\overline{f(z)}$, that we write as
-$\bar{f}(\bar{z})$.  Then for all $j$
+$\bar{f}(\bar{z})$.  Then using directly the definitions for
+the Wirtinger operators, for all $j$,
 \begin{equation*}
-\frac{\partial \bar{f}}{\partial z_j} = 0,
+\frac{\partial \bar{f}}{\partial z_j} = 
+\overline{\frac{\partial f}{\partial \bar{z}_j}} = 0,
 \qquad
 \frac{\partial \bar{f}}{\partial \bar{z}_j} = \overline{
 \left(\frac{\partial f}{\partial z_j} \right) } .
@@ -2783,8 +2798,8 @@ such that the image $g(\D)$ is inside the unit sphere.  In other words
 \snorm{g(z)}^2 = \sabs{g_1(z)}^2 + \sabs{g_2(z)}^2 + \cdots + \sabs{g_n(z)}^2 = 1
 \end{equation*}
 for all $z \in \D$.  Without loss of generality (after composing with a
-unitary matrix) we assume that
-$g(0) = (1,0,0,\ldots,0)$.  We look at the first component
+unitary matrix) assume that
+$g(0) = (1,0,0,\ldots,0)$.  Consider the first component
 and notice that $g_1(0) = 1$.  If a sum of
 positive numbers is less than or equal to 1,
 then they all are, and hence $\sabs{g_1(z)} \leq 1$.  Maximum principle
@@ -2878,7 +2893,7 @@ Suppose there is a proper holomorphic map $f \colon \D^2
 Fix some $e^{i\theta}$ in the boundary of the disc $\bD$.  Take a sequence
 $w_k \in \bD$ such that $w_k \to e^{i\theta}$.   The functions
 $g_k(\zeta) =  f(\zeta,w_k)$ map the unit disc into $\bB_2$.  By the standard
-Montel's theorem, by passing to a subsequence we assume that
+\hyperref[thm:onevarmontel]{Montel's theorem}, by passing to a subsequence we assume that
 the sequence of functions converges (uniformly on compact subsets) to
 a limit $g \colon \bD \to \overline{\bB}_2$.  As $(\zeta,w_k) \to
 (\zeta,e^{i\theta}) \in \partial \D^2$, then by
@@ -3281,7 +3296,8 @@ Write $p = (p',p_n)$.  Then the function
 \begin{equation*}
 \xi \mapsto f(p',\xi)
 \end{equation*}
-has a zero in a small disc around $p_n$.  By Rouche's theorem
+has a zero in a small disc around $p_n$.  By
+\hyperref[thm:onevarrouche]{Rouch\`e's theorem}
 $\xi \mapsto f(z',\xi)$ must have a zero for $z'$ sufficiently close to $p'$.
 It follows that since $g$ was giving the unique solution near $p$ and the
 zeros of $f$ are contained in the zeros of $h$, we are done.
@@ -6166,7 +6182,7 @@ Riemann extension theorem, when on the one hand you know that the function is
 continuous and vanishes on the set you wish to extend across, but on the
 other hand you know nothing about this set.
 
-\begin{thm}[Rad\'o] \index{Rad\'o's theorem}
+\begin{thm}[Rad\'o] \index{Rad\'o's theorem}\label{thm:rado}
 Let $U \subset \C^n$ be a domain and $f \colon U \to \C$ be a continuous
 function that is holomorphic on the set
 \begin{equation*}
@@ -9930,9 +9946,13 @@ Find a (trivial) counterexample.
 \begin{exercise}
 Show that given a domain $U \subset \C^n$, the Bergman kernel is the unique
 function $K_U(z,\bar{\zeta})$ such that
+\\
 1)~for a fixed $\zeta$, $K_U(z,\bar{\zeta})$ is in $A^2(U)$,
+\\
 2)~$\overline{K_U(z,\bar{\zeta})} =
-K_U(\zeta,\bar{z})$, 3)~the reproducing property \eqref{eq:repropropBergman}
+K_U(\zeta,\bar{z})$,
+\\
+3)~the reproducing property \eqref{eq:repropropBergman}
 holds.
 \end{exercise}
 
@@ -10301,7 +10321,7 @@ of $f$ we find a small polydisc $V = V' \times D$ such that
 $\overline{V} \subset U$ and $f$ is not zero on
 $V' \times \partial D$.
 
-The one-variable argument principle implies that the number of zeros (with
+The one-variable argument principle (see \thmref{thm:onevarargprinc}) implies that the number of zeros (with
 multiplicity) of $z_n
 \mapsto f(z',z_n)$ in $D$ is
 \begin{equation*}
@@ -10641,7 +10661,8 @@ find that $\Delta(z') \to 0$ as $z' \to p'$.
 
 We defined $\Delta$ on $U_m$.  Set $\Delta(z') = 0$ for $z' \in E$.
 As $\Delta(z') \to 0$ as $z'$ goes to $E$, $\Delta$ is continuous,
-and it is holomorphic outside its zero set.  We apply Rad{\'o}'s theorem to find $\Delta$
+and it is holomorphic outside its zero set.  We apply Rad{\'o}'s theorem
+(\thmref{thm:rado}) to find $\Delta$
 is holomorphic in $U'$.
 \end{proof}
 
@@ -11118,7 +11139,7 @@ whose roots
 above $z' \in U' \setminus E$
 are simple and give precisely $X'$
 and $g_j(z')$ are holomorphic in $U'$. 
-  By using the argument principle
+By using the argument principle
 again, we find that all roots above points of $E$ are limits of roots
 above points in $U \setminus E$.
 Therefore by continuity we find that
@@ -12358,7 +12379,7 @@ on compact subsets of $U$ to $f \colon U \to \C$.  Then $f$ is holomorphic.
 
 Holomorphic functions satisfy a Heine--Borel-like theorem:
 
-\begin{thm}[Montel]\index{Monte's theorem}
+\begin{thm}[Montel]\index{Montel's theorem}\label{thm:onevarmontel}
 If $U \subset \C$ is a domain and
 $f_n \subset U \to \C$ is a sequence of holomorphic functions
 that is uniformly bounded on compact subsets of $U$,
@@ -12368,7 +12389,7 @@ of $U$.
 
 A sequence of holomorphic functions cannot create or delete zeros out of thin air:
 
-\begin{thm}[Hurwitz]\index{Hurwitz's theorem}
+\begin{thm}[Hurwitz]\index{Hurwitz's theorem}\label{thm:onevarhurwitz}
 If $U \subset \C$ is a domain and
 $f_n \subset U \to \C$ is a sequence of holomorphic functions
 converging uniformly on compact subsets of $U$ to $f \colon U \to \C$.
@@ -12500,7 +12521,7 @@ points, and so are isolated points.  Since $\frac{1}{f}$ is a meromorphic
 function with zeros at the poles of $f$, we see that poles are also
 isolated.  Zeros and poles of  can be counted fairly easily.
 
-\begin{thm}[Argument principle]\index{argument principle}
+\begin{thm}[Argument principle]\index{argument principle}\label{thm:onevarargprinc}
 Suppose $U \subset \C$ is a domain, and $\gamma$ is a piecewise-$C^1$
 simple closed path in $U$ such that the interior of $\gamma$ is in $U$.
 Suppose that $f \colon U \to \bP^1$ is a meromorphic function with no zeros
@@ -12535,7 +12556,7 @@ so the above statement may be slightly different than what you have seen in
 your one-variable course.
 Another useful way to count zeros is Rouch\`e's theorem.
 
-\begin{thm}[Rouch\`e]\index{Rouch\`e's theorem}
+\begin{thm}[Rouch\`e]\index{Rouch\`e's theorem}\label{thm:onevarrouche}
 Suppose $U \subset \C$ is a domain, and $\gamma$ is a piecewise-$C^1$
 simple closed path in $U$ such that the interior of $\gamma$ is in $U$.
 Suppose that $f \colon U \to \C$ and $g \colon U \to \C$
