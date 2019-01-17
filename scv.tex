@@ -731,7 +731,7 @@ If $f$ is holomorphic, the derivative in $z$ is the standard complex derivative 
 =
 f'(z_0)
 =
-\lim_{w \to z_0} \frac{f(w)-f(z_0)}{w-z_0} .
+\lim_{\xi \to 0} \frac{f(z_0+\xi)-f(z_0)}{\xi} .
 \end{equation*}
 That's because 
 \begin{equation*}
@@ -873,13 +873,13 @@ which has several versions.  Let us give the simplest one.
 
 \begin{thm}[Maximum modulus principle]
 Suppose $U \subset \C$ is a domain and $f \colon U \to \C$
-is a holomorphic function.
-If
+is holomorphic.
+If for some $z_0 \in U$
 \begin{equation*}
-\sup_{z \in U} \, \sabs{f(z)} = \sabs{f(z_0)}
+\sup_{z \in U} \, \sabs{f(z)} = \sabs{f(z_0)} ,
 \end{equation*}
 \glsadd{not:identeq}%
-for some $z_0 \in U$, then $f$ is constant ($f \equiv f(z_0)$).
+then $f$ is constant, that is, $f \equiv f(z_0)$.
 \end{thm}
 
 That is, if the supremum is attained in the interior of the domain,
@@ -898,15 +898,17 @@ harmonic, that is,
 \nabla^2 h = \frac{\partial^2 h}{\partial x^2} + \frac{\partial^2 h}{\partial
 y^2} = 0 .
 \end{equation*}
-If
+If for some $z_0 \in U$
 \begin{equation*}
 \sup_{z \in U} \, h(z) = h(z_0)
+\qquad \text{or} \qquad
+\inf_{z \in U} \, h(z) = h(z_0) ,
 \end{equation*}
-for some $z_0 \in U$, then $h$ is constant, that is, $h \equiv h(z_0)$.
+then $h$ is constant, that is, $h \equiv h(z_0)$.
 \end{thm}
 
-In one variable, if $f = u+iv$ is holomorphic then $u$ and $v$
-are harmonic.  Locally, any harmonic function is
+In one variable, if $f = u+iv$ is holomorphic for real valued $u$ and $v$,
+then $u$ and $v$ are harmonic.  Locally, any harmonic function is
 the real (or imaginary) part of a holomorphic function, so in
 one complex variable, studying 
 harmonic functions is almost equivalent to studying holomorphic
@@ -1122,7 +1124,7 @@ $\R^n$.
 We 
 identify $\C^n$ with
 $\R^{2n}$ by letting
-$z = x+iy$.
+$z = x+iy$, that is, $z_j = x_j + i y_j$ for every $j$.
 As in one complex variable, we write $\bar{z} = x-iy$.
 We call $z$ the \emph{\myindex{holomorphic coordinates}}
 and $\bar{z}$ the \emph{\myindex{antiholomorphic coordinates}}.
@@ -1498,8 +1500,8 @@ set $\Gamma$ is quite small in comparison to the entire boundary.
 \begin{exercise}
 %Prove the following stronger version of the maximum principle.
 Suppose $\Delta$ is a polydisc, $\Gamma$ its distinguished boundary,
-and $f \colon \overline{\Delta} \to \C$ is continuous and 
-holomorphic on $\Delta$.
+and $f \colon \overline{\Delta} \to \C$ is continuous on $\overline{\Delta}$
+and holomorphic on $\Delta$.
 Prove
 $\sabs{f(z)}$ achieves its maximum on $\Gamma$.
 \end{exercise}
@@ -1514,6 +1516,12 @@ locally bounded function in $\R^2$, which is differentiable
 in each variable separately (all partial derivatives exist), but 
 the function is not even continuous.  There is something very
 special about the holomorphic category.
+\end{exercise}
+
+\begin{exercise}
+A ball is different from a polydisc.  Prove that for any $z \in \partial \bB_n$
+there exists a continuous $f \colon \overline{\bB_n} \to \C$, holomorphic
+on $\bB_n$ such that $\sabs{f(z)}$ achieves a strict maximum at $z$.
 \end{exercise}
 \end{exbox}
 
@@ -2655,17 +2663,6 @@ If $U \subset \C$ is a simply connected domain such that $U \neq \C$,
 then $U$ is biholomorphic to $\D$.
 \end{thm}
 
-\begin{equation*}
-\begin{array}{lll}
-d z_j \left( \frac{\partial}{\partial z_k} \right) = \delta_j^k ,
-& \quad &
-d z_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = 0 , \\
-d \bar{z}_j \left( \frac{\partial}{\partial z_k} \right) = 0 ,
-& \quad &
-d \bar{z}_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = \delta_j^k
-,
-\end{array}
-\end{equation*}
 In one variable, a topological property on $U$ is enough to classify a whole
 class of domains.  It is one of the reasons why studying the disc is so
 important in one variable, and why many theorems are stated for
