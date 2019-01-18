@@ -1250,8 +1250,9 @@ and complex-differentiable in each variable separately:
 \lim_{\xi \in \C \to 0} \frac{f(z_1,\ldots,z_k+\xi,\ldots,z_n) - f(z)}{\xi}
 \qquad \text{exists for all $z \in U$ and all $k=1,2,\ldots,n$}.
 \end{equation*}
-In this book, however, the words ``differentiable'' and ``derivative'' refer
-to real differentiability.
+In this book, however, the words ``differentiable'' and ``derivative''
+(without the ``complex-'') refer
+to plain vanilla real differentiability.
 \end{defn}
 
 As in one variable, we define the \emph{\myindex{Wirtinger operators}}
@@ -1275,7 +1276,20 @@ it satisfies the
 \begin{equation*}
 \frac{\partial f}{\partial \bar{z}_j}  = 0 \qquad \text{for $j=1,2,\ldots,n$}.
 \end{equation*}
-Due to the following proposition, this alternative definition is just as good.
+As in one variable, if you defined partial derivatives
+of holomorphic functions
+as the limits of the definition above,
+then you would get the Wirtinger $\frac{\partial}{\partial z_k}$
+for holomorphic functions.  That is, if $f$ is holomorphic, then
+\begin{equation*}
+\frac{\partial f}{\partial z_k}(z)
+=
+\lim_{\xi \in \C \to 0} \frac{f(z_1,\ldots,z_k+\xi,\ldots,z_n) - f(z)}{\xi}
+.
+\end{equation*}
+
+Due to the following proposition, the alternative definition using the
+Cauchy--Riemann equations is just as good as the definition we gave.
 
 \begin{prop}
 Let $U \subset \C^n$ be an open set and
@@ -1354,7 +1368,8 @@ Above in \eqref{iteratedcauchy:eq}, we really derived the Cauchy integral formul
 write the formula more concisely we apply the Fubini's theorem to write it as
 a single integral.  We will write it down using differential forms.  If you
 are unfamiliar with differential forms, think of the integral
-as the iterated integral above.
+as the iterated integral above, and you can read the next few paragraphs
+a little lightly.
 It is enough to understand real differential forms; we simply allow
 complex coefficients.
 For a good introduction to differential forms
@@ -1362,7 +1377,7 @@ see Rudin~\cite{Rudin:principles}.
 
 Recall that a one-form $d x_j$ is a linear functional on tangent vectors
 such that when $d x_j \bigl( \frac{\partial}{\partial x_j} \bigr) = 1$ and
-$d x_j \bigl( \frac{\partial}{\partial x_k} \bigr) = 0$ if $j \not= k$.  Therefore because
+$d x_j \bigl( \frac{\partial}{\partial x_k} \bigr) = 0$ if $j \not= k$.  Because
 $z_j = x_j + i y_j$ and
 $\bar{z}_j = x_j - i y_j$,
 \glsadd{not:dz}\glsadd{not:dzbar}%
@@ -1726,9 +1741,9 @@ As in one variable, write the Cauchy kernel as
 The multivariable geometric series is a product of geometric series
 in one variable, and geometric series in one variable
 are uniformly absolutely convergent on compact subsets of the unit disc.
-Therefore the series
-above converges uniformly absolutely for $z$ in compact subsets of $\Delta$
-and $\zeta \in \Gamma$.
+So the series
+above converges uniformly absolutely for $(z,\zeta) \in K \times \Gamma$ 
+for any compact subset $K$ of $\Delta$.
 
 %We wish to apply the Cauchy formula.
 Compute
@@ -2270,6 +2285,7 @@ $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
 \end{equation}
 \end{prop}
 
+\pagebreak[2]
 \begin{proof}
 Write $f = u+iv$, $z = x+iy$, $w=s+it$.
 The composition replaces $w$ with $f$, and so it replaces $s$ with $u$, and
@@ -2703,9 +2719,10 @@ that is, $f$ is a bijection, and both $f$ and $f^{-1}$ are continuous.
 \end{exbox}
 
 
-   Let us stick with $n=2$.
+Let us stick with $n=2$.
 Instead of proving that $\bB_2$ and
-$\D^2$ are inequivalent we will prove a stronger theorem.  First a
+$\D^2$ are biholomorphically 
+inequivalent we will prove a stronger theorem.  First a
 definition.
 
 \begin{defn}
@@ -2828,7 +2845,7 @@ locally near
 $(1,0) \in \partial \bB_2$, the set
 $\Delta \cap \partial \bB_2$ is the
 curve defined by $\Im z_1=0$, $\Im z_2=0$,
-$(\Re z_1)^2+ (\Re z_2)^2 = 1$.
+${(\Re z_1)}^2+ {(\Re z_2)}^2 = 1$.
 \end{exercise}
 \end{exbox}
 
@@ -2840,34 +2857,35 @@ Let $U \subset \R^n$ and $V \subset \R^m$ be bounded domains and
 let $f \colon U \to V$ be continuous.
 Then $f$ is proper if and only if
 for every sequence $\{ p_k \}$ in $U$ such that $p_k \to p \in \partial U$,
-the set of limit points of $\{ f(p_k) \}$ lies in $\partial V$.
+the set of limit points of $\bigl\{ f(p_k) \bigr\}$ lies in $\partial V$.
 \end{lemma}
 
 \begin{proof}
 First suppose $f$ is proper.  Take a 
 sequence $\{ p_k \}$ in $U$ such that $p_k \to p \in \partial U$.
-Then take any convergent subsequence $\{ f(p_{k_j}) \}$ of $\{ f(p_k) \}$
-converging to some $q \in \overline{V}$.  Take
-$E = \{ f(p_{k_j}) \}$ as a set.  Let $\overline{E}$ be the closure of $E$
+Then take any convergent subsequence $\bigl\{ f(p_{k_j}) \bigr\}$ of
+$\bigl\{ f(p_k) \bigr\}$
+converging to some $q \in \overline{V}$.  Consider
+$E = \bigl\{ f(p_{k_j}) \bigr\}$ as a set.  Let $\overline{E}$ be the closure of $E$
 in $V$ (relative topology).  If $q \in V$, then $\overline{E} = E \cup \{ q \}$, otherwise
 $\overline{E} = E$.
 The inverse image $f^{-1}(\overline{E})$
 is not compact (it contains a sequence going to $p \in \partial U$)
 and hence $\overline{E}$ is not
 compact either as $f$ is proper.  Thus $q \notin V$, and hence $q \in
-\partial V$.  As we took an arbitrary subsequence of $\{ f(p_k) \}$, $q$ was
+\partial V$.  As we took an arbitrary subsequence of $\bigl\{ f(p_k) \bigr\}$, $q$ was
 an arbitrary limit point.  Therefore, all limit points are in $\partial V$.
 
 %We prove the converse by contrapositive.
 Let us prove the converse.
 Suppose that for every sequence
 $\{ p_k \}$ in $U$ such that $p_k \to p \in \partial U$,
-the set of limit points of $\{ f(p_k) \}$ lies in $\partial V$.
+the set of limit points of $\bigl\{ f(p_k) \bigr\}$ lies in $\partial V$.
 Take a closed set $E \subset V$ (relative topology) and look at $f^{-1}(E)$.  If $f^{-1}(E)$
 is not compact, then there exists a sequence $\{ p_k \}$ in $f^{-1}(E)$
 such that $p_k \to p \in \partial U$.  That is because $f^{-1}(E)$ is closed
 (in $U$) but not compact.  The hypothesis then says that the limit points of
-$\{ f(p_k) \}$ are in $\partial V$.  Hence $E$ has limit points in
+$\bigl\{ f(p_k) \bigr\}$ are in $\partial V$.  Hence $E$ has limit points in
 $\partial V$ and is not compact.
 \end{proof}
 
@@ -12602,7 +12620,7 @@ such that
 
 Perhaps a surprising generalization of the
 classical Weierstrass approximation theorem,
-and one of my favourite one-variable theorems,
+and one of my favorite one-variable theorems,
 is Mergelyan's theorem.
 It may be good to note that Mergelyan does not follow from Runge.
 
@@ -13256,8 +13274,8 @@ d(d\omega) = 0
 \end{equation*}
 for every $\omega$,
 which follows because partial derivatives commute.  In particular, we get a
-so-called complex.  That is
-let $\Lambda^k(M)$ denote the $k$-forms on an $n$-dimensional manifold $M$,
+so-called complex:  If
+$\Lambda^k(M)$ denotes the $k$-forms on an $n$-dimensional manifold $M$,
 then we get the complex
 \begin{equation*}
 \Lambda^0(M)
@@ -13272,17 +13290,20 @@ then we get the complex
 \overset{d}{\to}
 0 .
 \end{equation*}
-As a remark, once can study the topology of $M$
-by computing cohomology groups of $M$ from this complex, which in turn
-is really talking about global solvability of the differential
+As a remark, one can study the topology of $M$
+by computing cohomology groups,
+$\frac{\operatorname{ker}(d \colon \Lambda^k
+\to \Lambda^{k+1})}{\operatorname{im}(d \colon \Lambda^{k-1} \to \Lambda^k)}$,
+from this complex, which in turn
+is really about global solvability of the differential
 equation $d\omega = \eta$ for an unknown $\omega$.  There are variations
 on this idea and one appears in \chapterref{ch:dbar}, but we digress.
 
 \medskip
 
-Let us now state \emph{\myindex{Stokes' theorem}} or the sometimes
-called \emph{\myindex{generalized Stokes' theorem}} to distinguish it
-from the classical Stokes' theorem, which is a special case.
+Let us now state \emph{\myindex{Stokes' theorem}}, sometimes
+called the \emph{\myindex{generalized Stokes' theorem}} to distinguish it
+from the classical Stokes' theorem you know from vector calculus, which is a special case.
 
 \begin{thm}[Stokes]
 Suppose $M \subset \R^n$ is an embedded
