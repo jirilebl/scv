@@ -12,7 +12,9 @@
 * Add note on integrability in 1.1
 * Add note on partial z derivative being the limit of difference quotients
 * Add exercise 1.1.5
+* Add more on the multiindex notation as it is used to hopefully make the computations less mysterious.
 * Use the "reduce to one variable proof" as the main one for converse of the power series theorem, and add one more alternative proof with an exercise
+** Make the Cauchy estimates and computation of coefficients into a proposition, which renumbers the propositions/theorems/etc.. in 1.2
 ** Add two exercises in 1.2, which renumbers the other exercises.
 (* Add exercise 1.2.17 now 18?)
 ** Add two exercises in 1.4, which renumbers the other exercises.

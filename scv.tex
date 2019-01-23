@@ -1572,44 +1572,42 @@ We write
 \glsadd{not:absalpha}%
 \glsadd{not:alphabang}%
 \glsadd{not:alphader}%
-\begin{equation*}
-\begin{aligned}
+\begin{align*}
 z^\alpha & \overset{\text{def}}{=} z_1^{\alpha_1}z_2^{\alpha_2} \cdots
-z_n^{\alpha_n} , \\
-\frac{1}{z} & \overset{\text{def}}{=} \frac{1}{z_1z_2 \cdots z_n} , \\
-dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n , \\
-%\sabs{\alpha} & \overset{\text{def}}{=} \alpha_1 + \alpha_2 + \cdots + \alpha_n \\
-%\alpha! & \overset{\text{def}}{=} \alpha_1!\alpha_2! \cdots \alpha_n! \\
-%\frac{\partial^{\sabs{\alpha}}}{\partial z^\alpha} & \overset{\text{def}}{=}
-%\frac{\partial^{\alpha_1}}{\partial z_1^{\alpha_1}}
-%\frac{\partial^{\alpha_2}}{\partial z_2^{\alpha_2}}
-%\cdots
-%\frac{\partial^{\alpha_n}}{\partial z_n^{\alpha_n}}
-\end{aligned}
-\qquad
-\begin{aligned}
-%z^\alpha & \overset{\text{def}}{=} z_1^{\alpha_1}z_2^{\alpha_2} \cdots z_n^{\alpha_n} \\
-%\frac{1}{z} & \overset{\text{def}}{=} \frac{1}{z_1z_2 \cdots z_n} \\
-%dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n \\
-\sabs{\alpha} & \overset{\text{def}}{=} \alpha_1 + \alpha_2 + \cdots +
-\alpha_n , \\
-\alpha! & \overset{\text{def}}{=} \alpha_1!\alpha_2! \cdots \alpha_n! , \\
+z_n^{\alpha_n} ,
+&
+\frac{1}{z} & \overset{\text{def}}{=} \frac{1}{z_1z_2 \cdots z_n} ,
+&
+\frac{z}{w} & \overset{\text{def}}{=}
+\left(\frac{z_1}{w_1}, \frac{z_2}{w_2}, \ldots, \frac{z_n}{w_n} \right) ,
+\\
+\sabs{\alpha} & \overset{\text{def}}{=} \alpha_1 + \alpha_2 + \cdots + \alpha_n ,
+&
+\alpha! & \overset{\text{def}}{=} \alpha_1!\alpha_2! \cdots \alpha_n! ,
+&
+dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n ,
+\\
 \frac{\partial^{\sabs{\alpha}}}{\partial z^\alpha} & \overset{\text{def}}{=}
 \frac{\partial^{\alpha_1}}{\partial z_1^{\alpha_1}}
 \frac{\partial^{\alpha_2}}{\partial z_2^{\alpha_2}}
 \cdots
-\frac{\partial^{\alpha_n}}{\partial z_n^{\alpha_n}}
-.
-\end{aligned}
-\end{equation*}
+\frac{\partial^{\alpha_n}}{\partial z_n^{\alpha_n}} .
+\end{align*}
 We can also make sense of this notation, especially the notation $z^\alpha$,
 if $\alpha \in \Z^n$, that is, if it includes negative integers,
 although usually $\alpha$ is assumed to be in $\N_0^n$.
 Furthermore, when we use $1$ as a vector it means $(1,1,\ldots,1)$.
 For example, if $z \in \C^n$ then,
 \begin{equation*}
-1-z = (1-z_1,1-z_2,\ldots,1-z_n) .
+1-z = (1-z_1,1-z_2,\ldots,1-z_n) ,
+\qquad \text{or} \qquad
+z^{\alpha+1} = z_1^{\alpha_1+1}z_2^{\alpha_2+1} \cdots z_n^{\alpha_n+1} .
 \end{equation*}
+It goes without saying that when using this notation it is
+important to be careful to always realize which symbol lives where.  For
+example one could interpret $\frac{1}{z}$ in two different ways depending
+on if we interpret $1$ as a vector or not, and if we are
+expecting a vector or a number.
 
 In this notation, the Cauchy formula becomes the perhaps deceptively simple
 \begin{equation*}
@@ -1620,8 +1618,6 @@ f(z) =
 \,
 d \zeta .
 \end{equation*}
-It goes without saying that when using this notation it is
-important to be careful to always realize which symbol lives where.
 
 Let us move to power series.  For simplicity we start with
 power series at the origin.  Using the multinomial notation we write
@@ -1711,8 +1707,10 @@ a power series expansion.
 
 \begin{thm}
 Let $\Delta = \Delta_\rho(a) \subset \C^n$ be a polydisc.
-Suppose $f \colon \overline{\Delta} \to \C$ is continuous and
-holomorphic on $\Delta$.  Then on $\Delta$, $f$ is equal to a power series 
+Suppose
+$f \colon \overline{\Delta} \to \C$ is a continuous function
+holomorphic in $\Delta$.
+Then on $\Delta$, $f$ is equal to a power series 
 converging uniformly absolutely on compact subsets of $\Delta$:
 \begin{equation} \label{holfunc:ps}
 f(z) = \sum_{\alpha} c_\alpha {(z-a)}^\alpha .
@@ -1738,6 +1736,16 @@ As in one variable, write the Cauchy kernel as
 \sum_{\alpha}
 {\left(\frac{z-a}{\zeta-a}\right)}^\alpha .
 \end{equation*}
+Here, make sure you interpret the formulas as
+$\frac{1}{\zeta-z} = \frac{1}{(\zeta_1-z_1) \cdots (\zeta_n-z_n)}$,
+$\frac{1}{\zeta-a} = \frac{1}{(\zeta_1-a_1) \cdots (\zeta_n-a_n)}$
+and
+$\frac{z-a}{\zeta-a} =
+\left(
+\frac{z_1-a_1}{\zeta_1-a_1}, \ldots,
+\frac{z_n-a_n}{\zeta_n-a_n}
+\right)$.
+
 The multivariable geometric series is a product of geometric series
 in one variable, and geometric series in one variable
 are uniformly absolutely convergent on compact subsets of the unit disc.
@@ -1745,7 +1753,6 @@ So the series
 above converges uniformly absolutely for $(z,\zeta) \in K \times \Gamma$ 
 for any compact subset $K$ of $\Delta$.
 
-%We wish to apply the Cauchy formula.
 Compute
 \begin{equation*}
 \begin{split}
@@ -1755,13 +1762,14 @@ f(z)
 \int_{\Gamma}
 \frac{f(\zeta)}{\zeta-z}
 d \zeta 
-\\
-& =
-\frac{1}{{(2\pi i)}^n}
-\int_{\Gamma}
-\frac{f(\zeta)}{\zeta-a}
-\frac{\zeta-a}{\zeta-z}
-d \zeta 
+%\\
+% (this step doesn't work without extra notation in several variables.)
+%& =
+%\frac{1}{{(2\pi i)}^n}
+%\int_{\Gamma}
+%\frac{f(\zeta)}{\zeta-a}
+%\frac{\zeta-a}{\zeta-z}
+%d \zeta 
 \\
 & =
 \frac{1}{{(2\pi i)}^n}
@@ -1835,14 +1843,15 @@ Notice how strikingly similar the computation is to one variable.
 %therefore we can take a limit as $k \to \infty$.  Same computation also
 %works ... this is too complicated ...
 
-The converse statement follows by first noting that the limit
-must be continuous as it is a uniform-on-compact-sets limit of continuous
+To prove the converse statement,
+we note that the limit
+is continuous as it is a uniform-on-compact-sets limit of continuous
 functions, and hence it is locally bounded in $\Delta$.  Second
-by restricting to each variable in turn, that is,
+we restrict to each variable in turn, that is,
 \begin{equation*}
 z_j \mapsto \sum_{\alpha} c_\alpha {(z-a)}^\alpha ,
 \end{equation*}
-and noting that this function is holomorphic by using the corresponding one-variable argument.
+and this function is holomorphic via the corresponding one-variable argument.
 \end{proof}
 
 The converse statement also follows by applying the Cauchy--Riemann equations to the series
@@ -1886,6 +1895,42 @@ for $z \in \overline{\Delta''}$.
 \end{exercise}
 \end{exbox}
 
+Next we organize some immediate consequences of the theorem
+and the calculation in the proof.
+
+\pagebreak[2]
+\begin{prop}
+Let $\Delta = \Delta_\rho(a) \subset \C^n$ be a polydisc,
+and $\Gamma$ its distinguished boundary.
+Suppose
+$f \colon \overline{\Delta} \to \C$ is a continuous function
+holomorphic in $\Delta$.
+Then, for $z \in \Delta$,
+\begin{equation*}
+\frac{\partial^{\sabs{\alpha}}f}{\partial z^\alpha} (z) =
+\frac{1}{{(2\pi i)}^n}
+\int_{\Gamma}
+\frac{\alpha! f(\zeta)}{{(\zeta-z)}^{\alpha+1}}
+\,
+d \zeta .
+\end{equation*}
+In particular if $f$ is given by \eqref{holfunc:ps}, 
+\begin{equation*}
+c_\alpha = \frac{1}{\alpha!} \frac{\partial^{\sabs{\alpha}}f}{\partial
+z^\alpha} (a),
+\end{equation*}
+\nopagebreak
+and we have the \emph{\myindex{Cauchy estimates}}:
+\begin{equation*}
+\abs{c_\alpha} = \frac{\snorm{f}_\Gamma}{\rho^\alpha} .
+\end{equation*}
+\end{prop}
+
+In particular the coefficients of the power series only depend on
+derivatives of $f$ at $a$ (and so the values of $f$ in an arbitrarily small
+neighborhood of $a$) and not the specific polydisc used in the theorem.
+
+\begin{proof}
 Using the Leibniz rule (taking derivatives under the integral),
 as long as $z \in \Delta$ and not on the boundary,
 we can differentiate under the integral.  We are talking regular real
@@ -1965,7 +2010,7 @@ Therefore
 \alpha! \, c_\alpha = 
 \frac{\partial^{\sabs{\alpha}} f}{\partial z^\alpha} (a) .
 \end{equation*}
-As before, we obtain the \emph{\myindex{Cauchy estimates}}:
+And we obtain the Cauchy estimates as before:
 \begin{equation*}
 \abs{\frac{\partial^{\sabs{\alpha}}f}{\partial z^\alpha}(a)}
 =
@@ -1983,13 +2028,14 @@ d \zeta }
 \sabs{d \zeta}
 \leq
 \frac{\alpha!}{\rho^\alpha}
-\snorm{f}_\Gamma .
+\snorm{f}_\Gamma . \qedhere
 \end{equation*}
-Or
-\begin{equation*}
-\sabs{c_\alpha} \leq 
-\frac{\snorm{f}_\Gamma}{\rho^\alpha} .
-\end{equation*}
+%Or
+%\begin{equation*}
+%\sabs{c_\alpha} \leq 
+%\frac{\snorm{f}_\Gamma}{\rho^\alpha} .
+%\end{equation*}
+\end{proof}
 
 As in one-variable theory, the Cauchy estimates prove the following
 proposition.
@@ -2185,8 +2231,9 @@ for all $z \in \D^n$,
 $\sabs{f(z)} \leq M$ for some $M$.  Show that
 \begin{equation*}
 \sabs{f(z)} \leq M \snorm{z}^k
+\qquad
+\text{for all $z \in \overline{\D^n}$}.
 \end{equation*}
-for all $z \in \overline{\D^n}$.
 \end{exercise}
 
 \begin{exercise}
@@ -2230,9 +2277,9 @@ Hint: Feel free to use the \hyperref[thm:onevarhurwitz]{one-variable result}.
 \end{exercise}
 \end{exbox}
 
-Let us define some notation for the set of holomorphic functions.
+Let us define notation for the set of holomorphic functions.
 At the same time, we notice that the set of holomorphic functions is
-naturally a commutative ring under pointwise addition and multiplication.
+a commutative ring under pointwise addition and multiplication.
 
 \begin{defn}
 Let $U \subset \C^n$ be an open set.
@@ -2721,7 +2768,7 @@ where $\overline{A}$ is the complex conjugate of $A$.  Thus
 =
 \det(A) \det(\overline{A})
 =
-\det(A) \overline{\det(A)}
+\det(A) \, \overline{\det(A)}
 =
 \abs{\det(A)}^2 . \qedhere
 \end{equation*}
@@ -2745,10 +2792,6 @@ The mapping $f$ is said to be a
 \emph{biholomorphic map}\index{map!biholomorphic} or a 
 \emph{\myindex{biholomorphism}}.
 \end{defn}
-
-% FIXME: no we won't
-%We will see later that the inverse being holomorphic is automatic as it is
-%in one variable, but we digress.
 
 As function theory on two biholomorphic domains is the same,
 one of the main questions in complex analysis is to classify domains up
