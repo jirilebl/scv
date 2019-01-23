@@ -12,7 +12,9 @@
 * Add note on integrability in 1.1
 * Add note on partial z derivative being the limit of difference quotients
 * Add exercise 1.1.5
-* Add exercise 1.2.17
+* Use the "reduce to one variable proof" as the main one for converse of the power series theorem, and add one more alternative proof with an exercise
+** Add two exercises in 1.2, which renumbers the other exercises.
+(* Add exercise 1.2.17 now 18?)
 ** Add two exercises in 1.4, which renumbers the other exercises.
 * Add definition of Levi-flat to end of 2.3 and add exercises 2.3.13-2.3.17
 ** Move the solution of Dirichlet problem up in 2.4 so that it can be used.  This renumbers the exercises in 2.4

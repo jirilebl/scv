@@ -1623,11 +1623,19 @@ d \zeta .
 It goes without saying that when using this notation it is
 important to be careful to always realize which symbol lives where.
 
-Let us move to power series.  For simplicity let us first start with
+Let us move to power series.  For simplicity we start with
 power series at the origin.  Using the multinomial notation we write
 such a series as
 \begin{equation*}
 \sum_{\alpha \in \N_0^n} c_\alpha {z}^\alpha .
+\end{equation*}
+You have to admit that the
+above is far nicer to write than, for example, for 3 variables writing
+\begin{equation*}
+\sum_{j=0}^\infty
+\sum_{k=0}^\infty
+\sum_{\ell=0}^\infty
+c_{jk\ell} z_1^jz_2^kz_3^\ell .
 \end{equation*}
 When it is clear
 from context that we are talking about a power series
@@ -1654,14 +1662,6 @@ for $z \in X$ when $\sum_\alpha \sabs{c_\alpha z^\alpha}$
 converges uniformly for $z \in X$.
 
 
-You have to admit that the
-above is far nicer to write than, for example, for 3 variables writing
-\begin{equation*}
-\sum_{j=0}^\infty
-\sum_{k=0}^\infty
-\sum_{\ell=0}^\infty
-c_{jk\ell} z_1^jz_2^kz_3^\ell .
-\end{equation*}
 
 We first need the \emph{\myindex{geometric series in several variables}}.
 If 
@@ -1811,15 +1811,47 @@ d \zeta .
 \end{equation*}
 Notice how strikingly similar the computation is to one variable.
 
-The converse statement follows by applying the Cauchy--Riemann equations to the series
-term-wise.  To do this you have to show that the term-by-term derivative
-series also converges uniformly absolutely on compact subsets.  It is left as an
-exercise.  Then you apply the well-known theorem from real analysis.
-The proof of this fact is very similar to one-variable series that you know.
+%To prove the converse statement,
+%let $\Delta'' \subset \Delta' \subset \Delta$
+%be two polydiscs with the same center $a$
+%such that $\overline{\Delta''} \subset \Delta'$
+%and $\overline{\Delta'} \subset \Delta$.
+%Let $\Gamma'$ be the distinguished boundary of $\Delta'$.
+%The partial sums are holomorphic so
+%write the partial sums as
+%\begin{equation*}
+%\sum_{\abs{\alpha} \leq k}
+%c_\alpha {(z-a)}^\alpha
+%=
+%\frac{1}{{(2\pi i)}^n}
+%\int_{\Gamma'}
+%\frac{1}{{(\zeta-z)}^{\alpha+1}}
+%\sum_{\abs{\alpha} \leq k}
+%c_\alpha {(\zeta-a)}^\alpha
+%\,
+%d \zeta .
+%\end{equation*}
+%The convergence of the series is uniform on $\overline{\Gamma'}$, and
+%therefore we can take a limit as $k \to \infty$.  Same computation also
+%works ... this is too complicated ...
 
-The conclusion also follows by restricting to one variable for each variable
-in turn, and then using the corresponding one-variable result.
+The converse statement follows by first noting that the limit
+must be continuous as it is a uniform-on-compact-sets limit of continuous
+functions, and hence it is locally bounded in $\Delta$.  Second
+by restricting to each variable in turn, that is,
+\begin{equation*}
+z_j \mapsto \sum_{\alpha} c_\alpha {(z-a)}^\alpha ,
+\end{equation*}
+and noting that this function is holomorphic by using the corresponding one-variable argument.
 \end{proof}
+
+The converse statement also follows by applying the Cauchy--Riemann equations to the series
+term-wise.  First one must show that the term-by-term derivative
+series also converges uniformly absolutely on compact subsets.  It is left as an
+exercise.  Then you apply the theorem from real analysis about derivatives
+of limits: if a sequence of functions and its derivatives converges
+uniformly, then the derivatives converge to the derivative of the limit.
+%The proof is similar as the one for one-variable series.
 
 \begin{exbox}
 \begin{exercise}
@@ -1830,9 +1862,42 @@ Do the proof without using the analogous result for single variable series.
 \end{exercise}
 \end{exbox}
 
+A third way to prove the converse statement of the theorem
+is to note that partial sums are
+holomorphic and write them using the Cauchy formula.  Uniform
+convergence shows that the limit also satisfies the Cauchy formula, and
+differentiating under the integral obtains the result.
+
+\begin{exbox}
+\begin{exercise}
+Follow the logic above to prove the converse of the
+theorem.
+Do the proof without using the analogous result for single variable series.
+Hint:
+Let
+$\Delta'' \subset \Delta' \subset \Delta$
+be two polydiscs with the same center $a$
+such that $\overline{\Delta''} \subset \Delta'$
+and $\overline{\Delta'} \subset \Delta$.
+Apply Cauchy formula on $\Delta'$
+for $z \in \overline{\Delta''}$.
+%pass limit into the integral, then
+%show the result is holomorphic by differentiating under the integral.
+\end{exercise}
+\end{exbox}
+
 Using the Leibniz rule (taking derivatives under the integral),
 as long as $z \in \Delta$ and not on the boundary,
-we can differentiate under the integral.  Let us do a single derivative to
+we can differentiate under the integral.  We are talking regular real
+partial differentiation, and we use it to apply the Wirtinger operator.
+The point is that
+\begin{equation*}
+\frac{\partial}{\partial z_j} \left[
+\frac{1}{{(\zeta_j-z_j)}^k} \right]
+=
+\frac{k}{{(\zeta_j-z_j)}^{k+1}} .
+\end{equation*}
+Let us do a single derivative to
 get the idea:
 \begin{equation*}
 \begin{split}
@@ -2044,7 +2109,7 @@ Then $f \equiv 0$.
 
 \begin{proof}
 Let $Z$ be the set where all derivatives of $f$ are zero; then
-$N \subset Z$.  The set $Z$ is closed in $U$
+$N \subset Z$, so $Z$ is nonempty.  The set $Z$ is closed in $U$
 as all derivatives are continuous.
 Take an arbitrary $a \in Z$.
 Expand $f$
@@ -2052,7 +2117,8 @@ in a power series around $a$ converging to $f$ in a polydisc
 $\Delta_\rho(a) \subset U$. 
 As the coefficients are given by derivatives 
 of $f$, the power series is the zero series.  Hence, $f$ is
-identically zero in $\Delta_\rho(a)$.  Therefore $Z$ is open in $U$ and
+identically zero in $\Delta_\rho(a)$.  Therefore $Z$ is open. 
+As $Z$ is also closed and nonempty, and $U$ is connected, we have
 $Z = U$.
 \end{proof}
 
@@ -4400,7 +4466,7 @@ is a vector space isomorphism.  Similarly for $T_p^{(0,1)} \C^n$.
 \begin{exbox}
 \begin{exercise}
 Prove the proposition.
-Hint: First start with $D_\R f(p)$ as a real $2m \times 2n$ matrix to show it
+Hint: Start with $D_\R f(p)$ as a real $2m \times 2n$ matrix to show it
 extends (it is the same matrix if you think of it as a matrix).  Think of $\C^n$ and $\C^m$ in terms of the $z$s and the
 $\bar{z}$s and think of $f$ as a mapping
 \begin{equation*}
