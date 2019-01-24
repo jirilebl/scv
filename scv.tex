@@ -15,7 +15,7 @@
 \usepackage[perpage,symbol*]{footmisc}
 
 
-\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
 \usepackage{ifpdf}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -271,6 +271,17 @@
     \MakeFramed {\advance \hsize -\width \FrameRestore }%
 }{%
     \endMakeFramed
+}
+
+\newenvironment{exparts}{%
+    \leavevmode\begin{enumerate}[a),noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+}{%
+    \end{enumerate}
+}
+\newenvironment{exnumparts}{%
+    \leavevmode\begin{enumerate}[1),noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+}{%
+    \end{enumerate}
 }
 
 \theoremstyle{exercise}
@@ -2245,17 +2256,23 @@ Prove $f$ is constant.
 \begin{exercise}
 Improve Liouville's theorem slightly in $\C^2$.
 A complex line though the origin is
-the image of a linear map $L \colon \C \to \C^n$.  a)~Prove that 
+the image of a linear map $L \colon \C \to \C^n$.
+\begin{exparts}
+\item
+Prove that 
 for any collection of finitely many complex lines through the origin,
 there exists an entire nonconstant holomorphic function ($n \geq 2$)
 bounded (hence constant) on these complex lines.
-b)~Prove that if an entire holomorphic function in $\C^2$ is bounded on
+\item
+Prove that if an entire holomorphic function in $\C^2$ is bounded on
 countably many distinct
 complex lines through the origin then it is constant.
-c)~Find a nonconstant entire holomorphic function in $\C^3$ that is
+\item
+Find a nonconstant entire holomorphic function in $\C^3$ that is
 bounded on
 countably many distinct
 complex lines through the origin.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -2941,20 +2958,25 @@ the polydisc and the sphere.
 
 \begin{exbox}
 \begin{exercise}
-Modify the proof to show some stronger results.\\
-a) Let $\Delta$ be an analytic disc
+Modify the proof to show some stronger results.
+\begin{exparts}
+\item
+Let $\Delta$ be an analytic disc
 and $\Delta \cap \partial \bB_n \not= \emptyset$.
 Prove $\Delta$ contains points not in
-$\overline{\bB_n}$.\\
-b) Let $\Delta$ be an analytic disc.
-Prove that $\Delta \cap \partial \bB_n$ is nowhere dense in $\Delta$.\\
-c) Find an analytic disc, such that $(1,0) \in \Delta$, $\Delta \cap \bB_n =
+$\overline{\bB_n}$.
+\item
+Let $\Delta$ be an analytic disc.
+Prove that $\Delta \cap \partial \bB_n$ is nowhere dense in $\Delta$.
+\item
+Find an analytic disc, such that $(1,0) \in \Delta$, $\Delta \cap \bB_n =
 \emptyset$, and 
 locally near
 $(1,0) \in \partial \bB_2$, the set
 $\Delta \cap \partial \bB_2$ is the
 curve defined by $\Im z_1=0$, $\Im z_2=0$,
 ${(\Re z_1)}^2+ {(\Re z_2)}^2 = 1$.
+\end{exparts}
 \end{exercise}
 \end{exbox}
 
@@ -3308,7 +3330,8 @@ happens to those points you took out.
 Let us extend a very useful theorem from one dimension to several
 dimensions.  In one dimension if a function is holomorphic in $U
 \setminus \{ p \}$ and locally bounded in $U$, in particular bounded near
-$p$, then the function extends holomorphically to $U$.  In several
+$p$, then the function extends holomorphically to $U$ (see
+\propref{prop:onevarclassifysing} \ref{prop:onevarclassifysing:i}).  In several
 variables the same theorem holds, and the analogue of a single point
 is the zero set of a holomorphic function.
 
@@ -3339,7 +3362,7 @@ as an isolated point.
 
 Write $z' =
 (z_1,\ldots,z_{n-1})$ and $z=(z',z_n)$.
-Without loss of generality suppose $p = 0$, and $L$ is the line
+Without loss of generality $p = 0$, and $L$ is the line
 obtained by setting $z' = 0$.
 There is some small
 $r > 0$ such that $g$ is nonzero on the set
@@ -3689,7 +3712,9 @@ Show that a polydisc in $\C^n$ is a domain of holomorphy.
 \end{exercise}
 
 \begin{exercise}
-a) Given $p \in \partial \bB_n$, find a function $f$ holomorphic on
+\begin{exparts}
+\item
+Given $p \in \partial \bB_n$, find a function $f$ holomorphic on
 $\bB_n$,
 $C^\infty$-smooth on $\overline{\bB_n}$ (all real partial derivatives of
 all orders extend
@@ -3697,10 +3722,12 @@ continuously to $\overline{\bB_n}$), that does not extend past $p$
 as a holomorphic function.
 Hint: For the principal branch of $\sqrt{\cdot}$ the function $\xi \mapsto
 e^{-1/\sqrt{\xi}}$ is holomorphic for $\Re \xi > 0$ and extends to
-be continuous (even smooth) on all of $\Re \xi \geq 0$.\\
-b) Find a function $f$ holomorphic on $\bB_n$
+be continuous (even smooth) on all of $\Re \xi \geq 0$.
+\item
+Find a function $f$ holomorphic on $\bB_n$
 that does not extend past any point of
 $\partial \bB_n$.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -3921,11 +3948,17 @@ Suppose $U \subset \C^n$ is an open set such that for every
 $z \in \C^n \setminus \{ 0 \}$, there is a $\lambda \in \C$ such that
 $\lambda z \in U$.  Let $f \colon U \to \C$ be holomorphic with
 $f(\lambda z) = f(z)$ whenever $z \in U$, $\lambda \in \C$ and $\lambda z
-\in U$.  a) (easy) Prove that $f$ is constant.  b) (hard) Relax the requirement on
+\in U$.
+\begin{exparts}
+\item
+(easy) Prove that $f$ is constant.
+\item
+(hard) Relax the requirement on
 $f$ to being meromorphic, that is $f = \nicefrac{g}{h}$
 for holomorphic $g$ and $h$,
 find a nonconstant example and prove that such an $f$ must be rational (that
 is $g$ and $h$ must be polynomials).
+\end{exparts}
 \end{exercise}
 \end{exbox}
 
@@ -5730,25 +5763,35 @@ is harmonic in $\D$ and continuous on $\overline{D}$.
 
 \begin{exbox}
 \begin{exercise}
-a)~Prove $P_r(\theta) > 0$ for all $0 \leq r < 1$ and all $\theta$.\\
-b)~Prove $\int_{-\pi}^{\pi} P_r(\theta) \, d\theta = 1$.\\
-c)~Prove for any given $\delta > 0$,
+\begin{exparts}
+\item
+Prove $P_r(\theta) > 0$ for all $0 \leq r < 1$ and all $\theta$.
+\item
+Prove $\int_{-\pi}^{\pi} P_r(\theta) \, d\theta = 1$.
+\item
+Prove for any given $\delta > 0$,
 $\sup \{P_r(\theta) : \delta \leq \abs{\theta} \leq \pi \} \to 0$ as
 $r \to 1$.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
-Prove \thmref{thm:dirichsol} using the following guideline:\\
-a)~Poisson kernel is harmonic
+Prove \thmref{thm:dirichsol} using the following guideline:
+\begin{exparts}
+\item
+Poisson kernel is harmonic
 as a function of $z=re^{i\theta} \in \D$, and hence
-$Pu$ is harmonic.\\
-b)~$P_r$ acts like an
+$Pu$ is harmonic.
+\item
+$P_r$ acts like an
 approximate identity: prove that
 $Pu(re^{i\theta}) \to u(e^{i\theta})$ uniformly as
 $r \to 1$ (Hint: split the integral to $[-\delta,\delta]$ and the rest
-and use the previous exercise).\\
-c)~Prove that $Pu(z)$ tends to $u(z_0)$ as
+and use the previous exercise).
+\item
+Prove that $Pu(z)$ tends to $u(z_0)$ as
 $z \in \D \to z_0 \in \partial \D$.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -6052,10 +6095,12 @@ implies $g$ is subharmonic, and we are done.
 \begin{exbox}
 \begin{exercise} \label{exercise:modholplush}
 Suppose $f \colon U \subset \C^n \to \C$ is holomorphic.
-\\
-a) Show that $\log \sabs{f(z)}$ is plurisubharmonic.  In fact, it is pluriharmonic away from the zeros of $f$.
-\\
-b) Show that $\sabs{f(z)}^{\eta}$ is plurisubharmonic for all $\eta > 0$.
+\begin{exparts}
+\item
+Show $\log \sabs{f(z)}$ is plurisubharmonic.  In fact, it is pluriharmonic away from the zeros of $f$.
+\item
+Show $\sabs{f(z)}^{\eta}$ is plurisubharmonic for all $\eta > 0$.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -6250,17 +6295,23 @@ f_\epsilon(0) - f(0)
 Again we used that $g_\epsilon$ is nonnegative.
 \end{proof}
 
+\pagebreak[2]
 \begin{exbox}
 \begin{exercise}
 Show that $g$ in the proof above is smooth on all of $\C^n$.
 \end{exercise}
 
 \begin{exercise}
-a) Show that for a subharmonic function $\int_0^{2\pi} f(a+re^{i\theta}) \,
+\begin{exparts}
+\item
+Show that for a subharmonic function $\int_0^{2\pi} f(a+re^{i\theta}) \,
 d\theta$ is a monotone function of $r$ (Hint: try a $C^2$ function first and
-use Green's theorem).  b) Use this
+use Green's theorem).
+\item
+Use this
 fact to show that $f_\epsilon(z)$ from \thmref{thm:subharlim} are monotone
 decreasing in $\epsilon$.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -6526,26 +6577,26 @@ $U$ is convex with respect to plurisubharmonic functions defined on $U$.
 \end{samepage}
 
 \begin{proof}
-\eqref{thm:pscvx:itemi}
+\ref{thm:pscvx:itemi}
 $\Rightarrow$
-\eqref{thm:pscvx:itemii}:
+\ref{thm:pscvx:itemii}:
 If $U$ is bounded,
 the function $-\log \rho(z)$ is clearly a continuous exhaustion function.
 If $U$ is unbounded, take 
 $z \mapsto \max \{ -\log \rho(z) , \snorm{z}^2 \}$.
 
-\eqref{thm:pscvx:itemii}
+\ref{thm:pscvx:itemii}
 $\Rightarrow$
-\eqref{thm:pscvx:itemiii}:
+\ref{thm:pscvx:itemiii}:
 Suppose $f$ is a continuous plurisubharmonic exhaustion function.
 If $K \subset \subset U$, then for some $r$ we have
 $K \subset \{ z \in U : f(z) < r \} \subset \subset U$.
 But then by definition of the hull $\widehat{K}$ we have
 $\widehat{K} \subset \{ z \in U : f(z) < r \} \subset \subset U$.
 
-\eqref{thm:pscvx:itemiii}
+\ref{thm:pscvx:itemiii}
 $\Rightarrow$
-\eqref{thm:pscvx:itemi}:
+\ref{thm:pscvx:itemi}:
 For $c \in \C^n$ with $\snorm{c}=1$, let us define
 \begin{equation*}
 \rho_c(z) =
@@ -7065,10 +7116,12 @@ $K \subset \subset \C^n$ is the same as the holomorphic hull $\widehat{K}_{\C^n}
 \end{exercise}
 
 \begin{exercise}
-a)~Prove the Hartogs triangle $T$ (see \exerciseref{exercise:hartogstriangle})
-is holomorphically convex.\\
-b)~Prove $T \cup B_{\epsilon}(0)$ (for a small enough $\epsilon > 0$) is
+\begin{exparts}
+\item Prove the Hartogs triangle $T$ (see \exerciseref{exercise:hartogstriangle})
+is holomorphically convex.
+\item Prove $T \cup B_{\epsilon}(0)$ (for a small enough $\epsilon > 0$) is
 not holomorphically convex.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -7088,6 +7141,7 @@ Using an above exercise we see that $\C^n$ is both holomorphically convex and
 a domain of holomorphy.  In fact, these two notions are equivalent for all
 other domains in $\C^n$.
 
+\pagebreak[3]
 \begin{thm}[Cartan--Thullen\index{Cartan--Thullen theorem}]
 \label{thm:cartthul}
 Let $U \subsetneq \C^n$ be a domain.  The following are equivalent:
@@ -7101,6 +7155,7 @@ $\operatorname{dist}(K,\partial U) = \operatorname{dist}(\widehat{K}_U,\partial 
 $U$ is holomorphically convex.
 \end{enumerate}
 \end{thm}
+\pagebreak[3]
 
 \begin{proof}
 Let us start with \eqref{thm:cartthul:domhol} $\Rightarrow$
@@ -7135,12 +7190,12 @@ converges in $\Delta_r(p)$.  Hence $f$ extends to all of $\Delta_r(p)$ and
 $\Delta_r(p)$ contains points outside of $U$, in other words,
 $U$ is not a domain of holomorphy.
 
-The implication \eqref{thm:cartthul:disthull} $\Rightarrow$
-\eqref{thm:cartthul:holconv} is easy.
+The implication \ref{thm:cartthul:disthull} $\Rightarrow$
+\ref{thm:cartthul:holconv} is easy.
 
 Finally let us prove
-\eqref{thm:cartthul:holconv} $\Rightarrow$
-\eqref{thm:cartthul:domhol}.
+\ref{thm:cartthul:holconv} $\Rightarrow$
+\ref{thm:cartthul:domhol}.
 Suppose $U$ is holomorphically convex.  Let $p \in \partial U$.
 By convexity we choose nested compact sets $K_{j-1} \subsetneq K_j \subset
 \subset U$ such that $\bigcup_j K_j = U$, and $\widehat{(K_j)}_U = K_j$.
@@ -7859,16 +7914,21 @@ identity it holds everywhere.
 \begin{exbox}
 \begin{exercise}
 Find a domain $U \subset \C^n$, $n \geq 2$, with smooth boundary and a smooth
-CR function $f$ on $\partial U$ such that there is no holomorphic function
+CR function $f \colon \partial U \to \C$ such that there is no holomorphic function
 on $U$ or $\C^n \setminus U$ whose boundary values are $f$.
 \end{exercise}
 
 \begin{exercise}
-a) Suppose $U \subset \C^n$ is a bounded domain with smooth boundary.  Suppose
+\begin{exparts}
+\item
+Suppose $U \subset \C^n$ is a bounded domain with smooth boundary,
 $f \colon \overline{U} \to \C$ is a continuous function holomorphic in
-$U$.  Suppose $f|_{\partial U}$ is real-valued.  Show that $f$ is
-constant. b) Find a counterexample to the statement if you allow $U$
+$U$, and $f|_{\partial U}$ is real-valued.  Show that $f$ is
+constant.
+\item
+Find a counterexample to the statement if you allow $U$
 to be unbounded.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -8774,10 +8834,15 @@ a neighborhood of $p$.
 
 \begin{exercise}
 Let $M \subset \C^3$ be defined by $\Im w = \sabs{z_1}^2-\sabs{z_2}^2$.
-a) Show that an arbitrary compact subset $K \subset \subset M$ will work
-for the conclusion Baouendi--Tr{\`e}ves.  b) Use this to show that every
+\begin{exparts}
+\item
+Show that an arbitrary compact subset $K \subset \subset M$ will work
+for the conclusion Baouendi--Tr{\`e}ves.
+\item
+Use this to show that every
 smooth CR function $f \colon M \to \C$ is a restriction of an entire holomorphic function
 $F \colon \C^3 \to \C$.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -8918,18 +8983,22 @@ The theorem follows.
 
 \begin{exbox}
 \begin{exercise}
-a)~Let $U \subset \C$ be a bounded domain with piecewise $C^1$-smooth boundary and
+\begin{exparts}
+\item
+Let $U \subset \C$ be a bounded domain with piecewise $C^1$-smooth boundary and
 suppose $f \colon \overline{U} \to \C$ is a $C^1$-smooth function such
 that 
 $\int_{U} \frac{\frac{\partial f}{\partial \bar{z}}(\zeta)}{\zeta-z} \,
 dA(\zeta) =
-0$ for every $z \in \partial U$, then $f|_{\partial U}$ are the boundary
+0$ for every $z \in \partial U$.  Prove that $f|_{\partial U}$ are the boundary
 values of a holomorphic function.
-b)~Given arbitrary $\epsilon > 0$, find a $C^1$ function $f$ on the closed unit disc
+\item
+Given arbitrary $\epsilon > 0$, find a $C^1$ function $f$ on the closed unit disc
 $\overline{\D}$,
 such that $\frac{\partial f}{\partial \bar{z}}$ is identically zero
 outside an $\epsilon$-neighborhood of the origin, yet $f|_{\partial \D}$
 are not the boundary values of a holomorphic function.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -9159,13 +9228,17 @@ $\psi$ will not have compact support.
 
 \begin{exbox}
 \begin{exercise} \label{exercise:supportofpsi}
-a) Show that if $g$ is supported in $K \subset \subset \C^n$, $n \geq 2$,
+\begin{exparts}
+\item
+Show that if $g$ is supported in $K \subset \subset \C^n$, $n \geq 2$,
 then $\psi$ is supported in the complement of the unbounded component
 of $\C^n \setminus K$.  In particular, show that if $K$ is the support of
 $g$ and $\C^n \setminus K$ is connected, then the support of
 $\psi$ is $K$.
-b) Find an explicit example where the support of $\psi$ is strictly larger
+\item
+Find an explicit example where the support of $\psi$ is strictly larger
 than the support of $g$.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -9716,13 +9789,17 @@ f(\zeta) \omega(\zeta,z)
 
 \begin{exercise}
 Suppose $f$ is holomorphic on a neighborhood of
-$\overline{B_r(z)}$.\\
-a) Using the Bochner--Martinelli formula, prove that
+$\overline{B_r(z)}$.
+\begin{exparts}
+\item
+Using the Bochner--Martinelli formula, prove that
 \begin{equation*}
 f(z) = \frac{1}{V\bigl(B_r(z)\bigr)} \int_{B_r(z)} f(\zeta) \, dV(\zeta) ,
 \end{equation*}
-where $V\bigl(B_r(z)\bigr)$ is the volume of $B_r(z)$.\\
-b) Use part a) to prove the maximum principle for holomorphic functions.
+where $V\bigl(B_r(z)\bigr)$ is the volume of $B_r(z)$.
+\item
+Use part a) to prove the maximum principle for holomorphic functions.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -9839,11 +9916,16 @@ infinite-dimensional.
 \end{exercise}
 
 \begin{exercise}
-a) Show that $A^2(\C^n)$ is trivial. \\
-b) Show that $A^2(\D \times \C)$ is trivial. \\
-c) Find an example of an unbounded domain $U$ for which $A^2(U)$ is
+\begin{exparts}
+\item
+Show that $A^2(\C^n)$ is trivial.
+\item
+Show that $A^2(\D \times \C)$ is trivial.
+\item
+Find an example of an unbounded domain $U$ for which $A^2(U)$ is
 infinite-dimensional.
 Hint: Think in one dimension for simplicity.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -10065,22 +10147,29 @@ And so the convergence is uniform on $K \times K^*$.
 
 \begin{exbox}
 \begin{exercise}
-a) Show that if $U \subset \C^n$ is bounded then for all $z \in U$
-we find $K_U(z,\bar{z}) > 0$. b)~Why can this fail if $U$ is unbounded?
+\begin{exparts}
+\item
+Show that if $U \subset \C^n$ is bounded then for all $z \in U$
+we find $K_U(z,\bar{z}) > 0$.
+\item
+Why can this fail if $U$ is unbounded?
 Find a (trivial) counterexample.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
 Show that given a domain $U \subset \C^n$, the Bergman kernel is the unique
 function $K_U(z,\bar{\zeta})$ such that
-\\
-1)~for a fixed $\zeta$, $K_U(z,\bar{\zeta})$ is in $A^2(U)$,
-\\
-2)~$\overline{K_U(z,\bar{\zeta})} =
+\begin{exnumparts}
+\item
+for a fixed $\zeta$, $K_U(z,\bar{\zeta})$ is in $A^2(U)$,
+\item
+$\overline{K_U(z,\bar{\zeta})} =
 K_U(\zeta,\bar{z})$,
-\\
-3)~the reproducing property \eqref{eq:repropropBergman}
+\item
+the reproducing property \eqref{eq:repropropBergman}
 holds.
+\end{exnumparts}
 \end{exercise}
 
 \begin{exercise}
@@ -10308,15 +10397,19 @@ $U$ such that $g|_U \equiv f$.
 \end{exercise}
 
 \begin{exercise}
-a) Suppose $f \in \sO_p$ is such that $f(p) \not= 0$, and let
-$(f)$ be the ideal generated by $f$.  Prove $(f) = \sO_p$.\\
-b) Let $m = (z_1,\ldots,z_n)$ be the ideal generated by the coordinate
+\begin{exparts}
+\item
+Suppose $f \in \sO_p$ is such that $f(p) \not= 0$, and 
+$(f)$ is the ideal generated by $f$.  Prove $(f) = \sO_p$.
+\item
+Let $m = (z_1,\ldots,z_n)$ be the ideal generated by the coordinate
 functions.  Show that if $f$ vanishes at the origin, then $f \in m$.
-\\
-c) Show that if $I \subsetneq \sO_p$ is a \emph{\myindex{proper ideal}}
+\item
+Show that if $I \subsetneq \sO_p$ is a \emph{\myindex{proper ideal}}
 (ideal such that $I
 \not= \sO_p$) then
 $I \subset m$, that is $m$ is a \emph{\myindex{maximal ideal}}.
+\end{exparts}
 \end{exercise}
 \end{exbox}
 
@@ -11320,13 +11413,18 @@ However, the subvariety has no singular points.  A less trivial example
 is given in an exercise below.
 \end{example}
 
+\pagebreak[2]
 \begin{exbox}
 \begin{exercise}
-a)~Prove that the hypervariety in $\C^n$ given by $z_1^2 + z_2^2 + \cdots + z_n^2 = 0$
+\begin{exparts}
+\item
+Prove that the hypervariety in $\C^n$ given by $z_1^2 + z_2^2 + \cdots + z_n^2 = 0$
 has an isolated singularity at the origin (that is, the origin is the only
-singular point).\\
-b)~For any $0 \leq k \leq n-2$, find a hypervariety $X$ of $\C^n$ whose set
+singular point).
+\item
+For any $0 \leq k \leq n-2$, find a hypervariety $X$ of $\C^n$ whose set
 of singular points is a subvariety of dimension $k$.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -12550,13 +12648,13 @@ The first statement of the following proposition is
 usually called the \emph{\myindex{Riemann extension theorem}}.
 
 \pagebreak[2]
-\begin{prop}
+\begin{prop} \label{prop:onevarclassifysing}
 Suppose $U \subset \C$ is a domain, $p \in U$,
 and $f \colon U \setminus \{p\} \to \C$ holomorphic.
 \begin{enumerate}[(i)]
-\item
+\item \label{prop:onevarclassifysing:i}
 If $f$ is bounded (near $p$ is enough), then $p$ is a removable singularity.
-\item
+\item \label{prop:onevarclassifysing:ii}
 If $p$ is a pole, there exists a $k \in \N$ such that
 \begin{equation*}
 g(z) = {(z-p)}^k f(z)
