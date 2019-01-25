@@ -2159,7 +2159,7 @@ Show that the interior of $W$ is a complete Reinhardt domain.
 \begin{thm}[Identity theorem\index{identity theorem}]
 Let $U \subset \C^n$ be a domain (connected open set) and let
 $f \colon U \to \C$ be holomorphic.  Suppose 
-$f|_N \equiv 0$ for an open
+$f|_N \equiv 0$ for a nonempty open
 subset $N \subset U$.
 Then $f \equiv 0$.
 \end{thm}
@@ -2187,19 +2187,18 @@ then $f \equiv g$.
 \begin{thm}[Maximum principle\index{maximum principle}]
 Let $U \subset \C^n$ be a domain (connected open set).
 Let $f \colon U \to \C$ be holomorphic and suppose $\sabs{f(z)}$
-attains a maximum at some $a \in U$.  Then $f \equiv f(a)$.
+attains a local maximum at some $a \in U$.  Then $f \equiv f(a)$.
 \end{thm}
 
 \begin{proof}
-Suppose $\sabs{f(z)}$ attains its maximum at $a \in U$.  Consider a polydisc
+Suppose $\sabs{f(z)}$ attains a local maximum at $a \in U$.  Consider a polydisc
 $\Delta = \Delta_1 \times \cdots \times \Delta_n \subset U$
 centered at $a$.  The function
 \begin{equation*}
 z_1 \mapsto f(z_1,a_2,\ldots,a_n) 
 \end{equation*}
 is holomorphic
-%(one variable)
-on $\Delta_1$ and its modulus attains the maximum
+on the disc $\Delta_1$ and its modulus attains the maximum
 at the center.  Therefore it is constant by maximum principle in one variable,
 that is, $f(z_1,a_2,\ldots,a_n)  = f(a)$ for all $z_1 \in \Delta_1$.  For
 any fixed $z_1
@@ -2207,7 +2206,7 @@ any fixed $z_1
 \begin{equation*}
 z_2 \mapsto f(z_1,z_2,a_3,\ldots,a_n)  .
 \end{equation*}
-This function again attains its maximum modulus at the center of $\Delta_2$
+This function, holomorphic on the disc $\Delta_2$, again attains its maximum modulus at the center of $\Delta_2$
 and hence is constant on $\Delta_2$.  Iterating this procedure we obtain
 that $f(z) = f(a)$ for all $z \in \Delta$.  By the identity theorem we have
 that $f(z) = f(a)$ for all $z \in U$.
@@ -2368,11 +2367,12 @@ $z_2,\ldots,z_n$ around, and use for example
 
 \section{Derivatives}
 
-When you apply a conjugate to a holomorphic function you get a so-called
+When you conjugate a holomorphic function you get a so-called
 \emph{\myindex{antiholomorphic function}}.  An antiholomorphic function is a
-function that does not depend on $z$, but only on $\bar{z}$.  Given a
-holomorphic function $f$, we define the function
-$\bar{f}$ by $\overline{f(z)}$, that we write as
+function that does not depend on $z$, but only on $\bar{z}$.  Let's see why.
+Given a holomorphic function $f$, we define the function
+$\bar{f}$ by $\overline{f(z)}$ (that is, $\bar{f} = u-iv$ if $f=u+iv$).
+If we write the variable, we sometimes write it as
 $\bar{f}(\bar{z})$.  Then using directly the definitions for
 the Wirtinger operators, for all $j$,
 \begin{equation*}
@@ -2383,8 +2383,10 @@ the Wirtinger operators, for all $j$,
 \left(\frac{\partial f}{\partial z_j} \right) } .
 \end{equation*}
 
-Let us figure out how chain rule works for the holomorphic and
-antiholomorphic derivatives.
+For functions that are neither holomorphic or anti-holomorphic we
+pretend they depend on both $z$ and $\bar{z}$.
+Let us figure out how the chain rule works for Wirtinger derivatives.
+%the holomorphic and antiholomorphic derivatives.
 
 \begin{prop}[Complex chain rule]\index{complex chain rule}
 Suppose 
@@ -2418,9 +2420,9 @@ $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
 \pagebreak[2]
 \begin{proof}
 Write $f = u+iv$, $z = x+iy$, $w=s+it$.
-The composition replaces $w$ with $f$, and so it replaces $s$ with $u$, and
-$t$ with $v$.
-Compute
+The composition plugs in $f$ for $w$, and so it plugs in $u$ for $s$, and
+$v$ for $t$.
+Compute, using the standard chain rule,
 \begin{equation*}
 \begin{split}
 \frac{\partial}{\partial z_j} \left[ g \circ f \right]
