@@ -1386,9 +1386,10 @@ complex coefficients.
 For a good introduction to differential forms
 see Rudin~\cite{Rudin:principles}.
 
-Recall that a one-form $d x_j$ is a linear functional on tangent vectors
+Recall that given coordinates $x = (x_1,\ldots,x_n)$, a one-form $d x_j$ is a linear functional on tangent vectors
 such that when $d x_j \bigl( \frac{\partial}{\partial x_j} \bigr) = 1$ and
-$d x_j \bigl( \frac{\partial}{\partial x_k} \bigr) = 0$ if $j \not= k$.  Because
+$d x_j \bigl( \frac{\partial}{\partial x_k} \bigr) = 0$ if $j \not= k$.
+Because
 $z_j = x_j + i y_j$ and
 $\bar{z}_j = x_j - i y_j$,
 \glsadd{not:dz}\glsadd{not:dzbar}%
@@ -1615,10 +1616,12 @@ For example, if $z \in \C^n$ then,
 z^{\alpha+1} = z_1^{\alpha_1+1}z_2^{\alpha_2+1} \cdots z_n^{\alpha_n+1} .
 \end{equation*}
 It goes without saying that when using this notation it is
-important to be careful to always realize which symbol lives where.  For
+important to be careful to always realize which symbol lives where,
+and most of all, to not get carried away.  For
 example one could interpret $\frac{1}{z}$ in two different ways depending
 on if we interpret $1$ as a vector or not, and if we are
-expecting a vector or a number.
+expecting a vector or a number.  Best to just keep to the limited set of
+cases as given above.
 
 In this notation, the Cauchy formula becomes the perhaps deceptively simple
 \begin{equation*}
@@ -2627,15 +2630,14 @@ For any $j = 1,\ldots,n$ and any $p=1,\ldots,k$, we compute
 \end{equation*}
 \end{proof}
 
-For holomorphic functions the chain rule simplifies, and formally looks
+For holomorphic functions the chain rule simplifies, and it formally looks
 like the familiar vector calculus rule.
 Suppose again
 $U \subset \C^n$ and $V \subset \C^m$ are open sets and 
 $f \colon U \to V$, and $g \colon V \to \C$ are holomorphic.
-And again let the variables be named
+Again let the variables be named
 $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
-\subset \C^m$.  In formula \eqref{eq:chainrule} for the $z_j$ derivative
-notice that 
+\subset \C^m$.  In formula \eqref{eq:chainrule} for the $z_j$ derivative,
 the $\bar{w}_j$ derivative of $g$ is zero and the $z_j$ derivative of
 $\bar{f}_\ell$ is also zero because $f$ and $g$ are holomorphic.
 Therefore for any $j=1,\ldots,n$,
