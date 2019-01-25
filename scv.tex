@@ -2147,7 +2147,7 @@ Reinhardt domains, they are exactly the domains that you can
 draw by plotting what happens for the moduli of the variables.
 A domain is called a \emph{\myindex{complete Reinhardt domain}} if whenever
 $z \in U$ then for $r = (r_1,\ldots,r_n)$ where $r_j = \sabs{z_j}$
-for all $j$, we have that the whole polydisc $\Delta_r(0) \subset U$.
+for all $j$, we have that the whole polydisc $\overline{\Delta_r(0)} \subset U$.
 So a complete Reinhardt domain is a union (possibly infinite) of polydiscs
 centered at the origin.
 
@@ -4319,7 +4319,11 @@ strongly convex at all points except the origin, where it is just convex
 For computations it is often useful to use a more convenient
 defining function.
 \glsadd{not:Ol}%
-We use the \emph{\myindex{big-oh notation}}.
+We use the \emph{\myindex{big-oh notation}},
+although we use it in perhaps less standard short hand\footnote{%
+The standard notation for $O(\ell)$ is $O(\snorm{x}^{\ell})$ and
+is usually defined as saying that
+$\abs{\frac{f(x)}{\snorm{x}^\ell}}$ is bounded as $x \to p$.}.
 A smooth function is $O(\ell)$ at a point $p$ (usually the origin),
 if all its derivatives of order $0, 1, \ldots,  \ell-1$ vanish at $p$.
 For example, if $f$ is $O(3)$ at the origin
@@ -5226,7 +5230,8 @@ to get rid of the dependence on $\Re w$ except in the quadratic
 terms.
 
 Recall that $O(k)$ at the origin means
-a function that together with its derivatives up to order $k-1$ vanish.
+a function that together with its derivatives up to order $k-1$ vanish
+at the origin.
 %We use the \emph{\myindex{big-oh notation}}.
 %A smooth function is $O(k)$ (or ``$O(k)$ at the origin'' to be
 %precise), if
@@ -5234,8 +5239,8 @@ a function that together with its derivatives up to order $k-1$ vanish.
 %derivatives vanish at the origin.
 %For example, if $E$ is $O(3)$ at the origin
 %then $E(0)=0$, and its first and second derivatives vanish.
-Often we write
-$O(k)$ to denote any function in $O(k)$ to simplify notation.
+%Often we write
+%$O(k)$ to denote any function in $O(k)$ to simplify notation.
 
 \begin{lemma} \label{lemma:normformquad}
 Let $M$ be a smooth real hypersurface in $\C^n$ and $p \in M$.  Then there

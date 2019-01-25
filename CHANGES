@@ -6,6 +6,7 @@
 * Include "minimum principle" in the max principle for harmonic functions in 0.1
 * Add a bit more algebra detail and make sure to point out the rings are commutative
 * Move all the $O(\ell)$ explanation into one place
+* Add a note (and a footnote) about the more standard big-oh notation vs our shorthand
 * Clarifications and rewordings throughout
 * Add picture of unit ball in two dimensions
 * Equations renumbered in chapter 1
@@ -18,6 +19,7 @@
 ** Add two exercises in 1.2, which renumbers the other exercises.
 (* Add exercise 1.2.17 now 18?)
 * Say "local maximum" for the maximum principle ... why not.
+* Makes more sense to define complete Reinhardt domains with closed polydiscs, so do that
 ** Add two exercises in 1.4, which renumbers the other exercises.
 * Add definition of Levi-flat to end of 2.3 and add exercises 2.3.13-2.3.17
 ** Move the solution of Dirichlet problem up in 2.4 so that it can be used.  This renumbers the exercises in 2.4
