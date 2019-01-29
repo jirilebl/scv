@@ -1,4 +1,5 @@
 * New slightly different font
+* A bunch of places used "domain" where "open set" is just as good.
 * Slightly more general Cauchy-Pompeiu
 * Add Re/Im notation in 0.1
 * Make difference quotient in 0.1 look like the one in 1.1 for consistency.
