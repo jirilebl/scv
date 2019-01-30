@@ -2915,7 +2915,7 @@ Poincar\'e by computing the automorphism groups of $\D^2$ and $\bB_2$,
 although his proof
 assumed the maps extended past the boundary.  The first
 complete proof was by Henri Cartan in 1931, though popularly the theorem is
-attributed to Poincar\'e.  It seems standard that any general audience talk
+attributed to Poincar\'e.  It seems standard practice that any general audience talk
 about several complex variables contains a mention of Poincar\'e,
 and often the reference is to this exact theorem.
 
@@ -3025,7 +3025,9 @@ Then take any convergent subsequence $\bigl\{ f(p_{k_j}) \bigr\}$ of
 $\bigl\{ f(p_k) \bigr\}$
 converging to some $q \in \overline{V}$.  Consider
 $E = \bigl\{ f(p_{k_j}) \bigr\}$ as a set.  Let $\overline{E}$ be the closure of $E$
-in $V$ (relative topology).  If $q \in V$, then $\overline{E} = E \cup \{ q \}$, otherwise
+in $V$ (relative topology).  If $q \in V$, then $\overline{E} = E \cup \{ q
+\}$ and $\overline{E}$ is compact.
+Otherwise, if $q \notin V$, then
 $\overline{E} = E$.
 The inverse image $f^{-1}(\overline{E})$
 is not compact (it contains a sequence going to $p \in \partial U$)
@@ -3092,8 +3094,8 @@ which is a contradiction as $f$ was proper.
 \end{proof}
 
 The proof says that the reason why there is not even a proper mapping is the fact
-that the boundary of the polydisc contained analytic discs, while
-the sphere did not.
+that the boundary of the polydisc contains analytic discs, while
+the sphere does not.
 The proof extends easily to higher dimensions as well, and the proof
 of the generalization is left as an exercise.
 
@@ -3170,7 +3172,7 @@ for all $z \in U$.
 
 \begin{exbox}
 \begin{exercise}
-Find a counterexample if $U$ is unbounded.  Hint: For simplicity take
+Find a counterexample to the theorem if $U$ is unbounded.  Hint: For simplicity take
 $a=0$ and $U=\C^n$.
 \end{exercise}
 \end{exbox}
@@ -3209,10 +3211,12 @@ componentwise.}.
 \begin{exercise}
 Prove a vector-valued version of the Cauchy estimates.  Suppose $f
 \colon \overline{\Delta_r(a)} \to \C^m$ is continuous function holomorphic
-on a polydisc $\Delta_r(a) \subset \C^n$.  Let $T$ denote the distinguished
+on a polydisc $\Delta_r(a) \subset \C^n$.  Let $\Gamma$ denote the distinguished
 boundary of $\Delta$.  Show that for any multi-index $\alpha$ we get
 \begin{equation*}
-\norm{\frac{\partial^{\abs{\alpha}}f}{\partial z^\alpha} (a)} \leq \frac{\alpha!}{r^\alpha} \sup_{z\in T} \norm{f(z)} .
+\norm{\frac{\partial^{\abs{\alpha}}f}{\partial z^\alpha} (a)}
+\leq
+\frac{\alpha!}{r^\alpha} \sup_{z\in \Gamma} \norm{f(z)} .
 \end{equation*}
 \end{exercise}
 \end{exbox}
@@ -3226,8 +3230,9 @@ as a power series at the origin, written in homogeneous parts:
 f(z) = z + f_k(z) + \sum_{j=k+1}^\infty f_j(z) ,
 \end{equation*}
 where $k \geq 2$ is an integer such that $f_j(z)$ is zero for all
-$2 \leq j < k$.  The degree 1 homogeneous part is simply the vector $z$
-as the derivative of the mapping at the origin is the identity.
+$2 \leq j < k$.  The degree-one homogeneous part is simply the vector $z$,
+because
+the derivative of the mapping at the origin is the identity.
 Compose $f$ with itself $\ell$ times:
 \begin{equation*}
 f^\ell(z) = \underbrace{f \circ f \circ \cdots \circ f}_{\ell\text{ times}}
@@ -3943,8 +3948,6 @@ for an arbitrarily small $\epsilon > 0$, then $\widetilde{T}$ is not a domain
 of holomorphy.  In fact, every function holomorphic on $\widetilde{T}$
 extends to a holomorphic function of $\D^2$.
 \end{exercise}
-
-%FIXME: checked domains for "nonempty" and "isn't open set enough" up to here
 
 \begin{exercise} \label{exercise:C2minusR2}
 Take the natural embedding of $\R^2 \subset \C^2$.  Suppose 
@@ -6395,7 +6398,7 @@ continuous and vanishes on the set you wish to extend across, but on the
 other hand you know nothing about this set.
 
 \begin{thm}[Rad\'o] \index{Rad\'o's theorem}\label{thm:rado}
-Let $U \subset \C^n$ be a domain and $f \colon U \to \C$ be a continuous
+Let $U \subset \C^n$ be an open set and $f \colon U \to \C$ be a continuous
 function that is holomorphic on the set
 \begin{equation*}
 U' = \{ z \in U : f(z) \not= 0 \} .
@@ -7902,7 +7905,7 @@ holomorphic functions.
 
 \begin{prop}
 Suppose $U \subset \C^n$ is a domain with smooth boundary.  Suppose
-$f \colon \overline{U} \to \C$ is smooth and holomorphic on $U$.
+$f \colon \overline{U} \to \C$ is a smooth function, holomorphic on $U$.
 Then $f|_{\partial U}$ is a smooth CR function.
 \end{prop}
 
@@ -7926,7 +7929,7 @@ particular we have the following result you know from one variable.
 
 \begin{prop}
 Suppose $U \subset \C^n$ is a domain with smooth boundary and $f \colon \overline{U} \to \C$ is 
-continuous and holomorphic on $U$.  If $f=0$ on an open subset of $\partial
+a continuous function, holomorphic on $U$.  If $f=0$ on a nonempty open subset of $\partial
 U$, then $f=0$ on all of $U$.
 \end{prop}
 
@@ -7956,7 +7959,7 @@ on $U$ or $\C^n \setminus U$ whose boundary values are $f$.
 \begin{exparts}
 \item
 Suppose $U \subset \C^n$ is a bounded domain with smooth boundary,
-$f \colon \overline{U} \to \C$ is a continuous function holomorphic in
+$f \colon \overline{U} \to \C$ is a continuous function, holomorphic in
 $U$, and $f|_{\partial U}$ is real-valued.  Show that $f$ is
 constant.
 \item
