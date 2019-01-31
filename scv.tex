@@ -284,6 +284,13 @@
     \end{enumerate}
 }
 
+\newenvironment{myfig}{%
+    \begin{center}
+}{%
+    \end{center}
+    \pagebreak[2]
+}
+
 \theoremstyle{exercise}
 \newtheorem{exercise}{Exercise}[section]
 
@@ -1187,14 +1194,9 @@ for lack of real dimensions on our paper.
 We visualize the unit polydisc in two variables
 by drawing the following
 picture by plotting just against the modulus of the variables:
-
-%\medskip
-
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{polydisc.pdf_t}
-\end{center}
-
-%\medskip
+\end{myfig}
 
 Recall the
 \emph{\myindex{Euclidean inner product}} on $\C^n$:
@@ -1236,10 +1238,9 @@ depends on the moduli of the variables.
 Not every domain can be drawn like this, but those that can
 are called \emph{\myindex{Reinhardt domain}}, more on this later.
 Here is a picture of $\bB_2$:
-
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{ball.pdf_t}
-\end{center}
+\end{myfig}
 
 \begin{defn}
 Let $U \subset
@@ -1516,15 +1517,10 @@ the boundary of the polydisc has real dimension $2n-1$.
 The set $\Gamma = \partial \Delta_1 \times \cdots \times \partial \Delta_n$
 is called the \emph{\myindex{distinguished boundary}}.  For
 the unit bidisc we have:
-
-%\medskip
-
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{polydisc-dist.pdf_t}
-\end{center}
+\end{myfig}
 \end{samepage}
-
-%\medskip
 
 The set $\Gamma$ is a 2-dimensional torus, like the surface of a
 donut.  Whereas the set $\partial \D^2 =
@@ -2155,9 +2151,9 @@ The picture is definitely more complicated than a polydisc:
 
 \medskip
 
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{convergence-example-2.pdf_t}
-\end{center}
+\end{myfig}
 \end{example}
 
 \begin{exbox}
@@ -3450,9 +3446,9 @@ For any fixed small $s \in \C^{n-1}$, with $\snorm{s} < \epsilon$,
 setting $z' = s$,
 the zeros of $\xi \mapsto g(s,\xi)$ are isolated.
 
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{riemann-ext-zeros.pdf_t}
-\end{center}
+\end{myfig}
 
 For $\snorm{z'} <
 \epsilon$ and $\abs{z_n} < r$, write
@@ -3740,13 +3736,9 @@ connected, such that for every $f \in \sO(U)$ there exists an $\widetilde{f} \in
 \sO(W)$ with $f(z) = \widetilde{f}(z)$ for all $z \in V$.
 \end{defn}
 
-%\medskip
-
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{domain-of-hol-def.pdf_t}
-\end{center}
-
-%\medskip
+\end{myfig}
 
 \begin{example}
 The unit ball $\bB_n \subset \C^n$ is a domain of holomorphy.  Proof: 
@@ -3846,17 +3838,13 @@ If $f \in \sO(H)$, then $f$ extends holomorphically to $\D^{m+k}$.
 \begin{samepage}
 In $\C^2$ if $m=1$ and $k=1$, the figure looks like:
 
-%\medskip
-
 \newcommand{\hartogstext}{\parbox[t]{2.5in}{In diagrams, often the Hartogs figure is
 drawn as:}}
-\begin{center}
+
+\begin{myfig}
 \subimport*{figures/}{hartogs-figure.pdf_t}
-\end{center}
+\end{myfig}
 \end{samepage}
-
-%\medskip
-
 
 \begin{proof}
 Pick a $c \in (a,1)$.  Let
@@ -4124,13 +4112,9 @@ For simplicity, in this book we generally deal with smooth
 $C^k$-smooth functions for finite $k$ introduces technicalities that make
 certain theorems and arguments unnecessarily difficult.
 
-%\medskip
-
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{deffun.pdf_t}
-\end{center}
-
-%\medskip
+\end{myfig}
 
 Notice that the definition of a domain with smooth boundary is not just that the
 boundary is a smooth hypersurface, that is not enough.  It also says that 
@@ -4423,13 +4407,9 @@ then the rotation can be chosen
 such that for points in $U$ we have $y > \varphi(x)$.
 \end{lemma}
 
-%\medskip
-
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{deffun-graph.pdf_t}
-\end{center}
-
-%\medskip
+\end{myfig}
 
 
 \begin{proof}
@@ -5275,9 +5255,9 @@ Similarly
 $U$ is strongly pseudoconvex at $p$ if and only if $U'$ is strongly pseudoconvex at $q$.
 \end{thm}
 
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{bndry-bihol.pdf_t}
-\end{center}
+\end{myfig}
 
 The only thing left is to observe that if
 $f(U \cap V) = U' \cap V'$ then $f(\partial U \cap V) = \partial U' \cap
@@ -5654,9 +5634,9 @@ variables.  The boundary $\partial U$ and $U$ are only pictured diagrammatically
 Also we make a ``picture'' the analytic discs giving the ``tomato can''.
 In the picture the $U$ is below its boundary $\partial U$, unlike usually.
 
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{hartogs-figure-tomato.pdf_t}
-\end{center}
+\end{myfig}
 
 The origin is in the hull of $H$, and so
 every function holomorphic in $U$, and so in $H$, extends through the origin.
@@ -6243,9 +6223,9 @@ functions $e^{-1/(1-x^2)}$,
 $\frac{1}{0.5}e^{-1/\bigl(1-{(x/0.5)}^2\bigr)}$, and
 $\frac{1}{0.25}e^{-1/\bigl(1-{(x/0.25)}^2\bigr)}$.
 
-\begin{center}
+\begin{myfig}
 \includegraphics[width=3.0in]{figures/graph-of-mollifier.pdf}
-\end{center}
+\end{myfig}
 
 First $f$ is bounded above on compact sets as it is upper semicontinuous.
 If $f$ is not bounded below, we replace $f$ with $\max \{ f , 1/\epsilon
@@ -6600,9 +6580,9 @@ discs (denoted by straight line segments) that approach the boundary as in
 the following picture.  In the diagram the boundaries of the discs are
 denoted by the dark dots at the end of the segments.
 
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{contprinc.pdf_t}
-\end{center}
+\end{myfig}
 
 \begin{defn}
 Let $U \subset \C^n$ be a domain.  An $f \colon U \to \R$ is an \emph{\myindex{exhaustion function}} for $U$ if
@@ -6693,10 +6673,9 @@ As $\rho(z) = \inf_c \rho_c(z)$,
 If we prove that for any $a, b, c$ the function $\xi \mapsto -\log \rho_c(a+b\xi)$ is
 subharmonic, then $\xi \mapsto - \log \rho(a+b\xi)$ is subharmonic and we are done.
 Here is the setup, the disc is drawn as a line:
-
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{distfun-hartogs.pdf_t}
-\end{center}
+\end{myfig}
 
 Suppose $\Delta \subset \C$ is a disc such that for all $\xi \in
 \overline{\Delta}$, $a+b\xi \in U$.  We need to show that if there is a
@@ -6820,9 +6799,9 @@ black line, the part of the boundary of $\partial (W \cap U)$ that arises as
 the boundary of $W$ is marked by a thick gray line.  A point $q \in B$ is
 marked and a ball of radius $\nicefrac{r}{2}$ around $q$ is dotted.
 
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{hartogs-pseudoconvex-local.pdf_t}
-\end{center}
+\end{myfig}
 
 No point of distance $\nicefrac{r}{2}$ from $q$ can be in $\partial W$, and 
 the distance of $q$ to $\partial U$ is at most $\nicefrac{r}{2}$ as $p \in \partial U$
@@ -7250,9 +7229,9 @@ $p + \Delta = \Delta_r(p)$ contains a point of $\partial U$, but
 K + \Delta = \bigcup_{q \in K} \Delta_r(q) \subset \subset U.
 \end{equation*}
 
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{cart-thul-fig.pdf_t}
-\end{center}
+\end{myfig}
 
 If $f \in \sO(U)$, then there is an $M > 0$ such that $\sabs{f} \leq M$ on
 $K + \Delta$ as that is a relatively compact set.  By the Cauchy estimates
@@ -8835,9 +8814,9 @@ We know this because $r$ is positive on $(\partial D) \times \{ (z',w) \}$
 and hence $r=0$ on $\partial D_-$.
 As $D \times W \cap M \subset K$, we have that $\partial D_- \subset K$.
 
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{lewy-extension-figure.pdf_t}
-\end{center}
+\end{myfig}
 
 As $p_j \to f$ uniformly on $K$ then $p_j \to f$ uniformly on
 $\partial D_-$.  As  $p_j$ are holomorphic, then by maximum
@@ -9013,9 +8992,9 @@ Let $\Delta_r(z)$ be a small disc such that
 $\Delta_r(z) \subset
 \subset U$.  Stokes now applies on $U \setminus \Delta_r(z)$.
 
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{cauchy-pompeiu.pdf_t}
-\end{center}
+\end{myfig}
 
 Via Stokes we get
 \begin{equation*}
@@ -9292,9 +9271,9 @@ holomorphic for very large $z$ since $\bar{\partial} \psi = g = 0$ when $z$
 is large.  When $z_2,\ldots,z_n$ are large, then $\psi$ is identically zero
 simply from its definition.  See the following diagram:
 
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{dbarcpt-fig.pdf_t}
-\end{center}
+\end{myfig}
 
 As $\bar{\partial} \psi = 0$ on the light gray and white areas in the
 diagram, $\psi$ is holomorphic there. As $\psi$ is zero on the light
@@ -9353,9 +9332,9 @@ $U \setminus K$ is connected.  Every holomorphic $f \colon U \setminus K \to \C$
 extends uniquely to a holomorphic function on $U$.
 \end{thm}
 
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{hartogs-fig.pdf_t}
-\end{center}
+\end{myfig}
 
 The idea of the proof is extending in some way and then using the solution
 to the $\bar{\partial}$-problem to correct the result to make it
@@ -11609,11 +11588,11 @@ $(1,0)$ it is reducible.  There, the variety is
 a union of two graphs: $z_2 = \pm \sqrt{z_1}(z_1-1)$.
 Here is a plot in two real dimensions:
 
-\begin{center}
+\begin{myfig}
 \medskip
 \subimport*{figures/}{locallyredcurve.eepic}
 \bigskip
-\end{center}
+\end{myfig}
 \end{example}
 
 
@@ -11664,6 +11643,7 @@ We give the theorem without proof in the general case, although we have
 essentially proved it already for pure codimension 1 (to put it
 together is left as an exercise).
 
+\pagebreak[3]
 \begin{thm}[\myindex{Local parametrization theorem}]
 \label{localparthm}
 Let $(X,0)$ be an irreducible germ of a complex variety of dimension $k$
@@ -11680,6 +11660,7 @@ for some integer $m$.
 \item $\pi \colon X \cap U \to \pi(U)$ is a proper mapping.
 \end{enumerate}
 \end{thm}
+\pagebreak[2]
 
 The $m$-sheeted covering map in this case is a local biholomorphism
 that is an $m$-to-1 map.
@@ -11714,12 +11695,11 @@ $\xi \mapsto (\xi^2,\xi^3)$ is the variety
 defined by $z_1^3-z_2^2 = 0$ in $\C^2$, the so-called ``cusp''.  Here is a
 plot in two real dimensions:
 
-\nopagebreak
-\begin{center}
+\begin{myfig}
 \medskip
 \subimport*{figures/}{cusp.eepic}
 \bigskip
-\end{center}
+\end{myfig}
 \end{samepage}
 \end{example}
 
@@ -11786,9 +11766,11 @@ $\sigma^k$ is the identity.
 So $g(\xi)$ is a well-defined function outside the origin.  Let
 $g(0) = 0$, and $g$ is holomorphic at 0 by the Riemann extension theorem.
 See the following figure for an example:
-\begin{center}
+
+\begin{myfig}
 \subimport*{figures/}{puiseux.pdf_t}
-\end{center}
+\end{myfig}
+
 In the figure, $m = k = 4$, and the permutation $\sigma$ takes 1 to 2, 2 to 3, 3 to 4,
 and 4 to 1.  As $\xi$ moves along the short circular arrow on the right, $\xi^4$
 moves along the long circular arrow on the left.  The definition of $g$ is
@@ -12190,13 +12172,13 @@ we would obtain a pluriharmonic function with a strict
 maximum on $Y$, which is impossible by the maximum principle for
 varieties that you proved in \exerciseref{exercise:maxprincsubvar}.
 The picture would look as follows:
-\begin{center}
+\begin{myfig}
 \medskip
 \subimport*{figures/}{forndied.pdf_t}
-\end{center}
+\end{myfig}
 \end{proof}
 
-\vspace*{1in}
+\vspace{1in}
 
 \ldots and that is how using sheep's bladders can prevent
 earthquakes!
@@ -13071,9 +13053,9 @@ The situation for a boundary point and an interior point is depicted in the
 following diagram.  Note that $W$ is a bigger neighborhood in $\R^n$ than
 the image $\varphi(U)$.
 
-\begin{center}
+\begin{myfig}
 \subimport*{figures/}{manif-bound.pdf_t}
-\end{center}
+\end{myfig}
 
 More correctly we may call $M$ a \emph{\myindex{submanifold}} rather than a
 \emph{manifold}.
