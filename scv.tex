@@ -1545,6 +1545,12 @@ $\sabs{f(z)}$ achieves its maximum on $\Gamma$.
 \end{exercise}
 
 \begin{exercise}
+A ball is different from a polydisc.  Prove that for any $z \in \partial \bB_n$
+there exists a continuous $f \colon \overline{\bB_n} \to \C$, holomorphic
+on $\bB_n$ such that $\sabs{f(z)}$ achieves a strict maximum at $z$.
+\end{exercise}
+
+\begin{exercise}
 Show that in the real setting, differentiable
 in each variable separately does not imply differentiable even if
 the function is locally bounded.
@@ -1557,9 +1563,28 @@ special about the holomorphic category.
 \end{exercise}
 
 \begin{exercise}
-A ball is different from a polydisc.  Prove that for any $z \in \partial \bB_n$
-there exists a continuous $f \colon \overline{\bB_n} \to \C$, holomorphic
-on $\bB_n$ such that $\sabs{f(z)}$ achieves a strict maximum at $z$.
+Suppose $U \subset \C^n$ is open.
+Prove that $f \colon U \to \C$ is holomorphic, if and only if,
+$f$ is locally bounded and
+for every $a,b \in \C^n$, the
+function
+$\zeta \mapsto f(\zeta a + b)$ is holomorphic on
+the open set $\{ \zeta \in \C : \zeta a + b \in U \}$.
+\end{exercise}
+
+\begin{exercise}
+Prove a several complex variables version of Morera's theorem (see
+\thmref{thm:onevarmorera}).
+A triangle $T \subset \C^n$ is the closed convex hull of three points, so
+including the inside.  Orient $T$ in some way (will not matter which way)
+and orient $\partial T$ accordingly.
+Suppose $U \subset \C^n$ is open and $f \colon U \to \C$ is continuous.
+Prove that $f$ is holomorphic if and only if
+\begin{equation*}
+\int_{\partial T} f(z) \, dz_k = 0
+\end{equation*}
+for every triangle $T \subset U$ and every $k=1,2,\ldots,n$.
+Hint: The previous exercise may be useful.
 \end{exercise}
 \end{exbox}
 
@@ -1641,15 +1666,17 @@ such a series as
 \end{equation*}
 You have to admit that the
 above is far nicer to write than, for example, for 3 variables writing
-\begin{equation*}
+\begin{equation} \label{eq:iteratedsum}
 \sum_{j=0}^\infty
 \sum_{k=0}^\infty
 \sum_{\ell=0}^\infty
-c_{jk\ell} z_1^jz_2^kz_3^\ell .
-\end{equation*}
+c_{jk\ell} z_1^jz_2^kz_3^\ell ,
+\end{equation}
+which is not even exactly the definition of the series sum (see
+below).
 When it is clear
 from context that we are talking about a power series
-and therefore all the powers are nonnegative,
+and all the powers are nonnegative,
 we often write just
 \glsadd{not:zalphasum}%
 \begin{equation*}
@@ -1664,18 +1691,30 @@ talk about conditional convergence.  When we say the series
 \index{power series convergence}%
 \index{convergence of power series}, we mean absolutely.
 Fortunately power series converge
-absolutely, and so the ordering does not matter.
+absolutely, and so the ordering does not matter.  So if you want to write
+down the limit in terms of partial sums, you pick some ordering of the
+multiindices: $\alpha(1), \alpha(2), \ldots$, and then
+\begin{equation*}
+\sum_{\alpha}
+c_\alpha {z}^\alpha 
+=
+\lim_{m \to \infty}
+\sum_{k=1}^m 
+c_{\alpha(k)} {z}^{\alpha(k)} .
+\end{equation*}
+By the Fubini theorem (for sums) this is also equal to the iterated
+sum such as in \eqref{eq:iteratedsum}.
+
 We say a power series $\sum_\alpha c_\alpha z^\alpha$
 \emph{\myindex{converges uniformly absolutely}}
 \index{uniform absolute convergence}
 for $z \in X$ when $\sum_\alpha \sabs{c_\alpha z^\alpha}$
 converges uniformly for $z \in X$.
 
-
-
-We first need the \emph{\myindex{geometric series in several variables}}.
-If 
-$z \in \D^n$ (unit polydisc), then
+As in one variable,
+we need the \emph{\myindex{geometric series in several variables}}.
+For
+$z \in \D^n$ (unit polydisc),
 \begin{equation*}
 \begin{split}
 \frac{1}{1-z} & =
@@ -1912,7 +1951,7 @@ for $z \in \overline{\Delta''}$.
 Next we organize some immediate consequences of the theorem
 and the calculation in the proof.
 
-\pagebreak[2]
+\pagebreak[3]
 \begin{prop}
 Let $\Delta = \Delta_\rho(a) \subset \C^n$ be a polydisc,
 and $\Gamma$ its distinguished boundary.
@@ -2110,6 +2149,8 @@ converges absolutely exactly on the set
 \begin{equation*}
 \bigl\{ z \in \C^2 : \sabs{z_1 z_2} < 1 \bigr\} .
 \end{equation*}
+
+\pagebreak[2]
 The picture is definitely more complicated than a polydisc:
 
 \medskip
@@ -2231,7 +2272,7 @@ That is, $f(a)$ is an average of the values on a polydisc centered at $a$.
 
 \begin{exercise}
 Prove the maximum principle by using the Cauchy formula instead.  (Hint:
-use previous exercise)
+Use the previous exercise)
 \end{exercise}
 
 \begin{exercise}
@@ -2390,8 +2431,10 @@ of the Wirtinger operators,
 
 For functions that are neither holomorphic or anti-holomorphic we
 pretend they depend on both $z$ and $\bar{z}$.
-Let us figure out how the chain rule works for Wirtinger derivatives.
-%the holomorphic and antiholomorphic derivatives.
+Since we want to write functions in terms of $z$ and $\bar{z}$,
+let us figure out how the chain rule works for Wirtinger derivatives,
+rather than writing derivatives in terms of $x$ and $y$, which
+gets tedious very quick.
 
 \begin{prop}[Complex chain rule]\index{complex chain rule}
 Suppose 
@@ -2425,7 +2468,7 @@ $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
 \pagebreak[2]
 \begin{proof}
 Write $f = u+iv$, $z = x+iy$, $w=s+it$,
-$f$ is a function of $z$ and $g$ is a function of $w$.
+$f$ is a function of $z$, and $g$ is a function of $w$.
 The composition plugs in $f$ for $w$, and so it plugs in $u$ for $s$, and
 $v$ for $t$.
 Using the standard chain rule,
@@ -4094,7 +4137,7 @@ boundary is a smooth hypersurface, that is not enough.  It also says that
 one side of that hypersurface is in $U$ and one side is not in $U$.  That is
 because if the derivative of $r$ never vanishes, then $r$ must have
 different signs on different sides of $\{ x \in V : r(x) = 0 \}$.  The
-verification of this fact is left to the reader (Hint: look at where the
+verification of this fact is left to the reader (Hint: Look at where the
 gradient points to).
 
 Same definition works for $\C^n$ where we simply treat $\C^n$ as $\R^{2n}$.
@@ -5642,10 +5685,10 @@ for $p \in \partial U$, there is a neighborhood $W$ of $p$
 and a holomorphic function $f \colon W \to
 \C$ such that $df(p) \not= 0$, $f(p) = 0$, but
 $f$ is never zero on $W \cap U$.  Show that $U$ is pseudoconvex
-at $p$.  Hint: you may need the holomorphic implicit function theorem, see
+at $p$.  Hint: You may need the holomorphic implicit function theorem, see
 \thmref{thm:ift}.
 %apply the implicit function theorem and prove the result is holomorphic.
-Note: the result does not require the derivative of $f$ to not vanish, but is
+Note: The result does not require the derivative of $f$ to not vanish, but is
 much harder to prove without that hypothesis.
 \end{exercise}
 \end{exbox}
@@ -5823,7 +5866,7 @@ $Pu$ is harmonic.
 $P_r$ acts like an
 approximate identity: prove that
 $Pu(re^{i\theta}) \to u(e^{i\theta})$ uniformly as
-$r \to 1$ (Hint: split the integral to $[-\delta,\delta]$ and the rest
+$r \to 1$ (Hint: Split the integral to $[-\delta,\delta]$ and the rest
 and use the previous exercise).
 \item
 Prove that $Pu(z)$ tends to $u(z_0)$ as
@@ -6061,7 +6104,7 @@ only if
 \begin{exercise}
 Show that a pluriharmonic function is harmonic.  On the other hand, find an
 example of a harmonic function that is not pluriharmonic.
-%Hint: it is
+%Hint: It is
 %enough to look at quadratic polynomials.
 \end{exercise}
 
@@ -6148,6 +6191,7 @@ $a f + b g$ is plurisubharmonic.
 \end{exercise}
 \end{exbox}
 
+\pagebreak[2]
 \begin{thm} \label{thm:subharlim}
 Suppose $U \subset \C^n$ is a domain and $f \colon U \to \R \cup \{
 -\infty \}$ is plurisubharmonic.  For every $\epsilon > 0$,
@@ -6342,7 +6386,7 @@ Show that $g$ in the proof above is smooth on all of $\C^n$.
 \begin{exparts}
 \item
 Show that for a subharmonic function $\int_0^{2\pi} f(a+re^{i\theta}) \,
-d\theta$ is a monotone function of $r$ (Hint: try a $C^2$ function first and
+d\theta$ is a monotone function of $r$ (Hint: Try a $C^2$ function first and
 use Green's theorem).
 \item
 Use this
@@ -7136,7 +7180,7 @@ Let $U \subset \C^n$ be a domain and $f \in \sO(U)$.  Show that if
 $U$ is holomorphically convex then
 $\widetilde{U} = \bigl\{ z \in U : f(z) \not= 0 \bigr\}$
 is holomorphically convex.  
-Hint: first see \exerciseref{exercise:connectedcomplement}.
+Hint: First see \exerciseref{exercise:connectedcomplement}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:biholholconvex}
@@ -9851,7 +9895,7 @@ Prove that
 \psi(z) = - \int_{\C^n} g(\zeta) \wedge \omega(\zeta,z)
 \end{equation*}
 is a compactly supported smooth solution to $\bar{\partial} \psi = g$.
-Hint: look at the previous proof.
+Hint: Look at the previous proof.
 \end{exercise}
 \end{exbox}
 
@@ -11227,7 +11271,7 @@ Final remark is that dimension is well-defined.  We leave it as an exercise.
 \begin{exbox}
 \begin{exercise}
 Prove that if $p$ is a regular point of a subvariety $X \subset U \subset
-\C^n$ of a domain $U$, then the dimension is well-defined.  Hint: if there were two possible
+\C^n$ of a domain $U$, then the dimension is well-defined.  Hint: If there were two possible
 $U'$ of different dimension (possibly different affine coordinates), construct a map
 from one such $U'$ to another such $U'$ with nonvanishing derivative.
 \end{exercise}
@@ -11542,7 +11586,7 @@ if $ab \in I$ implies either $a \in I$ or $b
 Suppose a germ of a complex variety $(X,p)$ is of pure codimension 1.
 Prove $(X,p)$ is irreducible if and only if there
 exists a representative of $X$ whose set of regular points
-is connected.  Hint: see the proof of \thmref{thm:codim1var}.
+is connected.  Hint: See the proof of \thmref{thm:codim1var}.
 \end{exercise}
 
 \begin{exercise}
@@ -12405,10 +12449,41 @@ Then
 \end{multline*}
 \end{thm}
 
+The Cauchy integral formula is equivalent to
+what's usually called just Cauchy's theorem:
+
+\begin{thm}[Cauchy]
+Let $U \subset \C$ be a bounded domain with piecewise-$C^1$ boundary
+$\partial U$ oriented positively, and let
+$f \colon \overline{U} \to \C$ be a continuous function
+holomorphic in $U$.  Then
+\begin{equation*}
+\int_{\partial U}
+f(z) \, dz = 0 .
+\end{equation*}
+\end{thm}
+
+There is a converse to Cauchy as well.  A triangle $T \subset \C$ is
+the convex hull of the three vertices (so we include the inside of the
+triangle), and $\partial T$ is the boundary of the triangle oriented
+counter-clockwise.  Let us state the following theorem as an
+if and only if, even though, usually it is only the reverse direction that
+is called Morera's theorem.
+
+\begin{thm}[Morera] \label{thm:onevarmorera}
+Suppose $U \subset \C$ is an open set, and $f \colon U \to \C$
+is continuous.  Then $f$ is holomorphic
+if and only if
+\begin{equation*}
+\int_{\partial T} f(z) \, dz = 0
+\end{equation*}
+for all triangles $T \subset U$.
+\end{thm}
+
 As we saw in the introduction, a holomorphic function has a power series.
 
 \begin{prop}
-If $U \subset \C$ is a domain, and $f \colon U \to \C$ holomorphic,
+If $U \subset \C$ is an open set, and $f \colon U \to \C$ holomorphic,
 then $f$ is infinitely differentiable, and if $\Delta_\rho(p) \subset \C$
 is a disc, then $f$ has a power series that
 converges absolutely uniformly on compact subsets of $\Delta_\rho(p)$:
@@ -12575,6 +12650,7 @@ and a holomorphic function $g \colon W \to U$ that is
 one-to-one and $f\bigl(g(z)\bigr) = z$ for all $z \in W$.
 \end{enumerate}
 \end{thm}
+\pagebreak[2]
 
 The Riemann mapping theorem actually follows from the following
 theorem about existence of branches of the logarithm.
@@ -12639,7 +12715,7 @@ a sequence of holomorphic functions which converge uniformly
 on compact subsets of $U$ to $f \colon U \to \C$.  Then $f$ is holomorphic.
 \end{prop}
 
-Holomorphic functions satisfy a Heine--Borel-like theorem:
+Holomorphic functions satisfy a Heine--Borel-like property:
 
 \begin{thm}[Montel]\index{Montel's theorem}\label{thm:onevarmontel}
 If $U \subset \C$ is a domain and
@@ -12735,6 +12811,7 @@ $f(\C)$ is either $\C$ or $\C$ minus a point.
 Isolated singularities can be characterized via the
 \emph{\myindex{Laurent series}}.
 
+\pagebreak[2]
 \begin{prop}
 If $\Delta \subset \C$ is a disc centered at $p \in \C$,
 and $f \colon \Delta \setminus \{p\} \to \C$ holomorphic,

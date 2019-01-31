@@ -13,8 +13,8 @@
 * Equations renumbered in chapter 1
 * Add note on integrability in 1.1
 * Add note on partial z derivative being the limit of difference quotients
-* Add exercise 1.1.5
-* Add more on the multiindex notation as it is used to hopefully make the computations less mysterious.
+** Add three exercises in 1.1, but that renumbers the last exercise
+* Add more on the multiindex notation as it is used to hopefully make the computations less mysterious, also add more details on the convergence.
 * Use the "reduce to one variable proof" as the main one for converse of the power series theorem, and add one more alternative proof with an exercise
 ** Make the Cauchy estimates and computation of coefficients into a proposition, which renumbers the propositions/theorems/etc.. in 1.2
 * The proposition about normal convergence only needs an open set, not a domain
