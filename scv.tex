@@ -12516,7 +12516,7 @@ Another consequence  of the Cauchy integral formula is that there is
 a differential equation characterizing holomorphic functions.
 
 \begin{prop}[Cauchy--Riemann equations]
-Given a domain $U \subset \C$,
+Given an open set $U \subset \C$,
 a function $f \colon U \to \C$ is holomorphic if and only if
 $f$ is continuously differentiable and
 \begin{equation*}
@@ -12652,8 +12652,8 @@ g^k = f .
 \end{equation*}
 \end{thm}
 
-Zeros of holomorphic functions
-can be divided out in one variable, and moreover zeros
+In one complex variable, zeros of holomorphic functions
+can be divided out.  Moreover, zeros
 of holomorphic functions are of finite order unless
 the function is identically zero.
 
@@ -12692,15 +12692,17 @@ Convergence of holomorphic functions is the same as for continuous
 functions.  Sometimes this is called \emph{\myindex{normal convergence}}.
 
 \begin{prop}
-Suppose $U \subset \C$ is a domain, and $f_k \colon U \to \C$
+Suppose $U \subset \C$ is an open set, and $f_k \colon U \to \C$
 a sequence of holomorphic functions which converge uniformly
-on compact subsets of $U$ to $f \colon U \to \C$.  Then $f$ is holomorphic.
+on compact subsets of $U$ to $f \colon U \to \C$.  Then $f$ is holomorphic,
+and every derivative $f_k^{(\ell)}$ converges uniformly on compact subsets
+to the derivative $f^{(\ell)}$.
 \end{prop}
 
 Holomorphic functions satisfy a Heine--Borel-like property:
 
 \begin{thm}[Montel]\index{Montel's theorem}\label{thm:onevarmontel}
-If $U \subset \C$ is a domain and
+If $U \subset \C$ is an open set and
 $f_n \subset U \to \C$ is a sequence of holomorphic functions
 that is uniformly bounded on compact subsets of $U$,
 then there exists a subsequence converging uniformly on compact subsets
@@ -12710,7 +12712,7 @@ of $U$.
 A sequence of holomorphic functions cannot create or delete zeros out of thin air:
 
 \begin{thm}[Hurwitz]\index{Hurwitz's theorem}\label{thm:onevarhurwitz}
-If $U \subset \C$ is a domain and
+Suppose $U \subset \C$ is a domain and
 $f_n \subset U \to \C$ is a sequence of holomorphic functions
 converging uniformly on compact subsets of $U$ to $f \colon U \to \C$.
 If $f$ is not identically zero and $z_0$ is a zero of $f$,
@@ -12736,15 +12738,17 @@ An isolated singularity is a \emph{\myindex{pole}} if
 \lim_{z \to p} f(z) = \infty \qquad \text{(that is
 $\sabs{f(z)} \to \infty$ as $\sabs{z} \to \infty$)}.
 \end{equation*}
-Otherwise the singularity is said to be
+An isolated singularity that is neither removable nor a pole is said to be
 \emph{essential}\index{essential singularity}.
 
+Non-essential isolated singularities have finite order, just like zeros,
+that is, the function blows up to a finite (integral) order.
 The first statement of the following proposition is
 usually called the \emph{\myindex{Riemann extension theorem}}.
 
 \pagebreak[2]
 \begin{prop} \label{prop:onevarclassifysing}
-Suppose $U \subset \C$ is a domain, $p \in U$,
+Suppose $U \subset \C$ is an open set, $p \in U$,
 and $f \colon U \setminus \{p\} \to \C$ holomorphic.
 \begin{enumerate}[(i)]
 \item \label{prop:onevarclassifysing:i}
@@ -12765,24 +12769,38 @@ And if $f$ has a pole of order $k$ at $p$, then $\frac{1}{f}$
 has a removable singularity, and the extended function has a zero of order
 $k$.
 
+Let $\bP^1 = \C \cup \{\infty\}$ be the \emph{\myindex{Riemann sphere}}.
+The topology on $\bP^1$ is given by insisting that
+the function $\frac{1}{z}$ is a homeomorphism
+of $\bP^1$ to itself,
+by letting $\frac{1}{\infty} = 0$ and $\frac{1}{0} = \infty$.
+A function $f \colon U \to \bP^1$ is called \emph{\myindex{meromorphic}},
+if it is not
+identically $\infty$, and the points $U \setminus f^{-1}(\infty)$ are poles.
+In other words, a holomorphic function with poles is meromorphic
+by setting the value to be $\infty$ at the poles.
+A meromorphic function is one that can locally be written as a quotient of
+holomorphic functions.
+
 An function with an essential singularity actually achieves essentially
 every value.  A weak version of this result (and an easy to prove one)
 is the \emph{\myindex{Casorati--Weierstrass theorem}}, which states
 that if $f$ has an essential singularity at $p$,
-then for any neighborhood $W$ of $p$, $f(W \setminus \{p\})$ is dense in
+then for any neighborhood $W$ of $p$, $f\bigl(W \setminus \{p\}\bigr)$ is dense in
 $\C$.  Let us state the much stronger theorem of Picard.
 
 \begin{thm}[Picard's big theorem]\index{Picard's big theorem}
-Suppose $U \subset \C$ is open and $f \colon U \setminus \{ p \} \to \C$
-is holomorphic and has an essential singularity at $p$.  Then for any
-neighborhood $W$ of $p$, $f(W \setminus \{ p \})$ is either $\C$
+Suppose $U \subset \C$ is open, $f \colon U \setminus \{ p \} \to \C$
+is holomorphic, and $f$ has an essential singularity at $p$.  Then for any
+neighborhood $W$ of $p$, $f\bigl(W \setminus \{ p \}\bigr)$ is either $\C$
 or $\C$ minus a point.
 \end{thm}
 
 In particular, a function with an essential singularity is very wild.
 It achieves every value (except possibly one) infinitely often.
-An example is $e^{1/z}$ that does not achieve 0.
-Since we have stated the big theorem, we can state the little theorem:
+For example, $e^{1/z}$ has an essential singularity at the origin
+and the function is never 0.
+Since we stated the big theorem, let us also state the little theorem.
 
 \begin{thm}[Picard's little theorem]\index{Picard's little theorem}
 If $f \colon \C \to \C$ is holomorphic
@@ -12790,10 +12808,12 @@ then
 $f(\C)$ is either $\C$ or $\C$ minus a point.
 \end{thm}
 
-Isolated singularities can be characterized via the
-\emph{\myindex{Laurent series}}.
+At an isolated singularity we can expand a holomorphic function
+via the so called
+\emph{\myindex{Laurent series}} by adding all negative powers.
+The Laurent series also characterizes the type of the singularity.
 
-\pagebreak[2]
+\pagebreak[3]
 \begin{prop}
 If $\Delta \subset \C$ is a disc centered at $p \in \C$,
 and $f \colon \Delta \setminus \{p\} \to \C$ holomorphic,
@@ -12823,27 +12843,13 @@ such that $c_k \not= 0$.
 \end{enumerate}
 \end{prop}
 
-\pagebreak[2]
-
-Let $\bP^1 = \C \cup \{\infty\}$ be the \emph{\myindex{Riemann sphere}}.
-The topology on $\bP^1$ is given by insisting that
-the function $\frac{1}{z}$ is a homeomorphism
-of $\bP^1$ to itself,
-by letting $\frac{1}{\infty} = 0$ and $\frac{1}{0} = \infty$.
-A function $f \colon U \to \bP^1$ is called \emph{\myindex{meromorphic}},
-if it is not
-identically $\infty$, and the points $U \setminus f^{-1}(\infty)$ are poles.
-In other words, a holomorphic function with poles is meromorphic.
-A meromorphic function is one that can locally be written as a quotient of
-holomorphic functions.
-
 The identity theorem says that zeros of a nonconstant holomorphic $f$ have no limit
 points, and so are isolated points.  Since $\frac{1}{f}$ is a meromorphic
 function with zeros at the poles of $f$, we see that poles are also
 isolated.  Zeros and poles of  can be counted fairly easily.
 
 \begin{thm}[Argument principle]\index{argument principle}\label{thm:onevarargprinc}
-Suppose $U \subset \C$ is a domain, and $\gamma$ is a piecewise-$C^1$
+Suppose $U \subset \C$ is an open set, and $\gamma$ is a piecewise-$C^1$
 simple closed path in $U$ such that the interior of $\gamma$ is in $U$.
 Suppose that $f \colon U \to \bP^1$ is a meromorphic function with no zeros
 or poles on $\gamma$.
@@ -12878,10 +12884,10 @@ your one-variable course.
 Another useful way to count zeros is Rouch\`e's theorem.
 
 \begin{thm}[Rouch\`e]\index{Rouch\`e's theorem}\label{thm:onevarrouche}
-Suppose $U \subset \C$ is a domain, and $\gamma$ is a piecewise-$C^1$
+Suppose $U \subset \C$ is an open set, and $\gamma$ is a piecewise-$C^1$
 simple closed path in $U$ such that the interior of $\gamma$ is in $U$.
 Suppose that $f \colon U \to \C$ and $g \colon U \to \C$
-are meromorphic functions such that
+are holomorphic functions such that
 \begin{equation*}
 \sabs{f(z)-g(z)} < \sabs{f(z)}+\sabs{g(z)}
 \end{equation*}
@@ -12892,10 +12898,10 @@ inside $\gamma$ (up to multiplicity).
 
 In the classical statement of the theorem the weaker
 inequality $\sabs{f(z)-g(z)} < \sabs{f(z)}$ is used.
-Also notice that the inequality precludes any zeros on $\gamma$ itself.
+Notice that either inequality precludes any zeros on $\gamma$ itself.
 
 One theorem from algebra that is important in complex analysis, and becomes
-perhaps even more impportant in several variables is the fundamental theorem
+perhaps even more important in several variables is the fundamental theorem
 of algebra.
 
 \begin{thm}[Fundamental theorem of algebra]\index{fundamental theorem of algebra}
@@ -12910,7 +12916,7 @@ $P(z) \to \infty$ as $z \to \infty$.  Letting $\bP^1$ again be the Riemman
 sphere, we have Runge's approximation theorem.
 
 \begin{thm}[Runge]\index{Runge's approximation theorem}
-Suppose $U \subset \C$ is a domain and $A \subset \bP^1 \setminus U$
+Suppose $U \subset \C$ is an open set and $A \subset \bP^1 \setminus U$
 is a set containing at least one point from each component of
 $\bP^1 \setminus U$.  Suppose $f \colon U \to \C$ is holomorphic.
 Then for any $\epsilon > 0$ and any compact
