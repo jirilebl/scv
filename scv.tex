@@ -2990,8 +2990,8 @@ of the unit bidisc contains analytic discs $\{p\} \times \bD$
 and $\bD \times \{p\}$ for $p \in \partial \bD$.  That is, through
 every point in the boundary, except for the distinguished
 boundary $\partial \D \times \partial \D$, there exists an analytic disc
-lying entirely inside the boundary.  On the other hand for the ball
-we have the following proposition.
+lying entirely inside the boundary.  On the other hand, the ball
+contains no analytic discs in its boundary.
 
 \begin{prop}
 \glsadd{not:unitsphere}%
@@ -3117,18 +3117,34 @@ a limit $g \colon \bD \to \overline{\bB}_2$.  As $(\zeta,w_k) \to
 and hence $g$ must be constant.
 
 Let $g_k'$ denote the derivative (we differentiate each component).
-The functions $g_k'$ converge (uniformly on compact subsets)
-to $g' = 0$. So for every fixed $\zeta \in \bD$,
+The functions $g_k'$ converge
+%(uniformly on compact subsets) %%%%that's not needed
+to $g' = 0$. So for any fixed $\zeta \in \bD$,
 $\frac{\partial f}{\partial z_1} (\zeta, w_k) \to 0$.
-This limit holds for all $e^{i\theta}$ and a subsequence of
-an arbitrary sequence $\{ w_k \}$ where $w_k \to e^{i\theta}$.  The mapping that takes $w$ to
-$\frac{\partial f}{\partial z_1} (\zeta, w)$ therefore extends continuously
-to $\partial \D$ and is zero on the boundary.
+This limit holds for all $e^{i\theta}$ and some subsequence of
+an arbitrary sequence $\{ w_k \}$ where $w_k \to e^{i\theta}$.  The
+holomorphic mapping $w \mapsto \frac{\partial f}{\partial z_1} (\zeta, w)$
+therefore extends continuously
+to the closure $\overline{\D}$ and is zero on $\partial \D$.
 We apply the maximum
 principle or the Cauchy formula and the fact that $\zeta$ was arbitrary to find 
 $\frac{\partial f}{\partial z_1} \equiv 0$.  By symmetry
 $\frac{\partial f}{\partial z_2} \equiv 0$.  Therefore $f$ is constant,
 which is a contradiction as $f$ was proper.
+
+The proof is illustrated in the following picture:
+
+\begin{myfig}
+\subimport*{figures/}{rothstein.pdf_t}
+\end{myfig}
+
+In the picture, on the left hand side is the bidisc, and we
+restrict $f$ to the horizontal gray lines (where the second component is
+fixed to be $w_k$) and take a limit to produce an analytic disc
+in the boundary of $\bB_2$.  We then show that $\frac{\partial f}{\partial
+z_1} = 0$ on the vertical gray line (where the first component is fixed to
+be $\zeta$).  The right hand side shows the disc where $z_1 = \zeta$ is
+fixed, which corresponds to the vertical gray line on the left.
 \end{proof}
 
 The proof says that the reason why there is not even a proper mapping is the fact
@@ -3281,7 +3297,10 @@ of $U$ to $U$.  As $U$ is bounded, there is an $M$ such that $\snorm{z} \leq
 M$ for all $z \in U$.  Therefore $\snorm{f(z)} \leq M$ for all $z \in U$, and
 $\snorm{f^\ell(z)} \leq M$ for all $z \in U$.
 
-By direct computation we get
+Notice that if we plug in $z + f_k(z) + {}$higher order terms
+into $f_k$, we get $f_k(z) + {}$some other higher order terms.
+Therefore $f^2(z) = z + 2 f_k(z) + {}$higher order terms.
+Continuing this procedure,
 \begin{equation*}
 f^\ell(z) = z + \ell f_k(z) + \sum_{j=k+1}^\infty \tilde{f}_j(z) ,
 \end{equation*}
@@ -3299,8 +3318,10 @@ for any multinomial $\alpha$ with $\sabs{\alpha}=k$,
 \end{equation*}
 The inequality holds for all $\ell \in \N$, and so
 $\frac{\partial^{\sabs{\alpha}} f}{\partial z^\alpha}(0) = 0$.  Therefore
-$f_k \equiv 0$.  Hence $f(z) = z$, as there is no other
-nonzero homogeneous part in the expansion of $f$.
+$f_k \equiv 0$.  Hence on the domain of convergence of the expansion
+we get $f(z) = z$, as there is no other
+nonzero homogeneous part in the expansion of $f$.  As $U$ is connected,
+then the identity theorem says $f(z) = z$ for all $z \in U$.
 \end{proof}
 
 As an application, let us classify all biholomorphisms of all bounded
@@ -3399,7 +3420,12 @@ happens to those points you took out.
 
 Let us extend a very useful theorem from one dimension to several
 dimensions.  In one dimension if a function is holomorphic in $U
-\setminus \{ p \}$ and locally bounded in $U$, in particular bounded near
+\setminus \{ p \}$ and
+locally bounded\index{locally bounded in $U$}\footnote{By
+$f \colon U \setminus X \to \C$ being locally bounded in $U$
+we mean that for every $p \in U$, there is a neighborhood $W$ of
+$p$ such that $f$ is bounded on $W \cap (U \setminus X)$}
+in $U$, in particular bounded near
 $p$, then the function extends holomorphically to $U$ (see
 \propref{prop:onevarclassifysing} \ref{prop:onevarclassifysing:i}).  In several
 variables the same theorem holds, and the analogue of a single point
@@ -3605,8 +3631,8 @@ Write the zero set of $J_f$ near $q$ as
 z_n = g(z_1,\ldots,z_{n-1})
 \end{equation*}
 for some holomorphic $g$.
-If we prove the theorem near $q$, we are done.  So without loss of generality
-we assume that $q=0$ and that $U$ is a
+If we prove the theorem near $q$, we are done.  Without loss of generality
+assume that $q=0$ and that $U$ is a
 small neighborhood of $0$.  The map
 \begin{equation*}
 F(z_1,\ldots,z_n) = \bigl(z_1,z_2,\ldots,z_{n-1},z_n-g(z_1,\ldots,z_{n-1}) \bigr)
@@ -3618,8 +3644,9 @@ We wish to show that all the derivatives of $f$ in the $z_1,\ldots,z_{n-1}$
 variables vanish whenever $z_n = 0$.  This
 would clearly contradict $f$ being one-to-one.
 
-Suppose without loss of generality that $\frac{\partial f_1}{\partial z_1}$
-is nonzero at the origin and $f(0) = 0$.
+Without loss of generality, suppose
+$\frac{\partial f_1}{\partial z_1}(0) \not= 0$
+and $f(0) = 0$.
 The map
 \begin{equation*}
 G(z_1,\ldots,z_n) = \bigl(f_1(z),z_2,\ldots,z_n\bigr)
@@ -3656,8 +3683,8 @@ D(f \circ G^{-1})
 
 \begin{exbox}
 \begin{exercise}
-Take the analytic set
-$X = \{ z \in \C^2 : z_1^2 = z_2^3 \}$.
+Take the set
+$X = \bigl\{ z \in \C^2 : z_1^2 = z_2^3 \bigr\}$.
 Find a one-to-one holomorphic mapping $f \colon \C \to X$.
 Then note that the derivative of $f$ vanishes at a certain point.
 So \thmref{thm:injective} has no analogue when the domain and range have
