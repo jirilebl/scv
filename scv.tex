@@ -3418,12 +3418,11 @@ happens to those points you took out.
 
 \section{Riemann extension theorem, zero sets, and injective maps}
 
-Let us extend a very useful theorem from one dimension to several
-dimensions.  In one dimension if a function is holomorphic in $U
+In one dimension if a function is holomorphic in $U
 \setminus \{ p \}$ and
-locally bounded\index{locally bounded in $U$}\footnote{By
-$f \colon U \setminus X \to \C$ being locally bounded in $U$
-we mean that for every $p \in U$, there is a neighborhood $W$ of
+locally bounded\index{locally bounded in $U$}\footnote{
+$f \colon U \setminus X \to \C$ is locally bounded in $U$
+if for every $p \in U$, there is a neighborhood $W$ of
 $p$ such that $f$ is bounded on $W \cap (U \setminus X)$}
 in $U$, in particular bounded near
 $p$, then the function extends holomorphically to $U$ (see
@@ -3443,28 +3442,33 @@ Then there exists a unique $F \in \sO(U)$ such that $F|_{U \setminus N} = f$.
 The proof is an application of the Riemann extension theorem from one dimension.
 
 \begin{proof}
-Take any complex line $L$ in $\C^n$, that is, an image of an affine mapping
+Take any $p \in N$, and let $L$ be a complex line through $p$.
+That is,
+$L$ is an image of an affine mapping
 $\varphi \colon \C \to \C^n$ defined by
-$\varphi(\xi) = a\xi + b$, for two vectors $a,b \in \C^n$.
-If $L$ goes through a point $p \in N$, that is say $b=p$,
-then $g \circ \varphi$ is
-holomorphic function of one variable.  The function $g \circ \varphi$
+$\varphi(\xi) = a\xi + p$, for a vectors $a \in \C^n$.
+The function $g \circ \varphi$
+is a holomorphic function of one variable, and it
 is either identically zero, or
 the zero at $\xi=0$ is isolated.
-If $g \circ \varphi$ would be identically zero for all lines going through
-$p$, then $g$ would be identically zero in a neighborhood of $p$ and hence
-everywhere in $U$.  So there is one line $L$ such that $L \cap N$ has $p$
-as an isolated point.
+The function $g$ is not identically zero in any neighborhood of $p$.
+%The function $g \circ \varphi$ cannot be identically zero for all lines
+%going through $p$, as otherwise $g$ would be identically zero in a
+%neighborhood of $p$ and hence
+%everywhere in $U$.
+So there is some line $L$ such that $g \circ \varphi$
+is not identically zero, or in other words, $p$
+is an isolated point of $L \cap N$.
 
 Write $z' =
 (z_1,\ldots,z_{n-1})$ and $z=(z',z_n)$.
 Without loss of generality $p = 0$, and $L$ is the line
-obtained by setting $z' = 0$.
+obtained by $z' = 0$.
 There is some small
 $r > 0$ such that $g$ is nonzero on the set
 given by $\sabs{z_n}^2 = r$ and $z' = 0$.
 By continuity,
-$g$ is never zero on the set given by
+$g$ is nonzero on the set given by
 $\sabs{z_n}^2 = r$ and $\snorm{z'} <\epsilon$ for some $\epsilon >0$.
 
 For any fixed small $s \in \C^{n-1}$, with $\snorm{s} < \epsilon$,
@@ -3483,13 +3487,15 @@ F(z',z_n) =
 \int_{\sabs{\xi}=r} \frac{f(z',\xi)}{\xi-z_n} \,d\xi .
 \end{equation*}
 The function $\xi \to f(z',\xi)$ extends holomorphically to the entire
-disc of radius $r$ by the Riemann extension from one dimension.  Therefore,
-$F$ is equal to $f$ on the points where they are both defined.
+disc of radius $r$ by the Riemann extension from one dimension.  By Cauchy
+integral formula,
+$F$ is equal to $f$ at the points where they are both defined.
 By differentiating under the integral, the function $F$ is holomorphic.
 
 In a neighborhood of each point of 
 $N$, $f$ extends to a continuous (holomorphic in fact) function.
-So $f$ uniquely extends continuously to the closure of
+A continuous extension of $f$ must be unique
+on the closure of
 $U \setminus N$ in the subspace topology,
 $\overline{(U \setminus N)} \cap U$.  The set $N$ has empty interior,
 so $\overline{(U \setminus N)} \cap U = U$.  Hence, $F$ is the unique
@@ -3507,8 +3513,9 @@ points.
 \begin{thm} \label{thm:regptsdense}
 Let $U \subset \C^n$ be a domain and
 $f \in \sO(U)$ and $f$ is not identically zero.
-Let $N = f^{-1}(0)$.  Then there exists a open dense set of $p \in N$
-such that near each such $p$, after possibly reordering variables,
+Let $N = f^{-1}(0)$.  Then there exists a open dense subset
+$N_{\mathit{reg}} \subset N$
+such that near each $p \in N_{\mathit{reg}}$, after possibly reordering variables,
 $N$ can be locally written as
 \begin{equation*}
 z_n = g(z_1,\ldots,z_{n-1})
@@ -3517,15 +3524,17 @@ for a holomorphic function $g$.
 \end{thm}
 
 \begin{proof}
-Once we show that one regular point $p$ exists, then a whole
-neighborhood of $p$ in $N$ are regular points.  We would then be done
-since we can
+If $N$ is locally a graph at $p$, then it is a graph
+for every point of $N$ near $p$.  So $N_{\mathit{reg}}$
+is open.  Hence, once we show that $N_{\mathit{reg}}$ is nonempty, 
+we will be done as we can
 repeat the procedure on any neighborhood of any point of $N$.
 
 Since $f$ is not identically zero, then not all derivatives of $f$
 vanish identically on $N$.  Pick a derivative of $f$ of order $k$
 such that all derivatives of $f$ order less than $k$ vanish identically on $N$.
-We obtain a function $h \colon U \to \C$, holomorphic, and such that 
+We obtain a function $h \colon U \to \C$, holomorphic, vanishing on $N$,
+and such that 
 without loss of generality the $z_n$ derivative does not vanish identically
 on $N$.  Then there is some point $p \in N$ such that $\frac{\partial
 h}{\partial z_n}(p) \not= 0$.
@@ -3533,8 +3542,8 @@ We apply the implicit function theorem at $p$ to find $g$ such that
 \begin{equation*}
 h\bigr(z_1,\ldots,z_{n-1},g(z_1,\ldots,z_{n-1})\bigr) = 0 ,
 \end{equation*}
-and the solution $z_n = g(z_1,\ldots,z_{n-1})$ is the unique one
-in $h=0$ near $p$.
+and $z_n = g(z_1,\ldots,z_{n-1})$ is the unique solution to
+$h=0$ near $p$.
 
 Near $p$ we have that the zero set of $h$ contains the zero set of $f$, and
 we need to show equality.
@@ -3542,10 +3551,11 @@ Write $p = (p',p_n)$.  Then the function
 \begin{equation*}
 \xi \mapsto f(p',\xi)
 \end{equation*}
-has a zero in a small disc around $p_n$.  By
+has an isolated zero in a small disc around $p_n$.  By
 \hyperref[thm:onevarrouche]{Rouch\`e's theorem}
-$\xi \mapsto f(z',\xi)$ must have a zero for $z'$ sufficiently close to $p'$.
-It follows that since $g$ was giving the unique solution near $p$ and the
+$\xi \mapsto f(z',\xi)$ must have a zero for all $z'$ sufficiently close to $p'$.
+It follows that since $g$ was giving the unique solution to $h=0$
+near $p$ and the
 zeros of $f$ are contained in the zeros of $h$, we are done.
 \end{proof}
 
@@ -3683,7 +3693,7 @@ D(f \circ G^{-1})
 
 \begin{exbox}
 \begin{exercise}
-Take the set
+Take the analytic set
 $X = \bigl\{ z \in \C^2 : z_1^2 = z_2^3 \bigr\}$.
 Find a one-to-one holomorphic mapping $f \colon \C \to X$.
 Then note that the derivative of $f$ vanishes at a certain point.
@@ -11318,7 +11328,7 @@ ambient dimension minus the dimension of $X$.
 \begin{exbox}
 \begin{exercise}
 Suppose that $X \subset U \subset \C^n$ is a subvariety
-of a domain $U$, such that $X_{reg}$ is connected.  Show that $X$ is of
+of a domain $U$, such that $X_{\mathit{reg}}$ is connected.  Show that $X$ is of
 pure dimension.
 \end{exercise}
 \end{exbox}
@@ -12298,11 +12308,26 @@ Let us review some results from one complex variable that may be useful for
 reading this book.
 The reader should first look through \sectionref{sec:motivation}
 for basic notation and motivation, although we will review some of the
-results again here.
+results again here.  We start with holomorphic functions.
+Let $U \subset \C$ be open.
+A function
+$f \colon U \to \C$ is \emph{holomorphic} if it is complex
+differentiable at every point, that is
+\begin{equation*}
+f'(z) = \lim_{h \in \C \to 0} \frac{f(z+h) - f(z)}{h}
+\end{equation*}
+exists for all $z \in U$.  For example, polynomials and rational
+functions in $z$ are holomorphic.  One of the most important examples
+is the solution to the differential equation $f'(z) = f(z)$, $f(0) = 1$, that is
+the complex exponential, defined in the entire complex plane:
+\begin{equation*}
+f(z) = e^z = e^{x+iy} = e^x \bigl( \cos y + i \sin(y) \bigr) .
+\end{equation*}
+
 
 A piecewise-$C^1$ path (or curve)\index{path}\index{curve} in $\C$
 is a continuous function $\gamma \colon [a,b] \to \C$,
-that is continuously differentiable except at finitely many points,
+continuously differentiable except at finitely many points,
 such that one-sided limits of $\gamma'$ exist at all points of $[a,b]$.
 By abuse of notation, when $\gamma$ is used as a set, then we mean
 the image
@@ -12314,7 +12339,7 @@ For a continuous function $f \colon \gamma \to \C$, define
 \overset{\text{def}}{=}
 \int_a^b f\bigl(\gamma(t)\bigr) \gamma'(t) \, dt .
 \end{equation*}
-As $\gamma'$ is only undefined at finitely many points and is otherwise
+As $\gamma'$ is defined at all but finitely many points and is otherwise
 continuous, the integral is well-defined.  Similarly one defines the more general
 path integral in $dz = dx + i\,dy$ and $d\bar{z} = dx - i\, dy$.
 Let
@@ -12356,20 +12381,6 @@ and a path is \emph{simple}\index{simple path}
 if $\gamma|_{[a,b]}$ is one-to-one
 with the possible exception of $\gamma(a) = \gamma(b)$.
 
-For an open $U \subset \C$,
-a function $f \colon U \to \C$ is \emph{holomorphic} if it is complex
-differentiable at every point, that is
-\begin{equation*}
-f'(z) = \lim_{h \in \C \to 0} \frac{f(z+h) - f(z)}{h}
-\end{equation*}
-exists for all $z \in U$.  For example, polynomials and rational
-functions in $z$ are holomorphic.  One of the most important examples
-is the solution to the differential equation $f'(z) = f(z)$, $f(0) = 1$, that is
-the complex exponential, defined in the entire complex plane:
-\begin{equation*}
-f(z) = e^z = e^{x+iy} = e^x \bigl( \cos y + i \sin(y) \bigr) .
-\end{equation*}
-
 As in the introduction, we have the following version of Cauchy integral
 formula.  A bounded domain has piecewise-$C^1$ boundary if $\partial U$
 is composed of piecewise-$C^1$ paths, and at point $p \in \partial U$,
@@ -12396,7 +12407,7 @@ d \zeta .
 \end{thm}
 
 The theorem follows from Green's theorem, which is the Stokes' theorem
-in two dimensions, although in the versions we state, one needs to
+in two dimensions.  In the versions we state, one needs to
 approximate the domain by smaller domains from the inside to insure
 the partial derivatives are bounded.  See
 \thmref{thm:generalizedcauchy}.  Let us state Green's theorem using
@@ -12503,7 +12514,7 @@ is the maximum of $\sabs{f}$ on the circle $\partial \Delta_r(p)$, then
 \sabs{c_k} \leq \frac{M}{r^k} .
 \end{equation*}
 Conversely, if a power series satisfies the Cauchy estimates,
-it will converge on $\Delta_r(p)$.
+it converges on $\Delta_r(p)$.
 
 A function $f \colon \C \to \C$ that is holomorphic is
 \emph{\myindex{entire}}.  An immediate application of Cauchy estimates
@@ -12535,7 +12546,7 @@ $f$ is continuously differentiable and
 \end{prop}
 
 Yet another consequence of the Cauchy formula (and one can make an argument
-that everything in this section is just a consequence of the Cauchy formula)
+that everything in this appendix is a consequence of the Cauchy formula)
 is the open mapping theorem.
 
 \begin{thm}[Open mapping theorem]\index{open mapping theorem}
@@ -12546,7 +12557,7 @@ $f(V)$ is open whenever $V$ is open.
 
 The real and imaginary parts $u$ and $v$ of a holomorphic function $f =
 u+iv$ are harmonic, that is
-they satisfy $\nabla^2 u = \nabla^2 v = 0$, where $\nabla^2$ is the
+$\nabla^2 u = \nabla^2 v = 0$, where $\nabla^2$ is the
 Laplacian.
 A domain $U$ is \emph{\myindex{simply connected}} if every simple closed
 path
@@ -12601,14 +12612,14 @@ The above theorem is actually quite general.
 
 \begin{thm}[Riemann mapping theorem]\index{Riemann mapping theorem}
 If $U \subset \C$ is a nonempty simply connected domain such that $U \neq \C$,
-then $U$ is biholomorphic to $\D$.  In fact, given $z_0 \in U$
+then $U$ is biholomorphic to $\D$.  Given $z_0 \in U$
 there exists a unique biholomorphic $f \colon U \to \D$
-such that $f'(z_0) > 0$, and furthermore this $f$
-maximizes $\sabs{f'(z_0)}$ among all holomorphic maps to the disc $\D$.
+such that $f'(z_0) > 0$, and $f$
+maximizes $\sabs{f'(z_0)}$ among all holomorphic maps to $\D$.
 \end{thm}
 
 Schwarz's Lemma can also be used to classify the automorphisms of the disc
-(and hence any simply connected domain).  That is let
+(and hence any simply connected domain).  Let
 $\operatorname{Aut(\D)}$ denote the group of biholomorphic (both $f$ and
 $f^{-1}$ are holomorphic) self maps of the
 disc to itself.
@@ -12625,7 +12636,7 @@ Speaking of automorphisms.  We have the following
 version of inverse function theorem.
 
 \begin{thm}
-Suppose $U$ and $V$ are open sets.
+Suppose $U$ and $V$ are open subsets of $\C$.
 \begin{enumerate}[(i)]
 \item
 If $f \colon U \to V$ is holomorphic and bijective (one-to-one and onto),
@@ -12698,7 +12709,8 @@ $\varphi'(p) \not= 0$, such that
 \end{prop}
 
 Convergence of holomorphic functions is the same as for continuous
-functions.  Sometimes this is called \emph{\myindex{normal convergence}}.
+functions: uniform convergence on compact subsets.
+Sometimes this is called \emph{\myindex{normal convergence}}.
 
 \begin{prop}
 Suppose $U \subset \C$ is an open set, and $f_k \colon U \to \C$
@@ -12735,6 +12747,7 @@ the theorem is stated, is that if $f_n$ have no zeros in $U$, then
 either the limit $f$ is identically zero, or it also has no zeros.
 
 
+\pagebreak[2]
 If $U \subset \C$ is open, $p \in U$, and
 $f \colon U \setminus \{ p \} \to \C$ is holomorphic we say that
 $f$ has an \emph{\myindex{isolated singularity}} at $p$. 
@@ -12750,12 +12763,11 @@ $\sabs{f(z)} \to \infty$ as $\sabs{z} \to \infty$)}.
 An isolated singularity that is neither removable nor a pole is said to be
 \emph{essential}\index{essential singularity}.
 
-Non-essential isolated singularities have finite order, just like zeros,
-that is, the function blows up to a finite (integral) order.
-The first statement of the following proposition is
+At non-essential isolated singularities
+the function blows up to a finite integral order.
+The first part of the following proposition is
 usually called the \emph{\myindex{Riemann extension theorem}}.
 
-\pagebreak[2]
 \begin{prop} \label{prop:onevarclassifysing}
 Suppose $U \subset \C$ is an open set, $p \in U$,
 and $f \colon U \setminus \{p\} \to \C$ holomorphic.
@@ -12772,9 +12784,9 @@ is bounded near $p$ and hence $g$ has a removable singularity at $p$.
 \end{prop}
 
 The number $k$ above is called the \emph{order}\index{order of a pole}
-of the pole.  There is a certain symmetry between zeros and poles.
+of the pole.  There is a symmetry between zeros and poles:
 If $f$ has a zero of order $k$, then $\frac{1}{f}$ has a pole of order $k$.
-And if $f$ has a pole of order $k$ at $p$, then $\frac{1}{f}$
+If $f$ has a pole of order $k$, then $\frac{1}{f}$
 has a removable singularity, and the extended function has a zero of order
 $k$.
 
@@ -12782,47 +12794,22 @@ Let $\bP^1 = \C \cup \{\infty\}$ be the \emph{\myindex{Riemann sphere}}.
 The topology on $\bP^1$ is given by insisting that
 the function $\frac{1}{z}$ is a homeomorphism
 of $\bP^1$ to itself,
-by letting $\frac{1}{\infty} = 0$ and $\frac{1}{0} = \infty$.
+where $\frac{1}{\infty} = 0$ and $\frac{1}{0} = \infty$.
 A function $f \colon U \to \bP^1$ is called \emph{\myindex{meromorphic}},
 if it is not
-identically $\infty$, and the points $U \setminus f^{-1}(\infty)$ are poles.
-In other words, a holomorphic function with poles is meromorphic
+identically $\infty$, is holomorphic on $U \setminus f^{-1}(\infty)$,
+and has poles at $f^{-1}(\infty)$.
+A holomorphic function with poles is meromorphic
 by setting the value to be $\infty$ at the poles.
 A meromorphic function is one that can locally be written as a quotient of
 holomorphic functions.
 
-An function with an essential singularity actually achieves essentially
-every value.  A weak version of this result (and an easy to prove one)
-is the \emph{\myindex{Casorati--Weierstrass theorem}}, which states
-that if $f$ has an essential singularity at $p$,
-then for any neighborhood $W$ of $p$, $f\bigl(W \setminus \{p\}\bigr)$ is dense in
-$\C$.  Let us state the much stronger theorem of Picard.
-
-\begin{thm}[Picard's big theorem]\index{Picard's big theorem}
-Suppose $U \subset \C$ is open, $f \colon U \setminus \{ p \} \to \C$
-is holomorphic, and $f$ has an essential singularity at $p$.  Then for any
-neighborhood $W$ of $p$, $f\bigl(W \setminus \{ p \}\bigr)$ is either $\C$
-or $\C$ minus a point.
-\end{thm}
-
-In particular, a function with an essential singularity is very wild.
-It achieves every value (except possibly one) infinitely often.
-For example, $e^{1/z}$ has an essential singularity at the origin
-and the function is never 0.
-Since we stated the big theorem, let us also state the little theorem.
-
-\begin{thm}[Picard's little theorem]\index{Picard's little theorem}
-If $f \colon \C \to \C$ is holomorphic
-then
-$f(\C)$ is either $\C$ or $\C$ minus a point.
-\end{thm}
 
 At an isolated singularity we can expand a holomorphic function
 via the so called
 \emph{\myindex{Laurent series}} by adding all negative powers.
 The Laurent series also characterizes the type of the singularity.
 
-\pagebreak[3]
 \begin{prop}
 If $\Delta \subset \C$ is a disc centered at $p \in \C$,
 and $f \colon \Delta \setminus \{p\} \to \C$ holomorphic,
@@ -12849,6 +12836,7 @@ The singularity at $p$ is
 \not= 0$.
 \item \emph{essential} if for every exist infinitely negative $k$
 such that $c_k \not= 0$.
+\pagebreak[3]
 \end{enumerate}
 \end{prop}
 
@@ -12909,12 +12897,40 @@ In the classical statement of the theorem the weaker
 inequality $\sabs{f(z)-g(z)} < \sabs{f(z)}$ is used.
 Notice that either inequality precludes any zeros on $\gamma$ itself.
 
+An function with an essential singularity actually achieves essentially
+every value.  A weak version of this result (and an easy to prove one)
+is the \emph{\myindex{Casorati--Weierstrass theorem}}:
+If $f$ has an essential singularity at $p$,
+then for any neighborhood $W$ of $p$, $f\bigl(W \setminus \{p\}\bigr)$ is dense in
+$\C$.  Let us state the much stronger theorem of Picard:
+A function with an essential singularity is very wild.
+It achieves every value (except possibly one) infinitely often.
+
+\begin{thm}[Picard's big theorem]\index{Picard's big theorem}
+Suppose $U \subset \C$ is open, $f \colon U \setminus \{ p \} \to \C$
+is holomorphic, and $f$ has an essential singularity at $p$.  Then for any
+neighborhood $W$ of $p$, $f\bigl(W \setminus \{ p \}\bigr)$ is either $\C$
+or $\C$ minus a point.
+\end{thm}
+
+For example, $e^{1/z}$ has an essential singularity at the origin
+and the function is never 0.
+Since we stated the big theorem, let us also state the little theorem.
+
+\begin{thm}[Picard's little theorem]\index{Picard's little theorem}
+If $f \colon \C \to \C$ is holomorphic
+then
+$f(\C)$ is either $\C$ or $\C$ minus a point.
+\end{thm}
+
+
 One theorem from algebra that is important in complex analysis, and becomes
 perhaps even more important in several variables is the fundamental theorem
 of algebra.
 
 \begin{thm}[Fundamental theorem of algebra]\index{fundamental theorem of algebra}
-If $P \colon \C \to \C$ is a nonzero polynomial of degree $k$, then $P$
+If $P \colon \C \to \C$ is a nonzero polynomial of degree $k$,\linebreak[2]
+then $P$
 has exactly $k$ roots (zeros) in $\C$ counted with multiplicity.
 \end{thm}
 
@@ -12960,10 +12976,11 @@ surprising is that $K$ may have only a
 small or no interior.  Using a closed interval $K=[a,b]$ of the real line we
 recover the Weierstrass approximation theorem.
 
-Another very interesting and useful theorem getting the opposite inequality from
+Another interesting and useful theorem getting an inequality in the opposite
+direction from
 Schwarz, and one which is often not covered in a one-variable
-course is the Koebe $\frac{1}{4}$-theorem.  It is very useful to try to
-think of why no such theorem could possibly be true for just smooth
+course is the Koebe $\frac{1}{4}$-theorem.
+Think of why no such theorem could possibly hold for just smooth
 functions.  At first glance the theorem should seem quite counterintuitive,
 and at second glance, it should seem outright outrageous.
 
