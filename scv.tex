@@ -3352,6 +3352,8 @@ f(e^{i\theta} z) = e^{i\theta}f(z) .
 Write $f$ near zero as $f(z) = \sum_{j=1}^\infty f_j(z)$ where $f_j$ are
 homogeneous polynomials of degree $j$ (notice $f_0 = 0$).  Then
 \begin{equation*}
+\sum_{j=1}^\infty e^{i\theta} f_j(z) 
+=
 e^{i\theta} \sum_{j=1}^\infty f_j(z) 
 =
 \sum_{j=1}^\infty f_j(e^{i\theta} z)
@@ -3446,8 +3448,8 @@ Take any $p \in N$, and let $L$ be a complex line through $p$.
 That is,
 $L$ is an image of an affine mapping
 $\varphi \colon \C \to \C^n$ defined by
-$\varphi(\xi) = a\xi + p$, for a vectors $a \in \C^n$.
-The function $g \circ \varphi$
+$\varphi(\xi) = a\xi + p$, for a vector $a \in \C^n$.
+The composition $g \circ \varphi$
 is a holomorphic function of one variable, and it
 is either identically zero, or
 the zero at $\xi=0$ is isolated.
@@ -3464,14 +3466,14 @@ Write $z' =
 (z_1,\ldots,z_{n-1})$ and $z=(z',z_n)$.
 Without loss of generality $p = 0$, and $L$ is the line
 obtained by $z' = 0$.
+So $g \circ \varphi$ is $\xi \mapsto g(0,\xi)$.
 There is some small
 $r > 0$ such that $g$ is nonzero on the set
-given by $\sabs{z_n}^2 = r$ and $z' = 0$.
+given by $\sabs{z_n} = r$ and $z' = 0$.
 By continuity,
 $g$ is nonzero on the set given by
-$\sabs{z_n}^2 = r$ and $\snorm{z'} <\epsilon$ for some $\epsilon >0$.
-
-For any fixed small $s \in \C^{n-1}$, with $\snorm{s} < \epsilon$,
+$\sabs{z_n} = r$ and $\snorm{z'} <\epsilon$ for some $\epsilon >0$.
+In particular, for any fixed small $s \in \C^{n-1}$, with $\snorm{s} < \epsilon$,
 setting $z' = s$,
 the zeros of $\xi \mapsto g(s,\xi)$ are isolated.
 
@@ -3490,7 +3492,8 @@ The function $\xi \to f(z',\xi)$ extends holomorphically to the entire
 disc of radius $r$ by the Riemann extension from one dimension.  By Cauchy
 integral formula,
 $F$ is equal to $f$ at the points where they are both defined.
-By differentiating under the integral, the function $F$ is holomorphic.
+By differentiating under the integral, the function $F$ is holomorphic
+in all variables.
 
 In a neighborhood of each point of 
 $N$, $f$ extends to a continuous (holomorphic in fact) function.
@@ -3507,7 +3510,7 @@ continuous extension of $f$ to $U$.
 %$F$ is continuous, it must be unique.
 \end{proof}
 
-The set of zeros of a holomorphic function has nice structure at most
+The set of zeros of a holomorphic function has a nice structure at most
 points.
 
 \begin{thm} \label{thm:regptsdense}
@@ -3528,7 +3531,7 @@ If $N$ is locally a graph at $p$, then it is a graph
 for every point of $N$ near $p$.  So $N_{\mathit{reg}}$
 is open.  Hence, once we show that $N_{\mathit{reg}}$ is nonempty, 
 we will be done as we can
-repeat the procedure on any neighborhood of any point of $N$.
+repeat the procedure on any open subset of $N$.
 
 Since $f$ is not identically zero, then not all derivatives of $f$
 vanish identically on $N$.  Pick a derivative of $f$ of order $k$
@@ -3545,7 +3548,7 @@ h\bigr(z_1,\ldots,z_{n-1},g(z_1,\ldots,z_{n-1})\bigr) = 0 ,
 and $z_n = g(z_1,\ldots,z_{n-1})$ is the unique solution to
 $h=0$ near $p$.
 
-Near $p$ we have that the zero set of $h$ contains the zero set of $f$, and
+Near $p$ the zero set of $h$ contains the zero set of $f$, and
 we need to show equality.
 Write $p = (p',p_n)$.  Then the function
 \begin{equation*}
@@ -3614,9 +3617,9 @@ a special case of the implicit function theorem.
 The trick is to show that $J_f$ happens to be nonzero
 everywhere.
 
-In one complex dimension, every holomorphic function $f$ can in
-the proper local holomorphic coordinates (and up to adding a constant)
-written as $z^d$ for $d=0,1,2,\ldots$:
+In one complex dimension, every holomorphic function $f$ can, in
+the proper local holomorphic coordinates (and up to adding a constant),
+be written as $z^d$ for $d=0,1,2,\ldots$:
 Near a $z_0 \in \C$,
 there exists a constant $c$ and a local biholomorphic $g$
 with $g(z_0) = 0$ such that
@@ -3626,7 +3629,7 @@ does not hold in several variables in general, but if the mapping is
 locally one-to-one then the present theorem says that such a mapping can be
 locally written as the identity.
 
-\begin{proof}
+\begin{proof}[Proof of the theorem]
 We proceed by induction.  We know the theorem for $n=1$,
 and suppose we know the theorem is true for dimension $n-1$.
 
@@ -3642,28 +3645,27 @@ z_n = g(z_1,\ldots,z_{n-1})
 \end{equation*}
 for some holomorphic $g$.
 If we prove the theorem near $q$, we are done.  Without loss of generality
-assume that $q=0$ and that $U$ is a
-small neighborhood of $0$.  The map
+assume $q=0$.  The biholomorphic (near the origin) map
 \begin{equation*}
-F(z_1,\ldots,z_n) = \bigl(z_1,z_2,\ldots,z_{n-1},z_n-g(z_1,\ldots,z_{n-1}) \bigr)
+\Psi(z_1,\ldots,z_n) = \bigl(z_1,z_2,\ldots,z_{n-1},z_n-g(z_1,\ldots,z_{n-1}) \bigr)
 \end{equation*}
-takes the zero set of $J_f$ to the set given by $z_n=0$.  Let us therefore assume
-that $J_f = 0$ precisely on the set given by $z_n=0$.
+takes the zero set of $J_f$ to the set given by $z_n=0$.  By considering
+$f \circ \Psi^{-1}$ instead of $f$, we may assume
+that $J_f = 0$ precisely on the set given by $z_n=0$.  We may also
+assume that $f(0) = 0$.
 
 We wish to show that all the derivatives of $f$ in the $z_1,\ldots,z_{n-1}$
 variables vanish whenever $z_n = 0$.  This
 would clearly contradict $f$ being one-to-one.
-
 Without loss of generality, suppose
-$\frac{\partial f_1}{\partial z_1}(0) \not= 0$
-and $f(0) = 0$.
+$\frac{\partial f_1}{\partial z_1}(0) \not= 0$.
 The map
 \begin{equation*}
 G(z_1,\ldots,z_n) = \bigl(f_1(z),z_2,\ldots,z_n\bigr)
 \end{equation*}
 is biholomorphic on a small neighborhood of the origin.
 The function $f \circ G^{-1}$ is holomorphic and one-to-one on a small
-neighborhood.  Furthermore by definition of $G$,
+neighborhood.  By the definition of $G$,
 \begin{equation*}
 f \circ G^{-1} (w_1,\ldots,w_n) = \bigl(w_1,h(w)\bigr) .
 \end{equation*}
@@ -3672,7 +3674,7 @@ The mapping
 \begin{equation*}
 \varphi(w_2,\ldots,w_n) = h(0,w_2,\ldots,w_n)
 \end{equation*}
-is one-to-one holomorphic mapping of a neighborhood of the origin in
+is a one-to-one holomorphic mapping of a neighborhood of the origin in
 $\C^{n-1}$ to $\C^{n-1}$.  By induction hypothesis, the Jacobian determinant of
 $\varphi$ is nowhere zero.
 
@@ -3768,8 +3770,8 @@ Let $U \subset \C^n$ be a domain (connected open set).  The set $U$ is
 called a \emph{\myindex{domain of holomorphy}} if there do not exist
 nonempty open sets
 $V$ and $W$, with $V \subset U \cap W$, $W \not\subset U$, and $W$
-connected, such that for every $f \in \sO(U)$ there exists an $\widetilde{f} \in
-\sO(W)$ with $f(z) = \widetilde{f}(z)$ for all $z \in V$.
+connected, such that for every $f \in \sO(U)$ there exists an $F \in
+\sO(W)$ with $f(z) = F(z)$ for all $z \in V$.
 \end{defn}
 
 \begin{myfig}
@@ -3778,7 +3780,7 @@ connected, such that for every $f \in \sO(U)$ there exists an $\widetilde{f} \in
 
 \begin{example}
 The unit ball $\bB_n \subset \C^n$ is a domain of holomorphy.  Proof: 
-Consider $V$, $W$, and $\widetilde{f}$ as in the definition.  As $W$ is
+Consider $V$, $W$, and $F$ as in the definition.  As $W$ is
 connected and open, it is path connected.  There exist
 points in $W$ that are not in $\bB_n$, so there
 is a path $\gamma$ in $W$ that goes
@@ -3786,9 +3788,9 @@ from a point $q \in V$ to some $p \in \partial \bB_n \cap W$.
 Without loss of generality (after composing with
 rotations, that is unitary matrices), we assume that $p =
 (1,0,0,\ldots,0)$.  Take the function $f(z) = \frac{1}{1-z_1}$.  
-The function $\widetilde{f}$ must agree with $f$ on the component of
+The function $F$ must agree with $f$ on the component of
 $\bB_n \cap W$ that contains $q$.  But that component also contains $p$ and
-so $\widetilde{f}$ must blow up (in particular it cannot be holomorphic) at
+so $F$ must blow up (in particular it cannot be holomorphic) at
 $p$.  The contradiction shows that no $V$ and $W$ exist.
 \end{example}
 
@@ -3839,7 +3841,7 @@ Show that a convex domain in $\C^n$ is a domain of holomorphy.
 
 In the following when we say $f \in \sO(U)$ extends holomorphically to $V$ where
 $U \subset V$, we mean that there
-exists a function $\widetilde{f} \in \sO(V)$ such that $f = \widetilde{f}$ on
+exists a function $F \in \sO(V)$ such that $f = F$ on
 $U$.
 
 \begin{remark}
@@ -3850,7 +3852,7 @@ of the logarithm defined on $U = \C \setminus \{ z \in \C : \Im z = 0, \Re z \le
 \}$.  We can locally define an extension from one side through the boundary
 of the domain, but we cannot define an extension on a open set that
 contains $U$.  This example should be motivation why we need $V$ to possibly
-be a subset of $U \cap W$, and why $W$ need not include all of $U$.
+be a proper subset of $U \cap W$, and why $W$ need not include all of $U$.
 \end{remark}
 
 In several dimensions not every domain is a domain of holomorphy.  We have
