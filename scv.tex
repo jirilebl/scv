@@ -3778,15 +3778,20 @@ connected, such that for every $f \in \sO(U)$ there exists an $F \in
 \subimport*{figures/}{domain-of-hol-def.pdf_t}
 \end{myfig}
 
+The idea is that if a domain $U$
+is not a domain of holomorphy and $V$, $W$ exist as in the
+definition, then $f$ ``extends across the boundary'' somewhere.
+
 \begin{example}
 The unit ball $\bB_n \subset \C^n$ is a domain of holomorphy.  Proof: 
-Consider $V$, $W$, and $F$ as in the definition.  As $W$ is
+Consider $U=\bB_n$, and suppose $V$, $W$ as in the definition exist.
+As $W$ is
 connected and open, it is path connected.  There exist
 points in $W$ that are not in $\bB_n$, so there
 is a path $\gamma$ in $W$ that goes
 from a point $q \in V$ to some $p \in \partial \bB_n \cap W$.
 Without loss of generality (after composing with
-rotations, that is unitary matrices), we assume that $p =
+rotations, that is unitary matrices), assume $p =
 (1,0,0,\ldots,0)$.  Take the function $f(z) = \frac{1}{1-z_1}$.  
 The function $F$ must agree with $f$ on the component of
 $\bB_n \cap W$ that contains $q$.  But that component also contains $p$ and
@@ -3809,6 +3814,7 @@ domains), then the intersection
 \bigcap_{j} U_j
 \end{equation*}
 is either empty or every connected component is a domain of holomorphy.
+\pagebreak[1]
 \end{exercise}
 
 \begin{exercise}[Easy]
@@ -3833,9 +3839,21 @@ that does not extend past any point of
 $\partial \bB_n$.
 \end{exparts}
 \end{exercise}
+\end{exbox}
 
+Convexity will play a big role later on.
+A set $S$ is \emph{\myindex{geometrically convex}} or just \emph{\myindex{convex}}
+if for any $x,y \in S$ and any $t \in [0,1]$,
+then $t x + (1-t)y \in S$.
+The exercise below
+says that any convex domain is a domain of holomorphy.  There are other,
+nonconvex domains of holomorphy (any domain in $\C$),
+so classical convexity is not the correct notion, but it is
+in the right direction.
+
+\begin{exbox}
 \begin{exercise}
-Show that a convex domain in $\C^n$ is a domain of holomorphy.
+Show that a geometrically convex domain in $\C^n$ is a domain of holomorphy.
 \end{exercise}
 \end{exbox}
 
@@ -3845,17 +3863,18 @@ exists a function $F \in \sO(V)$ such that $f = F$ on
 $U$.
 
 \begin{remark}
-Do note that the subtlety of the definition of domain of holomorphy is that it does not
+The subtlety of the definition of domain of holomorphy is that it does not
 necessarily talk about functions extending to a larger set, since we must
 take into account single-valuedness.  For example, let $f$ be the principal branch
-of the logarithm defined on $U = \C \setminus \{ z \in \C : \Im z = 0, \Re z \leq 0
-\}$.  We can locally define an extension from one side through the boundary
+of the logarithm defined on the slit plane
+$U = \C \setminus \{ z \in \C : \Im z = 0, \Re z \leq 0 \}$.
+We can locally define an extension from one side through the boundary
 of the domain, but we cannot define an extension on a open set that
-contains $U$.  This example should be motivation why we need $V$ to possibly
+contains $U$.  This example should be motivation for why we let $V$ 
 be a proper subset of $U \cap W$, and why $W$ need not include all of $U$.
 \end{remark}
 
-In several dimensions not every domain is a domain of holomorphy.  We have
+In dimension two or more, not every domain is a domain of holomorphy.  We have
 the following theorem.  The domain $H$ in the theorem is called the
 \emph{\myindex{Hartogs figure}}.
 
@@ -3873,10 +3892,11 @@ If $f \in \sO(H)$, then $f$ extends holomorphically to $\D^{m+k}$.
 \end{thm}
 
 \begin{samepage}
-In $\C^2$ if $m=1$ and $k=1$, the figure looks like:
+In $\C^2$ if $m=1$ and $k=1$, the figure looks like (the $c$ will come up in
+the proof):
 
-\newcommand{\hartogstext}{\parbox[t]{2.5in}{In diagrams, often the Hartogs figure is
-drawn as:}}
+\newcommand{\hartogstext}{\parbox[t]{2.3in}{In diagrams, the Hartogs figure is
+often drawn as:}}
 
 \begin{myfig}
 \subimport*{figures/}{hartogs-figure.pdf_t}
@@ -3891,15 +3911,15 @@ Pick a $c \in (a,1)$.  Let
 \end{equation*}
 That is, $\Gamma$ is the distinguished boundary of $c \D^m$,
 a polydisc centered at 0 of radius $c$ in $\C^m$.
-We use the Cauchy formula in the first $m$ variables and
-define the function $F$
+%We use the Cauchy formula in the first $m$ variables and
+We define the function
 \begin{equation*}
 F(z,w)
 =
 \frac{1}{{(2\pi i)}^m}
 \int_\Gamma \frac{f(\xi,w)}{\xi-z} \, d\xi .
 \end{equation*}
-Clearly $F$ is well-defined on all of
+Clearly $F$ is well-defined on
 \begin{equation*}
 c\D^m \times \D^k
 \end{equation*}
@@ -3911,11 +3931,15 @@ underneath the integral and $f$ is holomorphic in $w$ on $H$.  Furthermore,
 $F$ is holomorphic in $z$ as the kernel $\frac{1}{\xi-z}$ is holomorphic in
 $z$ as long as $z \in c\D^m$.
 
-When $\sabs{w_j} < b$ for all $j$, then we know that $F(z,w) = f(z,w)$
-for all $z \in c \D^m$.  Therefore, $F$ and $f$ are equal on an open subset
-of $H$, and hence they are equal everywhere where their domains intersect.
+For any $w$ with $\sabs{w_j} < b$ for all $j$,
+the Cauchy integral formula says
+$F(z,w) = f(z,w)$ for all $z \in c \D^m$.
+Hence, $F=f$ on the open set
+$c\D^m \times b\D^k$,
+and so they are equal on 
+$(c\D^m \times \D^k) \cap H$.
 Combining $F$ and $f$ we obtain a holomorphic
-function on all of $\D^{m+k}$ that extends $f$.
+function on $\D^{m+k}$ that extends $f$.
 \end{proof}
 
 The theorem is used 
@@ -3962,12 +3986,9 @@ $U \setminus \{ p \}$.  It would not be possible to extend $f$
 through $p$ (not even continuously let alone holomorphically),
 and we obtain a contradiction.
 
-\pagebreak[2]
 The extension works in an even more surprising fashion.  We could
 take out a very large set, for example, any geometrically
-convex\footnote{By geometrically convex we mean the classical
-definition of convex: $K$ is convex if given any two $x,y \in K$ and $t \in [0,1]$,
-then $t x + (1-t)y \in K$.} subset:
+convex subset:
 
 \begin{exbox}
 \begin{exercise} \label{exercise:convexhartogs}
@@ -4023,7 +4044,7 @@ $f \in \sO(\C^2 \setminus \R^2)$.  Show that $f$ extends to be holomorphic
 in all of $\C^2$.  Hint: Change coordinates before using Hartogs.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:fatcylinder1}
 Suppose 
 \begin{equation*}
 U = \bigl\{ (z,w) \in \D^2 : \nicefrac{1}{2} < \sabs{z} \bigr\} .
@@ -4060,14 +4081,24 @@ find a nonconstant example and prove that such an $f$ must be rational (that
 is $g$ and $h$ must be polynomials).
 \end{exparts}
 \end{exercise}
+
+\begin{exercise} \label{exercise:fatcylinder2}
+Suppose 
+\begin{equation*}
+U = \bigl\{ z \in \D^3 :
+\nicefrac{1}{2} < \sabs{z_1} \quad\text{or}\quad
+\nicefrac{1}{2} < \sabs{z_2} \bigr\} .
+\end{equation*}
+Prove that every function $f \in \sO(U)$ extends to $\D^3$.
+Compare to \exerciseref{exercise:fatcylinder1}.
+\end{exercise}
 \end{exbox}
 
 \begin{example}
 By
-\exerciseref{exercise:C2minusR2} we see
-that
+\exerciseref{exercise:C2minusR2},
 $U_1 = \C^2 \setminus \R^2$
-is not a domain of holomorphy.  On the other hand
+is not a domain of holomorphy.  On the other hand,
 $U_2 = \C^2 \setminus \{ z \in \C^2 : z_2 = 0 \}$ is a domain of holomorphy;
 simply
 use $f(z) = \frac{1}{z_2}$ as the function that cannot extend.

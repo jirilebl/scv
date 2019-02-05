@@ -25,6 +25,8 @@
 * Add figure to proof of Rothstein's theorem in 1.4
 ** Add two exercises in 1.4, which renumbers the other exercises.
 * Add a little bit of explanation of the computation for $f^\ell$ in 1.5
+* Improve figure for Hartogs figure.
+* Add exercise to 2.1
 * Add definition of Levi-flat to end of 2.3 and add exercises 2.3.13-2.3.17
 ** Move the solution of Dirichlet problem up in 2.4 so that it can be used.  This renumbers the exercises in 2.4
 * Add figure to proof of Cauchy-Pompeiu
