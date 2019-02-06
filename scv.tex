@@ -3534,7 +3534,8 @@ repeat the procedure on any open subset of $N$.
 
 Since $f$ is not identically zero, then not all derivatives of $f$
 vanish identically on $N$.  Pick a derivative of $f$ of order $k$
-such that all derivatives of $f$ order less than $k$ vanish identically on $N$.
+such that all derivatives of $f$ order less than $k$ vanish identically on
+$N$.\linebreak[1]
 We obtain a function $h \colon U \to \C$, holomorphic, vanishing on $N$,
 and such that 
 without loss of generality the $z_n$ derivative does not vanish identically
@@ -3553,10 +3554,14 @@ Write $p = (p',p_n)$.  Then the function
 \begin{equation*}
 \xi \mapsto f(p',\xi)
 \end{equation*}
-has an isolated zero in a small disc around $p_n$.  By
-\hyperref[thm:onevarrouche]{Rouch\`e's theorem}
-$\xi \mapsto f(z',\xi)$ must have a zero for all $z'$ sufficiently close to $p'$.
-It follows that since $g$ was giving the unique solution to $h=0$
+has an isolated zero in a small disc $\Delta$ around $p_n$ and is
+nonzero on the circle $\partial \Delta$.  By
+\hyperref[thm:onevarrouche]{Rouch\`e's theorem},
+$\xi \mapsto f(z',\xi)$ must have a zero for all $z'$ sufficiently close to $p'$
+(close enough to make $\sabs{f(q',\xi)-f(z',\xi)} < \sabs{f(q',\xi)}$ for all $\xi \in
+\partial \Delta$).
+%since $f(z',\xi)$ is close to $f(p',\xi)$ for $\xi \in \partial \Delta$).
+Since $g(z')$ is the unique solution $z_n$ to $h(z',z_n) = 0$
 near $p$ and the
 zeros of $f$ are contained in the zeros of $h$, we are done.
 \end{proof}
@@ -3567,7 +3572,8 @@ although the general definition of an
 analytic set is a little more complicated, and includes more sets.
 See \chapterref{ch:analyticvarieties}.
 Points where $N$ is written as a graph of a holomorphic mapping are called
-\emph{regular points}\index{regular point}.  In particular,
+\emph{regular points}\index{regular point}, and we write them as
+$N_{\mathit{reg}}$ as above.  In particular,
 since $N$ is a graph of a single holomorphic function, they are called
 regular points of (complex) dimension $n-1$, or (complex) codimension 1.
 The set of regular points is what is called an
@@ -3576,10 +3582,33 @@ submanifold of real dimension $2n-2$.
 The points on an analytic set that are not regular are called
 \emph{singular points}\index{singular point}.
 
+\begin{example}
+For $U = \C^2$,
+let $f(z) = z_1^2-z_2^2$ and consider $X = f^{-1}(0)$. As $\nabla f =
+(2z_1,2z_2)$,
+outside of the origin, we can solve for $z_1$ or $z_2$ and so
+all points of $X \setminus 0$ are regular.  In fact,
+$z_1 = z_2$ and $z_1 = -z_2$ are the two possibilities.
+In any neighborhood of the origin, however, there is no way to solve for either
+$z_1$ or $z_2$, since you always get two possible solutions:  If you could
+solve $z_1 = g(z_2)$, then both $z_2 = g(z_2)$ and $-z_2 = g(z_2)$ must be
+true, a contradiction for any nonzero $z_2$.  Similarly we cannot solve for $z_1$.
+So the origin is a singular point.
+
+To see that you may have need to use derivatives of the function, notice
+that the function $\varphi(z) = {(z_1^2-z_2^2)}^2$ has the same zero set $X$,
+but both
+$\frac{\partial \varphi}{\partial z_1}$ and
+$\frac{\partial \varphi}{\partial z_2}$ vanish on $X$.  Using
+$h= \frac{\partial \varphi}{\partial z_1}$ or
+$h= \frac{\partial \varphi}{\partial z_2}$ in the proof will work.
+\end{example}
+
 \begin{exbox}
 \begin{exercise}
 Find all the regular points of the analytic set
 $X = \bigl\{ z \in \C^2 : z_1^2 = z_2^3 \bigr\}$.
+Hint: The trick is showing that you've found all of them.
 \end{exercise}
 
 \begin{exercise} \label{exercise:connectedcomplement}
@@ -3599,7 +3628,7 @@ Suppose $U \subset \C^n$ is a domain and $f \colon U \to \C^n$ is
 holomorphic and one-to-one.  Then the Jacobian determinant is never equal to zero 
 on $U$.
 
-In particular if $f \colon U \to V$ is
+In particular if a holomorphic map $f \colon U \to V$ is
 one-to-one and onto for two domains $U,V \subset \C^n$, then $f$ is
 biholomorphic.
 \end{thm}
@@ -3629,15 +3658,15 @@ locally one-to-one then the present theorem says that such a mapping can be
 locally written as the identity.
 
 \begin{proof}[Proof of the theorem]
-We proceed by induction.  We know the theorem for $n=1$,
-and suppose we know the theorem is true for dimension $n-1$.
+We proceed by induction.  We know the theorem for $n=1$.
+Suppose $n > 1$ and suppose we know the theorem is true for dimension $n-1$.
 
 Suppose for contradiction that $J_f = 0$ somewhere.
-The Jacobian determinant cannot be identically zero.  For example, by the
-classical theorem of Sard the set of critical values (the image of the set
-where the Jacobian determinant vanishes) is a null set.
-
-Let us find a regular point $q$ on the zero set of $J_f$.
+First suppose that $J_f$ is not identically zero.
+%The Jacobian determinant cannot be identically zero.  For example, by the
+%classical theorem of Sard the set of critical values (the image of the set
+%where the Jacobian determinant vanishes) is a null set.
+Find a regular point $q$ on the zero set of $J_f$.
 Write the zero set of $J_f$ near $q$ as
 \begin{equation*}
 z_n = g(z_1,\ldots,z_{n-1})
@@ -3650,13 +3679,22 @@ assume $q=0$.  The biholomorphic (near the origin) map
 \end{equation*}
 takes the zero set of $J_f$ to the set given by $z_n=0$.  By considering
 $f \circ \Psi^{-1}$ instead of $f$, we may assume
-that $J_f = 0$ precisely on the set given by $z_n=0$.  We may also
+that $J_f = 0$ on the set given by $z_n=0$.  We may also
 assume that $f(0) = 0$.
+
+If $J_f$ vanishes identically then there is no need to do anything other
+than a translation.  In either case,
+we may assume that $0 \in U$, $f(0)=0$, and
+$J_f = 0$ when $z_n=0$.
 
 We wish to show that all the derivatives of $f$ in the $z_1,\ldots,z_{n-1}$
 variables vanish whenever $z_n = 0$.  This
-would clearly contradict $f$ being one-to-one.
-Without loss of generality, suppose
+would clearly contradict $f$ being one-to-one,
+as $f(z_1,\ldots,z_{n-1},0)$ would be constant.
+So for any point on $z_n=0$ we consider one of the components
+of $f$ and one of the derivatives of that component.
+Without loss of generality, suppose the point is 0, and
+for contradiction suppose
 $\frac{\partial f_1}{\partial z_1}(0) \not= 0$.
 The map
 \begin{equation*}
@@ -3666,15 +3704,17 @@ is biholomorphic on a small neighborhood of the origin.
 The function $f \circ G^{-1}$ is holomorphic and one-to-one on a small
 neighborhood.  By the definition of $G$,
 \begin{equation*}
-f \circ G^{-1} (w_1,\ldots,w_n) = \bigl(w_1,h(w)\bigr) .
+f \circ G^{-1} (w_1,\ldots,w_n) = \bigl(w_1,h(w)\bigr) ,
 \end{equation*}
+where $h$ is a holomorphic mapping taking a neighborhood of the
+origin in $\C^n$ to $\C^{n-1}$.
 %For any small $\xi \in \C$ near the origin,
 The mapping
 \begin{equation*}
 \varphi(w_2,\ldots,w_n) = h(0,w_2,\ldots,w_n)
 \end{equation*}
 is a one-to-one holomorphic mapping of a neighborhood of the origin in
-$\C^{n-1}$ to $\C^{n-1}$.  By induction hypothesis, the Jacobian determinant of
+$\C^{n-1}$ to $\C^{n-1}$.  By the induction hypothesis, the Jacobian determinant of
 $\varphi$ is nowhere zero.
 
 If we differentiate $f \circ G^{-1}$, we notice 
@@ -3691,6 +3731,9 @@ D(f \circ G^{-1})
 = \det D\varphi \not= 0 . \qedhere
 \end{equation*}
 \end{proof}
+
+The theorem is no longer true if the domain and range dimensions of the
+mapping are not equal.
 
 \begin{exbox}
 \begin{exercise}
@@ -4391,9 +4434,12 @@ $\nabla r = (2x,2y)$ to check that
 %Without loss of generality assume that $y\not=0$, then $b= -a \frac{x}{y}$.
 %So any vector in $T_p \partial U$ is a multiple of the vector
 \begin{equation*}
-y \frac{\partial}{\partial x} - x \frac{\partial}{\partial y}
+X = y \frac{\partial}{\partial x} - x \frac{\partial}{\partial y}
 \end{equation*}
-is tangent to the circle.  It is also nonzero on the circle.
+is tangent to the circle, that is,
+$Xr = X(x^2+y^2-1) = (2x,2y) \cdot (y,-x) = 0$ on the circle (it is in fact zero everywhere,
+but that's a fluke).
+The vector field $X$ is also nonzero on the circle.
 
 The Hessian matrix of $r$ is
 \begin{equation*}
@@ -4426,6 +4472,12 @@ y \\ -x
 \end{equation*}
 So the domain given by $r < 0$ is strongly convex at all points.
 \end{example}
+
+In general, it is easy to construct a tangent vector field on the plane
+by considering
+$r_y \frac{\partial}{\partial x} - r_x \frac{\partial}{\partial y}$.  In
+higher dimensions you can just run through enough pairs of variables to get
+a basis of $TM$.
 
 \begin{exbox}
 \begin{exercise}
@@ -4532,16 +4584,22 @@ r}{\partial y}(0,0) < 0$.
 
 The advantage of this representation is that the tangent plane at $p$
 can be identified with the $x$ coordinates for the purposes of computation.
-Let $M$ be smooth for simplicity.
-We write the equation of the hypersurface as
+The Taylor expension of any smooth function $\varphi$ at the origin is
 \begin{equation*}
-y = \frac{1}{2}\, x^t H x + E(x) ,
+\varphi(x) = \varphi(0) + \nabla \varphi|_0 \cdot x + \frac{1}{2}\, x^t H x + E(x) ,
 \end{equation*}
 where $H$ is the Hessian matrix of $\varphi$ at the origin, that is $H = \left[
 \frac{\partial^2 \varphi}{\partial x_j \partial x_k} \big|_{0} \right]_{jk}$,
 and $E$ is $O(3)$.  That is, $E(0) = 0$, and
-all first and second derivatives of $E$ vanish.  If we are dealing with a domain boundary
-$\partial U$, then
+all first and second derivatives of $E$ vanish.
+For the situation above, our $\varphi$ is $O(2)$ at the origin, and
+hence $\varphi(0) = 0$ and $d\varphi(0) = 0$, so we write the hypersurface
+$M$ as
+\begin{equation*}
+y = \frac{1}{2}\, x^t H x + E(x) .
+\end{equation*}
+If $M$ is the boundary
+$\partial U$ of a domain, then
 we pick the rotation so that $y > \frac{1}{2}\,x^t H x + E(x)$ on $U$.
 It is an easy exercise to show that $U$ is convex at $p$ if
 $H$ positive semidefinite, and $U$ is strongly convex at $p$ if $H$ is positive definite.
@@ -8640,7 +8698,7 @@ uniformly in $(\tilde{x},y') \in K'$.
 
 That is, we look at \eqref{eq:BTstokes} and we plug in $w = z(\tilde{x},y') \in K$.
 Notice that the $g$ (as usual) makes sure we never evaluate $f$, $\psi$, or
-$\phi$ at
+$\varphi$ at
 points where they are not defined.
 
 \begin{proof}
