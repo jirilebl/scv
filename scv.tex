@@ -473,10 +473,9 @@ at github: \url{https://github.com/jirilebl/scv}
 
 This book is a polished version of my course notes for Math 6283, Several
 Complex Variables, given in
-Spring 2014 and then Spring 2016 semesters at Oklahoma State University.
-It should be enough material for a semester-long course,
-though that,
-of course, depends on the speed of the lecturer and the number of detours taken.
+Spring 2014, Spring 2016, and then Spring 2019 semesters
+at Oklahoma State University.
+It is meant for a semester-long course.
 There are quite a few
 exercises sprinkled throughout the text, and I am assuming that a reader is
 at least attempting all of them.  Many are required later in the
@@ -4175,14 +4174,15 @@ we mean $C^\infty$-smooth,\index{Cinfinity-smooth@$C^\infty$-smooth}
 that is, the $r$ above is infinitely differentiable.
 \end{defn}
 
+\begin{myfig}
+\subimport*{figures/}{deffun.pdf_t}
+\end{myfig}
+
 For simplicity, in this book we generally deal with smooth
 (that is, $C^\infty$) functions and hypersurfaces only.  Dealing with
 $C^k$-smooth functions for finite $k$ introduces technicalities that make
 certain theorems and arguments unnecessarily difficult.
 
-\begin{myfig}
-\subimport*{figures/}{deffun.pdf_t}
-\end{myfig}
 
 Notice that the definition of a domain with smooth boundary is not just that the
 boundary is a smooth hypersurface, that is not enough.  It also says that 
@@ -4312,6 +4312,7 @@ $r$ is a defining function for $\partial U$ at $p \in \partial
 U$ such that $r < 0$ on $U$.
 
 If for all nonzero
+tangent vectors
 $X_p \in T_p \partial U$,
 \begin{equation*}
 X_p = \sum_{j=1}^n a_j 
@@ -8013,8 +8014,8 @@ X_{q_k} = \sum_{j=1}^n a_j \frac{\partial}{\partial \bar{z}_j} \Big|_{q_k} .
 Then $X_{q_k} f = 0$ for all $k$ and by continuity $X_p f = 0$.
 \end{proof}
 
-The boundary values of a holomorphic function define the function uniquely.  In
-particular we extend the following result from one variable.
+\pagebreak[2]
+The boundary values of a holomorphic function define the function uniquely.
 
 \begin{prop}
 Suppose $U \subset \C^n$ is a domain with smooth boundary and $f \colon \overline{U} \to \C$ is 
@@ -8023,9 +8024,8 @@ U$, then $f=0$ on all of $U$.
 \end{prop}
 
 \begin{proof}
-Let us first prove the one-dimensional theorem.
 Take $p \in \partial U$ such that $f=0$ on a neighborhood of $p$ in
-$\partial U$.  Consider a small disc $\Delta$ centered at $p$ such
+$\partial U$.  Consider a small neighborhood $\Delta$ of $p$ such
 that $f$ is zero on $\partial U \cap \Delta$.  Define $g \colon \Delta \to
 \C$ by setting $g(z) = f(z)$ if $z \in U$ and $g(z) = 0$ otherwise.
 It is not hard to see that $g$ is continuous, and it is clearly holomorphic
@@ -8038,20 +8038,20 @@ identity.
 \begin{myfig}
 \subimport*{figures/}{zero-onbound.pdf_t}
 \end{myfig}
-
-Now consider $n \geq 2$.
-Take $p \in \partial U$ such that $f=0$ on a neighborhood of $p$ in
-$\partial U$.  Without loss of generality $p=0$ and near $0$ write $U$ as
-\begin{equation*}
-\Im w > \varphi(z,\bar{z},\Re w)
-\end{equation*}
-for $(z,w) \in \C^{n-1} \times \C$, and where $\varphi$ is $O(2)$.
-Next fix any small $z$.  Considering $f$ as a function of $w$
-defined on
-$\Im w \geq \varphi(z,\bar{z},\Re w)$ the corresponding
-one-dimensional result says that $f$ is identically zero inside the domain.
-This holds for every small fixed $z$, so it holds in an open subset of $U$ and by
-identity it holds everywhere.
+%
+%Now consider $n \geq 2$.
+%Take $p \in \partial U$ such that $f=0$ on a neighborhood of $p$ in
+%$\partial U$.  Without loss of generality $p=0$ and near $0$ write $U$ as
+%\begin{equation*}
+%\Im w > \varphi(z,\bar{z},\Re w)
+%\end{equation*}
+%for $(z,w) \in \C^{n-1} \times \C$, and where $\varphi$ is $O(2)$.
+%Next fix any small $z$.  Considering $f$ as a function of $w$
+%defined on
+%$\Im w \geq \varphi(z,\bar{z},\Re w)$ the corresponding
+%one-dimensional result says that $f$ is identically zero inside the domain.
+%This holds for every small fixed $z$, so it holds in an open subset of $U$ and by
+%identity it holds everywhere.
 \end{proof}
 
 \begin{exbox}
@@ -8108,10 +8108,10 @@ p_j(z) \to f(z)
 A key point is that $K$ cannot be chosen arbitrarily, it depends on $p$ and $M$.
 On the other hand it does not depend on $f$.  Given $M$ and $p \in M$
 there is a $K$ such that \emph{every} CR function on $M$ is approximated
-uniformly on $K$ by polynomials.  The theorem also applies in $n=1$ (in one
-dimension), although in that case it follows from the much more general
+uniformly on $K$ by polynomials.  The theorem also applies in one
+dimension, although in that case the 
 theorem of Mergelyan
-(see \thmref{thm:mergelyan}).
+(see \thmref{thm:mergelyan}) is much more general.
 
 \begin{example}
 Let us show that $K$ cannot possibly be arbitrary.  Let us give an example
@@ -9261,21 +9261,24 @@ where the functions $g_k$ satisfy the compatibility conditions
 
 We claim that the following is an explicit solution:
 \begin{equation*}
+\begin{split}
 \psi(z)
-=
+& =
 \frac{1}{2\pi i}
 \int_\C
 \frac{
  g_1(\zeta,z_2,\ldots,z_n)
 }{\zeta - z_1}
 d\zeta \wedge d\bar{\zeta}
-=
+\\
+& =
 \frac{1}{2\pi i}
 \int_\C
 \frac{
  g_1(\zeta+z_1,z_2,\ldots,z_n)
 }{\zeta}
 d\zeta \wedge d\bar{\zeta} .
+\end{split}
 \end{equation*}
 To show that the singularity does not matter for integrability is the same
 idea as for the generalized Cauchy formula.
