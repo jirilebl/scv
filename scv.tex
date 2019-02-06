@@ -3413,6 +3413,22 @@ and remove some number of points (be careful in how you choose them).  Then
 show that $f$ extends to a biholomorphism of the polydisc.  Then see what
 happens to those points you took out.
 \end{exercise}
+
+\begin{exercise}
+\begin{exparts}
+\item
+Show that Cartan's uniqueness theorem is not true in the real case,
+even for rational
+functions.  That is, find a rational function $R(t)$ of
+a real variable $t$, such that $R$ that is bijective on $(-1,1)$ to
+$(-1,1)$, $R'(0) = 1$, and $R(t)$ is not the identity.
+\item
+Show that the argument from the proof of Cartan's uniqueness theorem is not true in the real case.
+For any $k \geq 1$ find a rational function $R(t)$ of
+a real variable $t$, such that $R$ takes $(-1,1)$ to $(-1,1)$ and $R'(0) =
+k$.
+\end{exparts}
+\end{exercise}
 \end{exbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3515,7 +3531,7 @@ points.
 \begin{thm} \label{thm:regptsdense}
 Let $U \subset \C^n$ be a domain and
 $f \in \sO(U)$ and $f$ is not identically zero.
-Let $N = f^{-1}(0)$.  Then there exists a open dense subset
+Let $N = f^{-1}(0)$.  Then there exists a open and dense (relative topology) subset
 $N_{\mathit{reg}} \subset N$
 such that near each $p \in N_{\mathit{reg}}$, after possibly reordering variables,
 $N$ can be locally written as
@@ -3532,10 +3548,15 @@ is open.  Hence, once we show that $N_{\mathit{reg}}$ is nonempty,
 we will be done as we can
 repeat the procedure on any open subset of $N$.
 
-Since $f$ is not identically zero, then not all derivatives of $f$
-vanish identically on $N$.  Pick a derivative of $f$ of order $k$
-such that all derivatives of $f$ order less than $k$ vanish identically on
-$N$.\linebreak[1]
+Since $f$ is not identically zero, then not all derivatives (of arbitrary
+order) of $f$
+vanish identically on $N$.
+If some first order derivative of $f$ does not vanish identically on $N$,
+let $h=f$.
+Otherwise, suppose $k$ is such that a derivative of $f$ of order $k$
+does not vanish identically on $N$, and
+all derivatives of $f$ order less than $k$ vanish identically on
+$N$.  Let $h$ be one of the derivatives of order $k-1$.
 We obtain a function $h \colon U \to \C$, holomorphic, vanishing on $N$,
 and such that 
 without loss of generality the $z_n$ derivative does not vanish identically
@@ -3611,6 +3632,7 @@ of any function of one variable.  The first part of the theorem works, but
 the $h$ you find is either $2x_1$ or $2x_2$, and its zero set is too big.
 \end{example}
 
+\pagebreak[1]
 \begin{exbox}
 \begin{exercise}
 Find all the regular points of the analytic set
