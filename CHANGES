@@ -25,7 +25,7 @@
 * Add figure to proof of Rothstein's theorem in 1.4
 ** Add two exercises in 1.4, which renumbers the other exercises.
 * Add a little bit of explanation of the computation for $f^\ell$ in 1.5
-* Add example for analytic sets in 1.6.
+* Add examples for analytic sets in 1.6.
 * Avoid unnecessary use of Sard's theorem in the theorem "one-to-one implies biholomorphic" (was 1.6.3)
 * Add a short blurb about convexity right at the beginning of 2.1
 * Improve figure for Hartogs figure.
