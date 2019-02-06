@@ -3167,8 +3167,8 @@ Prove \thmref{thm:nopropmapprodandnodisc}.
 \end{exbox}
 
 The key take-away from this section is that
-in several variables, when looking at which domains are equivalent,
-it is the geometry 
+in several variables, to see if two domains are equivalent,
+the geometry 
 of the boundaries makes a difference, not just the topology
 of the domains.
 
@@ -3188,7 +3188,7 @@ Blaschke product).  Hint: Consider the set $f^{-1}(0)$.
 
 In several variables, when $\D$ is replaced by a ball,
 this question (what are the proper maps)
-becomes much more involved, and when the dimensions of the balls are
+becomes far more involved, and if the dimensions of the balls are
 different, it is not solved in general.
 
 \begin{exbox}
@@ -3400,7 +3400,7 @@ used: Show that the groups of automorphisms of the two domains are
 different groups when $n \geq 2$.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:boundedeigen}
 Suppose $U \subset \C^n$ is a bounded domain, $a \in U$, and $f \colon U \to U$ is a
 holomorphic mapping such that $f(a) = a$.  Show that every eigenvalue
 $\lambda$ of the matrix $Df(a)$ satisfies $\sabs{\lambda} \leq 1$.
@@ -3420,14 +3420,25 @@ happens to those points you took out.
 Show that Cartan's uniqueness theorem is not true in the real case,
 even for rational
 functions.  That is, find a rational function $R(t)$ of
-a real variable $t$, such that $R$ that is bijective on $(-1,1)$ to
-$(-1,1)$, $R'(0) = 1$, and $R(t)$ is not the identity.
+a real variable $t$, such that $R$ that takes $(-1,1)$ to
+$(-1,1)$, $R'(0) = 1$, and $R(t)$ is not the identity.  You can even make
+$R$ bijective.
 \item
-Show that the argument from the proof of Cartan's uniqueness theorem is not true in the real case.
-For any $k \geq 1$ find a rational function $R(t)$ of
-a real variable $t$, such that $R$ takes $(-1,1)$ to $(-1,1)$ and $R'(0) =
-k$.
+Show that also \exerciseref{exercise:boundedeigen} is not true in the real
+case.
+For any $\alpha \in \R$ find a rational function $R(t)$ of
+a real variable $t$, such that $R$ takes $(-1,1)$ to $(-1,1)$ and
+$R'(0) = \alpha$.
 \end{exparts}
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \C^n$ is a domain, $a \in U$.
+Suppose $f \colon U \to U$ is a holomorphic mapping,
+$f(a) = a$, and suppose that $\sabs{\lambda} < 1$
+for any eigenvalue $\lambda$ of
+$D f(a)$.  Prove that there exists a neighborhood $W$ of $a$, such that
+$\lim_{\ell \to \infty} f^{\ell}(z) = a$ for all $z \in W$.
 \end{exercise}
 \end{exbox}
 
@@ -3437,10 +3448,10 @@ k$.
 
 In one dimension if a function is holomorphic in $U
 \setminus \{ p \}$ and
-locally bounded\index{locally bounded in $U$}\footnote{
+locally bounded\index{locally bounded in $U$}\footnote{%
 $f \colon U \setminus X \to \C$ is locally bounded in $U$
 if for every $p \in U$, there is a neighborhood $W$ of
-$p$ such that $f$ is bounded on $W \cap (U \setminus X)$}
+$p$ such that $f$ is bounded on $W \cap (U \setminus X)$.}
 in $U$, in particular bounded near
 $p$, then the function extends holomorphically to $U$ (see
 \propref{prop:onevarclassifysing} \ref{prop:onevarclassifysing:i}).  In several
@@ -3525,6 +3536,7 @@ continuous extension of $f$ to $U$.
 %$F$ is continuous, it must be unique.
 \end{proof}
 
+\pagebreak[2]
 The set of zeros of a holomorphic function has a nice structure at most
 points.
 
@@ -3780,6 +3792,7 @@ such that the inverse $f^{-1} \colon f(\R) \to \R$ is not continuous.
 \end{exercise}
 \end{exbox}
 
+\pagebreak[1]
 We now state a well-known and as yet unsolved conjecture (and most
 likely ridiculously hard to solve):
 the \emph{\myindex{Jacobian conjecture}}.
@@ -4813,10 +4826,10 @@ a_j
 +
 b_j
 \frac{\partial}{\partial \bar{z}_j} \Big|_p
-\right),
+\right).
 \end{equation*}
-then $X_p \in \C \otimes T_p M$
-if
+Then $X_p \in \C \otimes T_p M$
+whenever
 \begin{equation*}
  \sum_{j=1}^n
 \left(
@@ -5011,7 +5024,7 @@ computing the
 Levi form directly from $r(z,\bar{z}) = \snorm{z}^2-1$, that is,
 the complex Hessian of $r$ is the identity matrix.
 
-We remakr that the complex Hessian is not the full Hessian.
+We remark that the complex Hessian is not the full Hessian.
 Let us write down the full Hessian, using the
 basis of $\frac{\partial}{\partial z}$s and
 $\frac{\partial}{\partial \bar{z}}$s.  It is
