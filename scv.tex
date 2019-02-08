@@ -3793,7 +3793,7 @@ such that the inverse $f^{-1} \colon f(\R) \to \R$ is not continuous.
 \end{exbox}
 
 \pagebreak[1]
-We now state a well-known and as yet unsolved conjecture (and most
+This is an appropriate place to state a well-known and as yet unsolved conjecture (and most
 likely ridiculously hard to solve):
 the \emph{\myindex{Jacobian conjecture}}.
 This conjecture is a converse to the above
@@ -3996,7 +3996,7 @@ Pick a $c \in (a,1)$.  Let
 \end{equation*}
 That is, $\Gamma$ is the distinguished boundary of $c \D^m$,
 a polydisc centered at 0 of radius $c$ in $\C^m$.
-We define the function
+Define the function
 \begin{equation*}
 F(z,w)
 =
@@ -4015,7 +4015,7 @@ underneath the integral and $f$ is holomorphic in $w$ on $H$.  Furthermore,
 $F$ is holomorphic in $z$ as the kernel $\frac{1}{\xi-z}$ is holomorphic in
 $z$ as long as $z \in c\D^m$.
 
-For any $w$ with $\sabs{w_j} < b$ for all $j$,
+For any fixed $w$ with $\sabs{w_j} < b$ for all $j$,
 the Cauchy integral formula says
 $F(z,w) = f(z,w)$ for all $z \in c \D^m$.
 Hence, $F=f$ on the open set
@@ -4103,7 +4103,8 @@ The extension result decisively does not work in one dimension; for
 example take $\nicefrac{1}{z}$.
 Notice that if $n \geq 2$, then if $f \in \sO(\bB_n)$
 the set of its zeros must 
-``touch the boundary'' or be empty:  If the set of zeros was 
+``touch the boundary'' (in other words $f^{-1}(0)$ is not compact)
+or be empty:  If the set of zeros was 
 compact in $\bB_n$, then we could try to
 extend the function $\nicefrac{1}{f}$.
 
@@ -4229,6 +4230,7 @@ complex directions'' that is the correct notion to classify which
 domains are domains of holomorphy.
 %In this course
 %we will only define the notion for domains with smooth boundaries.
+Let us figure out what convexity means locally for a smooth boundary.
 
 \begin{defn} \label{def:hypersurface}
 A set $M \subset \R^n$ is a real
@@ -4283,7 +4285,7 @@ function $r(z,\bar{z}) = \snorm{z}^2-1$.  We can, in fact, find a
 single global defining function for every domain, but we have no need of this.
 
 \begin{defn}
-For any $p \in \R^n$, the set of tangent vectors $T_p \R^n$ is given by
+For any $p \in \R^n$, the set of \emph{tangent vectors}\index{vector} $T_p \R^n$ is given by
 \glsadd{not:realtangentspace}%
 \begin{equation*}
 T_p \R^n = \operatorname{span}_{\R} \left\{
@@ -4306,14 +4308,15 @@ functional.
 
 Let $M \subset \R^n$ be a smooth hypersurface, %$C^k$-smooth hypersurface for $k \geq 1$,
 $p \in M$, and $r$ is the defining function at $p$,
-then a vector $X_p \in T_p \R^n$ is tangent 
+then a vector $X_p \in T_p \R^n$ is \emph{tangent}\index{tangent vector}
 to $M$ at $p$ if
 \begin{equation*}
 X_p r = 0, \qquad \text{or in other words} \qquad
 \sum_{j=1}^n a_j \frac{\partial r}{\partial x_j} \Big|_p = 0 .
 \end{equation*}
 \glsadd{not:realtangentspace}%
-The space of tangent vectors to $M$ is denoted by $T_p M$.  The
+The space of tangent vectors to $M$ is denoted by $T_p M$, and
+is called the \emph{\myindex{tangent space}} to $M$ at $p$.  The
 space $T_pM$ is an $(n-1)$-dimensional real vector space.  
 The definition of $T_pM$ is independent of the choice of $r$ by the next two
 exercises.
@@ -4369,10 +4372,8 @@ X = \sum_{j=1}^n a_j
 \end{equation*}
 where $a_j$ are smooth %$C^k$-smooth
 functions.
-That is, $X$ is a function
-$X \colon V \subset \R^n \to T\R^n$ such that $X(p) \in T_p \R^n$, and the vectors vary 
-%$C^k$-smoothly.
-smoothly.
+That is, $X$ is a smooth function
+$X \colon V \subset \R^n \to T\R^n$ such that $X(p) \in T_p \R^n$.
 Usually we write $X_p$ rather than $X(p)$.
 To be more fancy we could
 say $X$ is a \emph{\myindex{section}} of $T \R^n$.
@@ -4441,7 +4442,7 @@ one defining function.
 \begin{exercise}
 Show that the definition of convexity is independent of the defining
 function.  Hint: If $\tilde{r}$ is another defining function near $p$,
-then there is a function $g > 0$ such that $\tilde{r} = g r$.
+then there is a smooth function $g > 0$ such that $\tilde{r} = g r$.
 \end{exercise}
 
 \begin{exercise}
@@ -4482,6 +4483,9 @@ is tangent to the circle, that is,
 $Xr = X(x^2+y^2-1) = (2x,2y) \cdot (y,-x) = 0$ on the circle (it is in fact zero everywhere,
 but that's a fluke).
 The vector field $X$ is also nonzero on the circle.
+\begin{myfig}
+\subimport*{figures/}{circle-tangent.pdf_t}
+\end{myfig}
 
 The Hessian matrix of $r$ is
 \begin{equation*}
@@ -4515,10 +4519,11 @@ y \\ -x
 So the domain given by $r < 0$ is strongly convex at all points.
 \end{example}
 
-In general, it is easy to construct a tangent vector field on the plane
+In general, we can construct a tangent vector field for
+a curve in $\R^2$
 by considering
 $r_y \frac{\partial}{\partial x} - r_x \frac{\partial}{\partial y}$.  In
-higher dimensions you can just run through enough pairs of variables to get
+higher dimensions we can just run through enough pairs of variables to get
 a basis of $TM$.
 
 \begin{exbox}
@@ -4538,7 +4543,7 @@ For computations it is often useful to use a more convenient
 defining function.
 \glsadd{not:Ol}%
 We use the \emph{\myindex{big-oh notation}},
-although we use it in perhaps less standard short hand\footnote{%
+although we use a perhaps less standard short hand\footnote{%
 The standard notation for $O(\ell)$ is $O(\snorm{x}^{\ell})$ and
 is usually defined as saying that
 $\abs{\frac{f(x)}{\snorm{x}^\ell}}$ is bounded as $x \to p$.}.
@@ -4578,20 +4583,19 @@ such that for points in $U$ we have $y > \varphi(x)$.
 \begin{proof}
 Let $r$ be a defining function at $p$.  Take $v = \nabla r (p)$.
 By translating $p$ to zero, and applying a rotation (an orthogonal matrix),
-we assume that $v = (0,0,\ldots,0,v_n)$, where $v_n < 0$.  Denote our
+we assume $v = (0,0,\ldots,0,v_n)$, where $v_n < 0$.  Denote our
 coordinates by $(x,y) \in \R^{n-1} \times \R$.  As $\nabla r(0) =
 v$, then $\frac{\partial r}{\partial y}(0) \not= 0$.  We apply 
 the implicit function theorem to find a
-smooth %$C^k$
-function $\varphi$ such that
+smooth function $\varphi$ such that
 $r\bigl(x,\varphi(x)\bigr) = 0$ for all $x$ in a neighborhood of the
-origin, and in fact that $\{ (x,y) : y=\varphi(x) \}$ are all the
+origin, and $\bigl\{ (x,y) : y=\varphi(x) \bigr\}$ are all the
 solutions to $r = 0$ near the origin.
 
 What is left is to show that the derivative at 0 of $\varphi$ vanishes.
-We have
+As
 $r\bigl(x,\varphi(x)\bigr) = 0$ for all $x$ in a neighborhood of the
-origin.
+origin, we differentiate.
 For any $j=1,\ldots,n-1$,
 \begin{equation*}
 0 = 
@@ -4618,15 +4622,15 @@ $\frac{\partial r}{\partial x_j}(0,0) = 0$ and
 $\frac{\partial r}{\partial y}(0,0) = v_n \not= 0$ and therefore
 $\frac{\partial \varphi}{\partial x_j}(0) = 0$.
 
-To prove the final statement suppose
-$r < 0$ on the domain.  It is enough to check that $r$ is
+To prove the final statement note that
+$r < 0$ on $U$.  It is enough to check that $r$ is
 negative for $(0,y)$ if $y > 0$ is small, which follows as $\frac{\partial
-r}{\partial y}(0,0) < 0$.
+r}{\partial y}(0,0) = v_n < 0$.
 \end{proof}
 
-The advantage of this representation is that the tangent plane at $p$
+The advantage of this representation is that the tangent space at $p$
 can be identified with the $x$ coordinates for the purposes of computation.
-The Taylor expension of any smooth function $\varphi$ at the origin is
+Considering $x$ as a column vector, the Taylor expension of any smooth function $\varphi$ at the origin is
 \begin{equation*}
 \varphi(x) = \varphi(0) + \nabla \varphi|_0 \cdot x + \frac{1}{2}\, x^t H x + E(x) ,
 \end{equation*}
@@ -4634,8 +4638,8 @@ where $H$ is the Hessian matrix of $\varphi$ at the origin, that is $H = \left[
 \frac{\partial^2 \varphi}{\partial x_j \partial x_k} \big|_{0} \right]_{jk}$,
 and $E$ is $O(3)$.  That is, $E(0) = 0$, and
 all first and second derivatives of $E$ vanish.
-For the situation above, our $\varphi$ is $O(2)$ at the origin, and
-hence $\varphi(0) = 0$ and $d\varphi(0) = 0$, so we write the hypersurface
+For the situation from the lemma above, our $\varphi$ is $O(2)$ at the origin, i.e.\
+$\varphi(0) = 0$ and $\nabla \varphi|_0 = 0$, so we write the hypersurface
 $M$ as
 \begin{equation*}
 y = \frac{1}{2}\, x^t H x + E(x) .
@@ -6392,7 +6396,7 @@ $\frac{1}{0.5}e^{-1/\bigl(1-{(x/0.5)}^2\bigr)}$, and
 $\frac{1}{0.25}e^{-1/\bigl(1-{(x/0.25)}^2\bigr)}$.
 
 \begin{myfig}
-\includegraphics[width=3.0in]{figures/graph-of-mollifier.pdf}
+\includegraphics[width=0.666\textwidth]{figures/graph-of-mollifier.pdf}
 \end{myfig}
 
 First $f$ is bounded above on compact sets as it is upper semicontinuous.
