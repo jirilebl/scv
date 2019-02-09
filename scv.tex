@@ -4306,7 +4306,8 @@ An object $\frac{\partial}{\partial x_j}\Big|_p$ is a linear functional
 on the space of smooth functions:
 when applied to a smooth function $g$ it gives
 $\frac{\partial g}{\partial x_j} \Big|_p$.  Therefore $X_p$ is also such a
-functional.
+functional.  It is the directional derivative from calculus, that is,
+it can also be computed as $\nabla f|_p \cdot (a_1,\ldots,a_n)$.
 
 Let $M \subset \R^n$ be a smooth hypersurface, %$C^k$-smooth hypersurface for $k \geq 1$,
 $p \in M$, and $r$ is the defining function at $p$,
@@ -4621,10 +4622,10 @@ such that for points in $U$ we have $y > \varphi(x)$.
 
 
 \begin{proof}
-Let $r$ be a defining function at $p$.  Take $v = \nabla r (p)$.
+Let $r$ be a defining function at $p$.  Take $v = \nabla r|_p$.
 By translating $p$ to zero, and applying a rotation (an orthogonal matrix),
 we assume $v = (0,0,\ldots,0,v_n)$, where $v_n < 0$.  Denote our
-coordinates by $(x,y) \in \R^{n-1} \times \R$.  As $\nabla r(0) =
+coordinates by $(x,y) \in \R^{n-1} \times \R$.  As $\nabla r|_0 =
 v$, then $\frac{\partial r}{\partial y}(0) \not= 0$.  We apply 
 the implicit function theorem to find a
 smooth function $\varphi$ such that
