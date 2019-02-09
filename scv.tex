@@ -1942,10 +1942,11 @@ for $z \in \overline{\Delta''}$.
 \end{exercise}
 \end{exbox}
 
+\pagebreak[2]
 Next we organize some immediate consequences of the theorem
 and the calculation in the proof.
 
-\pagebreak[3]
+\pagebreak[2]
 \begin{prop}
 Let $\Delta = \Delta_\rho(a) \subset \C^n$ be a polydisc,
 and $\Gamma$ its distinguished boundary.
@@ -4226,11 +4227,11 @@ $U \times V$ is a domain of holomorphy in $\C^2$.  The domains
 $U$ and $V$, and therefore $U \times V$ can be spectacularly non-convex.
 But we should not discard convexity completely, there is a notion of
 \emph{pseudoconvexity}, which vaguely means ``convexity in the 
-complex directions'' that is the correct notion to classify which
+complex directions,'' that is the correct notion to classify which
 domains are domains of holomorphy.
 %In this course
 %we will only define the notion for domains with smooth boundaries.
-Let us figure out what convexity means locally for a smooth boundary.
+Let us figure out what classical convexity means locally for a smooth boundary.
 
 \begin{defn} \label{def:hypersurface}
 A set $M \subset \R^n$ is a real
@@ -4248,9 +4249,10 @@ A domain $U$ with
 \emph{$C^k$-smooth boundary}%
 \index{Ck-smooth boundary@$C^k$-smooth boundary}
 is a domain where
-$\partial U$ is a $C^k$-smooth hypersurface, where we further require
-for a defining function $r$ of $\partial U$ near some $p$,
-that $r < 0$ for points in $U$ and $r > 0$
+$\partial U$ is a $C^k$-smooth hypersurface,
+and for every $p \in \partial U$ there is a defining
+function $r$ such that
+$r < 0$ for points in $U$ and $r > 0$
 for points not in $U$.
 
 If we say simply
@@ -4279,7 +4281,7 @@ different signs on different sides of $\bigl\{ x \in V : r(x) = 0 \bigr\}$.  The
 verification of this fact is left to the reader (Hint: Look at where the
 gradient points to).
 
-Same definition works for $\C^n$ where we simply treat $\C^n$ as $\R^{2n}$.
+Same definition works for $\C^n$, where we simply treat $\C^n$ as $\R^{2n}$.
 For example, the ball $\bB_n$ is a domain with smooth boundary with defining
 function $r(z,\bar{z}) = \snorm{z}^2-1$.  We can, in fact, find a
 single global defining function for every domain, but we have no need of this.
@@ -4322,15 +4324,25 @@ The definition of $T_pM$ is independent of the choice of $r$ by the next two
 exercises.
 
 \begin{exbox}
-\begin{exercise}
-Let $r$ and $\tilde{r}$ be two smooth defining functions for $M$ at $p$.
-Show that there exists a nonvanishing smooth function $g$ such that
-$\tilde{r} = g r$ (in a neighborhood of $p$).
-Hint: First assume $r=x_n$, so that $M$ is the set $x_n = 0$,
-and find a $g$ such that $\tilde{r} = x_n g$.  Then think
-about a local change of variables that makes $M$ into $x_n$.  Hint for the
-hint: Notice
-the basic calculus fact that if $f(0) = 0$ and $f$ is smooth then
+\begin{exercise} \label{exercise:smoothdivision}
+Suppose $M \subset \R^n$ is a smooth hypersurface and
+$r$ is a smooth defining function for $M$ at $p$.
+\begin{exparts}
+\item
+Suppose $\varphi$ is another
+smooth defining function on a neighbourhood of $p$.
+Show that there exists a smooth nonvanishing function $g$ such that
+$\varphi = g r$ (in a neighborhood of $p$).
+\item
+Now suppose $\varphi$ is just any smooth function that vanishes on $M$ (not
+necessarily a defining function).
+Again show that $\varphi = g r$, but now $g$ may possibly vanish.
+\end{exparts}
+Hint: First prove that if $r=x_n$, %so that $M$ is the set $x_n = 0$,
+find a $g$ such that $\varphi = x_n g$.  Then find
+a local change of variables to make $M$ into the set given by $x_n = 0$.
+Useful one variable calculus fact:
+If $f(0) = 0$ and $f$ is smooth then
 $s \int_0^1 f'(ts) \,dt = f(s)$
 and $\int_0^1 f'(ts) \,dt$ is a smooth function of $s$.
 \end{exercise}
@@ -4344,6 +4356,34 @@ if and only if
 $\sum_j a_j \frac{\partial \tilde{r}}{\partial x_j} \Big|_p = 0$.
 \end{exercise}
 \end{exbox}
+
+The tangent space $T_p M$ is the set of derivatives
+\emph{along} $M$ at $p$.  If $r$ is a defining function of $M$, and $f$ and $h$
+are two smooth functions such that $f=h$ on $M$, then
+\exerciseref{exercise:smoothdivision}
+says that
+\begin{equation*}
+f-h = r g, \qquad \text{or} \qquad
+f = h + r g,
+\end{equation*}
+for some smooth $g$.  Applying $X_p$ we find
+\begin{equation*}
+X_p f =
+X_p h + X_p (rg) = 
+X_p h + (X_p r)g + r(X_p g) = 
+X_p h + r(X_p g).
+\end{equation*}
+So $X_p f = X_p h$ on $M$ (where $r=0$).  In other words, $X_p f$ only
+depends on the values of $f$ on $M$.
+
+\begin{example}
+If $M \subset \R^n$ is given by $x_n = 0$, then $T_p M$ is given by
+derivatives of the form
+\begin{equation*}
+X_p =  \sum_{j=1}^{n-1} a_j \frac{\partial}{\partial x_j} \Big|_p .
+\end{equation*}
+That is, derivatives along the first $n-1$ variables only.
+\end{example}
 
 The disjoint union
 \glsadd{not:realtangentbundle}%
@@ -4375,7 +4415,7 @@ functions.
 That is, $X$ is a smooth function
 $X \colon V \subset \R^n \to T\R^n$ such that $X(p) \in T_p \R^n$.
 Usually we write $X_p$ rather than $X(p)$.
-To be more fancy we could
+To be more fancy,
 say $X$ is a \emph{\myindex{section}} of $T \R^n$.
 
 Similarly,
@@ -4431,12 +4471,12 @@ So, $U$ is convex at $p \in \partial U$ if
 the Hessian
 of $r$ at $p$ as a bilinear form is positive definite (or positive
 semidefinite) when restricted to tangent vectors in $T_p \partial U$.
-Essentially, this matrix is the second fundamental form from Riemannian
+This matrix is the second fundamental form from Riemannian
 geometry in mild disguise (or perhaps it is the other way around).
 
-Notice that we cheated above a little bit since we have not proved that
-the notion is well-defined.  In particular, we may have more than
-one defining function.
+We cheated above a little bit, since we have not proved that
+the notion is well-defined.  In particular, there are many possible
+defining functions.
 
 \begin{exbox}
 \begin{exercise}
@@ -4480,8 +4520,8 @@ $\nabla r = (2x,2y)$ to check that
 X = y \frac{\partial}{\partial x} - x \frac{\partial}{\partial y}
 \end{equation*}
 is tangent to the circle, that is,
-$Xr = X(x^2+y^2-1) = (2x,2y) \cdot (y,-x) = 0$ on the circle (it is in fact zero everywhere,
-but that's a fluke).
+$Xr = X(x^2+y^2-1) = (2x,2y) \cdot (y,-x) = 0$ on the circle (in this case
+it is in fact zero everywhere).
 The vector field $X$ is also nonzero on the circle.
 \begin{myfig}
 \subimport*{figures/}{circle-tangent.pdf_t}
@@ -4519,9 +4559,9 @@ y \\ -x
 So the domain given by $r < 0$ is strongly convex at all points.
 \end{example}
 
-In general, we can construct a tangent vector field for
-a curve in $\R^2$
-by considering
+In general, to construct a tangent vector field for
+a curve in $\R^2$,
+consider
 $r_y \frac{\partial}{\partial x} - r_x \frac{\partial}{\partial y}$.  In
 higher dimensions we can just run through enough pairs of variables to get
 a basis of $TM$.
@@ -4861,8 +4901,8 @@ T_p^{(1,0)} M \overset{\text{def}}{=} \bigl( \C \otimes T_pM \bigr) \cap
 T_p^{(0,1)} M \overset{\text{def}}{=} \bigl( \C \otimes T_pM \bigr) \cap
 \bigl( T_p^{(0,1)} \C^n \bigr) .
 \end{equation*}
-The $B_p$ is just the ``left-over'' and we need to
-include it as otherwise the dimensions cannot possibly work out.
+The $B_p$ is just the ``left-over'' and must
+be included, otherwise the dimensions will not work out.
 
 Make sure that you understand what all the objects are.  The space
 $T_pM$ is a real vector space; $\C \otimes T_pM$, $T_p^{(1,0)}M$,
@@ -4904,7 +4944,7 @@ $T_p^{(0,1)}M$ to $T_{f(p)}^{(0,1)}f(M)$.
 In the next proposition it is important to note that a translation and
 applying a unitary matrix are biholomorphic changes of coordinates.
 
-\pagebreak[3]
+\pagebreak[2]
 \begin{prop}
 Suppose $M \subset \C^n$ is a smooth real hypersurface, $p \in M$.
 After a translation and rotation via a unitary
@@ -4938,6 +4978,7 @@ $\dim_\C B_p = 1$.
 If $M$ is the boundary of a domain $U$ with smooth boundary,
 the rotation can be chosen so that
 $\Im w > \varphi(z,\bar{z},\Re w)$ on $U$.
+\pagebreak[2]
 \end{prop}
 
 \begin{proof}
@@ -5310,7 +5351,7 @@ $f$ is a function of $z$, and $\bar{f}$ is a function of $\bar{z}$.
 \frac{\partial f_\ell}{\partial z_k} (z) 
 +
 \frac{\partial^2 r}{\partial \bar{z}_m \partial z_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
-\cancelto{0}{\frac{\partial \bar{f}_m}{\partial z_j} (\bar{z}) }
+\smash{\cancelto{0}{\frac{\partial \bar{f}_m}{\partial z_j} (\bar{z}) }}
 \frac{\partial f_\ell}{\partial z_k} (z) 
 \biggr)
 \\
@@ -5381,7 +5422,8 @@ Let us look at the mixed derivatives:
 +
 \sum_{\ell=1}^n 
 \frac{\partial r}{\partial z_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
-\cancelto{0}{\frac{\partial^2 f_\ell}{\partial \bar{z}_j \partial z_k} (z)}
+\smash{\cancelto{0}{\frac{\partial^2 f_\ell}{\partial \bar{z}_j \partial
+z_k} (z)}}
 \\
 &=
 \sum_{\ell,m=1}^n 
@@ -6661,10 +6703,11 @@ Use the one-variable result to extend the theorem to several variables.
 
 \section{Hartogs pseudoconvexity}
 
-It is worth it to mention explicitly that by the above
-exercises, plurisubharmonicity is preserved under holomorphic mappings.
-That is if $g$ is holomorphic and $f$ is plurisubharmonic, then
-$f \circ g$ is plurisubharmonic.  In particular if $\varphi \colon \D \to
+It is worth mentioning explicitly that by the
+exercises of the previous section,
+plurisubharmonicity is preserved under holomorphic mappings.
+That is, if $g$ is holomorphic and $f$ is plurisubharmonic, then
+$f \circ g$ is plurisubharmonic.  In particular, if $\varphi \colon \D \to
 \C^n$ is an analytic disc and $f$ is plurisubharmonic in a neighborhood of
 $\varphi(\D)$,
 then $f \circ \varphi$ is subharmonic.
@@ -7097,7 +7140,7 @@ a_j \frac{\partial r}{\partial z_j} \Big|_q =
 0 .
 \end{equation*}
 Taking the orthogonal decomposition, $b$ is a scalar multiple of $\overline{\nabla_z r(q)}$.
-Then by Cauchy--Schwarz we find
+By Cauchy--Schwarz,
 \begin{equation*}
 \abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
 =
@@ -7375,7 +7418,7 @@ Using an above exercise we see that $\C^n$ is both holomorphically convex and
 a domain of holomorphy.  In fact, these two notions are equivalent for all
 other domains in $\C^n$.
 
-\pagebreak[3]
+\pagebreak[2]
 \begin{thm}[Cartan--Thullen\index{Cartan--Thullen theorem}]
 \label{thm:cartthul}
 Let $U \subsetneq \C^n$ be a domain.  The following are equivalent:
@@ -10667,7 +10710,7 @@ such that $A \cap N = B \cap N$.
 An equivalence class of sets 
 is called a \emph{\myindex{germ of a set}} at $p$.
 \glsadd{not:germA}%
-Usually it is denoted by $(A,p)$, but we may write $A$ when
+It is denoted by $(A,p)$, but we may write $A$ when
 the context is clear.
 \end{defn}
 
@@ -10718,7 +10761,7 @@ at least one derivative of order $k$ that does not vanish at $a$.
 \sectionnewpage
 \section{Weierstrass preparation and division theorems} \label{sec:wpt}
 
-From one variable, you may remember that a holomorphic function 
+In one complex variable, a holomorphic function 
 vanishing to order $k$ at 0 equals (locally) $z^k u(z)$ for a nonvanishing $u$.
 In several variables, there is a similar theorem, or in fact a pair of theorems,
 the so-called Weierstrass preparation and
@@ -10910,10 +10953,6 @@ There is an obvious statement of the preparation theorem for germs.
 State and prove a germ version of the preparation theorem.
 \end{exercise}
 \end{exbox}
-
-%\subsection{The division theorem}
-
-%A related theorem is the Weierstrass division theorem.
 
 \begin{thm}[\myindex{Weierstrass division theorem}]
 Suppose $f$ is holomorphic near the origin, and suppose $P$
@@ -11827,7 +11866,7 @@ We give the theorem without proof in the general case, although we have
 essentially proved it already for pure codimension 1 (to put it
 together is left as an exercise).
 
-\pagebreak[3]
+\pagebreak[2]
 \begin{thm}[\myindex{Local parametrization theorem}]
 \label{localparthm}
 Let $(X,0)$ be an irreducible germ of a complex variety of dimension $k$
@@ -12397,6 +12436,8 @@ $\N = \{ 1,2,3, \ldots \}$ for
 the natural numbers, 
 $\N_0 = \{ 0,1,2,3, \ldots \}$ for the zero-based natural numbers,
 and $\Z$ for all integers.
+When we write $\C^n$ or $\R^n$ we implicitly mean that $n \geq 1$, unless
+otherwise stated.
 
 The notation $f \colon X \to Y$ means a function with domain $X$ and
 codomain $Y$.  By $f(S)$ we mean the direct image of $S$ by $f$.
@@ -13201,6 +13242,54 @@ $f(\D)$ contains a disc centered at $f(0)$ and radius $\frac{f'(0)}{4}$.
 
 The $\frac{1}{4}$ is sharp, that is, it is the best it can be.
 
+\medskip
+
+Finally, it is useful to factor out all the zeros of a holomorphic function,
+not just finitely many.  Similarly we can work with poles.
+
+\begin{thm}[Weierstrass product theorem]\index{Weierstrass product theorem}
+Suppose $U \subset \C$ is a domain, $\{ a_k \}$, $\{ b_k \}$ are
+countable sets in $U$
+with no limit points in $U$, and $\{ n_k \}$, $\{ m_k \}$ any countable sets of
+natural numbers.
+Then there exists a meromorphic function $f$ of $U$ whose
+zeros are exactly at $a_k$, with orders given by $n_k$, and
+poles are exactly at $b_k$, with orders given by $m_k$.
+\end{thm}
+
+For a more explicit statement, we need infinite products.  The product
+$\prod_{j=1}^\infty (1+a_j)$
+converges if the sequence partial products
+$\prod_{j=1}^n (1+a_j)$ converges.  We say that it the product converges
+absolutely if
+$\prod_{j=1}^\infty (1+\sabs{a_j})$
+converges, which is equivalent to $\sum_{j=1}^\infty \sabs{a_j}$ converging.
+
+Define
+\begin{equation*}
+E_0(z) = (1-z), \qquad
+E_m(z) = (1-z) \exp\left( z +\frac{z^2}{2} + \cdots + \frac{z^m}{m} \right)
+.
+\end{equation*}
+The function $E_m\bigl(\nicefrac{z}{a}\bigr)$ has a zero of order 1 at $a$.
+
+\begin{thm}[Weierstrass factorization theorem]\index{Weierstrass factorization theorem}
+Let $f$ be an entire function with zeros (with multiplicity) at points of
+the sequence $\{ a_k \}$ except the zero at
+the origin, whose order is $m$ (possibly $m=0$).  Then there exists an
+entire function $g$ and a sequence $p_k$ such that
+\begin{equation*}
+f(z) = z^m e^{g(z)} \prod_{k=1}^\infty E_{p_k}\left(\frac{z}{a_k}\right) ,
+\end{equation*}
+converges absolutely and uniformly on all compact subsets.
+\end{thm}
+
+The $p_k$ are chosen such that
+\begin{equation*}
+\sum_{j=1}^\infty {\abs{\frac{r}{a_k}}}^{1+p_k}
+\end{equation*}
+converges for all $r > 0$.
+
 \begin{center}
 * * *
 \end{center}
@@ -13212,7 +13301,6 @@ as a refresher for the reader of the most common results, some of which are
 used in this book, some of which are useful in the exercises, and some of
 which are just too interesting not to mention.
 
-%FIXME: Weierstrass?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13834,11 +13922,11 @@ then we get the complex
 \overset{d}{\to}
 0 .
 \end{equation*}
-As a remark, one can study the topology of $M$
-by computing cohomology groups,
+We remark that one can study the topology of $M$
+by computing from this complex the cohomology groups,
 $\frac{\operatorname{ker}(d \colon \Lambda^k
 \to \Lambda^{k+1})}{\operatorname{im}(d \colon \Lambda^{k-1} \to \Lambda^k)}$,
-from this complex, which in turn
+which 
 is really about global solvability of the differential
 equation $d\omega = \eta$ for an unknown $\omega$.  There are variations
 on this idea and one appears in \chapterref{ch:dbar}, but we digress.

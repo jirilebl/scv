@@ -34,6 +34,8 @@ improvements have been made throughout.
 * Add a short blurb about convexity right at the beginning of 2.1
 * Improve figure for Hartogs figure.
 * Add an exercise to 2.1
+** Add part b) to exercise 2.2.2 for any function vanishing on $M$ 
+** Add a blurb about tangent space being derivatives along $M$ and give a short example, this renumbers the rest of the definitions/lemmas
 * Add definition of Levi-flat to end of 2.3 and add exercises 2.3.13-2.3.17
 ** Move the solution of Dirichlet problem up in 2.4 so that it can be used.  This renumbers the exercises in 2.4
 * In 3.2, prove the proposition "zero on the boundary means zero inside" including in one dimension (using Rado), and add a figure.
