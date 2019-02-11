@@ -4281,7 +4281,7 @@ different signs on different sides of $\bigl\{ x \in V : r(x) = 0 \bigr\}$.  The
 verification of this fact is left to the reader (Hint: Look at where the
 gradient points to).
 
-Same definition works for $\C^n$, where we simply treat $\C^n$ as $\R^{2n}$.
+Same definition works for $\C^n$, where we treat $\C^n$ as $\R^{2n}$.
 For example, the ball $\bB_n$ is a domain with smooth boundary with defining
 function $r(z,\bar{z}) = \snorm{z}^2-1$.  We can, in fact, find a
 single global defining function for every domain, but we have no need of this.
@@ -4295,6 +4295,8 @@ T_p \R^n = \operatorname{span}_{\R} \left\{
 \ldots,
 \frac{\partial}{\partial x_n}\Big|_p \right\} .
 \end{equation*}
+\end{defn}
+
 That is, a vector $X_p \in T_p \R^n$ is an object of the form
 \begin{equation*}
 X_p = \sum_{j=1}^n a_j 
@@ -4307,9 +4309,10 @@ on the space of smooth functions:
 when applied to a smooth function $g$ it gives
 $\frac{\partial g}{\partial x_j} \Big|_p$.  Therefore $X_p$ is also such a
 functional.  It is the directional derivative from calculus, that is,
-it can also be computed as $\nabla f|_p \cdot (a_1,\ldots,a_n)$.
+it can be computed as $X_p f = \nabla f|_p \cdot (a_1,\ldots,a_n)$.
 
-Let $M \subset \R^n$ be a smooth hypersurface, %$C^k$-smooth hypersurface for $k \geq 1$,
+\begin{defn}
+Let $M \subset \R^n$ be a smooth hypersurface,
 $p \in M$, and $r$ is the defining function at $p$,
 then a vector $X_p \in T_p \R^n$ is \emph{tangent}\index{tangent vector}
 to $M$ at $p$ if
@@ -4319,11 +4322,15 @@ X_p r = 0, \qquad \text{or in other words} \qquad
 \end{equation*}
 \glsadd{not:realtangentspace}%
 The space of tangent vectors to $M$ is denoted by $T_p M$, and
-is called the \emph{\myindex{tangent space}} to $M$ at $p$.  The
+is called the \emph{\myindex{tangent space}} to $M$ at $p$.
+\end{defn}
+
+The
 space $T_pM$ is an $(n-1)$-dimensional real vector space.  
 The definition of $T_pM$ is independent of the choice of $r$ by the next two
 exercises.
 
+\pagebreak[2]
 \begin{exbox}
 \begin{exercise} \label{exercise:smoothdivision}
 Suppose $M \subset \R^n$ is a smooth hypersurface and
@@ -4331,7 +4338,7 @@ $r$ is a smooth defining function for $M$ at $p$.
 \begin{exparts}
 \item
 Suppose $\varphi$ is another
-smooth defining function on a neighborhood of $p$.
+smooth defining function of $M$ on a neighborhood of $p$.
 Show that there exists a smooth nonvanishing function $g$ such that
 $\varphi = g r$ (in a neighborhood of $p$).
 \item
@@ -4339,13 +4346,15 @@ Now suppose $\varphi$ is just any smooth function that vanishes on $M$ (not
 necessarily a defining function).
 Again show that $\varphi = g r$, but now $g$ may possibly vanish.
 \end{exparts}
-Hint: First prove that if $r=x_n$, %so that $M$ is the set $x_n = 0$,
+\nopagebreak
+Hint: First suppose $r=x_n$, then %so that $M$ is the set $x_n = 0$,
 find a $g$ such that $\varphi = x_n g$.  Then find
 a local change of variables to make $M$ into the set given by $x_n = 0$.
-Useful one variable calculus fact:
-If $f(0) = 0$ and $f$ is smooth then
-$s \int_0^1 f'(ts) \,dt = f(s)$
+A useful one variable calculus fact:
+If $f(0) = 0$ and $f$ is smooth, then
+$s \int_0^1 f'(ts) \,dt = f(s)$,
 and $\int_0^1 f'(ts) \,dt$ is a smooth function of $s$.
+\pagebreak[2]
 \end{exercise}
 
 \begin{exercise}
@@ -4364,15 +4373,15 @@ are two smooth functions such that $f=h$ on $M$, then
 \exerciseref{exercise:smoothdivision}
 says that
 \begin{equation*}
-f-h = r g, \qquad \text{or} \qquad
-f = h + r g,
+f-h = g r, \qquad \text{or} \qquad
+f = h + g r,
 \end{equation*}
 for some smooth $g$.  Applying $X_p$ we find
 \begin{equation*}
 X_p f =
-X_p h + X_p (rg) = 
-X_p h + (X_p r)g + r(X_p g) = 
-X_p h + r(X_p g).
+X_p h + X_p (gr) = 
+X_p h + (X_p g)r + g(X_p r) = 
+X_p h + (X_p g)r.
 \end{equation*}
 So $X_p f = X_p h$ on $M$ (where $r=0$).  In other words, $X_p f$ only
 depends on the values of $f$ on $M$.
@@ -4386,6 +4395,7 @@ X_p =  \sum_{j=1}^{n-1} a_j \frac{\partial}{\partial x_j} \Big|_p .
 That is, derivatives along the first $n-1$ variables only.
 \end{example}
 
+\begin{defn}
 The disjoint union
 \glsadd{not:realtangentbundle}%
 \begin{equation*}
@@ -4405,13 +4415,13 @@ The wording ``bundle'' (a bundle of fibers)
 comes from the natural projection $\pi \colon T\R^n
 \to \R^n$, where fibers are $\pi^{-1}(p) = T_p\R^n$.
 
-A smooth %$C^k$-smooth
+A smooth
 \emph{\myindex{vector field}} in $T\R^n$ is an object of the form 
 \begin{equation*}
 X = \sum_{j=1}^n a_j
 \frac{\partial}{\partial x_j} ,
 \end{equation*}
-where $a_j$ are smooth %$C^k$-smooth
+where $a_j$ are smooth
 functions.
 That is, $X$ is a smooth function
 $X \colon V \subset \R^n \to T\R^n$ such that $X(p) \in T_p \R^n$.
@@ -4471,8 +4481,8 @@ is called the
 So, $U$ is convex at $p \in \partial U$ if
 the Hessian
 of $r$ at $p$ as a bilinear form is positive definite (or positive
-semidefinite) when restricted to tangent vectors in $T_p \partial U$.
-This matrix is the second fundamental form from Riemannian
+semidefinite) when restricted to $T_p \partial U$.
+This bilinear form is the second fundamental form from Riemannian
 geometry in mild disguise (or perhaps it is the other way around).
 
 We cheated above a little bit, since we have not proved that
@@ -4580,10 +4590,8 @@ strongly convex at all points except the origin, where it is just convex
 \end{exercise}
 \end{exbox}
 
-For computations it is often useful to use a more convenient
-defining function.
-\glsadd{not:Ol}%
-We use the \emph{\myindex{big-oh notation}},
+In the following, \glsadd{not:Ol}%
+we use the \emph{\myindex{big-oh notation}},
 although we use a perhaps less standard short hand\footnote{%
 The standard notation for $O(\ell)$ is $O(\snorm{x}^{\ell})$ and
 is usually defined as saying that
@@ -4592,11 +4600,12 @@ A smooth function is $O(\ell)$ at a point $p$ (usually the origin),
 if all its derivatives of order $0, 1, \ldots,  \ell-1$ vanish at $p$.
 For example, if $f$ is $O(3)$ at the origin
 then $f(0)=0$, and its first and second derivatives vanish at the origin.
-%Often we write
-%$O(3)$ instead of $f$ to denote any function in $O(3)$ to simplify notation.
+
+For computations it is often useful to use a more convenient
+defining function, that is, it is convenient to write $M$ as a graph.
 
 \begin{lemma} \label{lemma:realgraphcoords}
-Suppose $M \subset \R^n$ is a smooth hypersurface, %$C^k$-smooth hypersurface, $k \geq 1$,
+Suppose $M \subset \R^n$ is a smooth hypersurface, 
 and $p \in M$.  Then after a rotation and translation, 
 $p$ is the origin and near the origin $M$ is defined by
 \begin{equation*}
@@ -4605,10 +4614,7 @@ y = \varphi(x) ,
 where $(x,y) \in \R^{n-1} \times \R$ are our coordinates and
 $\varphi$ is a smooth %$C^k$
 function that is $O(2)$ at the origin,
-%that vanishes to second order,
 that is $\varphi(0) = 0$ and $d\varphi(0) = 0$.
-%such that $\varphi(0) = 0$ and $d\varphi(0) = 0$, that is we usually say $\varphi$
-%is $O(2)$ at the origin.
 
 If $M$ is the boundary of a domain $U$ with smooth boundary and
 $r < 0$ on $U$,
@@ -4619,7 +4625,6 @@ such that for points in $U$ we have $y > \varphi(x)$.
 \begin{myfig}
 \subimport*{figures/}{deffun-graph.pdf_t}
 \end{myfig}
-
 
 \begin{proof}
 Let $r$ be a defining function at $p$.  Take $v = \nabla r|_p$.
@@ -4663,7 +4668,7 @@ $\frac{\partial r}{\partial x_j}(0,0) = 0$ and
 $\frac{\partial r}{\partial y}(0,0) = v_n \not= 0$ and therefore
 $\frac{\partial \varphi}{\partial x_j}(0) = 0$.
 
-To prove the final statement note that
+To prove the final statement, note that
 $r < 0$ on $U$.  It is enough to check that $r$ is
 negative for $(0,y)$ if $y > 0$ is small, which follows as $\frac{\partial
 r}{\partial y}(0,0) = v_n < 0$.
@@ -4678,9 +4683,10 @@ Considering $x$ as a column vector, the Taylor expansion of any smooth function 
 where $H$ is the Hessian matrix of $\varphi$ at the origin, that is $H = \left[
 \frac{\partial^2 \varphi}{\partial x_j \partial x_k} \big|_{0} \right]_{jk}$,
 and $E$ is $O(3)$.  That is, $E(0) = 0$, and
-all first and second derivatives of $E$ vanish.
-For the situation from the lemma above, our $\varphi$ is $O(2)$ at the origin, i.e.\
-$\varphi(0) = 0$ and $\nabla \varphi|_0 = 0$, so we write the hypersurface
+all first and second derivatives of $E$ vanish at $0$.
+For the situation from the lemma above,
+the $\varphi$ is $O(2)$ at the origin, i.e.\ $\varphi(0) = 0$
+and $\nabla \varphi|_0 = 0$.  So we write the hypersurface
 $M$ as
 \begin{equation*}
 y = \frac{1}{2}\, x^t H x + E(x) .
@@ -4799,7 +4805,7 @@ Suppose
 $D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$
 is the real derivative of $f$ at $p$.
 \glsadd{not:DCf}%
-Then we naturally
+We naturally
 extend the derivative to $D_\C f(p) \colon \C \otimes T_p\C^n \to \C \otimes  T_{f(p)}
 \C^m$.  Then
 \begin{equation*}
