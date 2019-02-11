@@ -4302,7 +4302,10 @@ That is, a vector $X_p \in T_p \R^n$ is an object of the form
 X_p = \sum_{j=1}^n a_j 
 \frac{\partial}{\partial x_j}\Big|_p ,
 \end{equation*}
-for real numbers $a_j$.
+for real numbers $a_j$, so for computations $X_p$ could be represented
+by an $n$-vector $a = (a_1,\ldots,a_n)$.  However, if $p \not= q$, then
+$T_p \R^n$ and
+$T_q \R^n$ are distinct spaces.
 \glsadd{not:evalpartial}%
 An object $\frac{\partial}{\partial x_j}\Big|_p$ is a linear functional
 on the space of smooth functions:
@@ -4325,9 +4328,15 @@ The space of tangent vectors to $M$ is denoted by $T_p M$, and
 is called the \emph{\myindex{tangent space}} to $M$ at $p$.
 \end{defn}
 
-The
-space $T_pM$ is an $(n-1)$-dimensional real vector space.  
-The definition of $T_pM$ is independent of the choice of $r$ by the next two
+The space $T_pM$ is an $(n-1)$-dimensional real vector space---it is a subspace
+of an $n$-dimensional $T_p\R^n$ given by a single linear equation.  
+Recall from calculus that $\nabla r|_p$ is ``normal'' to $M$ at $p$, and
+then the tangent space is given by all the $n$-vectors $a$
+that are orthogonal to the normal, that is $\nabla r|_p \cdot a = 0$.
+
+We cheated in the terminology, and assumed without justification that $T_pM$
+depends only on $M$, not on $r$.
+Fortunately, the definition of $T_pM$ is independent of the choice of $r$ by the next two
 exercises.
 
 \pagebreak[2]
@@ -4482,11 +4491,18 @@ So, $U$ is convex at $p \in \partial U$ if
 the Hessian
 of $r$ at $p$ as a bilinear form is positive definite (or positive
 semidefinite) when restricted to $T_p \partial U$.
+In a vector calculus language, let $H$ be the Hessian at $p$, and treat
+$a$ as a column $n$-vector, then 
+$\partial U$ is convex at $p$ whenever
+\begin{equation*}
+a^t H a \geq 0 , \qquad \text{for all $a$ such that} \quad \nabla r|_p
+\cdot a = 0 .
+\end{equation*}
 This bilinear form is the second fundamental form from Riemannian
 geometry in mild disguise (or perhaps it is the other way around).
 
-We cheated above a little bit, since we have not proved that
-the notion is well-defined.  In particular, there are many possible
+We cheated a little bit, since we have not proved that
+the notion of convexity is well-defined.  In particular, there are many possible
 defining functions.
 
 \begin{exbox}
@@ -4506,7 +4522,7 @@ arbitrarily near $p$.
 
 \begin{example}
 Let us look at an example.  Let us prove that the unit disc in $\R^2$ is
-convex (actually strongly convex).  Let $x,y$ be our coordinates and then
+convex (actually strongly convex).  Let $(x,y)$ be our coordinates and then
 our defining function is $r(x,y) = x^2+y^2-1$.
 
 The tangent space of the circle is one-dimensional, so we simply need to
@@ -4665,7 +4681,7 @@ r\bigl(x,\varphi(x)\bigr)
 \end{equation*}
 At the origin,
 $\frac{\partial r}{\partial x_j}(0,0) = 0$ and
-$\frac{\partial r}{\partial y}(0,0) = v_n \not= 0$ and therefore
+$\frac{\partial r}{\partial y}(0,0) = v_n \not= 0$, and therefore
 $\frac{\partial \varphi}{\partial x_j}(0) = 0$.
 
 To prove the final statement, note that
@@ -4736,7 +4752,8 @@ holomorphy.
 \section{Holomorphic vectors, the Levi form, and pseudoconvexity}
 
 As $\C^n$ is identified with $\R^{2n}$ using $z=x+iy$, we have
-$T_p\C^n = T_p\R^{2n}$.  We write
+$T_p\C^n = T_p\R^{2n}$.  If we take the complex span instead of the real
+span we get the \emph{\myindex{complexified tangent space}}
 \glsadd{not:complexifiedtangentspace}%
 \begin{equation*}
 \C \otimes T_p\C^n
@@ -4796,7 +4813,7 @@ mapping $f$ from $\C^n$ to $\C^m$, its derivative at $p \in \C^n$
 is a real-linear mapping $D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$.
 Given the basis above, this mapping is represented by
 the standard real Jacobian matrix, that is, a real $2m \times 2n$ matrix
-that we before wrote as $D_\R f(p)$.
+that we wrote before as $D_\R f(p)$.
 
 \begin{prop} \label{prop:holvectmap}
 Let $f \colon U \subset \C^n \to \C^m$ be a holomorphic function with
@@ -5243,7 +5260,8 @@ Notice
 that the last component is the inverse of the Cayley transform (that takes
 the disc to the upper half plane).
 
-We claim that the mapping takes the unit sphere given by $\snorm{Z} = 1$, to
+We claim that the mapping takes the unit sphere given by $\snorm{Z} = 1$
+(without the point $(0,\ldots,0,1)$), to
 the set defined by
 \begin{equation*}
 \Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2 ,
@@ -5309,6 +5327,11 @@ literature some even say it \emph{is} the sphere\footnote{That is not, in
 fact, completely incorrect.
 If you think of the sphere in the complex projective space,
 we are simply looking at the sphere in a different coordinate patch.}.
+Pretending $z$ is just one real direction, it looks like this:
+
+\begin{myfig}
+\subimport*{figures/}{lewy-hyper.eepic}
+\end{myfig}
 
 As an aside,
 the hypersurface 
@@ -7131,7 +7154,7 @@ We will use $r$ to manufacture a plurisubharmonic exhaustion function, that
 is one with a semidefinite Hessian.  Therefore, we already
 have what we need in all but one direction.
 
-Let $\nabla_z r(q) =
+Let $\nabla_z r|_q =
 \Bigl(
 \frac{\partial r}{\partial z_1}\Big|_q,\ldots,
 \frac{\partial r}{\partial z_n}\Big|_q \Bigr)$ denote the gradient of $r$ in
@@ -7142,26 +7165,28 @@ satisfies
 \begin{equation*}
 \sum_{j=1}^n
 a_j \frac{\partial r}{\partial z_j} \Big|_q = 
-\blinnprod{a}{\overline{\nabla_z r(q)}}
+\blinnprod{a}{\overline{\nabla_z r|_q}}
 =
 0 .
 \end{equation*}
-Taking the orthogonal decomposition, $b$ is a scalar multiple of $\overline{\nabla_z r(q)}$.
+Taking the orthogonal decomposition, $b$ is a scalar multiple of
+$\overline{\nabla_z r|_q}$.
 By Cauchy--Schwarz,
 \begin{equation*}
 \abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
 =
 \abs{\sum_{j=1}^n b_j \frac{\partial r}{\partial z_j} \Big|_q}
 =
-\Babs{\blinnprod{b}{\overline{\nabla_z r(q)}}}
+\Babs{\blinnprod{b}{\overline{\nabla_z r|_q}}}
 =
-\snorm{b} \snorm {\nabla_z r(q)} .
+\snorm{b} \snorm {\nabla_z r|_q} .
 \end{equation*}
-As $\nabla_z r(0) = (0,\ldots,0,-\nicefrac{1}{2i})$, then for $q$ sufficiently near $0$ we have that
-$\snorm{\nabla_z r(q)} \geq \nicefrac{1}{3}$.  Therefore for such $q$,
+As $\nabla_z r|_0 = (0,\ldots,0,-\nicefrac{1}{2i})$, then for $q$ sufficiently near $0$ we have that
+$\snorm{\nabla_z r|_q} \geq \nicefrac{1}{3}$.  Therefore for such $q$,
 \begin{equation*}
 \snorm{b} =
-\frac{\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}}{\snorm {\nabla_z r(q)}}
+\frac{\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}}{\snorm
+{\nabla_z r|_q}}
 \leq
 3 \abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
 .
@@ -7184,7 +7209,7 @@ Again using Cauchy--Schwarz
 \sum_{j=1,\ell=1}^n
 \bar{a}_j a_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
 \\
-& \phantom{=}~
+& \phantom{=} \quad
 +
 \sum_{j=1,\ell=1}^n
 \bar{b}_j c_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
@@ -7217,7 +7242,7 @@ $\snorm{b}$ we get:
 \bar{c}_j c_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
 \geq -3M \snorm{c} \snorm{b} %=
 %-M \frac{\snorm{c}\Babs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j}
-%\big|_q}}{\snorm{\nabla_z r (q)}}
+%\big|_q}}{\snorm{\nabla_z r |_q}}
 \geq
 -3^2 M \snorm{c}\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j}
 \Big|_q} .

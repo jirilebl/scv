@@ -1,0 +1,674 @@
+%% Generated from lewy-hyper.xp on Mon 11 Feb 2019 02:29:36 PM CST by
+%% ePiX-1.2.18
+%% 
+%%   Cartesian bounding box: [-3.12,2.99] x [-1.8,4.9]
+%%   Actual size: 2.3 x 1.5in
+%%   Figure offset: left by 0in, down by 0in
+%% 
+%% usepackages tikz
+%% 
+\xdefinecolor{rgb_000000}{rgb}{0,0,0}%
+\xdefinecolor{rgb_7f7f7f}{rgb}{0.498039,0.498039,0.498039}%
+\xdefinecolor{rgb_808080}{rgb}{0.501961,0.501961,0.501961}%
+\xdefinecolor{rgb_818181}{rgb}{0.505882,0.505882,0.505882}%
+\xdefinecolor{rgb_828282}{rgb}{0.509804,0.509804,0.509804}%
+\xdefinecolor{rgb_838383}{rgb}{0.513725,0.513725,0.513725}%
+\xdefinecolor{rgb_848484}{rgb}{0.517647,0.517647,0.517647}%
+\xdefinecolor{rgb_858585}{rgb}{0.521569,0.521569,0.521569}%
+\xdefinecolor{rgb_868686}{rgb}{0.52549,0.52549,0.52549}%
+\xdefinecolor{rgb_8b8b8b}{rgb}{0.545098,0.545098,0.545098}%
+\xdefinecolor{rgb_8c8c8c}{rgb}{0.54902,0.54902,0.54902}%
+\xdefinecolor{rgb_8d8d8d}{rgb}{0.552941,0.552941,0.552941}%
+\xdefinecolor{rgb_9e9e9e}{rgb}{0.619608,0.619608,0.619608}%
+\xdefinecolor{rgb_9f9f9f}{rgb}{0.623529,0.623529,0.623529}%
+\xdefinecolor{rgb_a0a0a0}{rgb}{0.627451,0.627451,0.627451}%
+\xdefinecolor{rgb_a1a1a1}{rgb}{0.631373,0.631373,0.631373}%
+\xdefinecolor{rgb_a2a2a2}{rgb}{0.635294,0.635294,0.635294}%
+\xdefinecolor{rgb_a3a3a3}{rgb}{0.639216,0.639216,0.639216}%
+\xdefinecolor{rgb_a4a4a4}{rgb}{0.643137,0.643137,0.643137}%
+\xdefinecolor{rgb_a9a9a9}{rgb}{0.662745,0.662745,0.662745}%
+\xdefinecolor{rgb_aaaaaa}{rgb}{0.666667,0.666667,0.666667}%
+\xdefinecolor{rgb_ababab}{rgb}{0.670588,0.670588,0.670588}%
+\xdefinecolor{rgb_acacac}{rgb}{0.67451,0.67451,0.67451}%
+\xdefinecolor{rgb_adadad}{rgb}{0.678431,0.678431,0.678431}%
+\xdefinecolor{rgb_aeaeae}{rgb}{0.682353,0.682353,0.682353}%
+\xdefinecolor{rgb_afafaf}{rgb}{0.686275,0.686275,0.686275}%
+\xdefinecolor{rgb_b0b0b0}{rgb}{0.690196,0.690196,0.690196}%
+\xdefinecolor{rgb_b1b1b1}{rgb}{0.694118,0.694118,0.694118}%
+\xdefinecolor{rgb_b2b2b2}{rgb}{0.698039,0.698039,0.698039}%
+\xdefinecolor{rgb_b3b3b3}{rgb}{0.701961,0.701961,0.701961}%
+\xdefinecolor{rgb_b4b4b4}{rgb}{0.705882,0.705882,0.705882}%
+\xdefinecolor{rgb_b5b5b5}{rgb}{0.709804,0.709804,0.709804}%
+\xdefinecolor{rgb_b6b6b6}{rgb}{0.713725,0.713725,0.713725}%
+\xdefinecolor{rgb_b7b7b7}{rgb}{0.717647,0.717647,0.717647}%
+\xdefinecolor{rgb_b8b8b8}{rgb}{0.721569,0.721569,0.721569}%
+\xdefinecolor{rgb_b9b9b9}{rgb}{0.72549,0.72549,0.72549}%
+\xdefinecolor{rgb_bababa}{rgb}{0.729412,0.729412,0.729412}%
+\xdefinecolor{rgb_bbbbbb}{rgb}{0.733333,0.733333,0.733333}%
+\xdefinecolor{rgb_bcbcbc}{rgb}{0.737255,0.737255,0.737255}%
+\xdefinecolor{rgb_bdbdbd}{rgb}{0.741176,0.741176,0.741176}%
+\xdefinecolor{rgb_bebebe}{rgb}{0.745098,0.745098,0.745098}%
+\xdefinecolor{rgb_bfbfbf}{rgb}{0.74902,0.74902,0.74902}%
+\xdefinecolor{rgb_c0c0c0}{rgb}{0.752941,0.752941,0.752941}%
+\xdefinecolor{rgb_c1c1c1}{rgb}{0.756863,0.756863,0.756863}%
+\xdefinecolor{rgb_c2c2c2}{rgb}{0.760784,0.760784,0.760784}%
+\xdefinecolor{rgb_c3c3c3}{rgb}{0.764706,0.764706,0.764706}%
+\xdefinecolor{rgb_c5c5c5}{rgb}{0.772549,0.772549,0.772549}%
+\xdefinecolor{rgb_c6c6c6}{rgb}{0.776471,0.776471,0.776471}%
+\xdefinecolor{rgb_c8c8c8}{rgb}{0.784314,0.784314,0.784314}%
+\xdefinecolor{rgb_cacaca}{rgb}{0.792157,0.792157,0.792157}%
+\begin{tikzpicture}
+\pgfsetlinewidth{0.4pt}
+\useasboundingbox (0in,0in) rectangle (2.3in,1.5in);
+\draw (1.17447in,0.402985in)--(0.550025in,0.0207955in);
+\pgfsetfillcolor{rgb_000000}
+\draw [fill](0.620862in,0.0641516in)--(0.610027in,0.0818545in)--
+  (0.550025in,0.0207955in)--(0.631697in,0.0464487in)--(0.620862in,0.0641516in)--cycle;
+\pgftext[at={\pgfpoint{0.48275in}{0.0608067in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}$\operatorname{Re} w$}}}
+\draw (1.17447in,0.402985in)--(2.19785in,0.186252in);
+\draw [fill](2.09567in,0.207892in)--(2.09137in,0.187587in)--
+  (2.19785in,0.186252in)--(2.09997in,0.228197in)--(2.09567in,0.207892in)--cycle;
+\pgftext[at={\pgfpoint{2.19785in}{0.2416in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$z$}}}
+\pgfsetfillcolor{rgb_bcbcbc}
+\draw [fill](1.41259in,0.67674in)--(1.34219in,0.635003in)--
+  (1.40425in,0.601512in)--(1.47402in,0.643612in)--(1.41259in,0.67674in)--cycle;
+\pgfsetfillcolor{rgb_bbbbbb}
+\draw [fill](1.35153in,0.72391in)--(1.28037in,0.682609in)--
+  (1.34219in,0.635003in)--(1.41259in,0.67674in)--(1.35153in,0.72391in)--cycle;
+\pgfsetfillcolor{rgb_b3b3b3}
+\draw [fill](1.47402in,0.643612in)--(1.40425in,0.601512in)--
+  (1.46689in,0.58196in)--(1.53616in,0.624356in)--(1.47402in,0.643612in)--cycle;
+\pgfsetfillcolor{rgb_b6b6b6}
+\draw [fill](1.2905in,0.785452in)--(1.21844in,0.744662in)--
+  (1.28037in,0.682609in)--(1.35153in,0.72391in)--(1.2905in,0.785452in)--cycle;
+\pgfsetfillcolor{rgb_9e9e9e}
+\draw [fill](1.53616in,0.624356in)--(1.46689in,0.58196in)--
+  (1.53047in,0.576329in)--(1.59935in,0.618955in)--(1.53616in,0.624356in)--cycle;
+\pgfsetfillcolor{rgb_b2b2b2}
+\draw [fill](1.22914in,0.861856in)--(1.15605in,0.821665in)--
+  (1.21844in,0.744662in)--(1.2905in,0.785452in)--(1.22914in,0.861856in)--cycle;
+\pgfsetfillcolor{rgb_8b8b8b}
+\draw [fill](1.59935in,0.618955in)--(1.53047in,0.576329in)--
+  (1.59537in,0.584757in)--(1.66397in,0.627546in)--(1.59935in,0.618955in)--cycle;
+\pgfsetfillcolor{rgb_bdbdbd}
+\draw [fill](1.34219in,0.635003in)--(1.27028in,0.592375in)--
+  (1.33298in,0.558512in)--(1.40425in,0.601512in)--(1.34219in,0.635003in)--cycle;
+\pgfsetfillcolor{rgb_afafaf}
+\draw [fill](1.16713in,0.953791in)--(1.09283in,0.914297in)--
+  (1.15605in,0.821665in)--(1.22914in,0.861856in)--(1.16713in,0.953791in)--cycle;
+\pgfsetfillcolor{rgb_bcbcbc}
+\draw [fill](1.28037in,0.682609in)--(1.20769in,0.640423in)--
+  (1.27028in,0.592375in)--(1.34219in,0.635003in)--(1.28037in,0.682609in)--cycle;
+\pgfsetfillcolor{rgb_b4b4b4}
+\draw [fill](1.40425in,0.601512in)--(1.33298in,0.558512in)--
+  (1.39613in,0.538655in)--(1.46689in,0.58196in)--(1.40425in,0.601512in)--cycle;
+\pgfsetfillcolor{rgb_b7b7b7}
+\draw [fill](1.21844in,0.744662in)--(1.14484in,0.702996in)--
+  (1.20769in,0.640423in)--(1.28037in,0.682609in)--(1.21844in,0.744662in)--cycle;
+\pgfsetfillcolor{rgb_9e9e9e}
+\draw [fill](1.46689in,0.58196in)--(1.39613in,0.538655in)--
+  (1.46011in,0.532785in)--(1.53047in,0.576329in)--(1.46689in,0.58196in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.66397in,0.627546in)--(1.59537in,0.584757in)--
+  (1.66197in,0.607548in)--(1.7304in,0.65043in)--(1.66397in,0.627546in)--cycle;
+\pgfsetfillcolor{rgb_b3b3b3}
+\draw [fill](1.15605in,0.821665in)--(1.08137in,0.780606in)--
+  (1.14484in,0.702996in)--(1.21844in,0.744662in)--(1.15605in,0.821665in)--cycle;
+\pgfsetfillcolor{rgb_acacac}
+\draw [fill](1.10407in,1.06212in)--(1.02841in,1.02344in)--
+  (1.09283in,0.914297in)--(1.16713in,0.953791in)--(1.10407in,1.06212in)--cycle;
+\pgfsetfillcolor{rgb_8b8b8b}
+\draw [fill](1.53047in,0.576329in)--(1.46011in,0.532785in)--
+  (1.52528in,0.541041in)--(1.59537in,0.584757in)--(1.53047in,0.576329in)--cycle;
+\pgfsetfillcolor{rgb_bfbfbf}
+\draw [fill](1.27028in,0.592375in)--(1.19682in,0.548824in)--
+  (1.26017in,0.514581in)--(1.33298in,0.558512in)--(1.27028in,0.592375in)--cycle;
+\pgfsetfillcolor{rgb_b0b0b0}
+\draw [fill](1.09283in,0.914297in)--(1.01692in,0.873944in)--
+  (1.08137in,0.780606in)--(1.15605in,0.821665in)--(1.09283in,0.914297in)--cycle;
+\pgfsetfillcolor{rgb_bdbdbd}
+\draw [fill](1.20769in,0.640423in)--(1.13343in,0.597323in)--
+  (1.19682in,0.548824in)--(1.27028in,0.592375in)--(1.20769in,0.640423in)--cycle;
+\pgfsetfillcolor{rgb_b5b5b5}
+\draw [fill](1.33298in,0.558512in)--(1.26017in,0.514581in)--
+  (1.32385in,0.494412in)--(1.39613in,0.538655in)--(1.33298in,0.558512in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.7304in,0.65043in)--(1.66197in,0.607548in)--
+  (1.73071in,0.645178in)--(1.79907in,0.688076in)--(1.7304in,0.65043in)--cycle;
+\pgfsetfillcolor{rgb_b9b9b9}
+\draw [fill](1.14484in,0.702996in)--(1.06964in,0.660425in)--
+  (1.13343in,0.597323in)--(1.20769in,0.640423in)--(1.14484in,0.702996in)--cycle;
+\pgfsetfillcolor{rgb_ababab}
+\draw [fill](1.0396in,1.18792in)--(0.962365in,1.15018in)--
+  (1.02841in,1.02344in)--(1.10407in,1.06212in)--(1.0396in,1.18792in)--cycle;
+\pgfsetfillcolor{rgb_9f9f9f}
+\draw [fill](1.39613in,0.538655in)--(1.32385in,0.494412in)--
+  (1.38822in,0.488294in)--(1.46011in,0.532785in)--(1.39613in,0.538655in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.59537in,0.584757in)--(1.52528in,0.541041in)--
+  (1.59205in,0.56373in)--(1.66197in,0.607548in)--(1.59537in,0.584757in)--cycle;
+\pgfsetfillcolor{rgb_b4b4b4}
+\draw [fill](1.08137in,0.780606in)--(1.00507in,0.73865in)--
+  (1.06964in,0.660425in)--(1.14484in,0.702996in)--(1.08137in,0.780606in)--cycle;
+\pgfsetfillcolor{rgb_aeaeae}
+\draw [fill](1.02841in,1.02344in)--(0.951074in,0.983904in)--
+  (1.01692in,0.873944in)--(1.09283in,0.914297in)--(1.02841in,1.02344in)--cycle;
+\pgfsetfillcolor{rgb_8b8b8b}
+\draw [fill](1.46011in,0.532785in)--(1.38822in,0.488294in)--
+  (1.45366in,0.496368in)--(1.52528in,0.541041in)--(1.46011in,0.532785in)--cycle;
+\pgfsetfillcolor{rgb_c0c0c0}
+\draw [fill](1.19682in,0.548824in)--(1.12175in,0.504322in)--
+  (1.18577in,0.469691in)--(1.26017in,0.514581in)--(1.19682in,0.548824in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.79907in,0.688076in)--(1.73071in,0.645178in)--
+  (1.80205in,0.698316in)--(1.87044in,0.741143in)--(1.79907in,0.688076in)--cycle;
+\pgfsetfillcolor{rgb_bfbfbf}
+\draw [fill](1.13343in,0.597323in)--(1.05754in,0.55328in)--
+  (1.12175in,0.504322in)--(1.19682in,0.548824in)--(1.13343in,0.597323in)--cycle;
+\pgfsetfillcolor{rgb_b1b1b1}
+\draw [fill](1.01692in,0.873944in)--(0.939335in,0.832702in)--
+  (1.00507in,0.73865in)--(1.08137in,0.780606in)--(1.01692in,0.873944in)--cycle;
+\pgfsetfillcolor{rgb_aaaaaa}
+\draw [fill](0.973272in,1.33252in)--(0.894263in,1.29589in)--
+  (0.962365in,1.15018in)--(1.0396in,1.18792in)--(0.973272in,1.33252in)--cycle;
+\pgfsetfillcolor{rgb_b7b7b7}
+\draw [fill](1.26017in,0.514581in)--(1.18577in,0.469691in)--
+  (1.24998in,0.449199in)--(1.32385in,0.494412in)--(1.26017in,0.514581in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.66197in,0.607548in)--(1.59205in,0.56373in)--
+  (1.66085in,0.601334in)--(1.73071in,0.645178in)--(1.66197in,0.607548in)--cycle;
+\pgfsetfillcolor{rgb_bababa}
+\draw [fill](1.06964in,0.660425in)--(0.992782in,0.616919in)--
+  (1.05754in,0.55328in)--(1.13343in,0.597323in)--(1.06964in,0.660425in)--cycle;
+\pgfsetfillcolor{rgb_acacac}
+\draw [fill](0.962365in,1.15018in)--(0.883415in,1.11161in)--
+  (0.951074in,0.983904in)--(1.02841in,1.02344in)--(0.962365in,1.15018in)--cycle;
+\pgfsetfillcolor{rgb_a0a0a0}
+\draw [fill](1.32385in,0.494412in)--(1.24998in,0.449199in)--
+  (1.31474in,0.442824in)--(1.38822in,0.488294in)--(1.32385in,0.494412in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.52528in,0.541041in)--(1.45366in,0.496368in)--
+  (1.52059in,0.518945in)--(1.59205in,0.56373in)--(1.52528in,0.541041in)--cycle;
+\pgfsetfillcolor{rgb_b6b6b6}
+\draw [fill](1.00507in,0.73865in)--(0.927077in,0.695767in)--
+  (0.992782in,0.616919in)--(1.06964in,0.660425in)--(1.00507in,0.73865in)--cycle;
+\pgfsetfillcolor{rgb_afafaf}
+\draw [fill](0.951074in,0.983904in)--(0.872025in,0.943493in)--
+  (0.939335in,0.832702in)--(1.01692in,0.873944in)--(0.951074in,0.983904in)--cycle;
+\pgfsetfillcolor{rgb_8b8b8b}
+\draw [fill](1.38822in,0.488294in)--(1.31474in,0.442824in)--
+  (1.38046in,0.450706in)--(1.45366in,0.496368in)--(1.38822in,0.488294in)--cycle;
+\pgfsetfillcolor{rgb_a9a9a9}
+\draw [fill](0.904629in,1.49754in)--(0.823608in,1.4622in)--
+  (0.894263in,1.29589in)--(0.973272in,1.33252in)--(0.904629in,1.49754in)--cycle;
+\pgfsetfillcolor{rgb_c2c2c2}
+\draw [fill](1.12175in,0.504322in)--(1.04502in,0.458837in)--
+  (1.10972in,0.423808in)--(1.18577in,0.469691in)--(1.12175in,0.504322in)--cycle;
+\pgfsetfillcolor{rgb_c0c0c0}
+\draw [fill](1.05754in,0.55328in)--(0.979982in,0.508263in)--
+  (1.04502in,0.458837in)--(1.12175in,0.504322in)--(1.05754in,0.55328in)--cycle;
+\pgfsetfillcolor{rgb_b2b2b2}
+\draw [fill](0.939335in,0.832702in)--(0.860026in,0.790543in)--
+  (0.927077in,0.695767in)--(1.00507in,0.73865in)--(0.939335in,0.832702in)--cycle;
+\pgfsetfillcolor{rgb_808080}
+\draw [fill](1.87044in,0.741143in)--(1.80205in,0.698316in)--
+  (1.87651in,0.767842in)--(1.94503in,0.810499in)--(1.87044in,0.741143in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.73071in,0.645178in)--(1.66085in,0.601334in)--
+  (1.73214in,0.654533in)--(1.80205in,0.698316in)--(1.73071in,0.645178in)--cycle;
+\pgfsetfillcolor{rgb_b8b8b8}
+\draw [fill](1.18577in,0.469691in)--(1.10972in,0.423808in)--
+  (1.17447in,0.402985in)--(1.24998in,0.449199in)--(1.18577in,0.469691in)--cycle;
+\pgfsetfillcolor{rgb_ababab}
+\draw [fill](0.894263in,1.29589in)--(0.813474in,1.25843in)--
+  (0.883415in,1.11161in)--(0.962365in,1.15018in)--(0.894263in,1.29589in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.59205in,0.56373in)--(1.52059in,0.518945in)--
+  (1.58943in,0.556513in)--(1.66085in,0.601334in)--(1.59205in,0.56373in)--cycle;
+\pgfsetfillcolor{rgb_bbbbbb}
+\draw [fill](0.992782in,0.616919in)--(0.914222in,0.572446in)--
+  (0.979982in,0.508263in)--(1.05754in,0.55328in)--(0.992782in,0.616919in)--cycle;
+\pgfsetfillcolor{rgb_adadad}
+\draw [fill](0.883415in,1.11161in)--(0.802691in,1.07216in)--
+  (0.872025in,0.943493in)--(0.951074in,0.983904in)--(0.883415in,1.11161in)--cycle;
+\pgfsetfillcolor{rgb_a1a1a1}
+\draw [fill](1.24998in,0.449199in)--(1.17447in,0.402985in)--
+  (1.23964in,0.396342in)--(1.31474in,0.442824in)--(1.24998in,0.449199in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.45366in,0.496368in)--(1.38046in,0.450706in)--
+  (1.44753in,0.47316in)--(1.52059in,0.518945in)--(1.45366in,0.496368in)--cycle;
+\pgfsetfillcolor{rgb_b7b7b7}
+\draw [fill](0.927077in,0.695767in)--(0.847345in,0.651927in)--
+  (0.914222in,0.572446in)--(0.992782in,0.616919in)--(0.927077in,0.695767in)--cycle;
+\pgfsetfillcolor{rgb_b0b0b0}
+\draw [fill](0.872025in,0.943493in)--(0.7912in,0.902175in)--
+  (0.860026in,0.790543in)--(0.939335in,0.832702in)--(0.872025in,0.943493in)--cycle;
+\pgfsetfillcolor{rgb_8c8c8c}
+\draw [fill](1.31474in,0.442824in)--(1.23964in,0.396342in)--
+  (1.30562in,0.404022in)--(1.38046in,0.450706in)--(1.31474in,0.442824in)--cycle;
+\pgfsetfillcolor{rgb_c3c3c3}
+\draw [fill](1.04502in,0.458837in)--(0.96658in,0.412336in)--
+  (1.03198in,0.376901in)--(1.10972in,0.423808in)--(1.04502in,0.458837in)--cycle;
+\pgfsetfillcolor{rgb_c2c2c2}
+\draw [fill](0.979982in,0.508263in)--(0.900684in,0.462238in)--
+  (0.96658in,0.412336in)--(1.04502in,0.458837in)--(0.979982in,0.508263in)--cycle;
+\pgfsetfillcolor{rgb_aaaaaa}
+\draw [fill](0.823608in,1.4622in)--(0.740733in,1.42605in)--
+  (0.813474in,1.25843in)--(0.894263in,1.29589in)--(0.823608in,1.4622in)--cycle;
+\pgfsetfillcolor{rgb_b3b3b3}
+\draw [fill](0.860026in,0.790543in)--(0.778932in,0.747436in)--
+  (0.847345in,0.651927in)--(0.927077in,0.695767in)--(0.860026in,0.790543in)--cycle;
+\pgfsetfillcolor{rgb_b9b9b9}
+\draw [fill](1.10972in,0.423808in)--(1.03198in,0.376901in)--
+  (1.09727in,0.355736in)--(1.17447in,0.402985in)--(1.10972in,0.423808in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.66085in,0.601334in)--(1.58943in,0.556513in)--
+  (1.66064in,0.609761in)--(1.73214in,0.654533in)--(1.66085in,0.601334in)--cycle;
+\pgfsetfillcolor{rgb_808080}
+\draw [fill](1.80205in,0.698316in)--(1.73214in,0.654533in)--
+  (1.80644in,0.724219in)--(1.87651in,0.767842in)--(1.80205in,0.698316in)--cycle;
+\pgfsetfillcolor{rgb_acacac}
+\draw [fill](0.813474in,1.25843in)--(0.730845in,1.22011in)--
+  (0.802691in,1.07216in)--(0.883415in,1.11161in)--(0.813474in,1.25843in)--cycle;
+\pgfsetfillcolor{rgb_bdbdbd}
+\draw [fill](0.914222in,0.572446in)--(0.833898in,0.526975in)--
+  (0.900684in,0.462238in)--(0.979982in,0.508263in)--(0.914222in,0.572446in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.52059in,0.518945in)--(1.44753in,0.47316in)--
+  (1.51639in,0.510681in)--(1.58943in,0.556513in)--(1.52059in,0.518945in)--cycle;
+\pgfsetfillcolor{rgb_818181}
+\draw [fill](1.94503in,0.810499in)--(1.87651in,0.767842in)--
+  (1.95467in,0.854883in)--(2.02343in,0.897253in)--(1.94503in,0.810499in)--cycle;
+\pgfsetfillcolor{rgb_a1a1a1}
+\draw [fill](1.17447in,0.402985in)--(1.09727in,0.355736in)--
+  (1.16284in,0.348815in)--(1.23964in,0.396342in)--(1.17447in,0.402985in)--cycle;
+\pgfsetfillcolor{rgb_aeaeae}
+\draw [fill](0.802691in,1.07216in)--(0.720133in,1.03182in)--
+  (0.7912in,0.902175in)--(0.872025in,0.943493in)--(0.802691in,1.07216in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.38046in,0.450706in)--(1.30562in,0.404022in)--
+  (1.37283in,0.426342in)--(1.44753in,0.47316in)--(1.38046in,0.450706in)--cycle;
+\pgfsetfillcolor{rgb_b8b8b8}
+\draw [fill](0.847345in,0.651927in)--(0.765811in,0.607096in)--
+  (0.833898in,0.526975in)--(0.914222in,0.572446in)--(0.847345in,0.651927in)--cycle;
+\pgfsetfillcolor{rgb_b1b1b1}
+\draw [fill](0.7912in,0.902175in)--(0.708538in,0.859917in)--
+  (0.778932in,0.747436in)--(0.860026in,0.790543in)--(0.7912in,0.902175in)--cycle;
+\pgfsetfillcolor{rgb_8c8c8c}
+\draw [fill](1.23964in,0.396342in)--(1.16284in,0.348815in)--
+  (1.22908in,0.356281in)--(1.30562in,0.404022in)--(1.23964in,0.396342in)--cycle;
+\pgfsetfillcolor{rgb_c5c5c5}
+\draw [fill](0.96658in,0.412336in)--(0.886367in,0.364784in)--
+  (0.952478in,0.328933in)--(1.03198in,0.376901in)--(0.96658in,0.412336in)--cycle;
+\pgfsetfillcolor{rgb_c3c3c3}
+\draw [fill](0.900684in,0.462238in)--(0.819592in,0.415172in)--
+  (0.886367in,0.364784in)--(0.96658in,0.412336in)--(0.900684in,0.462238in)--cycle;
+\pgfsetfillcolor{rgb_bbbbbb}
+\draw [fill](1.03198in,0.376901in)--(0.952478in,0.328933in)--
+  (1.01832in,0.307416in)--(1.09727in,0.355736in)--(1.03198in,0.376901in)--cycle;
+\pgfsetfillcolor{rgb_b5b5b5}
+\draw [fill](0.778932in,0.747436in)--(0.695993in,0.703347in)--
+  (0.765811in,0.607096in)--(0.847345in,0.651927in)--(0.778932in,0.747436in)--cycle;
+\pgfsetfillcolor{rgb_ababab}
+\draw [fill](0.740733in,1.42605in)--(0.655941in,1.38906in)--
+  (0.730845in,1.22011in)--(0.813474in,1.25843in)--(0.740733in,1.42605in)--cycle;
+\pgfsetfillcolor{rgb_bebebe}
+\draw [fill](0.833898in,0.526975in)--(0.751749in,0.480471in)--
+  (0.819592in,0.415172in)--(0.900684in,0.462238in)--(0.833898in,0.526975in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.58943in,0.556513in)--(1.51639in,0.510681in)--
+  (1.58751in,0.563968in)--(1.66064in,0.609761in)--(1.58943in,0.556513in)--cycle;
+\pgfsetfillcolor{rgb_808080}
+\draw [fill](1.73214in,0.654533in)--(1.66064in,0.609761in)--
+  (1.73476in,0.679597in)--(1.80644in,0.724219in)--(1.73214in,0.654533in)--cycle;
+\pgfsetfillcolor{rgb_adadad}
+\draw [fill](0.730845in,1.22011in)--(0.646312in,1.18092in)--
+  (0.720133in,1.03182in)--(0.802691in,1.07216in)--(0.730845in,1.22011in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.44753in,0.47316in)--(1.37283in,0.426342in)--
+  (1.4417in,0.463805in)--(1.51639in,0.510681in)--(1.44753in,0.47316in)--cycle;
+\pgfsetfillcolor{rgb_a2a2a2}
+\draw [fill](1.09727in,0.355736in)--(1.01832in,0.307416in)--
+  (1.08429in,0.300207in)--(1.16284in,0.348815in)--(1.09727in,0.355736in)--cycle;
+\pgfsetfillcolor{rgb_818181}
+\draw [fill](1.87651in,0.767842in)--(1.80644in,0.724219in)--
+  (1.88433in,0.811538in)--(1.95467in,0.854883in)--(1.87651in,0.767842in)--cycle;
+\pgfsetfillcolor{rgb_afafaf}
+\draw [fill](0.720133in,1.03182in)--(0.635676in,0.990555in)--
+  (0.708538in,0.859917in)--(0.7912in,0.902175in)--(0.720133in,1.03182in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.30562in,0.404022in)--(1.22908in,0.356281in)--
+  (1.29642in,0.378455in)--(1.37283in,0.426342in)--(1.30562in,0.404022in)--cycle;
+\pgfsetfillcolor{rgb_b9b9b9}
+\draw [fill](0.765811in,0.607096in)--(0.682416in,0.561242in)--
+  (0.751749in,0.480471in)--(0.833898in,0.526975in)--(0.765811in,0.607096in)--cycle;
+\pgfsetfillcolor{rgb_838383}
+\draw [fill](2.02343in,0.897253in)--(1.95467in,0.854883in)--
+  (2.0372in,0.96085in)--(2.10628in,1.00279in)--(2.02343in,0.897253in)--cycle;
+\pgfsetfillcolor{rgb_b2b2b2}
+\draw [fill](0.708538in,0.859917in)--(0.623977in,0.816689in)--
+  (0.695993in,0.703347in)--(0.778932in,0.747436in)--(0.708538in,0.859917in)--cycle;
+\pgfsetfillcolor{rgb_8c8c8c}
+\draw [fill](1.16284in,0.348815in)--(1.08429in,0.300207in)--
+  (1.15079in,0.307447in)--(1.22908in,0.356281in)--(1.16284in,0.348815in)--cycle;
+\pgfsetfillcolor{rgb_c6c6c6}
+\draw [fill](0.886367in,0.364784in)--(0.80432in,0.316146in)--
+  (0.87116in,0.279868in)--(0.952478in,0.328933in)--(0.886367in,0.364784in)--cycle;
+\pgfsetfillcolor{rgb_c5c5c5}
+\draw [fill](0.819592in,0.415172in)--(0.736643in,0.367029in)--
+  (0.80432in,0.316146in)--(0.886367in,0.364784in)--(0.819592in,0.415172in)--cycle;
+\pgfsetfillcolor{rgb_bcbcbc}
+\draw [fill](0.952478in,0.328933in)--(0.87116in,0.279868in)--
+  (0.937567in,0.25799in)--(1.01832in,0.307416in)--(0.952478in,0.328933in)--cycle;
+\pgfsetfillcolor{rgb_b6b6b6}
+\draw [fill](0.695993in,0.703347in)--(0.611144in,0.658243in)--
+  (0.682416in,0.561242in)--(0.765811in,0.607096in)--(0.695993in,0.703347in)--cycle;
+\pgfsetfillcolor{rgb_adadad}
+\draw [fill](0.655941in,1.38906in)--(0.569162in,1.35121in)--
+  (0.646312in,1.18092in)--(0.730845in,1.22011in)--(0.655941in,1.38906in)--cycle;
+\pgfsetfillcolor{rgb_bfbfbf}
+\draw [fill](0.751749in,0.480471in)--(0.667713in,0.432899in)--
+  (0.736643in,0.367029in)--(0.819592in,0.415172in)--(0.751749in,0.480471in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.51639in,0.510681in)--(1.4417in,0.463805in)--
+  (1.5127in,0.517117in)--(1.58751in,0.563968in)--(1.51639in,0.510681in)--cycle;
+\pgfsetfillcolor{rgb_aeaeae}
+\draw [fill](0.646312in,1.18092in)--(0.559808in,1.14081in)--
+  (0.635676in,0.990555in)--(0.720133in,1.03182in)--(0.646312in,1.18092in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.37283in,0.426342in)--(1.29642in,0.378455in)--
+  (1.36527in,0.415846in)--(1.4417in,0.463805in)--(1.37283in,0.426342in)--cycle;
+\pgfsetfillcolor{rgb_808080}
+\draw [fill](1.66064in,0.609761in)--(1.58751in,0.563968in)--
+  (1.66142in,0.633942in)--(1.73476in,0.679597in)--(1.66064in,0.609761in)--cycle;
+\pgfsetfillcolor{rgb_a3a3a3}
+\draw [fill](1.01832in,0.307416in)--(0.937567in,0.25799in)--
+  (1.00394in,0.25048in)--(1.08429in,0.300207in)--(1.01832in,0.307416in)--cycle;
+\pgfsetfillcolor{rgb_b0b0b0}
+\draw [fill](0.635676in,0.990555in)--(0.549256in,0.948329in)--
+  (0.623977in,0.816689in)--(0.708538in,0.859917in)--(0.635676in,0.990555in)--cycle;
+\pgfsetfillcolor{rgb_818181}
+\draw [fill](1.80644in,0.724219in)--(1.73476in,0.679597in)--
+  (1.81236in,0.767184in)--(1.88433in,0.811538in)--(1.80644in,0.724219in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.22908in,0.356281in)--(1.15079in,0.307447in)--
+  (1.21824in,0.329463in)--(1.29642in,0.378455in)--(1.22908in,0.356281in)--cycle;
+\pgfsetfillcolor{rgb_bbbbbb}
+\draw [fill](0.682416in,0.561242in)--(0.597093in,0.514328in)--
+  (0.667713in,0.432899in)--(0.751749in,0.480471in)--(0.682416in,0.561242in)--cycle;
+\pgfsetfillcolor{rgb_b3b3b3}
+\draw [fill](0.623977in,0.816689in)--(0.53745in,0.772456in)--
+  (0.611144in,0.658243in)--(0.695993in,0.703347in)--(0.623977in,0.816689in)--cycle;
+\pgfsetfillcolor{rgb_838383}
+\draw [fill](1.95467in,0.854883in)--(1.88433in,0.811538in)--
+  (1.96649in,0.917925in)--(2.0372in,0.96085in)--(1.95467in,0.854883in)--cycle;
+\pgfsetfillcolor{rgb_8d8d8d}
+\draw [fill](1.08429in,0.300207in)--(1.00394in,0.25048in)--
+  (1.07069in,0.257483in)--(1.15079in,0.307447in)--(1.08429in,0.300207in)--cycle;
+\pgfsetfillcolor{rgb_c8c8c8}
+\draw [fill](0.80432in,0.316146in)--(0.720378in,0.266384in)--
+  (0.787961in,0.22967in)--(0.87116in,0.279868in)--(0.80432in,0.316146in)--cycle;
+\pgfsetfillcolor{rgb_c6c6c6}
+\draw [fill](0.736643in,0.367029in)--(0.651774in,0.31777in)--
+  (0.720378in,0.266384in)--(0.80432in,0.316146in)--(0.736643in,0.367029in)--cycle;
+\pgfsetfillcolor{rgb_bdbdbd}
+\draw [fill](0.87116in,0.279868in)--(0.787961in,0.22967in)--
+  (0.854939in,0.207418in)--(0.937567in,0.25799in)--(0.87116in,0.279868in)--cycle;
+\pgfsetfillcolor{rgb_b7b7b7}
+\draw [fill](0.611144in,0.658243in)--(0.52432in,0.612089in)--
+  (0.597093in,0.514328in)--(0.682416in,0.561242in)--(0.611144in,0.658243in)--cycle;
+\pgfsetfillcolor{rgb_848484}
+\draw [fill](2.10628in,1.00279in)--(2.0372in,0.96085in)--
+  (2.12486in,1.08749in)--(2.19436in,1.12883in)--(2.10628in,1.00279in)--cycle;
+\pgfsetfillcolor{rgb_c1c1c1}
+\draw [fill](0.667713in,0.432899in)--(0.581724in,0.384221in)--
+  (0.651774in,0.31777in)--(0.736643in,0.367029in)--(0.667713in,0.432899in)--cycle;
+\pgfsetfillcolor{rgb_aeaeae}
+\draw [fill](0.569162in,1.35121in)--(0.480328in,1.31246in)--
+  (0.559808in,1.14081in)--(0.646312in,1.18092in)--(0.569162in,1.35121in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.4417in,0.463805in)--(1.36527in,0.415846in)--
+  (1.43614in,0.469172in)--(1.5127in,0.517117in)--(1.4417in,0.463805in)--cycle;
+\pgfsetfillcolor{rgb_a4a4a4}
+\draw [fill](0.937567in,0.25799in)--(0.854939in,0.207418in)--
+  (0.921719in,0.199595in)--(1.00394in,0.25048in)--(0.937567in,0.25799in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.29642in,0.378455in)--(1.21824in,0.329463in)--
+  (1.28707in,0.366769in)--(1.36527in,0.415846in)--(1.29642in,0.378455in)--cycle;
+\pgfsetfillcolor{rgb_afafaf}
+\draw [fill](0.559808in,1.14081in)--(0.471264in,1.09975in)--
+  (0.549256in,0.948329in)--(0.635676in,0.990555in)--(0.559808in,1.14081in)--cycle;
+\pgfsetfillcolor{rgb_808080}
+\draw [fill](1.58751in,0.563968in)--(1.5127in,0.517117in)--
+  (1.58636in,0.587217in)--(1.66142in,0.633942in)--(1.58751in,0.563968in)--cycle;
+\pgfsetfillcolor{rgb_b1b1b1}
+\draw [fill](0.549256in,0.948329in)--(0.460802in,0.905108in)--
+  (0.53745in,0.772456in)--(0.623977in,0.816689in)--(0.549256in,0.948329in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.15079in,0.307447in)--(1.07069in,0.257483in)--
+  (1.13824in,0.279326in)--(1.21824in,0.329463in)--(1.15079in,0.307447in)--cycle;
+\pgfsetfillcolor{rgb_bcbcbc}
+\draw [fill](0.597093in,0.514328in)--(0.509776in,0.466317in)--
+  (0.581724in,0.384221in)--(0.667713in,0.432899in)--(0.597093in,0.514328in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.73476in,0.679597in)--(1.66142in,0.633942in)--
+  (1.73869in,0.721786in)--(1.81236in,0.767184in)--(1.73476in,0.679597in)--cycle;
+\pgfsetfillcolor{rgb_b4b4b4}
+\draw [fill](0.53745in,0.772456in)--(0.448888in,0.727182in)--
+  (0.52432in,0.612089in)--(0.611144in,0.658243in)--(0.53745in,0.772456in)--cycle;
+\pgfsetfillcolor{rgb_8d8d8d}
+\draw [fill](1.00394in,0.25048in)--(0.921719in,0.199595in)--
+  (0.988713in,0.206347in)--(1.07069in,0.257483in)--(1.00394in,0.25048in)--cycle;
+\pgfsetfillcolor{rgb_cacaca}
+\draw [fill](0.720378in,0.266384in)--(0.634472in,0.215458in)--
+  (0.702817in,0.178297in)--(0.787961in,0.22967in)--(0.720378in,0.266384in)--cycle;
+\pgfsetfillcolor{rgb_838383}
+\draw [fill](1.88433in,0.811538in)--(1.81236in,0.767184in)--
+  (1.89411in,0.873982in)--(1.96649in,0.917925in)--(1.88433in,0.811538in)--cycle;
+\pgfsetfillcolor{rgb_c8c8c8}
+\draw [fill](0.651774in,0.31777in)--(0.564917in,0.267358in)--
+  (0.634472in,0.215458in)--(0.720378in,0.266384in)--(0.651774in,0.31777in)--cycle;
+\pgfsetfillcolor{rgb_bfbfbf}
+\draw [fill](0.787961in,0.22967in)--(0.702817in,0.178297in)--
+  (0.770374in,0.15566in)--(0.854939in,0.207418in)--(0.787961in,0.22967in)--cycle;
+\pgfsetfillcolor{rgb_b8b8b8}
+\draw [fill](0.52432in,0.612089in)--(0.43545in,0.564848in)--
+  (0.509776in,0.466317in)--(0.597093in,0.514328in)--(0.52432in,0.612089in)--cycle;
+\pgfsetfillcolor{rgb_c2c2c2}
+\draw [fill](0.581724in,0.384221in)--(0.493713in,0.334398in)--
+  (0.564917in,0.267358in)--(0.651774in,0.31777in)--(0.581724in,0.384221in)--cycle;
+\pgfsetfillcolor{rgb_848484}
+\draw [fill](2.0372in,0.96085in)--(1.96649in,0.917925in)--
+  (2.05368in,1.04516in)--(2.12486in,1.08749in)--(2.0372in,0.96085in)--cycle;
+\pgfsetfillcolor{rgb_a4a4a4}
+\draw [fill](0.854939in,0.207418in)--(0.770374in,0.15566in)--
+  (0.83756in,0.147512in)--(0.921719in,0.199595in)--(0.854939in,0.207418in)--cycle;
+\pgfsetfillcolor{rgb_afafaf}
+\draw [fill](0.480328in,1.31246in)--(0.389363in,1.27278in)--
+  (0.471264in,1.09975in)--(0.559808in,1.14081in)--(0.480328in,1.31246in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.36527in,0.415846in)--(1.28707in,0.366769in)--
+  (1.35776in,0.420094in)--(1.43614in,0.469172in)--(1.36527in,0.415846in)--cycle;
+\draw [fill](1.21824in,0.329463in)--(1.13824in,0.279326in)--
+  (1.20702in,0.316533in)--(1.28707in,0.366769in)--(1.21824in,0.329463in)--cycle;
+\pgfsetfillcolor{rgb_b0b0b0}
+\draw [fill](0.471264in,1.09975in)--(0.380606in,1.05772in)--
+  (0.460802in,0.905108in)--(0.549256in,0.948329in)--(0.471264in,1.09975in)--cycle;
+\pgfsetfillcolor{rgb_808080}
+\draw [fill](1.5127in,0.517117in)--(1.43614in,0.469172in)--
+  (1.50952in,0.539384in)--(1.58636in,0.587217in)--(1.5127in,0.517117in)--cycle;
+\pgfsetfillcolor{rgb_bdbdbd}
+\draw [fill](0.509776in,0.466317in)--(0.420394in,0.417171in)--
+  (0.493713in,0.334398in)--(0.581724in,0.384221in)--(0.509776in,0.466317in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.07069in,0.257483in)--(0.988713in,0.206347in)--
+  (1.05634in,0.228004in)--(1.13824in,0.279326in)--(1.07069in,0.257483in)--cycle;
+\pgfsetfillcolor{rgb_b3b3b3}
+\draw [fill](0.460802in,0.905108in)--(0.370242in,0.860859in)--
+  (0.448888in,0.727182in)--(0.53745in,0.772456in)--(0.460802in,0.905108in)--cycle;
+\pgfsetfillcolor{rgb_858585}
+\draw [fill](2.19436in,1.12883in)--(2.12486in,1.08749in)--
+  (2.21855in,1.23698in)--(2.28857in,1.2775in)--(2.19436in,1.12883in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.66142in,0.633942in)--(1.58636in,0.587217in)--
+  (1.66326in,0.675305in)--(1.73869in,0.721786in)--(1.66142in,0.633942in)--cycle;
+\pgfsetfillcolor{rgb_b6b6b6}
+\draw [fill](0.448888in,0.727182in)--(0.358218in,0.680831in)--
+  (0.43545in,0.564848in)--(0.52432in,0.612089in)--(0.448888in,0.727182in)--cycle;
+\pgfsetfillcolor{rgb_8d8d8d}
+\draw [fill](0.921719in,0.199595in)--(0.83756in,0.147512in)--
+  (0.90479in,0.153999in)--(0.988713in,0.206347in)--(0.921719in,0.199595in)--cycle;
+\pgfsetfillcolor{rgb_838383}
+\draw [fill](1.81236in,0.767184in)--(1.73869in,0.721786in)--
+  (1.81999in,0.828984in)--(1.89411in,0.873982in)--(1.81236in,0.767184in)--cycle;
+\pgfsetfillcolor{rgb_bababa}
+\draw [fill](0.43545in,0.564848in)--(0.344461in,0.51648in)--
+  (0.420394in,0.417171in)--(0.509776in,0.466317in)--(0.43545in,0.564848in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.13824in,0.279326in)--(1.05634in,0.228004in)--
+  (1.12506in,0.265097in)--(1.20702in,0.316533in)--(1.13824in,0.279326in)--cycle;
+\pgfsetfillcolor{rgb_b0b0b0}
+\draw [fill](0.389363in,1.27278in)--(0.296191in,1.23214in)--
+  (0.380606in,1.05772in)--(0.471264in,1.09975in)--(0.389363in,1.27278in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.28707in,0.366769in)--(1.20702in,0.316533in)--
+  (1.27752in,0.369842in)--(1.35776in,0.420094in)--(1.28707in,0.366769in)--cycle;
+\pgfsetfillcolor{rgb_848484}
+\draw [fill](1.96649in,0.917925in)--(1.89411in,0.873982in)--
+  (1.98078in,1.00181in)--(2.05368in,1.04516in)--(1.96649in,0.917925in)--cycle;
+\pgfsetfillcolor{rgb_b2b2b2}
+\draw [fill](0.380606in,1.05772in)--(0.287759in,1.01467in)--
+  (0.370242in,0.860859in)--(0.460802in,0.905108in)--(0.380606in,1.05772in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](0.988713in,0.206347in)--(0.90479in,0.153999in)--
+  (0.972492in,0.175455in)--(1.05634in,0.228004in)--(0.988713in,0.206347in)--cycle;
+\pgfsetfillcolor{rgb_808080}
+\draw [fill](1.43614in,0.469172in)--(1.35776in,0.420094in)--
+  (1.43084in,0.490404in)--(1.50952in,0.539384in)--(1.43614in,0.469172in)--cycle;
+\pgfsetfillcolor{rgb_b4b4b4}
+\draw [fill](0.370242in,0.860859in)--(0.2775in,0.815543in)--
+  (0.358218in,0.680831in)--(0.448888in,0.727182in)--(0.370242in,0.860859in)--cycle;
+\pgfsetfillcolor{rgb_b7b7b7}
+\draw [fill](0.358218in,0.680831in)--(0.265364in,0.633363in)--
+  (0.344461in,0.51648in)--(0.43545in,0.564848in)--(0.358218in,0.680831in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.58636in,0.587217in)--(1.50952in,0.539384in)--
+  (1.58602in,0.627703in)--(1.66326in,0.675305in)--(1.58636in,0.587217in)--cycle;
+\pgfsetfillcolor{rgb_858585}
+\draw [fill](2.12486in,1.08749in)--(2.05368in,1.04516in)--
+  (2.1468in,1.19546in)--(2.21855in,1.23698in)--(2.12486in,1.08749in)--cycle;
+\pgfsetfillcolor{rgb_838383}
+\draw [fill](1.73869in,0.721786in)--(1.66326in,0.675305in)--
+  (1.74407in,0.782893in)--(1.81999in,0.828984in)--(1.73869in,0.721786in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.05634in,0.228004in)--(0.972492in,0.175455in)--
+  (1.04111in,0.212417in)--(1.12506in,0.265097in)--(1.05634in,0.228004in)--cycle;
+\draw [fill](1.20702in,0.316533in)--(1.12506in,0.265097in)--
+  (1.19533in,0.318373in)--(1.27752in,0.369842in)--(1.20702in,0.316533in)--cycle;
+\pgfsetfillcolor{rgb_b1b1b1}
+\draw [fill](0.296191in,1.23214in)--(0.20073in,1.1905in)--
+  (0.287759in,1.01467in)--(0.380606in,1.05772in)--(0.296191in,1.23214in)--cycle;
+\pgfsetfillcolor{rgb_b3b3b3}
+\draw [fill](0.287759in,1.01467in)--(0.192641in,0.970565in)--
+  (0.2775in,0.815543in)--(0.370242in,0.860859in)--(0.287759in,1.01467in)--cycle;
+\pgfsetfillcolor{rgb_b5b5b5}
+\draw [fill](0.2775in,0.815543in)--(0.182496in,0.769122in)--
+  (0.265364in,0.633363in)--(0.358218in,0.680831in)--(0.2775in,0.815543in)--cycle;
+\pgfsetfillcolor{rgb_808080}
+\draw [fill](1.35776in,0.420094in)--(1.27752in,0.369842in)--
+  (1.35025in,0.440233in)--(1.43084in,0.490404in)--(1.35776in,0.420094in)--cycle;
+\pgfsetfillcolor{rgb_848484}
+\draw [fill](1.89411in,0.873982in)--(1.81999in,0.828984in)--
+  (1.9061in,0.957387in)--(1.98078in,1.00181in)--(1.89411in,0.873982in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.50952in,0.539384in)--(1.43084in,0.490404in)--
+  (1.50688in,0.578939in)--(1.58602in,0.627703in)--(1.50952in,0.539384in)--cycle;
+\pgfsetfillcolor{rgb_858585}
+\draw [fill](2.05368in,1.04516in)--(1.98078in,1.00181in)--
+  (2.07327in,1.15291in)--(2.1468in,1.19546in)--(2.05368in,1.04516in)--cycle;
+\pgfsetfillcolor{rgb_838383}
+\draw [fill](1.66326in,0.675305in)--(1.58602in,0.627703in)--
+  (1.66628in,0.735667in)--(1.74407in,0.782893in)--(1.66326in,0.675305in)--cycle;
+\pgfsetfillcolor{rgb_7f7f7f}
+\draw [fill](1.12506in,0.265097in)--(1.04111in,0.212417in)--
+  (1.11112in,0.265643in)--(1.19533in,0.318373in)--(1.12506in,0.265097in)--cycle;
+\pgfsetfillcolor{rgb_b2b2b2}
+\draw [fill](0.20073in,1.1905in)--(0.102895in,1.14783in)--
+  (0.192641in,0.970565in)--(0.287759in,1.01467in)--(0.20073in,1.1905in)--cycle;
+\pgfsetfillcolor{rgb_b4b4b4}
+\draw [fill](0.192641in,0.970565in)--(0.0951684in,0.92537in)--
+  (0.182496in,0.769122in)--(0.2775in,0.815543in)--(0.192641in,0.970565in)--cycle;
+\pgfsetfillcolor{rgb_808080}
+\draw [fill](1.27752in,0.369842in)--(1.19533in,0.318373in)--
+  (1.26768in,0.38883in)--(1.35025in,0.440233in)--(1.27752in,0.369842in)--cycle;
+\pgfsetfillcolor{rgb_848484}
+\draw [fill](1.81999in,0.828984in)--(1.74407in,0.782893in)--
+  (1.82955in,0.911864in)--(1.9061in,0.957387in)--(1.81999in,0.828984in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.43084in,0.490404in)--(1.35025in,0.440233in)--
+  (1.4258in,0.528969in)--(1.50688in,0.578939in)--(1.43084in,0.490404in)--cycle;
+\pgfsetfillcolor{rgb_858585}
+\draw [fill](1.98078in,1.00181in)--(1.9061in,0.957387in)--
+  (1.9979in,1.10928in)--(2.07327in,1.15291in)--(1.98078in,1.00181in)--cycle;
+\pgfsetfillcolor{rgb_838383}
+\draw [fill](1.58602in,0.627703in)--(1.50688in,0.578939in)--
+  (1.58655in,0.687265in)--(1.66628in,0.735667in)--(1.58602in,0.627703in)--cycle;
+\pgfsetfillcolor{rgb_b4b4b4}
+\draw [fill](0.102895in,1.14783in)--(0.00259603in,1.10408in)--
+  (0.0951684in,0.92537in)--(0.192641in,0.970565in)--(0.102895in,1.14783in)--cycle;
+\pgfsetfillcolor{rgb_808080}
+\draw [fill](1.19533in,0.318373in)--(1.11112in,0.265643in)--
+  (1.18305in,0.336147in)--(1.26768in,0.38883in)--(1.19533in,0.318373in)--cycle;
+\pgfsetfillcolor{rgb_848484}
+\draw [fill](1.74407in,0.782893in)--(1.66628in,0.735667in)--
+  (1.75108in,0.865194in)--(1.82955in,0.911864in)--(1.74407in,0.782893in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.35025in,0.440233in)--(1.26768in,0.38883in)--
+  (1.34268in,0.477749in)--(1.4258in,0.528969in)--(1.35025in,0.440233in)--cycle;
+\pgfsetfillcolor{rgb_858585}
+\draw [fill](1.9061in,0.957387in)--(1.82955in,0.911864in)--
+  (1.9206in,1.06455in)--(1.9979in,1.10928in)--(1.9061in,0.957387in)--cycle;
+\pgfsetfillcolor{rgb_838383}
+\draw [fill](1.50688in,0.578939in)--(1.4258in,0.528969in)--
+  (1.50482in,0.637642in)--(1.58655in,0.687265in)--(1.50688in,0.578939in)--cycle;
+\pgfsetfillcolor{rgb_848484}
+\draw [fill](1.66628in,0.735667in)--(1.58655in,0.687265in)--
+  (1.67061in,0.817336in)--(1.75108in,0.865194in)--(1.66628in,0.735667in)--cycle;
+\pgfsetfillcolor{rgb_828282}
+\draw [fill](1.26768in,0.38883in)--(1.18305in,0.336147in)--
+  (1.25746in,0.425231in)--(1.34268in,0.477749in)--(1.26768in,0.38883in)--cycle;
+\pgfsetfillcolor{rgb_838383}
+\draw [fill](1.4258in,0.528969in)--(1.34268in,0.477749in)--
+  (1.42099in,0.586752in)--(1.50482in,0.637642in)--(1.4258in,0.528969in)--cycle;
+\pgfsetfillcolor{rgb_868686}
+\draw [fill](1.82955in,0.911864in)--(1.75108in,0.865194in)--
+  (1.84131in,1.01867in)--(1.9206in,1.06455in)--(1.82955in,0.911864in)--cycle;
+\pgfsetfillcolor{rgb_858585}
+\draw [fill](1.58655in,0.687265in)--(1.50482in,0.637642in)--
+  (1.58807in,0.768243in)--(1.67061in,0.817336in)--(1.58655in,0.687265in)--cycle;
+\pgfsetfillcolor{rgb_838383}
+\draw [fill](1.34268in,0.477749in)--(1.25746in,0.425231in)--
+  (1.335in,0.534545in)--(1.42099in,0.586752in)--(1.34268in,0.477749in)--cycle;
+\pgfsetfillcolor{rgb_868686}
+\draw [fill](1.75108in,0.865194in)--(1.67061in,0.817336in)--
+  (1.75995in,0.971582in)--(1.84131in,1.01867in)--(1.75108in,0.865194in)--cycle;
+\pgfsetfillcolor{rgb_858585}
+\draw [fill](1.50482in,0.637642in)--(1.42099in,0.586752in)--
+  (1.50337in,0.717866in)--(1.58807in,0.768243in)--(1.50482in,0.637642in)--cycle;
+\pgfsetfillcolor{rgb_868686}
+\draw [fill](1.67061in,0.817336in)--(1.58807in,0.768243in)--
+  (1.67644in,0.92325in)--(1.75995in,0.971582in)--(1.67061in,0.817336in)--cycle;
+\pgfsetfillcolor{rgb_858585}
+\draw [fill](1.42099in,0.586752in)--(1.335in,0.534545in)--
+  (1.41642in,0.666155in)--(1.50337in,0.717866in)--(1.42099in,0.586752in)--cycle;
+\pgfsetfillcolor{rgb_868686}
+\draw [fill](1.58807in,0.768243in)--(1.50337in,0.717866in)--
+  (1.59068in,0.873621in)--(1.67644in,0.92325in)--(1.58807in,0.768243in)--cycle;
+\draw [fill](1.50337in,0.717866in)--(1.41642in,0.666155in)--
+  (1.50259in,0.822642in)--(1.59068in,0.873621in)--(1.50337in,0.717866in)--cycle;
+\draw (1.17447in,0.402985in)--(1.17447in,1.2815in);
+\pgfsetfillcolor{rgb_000000}
+\draw [fill](1.17447in,1.19063in)--(1.19522in,1.19063in)--
+  (1.17447in,1.2815in)--(1.15371in,1.19063in)--(1.17447in,1.19063in)--cycle;
+\pgftext[at={\pgfpoint{1.17447in}{1.33684in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$\operatorname{Im} w$}}}
+\end{tikzpicture}
