@@ -4472,7 +4472,7 @@ the linear mapping $Df(p)$ is
 just the Jacobian matrix acting on the standard basis of the tangent space
 as given above.  This is why we use the same notation for the Jacobian
 matrix and the derivative acting on tanent spaces.
-To see that this is so, it is really enough to see where the basis element
+To see that this is so, it is enough to see where the basis element
 $\frac{\partial}{\partial x_j}|_p$ goes, and the form of $Df(p)$
 as a matrix
 follows by the chain rule.
@@ -4780,8 +4780,12 @@ function).
 
 Recall that $U$ is \emph{\myindex{geometrically convex}} if for every $p,q \in U$ the
 line between $p$ and $q$ is in $U$, or in other words
-$tp +(1-t)q \in U$ for all $t \in [0,1]$.  It turns out for domains with
-smooth boundaries the two notions are equivalent.
+$tp +(1-t)q \in U$ for all $t \in [0,1]$.
+In particular note that geometric convexity is a \emph{global} condition.  You need 
+to know all of $U$.  On the other hand, the notion of convex for a smooth boundary is
+\emph{local} in that you only need to know $\partial U$ in a small
+neighborhood.  It turns out for domains with
+smooth boundaries the two notions are equivalent.  One direction is easy.
 
 \begin{exbox}
 \begin{exercise}
@@ -4792,7 +4796,9 @@ convex.  Show that it is convex.
 \end{exbox}
 
 The other direction is considerably more complicated, and we will not worry
-about it here.  Similar difficulties will be present once we move back to
+about it here.  Proving a global condition from a local one is often
+trickier, but also often more interesting.
+Similar difficulties will be present once we move back to
 several complex variables and try to relate pseudoconvexity with domains of
 holomorphy.
 
@@ -4888,7 +4894,9 @@ is a vector space isomorphism.  Similarly for $T_p^{(0,1)} \C^n$.
 \begin{exercise}
 Prove the proposition.
 Hint: Start with $D_\R f(p)$ as a real $2m \times 2n$ matrix to show it
-extends (it is the same matrix if you think of it as a matrix).  Think of $\C^n$ and $\C^m$ in terms of the $z$s and the
+extends (it is the same matrix if you think of it as a matrix
+and use the same basis vectors).
+Think of $\C^n$ and $\C^m$ in terms of the $z$s and the
 $\bar{z}$s and think of $f$ as a mapping
 \begin{equation*}
 (z,\bar{z}) \mapsto \bigl( f(z) , \bar{f}(\bar{z}) \bigr) .
