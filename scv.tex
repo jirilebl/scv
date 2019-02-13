@@ -4447,7 +4447,56 @@ is the tangent bundle of $M$.  A vector field $X$ in $TM$ is a vector field
 such that $X_p \in T_p M$ for all $p \in M$.
 \end{defn}
 
-Now that we know what tangent vectors are, let us define convexity
+Before we move on, let us note how smooth maps transform tangent spaces.
+Given a smooth mapping 
+$f \colon U \subset \R^n \to \R^m$,
+the derivative at $p$ is a linear mapping of the 
+the tangent spaces: $Df(p) \colon T_p \R^n \to T_{f(p)} \R^m$.
+That is, given $X_p \in T_p \R^n$, then 
+$Df(p) X_p$ should be in $T_{f(p)} \R^m$.
+So if $\varphi$ is a smooth function of a neighborhood
+of $f(p)$ in $\R^m$, then
+$Df(p) X_p$ acts on $\varphi$ as
+\glsadd{not:Df}%
+\begin{equation*}
+Df(p) X_p \varphi = X_p (\varphi \circ f) .
+\end{equation*}
+It is really the only reasonable way to put those three objects together.
+When the spaces are $\C^n$ and $\C^m$, we denote this
+derivative as
+\glsadd{not:DRf}%
+$D_\R f$
+to distinguish it from the holomorphic derivative.
+As far as calculus computations are concerned, notice that
+the linear mapping $Df(p)$ is
+just the Jacobian matrix acting on the standard basis of the tangent space
+as given above.  This is why we use the same notation for the Jacobian
+matrix and the derivative acting on tanent spaces.
+To see that this is so, it is really enough to see where the basis element
+$\frac{\partial}{\partial x_j}|_p$ goes, and the form of $Df(p)$
+as a matrix
+follows by the chain rule.
+For example, the derivative of the mapping $f(x_1,x_2) =
+(x_1+2x_2+x_1^2,3x_1+4x_2+x_1x_2)$ at the origin is given by the matrix
+$\left[ \begin{smallmatrix} 1 & 2 \\ 3 & 4 \end{smallmatrix} \right]$,
+and so the vector
+$X_p = a\frac{\partial}{\partial x_1}|_0
++
+b\frac{\partial}{\partial x_2}|_0$
+gets taken to
+$Df(0) X_0 = (a+2b)\frac{\partial}{\partial y_1}|_0
++
+(3a+4b)\frac{\partial}{\partial y_2}|_0$, where we let $(y_1,y_2)$ be the
+coordinates on the target.  You should check on some test
+function, such as
+$\varphi(y_1,y_2) = \alpha y_1 + \beta y_2$, that this satisfies the
+definition.
+
+
+\medskip
+
+Now that we know what tangent vectors are and how they transform,
+let us define convexity
 for domains with smooth boundary.
 
 \begin{defn}
@@ -4549,7 +4598,8 @@ X = y \frac{\partial}{\partial x} - x \frac{\partial}{\partial y}
 is tangent to the circle, that is,
 $Xr = X(x^2+y^2-1) = (2x,2y) \cdot (y,-x) = 0$ on the circle (in this case
 it is in fact zero everywhere).
-The vector field $X$ is also nonzero on the circle.
+The vector field $X$ is nonzero on the circle, so at each point it gives a
+basis of the tangent space.
 \begin{myfig}
 \subimport*{figures/}{circle-tangent.pdf_t}
 \end{myfig}
@@ -4728,15 +4778,14 @@ function).
 \end{exercise}
 \end{exbox}
 
-There is also a geometric notion of convexity, that is, $U$ is
-\emph{\myindex{geometrically convex}} if for every $p,q \in U$ the
+Recall that $U$ is \emph{\myindex{geometrically convex}} if for every $p,q \in U$ the
 line between $p$ and $q$ is in $U$, or in other words
-$tp +(1-t)q \in U$ for all $t \in [0,1]$.
+$tp +(1-t)q \in U$ for all $t \in [0,1]$.  It turns out for domains with
+smooth boundaries the two notions are equivalent.
 
 \begin{exbox}
 \begin{exercise}
-Suppose a domain with smooth
-%$C^2$
+Suppose a domain $U \subset \R^n$ with smooth
 boundary is geometrically
 convex.  Show that it is convex.
 \end{exercise}
@@ -4931,13 +4980,16 @@ be included, otherwise the dimensions will not work out.
 Make sure that you understand what all the objects are.  The space
 $T_pM$ is a real vector space; $\C \otimes T_pM$, $T_p^{(1,0)}M$,
 $T_p^{(0,1)} M$, and $B_p$ are complex vector spaces.  To see that
-these are all vector bundles, we must show that their dimensions do not vary
+these are give vector bundles,
+we must first show that their dimensions do not vary
 from point to point.  The easiest way to see this fact is to write down
 convenient local coordinates.  First, let us see what a biholomorphic map
 does to the holomorphic and antiholomorphic vectors.  A biholomorphic map
 $f$ is a diffeomorphism.  And if a real hypersurface $M$ is defined
-by a function $r$ near $p$, then the image $f(M)$ is defined by
+by a function $r$ near $p$, then the image $f(M)$ is also
+a real hypersurface is given by the defining function
 $r \circ f^{-1}$ near $f(p)$.
+
 
 \begin{prop}
 Suppose $M \subset \C^n$ is a smooth real hypersurface, $p \in M$,
