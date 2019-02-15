@@ -38,6 +38,8 @@ improvements have been made throughout.
 * Add a blurb about tangent space being derivatives along $M$ and give a short example, this renumbers the rest of the definitions/lemmas
 * Split up the numbered definitions in 2.2 a bit more.
 * Add a bit more clarification to how this relates to standard vector calculus
+* Add proposition for the "inertia of Levi-form" does not depend on the defining function and exercise 2.3.3 now just says to prove this proposition.
+* Similarly, add the "inertial is preserved" to the change of variables theorem (was 2.3.7) right after instead of just making it a remark after the theorem
 * Add definition of Levi-flat to end of 2.3 and add exercises 2.3.13-2.3.17
 * Add figure of the Lewy hypersurface
 ** Move the solution of Dirichlet problem up in 2.4 so that it can be used.  This renumbers the exercises in 2.4

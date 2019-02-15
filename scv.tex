@@ -4924,10 +4924,10 @@ as the $m \times n$ Jacobian matrix
 \frac{\partial f_j}{\partial z_k}
 \right]_{jk} ,
 \end{equation*}
-which we have seen before and which was also represented by
+which we have seen before and for which we also used the notation 
 $Df(p)$.
 
-Similarly as before we define the tangent bundles
+Similarly as before, define the tangent bundles
 \begin{equation*}
 \C \otimes T\C^n,
 \quad
@@ -4935,14 +4935,15 @@ T^{(1,0)} \C^n,
 \quad \text{and} \quad
 T^{(0,1)} \C^n ,
 \end{equation*}
-by taking the disjoint unions, and we have vector fields in these bundles.
+by taking the disjoint unions.
+One can also define vector fields in these bundles.
 
-Given a real smooth hypersurface $M \subset \C^n$ let us describe
-$\C \otimes T_pM$.  Let $r$ be a real-valued defining function of
-$M$ at $p$.  A vector $X_p \in \C \otimes T_pM$
-is a vector in $\C \otimes T_p\C^n$ such that at $p$ we have
-$X_p r = 0$.  That is,
-write
+Let us describe $\C \otimes T_pM$
+for a real smooth hypersurface $M \subset \C^n$.
+Let $r$ be a real-valued defining function of
+$M$ at $p$.  A vector
+$X_p \in \C \otimes T_p\C^n$ is in
+$\C \otimes T_pM$ whenever $X_p r = 0$.  That is,
 \begin{equation*}
 X_p = \sum_{j=1}^n
 \left(
@@ -4951,11 +4952,10 @@ a_j
 +
 b_j
 \frac{\partial}{\partial \bar{z}_j} \Big|_p
-\right).
-\end{equation*}
-Then $X_p \in \C \otimes T_p M$
-whenever
-\begin{equation*}
+\right) \in \C \otimes T_p M
+\qquad
+\text{whenever}
+\qquad
  \sum_{j=1}^n
 \left(
 a_j 
@@ -4966,7 +4966,6 @@ b_j
 \right)
 = 0 .
 \end{equation*}
-%for a defining function $r$ of $M$ at $p$.
 Therefore, $\C \otimes T_p M$ is a $(2n-1)$-dimensional complex vector space.
 We decompose 
 $\C \otimes T_p M$ as
@@ -4988,7 +4987,7 @@ be included, otherwise the dimensions will not work out.
 Make sure that you understand what all the objects are.  The space
 $T_pM$ is a real vector space; $\C \otimes T_pM$, $T_p^{(1,0)}M$,
 $T_p^{(0,1)} M$, and $B_p$ are complex vector spaces.  To see that
-these are give vector bundles,
+these give vector bundles,
 we must first show that their dimensions do not vary
 from point to point.  The easiest way to see this fact is to write down
 convenient local coordinates.  First, let us see what a biholomorphic map
@@ -5013,7 +5012,9 @@ That is, the spaces are isomorphic as complex vector spaces.
 
 \begin{proof}
 Without loss of generality assume that $M \subset U$.
-The proof is simply the application of \propref{prop:holvectmap}.  We have
+The proof is simply the application of \propref{prop:holvectmap}.
+As the derivative is invertible,
+the dimensions of the spaces dictate that
 \begin{multline*}
 D_\C f(p)\Bigl(T_p^{(1,0)}\C^n\Bigr) = T_{f(p)}^{(1,0)}\C^n, \quad 
 D_\C f(p)\Bigl(T_p^{(0,1)}\C^n\Bigr) = T_{f(p)}^{(0,1)}\C^n, \quad
@@ -5030,7 +5031,7 @@ applying a unitary matrix are biholomorphic changes of coordinates.
 
 \pagebreak[2]
 \begin{prop}
-Suppose $M \subset \C^n$ is a smooth real hypersurface, $p \in M$.
+Let $M \subset \C^n$ be a smooth real hypersurface, $p \in M$.
 After a translation and rotation via a unitary
 matrix, $p=0$, and near the origin
 $M$ is written in variables $(z,w) \in \C^{n-1}
@@ -5260,9 +5261,20 @@ transpose of $A$.
 In other words, $A$
 transforms the complex Hessian $L$ as $A^* L A$, that is, by $*$-congruence.
 
-While the Levi form depends on the defining function,
-the inertia (the number of positive, negative, and zero
-eigenvalues) is independent of $r$ (see exercise below).
+The Levi-form itself does depend on the defining function, but the signs of
+the eigenvalues do not.  It is common to say ``the
+Levi-form'' without mentioning a specific defining function
+even though that is not completely correct.
+The proof of the following proposition is left as an exercise.
+
+\begin{prop} \label{prop:inertiainvariant}
+Let $U \subset \C^n$ be a domain with smooth boundary and $p \in \partial
+U$.  The inertia (the number of positive, negative, and zero
+eigenvalues) of the Levi-form at $p$
+does not depend on the defining function at $p$.
+In particular, the definition of pseudoconvexity and strong pseudoconvexity is
+independent of the defining function.
+\end{prop}
 
 \begin{exbox}
 \begin{exercise}
@@ -5271,11 +5283,12 @@ is, the matrix is equal to its conjugate transpose.
 \end{exercise}
 
 \begin{exercise}
-Show that pseudoconvexity of $U$ at $p \in \partial U$ is not dependent
-on the defining function.
-(In fact the inertia
-%, the number of positive negative and zero eigenvalues,
-of the Levi form does not depend on $r$.)
+Prove \propref{prop:inertiainvariant}.
+%Show that pseudoconvexity of $U$ at $p \in \partial U$ is not dependent
+%on the defining function.
+%(In fact the inertia
+%%, the number of positive negative and zero eigenvalues,
+%of the Levi form does not depend on $r$.)
 \end{exercise}
 
 \begin{exercise}
@@ -5380,7 +5393,7 @@ We have not yet proved that pseudoconvexity is a biholomorphic invariant,
 but when we do, it will also mean that the ball is strictly pseudoconvex.
 
 Of course not the entire sphere gets transformed, the points where $Z_n=1$
-get sent to infinity.
+get ``sent to infinity.''
 The hypersurface $\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$
 is sometimes called the \emph{\myindex{Lewy hypersurface}}, and in the
 literature some even say it \emph{is} the sphere\footnote{That is not, in
@@ -5554,7 +5567,9 @@ $q \in \partial U'$, $V' \subset \C^n$ a neighborhood of $q$,
 and $f \colon V \to V'$ a biholomorphic map with $f(p) = q$, such that
 $f(U \cap V) = U' \cap V'$.
 
-Then $U$ is pseudoconvex at $p$ if and only if $U'$ is pseudoconvex at $q$.
+Then the inertia of the Levi-form of $U$ at $p$ is the same as the inertia of
+the Levi-form of $U'$ at $q$.
+In particular, $U$ is pseudoconvex at $p$ if and only if $U'$ is pseudoconvex at $q$.
 Similarly
 $U$ is strongly pseudoconvex at $p$ if and only if $U'$ is strongly pseudoconvex at $q$.
 \end{thm}
@@ -5563,7 +5578,7 @@ $U$ is strongly pseudoconvex at $p$ if and only if $U'$ is strongly pseudoconvex
 \subimport*{figures/}{bndry-bihol.pdf_t}
 \end{myfig}
 
-The only thing left is to observe that if
+To prove the theorem, the only thing left is to observe that if
 $f(U \cap V) = U' \cap V'$ then $f(\partial U \cap V) = \partial U' \cap
 V'$.
 
@@ -5574,8 +5589,10 @@ but that is pseudoconvex.
 \end{exercise}
 \end{exbox}
 
-We proved a stronger result than the theorem.  We proved that the inertia
-of the Levi form is invariant under a biholomorphic change of coordinates.
+So while the Levi-form is not invariant under changes of coordinates,
+its inertia is.
+%We proved a stronger result than the theorem.  We proved that the inertia
+%of the Levi form is invariant under a biholomorphic change of coordinates.
 Putting this together with the other observations we made above,
 we will find the normal form for the
 quadratic part of the defining equation for a smooth real hypersurface
@@ -5903,11 +5920,13 @@ $\varphi(\xi) \in U$.  By picking $\lambda$ small enough, we have
 $\varphi(\overline{\D}\setminus\{0\}) \subset U$.
 
 As $\varphi(\partial \D)$ is compact we can ``wiggle it a little'' and
-find discs in $U$.  In particular, for small enough $s > 0$, the disc
+find discs in $U$.  In particular, for all small enough $s > 0$,
+the closed disc given by
 \begin{equation*}
 \xi \overset{\varphi_s}{\mapsto} (\lambda \xi, 0, 0, \ldots, 0, i s) 
 \end{equation*}
 is entirely inside $U$ (that is for slightly positive $\Im w$).
+Fix such a small $s > 0$.
 Suppose $\epsilon > 0$ is small and $\epsilon < s$.
 Define the Hartogs figure
 \begin{equation*}
@@ -6176,37 +6195,38 @@ the following proposition.
 \begin{prop}[Mean-value property and sub-mean-value property]
 \index{mean-value property}
 \index{sub-mean-value property}
+Let $U \subset \C$ be a domain.
+\begin{enumerate}[(i)]
+\item
 A continuous function
-$f \colon U \subset \C \to \R$
-is harmonic if and only if whenever 
-$\overline{\Delta_r(a)} \subset U$ then
+$f \colon U \to \R$
+is harmonic if and only if 
 \begin{equation*}
-f(a) = \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta .
+f(a) = \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta 
+\qquad \text{whenever} \quad
+\overline{\Delta_r(a)} \subset U .
 \end{equation*}
+\item
 An upper-semicontinuous function $f \colon U \to \R \cup \{ -\infty \}$
-is subharmonic if and only if whenever
-$\overline{\Delta_r(a)} \subset U$ then
-%then
-%\begin{equation*}
-%u(a) = \frac{1}{2\pi} \int_0^{2\pi} u(a+re^{i\theta})\, d\theta .
-%\end{equation*}
-%Therefore, as $f$ is less than a harmonic function we have
+is subharmonic if and only if
 \begin{equation*}
 f(a) \leq \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta .
+\qquad \text{whenever} \quad
+\overline{\Delta_r(a)} \subset U
 \end{equation*}
+\end{enumerate}
 \end{prop}
 
 For the sub-mean-value property you may have to use 
-the Lebesgue integral to integrate an upper-semicontinuous function.
+the Lebesgue integral to integrate an upper-semicontinuous function,
+and to use the version of the Poisson integral above, you need to
+approximate by continuous functions.
 On first reading, fell free to think of continuous subharmonic
 functions and not much will be lost.
-%Although continuous subharmonic functions are generally enough for this class.
 
 \begin{exbox}
 \begin{exercise}
 Fill in the details of the proof of the proposition.
-%Feel free to prove
-%the subharmonicity result only for continuous functions if you wish.
 \end{exercise}
 
 \begin{exercise}
@@ -6225,14 +6245,8 @@ is subharmonic.  If $f$ attains a maximum in $U$, then $f$ is constant.
 \end{prop}
 
 \begin{proof}
-%Recall that a function $f$ is subharmonic if and only if whenever
 If
 $\overline{\Delta_r(a)} \subset U$ then
-%then
-%\begin{equation*}
-%u(a) = \frac{1}{2\pi} \int_0^{2\pi} u(a+re^{i\theta})\, d\theta .
-%\end{equation*}
-%Therefore, as $f$ is less than a harmonic function we have
 \begin{equation*}
 f(a) \leq \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta .
 \end{equation*}
