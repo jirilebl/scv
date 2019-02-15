@@ -4871,7 +4871,7 @@ the standard real Jacobian matrix, that is, a real $2m \times 2n$ matrix
 that we wrote before as $D_\R f(p)$.
 
 \begin{prop} \label{prop:holvectmap}
-Let $f \colon U \subset \C^n \to \C^m$ be a holomorphic function with
+Let $f \colon U \subset \C^n \to \C^m$ be a holomorphic mapping with
 $p \in U$.
 Suppose 
 $D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$
@@ -5000,8 +5000,9 @@ $r \circ f^{-1}$ near $f(p)$.
 
 \begin{prop}
 Suppose $M \subset \C^n$ is a smooth real hypersurface, $p \in M$,
-and $U \subset \C^n$ is a neighborhood of $p$.
-Let $f \colon U \to \C^n$ be a biholomorphic map.  Let $D_\C f(p)$ be
+and $U \subset \C^n$ is an open set such that $M \subset U$.
+Let $f \colon U \to \C^n$ be a holomorphic mapping such
+that $D f(p)$ is invertible (a biholomorphism near $p$).  Let $D_\C f(p)$ be
 the complexified real derivative as before.  Then
 \begin{equation*}
 D_\C f(p)\Bigl(T_p^{(1,0)}M\Bigr) = T_{f(p)}^{(1,0)}f(M), \qquad
@@ -5010,11 +5011,13 @@ D_\C f(p)\Bigl(T_p^{(0,1)}M\Bigr) = T_{f(p)}^{(0,1)}f(M).
 That is, the spaces are isomorphic as complex vector spaces.
 \end{prop}
 
+The proposition is local, if $U$ is only a neighborhood of $p$,
+replace $M$ with $M \cap U$.
+
 \begin{proof}
-Without loss of generality assume that $M \subset U$.
-The proof is simply the application of \propref{prop:holvectmap}.
-As the derivative is invertible,
-the dimensions of the spaces dictate that
+%Without loss of generality assume that $M \subset U$.
+The proof is an application of \propref{prop:holvectmap}.
+As the map is a biholomorphism at $p$,
 \begin{multline*}
 D_\C f(p)\Bigl(T_p^{(1,0)}\C^n\Bigr) = T_{f(p)}^{(1,0)}\C^n, \quad 
 D_\C f(p)\Bigl(T_p^{(0,1)}\C^n\Bigr) = T_{f(p)}^{(0,1)}\C^n, \quad
