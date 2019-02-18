@@ -4505,18 +4505,13 @@ smooth boundary, %$C^k$-smooth boundary, $k \geq 2$,
 and 
 $r$ is a defining function for $\partial U$ at $p \in \partial
 U$ such that $r < 0$ on $U$.
-
-If for all nonzero
-tangent vectors
-$X_p \in T_p \partial U$,
-\begin{equation*}
-X_p = \sum_{j=1}^n a_j 
-\frac{\partial}{\partial x_j}\Big|_p ,
-\end{equation*}
-we have
+If
 \begin{equation*}
 \sum_{j=1,\ell=1}^n
 a_j a_\ell \frac{\partial^2 r}{\partial x_j \partial x_\ell} \Big|_p \geq 0 ,
+\qquad \text{for all} \qquad
+X_p = \sum_{j=1}^n a_j 
+\frac{\partial}{\partial x_j}\Big|_p \quad \in \quad T_p \partial U,
 \end{equation*}
 then $U$ is said to be \emph{\myindex{convex}} at $p$.  If the inequality
 above is strict for all nonzero $X_p \in T_p \partial U$, then $U$ is said to be
@@ -4540,14 +4535,15 @@ So, $U$ is convex at $p \in \partial U$ if
 the Hessian
 of $r$ at $p$ as a bilinear form is positive definite (or positive
 semidefinite) when restricted to $T_p \partial U$.
-In a vector calculus language, let $H$ be the Hessian at $p$, and treat
-$a$ as a column $n$-vector, then 
+In the language of vector calculus, let $H$ be the Hessian of $r$ at $p$, and treat
+$a \in \R^n$ as a column vector.
+Then 
 $\partial U$ is convex at $p$ whenever
 \begin{equation*}
-a^t H a \geq 0 , \qquad \text{for all $a$ such that} \quad \nabla r|_p
+a^t H a \geq 0 , \qquad \text{for all $a \in \R^n$ such that} \quad \nabla r|_p
 \cdot a = 0 .
 \end{equation*}
-This bilinear form is the second fundamental form from Riemannian
+This bilinear form given by the Hessian is the second fundamental form from Riemannian
 geometry in mild disguise (or perhaps it is the other way around).
 
 We cheated a little bit, since we have not proved that
@@ -4854,7 +4850,7 @@ The vectors in $T_p^{(1,0)} \C^n$ are the
 \emph{\myindex{holomorphic vectors}} and vectors in 
 $T_p^{(0,1)} \C^n$ are the
 \emph{\myindex{antiholomorphic vectors}}.
-We decompose the full tangent space as 
+We decompose the full tangent space as the direct sum
 \begin{equation*}
 \C \otimes T_p\C^n
 =
@@ -4915,19 +4911,25 @@ derivative, which we write as
 D f(p) \colon T_p^{(1,0)} \C^n \to T_{f(p)}^{(1,0)} \C^m .
 \end{equation*}
 That is, $Df(p)$ is the restriction of $D_\C f(p)$ to $T_p^{(1,0)} \C^n$.
-In other words,
-if we have specific coordinates in mind, the
-holomorphic derivative of $f \colon \C^{n} \to \C^m$ is represented
+In other words, let $z$ be the coordinates on $\C^n$ and
+$w$ be coordinates on $\C^m$.
+Using the bases
+$\left\{ \frac{\partial}{\partial z_1} \big|_p,\ldots,
+\frac{\partial}{\partial z_n} \big|_p \right\}$
+on $\C^n$ and 
+$\left\{ \frac{\partial}{\partial w_1} \big|_{f(p)},\ldots,
+\frac{\partial}{\partial w_m} \big|_{f(p)} \right\}$ on $\C^m$,
+the holomorphic derivative of $f \colon \C^{n} \to \C^m$ is represented
 as the $m \times n$ Jacobian matrix
 \begin{equation*}
 \left[
-\frac{\partial f_j}{\partial z_k}
+\frac{\partial f_j}{\partial z_k} \Big|_p
 \right]_{jk} ,
 \end{equation*}
 which we have seen before and for which we also used the notation 
 $Df(p)$.
 
-Similarly as before, define the tangent bundles
+As before, define the tangent bundles
 \begin{equation*}
 \C \otimes T\C^n,
 \quad
@@ -5033,7 +5035,7 @@ In the next proposition it is important to note that a translation and
 applying a unitary matrix are biholomorphic changes of coordinates.
 
 \pagebreak[2]
-\begin{prop}
+\begin{prop} \label{prop:graphcoordinatesCn}
 Let $M \subset \C^n$ be a smooth real hypersurface, $p \in M$.
 After a translation and rotation via a unitary
 matrix, $p=0$, and near the origin
@@ -5098,19 +5100,18 @@ hypersurfaces, and this complication does not arise.
 \begin{defn}
 Suppose $U \subset \C^n$ is a domain with
 smooth boundary, %$C^k$-smooth boundary, $k \geq 2$,
-and suppose $r$ is a defining function for $\partial U$ at $p \in \partial
+and $r$ is a defining function for $\partial U$ at $p \in \partial
 U$ such that $r < 0$ on $U$.
-
-If for all nonzero
-$X_p \in T^{(1,0)}_p \partial U$,
-\begin{equation*}
-X_p = \sum_{j=1}^n a_j 
-\frac{\partial}{\partial z_j}\Big|_p ,
-\end{equation*}
-we have
+If
 \begin{equation*}
 \sum_{j=1,\ell=1}^n
-\bar{a}_j a_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_p \geq 0 ,
+\bar{a}_j a_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_p \geq 0 
+\qquad
+\text{for all}
+\qquad
+X_p = \sum_{j=1}^n a_j 
+\frac{\partial}{\partial z_j}\Big|_p  \quad \in \quad 
+T^{(1,0)}_p \partial U,
 \end{equation*}
 then $U$ is said to be \emph{\myindex{pseudoconvex}} at $p$
 (or \emph{\myindex{Levi pseudoconvex}}).  If the inequality
@@ -5261,19 +5262,22 @@ the Hessian as
 \end{equation*}
 where $A^* = \overline{A}^t$ is the conjugate
 transpose of $A$.
-In other words, $A$
+So $A$
 transforms the complex Hessian $L$ as $A^* L A$, that is, by $*$-congruence.
+Star congruence preserves the \emph{\myindex{inertia}}
+(the number of positive, negative, and zero eigenvalues)
+of a Hermitian matrix
+by the Sylvester's law of inertia from linear algebra.
 
-The Levi-form itself does depend on the defining function, but the signs of
+The Levi form itself does depend on the defining function, but the signs of
 the eigenvalues do not.  It is common to say ``the
-Levi-form'' without mentioning a specific defining function
+Levi form'' without mentioning a specific defining function
 even though that is not completely correct.
 The proof of the following proposition is left as an exercise.
 
 \begin{prop} \label{prop:inertiainvariant}
 Let $U \subset \C^n$ be a domain with smooth boundary and $p \in \partial
-U$.  The inertia (the number of positive, negative, and zero
-eigenvalues) of the Levi-form at $p$
+U$.  The inertia  of the Levi form at $p$
 does not depend on the defining function at $p$.
 In particular, the definition of pseudoconvexity and strong pseudoconvexity is
 independent of the defining function.
@@ -5309,12 +5313,43 @@ pseudoconvex at all nearby points.
 We are generally interested what happens under a holomorphic change of
 coordinates, that is, a biholomorphic mapping.  And as far as pseudoconvexity
 is concerned we are interested in local changes of coordinates as
-pseudoconvexity is a local property.
+pseudoconvexity is a local property.  Before proving 
+that pseudoconvexity is a biholomorphic invariant, let us note where the
+Levi form appears in the graph coordinates from 
+\propref{prop:graphcoordinatesCn}, that is, if our boundary (the
+hypersurface) is given by
+\begin{equation*}
+\Im w = \varphi(z,\bar{z},\Re w) .
+\end{equation*}
+Let $r(z,\bar{z},w,\bar{w}) = \varphi(z,\bar{z},\Re w) - \Im w$ be our
+defining function.  Then the complex Hessian of $r$ is of the form
+\begin{equation*}
+\begin{bmatrix}
+L & 0 \\
+0 & 0
+\end{bmatrix}
+\qquad \text{where} \quad
+L = \left[
+\frac{\partial^2 \varphi}{\partial \bar{z}_j \partial z_{\ell}}\Big|_0
+\right]_{j \ell} .
+\end{equation*}
+Note that $L$ is an $(n-1) \times (n-1)$ matrix.
+The vectors in $T_0^{(1,0)} \partial U$ are in the span
+of $\left\{
+\frac{\partial}{\partial z_1}\big|_0,
+\ldots,
+\frac{\partial}{\partial z_{n-1}}\big|_0 \right\}$.
+That is, as an $n$-vector,
+a vector in $T_0^{(1,0)} \partial U$ is represented by $(a,0) \in \C^n$ for an
+arbitrary $a \in \C^{n-1}$.  The Levi form is then $a^* L a$,
+in other words, it is given by the $(n-1) \times (n-1)$ matrix $L$.
+If this matrix $L$ is positive
+semidefinite, then $\partial U$ is pseudoconvex at $0$.
 
 \begin{example}
-Let us change variables to show how we write $\bB_n$ in different
+Let us change variables to show how we write the ball $\bB_n$ in different
 local holomorphic coordinates where the Levi form is displayed nicely.
-Let $\bB_n$ be defined in the variables $Z = (Z_1,\ldots,Z_n) \in \C^n$
+Suppose the shphere $\partial \bB_n$ is defined in the variables $Z = (Z_1,\ldots,Z_n) \in \C^n$
 by $\snorm{Z} = 1$.
 
 %Let us take the change of variables given by 
@@ -5385,7 +5420,7 @@ think of the set given by
 \end{equation*}
 as the sphere in local holomorphic coordinates at $(0,\ldots,0,-1)$ (by symmetry
 of the sphere we could have done this at any point by rotation).
-The inside of the sphere is taken to the set given by
+In the coordinates $(z,w)$, the ball (the inside of the sphere) is the set given by
 \begin{equation*}
 \Im w > \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2 .
 \end{equation*}
@@ -5411,7 +5446,7 @@ Pretending $z$ is just one real direction, it looks like this:
 
 As an aside,
 the hypersurface 
-$\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$ is also often called the
+$\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$ is also called the
 \emph{\myindex{Heisenberg group}}.  The group in this case
 is the group defined on the parameters $(z,\Re w)$ of this manifold with the
 group law defined by $(z,\Re w)(z',\Re w') =
@@ -5426,8 +5461,8 @@ on the sets described above.
 \end{exbox}
 
 Let us see how the Hessian of $r$ changes under a biholomorphic change
-of coordinates.  That is, let $f \colon U \to V$ be a biholomorphic map
-between two domains in $\C^n$, and let $r \colon V \to \R$ be a smooth
+of coordinates.  That is, let $f \colon V \to V'$ be a biholomorphic map
+between two domains in $\C^n$, and let $r \colon V' \to \R$ be a smooth
 function with nonvanishing derivative.  Let us compute the Hessian of
 $r \circ f$.  We first compute what happens to the non-mixed derivatives.
 As we have to apply chain rule twice we write the
@@ -5477,16 +5512,16 @@ $f$ is a function of $z$, and $\bar{f}$ is a function of $\bar{z}$.
 \frac{\partial^2 f_\ell}{\partial z_j \partial z_k} .
 \end{split}
 \end{equation}
-In particular, the matrix 
+The matrix 
 $\left[ \frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k} \right]$
 can have different eigenvalues than the matrix
-$\left[ \frac{\partial^2 r}{\partial z_j \partial z_k} \right]$.  In fact,
-if $r$ has nonvanishing gradient, then
+$\left[ \frac{\partial^2 r}{\partial z_j \partial z_k} \right]$.
+If $r$ has nonvanishing gradient, then
 using the second term, we can (locally) choose $f$ in such a way as to make
 the matrix
 $\left[ \frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k} \right]$
-be the zero matrix at a certain point since we can just choose the second
-derivatives of $f$ arbitrarily at a point.  See the exercise below.  So nothing about the matrix
+be the zero matrix (or anything else) at a certain point by choosing the second
+derivatives of $f$ arbitrarily at that point.  See the exercise below.  Nothing about the matrix
 $\left[ \frac{\partial^2 r}{\partial z_j \partial z_k} \right]$ is
 preserved under a biholomorphic map.  And that is precisely why it does not
 appear in the definition of pseudoconvexity.
@@ -5541,25 +5576,25 @@ z_k} (z)}}
 The complex Hessian of $r \circ f$ is simply the complex Hessian $H$ of $r$
 conjugated as $D^*HD$ where $D$ is the holomorphic
 derivative matrix of $f$ at $z$ and
-$D^*$ is the conjugate transpose.  Sylvester's Law of Inertia from linear
-algebra then says that the number of positive, negative, and zero
+$D^*$ is the conjugate transpose.  Sylvester's law of inertia 
+then says that the number of positive, negative, and zero
 eigenvalues of $D^*HD$ is the same as that for $H$.  The
 eigenvalues might have changed, but their sign did not.
 
-In particular, if $H$ is positive definite, then $D^*HD$ is positive
+If $H$ is positive definite, then $D^*HD$ is positive
 definite.  If a smooth hypersurface $M$ is given by $r=0$, then $f^{-1}(M)$ is
 a smooth hypersurface given by $r \circ f = 0$.
 The holomorphic derivative of $f$ (given by $D$)
 takes the
-$T_{z}^{(1,0)}f^{-1}(M)$
+$T_{p}^{(1,0)}f^{-1}(M)$
 space isomorphically to
-$T_{f(z)}^{(1,0)}M$.
+$T_{f(p)}^{(1,0)}M$.
 %Therefore, the
 %law of inertia holds when restricting to the tangent space.
 So $H$ is positive semidefinite (resp.\ positive definite)
-on $T_{f(z)}^{(1,0)}M$ if and only if $D^*HD$ is positive semidefinite
+on $T_{f(p)}^{(1,0)}M$ if and only if $D^*HD$ is positive semidefinite
 (resp.\ positive definite) on
-$T_{z}^{(1,0)} f^{-1}(M)$.
+$T_{p}^{(1,0)} f^{-1}(M)$.
 We have essentially proved the following theorem.  That is, pseudoconvexity is a
 biholomorphic invariant.
 
@@ -5570,8 +5605,8 @@ $q \in \partial U'$, $V' \subset \C^n$ a neighborhood of $q$,
 and $f \colon V \to V'$ a biholomorphic map with $f(p) = q$, such that
 $f(U \cap V) = U' \cap V'$.
 
-Then the inertia of the Levi-form of $U$ at $p$ is the same as the inertia of
-the Levi-form of $U'$ at $q$.
+Then the inertia of the Levi form of $U$ at $p$ is the same as the inertia of
+the Levi form of $U'$ at $q$.
 In particular, $U$ is pseudoconvex at $p$ if and only if $U'$ is pseudoconvex at $q$.
 Similarly
 $U$ is strongly pseudoconvex at $p$ if and only if $U'$ is strongly pseudoconvex at $q$.
@@ -5592,7 +5627,7 @@ but that is pseudoconvex.
 \end{exercise}
 \end{exbox}
 
-So while the Levi-form is not invariant under changes of coordinates,
+So while the Levi form is not invariant under changes of coordinates,
 its inertia is.
 %We proved a stronger result than the theorem.  We proved that the inertia
 %of the Levi form is invariant under a biholomorphic change of coordinates.
@@ -5710,8 +5745,8 @@ a{\left(\frac{w+\bar{w}}{2}\right)}^2
 +O(3) .
 \end{split}
 \end{equation*}
-We cannot quite get rid of all the quadratic terms in this equation, but we can set
-$b$ and $c$ to make the second order terms not depend on $\Re w'$.
+We cannot quite get rid of all the quadratic terms in $\varphi$, but we can
+choose $b$ and $c$ to make the second order terms not depend on $\Re w'$.
 Setting $b=ai$ and $c=2\epsilon i$, and adding $q(z,\bar{z}) + O(3)$ into the mix we obtain
 \begin{equation*}
 \begin{split}
@@ -5763,7 +5798,7 @@ We solve
 for $\Im w'$.  The expression for $\Im w'$
 is $O(2)$, and therefore $-i\epsilon (\Im w')(z_1-\bar{z}_1)+a{(\Im w')}^2$
 is $O(3)$.
-So if we write $M$ as a graph:
+So if we write $M$ as a graph,
 \begin{equation*}
 \Im w' = q(z,\bar{z}) + E(z,\bar{z},\Re w'),
 \end{equation*}
