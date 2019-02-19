@@ -5464,10 +5464,15 @@ Let us see how the Hessian of $r$ changes under a biholomorphic change
 of coordinates.  That is, let $f \colon V \to V'$ be a biholomorphic map
 between two domains in $\C^n$, and let $r \colon V' \to \R$ be a smooth
 function with nonvanishing derivative.  Let us compute the Hessian of
-$r \circ f$.  We first compute what happens to the non-mixed derivatives.
-As we have to apply chain rule twice we write the
-derivatives as functions.  That is, $r$ is a function of $z$ and $\bar{z}$,
+$r \circ f \colon V \to \R$.
+We first compute what happens to the non-mixed derivatives.
+As we have to apply chain rule twice, to keep track better track of things,
+we write the
+derivatives as functions.  Also for clarity, let $z$ be the coordinates in $V$
+and $\zeta$ be the coordinates in $V'$.
+That is, $r$ is a function of $\zeta$ and $\bar{\zeta}$,
 $f$ is a function of $z$, and $\bar{f}$ is a function of $\bar{z}$.
+Therefore $r \circ f$ is a function of $z$ and $\bar{z}$.
 
 \begin{equation} \label{eq:nonmixedderschangeofcoords}
 \begin{split}
@@ -5476,57 +5481,59 @@ $f$ is a function of $z$, and $\bar{f}$ is a function of $\bar{z}$.
 \frac{\partial}{\partial z_j }
 \sum_{\ell=1}^n 
 \biggl(
-\frac{\partial r}{\partial z_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
+\frac{\partial r}{\partial \zeta_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
 \frac{\partial f_\ell}{\partial z_k} (z) 
 +
-\frac{\partial r}{\partial \bar{z}_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
+\frac{\partial r}{\partial \bar{\zeta}_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
 \cancelto{0}{\frac{\partial \bar{f}_\ell}{\partial z_k} (\bar{z})}
 \biggr)
 \\
 & =
 \sum_{\ell,m=1}^n 
 \biggl(
-\frac{\partial^2 r}{\partial z_m \partial z_\ell}
+\frac{\partial^2 r}{\partial \zeta_m \partial \zeta_\ell}
 \bigl(f(z),\bar{f}(\bar{z})\bigr)
 \frac{\partial f_m}{\partial z_j} (z) 
 \frac{\partial f_\ell}{\partial z_k} (z) 
 +
-\frac{\partial^2 r}{\partial \bar{z}_m \partial z_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
+\frac{\partial^2 r}{\partial \bar{\zeta}_m \partial \zeta_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
 \smash{\cancelto{0}{\frac{\partial \bar{f}_m}{\partial z_j} (\bar{z}) }}
 \frac{\partial f_\ell}{\partial z_k} (z) 
 \biggr)
 \\
 & \qquad +
 \sum_{\ell=1}^n 
-\frac{\partial r}{\partial z_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
+\frac{\partial r}{\partial \zeta_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
 \frac{\partial^2 f_\ell}{\partial z_j \partial z_k} (z)
 \\
 &=
 \sum_{\ell,m=1}^n 
-\frac{\partial^2 r}{\partial z_m \partial z_\ell}
+\frac{\partial^2 r}{\partial \zeta_m \partial \zeta_\ell}
 \frac{\partial f_m}{\partial z_j}
 \frac{\partial f_\ell}{\partial z_k}
 +
 \sum_{\ell=1}^n 
-\frac{\partial r}{\partial z_\ell}
+\frac{\partial r}{\partial \zeta_\ell}
 \frac{\partial^2 f_\ell}{\partial z_j \partial z_k} .
 \end{split}
 \end{equation}
 The matrix 
 $\left[ \frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k} \right]$
 can have different eigenvalues than the matrix
-$\left[ \frac{\partial^2 r}{\partial z_j \partial z_k} \right]$.
+$\left[ \frac{\partial^2 r}{\partial \zeta_j \partial \zeta_k} \right]$.
 If $r$ has nonvanishing gradient, then
 using the second term, we can (locally) choose $f$ in such a way as to make
 the matrix
 $\left[ \frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k} \right]$
 be the zero matrix (or anything else) at a certain point by choosing the second
 derivatives of $f$ arbitrarily at that point.  See the exercise below.  Nothing about the matrix
-$\left[ \frac{\partial^2 r}{\partial z_j \partial z_k} \right]$ is
+$\left[ \frac{\partial^2 r}{\partial \zeta_j \partial \zeta_k} \right]$ is
 preserved under a biholomorphic map.  And that is precisely why it does not
 appear in the definition of pseudoconvexity.
 The story for
-$\left[ \frac{\partial^2 r}{\partial \bar{z}_j \partial \bar{z}_k} \right]$ is
+$\left[ \frac{\partial^2 (r \circ f)}{\partial \bar{z}_j \partial \bar{z}_k} \right]$
+and
+$\left[ \frac{\partial^2 r}{\partial \bar{\zeta}_j \partial \bar{\zeta}_k} \right]$ is
 exactly the same.
 
 \begin{exbox}
@@ -5550,25 +5557,25 @@ Let us look at the mixed derivatives:
 \frac{\partial}{\partial \bar{z}_j }
 \sum_{\ell=1}^n 
 \left(
-\frac{\partial r}{\partial z_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
+\frac{\partial r}{\partial \zeta_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
 \frac{\partial f_\ell}{\partial z_k} (z) 
 \right)
 \\
 & =
 \sum_{\ell,m=1}^n 
-\frac{\partial^2 r}{\partial \bar{z}_m \partial z_\ell }
+\frac{\partial^2 r}{\partial \bar{\zeta}_m \partial \zeta_\ell }
 \bigl(f(z),\bar{f}(\bar{z})\bigr)
 \frac{\partial \bar{f}_m}{\partial \bar{z}_j} (\bar{z}) 
 \frac{\partial f_\ell}{\partial z_k} (z) 
 +
 \sum_{\ell=1}^n 
-\frac{\partial r}{\partial z_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
+\frac{\partial r}{\partial \zeta_\ell} \bigl(f(z),\bar{f}(\bar{z})\bigr)
 \smash{\cancelto{0}{\frac{\partial^2 f_\ell}{\partial \bar{z}_j \partial
 z_k} (z)}}
 \\
 &=
 \sum_{\ell,m=1}^n 
-\frac{\partial^2 r}{\partial \bar{z}_m \partial z_\ell}
+\frac{\partial^2 r}{\partial \bar{\zeta}_m \partial \zeta_\ell}
 \frac{\partial \bar{f}_m}{\partial \bar{z}_j} 
 \frac{\partial f_\ell}{\partial z_k} .
 \end{split}
@@ -5745,9 +5752,10 @@ a{\left(\frac{w+\bar{w}}{2}\right)}^2
 +O(3) .
 \end{split}
 \end{equation*}
-We cannot quite get rid of all the quadratic terms in $\varphi$, but we can
+We cannot quite get rid of all the quadratic terms in $\varphi$, but we 
 choose $b$ and $c$ to make the second order terms not depend on $\Re w'$.
-Setting $b=ai$ and $c=2\epsilon i$, and adding $q(z,\bar{z}) + O(3)$ into the mix we obtain
+Set $b=ai$ and $c=2\epsilon i$, and add $q(z,\bar{z}) + O(3)$ into the mix
+to get
 \begin{equation*}
 \begin{split}
 -\Im w & +
@@ -5809,7 +5817,7 @@ apply the computation in \eqref{eq:nonmixedderschangeofcoords}.
 %where the $n$th variable will be $w'$ or $w''$ instead of $z_n$,
 %depending if we are in the domain of $r$ or not.
 We again change variables in the $w'$; we fix the $z$s and we set
-$w' = w'' + g(z)$, where $g$ is $O(2)$.  
+$w' = w'' + g(z)$, where $g$ is $O(2)$ to be picked later.  
 That is, the biholomorphic mapping is
 $f_j(z,w'') = z_j$ for $j=1,\ldots,n-1$, and $f_n(z,w'') = w'' +g(z)$.
 We let $r = - \Im w' + q(z,\bar{z}) + E(z,\bar{z},\Re w')$, so
