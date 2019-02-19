@@ -538,7 +538,7 @@ the \emph{\myindex{complex conjugate}} of $z$ and is defined as
 \bar{z} \overset{\text{def}}{=} x-iy.
 \end{equation*}
 The size of $z$ is measured by the so-called \emph{\myindex{modulus}},
-which is really just the \emph{\myindex{Euclidean distance}}:
+which is just the \emph{\myindex{Euclidean distance}}:
 \glsadd{not:mod}%
 \begin{equation*}
 \abs{z} \overset{\text{def}}{=} \sqrt{z \bar{z}} = \sqrt{x^2+y^2} .
@@ -1374,7 +1374,7 @@ We may differentiate as many times as we wish.
 %the Cauchy--Riemann equations.  However, the way we stated the
 %definition makes it easier to apply.
 
-Above in \eqref{iteratedcauchy:eq}, we really derived the Cauchy integral formula in several variables.  To
+Above in \eqref{iteratedcauchy:eq}, we derived the Cauchy integral formula in several variables.  To
 write the formula more concisely we apply the Fubini's theorem to write it as
 a single integral.  We will write it down using differential forms.  If you
 are unfamiliar with differential forms, think of the integral
@@ -1435,7 +1435,7 @@ one-forms is a two-form, and so on.  A $k$-form is an object that
 can be integrated on a so-called $k$-chain, for example, a
 $k$-dimensional surface.  The wedge product takes care of the orientation.
 
-At this point, we need to talk about orientation in $\C^n$.  There are really two
+At this point, we need to talk about orientation in $\C^n$.  There are two
 natural real-linear isomorphisms of $\C^n$ and $\R^{2n}$.  That is, we
 identify $z = x+iy$ as
 \begin{equation*}
@@ -2618,7 +2618,7 @@ It is good to notice the subtlety of what we just said.  Formally it seems
 as if we are treating $z$ and $\bar{z}$ as independent variables when taking
 derivatives, but in reality they are not independent if we actually wish to
 evaluate the function.  Under the hood, a smooth function that is not
-necessarily holomorphic is really a function of real variables
+necessarily holomorphic is really a function of the real variables
 $x$ and $y$, where $z = x+iy$.
 \end{remark}
 
@@ -4461,32 +4461,32 @@ $Df(p) X_p$ acts on $\varphi$ as
 \begin{equation*}
 Df(p) X_p \varphi = X_p (\varphi \circ f) .
 \end{equation*}
-It is really the only reasonable way to put those three objects together.
+It is the only reasonable way to put those three objects together.
 When the spaces are $\C^n$ and $\C^m$, we denote this
 derivative as
 \glsadd{not:DRf}%
 $D_\R f$
 to distinguish it from the holomorphic derivative.
-As far as calculus computations are concerned, notice that
+As far as calculus computations are concerned,
 the linear mapping $Df(p)$ is
-just the Jacobian matrix acting on the standard basis of the tangent space
+the Jacobian matrix acting on vectors in the standard basis of the tangent space
 as given above.  This is why we use the same notation for the Jacobian
-matrix and the derivative acting on tanent spaces.
+matrix and the derivative acting on tangent spaces.
 To see that this is so, it is enough to see where the basis element
-$\frac{\partial}{\partial x_j}|_p$ goes, and the form of $Df(p)$
+$\frac{\partial}{\partial x_j}\big|_p$ goes, and the form of $Df(p)$
 as a matrix
 follows by the chain rule.
 For example, the derivative of the mapping $f(x_1,x_2) =
 (x_1+2x_2+x_1^2,3x_1+4x_2+x_1x_2)$ at the origin is given by the matrix
 $\left[ \begin{smallmatrix} 1 & 2 \\ 3 & 4 \end{smallmatrix} \right]$,
 and so the vector
-$X_p = a\frac{\partial}{\partial x_1}|_0
+$X_p = a\frac{\partial}{\partial x_1}\big|_0
 +
-b\frac{\partial}{\partial x_2}|_0$
+b\frac{\partial}{\partial x_2}\big|_0$
 gets taken to
-$Df(0) X_0 = (a+2b)\frac{\partial}{\partial y_1}|_0
+$Df(0) X_0 = (a+2b)\frac{\partial}{\partial y_1}\big|_0
 +
-(3a+4b)\frac{\partial}{\partial y_2}|_0$, where we let $(y_1,y_2)$ be the
+(3a+4b)\frac{\partial}{\partial y_2}\big|_0$, where we let $(y_1,y_2)$ be the
 coordinates on the target.  You should check on some test
 function, such as
 $\varphi(y_1,y_2) = \alpha y_1 + \beta y_2$, that this satisfies the
@@ -4566,9 +4566,10 @@ arbitrarily near $p$.
 \end{exbox}
 
 \begin{example}
-Let us look at an example.  Let us prove that the unit disc in $\R^2$ is
-convex (actually strongly convex).  Let $(x,y)$ be our coordinates and then
-our defining function is $r(x,y) = x^2+y^2-1$.
+Let us prove that the unit disc in $\R^2$ is
+convex (actually strongly convex).  Let $(x,y)$ be the coordinates and
+let $r(x,y) = x^2+y^2-1$ be the 
+defining function.
 
 The tangent space of the circle is one-dimensional, so we simply need to
 find a single nonzero tangent vector at each point.
@@ -4592,8 +4593,8 @@ $\nabla r = (2x,2y)$ to check that
 X = y \frac{\partial}{\partial x} - x \frac{\partial}{\partial y}
 \end{equation*}
 is tangent to the circle, that is,
-$Xr = X(x^2+y^2-1) = (2x,2y) \cdot (y,-x) = 0$ on the circle (in this case
-it is in fact zero everywhere).
+$Xr = X(x^2+y^2-1) = (2x,2y) \cdot (y,-x) = 0$ on the circle
+(by chance $Xr=0$ everywhere).
 The vector field $X$ is nonzero on the circle, so at each point it gives a
 basis of the tangent space.
 \begin{myfig}
@@ -6782,7 +6783,7 @@ the theorem of
 Rad\'o.  It is sometimes covered in a one-variable course, but it is often
 skipped.  It is very useful in several variables and the proof is a direct
 application of the one-variable theory.
-It is really a complementary theorem to the
+It is a complementary theorem to the
 Riemann extension theorem, when on the one hand the function is
 continuous and vanishes on the set you wish to extend across, but on the
 other hand you know nothing about this set.
@@ -9131,10 +9132,10 @@ a function holomorphic on $U$.
 \end{thm}
 
 In particular, if the Levi form has eigenvalues of both signs,
-then near $p$ the CR function is in fact a restriction of a holomorphic
-function on all of $U$.  The function $r$ can really be any defining
-function for $M$, either one can extend it to all of $U$ or we could take a
-smaller $U$ such that $r$ is defined on $U$.  As we have noticed before,
+then near $p$ the CR function is a restriction of a holomorphic
+function on $U$.  The function $r$ can be any defining
+function for $M$.  Either we can extend it to all of $U$ or we could take a
+smaller $U$ such that $r$ is defined on $U$.  As we noticed before,
 once we pick sides (where $r$ is positive and where it is negative), then
 the number of positive eigenvalues and the number of negative eigenvalues of
 the Levi form is fixed.  Taking a different $r$ can at most flip $U_-$
@@ -12450,7 +12451,7 @@ pseudoconvex, then $M$ contains no analytic discs.
 Let us end our discussion of Segre varieties by its perhaps most well-known
 application, the so-called Diederich--Forn\ae ss lemma.  Although
 we state it only for real-analytic hypersurfaces it works in greater generality.
-There are really two parts to it, although it is generally the corollary
+There are two parts to it, although it is generally the corollary
 that is called the \emph{\myindex{Diederich--Forn\ae ss lemma}}.
 
 First, for real-analytic hypersurfaces each point has a fixed neighborhood
@@ -13046,7 +13047,7 @@ The number $k$ above is called the \emph{order}\index{order of a zero}
 or \emph{multiplicity}\index{multiplicity of a zero}
 of the zero at $p$.
 We can use this fact and the existence of roots to show that every
-holomorphic function is locally really like $z^k$.  The function $\varphi$
+holomorphic function is locally like $z^k$.  The function $\varphi$
 below can be thought of as a local change of coordinates.
 
 \begin{prop}
@@ -13563,7 +13564,7 @@ makes it easy to evaluate integrals.
 Examples of such manifolds are for example domains with smooth boundaries
 as we have defined them in \defnref{def:hypersurface}.  The domain is $M$
 and $\partial M$ is the boundary of the domain.
-And really it is the key application for our purposes.
+And really, it is the key application for our purposes.
 Another example are smooth curves.
 
 It is rather easy to prove that if $M$ is an embedded manifold-with-boundary
@@ -13647,7 +13648,7 @@ is integrated as
 \end{equation*}
 where $\epsilon_p$ is the orientation of $p$ given as $+1$ or $-1$.
 To avoid problems of integrability, 
-one can really just assume that $\omega$ is compactly supported (it is
+one can assume that $\omega$ is compactly supported (it is
 nonzero on at most finitely many points of $M$) or that $M$ is compact (it
 is a finite set).
 
