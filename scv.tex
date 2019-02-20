@@ -5449,7 +5449,7 @@ As an aside,
 the hypersurface 
 $\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$ is also called the
 \emph{\myindex{Heisenberg group}}.  The group in this case
-is the group defined on the parameters $(z,\Re w)$ of this manifold with the
+is the group defined on the parameters $(z,\Re w)$ of this hypersurface with the
 group law defined by $(z,\Re w)(z',\Re w') =
 (z+z',\Re w + \Re w' + 2 \Im z \cdot z')$.
 \end{example}
@@ -5581,29 +5581,27 @@ z_k} (z)}}
 \frac{\partial f_\ell}{\partial z_k} .
 \end{split}
 \end{equation*}
-The complex Hessian of $r \circ f$ is simply the complex Hessian $H$ of $r$
-conjugated as $D^*HD$ where $D$ is the holomorphic
+The complex Hessian of $r \circ f$ is the complex Hessian $H$ of $r$
+conjugated as $D^*HD$, where $D$ is the holomorphic
 derivative matrix of $f$ at $z$ and
 $D^*$ is the conjugate transpose.  Sylvester's law of inertia 
-then says that the number of positive, negative, and zero
+says that the number of positive, negative, and zero
 eigenvalues of $D^*HD$ is the same as that for $H$.  The
 eigenvalues might have changed, but their sign did not.
+We are only considering $H$ and $D^*HD$ on a subspace.  In linear algebra
+language, suppose $D$ is invertible and consider a subspace $T$ and its
+image $DT$.  Then the inertia of $H$ restricted to $DT$ is the same
+as the inertia of $D^*HD$ restricted to $T$.
 
-If $H$ is positive definite, then $D^*HD$ is positive
-definite.  If a smooth hypersurface $M$ is given by $r=0$, then $f^{-1}(M)$ is
+Let $M$ be a smooth hypersurface given by $r=0$, then $f^{-1}(M)$ is
 a smooth hypersurface given by $r \circ f = 0$.
-The holomorphic derivative of $f$ (given by $D$)
-takes the
-$T_{p}^{(1,0)}f^{-1}(M)$
-space isomorphically to
-$T_{f(p)}^{(1,0)}M$.
-%Therefore, the
-%law of inertia holds when restricting to the tangent space.
-So $H$ is positive semidefinite (resp.\ positive definite)
-on $T_{f(p)}^{(1,0)}M$ if and only if $D^*HD$ is positive semidefinite
-(resp.\ positive definite) on
-$T_{p}^{(1,0)} f^{-1}(M)$.
-We have essentially proved the following theorem.  That is, pseudoconvexity is a
+The holomorphic derivative $D = Df(p)$ 
+takes
+$T_{p}^{(1,0)}f^{-1}(M)$ isomorphically to $T_{f(p)}^{(1,0)}M$.
+So $H$ is positive (semi)definite
+on $T_{f(p)}^{(1,0)}M$ if and only if $D^*HD$ is positive (semi)definite
+on $T_{p}^{(1,0)} f^{-1}(M)$.
+We have almost proved the following theorem.  In short, pseudoconvexity is a
 biholomorphic invariant.
 
 \begin{thm}
@@ -5624,9 +5622,10 @@ $U$ is strongly pseudoconvex at $p$ if and only if $U'$ is strongly pseudoconvex
 \subimport*{figures/}{bndry-bihol.pdf_t}
 \end{myfig}
 
-To prove the theorem, the only thing left is to observe that if
+To finish proving the theorem, the only thing left is to observe that if
 $f(U \cap V) = U' \cap V'$ then $f(\partial U \cap V) = \partial U' \cap
-V'$.
+V'$, and to note that if $r$ is a defining function for $U'$ at $q$,
+then $f \circ r$ is a defining function for $U$ at $p$.
 
 \begin{exbox}
 \begin{exercise}
@@ -5635,17 +5634,14 @@ but that is pseudoconvex.
 \end{exercise}
 \end{exbox}
 
-So while the Levi form is not invariant under changes of coordinates,
+While the Levi form is not invariant under holomorphic changes of coordinates,
 its inertia is.
-%We proved a stronger result than the theorem.  We proved that the inertia
-%of the Levi form is invariant under a biholomorphic change of coordinates.
 Putting this together with the other observations we made above,
 we will find the normal form for the
 quadratic part of the defining equation for a smooth real hypersurface
 under biholomorphic transformations.
 It is possible to do better than the following lemma, but it is not possible
 to always get rid of the dependence on $\Re w$ in the higher order terms.
-% except in the quadratic %terms.
 
 Recall that $O(k)$ at the origin means
 a function that together with its derivatives up to order $k-1$ vanish
@@ -5663,7 +5659,7 @@ at the origin.
 \begin{lemma} \label{lemma:normformquad}
 Let $M$ be a smooth real hypersurface in $\C^n$ and $p \in M$.  Then there
 exists a local biholomorphic change of coordinates taking $p$ to the origin
-and $M$ to the manifold given by
+and $M$ to the hypersurface given by
 \begin{equation*}
 \Im w = \sum_{j=1}^\alpha \sabs{z_j}^2 - \sum_{j=\alpha+1}^{\alpha+\beta}
 \sabs{z_j}^2 +
@@ -5729,7 +5725,7 @@ a{\left(\frac{w+\bar{w}}{2}\right)}^2
 +\epsilon \frac{w'+bw'^2+cw'z_1+\bar{w}'+\bar{b}\bar{w}'^2+\bar{c}\bar{w}'\bar{z}_1}{2}(z_1+\bar{z}_1)
 \\
 & \phantom{=}~
-+ \frac{{(w'+bw'^2+cw'z_1+\bar{w}'+\bar{b}\bar{w}'^2+\bar{c}\bar{w}'\bar{z}_1)}^2}{4}
++ a \frac{{(w'+bw'^2+cw'z_1+\bar{w}'+\bar{b}\bar{w}'^2+\bar{c}\bar{w}'\bar{z}_1)}^2}{4}
 %\\
 %& =
 %-\frac{w'-\bar{w}'}{2i} 
@@ -5749,13 +5745,13 @@ a{\left(\frac{w+\bar{w}}{2}\right)}^2
 }{2i}
 \\
 & \phantom{=}~
-+ \frac{(ai-2b)w'^2+(ai+2\bar{b})\bar{w}'^2+2iaw'\bar{w}'}{4i}
++ \frac{(ia-2b)w'^2+(ia+2\bar{b})\bar{w}'^2+2iaw'\bar{w}'}{4i}
 +O(3) .
 \end{split}
 \end{equation*}
 We cannot quite get rid of all the quadratic terms in $\varphi$, but we 
 choose $b$ and $c$ to make the second order terms not depend on $\Re w'$.
-Set $b=ai$ and $c=2\epsilon i$, and add $q(z,\bar{z}) + O(3)$ into the mix
+Set $b=ia$ and $c=2i\epsilon$, and add $q(z,\bar{z}) + O(3)$ into the mix
 to get
 \begin{equation*}
 \begin{split}
@@ -5834,7 +5830,7 @@ $\bar{w}'$ all vanish at the origin.
 Using
 \eqref{eq:nonmixedderschangeofcoords} at the origin for
 $j,k=1,\ldots,n-1$ we get
-\begin{equation*}
+\begin{equation} \label{eq:holoquadtermsinrcircf}
 \frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k}
 \Big|_0 = 
 \sum_{\ell,m=1}^{n-1} \frac{\partial^2 r}{\partial z_m \partial z_\ell}
@@ -5848,7 +5844,7 @@ $j,k=1,\ldots,n-1$ we get
 +
 \frac{1}{2i} 
 \frac{\partial^2 g}{\partial z_j \partial z_k} \Big|_0 .
-\end{equation*}
+\end{equation}
 Here $\delta_{j}^k$ is the Kronecker delta, that is, $\delta_j^j = 1$,
 and $\delta_j^k = 0$ if $j \not= k$.  Notice the $q$ on the right hand
 side.
@@ -5856,13 +5852,14 @@ Pick the $z_j z_k$ coefficient in $g$
 such that $\frac{\partial^2 g}{\partial z_k \partial z_j} \big|_0 =
 \frac{-1}{2i} \frac{\partial^2 q}{\partial z_k \partial z_j} \big|_0$
 making the expression vanish.
-The left hand side of the equation are the coefficients of
-quadratic the holomorphic terms in $z$ of $r \circ f$, that is, the
+The left hand side of \eqref{eq:holoquadtermsinrcircf} gives the coefficients of
+quadratic holomorphic terms in $z$ of $r \circ f$, that is, the
 holomorphic terms of the new $q$.
 This change of coordinates
 sets all the holomorphic terms of $q$ to zero.
 It is left as an exercise that as $q$ is real-valued,
-the coefficient of $\bar{z}_j \bar{z}_k$ in $q$ also becomes zero.
+the coefficient of $\bar{z}_j \bar{z}_k$ in the new $q$
+also becomes zero.
 Therefore, after this change of coordinates we may assume
 \begin{equation*}
 q(z,\bar{z}) = \sum_{j,k=1}^{n-1} c_{jk} z_j \bar{z}_k .
@@ -5922,9 +5919,10 @@ holomorphy.
 Suppose
 $U \subset \C^n$ is a domain with smooth boundary and at some point $p \in
 \partial U$ the Levi form has a negative eigenvalue.
-Then $U$ is not
-a domain of holomorphy.  In particular, every holomorphic function on $U$
+Then every holomorphic function on $U$
 extends to a neighborhood of $p$.
+In particular, $U$ is not
+a domain of holomorphy.
 \end{thm}
 
 Pseudoconvex at $p$ means that all eigenvalues of the Levi form are
@@ -5933,9 +5931,11 @@ The theorem says that a domain of holomorphy must be pseudoconvex.
 The theorem's name comes from the proof, and sometimes other theorems using a
 similar proof of a ``tomato can'' of analytic discs are called
 tomato can principles.
-The general statement of the principle is that ``an
+The general statement of proof of the principle is that ``an
 analytic function holomorphic in a neighborhood of the sides and the bottom
-of a tomato can extends to the inside.''
+of a tomato can extends to the inside.''  And the theorem we named after
+the principle states that ``if the Levi form at $p$ has a negative
+eigenvalue, we can fit a tomato can from inside the domain over $p$.''
 
 \begin{proof}
 We change variables so that $p = 0$, and
@@ -5961,7 +5961,8 @@ Clearly $\varphi(0) = 0 \in \partial U$.  For $\xi \not= 0$ near the origin
 %-\sabs{\xi}^2 + E(\xi,0,\bar{\xi},0,0)
 < 0 .
 \end{equation*}
-That is because by second derivative test the function above has a strict minimum
+That is because by second derivative test the function above has a strict
+maximum
 at $\xi = 0$.  Therefore for $\xi$ near the origin, but not zero, we have 
 $\varphi(\xi) \in U$.  By picking $\lambda$ small enough, we have
 $\varphi(\overline{\D}\setminus\{0\}) \subset U$.
@@ -5972,7 +5973,7 @@ the closed disc given by
 \begin{equation*}
 \xi \overset{\varphi_s}{\mapsto} (\lambda \xi, 0, 0, \ldots, 0, i s) 
 \end{equation*}
-is entirely inside $U$ (that is for slightly positive $\Im w$).
+is entirely inside $U$ (that is, for slightly positive $\Im w$).
 Fix such a small $s > 0$.
 Suppose $\epsilon > 0$ is small and $\epsilon < s$.
 Define the Hartogs figure
@@ -6001,7 +6002,7 @@ We are really just taking a Hartogs figure in the $z_1,w$ variables, and then
 ``fattening it up'' to the $z'$ variables.
 We picture the Hartogs figure in the $\sabs{z_1}$ and $\sabs{w-is}$
 variables.  The boundary $\partial U$ and $U$ are only pictured diagrammatically.
-Also we make a ``picture'' the analytic discs giving the ``tomato can''.
+Also we make a ``picture'' the analytic discs giving the ``tomato can.''
 In the picture the $U$ is below its boundary $\partial U$, unlike usually.
 
 \begin{myfig}
@@ -7587,8 +7588,8 @@ $U$ is holomorphically convex.
 \end{thm}
 
 \begin{proof}
-Let us start with \eqref{thm:cartthul:domhol} $\Rightarrow$
-\eqref{thm:cartthul:disthull}.  Suppose there is a $K \subset
+Let us start with \ref{thm:cartthul:domhol} $\Rightarrow$
+\ref{thm:cartthul:disthull}.  Suppose there is a $K \subset
 \subset U$ with $\operatorname{dist}(K,\partial U) > \operatorname{dist}(\widehat{K}_U,\partial U)$.
 After possibly a rotation by a unitary,
 there exists a point $p \in \widehat{K}_U$ and a polydisc
