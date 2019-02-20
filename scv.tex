@@ -13496,7 +13496,7 @@ is induced by $[a,b]$.
 
 Let us define the objects over which we integrate, that is,
 smooth submanifolds of $\R^n$.
-Our model for a $k$-dimensional manifold-with-boundary
+Our model for a $k$-dimensional submanifold-with-boundary
 is the upper-half-space and its boundary:
 \begin{equation*}
 \bH^k
@@ -13520,16 +13520,16 @@ mapping $\varphi \colon U \to M$ such that
 $\varphi(q) = p$, 
 $D\varphi$ has rank $k$ at all points, and $\varphi(U) = M \cap W$.
 Then $M$ is an
-\emph{\myindex{embedded manifold-with-boundary}}\index{manifold-with-boundary}
+\emph{\myindex{embedded submanifold-with-boundary}}\index{submanifold-with-boundary}
 of dimension $k$.
 The map $\varphi$ is called a
 \emph{\myindex{local parametrization}}\index{parametrization}.
 If $q$ is such that $q_k = 0$ (the last component is zero), then
-$p = \varphi(q)$ is a \emph{boundary point}\index{boundary of a manifold}.
+$p = \varphi(q)$ is a \emph{boundary point}\index{boundary of a submanifold}.
 \glsadd{not:boundary}%
 Let $\partial M$ denote the set
 of boundary points.  If $\partial M = \emptyset$, then we say
-$M$ is simply an \emph{\myindex{embedded manifold}}\index{manifold}.
+$M$ is simply an \emph{\myindex{embedded submanifold}}\index{submanifold}.
 \end{defn}
 
 The situation for a boundary point and an interior point is depicted in the
@@ -13540,21 +13540,24 @@ the image $\varphi(U)$.
 \subimport*{figures/}{manif-bound.pdf_t}
 \end{myfig}
 
-More correctly we may call $M$ a \emph{\myindex{submanifold}} rather than a
-\emph{manifold}.
+Completely correctly, we should say \emph{submanifold of $\R^k$}.
+Sometimes people (including me)
+say \emph{\myindex{manifold}} when they mean \emph{submanifold}.
+A manifold is a more abstract concept, but
+all submanifolds are manifolds.
 The word \emph{embedded} has to do with the topology on $M$, and this
 has to do with the condition $\varphi(U) = M \cap W$ and $\varphi$ being open.
 The condition means that $\varphi$ is a homeomorphism onto $M \cap W$.
 It is important that $W$ is an open set in $\R^n$.  For our
-purposes here, all manifolds will be embedded.
+purposes here, all submanifolds will be embedded.
 We have also made some economy in the definition.  If $q$ is not on the
 boundary of $\bH^k$, then we might as well have used $\R^k$ instead of
 $\bH^k$.
-A manifold is something that is locally like $\R^k$, and if it has a
+A submanifold is something that is locally like $\R^k$, and if it has a
 boundary, then near the boundary it is locally like $\bH^k$ near a point
 of $\partial \bH^k$.
 
-We also remark that manifolds are often defined in reverse rather than by
+We also remark that submanifolds are often defined in reverse rather than by
 parametrizations, that is, by starting with the (relatively) open sets $M \cap W$,
 and the maps $\varphi^{-1}$, calling those \emph{\myindex{charts}},
 and calling the entire set of charts an \emph{\myindex{atlas}}.
@@ -13562,20 +13565,20 @@ The particular version of the definition we have chosen makes
 it easy to evaluate integrals in the same way that parametrizing curves
 makes it easy to evaluate integrals.
 
-Examples of such manifolds are for example domains with smooth boundaries
+Examples of such submanifolds are for example domains with smooth boundaries
 as we have defined them in \defnref{def:hypersurface}.  The domain is $M$
 and $\partial M$ is the boundary of the domain.
 And really, it is the key application for our purposes.
 Another example are smooth curves.
 
-It is rather easy to prove that if $M$ is an embedded manifold-with-boundary
-of dimension $k$ then $\partial M$ is also an embedded manifold of dimension
+It is rather easy to prove that if $M$ is an embedded submanifold-with-boundary
+of dimension $k$ then $\partial M$ is also an embedded submanifold of dimension
 $k-1$.  Simply restrict the parametrizations to the boundary of $\bH^k$.
 
 We also need to define an orientation.
 
 \begin{defn}
-Let $M \subset \R^n$ be an embedded manifold-with-boundary of dimension $k
+Let $M \subset \R^n$ be an embedded submanifold-with-boundary of dimension $k
 \geq 2$.  Suppose
 that a set of parametrizations can be chosen such that
 each point of $M$ is in the image of one of the parametrizations,
@@ -13625,7 +13628,7 @@ points.
 
 An orientation will allow us to have a well-defined integral on $M$, just
 like a curve needs to be oriented in order to define a line integral.
-However, unlike for curves, not every manifold of dimension
+However, unlike for curves, not every submanifold of dimension
 more than one is \emph{orientable}, that is, admits an orientation.
 A classical non-orientable example is the M\"obius strip.
 
@@ -13634,13 +13637,13 @@ A classical non-orientable example is the M\"obius strip.
 Now that we know what we integrate ``on,'' let us figure out what ``it'' is
 that we integrate.  Let us start with $0$-forms.
 We define $0$-forms as smooth functions (possibly complex-valued).
-Sometimes we need a function defined on just a manifold.  A function $f$ defined
-on a manifold $M$ is smooth when $f \circ \varphi$ is smooth on $U$
+Sometimes we need a function defined just on a submanifold.  A function $f$ defined
+on a submanifold $M$ is smooth when $f \circ \varphi$ is smooth on $U$
 for every parametrization $\varphi \colon U \to M$.  Equivalently,
 one can prove that $f$ is the restriction of some smooth function
 defined on some neighborhood of $M$ in $\R^n$.
 
-A $0$-form $\omega$ defined on a $0$-dimensional oriented manifold $M$
+A $0$-form $\omega$ defined on a $0$-dimensional oriented submanifold $M$
 is integrated as
 \begin{equation*}
 \int_M \omega
@@ -13678,7 +13681,7 @@ in $\R^n$ is an object of the form
 where $g_1, g_2, \ldots, g_n$ are smooth functions.  That is, a $1$-form is
 at each point a linear combination of $dx_1, dx_2, \ldots, dx_n$ that
 varies smoothly from point to point.
-Suppose that $M$ is a one-dimensional manifold
+Suppose that $M$ is a one-dimensional submanifold
 (possibly with boundary), further suppose that $\varphi \colon U \to M$
 is a parametrization of $M$ and $g_j$ is supported in $\varphi(U)$.
 Define
@@ -13798,7 +13801,7 @@ dx_{j_2} \wedge
 dx_{j_k}  .
 \end{equation*}
 
-Consider $M$ is a $k$-dimensional manifold
+Consider $M$ is a $k$-dimensional submanifold
 (possibly with boundary), suppose that $\varphi \colon U \to M$
 is a parametrization of $M$ and $\omega$ (that is each $g_{j_1,\ldots,j_k}$)
 is supported in $\varphi(U)$.  Denote by $t \in U \subset \R^k$
@@ -13846,17 +13849,17 @@ f(x) \,
 dx_1 \wedge dx_2 \wedge \cdots \wedge dx_n .
 \end{equation*}
 The form $dx_1 \wedge dx_2 \wedge \cdots \wedge dx_n$ is called the
-volume form integrating it over a domain (an $n$ dimensional manifold)
+volume form integrating it over a domain (an $n$-dimensional submanifold)
 gives the standard volume integral.
 
 More generally one defines integration of $k$-forms over $k$-chains,
-which are just linear combinations of smooth manifolds, but we do not
+which are just linear combinations of smooth submanifolds, but we do not
 need that level of generality.
 
 \medskip
 
 In computations, we can avoid sets of zero measure ($k$-dimensional),
-so we can ignore the boundary of the manifold.  Similarly if we parametrize
+so we can ignore the boundary of the submanifold.  Similarly if we parametrize
 several subsets leaving out a small set.
 Let us give a couple of examples of computations.
 
@@ -13878,7 +13881,7 @@ measure zero.
 \end{example}
 
 \begin{example}
-Consider a domain $U \subset \R^n$, then $U$ is an oriented manifold.
+Consider a domain $U \subset \R^n$, then $U$ is an oriented submanifold.
 We use the parametrization $\varphi \colon U \to U$, where $\varphi(x) =
 x$.  Then
 \begin{equation*}
@@ -13893,7 +13896,7 @@ where $dV$ is the standard volume measure.
 
 \begin{example}
 Finally consider $M$
-the upper hemisphere of the unit sphere $S^2 \subset \R^3$ as a manifold
+the upper hemisphere of the unit sphere $S^2 \subset \R^3$ as a submanifold
 with boundary.  That is consider
 \begin{equation*}
 M = \bigl\{ x \in \R^3 : x_1^2+x_2^2+x_3^2=1, x_3 \geq 0 \bigr\} .
@@ -14018,10 +14021,10 @@ dx_{j_k} .
 \end{equation*}
 Then we define $d$ on every $k$-form by extending it linearly.
 
-For example
+For example,
 \begin{multline*}
 d \left(
-P \, dx_3 \wedge dx_2
+P \, dx_2 \wedge dx_3
 +
 Q \, dx_3 \wedge dx_1
 +
@@ -14029,7 +14032,7 @@ R \, dx_1 \wedge dx_2
 \right)
 \\
 =
-\frac{\partial P}{\partial x_1} \, dx_1 \wedge dx_3 \wedge dx_2
+\frac{\partial P}{\partial x_1} \, dx_1 \wedge dx_2 \wedge dx_3
 +
 \frac{\partial Q}{\partial x_2} \, dx_2 \wedge dx_3 \wedge dx_1
 +
@@ -14038,7 +14041,7 @@ R \, dx_1 \wedge dx_2
 =
 \left(
 \frac{\partial P}{\partial x_1}
--
++
 \frac{\partial Q}{\partial x_2} 
 +
 \frac{\partial R}{\partial x_3}
@@ -14061,7 +14064,7 @@ d(d\omega) = 0
 for every $\omega$,
 which follows because partial derivatives commute.  In particular, we get a
 so-called complex:  If
-$\Lambda^k(M)$ denotes the $k$-forms on an $n$-dimensional manifold $M$,
+$\Lambda^k(M)$ denotes the $k$-forms on an $n$-dimensional submanifold $M$,
 then we get the complex
 \begin{equation*}
 \Lambda^0(M)
@@ -14093,7 +14096,7 @@ from the classical Stokes' theorem you know from vector calculus, which is a spe
 
 \begin{thm}[Stokes]
 Suppose $M \subset \R^n$ is an embedded
-compact smooth oriented $(k+1)$-dimensional manifold-with-boundary,
+compact smooth oriented $(k+1)$-dimensional submanifold-with-boundary,
 $\partial M$ has the induced orientation,
 and $\omega$ is a smooth $k$-form defined on
 $M$.  Then
