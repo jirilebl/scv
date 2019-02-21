@@ -4268,10 +4268,16 @@ that is, the $r$ above is infinitely differentiable.
 \end{myfig}
 
 For simplicity, in this book we generally deal with smooth
-(that is, $C^\infty$) functions and hypersurfaces only.  Dealing with
+(that is, $C^\infty$) functions and hypersurfaces.  Dealing with
 $C^k$-smooth functions for finite $k$ introduces technicalities that make
 certain theorems and arguments unnecessarily difficult.
 
+As the derivative of $r$ is nonvanishing, a
+hypersurface $M$ is locally the graph of one variable over the rest
+using the implicit function theorem.  That is, $M$ is a smooth 
+hypersurface if it is locally a set defined by
+$x_j = \varphi(x_1,\ldots,x_{j-1},x_{j+1},\ldots,x_n)$ for some $j$ and some
+smooth function $\varphi$.
 
 Notice that the definition of a domain with smooth boundary is not just that the
 boundary is a smooth hypersurface, that is not enough.  It also says that 
@@ -4285,6 +4291,10 @@ Same definition works for $\C^n$, where we treat $\C^n$ as $\R^{2n}$.
 For example, the ball $\bB_n$ is a domain with smooth boundary with defining
 function $r(z,\bar{z}) = \snorm{z}^2-1$.  We can, in fact, find a
 single global defining function for every domain, but we have no need of this.
+In $\C^n$
+a hypersurface defined as above is a \emph{\myindex{real hypersurface}},
+to distinguish it from a complex hypersurface that would be the zero set of
+a holomorphic function.
 
 \begin{defn}
 For any $p \in \R^n$, the set of \emph{tangent vectors}\index{vector} $T_p \R^n$ is given by
@@ -4302,17 +4312,17 @@ That is, a vector $X_p \in T_p \R^n$ is an object of the form
 X_p = \sum_{j=1}^n a_j 
 \frac{\partial}{\partial x_j}\Big|_p ,
 \end{equation*}
-for real numbers $a_j$, so for computations $X_p$ could be represented
+for real numbers $a_j$.  So for computations, $X_p$ could be represented
 by an $n$-vector $a = (a_1,\ldots,a_n)$.  However, if $p \not= q$, then
 $T_p \R^n$ and
 $T_q \R^n$ are distinct spaces.
 \glsadd{not:evalpartial}%
 An object $\frac{\partial}{\partial x_j}\Big|_p$ is a linear functional
 on the space of smooth functions:
-when applied to a smooth function $g$ it gives
+When applied to a smooth function $g$, it gives
 $\frac{\partial g}{\partial x_j} \Big|_p$.  Therefore $X_p$ is also such a
-functional.  It is the directional derivative from calculus, that is,
-it can be computed as $X_p f = \nabla f|_p \cdot (a_1,\ldots,a_n)$.
+functional.  It is the directional derivative from calculus;
+it is computed as $X_p f = \nabla f|_p \cdot (a_1,\ldots,a_n)$.
 
 \begin{defn}
 Let $M \subset \R^n$ be a smooth hypersurface,
@@ -4330,8 +4340,9 @@ is called the \emph{\myindex{tangent space}} to $M$ at $p$.
 
 The space $T_pM$ is an $(n-1)$-dimensional real vector space---it is a subspace
 of an $n$-dimensional $T_p\R^n$ given by a single linear equation.  
-Recall from calculus that $\nabla r|_p$ is ``normal'' to $M$ at $p$, and
-then the tangent space is given by all the $n$-vectors $a$
+Recall from calculus that the gradient $\nabla r|_p$ is
+``normal'' to $M$ at $p$, and
+the tangent space is given by all the $n$-vectors $a$
 that are orthogonal to the normal, that is $\nabla r|_p \cdot a = 0$.
 
 We cheated in the terminology, and assumed without justification that $T_pM$
@@ -5623,7 +5634,7 @@ $U$ is strongly pseudoconvex at $p$ if and only if $U'$ is strongly pseudoconvex
 \end{myfig}
 
 To finish proving the theorem, the only thing left is to observe that if
-$f(U \cap V) = U' \cap V'$ then $f(\partial U \cap V) = \partial U' \cap
+$f(U \cap V) = U' \cap V'$, then $f(\partial U \cap V) = \partial U' \cap
 V'$, and to note that if $r$ is a defining function for $U'$ at $q$,
 then $f \circ r$ is a defining function for $U$ at $p$.
 
@@ -5703,8 +5714,8 @@ assume $Lz = \epsilon z_1$ where $\epsilon = 0$ or $\epsilon =
 1$. 
 
 Change variables
-by letting $w = w'+bw'^2+cw'z_1$.  Let us ignore $q(z,\bar{z})$ for a moment as
-this change of coordinates does not affect it.  Also let us only look up to
+by leaving $z$ unchanged and letting $w = w'+bw'^2+cw'z_1$.  We ignore $q(z,\bar{z})$ for a moment as
+this change of coordinates does not affect it.  Also we only look up to
 second order.
 \begin{equation*}
 \begin{split}
@@ -5755,7 +5766,8 @@ Set $b=ia$ and $c=2i\epsilon$, and add $q(z,\bar{z}) + O(3)$ into the mix
 to get
 \begin{equation*}
 \begin{split}
--\Im w & +
+-\Im w + \varphi(z,\bar{z},\Re w) & =
+-\Im w +
 q(z,\bar{z}) +
 \epsilon (\Re w) (z_1+\bar{z}_1)
 + a{(\Re w)}^2
@@ -5797,10 +5809,12 @@ a {(\Im w')}^2
 +O(3) .
 \end{split}
 \end{equation*}
-The right hand side depends on $\Im w'$, so we apply the implicit
-function theorem to write the hypersurface as a graph again.
-We solve
-for $\Im w'$.  The expression for $\Im w'$
+The right hand side is the defining equation in the $(z,w')$ coordinates.
+However, it is no longer written as a graph of $\Im w'$ over the
+rest, so we apply the implicit
+function theorem to solve for $\Im w'$
+and write the hypersurface as a graph again.
+The expression for $\Im w'$
 is $O(2)$, and therefore $-i\epsilon (\Im w')(z_1-\bar{z}_1)+a{(\Im w')}^2$
 is $O(3)$.
 So if we write $M$ as a graph,
@@ -5813,23 +5827,22 @@ Next we
 apply the computation in \eqref{eq:nonmixedderschangeofcoords}.
 %where the $n$th variable will be $w'$ or $w''$ instead of $z_n$,
 %depending if we are in the domain of $r$ or not.
-We again change variables in the $w'$; we fix the $z$s and we set
+We make another change of variables; we fix the $z$s again and we set
 $w' = w'' + g(z)$, where $g$ is $O(2)$ to be picked later.  
-That is, the biholomorphic mapping is
+That is, the biholomorphic mapping to use in
+\eqref{eq:nonmixedderschangeofcoords} is
 $f_j(z,w'') = z_j$ for $j=1,\ldots,n-1$, and $f_n(z,w'') = w'' +g(z)$.
 We let $r = - \Im w' + q(z,\bar{z}) + E(z,\bar{z},\Re w')$, so
 $r$ is a function of $(z_1,\ldots,z_{n-1},w')$ and
-$f$ and $(r \circ f)$ are functions of $(z_1,\ldots,z_{n-1},w'')$
+$f$ and $(r \circ f)$ are functions of $(z_1,\ldots,z_{n-1},w'')$.
 
-The only
+The only first order
 holomorphic derivative of $r$ that does not vanish at the origin is the $w'$
-derivative.  Also the second order derivatives of $r$ involving $w'$ or
+derivative.  The second order derivatives of $r$ involving $w'$ or
 $\bar{w}'$ all vanish at the origin.
-%Let $q_{jk}$ denote the coefficient
-%of $z_j z_k$ in $q$.
 Using
 \eqref{eq:nonmixedderschangeofcoords} at the origin for
-$j,k=1,\ldots,n-1$ we get
+$j,k=1,\ldots,n-1$, we get
 \begin{equation} \label{eq:holoquadtermsinrcircf}
 \frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k}
 \Big|_0 = 
@@ -5873,7 +5886,7 @@ and we think of $z$ as a column vector.
 If $T$ is a linear transformation on the $z$ variables, we
 obtain ${(Tz)}^*CTz = z^* ( T^*CT) z$.  Thus, we normalize $C$
 up to $*$-congruence.  A Hermitian matrix
-is $*$-congruent to a diagonal matrix with only $1$s, $-1$s, and $0$s on the
+is\linebreak[1] $*$-congruent to a diagonal matrix with only $1$s, $-1$s, and $0$s on the
 diagonal.  Writing out what that means is precisely the conclusion of the
 proposition.
 \end{proof}
@@ -7701,7 +7714,7 @@ point $p \in \partial U$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{CR geometry} \label{ch:crgeometry}
+\chapter{CR functions} \label{ch:crfunctions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -13634,7 +13647,7 @@ A classical non-orientable example is the M\"obius strip.
 
 \medskip
 
-Now that we know what we integrate ``on,'' let us figure out what ``it'' is
+Now that we know ``on'' what we integrate, let us figure out what ``it'' is
 that we integrate.  Let us start with $0$-forms.
 We define $0$-forms as smooth functions (possibly complex-valued).
 Sometimes we need a function defined just on a submanifold.  A function $f$ defined
