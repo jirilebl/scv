@@ -1385,7 +1385,7 @@ complex coefficients.
 For a good introduction to differential forms
 see Rudin~\cite{Rudin:principles}.
 
-Recall that given coordinates $x = (x_1,\ldots,x_n)$, a one-form $d x_j$ is a linear functional on tangent vectors
+Recall that given real coordinates $x = (x_1,\ldots,x_n)$, a one-form $d x_j$ is a linear functional on tangent vectors
 such that when $d x_j \bigl( \frac{\partial}{\partial x_j} \bigr) = 1$ and
 $d x_j \bigl( \frac{\partial}{\partial x_k} \bigr) = 0$ if $j \not= k$.
 Because
@@ -13162,7 +13162,7 @@ holomorphic functions.
 
 
 At an isolated singularity we can expand a holomorphic function
-via the so called
+via the so-called
 \emph{\myindex{Laurent series}} by adding all negative powers.
 The Laurent series also characterizes the type of the singularity.
 
@@ -13464,11 +13464,11 @@ which are just too interesting not to mention.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Differential forms come up quite a bit, especially
+Differential forms come up quite a bit in this book, especially
 in \chapterref{ch:dbar} and \chapterref{ch:integralkernels}.
 Let us overview their definition
-and state Stokes' theorem.  No proofs are given, this is just a bare bones
-guide.
+and state the general Stokes' theorem.  No proofs are given, this appendix
+is just a bare bones guide.
 For a more complete introduction to differential forms
 see Rudin~\cite{Rudin:principles}.
 
@@ -13476,7 +13476,7 @@ The short story about differential forms is that a $k$-form is an object
 that can be integrated (summed) over a $k$-dimensional object,
 taking orientation into account.
 For simplicity, as in most of this book,
-everything in this appendix will be stated for smooth
+everything in this appendix is stated for smooth
 ($C^\infty$) objects to avoid worrying about how much regularity is needed.
 
 The main point of differential forms is to find the proper context for the
@@ -13518,7 +13518,7 @@ and a smooth one-to-one open\footnote{By open, we mean that $\varphi(V)$ is
 a relatively open set of $M$ for every open set $V \subset U$.}
 mapping $\varphi \colon U \to M$ such that
 $\varphi(q) = p$, 
-$D\varphi$ has rank $k$ at all points, and $\varphi(U) = M \cap W$.
+the derivative $D\varphi$ has rank $k$ at all points, and $\varphi(U) = M \cap W$.
 Then $M$ is an
 \emph{\myindex{embedded submanifold-with-boundary}}\index{submanifold-with-boundary}
 of dimension $k$.
@@ -13565,14 +13565,15 @@ The particular version of the definition we have chosen makes
 it easy to evaluate integrals in the same way that parametrizing curves
 makes it easy to evaluate integrals.
 
-Examples of such submanifolds are for example domains with smooth boundaries
-as we have defined them in \defnref{def:hypersurface}.  The domain is $M$
+Examples of such submanifolds are domains with smooth boundaries
+as in \defnref{def:hypersurface}, we can take the inclusion map $x \mapsto
+x$ as our parametrization.  The domain is then the submanifold $M$
 and $\partial M$ is the boundary of the domain.
-And really, it is the key application for our purposes.
+Domains are the key application for our purposes.
 Another example are smooth curves.
 
-It is rather easy to prove that if $M$ is an embedded submanifold-with-boundary
-of dimension $k$ then $\partial M$ is also an embedded submanifold of dimension
+If $M$ is an embedded submanifold-with-boundary
+of dimension $k$, then $\partial M$ is also an embedded submanifold of dimension
 $k-1$.  Simply restrict the parametrizations to the boundary of $\bH^k$.
 
 We also need to define an orientation.
@@ -13580,7 +13581,7 @@ We also need to define an orientation.
 \begin{defn}
 Let $M \subset \R^n$ be an embedded submanifold-with-boundary of dimension $k
 \geq 2$.  Suppose
-that a set of parametrizations can be chosen such that
+a set of parametrizations can be chosen such that
 each point of $M$ is in the image of one of the parametrizations,
 and
 if
@@ -13597,7 +13598,8 @@ words, wherever it makes sense) is orientation preserving, that is
 \det D\bigl({\widetilde{\varphi}}^{~{-1}} \circ \varphi \bigr) > 0 
 \end{equation*}
 at all points.
-The set of such parametrizations is the orientation on $M$.
+The set of such parametrizations is the \emph{\myindex{orientation}} on $M$,
+and we usually take the maximal set of such parametrizations.
 
 If $M$ is oriented, then the restrictions of the parametrizations
 to $\partial \bH^k$ give an orientation on $\partial M$.  We say
@@ -13610,7 +13612,7 @@ orientation of $+$ or $-$.  For $k=1$, we need to allow parametrization by
 open subsets not only of $\bH^1 = [0,\infty)$, but also $-\bH^1 = (-\infty,0]$.
 The definition is the same otherwise.  To define the orientation
 of the boundary, if the boundary point corresponds to the $0$ in
-$[0,\infty)$ we will give this boundary point the orientation
+$[0,\infty)$ we give this boundary point the orientation
 $-$, and if it corresponds to the $0$ in $(-\infty,0]$, then
 we give this point the orientation $+$.  The reason for this complication is
 that unlike in $\R^k$ for $k \geq 2$, the set $\bH^1 = [0,\infty)$ cannot be
@@ -13626,7 +13628,7 @@ The fact that the transition map is smooth does require a proof, which is a
 good exercise in basic analysis.  It requires a bit of care at boundary
 points.
 
-An orientation will allow us to have a well-defined integral on $M$, just
+An orientation allows us to have a well-defined integral on $M$, just
 like a curve needs to be oriented in order to define a line integral.
 However, unlike for curves, not every submanifold of dimension
 more than one is \emph{orientable}, that is, admits an orientation.
@@ -13681,9 +13683,10 @@ in $\R^n$ is an object of the form
 where $g_1, g_2, \ldots, g_n$ are smooth functions.  That is, a $1$-form is
 at each point a linear combination of $dx_1, dx_2, \ldots, dx_n$ that
 varies smoothly from point to point.
-Suppose that $M$ is a one-dimensional submanifold
-(possibly with boundary), further suppose that $\varphi \colon U \to M$
-is a parametrization of $M$ and $g_j$ is supported in $\varphi(U)$.
+Suppose $M$ is a one-dimensional submanifold
+(possibly with boundary), $\varphi \colon U \to M$
+is a parametrization compatible with the orientation of $M$,
+and $g_j$ is supported in $\varphi(U)$.
 Define
 \begin{equation*}
 \int_M \omega
@@ -13702,8 +13705,7 @@ as a locally finite sum
 \begin{equation*}
 \omega = \sum_{\ell} \omega_\ell ,
 \end{equation*}
-where each $\omega_\ell$ has support in a single chart, that is
-the image of a single
+where each $\omega_\ell$ has support in the image of a single
 parametrization.  By locally finite, we mean that on each compact
 neighborhood only finitely many $\omega_\ell$ are nonzero.  
 Define
@@ -13718,13 +13720,13 @@ if this sum actually exists.  For example, if $\omega$ is
 compactly supported then this sum is only finite, and so it exists.
 
 Higher degree forms are constructed out of $1$-forms and $0$-forms
-by the so called wedge product.  Given a $k$-form $\omega$
+by the so-called wedge product.  Given a $k$-form $\omega$
 and an $\ell$-form $\eta$,
 \glsadd{not:wedge}%
 \begin{equation*}
 \omega \wedge \eta
 \end{equation*}
-is a $(k+\ell)$-form.  Require the wedge product to be bilinear at each point:
+is a $(k+\ell)$-form.  We require the wedge product to be bilinear at each point:
 if $f$ and $g$ are smooth functions, then
 \begin{equation*}
 (f \omega + g \eta) \wedge \xi =
@@ -13783,8 +13785,8 @@ $dx_{j_1} \wedge
 dx_{j_2} \wedge
 \cdots \wedge
 dx_{j_k}$ 
-is either zero if any two indices from $j_1,\ldots,j_k$ are equal, and by
-swapping we can make any nonzero such form into
+is either zero, if any two indices from $j_1,\ldots,j_k$ are equal, or
+can be put into the form
 $\pm dx_{j_1} \wedge
 dx_{j_2} \wedge
 \cdots \wedge
@@ -13801,11 +13803,15 @@ dx_{j_2} \wedge
 dx_{j_k}  .
 \end{equation*}
 
-Consider $M$ is a $k$-dimensional submanifold
-(possibly with boundary), suppose that $\varphi \colon U \to M$
-is a parametrization of $M$ and $\omega$ (that is each $g_{j_1,\ldots,j_k}$)
-is supported in $\varphi(U)$.  Denote by $t \in U \subset \R^k$
-the coordinates on $U$.  Then define
+Consider
+an oriented $k$-dimensional submanifold $M$
+(possibly with boundary), a parametrization $\varphi \colon U \to M$
+from the orientation,
+and a $k$-form $\omega$
+supported in $\varphi(U)$ (that is each $g_{j_1,\ldots,j_k}$ is supported in
+$\varphi(U)$).
+Denote by $t \in U \subset \R^k$
+the coordinates on $U$.  Define
 \begin{equation*}
 \int_M \omega
 \overset{\text{def}}{=}
@@ -13823,14 +13829,14 @@ $D (\varphi_{j_1},\varphi_{j_2},\ldots,\varphi_{j_k})$
 denotes the derivative of the mapping whose $\ell$th component
 is $\varphi_{j_\ell}$.
 
-Now similarly as before, if $\omega$ is not supported in a
-single chart, then write
+Similarly as before, if $\omega$ is not supported in the
+image of a single parametrization, write
 \begin{equation*}
 \omega = \sum_{\ell} \omega_\ell 
 \end{equation*}
 as a locally finite sum,
-where each $\omega_\ell$ has support in a single chart
-parametrization.
+where each $\omega_\ell$ has support in the image of a single
+parametrization of the orientation.
 Then
 \begin{equation*}
 \int_M \omega
@@ -13842,14 +13848,14 @@ Again, the sum has to exist, such as when $\omega$ is compactly supported
 and the sum is finite.
 
 Notice that the only nontrivial differential forms on $\R^n$
-are $0,1,2,\ldots,n$ forms.  And in fact, the only $n$-form is given
-as
+are $0,1,2,\ldots,n$ forms.  The only $n$-forms are
+object of the form
 \begin{equation*}
 f(x) \,
 dx_1 \wedge dx_2 \wedge \cdots \wedge dx_n .
 \end{equation*}
 The form $dx_1 \wedge dx_2 \wedge \cdots \wedge dx_n$ is called the
-volume form integrating it over a domain (an $n$-dimensional submanifold)
+volume form.  Integrating it over a domain (an $n$-dimensional submanifold)
 gives the standard volume integral.
 
 More generally one defines integration of $k$-forms over $k$-chains,
@@ -13860,10 +13866,10 @@ need that level of generality.
 
 In computations, we can avoid sets of zero measure ($k$-dimensional),
 so we can ignore the boundary of the submanifold.  Similarly if we parametrize
-several subsets leaving out a small set.
+several subsets we can leave out a measure zero subset.
 Let us give a couple of examples of computations.
 
-\begin{example}
+\begin{example} \label{example:diffformscircleint}
 Consider the circle $S^1 \subset
 \R^2$.  We use a parametrization $\varphi \colon (-\pi,\pi) \to S^1$
 where $\varphi(t) = \bigl(\cos(t),\sin(t)\bigr)$, so the circle is oriented
@@ -13901,7 +13907,7 @@ with boundary.  That is consider
 \begin{equation*}
 M = \bigl\{ x \in \R^3 : x_1^2+x_2^2+x_3^2=1, x_3 \geq 0 \bigr\} .
 \end{equation*}
-The boundary is then is the circle in the $(x_1,x_2)$-plane:
+The boundary is the circle in the $(x_1,x_2)$-plane:
 \begin{equation*}
 \partial M = \bigl\{ x \in \R^3 : x_1^2+x_2^2=1, x_3 = 0 \bigr\} .
 \end{equation*}
@@ -13917,7 +13923,7 @@ a rotation this is a subset of a half-plane with the points corresponding to
 $\psi = \nicefrac{\pi}{2}$ corresponding to boundary points.  We miss the
 points where $\theta = \pi$, including the point $(0,0,1)$, but the set of
 those points is a $1$-dimensional curve, and so a set of $2$-dimensional
-measure zero, and so for the purposes of integration we can ignore it.
+measure zero. For the purposes of integration we can ignore it.
 Let
 \begin{equation*}
 \omega(x_1,x_2,x_3) =
@@ -13960,7 +13966,7 @@ R\bigl(\varphi(\theta,\psi)\bigr) \biggl(
 =
 \int_{-\pi}^\pi
 \int_{0}^{\pi/2}
-\Bigl(
+\Bigl[
 P\bigl(\cos(\theta)\sin(\psi),\sin(\theta)\sin(\psi),\cos(\psi)\bigr)
 \bigl(-\cos(\psi)\sin(\psi) \bigr)
 \\
@@ -13971,7 +13977,7 @@ Q\bigl(\cos(\theta)\sin(\psi),\sin(\theta)\sin(\psi),\cos(\psi)\bigr)
 +
 R\bigl(\cos(\theta)\sin(\psi),\sin(\theta)\sin(\psi),\cos(\psi)\bigr) 
 \bigl(-\cos(\theta)\sin^2(\psi)\bigr)
-\Bigr)
+\Bigr]
 \,
 d\theta
 \,
@@ -13979,7 +13985,8 @@ d\psi .
 \end{multline*}
 
 The induced orientation on the boundary $\partial M$
-is the counterclockwise orientation used in the example above
+is the counterclockwise orientation used in
+\exampleref{example:diffformscircleint},
 because that is the parametrization we get when we restrict
 to the boundary, $\varphi(\theta,\nicefrac{\pi}{2}) =
 \bigl(\cos(\theta),\sin(\theta),0\bigr)$.
@@ -13990,7 +13997,7 @@ to the boundary, $\varphi(\theta,\nicefrac{\pi}{2}) =
 The derivative on $k$-forms is the
 \emph{\myindex{exterior derivative}},
 which is a linear operator that eats $k$-forms and spits out
-$(k+1)$-forms.  For
+$(k+1)$-forms.  For a $k$-form
 \begin{equation*}
 \omega =
 g_{j_1,\ldots,j_k}
@@ -14019,7 +14026,7 @@ dx_{j_2} \wedge
 \cdots \wedge
 dx_{j_k} .
 \end{equation*}
-Then we define $d$ on every $k$-form by extending it linearly.
+Then define $d$ on every $k$-form by extending it linearly.
 
 For example,
 \begin{multline*}
@@ -14047,7 +14054,7 @@ R \, dx_1 \wedge dx_2
 \frac{\partial R}{\partial x_3}
 \right) \, dx_1 \wedge dx_2 \wedge dx_3 .
 \end{multline*}
-You will recognize the divergence of the vector field $(P,Q,R)$ from vector
+You should recognize the divergence of the vector field $(P,Q,R)$ from vector
 calculus.
 All the various derivative operations in $\R^3$ from vector calculus make an
 appearance.
@@ -14116,7 +14123,7 @@ in more generality, see \thmref{thm:greens}.
 
 A final note is that the classical Stokes' theorem is just the generalized
 Stokes' theorem with $n=3$, $k=2$.  Classically instead of 
-using differential forms the line integral is an integral of a vector field
+using differential forms, the line integral is an integral of a vector field
 instead of a $1$-form
 $\omega$, and its derivative $d\omega$ is the curl operator.
 
