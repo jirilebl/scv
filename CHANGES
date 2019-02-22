@@ -70,10 +70,13 @@ improvements have been made throughout.
 * Similarly, add the "inertia is preserved" to the change of variables
   theorem (was 2.3.7) right after instead of just making it a remark after
   the theorem
-* Add definition of Levi-flat to end of 2.3 and add exercises 2.3.13-2.3.17
 * Add discussion in 2.3 of the Levi form in terms of graph coordinates
   before the Lewy hypersurface example
 * Add figure of the Lewy hypersurface
+* Simplify the lemma normalizing the Levi form.  There is really no reason
+  for the derivatives.
+** Add 2 exercises to 2.3 towards the end, renumbering exercises.
+* Add definition of Levi-flat to end of 2.3 and add 5 related exercises
 * Computation of the complex Hessian under change of coordinates is done
   with different variable names on source and target for more clarity
 ** Move the solution of Dirichlet problem up in 2.4 so that it can be used.

@@ -5272,6 +5272,7 @@ the Hessian as
 =
 \begin{bmatrix} A^tXA & {(A^*LA)}^t \\ A^*LA & \overline{A^tXA} \end{bmatrix} ,
 \end{equation*}
+\glsadd{not:star}%
 where $A^* = \overline{A}^t$ is the conjugate
 transpose of $A$.
 So $A$
@@ -5486,7 +5487,7 @@ That is, $r$ is a function of $\zeta$ and $\bar{\zeta}$,
 $f$ is a function of $z$, and $\bar{f}$ is a function of $\bar{z}$.
 Therefore $r \circ f$ is a function of $z$ and $\bar{z}$.
 
-\begin{equation} \label{eq:nonmixedderschangeofcoords}
+\begin{equation*} %\label{eq:nonmixedderschangeofcoords}
 \begin{split}
 \frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k} (z,\bar{z})
 & =
@@ -5528,7 +5529,7 @@ Therefore $r \circ f$ is a function of $z$ and $\bar{z}$.
 \frac{\partial r}{\partial \zeta_\ell}
 \frac{\partial^2 f_\ell}{\partial z_j \partial z_k} .
 \end{split}
-\end{equation}
+\end{equation*}
 The matrix 
 $\left[ \frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k} \right]$
 can have different eigenvalues than the matrix
@@ -5823,73 +5824,85 @@ So if we write $M$ as a graph,
 \end{equation*}
 then $E$ is $O(3)$.
 
-Next we 
-apply the computation in \eqref{eq:nonmixedderschangeofcoords}.
-%where the $n$th variable will be $w'$ or $w''$ instead of $z_n$,
-%depending if we are in the domain of $r$ or not.
-We make another change of variables; we fix the $z$s again and we set
-$w' = w'' + g(z)$, where $g$ is $O(2)$ to be picked later.  
-That is, the biholomorphic mapping to use in
-\eqref{eq:nonmixedderschangeofcoords} is
-$f_j(z,w'') = z_j$ for $j=1,\ldots,n-1$, and $f_n(z,w'') = w'' +g(z)$.
-We let $r = - \Im w' + q(z,\bar{z}) + E(z,\bar{z},\Re w')$, so
-$r$ is a function of $(z_1,\ldots,z_{n-1},w')$ and
-$f$ and $(r \circ f)$ are functions of $(z_1,\ldots,z_{n-1},w'')$.
-
-The only first order
-holomorphic derivative of $r$ that does not vanish at the origin is the $w'$
-derivative.  The second order derivatives of $r$ involving $w'$ or
-$\bar{w}'$ all vanish at the origin.
-Using
-\eqref{eq:nonmixedderschangeofcoords} at the origin for
-$j,k=1,\ldots,n-1$, we get
-\begin{equation} \label{eq:holoquadtermsinrcircf}
-\frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k}
-\Big|_0 = 
-\sum_{\ell,m=1}^{n-1} \frac{\partial^2 r}{\partial z_m \partial z_\ell}
-\Big|_0
-\delta_{m}^j \delta_{\ell}^k
+The quadratic polynomial $q$ can be written as
+\begin{equation} \label{eq:generalquadraticq}
+q(z,\bar{z}) =
+\sum_{j,k=1}^{n-1}
+a_{jk} z_jz_k
 +
-\frac{\partial r}{\partial w'} \Big|_0
-\frac{\partial^2 g}{\partial z_j \partial z_k} \Big|_0
-=
-\frac{\partial^2 q}{\partial z_j \partial z_k} \Big|_0
+b_{jk} \bar{z}_j\bar{z}_k
 +
-\frac{1}{2i} 
-\frac{\partial^2 g}{\partial z_j \partial z_k} \Big|_0 .
+c_{jk} \bar{z}_jz_k .
 \end{equation}
-Here $\delta_{j}^k$ is the Kronecker delta, that is, $\delta_j^j = 1$,
-and $\delta_j^k = 0$ if $j \not= k$.  Notice the $q$ on the right hand
-side.
-Pick the $z_j z_k$ coefficient in $g$
-such that $\frac{\partial^2 g}{\partial z_k \partial z_j} \big|_0 =
-\frac{-1}{2i} \frac{\partial^2 q}{\partial z_k \partial z_j} \big|_0$
-making the expression vanish.
-The left hand side of \eqref{eq:holoquadtermsinrcircf} gives the coefficients of
-quadratic holomorphic terms in $z$ of $r \circ f$, that is, the
-holomorphic terms of the new $q$.
-This change of coordinates
-sets all the holomorphic terms of $q$ to zero.
-It is left as an exercise that as $q$ is real-valued,
-the coefficient of $\bar{z}_j \bar{z}_k$ in the new $q$
-also becomes zero.
+As $q$ is real-valued, it is left as an exercise to show that $a_{jk} =
+\overline{b_{jk}}$ and $c_{jk} = \overline{c_{kj}}$.  That is, the
+matrix $[b_{jk}]$ is the complex conjugate of $[a_{jk}]$ and
+$[c_{jk}]$ is Hermitian.
+
+We make another change of variables; we fix the $z$s again and we set
+%$w' = w'' + g(z)$, where $g$
+\begin{equation} \label{eq:wprimeexpression}
+w' = w'' + i
+\sum_{j,k=1}^{n-1}
+a_{jk} z_jz_k .
+\end{equation}
+In particular,
+\begin{equation*}
+\Im w'
+= \Im w''
++ \Im \biggl(
+i
+\sum_{j,k=1}^{n-1}
+a_{jk} z_jz_k 
+\biggr)
+%=
+%\Im w''
+%-
+%\sum_{j,k=1}^{n-1}
+%\bigl(
+%a_{jk} z_jz_k 
+%+
+%\overline{a_{jk}} \bar{z}_j\bar{z}_k 
+%\bigr)
+=
+\Im w''
++
+\sum_{j,k=1}^{n-1}
+\bigl(
+a_{jk} z_jz_k 
++
+b_{jk} \bar{z}_j\bar{z}_k 
+\bigr) ,
+\end{equation*}
+as $\overline{a_{jk}} = b_{jk}$.  Plugging
+\eqref{eq:wprimeexpression} into $\Im w' = q(z,\bar{z}) + E(z,\bar{z},\Re w')$
+and solving for $\Im w''$ cancels out the
+holomorphic and antiholomorphic terms in $q$, and leaves $E$ as $O(3)$.
 Therefore, after this change of coordinates we may assume
 \begin{equation*}
 q(z,\bar{z}) = \sum_{j,k=1}^{n-1} c_{jk} z_j \bar{z}_k .
 \end{equation*}
 That is, $q$ is a sesquilinear form.  Since $q$ is real-valued the matrix
-$C = [ c_{jk} ]$ must be Hermitian.  In linear algebra notation,
+$C = [ c_{jk} ]$ is Hermitian.  In linear algebra notation,
 $q(z,\bar{z}) = z^*Cz$,
-\glsadd{not:star}%
-where the $*$ denotes the conjugate transpose,
-and we think of $z$ as a column vector.
-If $T$ is a linear transformation on the $z$ variables, we
-obtain ${(Tz)}^*CTz = z^* ( T^*CT) z$.  Thus, we normalize $C$
+where %the $*$ denotes the conjugate transpose, and
+we think of $z$ as a column vector.
+If $T$ is a linear transformation on the $z$ variables, say $z'=Tz$, we
+obtain ${z'}^*Cz' = {(Tz)}^*CTz = z^* ( T^*CT) z$.  Thus, we normalize $C$
 up to $*$-congruence.  A Hermitian matrix
-is\linebreak[1] $*$-congruent to a diagonal matrix with only $1$s, $-1$s, and $0$s on the
-diagonal.  Writing out what that means is precisely the conclusion of the
+is $*$-congruent to a diagonal matrix with only $1$s, $-1$s, and $0$s on the
+diagonal, again by Sylvester's law of inertia.  Writing out what that means is precisely the conclusion of the
 proposition.
 \end{proof}
+
+\begin{exbox}
+\begin{exercise}
+Prove the assertion in the proof, that is, if $q$ is a quadratic as in
+\eqref{eq:generalquadraticq} that is real-valued, then
+ $a_{jk} = \overline{b_{jk}}$ and $c_{jk} = \overline{c_{kj}}$.
+\pagebreak[2]
+\end{exercise}
+\end{exbox}
 
 \begin{lemma}[Narasimhan's lemma\index{Narasimhan's lemma}%
 \footnote{A statement essentially of Narasimhan's lemma was already used by Helmut
@@ -5897,24 +5910,32 @@ Knesser in 1936.}]
 Suppose $U \subset \C^n$ is a domain with smooth boundary.
 If $U$ is strongly
 pseudoconvex at $p \in \partial U$, then there exists a local biholomorphic change of
-coordinates fixing $p$ such that in these new coordinates $U$ is strongly convex in a neighborhood of $p$.
+coordinates fixing $p$ such that in these new coordinates $U$ is strongly
+convex at $p$ and hence strongly convex at all points near $p$.
 \end{lemma}
 
 \begin{exbox}
 \begin{exercise}
 Prove the above lemma.  Hint: See the proof of \lemmaref{lemma:normformquad}.
 \end{exercise}
+
+\begin{exercise}
+Prove that a domain $U \subset \C^n$ with smooth boundary is pseudoconvex at
+$p$ if and only if there exist local holomorphic coordinates at $p$ such that 
+$U$ is convex at $p$.
+\end{exercise}
 \end{exbox}
 
 Narasimhan's lemma only works at points of strong
 pseudoconvexity.  For weakly pseudoconvex points the situation is far more
-complicated.
+complicated.  The difficulty is that we cannot make a domain
+weakly pseudoconvex at $p$ to be convex at all points nearby $p$.
 
 \medskip
 
 
 Let us prove the easy direction of the famous 
-\emph{\myindex{Levi-problem}}.  The Levi-problem was a long standing
+\emph{\myindex{Levi problem}}.  The Levi problem was a long-standing
 problem%
 \footnote{E.\ E.\ Levi stated the problem in 1911, but it was not completely
 solved until the 1950s, by Oka and others.}
@@ -5923,10 +5944,12 @@ $\C^n$.  The answer is that a domain is a domain of holomorphy if and only
 if it is pseudoconvex.  Just as the problem of trying to show that
 the classical geometric convexity is the same as convexity as we have
 defined it, 
-the Levi-problem has an easier direction and a harder direction.
+the Levi problem has an easier direction and a harder direction.
 The easier direction is to show that a domain of holomorphy is pseudoconvex, and
 the harder direction is to show that a pseudoconvex domain is a domain of
-holomorphy.
+holomorphy.  In order to save a hundred pages or so of work, we will only
+prove the easy direction.  See H\"ormander's book~\cite{Hormander} for the proof
+of the hard direction.
 
 \begin{thm}[Tomato can principle\index{tomato can principle}] \label{thm:tomatocan}
 Suppose
@@ -7149,8 +7172,8 @@ Hartogs pseudoconvex.
 The statement corresponding to \exerciseref{exercise:nestedunions} on nested unions
 for domains of holomorphy is
 the \emph{\myindex{Behnke--Stein theorem}}, which follows using this exercise and the solution
-of the Levi-problem.  Although historically Behnke--Stein was proved
-independently and used to solve the Levi-problem.
+of the Levi problem.  Although historically Behnke--Stein was proved
+independently and used to solve the Levi problem.
 
 \exerciseref{exercise:biholHartogs} says that (Hartogs) pseudoconvexity is a
 biholomorphic invariant.  That is a good indication that we are looking at a
