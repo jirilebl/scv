@@ -6132,7 +6132,7 @@ ball $B_\rho(a)$ with $\overline{B_\rho(a)} \subset U$,
 and every function $\varphi$ harmonic on $B_\rho(a)$ and continuous
 on $\overline{B_\rho(a)}$
 such that $f(x) \leq \varphi(x)$ for $x \in
-\partial B_\rho(a)$, then
+\partial B_\rho(a)$, we have
 \begin{equation*}
 f(x) \leq \varphi(x), \quad \text{ for all } x \in
 B_\rho(a) .
@@ -6141,14 +6141,14 @@ B_\rho(a) .
 
 In other words, a subharmonic function is a function that is less than any
 harmonic function on every ball.
-We will generally look at harmonic and subharmonic functions in $\C \cong
+We will consider harmonic and subharmonic functions in $\C \cong
 \R^2$.
 Let us
 go through some basic results on harmonic and subharmonic
 functions that you have seen in detail in your one-variable class.
 Consequently we leave some of these results as exercises.
 In this section (and not just here)
-we will often write $f(z)$ for a function
+we often write $f(z)$ for a function
 even if it is not holomorphic.
 
 \begin{exbox}
@@ -6195,7 +6195,7 @@ Pu(re^{i\theta})
 \quad \text{if $r < 1$} \qquad \text{and} \qquad
 Pu(e^{i\theta}) = u(e^{i\theta}),
 \end{equation*}
-is harmonic in $\D$ and continuous on $\overline{D}$.
+is harmonic in $\D$ and continuous on $\overline{\D}$.
 %  Further as $z \in \D$ tends to $z_0 \in \partial \D$,
 %$\tilde{u}(z)$ tends to $u(z_0)$.  In other words,
 %$\tilde{u}$ extends to a continuous function on $\overline{D}$.
@@ -6263,7 +6263,7 @@ A continuous function
 $f \colon U \to \R$
 is harmonic if and only if 
 \begin{equation*}
-f(a) = \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta 
+f(a) = \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta
 \qquad \text{whenever} \quad
 \overline{\Delta_r(a)} \subset U .
 \end{equation*}
@@ -6271,9 +6271,9 @@ f(a) = \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta
 An upper-semicontinuous function $f \colon U \to \R \cup \{ -\infty \}$
 is subharmonic if and only if
 \begin{equation*}
-f(a) \leq \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta .
+f(a) \leq \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta
 \qquad \text{whenever} \quad
-\overline{\Delta_r(a)} \subset U
+\overline{\Delta_r(a)} \subset U .
 \end{equation*}
 \end{enumerate}
 \end{prop}
@@ -6282,7 +6282,7 @@ For the sub-mean-value property you may have to use
 the Lebesgue integral to integrate an upper-semicontinuous function,
 and to use the version of the Poisson integral above, you need to
 approximate by continuous functions on the boundary in the right way.
-On first reading, fell free to think of continuous subharmonic
+On first reading, feel free to think of continuous subharmonic
 functions and not too much will be lost.
 
 \begin{exbox}
@@ -6306,15 +6306,17 @@ is subharmonic.  If $f$ attains a maximum in $U$, then $f$ is constant.
 \end{prop}
 
 \begin{proof}
+Suppose $f$ attains a maximum at $a \in U$.
 If
 $\overline{\Delta_r(a)} \subset U$ then
 \begin{equation*}
-f(a) \leq \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta .
+f(a) \leq \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta \leq f(a)
+.
 \end{equation*}
 In particular $f = f(a)$ almost everywhere on $\partial \Delta_r(a)$.
 By upper-semicontinuity it is true everywhere.  This was true for all $r$
 with $\overline{\Delta_r(a)} \subset U$, so $f=f(a)$ on $\Delta_r(a)$,
-and the set where $f=f(a)$ is open.  The set where an upper-semicontinuous
+and so the set where $f=f(a)$ is open.  The set where an upper-semicontinuous
 function attains a maximum is closed.  So $f=f(a)$ on $U$ as $U$ is
 connected.
 \end{proof}
@@ -6398,8 +6400,8 @@ is a family of subharmonic functions.  Let
 \varphi(z) = \sup_\alpha\, f_\alpha(z) .
 \end{equation*}
 If the family is finite, then $\varphi$ is subharmonic.
-If the family is infinite and we assume that $\varphi(z) \not= \infty$ for
-all $z$ and that $\varphi$
+If the family is infinite, $\varphi(z) \not= \infty$ for
+all $z$, and $\varphi$
 is upper-semicontinuous, then $\varphi$ is subharmonic.
 \end{prop}
 
@@ -6468,16 +6470,16 @@ example of a harmonic function that is not pluriharmonic.
 \end{exercise}
 
 \begin{exercise}
-Show that a $f \colon U \subset \C^n \to \R$ is pluriharmonic if and
+Show that $f \colon U \subset \C^n \to \R$ is pluriharmonic if and
 only if it is locally the real or imaginary part of a holomorphic function.
 Hint:  Using a previous exercise
 $\frac{\partial f}{\partial z_k}$ is holomorphic for all $k$.
-Assume that $U$ is simply connected and
-$f(z^0) = 0$.
-Consider the  line integral from $z^0 \in U$ to a nearby $z \in U$:
+Assume that $U$ is simply connected, $p \in U$, and
+$f(p) = 0$.
+Consider the line integral from $p$ to a nearby $z \in U$:
 \begin{equation*}
 F(z) =
-\int_{z_0}^z \sum_{k=1}^n
+\int_{p}^z \sum_{k=1}^n
 \frac{\partial f}{\partial z_k}(z) \, dz_k .
 \end{equation*}
 Prove that it is path independent, compute derivatives of $F$, and
@@ -6485,7 +6487,7 @@ find out what is $f-F$.
 \end{exercise}
 
 \begin{exercise}
-Prove the \myindex{maximum principle!plurisubharmonic functions}.
+Prove the maximum principle\index{maximum principle!plurisubharmonic functions}.
 That is, if $U \subset \C^n$ is a domain and $f \colon U \to \R \cup
 \{-\infty\}$ is
 plurisubharmonic and achieves a maximum at $p \in U$, then $f$ is constant.
@@ -6507,7 +6509,7 @@ point.
 \end{samepage}
 
 \begin{proof}
-Fix a point $p$, and after translation assume $p=0$.
+Fix a point $p \in U$, and after translation assume $p=0$.
 After a holomorphic linear change of variables assume that
 the complex Hessian
 $\left[
@@ -6560,7 +6562,7 @@ Then there exists a smooth plurisubharmonic function
 $f_\epsilon \colon U_\epsilon \to \R$ such that $f_\epsilon(z) \geq
 f(z)$, and
 \begin{equation*}
-f(z) = \lim_{\epsilon \to 0} f_\epsilon(z) .
+f(z) = \lim_{\epsilon \to 0} f_\epsilon(z) \qquad \text{for all $z \in U$}.
 \end{equation*}
 \end{thm}
 
