@@ -484,12 +484,15 @@ can help or even be required to solve later exercises.
 
 The prerequisites are a decent knowledge of vector calculus, basic
 real-analysis, and a working knowledge of complex analysis in one variable.
-It is accessible to beginning graduate students after a complex
-analysis course, and the background actually required is quite minimal.
+Measure theory (Lebesgue integral and its convergence theorems) is useful,
+but it is not essential.
+It is accessible to beginning graduate students after one semester
+of a standard single-variable complex
+analysis graduate course, and the background actually required is quite minimal.
 Towards the end of the course (mainly \chapterref{ch:integralkernels}),
 differential forms will be useful, and
 in the final chapter, \chapterref{ch:analyticvarieties},
-we will use some basic ring theory from algebra.
+we use some basic ring theory from algebra.
 
 This book is not meant as an exhaustive reference.  It is simply a whirlwind
 tour of several complex variables.  See the end of the book
@@ -6247,9 +6250,9 @@ is harmonic in $\D$ and continuous on $\overline{\D}$.
 
 \pagebreak[2]
 In the proof it is useful to consider how
-the graph of $P_r$ as a function of $\theta$ looks for a fixed $r$.
+does the graph of $P_r$ as a function of $\theta$ look for a fixed $r$.
 The following are the graphs of $P_r$ for $r=0.5$,
-$r=0.7$ and $r=0.85$ on $[-\pi,\pi]$:
+$r=0.7$, and $r=0.85$ on $[-\pi,\pi]$:
 
 \begin{myfig}
 \includegraphics[width=0.5\textwidth]{figures/poisson-kernel.pdf}
@@ -6284,7 +6287,7 @@ Poisson kernel is harmonic
 as a function of $z=re^{i\theta} \in \D$, and hence
 $Pu$ is harmonic.
 \item
-$P_r$ acts like an
+$P$ acts like an
 approximate identity: prove that
 $Pu(re^{i\theta}) \to u(e^{i\theta})$ uniformly as
 $r \to 1$ (Hint: Split the integral to $[-\delta,\delta]$ and the rest
@@ -6317,6 +6320,7 @@ the following proposition.
 
 \pagebreak[2]
 \begin{prop}[Mean-value property and sub-mean-value property]
+\label{prop:meansubmeanprop}
 \index{mean-value property}
 \index{sub-mean-value property}
 Let $U \subset \C$ be an open set.
@@ -6350,7 +6354,7 @@ functions and not too much will be lost.
 
 \begin{exbox}
 \begin{exercise}
-Fill in the details of the proof of the proposition.
+Fill in the details of the proof of \propref{prop:meansubmeanprop}.
 \end{exercise}
 
 \begin{exercise}
