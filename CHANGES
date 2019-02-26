@@ -8,9 +8,10 @@ theorem and differential forms (without proofs)
 3) Do some minor reordering to make the flow a bit more logical, reword some
 theorems/lemmas/propositions, and make some results that were just mentioned
 in text or exercises into proper propositions.
-4) Fix any issues found along the way.
-5) Add a few exercises and one or two concepts, but really, there's no real
-new material in this edition.
+4) Fix any issues found along the way, and simplify a few proofs.
+5) Add a few exercises and one or two concepts, but really, there's not much
+new material in this edition, mostly just more motivation for what we are
+doing, and hopefully clearer (and cleaner) exposition.
 
 These are only the somewhat larger changes.  Lots of small minor
 improvements have been made throughout.
@@ -79,8 +80,15 @@ improvements have been made throughout.
 * Add definition of Levi-flat to end of 2.3 and add 5 related exercises
 * Computation of the complex Hessian under change of coordinates is done
   with different variable names on source and target for more clarity
+* Add graph of Poisson kernel for a few $r$
+* Add a picture for $n=1$ for definition of subharmonic function where it is
+  just the convex function 
 ** Move the solution of Dirichlet problem up in 2.4 so that it can be used.
   This renumbers the exercises in 2.4
+* Add a remark about how pluriharmonic and plurisubharmonic functions are
+  in some sense the correct several complex variable generalizations of
+  affine linear and convex functions.
+* Rework and add exercises in 2.4
 * Rename chapter 3 to "CR functions" from "CR geometry" since we really did
   quite a bit of "CR geometry" in chapter 2 already, it is CR functions that
   we are interested in in chapter 3.

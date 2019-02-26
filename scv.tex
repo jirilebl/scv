@@ -4449,12 +4449,12 @@ Usually we write $X_p$ rather than $X(p)$.
 To be more fancy,
 say $X$ is a \emph{\myindex{section}} of $T \R^n$.
 
-Similarly,
+Similarly, the tangent bundle of $M$ is
 \glsadd{not:realtangentbundle}%
 \begin{equation*}
-TM = \bigcup_{p \in M} T_p M
+TM = \bigcup_{p \in M} T_p M .
 \end{equation*}
-is the tangent bundle of $M$.  A vector field $X$ in $TM$ is a vector field
+A vector field $X$ in $TM$ is a vector field
 such that $X_p \in T_p M$ for all $p \in M$.
 \end{defn}
 
@@ -4540,12 +4540,12 @@ The matrix
 \left[ \frac{\partial^2 r}{\partial x_j \partial x_\ell} \Big|_p
 \right]_{j\ell}
 \end{equation*}
-is called the
+is the
 \emph{\myindex{Hessian}} of $r$ at $p$.
 So, $U$ is convex at $p \in \partial U$ if
 the Hessian
-of $r$ at $p$ as a bilinear form is positive definite (or positive
-semidefinite) when restricted to $T_p \partial U$.
+of $r$ at $p$ as a bilinear form is positive semidefinite
+when restricted to $T_p \partial U$.
 In the language of vector calculus, let $H$ be the Hessian of $r$ at $p$, and treat
 $a \in \R^n$ as a column vector.
 Then 
@@ -4651,6 +4651,7 @@ $r_y \frac{\partial}{\partial x} - r_x \frac{\partial}{\partial y}$.  In
 higher dimensions we can just run through enough pairs of variables to get
 a basis of $TM$.
 
+\pagebreak[2]
 \begin{exbox}
 \begin{exercise}
 Show that the domain in $\R^2$ defined by $x^4+y^4 < 1$ is convex, but not strongly convex.
@@ -5049,8 +5050,8 @@ applying a unitary matrix are biholomorphic changes of coordinates.
 \pagebreak[2]
 \begin{prop} \label{prop:graphcoordinatesCn}
 Let $M \subset \C^n$ be a smooth real hypersurface, $p \in M$.
-After a translation and rotation via a unitary
-matrix, $p=0$, and near the origin
+After a translation and rotation by a unitary
+matrix, $p=0$ and near the origin,
 $M$ is written in variables $(z,w) \in \C^{n-1}
 \times \C$ as
 \begin{equation*}
@@ -5714,8 +5715,8 @@ a linear change of coordinates in the $z$ only to make $Lz = z_1$.  So
 assume $Lz = \epsilon z_1$ where $\epsilon = 0$ or $\epsilon =
 1$. 
 
-Change variables
-by leaving $z$ unchanged and letting $w = w'+bw'^2+cw'z_1$.  We ignore $q(z,\bar{z})$ for a moment as
+Change coordinates
+by leaving $z$ unchanged and letting $w = w'+bw'^2+cw'z_1$.  Ignore $q(z,\bar{z})$ for a moment as
 this change of coordinates does not affect it.  Also we only look up to
 second order.
 \begin{equation*}
@@ -5839,7 +5840,7 @@ As $q$ is real-valued, it is left as an exercise to show that $a_{jk} =
 matrix $[b_{jk}]$ is the complex conjugate of $[a_{jk}]$ and
 $[c_{jk}]$ is Hermitian.
 
-We make another change of variables; we fix the $z$s again and we set
+We make another change of coordinates; we fix the $z$s again and we set
 %$w' = w'' + g(z)$, where $g$
 \begin{equation} \label{eq:wprimeexpression}
 w' = w'' + i
@@ -5874,11 +5875,11 @@ a_{jk} z_jz_k
 b_{jk} \bar{z}_j\bar{z}_k 
 \bigr) ,
 \end{equation*}
-as $\overline{a_{jk}} = b_{jk}$.  Plugging
+as $\overline{a_{jk}} = b_{jk}$.  Pluging
 \eqref{eq:wprimeexpression} into $\Im w' = q(z,\bar{z}) + E(z,\bar{z},\Re w')$
-and solving for $\Im w''$ cancels out the
+and solving for $\Im w''$ cancels the
 holomorphic and antiholomorphic terms in $q$, and leaves $E$ as $O(3)$.
-Therefore, after this change of coordinates we may assume
+After this change of coordinates we may assume
 \begin{equation*}
 q(z,\bar{z}) = \sum_{j,k=1}^{n-1} c_{jk} z_j \bar{z}_k .
 \end{equation*}
@@ -5900,17 +5901,16 @@ proposition.
 Prove the assertion in the proof, that is, if $q$ is a quadratic as in
 \eqref{eq:generalquadraticq} that is real-valued, then
  $a_{jk} = \overline{b_{jk}}$ and $c_{jk} = \overline{c_{kj}}$.
-\pagebreak[2]
+\pagebreak[3]
 \end{exercise}
 \end{exbox}
 
 \begin{lemma}[Narasimhan's lemma\index{Narasimhan's lemma}%
 \footnote{A statement essentially of Narasimhan's lemma was already used by Helmut
 Knesser in 1936.}]
-Suppose $U \subset \C^n$ is a domain with smooth boundary.
-If $U$ is strongly
-pseudoconvex at $p \in \partial U$, then there exists a local biholomorphic change of
-coordinates fixing $p$ such that in these new coordinates $U$ is strongly
+Let $U \subset \C^n$ be a domain with smooth boundary
+that is strongly pseudoconvex at $p \in \partial U$.  Then there exists a local biholomorphic change of
+coordinates fixing $p$ such that in these new coordinates, $U$ is strongly
 convex at $p$ and hence strongly convex at all points near $p$.
 \end{lemma}
 
@@ -5999,8 +5999,8 @@ Clearly $\varphi(0) = 0 \in \partial U$.  For $\xi \not= 0$ near the origin
 \end{equation*}
 That is because by second derivative test the function above has a strict
 maximum
-at $\xi = 0$.  Therefore for $\xi$ near the origin, but not zero, we have 
-$\varphi(\xi) \in U$.  By picking $\lambda$ small enough, we have
+at $\xi = 0$.  Therefore for $\xi \not= 0$ near the origin,
+$\varphi(\xi) \in U$.  By picking $\lambda$ small enough,
 $\varphi(\overline{\D}\setminus\{0\}) \subset U$.
 
 As $\varphi(\partial \D)$ is compact we can ``wiggle it a little'' and
@@ -6080,13 +6080,13 @@ much harder to prove without that hypothesis.
 \end{exercise}
 \end{exbox}
 
-Just as a flat hyperplane is the ``degenerate'' case of normal convexity.
+A flat hyperplane is the ``degenerate'' case of normal convexity.
 There is similarly a flat case of pseudoconvexity.  A smooth hypersurface
 $M \subset \C^n$ is \emph{\myindex{Levi-flat}} if the Levi form
 vanishes at every point of $M$.  A zero matrix is both positive semidefinite
 and negative semidefinite, so both sides of $M$ are pseudoconvex.
-Conversely the only hypersurface that is pseudoconvex from both sides must
-be Levi-flat.
+Conversely the only hypersurface pseudoconvex from both sides is a
+Levi-flat.
 
 \begin{exbox}
 \begin{exercise}
@@ -6133,10 +6133,10 @@ the origin.
 
 \begin{defn}
 A $C^2$-smooth
-function $f \colon U \subset \R^n \to \R$ is called
+function $f \colon U \subset \R^n \to \R$ is
 \emph{\myindex{harmonic}} if\footnote{Recall
 the operator $\nabla^2$, sometimes also written $\Delta$,
-is called the \emph{\myindex{Laplacian}}.
+is the \emph{\myindex{Laplacian}}.
 It is the trace of the Hessian matrix.}
 \begin{equation*}
 \nabla^2 f =
@@ -6146,29 +6146,50 @@ It is the trace of the Hessian matrix.}
 \quad \text{ on $U$.}
 \end{equation*}
 
-A function $f \colon U \subset \R^n \to \R \cup \{ -\infty \}$ is called
+A function $f \colon U \subset \R^n \to \R \cup \{ -\infty \}$ is 
 \emph{\myindex{subharmonic}} if it is upper-semicontinuous%
 \footnote{Recall $f$ is \emph{\myindex{upper-semicontinuous}}
 if $\limsup_{t\to x} f(t) \leq f(x)$ for all $x$.}
 and for every
-ball $B_\rho(a)$ with $\overline{B_\rho(a)} \subset U$,
-and every function $\varphi$ harmonic on $B_\rho(a)$ and continuous
-on $\overline{B_\rho(a)}$
-such that $f(x) \leq \varphi(x)$ for $x \in
-\partial B_\rho(a)$, we have
+ball $B_r(a)$ with $\overline{B_r(a)} \subset U$,
+and every function $g$
+continuous on $\overline{B_r(a)}$ and
+harmonic on $B_r(a)$,
+such that $f(x) \leq g(x)$ for $x \in
+\partial B_r(a)$, we have
 \begin{equation*}
-f(x) \leq \varphi(x), \quad \text{ for all } x \in
-B_\rho(a) .
+f(x) \leq g(x), \quad \text{ for all } x \in
+B_r(a) .
 \end{equation*}
 \end{defn}
 
 In other words, a subharmonic function is a function that is less than any
 harmonic function on every ball.
+We remark that when $n=1$ in the definition of a subharmonic function,
+it is the same as the standard definition of a
+convex function of one real variable, where affine linear functions play the role of harmonic
+functions: A function of one real variable is
+\emph{convex}\index{convex function} if 
+for every interval it is less than the affine linear function with the same
+end points.
+After all, a function of one real variable is harmonic if the second
+derivative vanishes, and it is therefore affine linear.
+In one real dimension it is also easier to picture.
+The function $f$ is convex if on
+every interval $[\alpha,\beta]$, $f \leq g$ for every affine linear $g$
+bigger than $f$ at the endpoints $\alpha$ and $\beta$.  In particular we can
+take the $g$ that is equal to $f$ at the endpoints.
+The picture is analogous for subharmonic functions for $n > 1$,
+but it is harder to draw.
+
+\begin{myfig}
+\subimport*{figures/}{convexfunc.pdf_t}
+\end{myfig}
+
 We will consider harmonic and subharmonic functions in $\C \cong
 \R^2$.
-Let us
-go through some basic results on harmonic and subharmonic
-functions that you have seen in detail in your one-variable class.
+Let us go through some basic results on harmonic and subharmonic
+functions in $\C$ that you have seen in detail in your one-variable class.
 Consequently we leave some of these results as exercises.
 In this section (and not just here)
 we often write $f(z)$ for a function
@@ -6191,14 +6212,14 @@ Hint: The key is finding an antiderivative of a holomorphic function.
 \end{exercise}
 \end{exbox}
 
-It follows from the exercise that
-a harmonic function is infinitely differentiable.
-It is often useful to find a harmonic function given boundary values.
-This problem is usually called the \emph{\myindex{Dirichlet problem}}.
+It follows from the exercise that a harmonic function is infinitely differentiable.
+It is useful to find a harmonic function given boundary values.
+This problem is called the \emph{\myindex{Dirichlet problem}}, and it is
+solvable for many (though not all) domains.
 The proof of the following special case is contained in the exercises
 following the theorem.
-Let the
-\emph{\myindex{Poisson kernel}} for the unit disc $\D \subset \C$ be defined by
+The
+\emph{\myindex{Poisson kernel}} for the unit disc $\D \subset \C$ is
 \glsadd{not:Pr}%
 \begin{equation*}
 P_r(\theta)
@@ -6210,7 +6231,7 @@ P_r(\theta)
 
 \begin{thm} \label{thm:dirichsol}
 Given any continuous function $u \colon \partial \D \to \C$, the function
-$Pu \colon \overline{\D} \to \C$ defined by
+$Pu \colon \overline{\D} \to \C$, defined by
 \begin{equation*}
 Pu(re^{i\theta})
 =
@@ -6223,6 +6244,18 @@ is harmonic in $\D$ and continuous on $\overline{\D}$.
 %$\tilde{u}(z)$ tends to $u(z_0)$.  In other words,
 %$\tilde{u}$ extends to a continuous function on $\overline{D}$.
 \end{thm}
+
+\pagebreak[2]
+In the proof it is useful to consider how
+the graph of $P_r$ as a function of $\theta$ looks for a fixed $r$.
+The following are the graphs of $P_r$ for $r=0.5$,
+$r=0.7$ and $r=0.85$ on $[-\pi,\pi]$:
+
+\begin{myfig}
+\includegraphics[width=0.5\textwidth]{figures/poisson-kernel.pdf}
+\end{myfig}
+
+%\pagebreak[2]
 
 %In other words, there exists a continuous function $\tilde{u}$ defined on
 %the closed disc, which is harmonic inside and is equal to $u$
@@ -6243,6 +6276,7 @@ $r \to 1$.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[1]%
 Prove \thmref{thm:dirichsol} using the following guideline:
 \begin{exparts}
 \item
@@ -6258,12 +6292,18 @@ and use the previous exercise).
 \item
 Prove that $Pu(z)$ tends to $u(z_0)$ as
 $z \in \D \to z_0 \in \partial \D$.
+\pagebreak[2]
 \end{exparts}
 \end{exercise}
 
 \begin{exercise}
 State and prove a version of \thmref{thm:dirichsol} for an arbitrary disc
 $\Delta_r(a)$.
+\end{exercise}
+
+\begin{exercise}
+Prove that the Dirichlet problem is not solvable in the punctured disc $\D
+\setminus \{ 0 \}$.
 \end{exercise}
 \end{exbox}
 
@@ -6279,7 +6319,7 @@ the following proposition.
 \begin{prop}[Mean-value property and sub-mean-value property]
 \index{mean-value property}
 \index{sub-mean-value property}
-Let $U \subset \C$ be a domain.
+Let $U \subset \C$ be an open set.
 \begin{enumerate}[(i)]
 \item
 A continuous function
@@ -6315,9 +6355,10 @@ Fill in the details of the proof of the proposition.
 
 \begin{exercise}
 Show that if $f \colon U \subset \C \to \R \cup\{- \infty \}$ is subharmonic
-then for $z \in U$ we have
+then 
 \begin{equation*}
-\limsup_{w \to z} f(w) = f(z) .
+\limsup_{w \to z} f(w) = f(z) 
+\qquad \text{for all $z \in U$.}
 \end{equation*}
 \end{exercise}
 \end{exbox}
@@ -6349,7 +6390,7 @@ connected.
 %completeness.
 
 \begin{prop}
-Suppose $U \subset \C$ and $f \colon U \to \R$ is a $C^2$ function.
+Suppose $U \subset \C$ is an open set and $f \colon U \to \R$ is a $C^2$ function.
 The function $f$ is subharmonic if and only if
 $\nabla^2 f \geq 0$.
 \end{prop}
@@ -6357,32 +6398,34 @@ $\nabla^2 f \geq 0$.
 \begin{proof}
 We have a $C^2$-smooth function on a subset of $\C \cong \R^2$
 with $\nabla^2 f \geq 0$ and we wish to show that it is subharmonic.
-Take a disc $\Delta_\rho(a)$ such that
-$f$ is continuous on the closure, and take a harmonic function $g$ on the
-closure $\overline{\Delta_\rho(a)}$
-such that $f \leq g$ on the boundary.  Because
+Take a disc $\Delta_r(a)$ such that $\overline{\Delta_r(a)} \subset U$.
+Consider a function
+$g$ continuous on $\overline{\Delta_r(a)}$,
+harmonic on $\Delta_r(a)$, and such that
+$f \leq g$ on the boundary $\partial \Delta_r(a)$.  Because
 $\nabla^2 (f-g) = \nabla^2 f \geq 0$, we assume $g = 0$ and $f \leq 0$
-on the boundary of $\Delta_\rho(a)$.  We can also assume that $f = 0$ on at least one point on
-the boundary.
+on the boundary $\partial \Delta_r(a)$. 
+% We can also assume that $f = 0$ on at least one point on
+%the boundary.
 
-First suppose $\nabla^2 f > 0$ at all points on $\Delta_\rho(a)$.
-Suppose $f$ attains a maximum in $\Delta_\rho(a)$,
+Suppose $\nabla^2 f > 0$ at all points on $\Delta_r(a)$.
+Suppose $f$ attains a maximum in $\Delta_r(a)$,
 call this point $p$.  
-$\nabla^2 f$ is the trace of the Hessian matrix, but for $f$ to have a
+The Laplacian $\nabla^2 f$ is the trace of the Hessian matrix, but for $f$ to have a
 maximum, the Hessian must have only nonpositive eigenvalues at the critical
 points, which is a
 contradiction as the trace is the sum of the eigenvalues.  So $f$ has no
 maximum inside, and therefore $f \leq 0$ on all of
-$\overline{\Delta_\rho(a)}$.
+$\overline{\Delta_r(a)}$.
 
 Next suppose $\nabla^2 f \geq 0$.
-Let $M$ be the maximum of $x^2+y^2$ on $\overline{\Delta_\rho(a)}$.
+Let $M$ be the maximum of $x^2+y^2$ on $\overline{\Delta_r(a)}$.
 Take $f_n(x,y) = f(x,y) + \frac{1}{n}
 ( x^2+y^2 ) - \frac{1}{n}M$.  Clearly $\nabla^2 f_n > 0$ everywhere on
-$\Delta_\rho(a)$ and
+$\Delta_r(a)$ and
 $f_n \leq 0$ on the boundary, so $f_n \leq 0$ 
-on all of $\overline{\Delta_\rho(a)}$.  As $f_n \to f$ we obtain that
-$f \leq 0$ on all of $\overline{\Delta_\rho(a)}$.
+on all of $\overline{\Delta_r(a)}$.  As $f_n \to f$ we obtain that
+$f \leq 0$ on all of $\overline{\Delta_r(a)}$.
 
 The other direction is left as an exercise.
 %
@@ -6415,7 +6458,10 @@ Finish the proof of the above proposition.
 \end{exercise}
 \end{exbox}
 
+In analogy to convex functions, a $C^2$-smooth function $f$ of one
+real variable is convex if and only if $f''(x) \geq 0$ for all $x$.
 
+\pagebreak[2]
 \begin{prop}
 Suppose $U \subset \C$ is a domain and $f_\alpha \colon U \to \R \cup \{ -\infty \}$
 is a family of subharmonic functions.  Let
@@ -6444,12 +6490,39 @@ Taking the supremum on the right over $\alpha$ obtains the results.
 Prove that if $\varphi \colon \R \to \R$ is a monotonically increasing convex function and $f \colon U \subset
 \C \to \R$ is subharmonic, then $\varphi \circ f$ is subharmonic.
 \end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \C$ is a domain, $\{ f_n \}$ a sequence of 
+subharmonic functions that is uniformly bounded above on compact subsets, and 
+$\{ c_n \}$ a sequence of positive real numbers such that $\sum_n c_n < \infty$.
+Prove that $f = \sum_n c_n f_n$ is subharmonic.  Make sure to prove
+the function is upper-semicontinuous.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \C$ is a bounded domain, and $\{ p_n \}$ a sequence of points in
+$U$. For $z \in U$, define $f(z) = \sum_n 2^{-n} \log \sabs{z-p_n}$, possibly taking on the
+value $-\infty$.
+\begin{exparts}
+\item
+Show that $f$ is a subharmonic function in $U$.
+\item
+If $U = \D$ and $p_n = \frac{1}{n}$, show that $f$ is discontinuous at 0
+(with the natural topology on $\R \cup \{ -\infty \}$).
+\item
+If $\{ p_n \}$ is dense in $U$, show that $f$ is
+is nowhere continuous.
+Hint: Consider the set where $f$ is $-\infty$, and the trick is to prove
+that it is a small (but dense) set.  Another hint is to try to integrate
+the partial sums, and use polar coordinates to integrate $\log \sabs{z}$.
+\end{exparts}
+\end{exercise}
 \end{exbox}
 
 %Recall from complex analysis in one variable that harmonic functions were
 %precisely (locally) the real and imaginary parts of holomorphic functions.
 There are too many
-harmonic functions in $\C^n$.  To get the real and imaginary parts of
+harmonic functions in $\C^n \cong \R^{2n}$.  To get the real and imaginary parts of
 holomorphic functions in $\C^n$,
 we require a smaller class of functions than all harmonic functions.
 
@@ -6474,6 +6547,16 @@ is subharmonic (whenever $a+b\xi \in U$).
 \glsadd{not:PSH}%
 The notation $PSH(U)$ is used to denote these functions.
 \end{defn}
+
+A harmonic function of one complex variable is in some sense a
+generalization of an affine linear function of one real variable.
+Similarly, as far as several complex variables are concerned, a
+pluriharmonic function is the right generalization to $\C^n$
+of an affine linear function on $\R^n$.
+In the same way plurisubharmonic functions are the correct complex variable generalizations
+of convex functions.  One real variable convex function is is like a
+subharmonic function, and a convex function of several real variables is
+a function that is convex when restricted to any real line.
 
 \begin{exbox}
 \begin{exercise}
@@ -6595,7 +6678,9 @@ contexts.
 
 \begin{proof}
 We smooth $f$ out by convolving with so-called
-\emph{mollifiers}\index{mollifier}.  Many different mollifiers 
+\emph{mollifiers}\index{mollifier}, or
+\emph{approximate delta functions}\index{approximate delta function}.
+Many different mollifiers 
 work, but let us use a very specific one for concreteness.
 For $\epsilon > 0$, define 
 \begin{equation*}
@@ -6628,11 +6713,18 @@ $\frac{1}{0.5}e^{-1/\bigl(1-{(x/0.5)}^2\bigr)}$, and
 $\frac{1}{0.25}e^{-1/\bigl(1-{(x/0.25)}^2\bigr)}$.
 
 \begin{myfig}
-\includegraphics[width=0.666\textwidth]{figures/graph-of-mollifier.pdf}
+\includegraphics[width=0.5\textwidth]{figures/graph-of-mollifier.pdf}
 \end{myfig}
 
+Compare the graphs to the graphs of the Poisson kernel as a function of
+$\theta$, which is also a type of mollifier.  In fact, the idea of
+integrating against the right approximate delta function with the desired properties
+is similar to the solution of the Dirichlet
+problem using the Poisson kernel.
+
 First $f$ is bounded above on compact sets as it is upper semicontinuous.
-If $f$ is not bounded below, we replace $f$ with $\max \{ f , 1/\epsilon
+If $f$ is not bounded below, we replace $f$ with $\max \{ f ,
+\frac{-1}{\epsilon}
 \}$, which is still plurisubharmonic.  Therefore, without loss of generality
 we assume that $f$ is locally bounded.
 
@@ -6649,7 +6741,7 @@ We are perhaps abusing notation a bit since $f$ is only defined on $U$,
 but it is not a problem as long as $z \in
 U_\epsilon$.
 By differentiating the first form under the integral, $f_\epsilon$ is smooth.
-Let us show that $f_\epsilon$ is plurisubharmonic.  We need to restrict to a
+Let us show that $f_\epsilon$ is plurisubharmonic.  We restrict to a
 line $\xi \mapsto a+b\xi$.
 We may translate and rotate by unitary matrices without affecting the setup.
 So without loss of generality, suppose that $a = 0$, $b = (1,0,\ldots,0)$,
@@ -6984,7 +7076,7 @@ $\bigcup_\alpha \Delta_\alpha \subset \subset U$ by convexity.
 Let us illustrate the failure of the continuity principle.  If the domain
 is not convex with respect to plurisubharmonic functions, then you could have
 discs (denoted by straight line segments) that approach the boundary as in
-the following picture.  In the diagram the boundaries of the discs are
+the following picture.  In the diagram, the boundaries of the discs are
 denoted by the dark dots at the end of the segments.
 
 \begin{myfig}
@@ -7719,7 +7811,7 @@ knowing anything about points outside of $U$.  Therefore, it is a much
 better way to think about domains of holomorphy.  In fact holomorphic
 convexity generalizes easily to more complicated complex
 manifolds\footnote{Manifolds with complex structure, that is, ``manifolds
-with multiplication by $i$ on the tangent space''.}, while
+with multiplication by $i$ on the tangent space.''}, while
 the notion of a domain of holomorphy only makes sense in $\C^n$.
 
 \begin{exbox}
@@ -7760,10 +7852,10 @@ Before we discuss the connection to holomorphic functions let us prove a simple
 lemma.
 
 \begin{lemma}
-Let $\R^n \subset \C^n$ be the natural inclusion and suppose
-$U \subset \C^n$ is a domain such that $U \cap \R^n \not= \emptyset$.
-Suppose $f,g \colon U \to \C$ be holomorphic functions such that
-$f=g$ on $U \cap \R^n$.  Then $f=g$ on all of $U$.
+Let $\R^n \subset \C^n$ be the natural inclusion and 
+$U \subset \C^n$ a domain such that $U \cap \R^n \not= \emptyset$.
+Suppose $f,g \colon U \to \C$ are holomorphic functions such that
+$f=g$ on $U \cap \R^n$.  Then $f=g$ on $U$.
 \end{lemma}
 
 \begin{proof}
