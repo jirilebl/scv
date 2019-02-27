@@ -4464,7 +4464,7 @@ such that $X_p \in T_p M$ for all $p \in M$.
 Before we move on, let us note how smooth maps transform tangent spaces.
 Given a smooth mapping 
 $f \colon U \subset \R^n \to \R^m$,
-the derivative at $p$ is a linear mapping of the 
+the derivative at $p$ is a linear mapping of
 the tangent spaces: $Df(p) \colon T_p \R^n \to T_{f(p)} \R^m$.
 That is, given $X_p \in T_p \R^n$, then 
 $Df(p) X_p$ should be in $T_{f(p)} \R^m$.
@@ -6498,14 +6498,16 @@ Prove that if $\varphi \colon \R \to \R$ is a monotonically increasing convex fu
 \begin{exercise}
 Suppose $U \subset \C$ is a domain, $\{ f_n \}$ a sequence of 
 subharmonic functions that is uniformly bounded above on compact subsets, and 
-$\{ c_n \}$ a sequence of positive real numbers such that $\sum_n c_n < \infty$.
-Prove that $f = \sum_n c_n f_n$ is subharmonic.  Make sure to prove
+$\{ c_n \}$ a sequence of positive real numbers such that
+$\sum_{n=1}^\infty c_n < \infty$.
+Prove that $f = \sum_{n=1}^\infty c_n f_n$ is subharmonic.  Make sure to prove
 the function is upper-semicontinuous.
 \end{exercise}
 
 \begin{exercise}
 Suppose $U \subset \C$ is a bounded domain, and $\{ p_n \}$ a sequence of points in
-$U$. For $z \in U$, define $f(z) = \sum_n 2^{-n} \log \sabs{z-p_n}$, possibly taking on the
+$U$. For $z \in U$, define
+$f(z) = \sum_{n=1}^\infty 2^{-n} \log \sabs{z-p_n}$, possibly taking on the
 value $-\infty$.
 \begin{exparts}
 \item
@@ -6514,7 +6516,7 @@ Show that $f$ is a subharmonic function in $U$.
 If $U = \D$ and $p_n = \frac{1}{n}$, show that $f$ is discontinuous at 0
 (with the natural topology on $\R \cup \{ -\infty \}$).
 \item
-If $\{ p_n \}$ is dense in $U$, show that $f$ is
+If $\{ p_n \}$ is dense in $U$, show that $f$ 
 is nowhere continuous.
 Hint: Consider the set where $f$ is $-\infty$, and the trick is to prove
 that it is a small (but dense) set.  Another hint is to try to integrate
@@ -6531,7 +6533,8 @@ holomorphic functions in $\C^n$,
 we require a smaller class of functions than all harmonic functions.
 
 \begin{defn}
-Twice differentiable function $f \colon U \subset \C^n \to \R$ is called
+Let $U \subset \C^n$ be open.
+A $C^2$-smooth $f \colon U \to \R$ is 
 \emph{\myindex{pluriharmonic}} if for every $a,b \in \C^n$, the function
 \begin{equation*}
 \xi \mapsto f(a+b\xi)
@@ -6539,7 +6542,7 @@ Twice differentiable function $f \colon U \subset \C^n \to \R$ is called
 is harmonic (on the set of $\xi \in \C$ where $a+b\xi \in U$).
 That is, $f$ is harmonic on every complex line.
 
-A function $f \colon U \subset \C^n \to \R \cup \{ -\infty \}$ is called
+A function $f \colon U \to \R \cup \{ -\infty \}$ is 
 \emph{\myindex{plurisubharmonic}}, sometimes \emph{\myindex{plush}}
 or \emph{\myindex{psh}} for short,
 if it is upper-semicontinuous and for every 
@@ -6548,8 +6551,8 @@ $a,b \in \C^n$, the function
 \xi \mapsto f(a+b\xi)
 \end{equation*}
 is subharmonic (whenever $a+b\xi \in U$).
-\glsadd{not:PSH}%
-The notation $PSH(U)$ is used to denote these functions.
+%\glsadd{not:PSH}%
+%The notation $PSH(U)$ is used to denote these functions.
 \end{defn}
 
 A harmonic function of one complex variable is in some sense a
@@ -6558,7 +6561,7 @@ Similarly, as far as several complex variables are concerned, a
 pluriharmonic function is the right generalization to $\C^n$
 of an affine linear function on $\R^n$.
 In the same way plurisubharmonic functions are the correct complex variable generalizations
-of convex functions.  One real variable convex function is is like a
+of convex functions.  One real variable convex function is like a
 subharmonic function, and a convex function of several real variables is
 a function that is convex when restricted to any real line.
 
@@ -6619,8 +6622,8 @@ point.
 \end{samepage}
 
 \begin{proof}
-Fix a point $p \in U$, and after translation assume $p=0$.
-After a holomorphic linear change of variables assume that
+Fix a point $p \in U$, and after a translation assume $p=0$.
+After a holomorphic linear change of coordinates assume that
 the complex Hessian
 $\left[
 \frac{\partial^2 f}{\partial \bar{z}_j \partial z_k}
@@ -6635,9 +6638,10 @@ is not plurisubharmonic.
 
 For the other direction, suppose the complex Hessian is positive
 semidefinite at all points.
-After a linear change of coordinates assume that the
+Let $p \in U$.  After an affine change of coordinates assume that the
 line $\xi \mapsto a+b\xi$ is simply setting all but the first variable to
-zero.  As the complex Hessian is positive semidefinite we have
+zero, that is $a=0$ and $b=(1,0,\ldots,0)$.
+As the complex Hessian is positive semidefinite,
 $\frac{\partial^2 f}{\partial \bar{z}_1 \partial z_1} \geq 0$ for all
 points $(z_1,0,\ldots,0)$.  We proved above that $\nabla^2 g \geq 0$
 implies $g$ is subharmonic, and we are done.
@@ -6918,7 +6922,7 @@ the theorem of
 Rad\'o.  It is sometimes covered in a one-variable course, but it is often
 skipped.  It is very useful in several variables and the proof is a direct
 application of the one-variable theory.
-It is a complementary theorem to the
+It is a complementary result to the
 Riemann extension theorem, when on the one hand the function is
 continuous and vanishes on the set you wish to extend across, but on the
 other hand you know nothing about this set.
@@ -6936,7 +6940,7 @@ Then $f \in \sO(U)$.
 First assume $n=1$.  As the theorem is local, it is
 enough to prove it for a small disc $\Delta$ such that $f$ is continuous
 on the closure $\overline{\Delta}$, let $\Delta'$ be the part of the disc
-where $f$ is nonzero as before.  If $\Delta'$ is empty, then we are done as
+where $f$ is nonzero.  If $\Delta'$ is empty, then we are done as
 $f$ is just identically zero and hence holomorphic.
 
 %Let us first show $\overline{\Delta'} = \overline{\Delta}$. Suppose
@@ -11269,7 +11273,7 @@ q(z',z_n) =
 ~d\zeta .
 \end{equation*}
 As $P$ is not zero on $V' \times \partial D$,
-the function $q$ is 
+the function $q$ 
 is holomorphic in $V$ (differentiate under the integral). 
 Write $f$ using the Cauchy integral in the last variable and
 subtract $Pq$ to obtain
@@ -13073,13 +13077,13 @@ If $f \colon U \to \C$ is holomorphic and $\sabs{f}$
 achieves a local maximum in $U$, then $f$ is constant.
 \item
 If $U$ is bounded and $f \colon \overline{U} \to \C$ is holomorphic in $U$
-and continuous, then then $\sabs{f}$ achieves its maximum on $\partial U$.
+and continuous, then $\sabs{f}$ achieves its maximum on $\partial U$.
 \item
 If $f \colon U \to \R$ is harmonic 
 achieves a local maximum or a minimum in $U$, then $f$ is constant.
 \item
 If $U$ is bounded and $f \colon \overline{U} \to \R$ is harmonic in $U$
-and continuous, then then $f$ achieves its maximum and minimum on $\partial U$.
+and continuous, then $f$ achieves its maximum and minimum on $\partial U$.
 \end{enumerate}
 \end{thm}
 
