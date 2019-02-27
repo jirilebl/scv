@@ -515,7 +515,8 @@ for real numbers,
 numbers,
 \glsadd{not:i}$i = \sqrt{-1}$, etc.  Throughout this book, we will use
 the standard terminology of \emph{\myindex{domain}} to mean connected open
-set.
+set.  We will try to avoid using it if connectedness is not needed, but
+sometimes we use it just for simplicity.
 
 As complex analysis deals with the complex numbers, perhaps we should start
 with $\sqrt{-1}$.  We start with the real numbers, $\R$, and wish to add
@@ -953,7 +954,7 @@ Given $a \in \C$ and $\rho > 0$, define the disc of radius $\rho$ around $a$
 \overset{\text{def}}{=}
 \bigl\{ z \in \C : \sabs{z-a} < \rho \bigr\} .
 \end{equation*}
-Suppose $U \subset \C$ is a domain, $f \colon U \to \C$ is holomorphic,
+Suppose $U \subset \C$ is open, $f \colon U \to \C$ is holomorphic,
 $a \in U$, and $\overline{\Delta_\rho(a)} \subset U$ (that is, the closure
 of the disc is in $U$, and so its boundary $\partial \Delta_\rho(a)$ is also in $U$).
 
@@ -2113,8 +2114,8 @@ is called the
 \emph{\myindex{domain of convergence}}.
 In one variable, every domain of convergence is a disc, and hence it is
 described with a single number (the radius).
-In several variables, the domain where a series
-converges is not as easy to describe.
+In several variables, the domain of convergence
+is not as easy to describe.
 %We content ourselves for now with
 %a few simple examples.
 For the multivariable geometric series 
@@ -3405,7 +3406,7 @@ different groups when $n \geq 2$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:boundedeigen}
-Suppose $U \subset \C^n$ is a bounded domain, $a \in U$, and $f \colon U \to U$ is a
+Suppose $U \subset \C^n$ is a bounded open set, $a \in U$, and $f \colon U \to U$ is a
 holomorphic mapping such that $f(a) = a$.  Show that every eigenvalue
 $\lambda$ of the matrix $Df(a)$ satisfies $\sabs{\lambda} \leq 1$.
 \end{exercise}
@@ -3437,7 +3438,7 @@ $R'(0) = \alpha$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \C^n$ is a domain, $a \in U$.
+Suppose $U \subset \C^n$ is an open set, $a \in U$.
 Suppose $f \colon U \to U$ is a holomorphic mapping,
 $f(a) = a$, and suppose that $\sabs{\lambda} < 1$
 for any eigenvalue $\lambda$ of
@@ -3669,12 +3670,12 @@ smooth setting: $x \mapsto x^3$ is smooth, one-to-one, onto map
 of $\R$ to $\R$, but the inverse is not differentiable.
 
 \begin{thm} \label{thm:injective}
-Suppose $U \subset \C^n$ is a domain and $f \colon U \to \C^n$ is
+Suppose $U \subset \C^n$ is an open set and $f \colon U \to \C^n$ is
 holomorphic and one-to-one.  Then the Jacobian determinant is never equal to zero 
 on $U$.
 
 In particular if a holomorphic map $f \colon U \to V$ is
-one-to-one and onto for two domains $U,V \subset \C^n$, then $f$ is
+one-to-one and onto for two open sets $U,V \subset \C^n$, then $f$ is
 biholomorphic.
 \end{thm}
 
@@ -3853,9 +3854,12 @@ that is proper subsets of $\C^n$ that are biholomorphic to $\C^n$.
 It turns out that not every domain in $\C^n$ is a natural domain for
 holomorphic functions.
 
-\begin{defn}
-Let $U \subset \C^n$ be a domain (connected open set).  The set $U$ is
-called a \emph{\myindex{domain of holomorphy}} if there do not exist
+\begin{defn} \label{defn:domainofhol}
+Let $U \subset \C^n$ be a domain\footnote{\emph{Domain of
+holomorphy} can make sense for disconnected sets (non-domains), and some authors
+do define it so.}
+(connected open set).  The set $U$ is
+a \emph{\myindex{domain of holomorphy}} if there do not exist
 nonempty open sets
 $V$ and $W$, with $V \subset U \cap W$, $W \not\subset U$, and $W$
 connected, such that for every $f \in \sO(U)$ there exists an $F \in
@@ -3887,7 +3891,7 @@ so $F$ must blow up (in particular it cannot be holomorphic) at
 $p$.  The contradiction shows that no $V$ and $W$ exist.
 \end{example}
 
-In one dimension this notion has no real content.  Every domain is a domain
+In one dimension this notion has no real content: Every domain is a domain
 of holomorphy.
 
 \begin{exbox}
@@ -3897,10 +3901,10 @@ In $\C$, every domain is a domain of holomorphy.
 
 \begin{exercise}
 If $U_j \subset \C^n$ are domains of holomorphy (possibly an infinite set of
-domains), then the intersection
-\begin{equation*}
-\bigcap_{j} U_j
-\end{equation*}
+domains), then the interior of
+%\begin{equation*}
+$\bigcap_{j} U_j$
+%\end{equation*}
 is either empty or every connected component is a domain of holomorphy.
 \pagebreak[1]
 \end{exercise}
@@ -3952,7 +3956,7 @@ exists a function $F \in \sO(V)$ such that $f = F$ on
 $U$.
 
 \begin{remark}
-The subtlety of the definition of domain of holomorphy is that it does not
+The subtlety of the definition of a domain of holomorphy is that it does not
 necessarily talk about functions extending to a larger set, since we must
 take into account single-valuedness.  For example, let $f$ be the principal branch
 of the logarithm defined on the slit plane
@@ -4248,10 +4252,10 @@ differentiable function $r \colon V \to
 such that $M \cap V = \bigl\{ x \in V : r(x) = 0 \bigr\}$.  The function $r$ is
 called the \emph{\myindex{defining function}} (at $p$).
 
-A domain $U$ with
+An open set (or domain) $U$ with
 \emph{$C^k$-smooth boundary}%
 \index{Ck-smooth boundary@$C^k$-smooth boundary}
-is a domain where
+is a set where
 $\partial U$ is a $C^k$-smooth hypersurface,
 and for every $p \in \partial U$ there is a defining
 function $r$ such that
@@ -4259,7 +4263,8 @@ $r < 0$ for points in $U$ and $r > 0$
 for points not in $U$.
 
 If we say simply
-\index{domain with smooth boundary}
+\index{domain with smooth boundary}%
+\index{open set with smooth boundary}%
 \emph{smooth}\index{smooth boundary},
 \glsadd{not:Cinfty}%
 we mean $C^\infty$-smooth,\index{Cinfinity-smooth@$C^\infty$-smooth}
@@ -4282,7 +4287,7 @@ hypersurface if it is locally a set defined by
 $x_j = \varphi(x_1,\ldots,x_{j-1},x_{j+1},\ldots,x_n)$ for some $j$ and some
 smooth function $\varphi$.
 
-Notice that the definition of a domain with smooth boundary is not just that the
+Notice that the definition of an open set with smooth boundary is not just that the
 boundary is a smooth hypersurface, that is not enough.  It also says that 
 one side of that hypersurface is in $U$ and one side is not in $U$.  That is
 because if the derivative of $r$ never vanishes, then $r$ must have
@@ -4293,7 +4298,8 @@ gradient points to).
 Same definition works for $\C^n$, where we treat $\C^n$ as $\R^{2n}$.
 For example, the ball $\bB_n$ is a domain with smooth boundary with defining
 function $r(z,\bar{z}) = \snorm{z}^2-1$.  We can, in fact, find a
-single global defining function for every domain, but we have no need of this.
+single global defining function for every open set with smooth boundary,
+but we have no need of this.
 In $\C^n$
 a hypersurface defined as above is a \emph{\myindex{real hypersurface}},
 to distinguish it from a complex hypersurface that would be the zero set of
@@ -4514,7 +4520,7 @@ let us define convexity
 for domains with smooth boundary.
 
 \begin{defn}
-Suppose $U \subset \R^n$ is a domain with
+Suppose $U \subset \R^n$ is an open set with
 smooth boundary, %$C^k$-smooth boundary, $k \geq 2$,
 and 
 $r$ is a defining function for $\partial U$ at $p \in \partial
@@ -4531,7 +4537,7 @@ then $U$ is said to be \emph{\myindex{convex}} at $p$.  If the inequality
 above is strict for all nonzero $X_p \in T_p \partial U$, then $U$ is said to be
 \emph{\myindex{strongly convex}} at $p$.
 
-The domain $U$ is \emph{convex} if it is convex at all $p \in \partial U$.
+A domain $U$ is \emph{convex} if it is convex at all $p \in \partial U$.
 If $U$ is bounded\footnote{Matters are a little more complicated
 with the ``strong'' terminology if $U$ is unbounded.}, we say
 $U$ is \emph{strongly convex} if it is strongly convex at all $p \in
@@ -4572,9 +4578,9 @@ then there is a smooth function $g > 0$ such that $\tilde{r} = g r$.
 \end{exercise}
 
 \begin{exercise}
-Show that if a domain is strongly convex at a point, then it is
+Show that if an open set with smooth boundary is strongly convex at a point, then it is
 strongly convex at all nearby points.  On the other hand find an example of
-a domain that is convex at one point $p$, but not convex at points
+an open set with smooth boundary that is convex at one point $p$, but not convex at points
 arbitrarily near $p$.
 \end{exercise}
 \end{exbox}
@@ -4694,7 +4700,7 @@ $\varphi$ is a smooth %$C^k$
 function that is $O(2)$ at the origin,
 that is $\varphi(0) = 0$ and $d\varphi(0) = 0$.
 
-If $M$ is the boundary of a domain $U$ with smooth boundary and
+If $M$ is the boundary of an open set $U$ with smooth boundary and
 $r < 0$ on $U$,
 then the rotation can be chosen
 such that for points in $U$ we have $y > \varphi(x)$.
@@ -4770,7 +4776,7 @@ $M$ as
 y = \frac{1}{2}\, x^t H x + E(x) .
 \end{equation*}
 If $M$ is the boundary
-$\partial U$ of a domain, then
+$\partial U$ of an open set, then
 we pick the rotation so that $y > \frac{1}{2}\,x^t H x + E(x)$ on $U$.
 It is an easy exercise to show that $U$ is convex at $p$ if
 $H$ positive semidefinite, and $U$ is strongly convex at $p$ if $H$ is positive definite.
@@ -5081,7 +5087,7 @@ In particular,
 $\dim_\C T_p^{(1,0)} M = \dim_\C T_p^{(0,1)} M = n-1$ and 
 $\dim_\C B_p = 1$.
 
-If $M$ is the boundary of a domain $U$ with smooth boundary,
+If $M$ is the boundary of a open set $U$ with smooth boundary,
 the rotation can be chosen so that
 $\Im w > \varphi(z,\bar{z},\Re w)$ on $U$.
 \pagebreak[2]
@@ -5114,7 +5120,7 @@ hypersurfaces, and this complication does not arise.
 \end{remark}
 
 \begin{defn}
-Suppose $U \subset \C^n$ is a domain with
+Suppose $U \subset \C^n$ is an open set with
 smooth boundary, %$C^k$-smooth boundary, $k \geq 2$,
 and $r$ is a defining function for $\partial U$ at $p \in \partial
 U$ such that $r < 0$ on $U$.
@@ -5136,10 +5142,11 @@ above is strict for all nonzero $X_p \in T^{(1,0)}_p \partial U$, then $U$ is sa
 If $U$ is pseudoconvex, but not strongly pseudoconvex at $p$, then we 
 say that $U$ is \emph{\myindex{weakly pseudoconvex}}.
 
-The domain $U$ is pseudoconvex if it is pseudoconvex at all $p \in \partial U$.
+A domain $U$ is \emph{pseudoconvex} if it is pseudoconvex at all $p \in \partial U$.
 For a bounded\footnote{The definition for unbounded domains is not
 consistent in the literature.
-Sometimes \emph{\myindex{strictly pseudoconvex}} is used.} $U$, we say $U$ is strongly pseudoconvex if it is strongly pseudoconvex at all $p \in \partial U$.
+Sometimes \emph{\myindex{strictly pseudoconvex}} is used.} $U$, we say $U$
+is \emph{strongly pseudoconvex} if it is strongly pseudoconvex at all $p \in \partial U$.
 
 For $X_p \in T^{(1,0)}_p\partial U$, the sesquilinear form
 \glsadd{not:Leviform}%
@@ -5293,7 +5300,7 @@ even though that is not completely correct.
 The proof of the following proposition is left as an exercise.
 
 \begin{prop} \label{prop:inertiainvariant}
-Let $U \subset \C^n$ be a domain with smooth boundary and $p \in \partial
+Let $U \subset \C^n$ be an open set with smooth boundary and $p \in \partial
 U$.  The inertia  of the Levi form at $p$
 does not depend on the defining function at $p$.
 In particular, the definition of pseudoconvexity and strong pseudoconvexity is
@@ -5316,13 +5323,13 @@ Prove \propref{prop:inertiainvariant}.
 \end{exercise}
 
 \begin{exercise}
-Show that a convex domain is pseudoconvex, and show that (a bounded)
-strongly convex
-domain is strongly pseudoconvex.
+Show that a convex domain with smooth boundary
+is pseudoconvex, and show that (a bounded) strongly convex
+domain with smooth boundaryis strongly pseudoconvex.
 \end{exercise}
 
 \begin{exercise}
-Show that if a domain is strongly pseudoconvex at a point, it is strongly
+Show that if an open set with smooth boundary is strongly pseudoconvex at a point, it is strongly
 pseudoconvex at all nearby points.
 \end{exercise}
 \end{exbox}
@@ -5443,9 +5450,9 @@ In the coordinates $(z,w)$, the ball (the inside of the sphere) is the set given
 \end{equation*}
 
 In these new coordinates, the Levi form is just the identity matrix at the
-origin.  In particular the domain is strictly pseudoconvex.
+origin.  In particular the domain is strongly pseudoconvex.
 We have not yet proved that pseudoconvexity is a biholomorphic invariant,
-but when we do, it will also mean that the ball is strictly pseudoconvex.
+but when we do, it will also mean that the ball is strongly pseudoconvex.
 
 Of course not the entire sphere gets transformed, the points where $Z_n=1$
 get ``sent to infinity.''
@@ -5621,7 +5628,7 @@ We have almost proved the following theorem.  In short, pseudoconvexity is a
 biholomorphic invariant.
 
 \begin{thm}
-Suppose $U, U' \subset \C^n$ are domains with smooth boundary,
+Suppose $U, U' \subset \C^n$ are open sets with smooth boundary,
 $p \in \partial U$, $V \subset \C^n$ a neighborhood of $p$,
 $q \in \partial U'$, $V' \subset \C^n$ a neighborhood of $q$,
 and $f \colon V \to V'$ a biholomorphic map with $f(p) = q$, such that
@@ -5911,7 +5918,7 @@ Prove the assertion in the proof, that is, if $q$ is a quadratic as in
 \begin{lemma}[Narasimhan's lemma\index{Narasimhan's lemma}%
 \footnote{A statement essentially of Narasimhan's lemma was already used by Helmut
 Knesser in 1936.}]
-Let $U \subset \C^n$ be a domain with smooth boundary
+Let $U \subset \C^n$ be a an open set with smooth boundary
 that is strongly pseudoconvex at $p \in \partial U$.  Then there exists a local biholomorphic change of
 coordinates fixing $p$ such that in these new coordinates, $U$ is strongly
 convex at $p$ and hence strongly convex at all points near $p$.
@@ -5923,7 +5930,7 @@ Prove the above lemma.  Hint: See the proof of \lemmaref{lemma:normformquad}.
 \end{exercise}
 
 \begin{exercise}
-Prove that a domain $U \subset \C^n$ with smooth boundary is pseudoconvex at
+Prove that an open $U \subset \C^n$ with smooth boundary is pseudoconvex at
 $p$ if and only if there exist local holomorphic coordinates at $p$ such that 
 $U$ is convex at $p$.
 \end{exercise}
@@ -5931,8 +5938,8 @@ $U$ is convex at $p$.
 
 Narasimhan's lemma only works at points of strong
 pseudoconvexity.  For weakly pseudoconvex points the situation is far more
-complicated.  The difficulty is that we cannot make a domain
-weakly pseudoconvex at $p$ to be convex at all points nearby $p$.
+complicated.  The difficulty is that we cannot make a $U$ that
+weakly pseudoconvex at all points near $p$ to be convex at all points near $p$.
 
 \medskip
 
@@ -5956,7 +5963,7 @@ of the hard direction.
 
 \begin{thm}[Tomato can principle\index{tomato can principle}] \label{thm:tomatocan}
 Suppose
-$U \subset \C^n$ is a domain with smooth boundary and at some point $p \in
+$U \subset \C^n$ is an open set with smooth boundary and at some point $p \in
 \partial U$ the Levi form has a negative eigenvalue.
 Then every holomorphic function on $U$
 extends to a neighborhood of $p$.
@@ -6061,7 +6068,7 @@ where it is strongly pseudoconvex.
 \end{exercise}
 
 \begin{exercise}
-Let $U \subset \C^n$ be a domain with smooth boundary that is
+Let $U \subset \C^n$ be an open set with smooth boundary that is
 strongly pseudoconvex at $p \in \partial U$.  Show that there
 exists a neighborhood $W$ of $p$ and a smooth function $f \colon
 \overline{W \cap U} \to \C$ that is holomorphic on $W \cap U$
@@ -6070,7 +6077,7 @@ $z \in \overline{W \cap U} \setminus \{ p \}$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \C^n$ is a domain with smooth boundary.  Suppose
+Suppose $U \subset \C^n$ is an open set with smooth boundary.  Suppose
 for $p \in \partial U$, there is a neighborhood $W$ of $p$
 and a holomorphic function $f \colon W \to
 \C$ such that $df(p) \not= 0$, $f(p) = 0$, but
@@ -6093,8 +6100,8 @@ Levi-flat.
 
 \begin{exbox}
 \begin{exercise}
-Suppose $U = V \times \C^{n-1} \subset \C^n$, where $V \subset \C$ is a domain
-with smooth boundary.  Show that $U$ is has a smooth Levi-flat boundary.
+Suppose $U = V \times \C^{n-1} \subset \C^n$, where $V \subset \C$ is an
+open set with smooth boundary.  Show that $U$ is has a smooth Levi-flat boundary.
 \end{exercise}
 
 \begin{exercise}
@@ -6102,7 +6109,7 @@ Prove that a real hyperplane is Levi-flat.
 \end{exercise}
 
 \begin{exercise}
-Let $f \in \sO(U)$ for some domain $U \subset \C^n$.
+Let $f \in \sO(U)$ for some domain $U \subset \C^n$, $f \not\equiv 0$.
 Let $M = \bigl\{ z \in U : \Im f(z) = 0 \bigr\}$.  Show that
 if $df(p) \not=0$ for some $p \in M$, then near $p$,
 $M$ is a Levi-flat hypersurface.
@@ -6117,7 +6124,7 @@ Prove that $p$ is not an isolated point of $L \cap M$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \C^n$ is a domain with smooth boundary
+Suppose $U \subset \C^n$ is an open set with smooth boundary
 and $\partial U$ is Levi-flat.
 Show that $U$ is unbounded.
 Hint: If $U$ were bounded, consider the point on $\partial U$ farthest from
@@ -6365,6 +6372,12 @@ then
 \qquad \text{for all $z \in U$.}
 \end{equation*}
 \end{exercise}
+
+\begin{exercise} \label{exercise:fminusgsubharmonic}
+Suppose $U \subset \C$ is open and $g \colon U \to \R$ is harmonic.
+Then $f \colon U \to \R \cup \{ -\infty \}$ is subharmonic if and only if $f-g$
+is subharmonic.
+\end{exercise}
 \end{exbox}
 
 \begin{prop}[Maximum principle]
@@ -6388,6 +6401,16 @@ and so the set where $f=f(a)$ is open.  The set where an upper-semicontinuous
 function attains a maximum is closed.  So $f=f(a)$ on $U$ as $U$ is
 connected.
 \end{proof}
+
+\begin{exbox}
+\begin{exercise}
+Prove that subharmonicity is a local property.  That is, given an open set
+$U \subset \C$, a function $f \colon U \to \R \cup \{ -\infty \}$ is subharmonic if
+and only if for every $p \in U$ there exists a neighborhood $W$ of $p$,
+$W \subset U$, such that $f|_{W}$ is subharmonic.  Hint: Perhaps try to use
+the maximum principle and \exerciseref{exercise:fminusgsubharmonic}.
+\end{exercise}
+\end{exbox}
 
 
 %We will need some results about subharmonic functions, let's prove them for
@@ -6467,7 +6490,7 @@ real variable is convex if and only if $f''(x) \geq 0$ for all $x$.
 
 \pagebreak[2]
 \begin{prop}
-Suppose $U \subset \C$ is a domain and $f_\alpha \colon U \to \R \cup \{ -\infty \}$
+Suppose $U \subset \C$ is an open set and $f_\alpha \colon U \to \R \cup \{ -\infty \}$
 is a family of subharmonic functions.  Let
 \begin{equation*}
 \varphi(z) = \sup_\alpha\, f_\alpha(z) .
@@ -6491,12 +6514,13 @@ Taking the supremum on the right over $\alpha$ obtains the results.
 
 \begin{exbox}
 \begin{exercise}
-Prove that if $\varphi \colon \R \to \R$ is a monotonically increasing convex function and $f \colon U \subset
-\C \to \R$ is subharmonic, then $\varphi \circ f$ is subharmonic.
+Prove that if $\varphi \colon \R \to \R$ is a monotonically increasing
+convex function, $U \subset \C$ is an open set, and $f \colon U \to \R$
+is subharmonic, then $\varphi \circ f$ is subharmonic.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \C$ is a domain, $\{ f_n \}$ a sequence of 
+Suppose $U \subset \C$ is an open set, $\{ f_n \}$ a sequence of 
 subharmonic functions that is uniformly bounded above on compact subsets, and 
 $\{ c_n \}$ a sequence of positive real numbers such that
 $\sum_{n=1}^\infty c_n < \infty$.
@@ -6505,7 +6529,7 @@ the function is upper-semicontinuous.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \C$ is a bounded domain, and $\{ p_n \}$ a sequence of points in
+Suppose $U \subset \C$ is a bounded open set, and $\{ p_n \}$ a sequence of points in
 $U$. For $z \in U$, define
 $f(z) = \sum_{n=1}^\infty 2^{-n} \log \sabs{z-p_n}$, possibly taking on the
 value $-\infty$.
@@ -6536,6 +6560,7 @@ we require a smaller class of functions than all harmonic functions.
 Let $U \subset \C^n$ be open.
 A $C^2$-smooth $f \colon U \to \R$ is 
 \emph{\myindex{pluriharmonic}} if for every $a,b \in \C^n$, the function
+of one variable
 \begin{equation*}
 \xi \mapsto f(a+b\xi)
 \end{equation*}
@@ -6546,7 +6571,7 @@ A function $f \colon U \to \R \cup \{ -\infty \}$ is
 \emph{\myindex{plurisubharmonic}}, sometimes \emph{\myindex{plush}}
 or \emph{\myindex{psh}} for short,
 if it is upper-semicontinuous and for every 
-$a,b \in \C^n$, the function
+$a,b \in \C^n$, the function of one variable
 \begin{equation*}
 \xi \mapsto f(a+b\xi)
 \end{equation*}
@@ -6567,7 +6592,8 @@ a function that is convex when restricted to any real line.
 
 \begin{exbox}
 \begin{exercise}
-A $C^2$-smooth function $f \colon U \subset \C^n \to \R$ is pluriharmonic if and
+Let $U \subset \C^n$ be open.
+A $C^2$-smooth $f \colon U \to \R$ is pluriharmonic if and
 only if
 \begin{equation*}
 \frac{\partial^2 f}{\partial \bar{z}_j \partial z_k} = 0
@@ -6583,7 +6609,8 @@ example of a harmonic function that is not pluriharmonic.
 \end{exercise}
 
 \begin{exercise}
-Show that $f \colon U \subset \C^n \to \R$ is pluriharmonic if and
+Let $U \subset \C^n$ be open.
+Show that $f \colon U \to \R$ is pluriharmonic if and
 only if it is locally the real or imaginary part of a holomorphic function.
 Hint:  Using a previous exercise
 $\frac{\partial f}{\partial z_k}$ is holomorphic for all $k$.
@@ -6609,7 +6636,8 @@ plurisubharmonic and achieves a maximum at $p \in U$, then $f$ is constant.
 
 \begin{samepage}
 \begin{prop}
-A $C^2$-smooth function $f \colon U \subset \C^n \to \R$ is plurisubharmonic
+Let $U \subset \C^n$ be open.
+A $C^2$-smooth $f \colon U \to \R$ is plurisubharmonic
 if and only if the complex Hessian matrix
 \begin{equation*}
 \left[
@@ -6622,16 +6650,25 @@ point.
 \end{samepage}
 
 \begin{proof}
-Fix a point $p \in U$, and after a translation assume $p=0$.
-After a holomorphic linear change of coordinates assume that
-the complex Hessian
+First let us suppose that the complex Hessian has a negative eigenvalue at
+a point $p \in U$.
+After a translation assume $p=0$.
+As $f$ is real-valued, the complex Hessian
+$\left[
+\frac{\partial^2 f}{\partial \bar{z}_j \partial z_k}
+\Big|_0
+\right]_{jk}$ is Hermitian.  A complex linear change of coordinates
+acts on the complex Hessian by $*$-congruence, and therefore we can
+diagonalize,
+using Sylvester's Law of Inertia again.
+So assume that 
 $\left[
 \frac{\partial^2 f}{\partial \bar{z}_j \partial z_k}
 \Big|_0
 \right]_{jk}$ is diagonal.  If the complex Hessian has a negative eigenvalue, then
 one of the diagonal entries is negative.
 Without loss of generality suppose
-$\frac{\partial^2 f}{\partial \bar{z}_1 \partial z_1} < 0$ at the origin.
+$\frac{\partial^2 f}{\partial \bar{z}_1 \partial z_1}\Big|_0 < 0$.
 The function $z_1 \mapsto f(z_1,0,\ldots,0)$ has
 a negative Laplacian and therefore is not subharmonic, and thus $f$ itself
 is not plurisubharmonic.
@@ -6649,7 +6686,7 @@ implies $g$ is subharmonic, and we are done.
 
 \begin{exbox}
 \begin{exercise} \label{exercise:modholplush}
-Suppose $f \colon U \subset \C^n \to \C$ is holomorphic.
+Suppose $U \subset \C^n$ is open and $f \colon U \to \C$ is holomorphic.
 \begin{exparts}
 \item
 Show $\log \sabs{f(z)}$ is plurisubharmonic.  In fact, it is pluriharmonic away from the zeros of $f$.
@@ -6659,7 +6696,7 @@ Show $\sabs{f(z)}^{\eta}$ is plurisubharmonic for all $\eta > 0$.
 \end{exercise}
 
 \begin{exercise}
-Show that the set of plurisubharmonic functions on a domain $U \subset \C^n$
+Show that the set of plurisubharmonic functions on an open set $U \subset \C^n$
 is a cone in the sense that if $a,b > 0$ are constants and
 $f, g \colon U \to \R \cup \{ -\infty \}$ are plurisubharmonic, then
 $a f + b g$ is plurisubharmonic.
@@ -6668,7 +6705,7 @@ $a f + b g$ is plurisubharmonic.
 
 \pagebreak[2]
 \begin{thm} \label{thm:subharlim}
-Suppose $U \subset \C^n$ is a domain and $f \colon U \to \R \cup \{
+Suppose $U \subset \C^n$ is an open set and $f \colon U \to \R \cup \{
 -\infty \}$ is plurisubharmonic.  For every $\epsilon > 0$,
 let $U_\epsilon \subset U$
 be the set of points further than $\epsilon$ away from $\partial U$.
@@ -6751,26 +6788,25 @@ U_\epsilon$.
 By differentiating the first form under the integral, $f_\epsilon$ is smooth.
 Let us show that $f_\epsilon$ is plurisubharmonic.  We restrict to a
 line $\xi \mapsto a+b\xi$.
-We may translate and rotate by unitary matrices without affecting the setup.
-So without loss of generality, suppose that $a = 0$, $b = (1,0,\ldots,0)$,
-and that we are testing subharmonicity on a disc of radius $r$ around $\xi = 0$.
+We wish to test subharmonicity by the sub-mean-value property using a disc
+of radius $r$ around $\xi = 0$:
 \begin{equation*}
 \begin{split}
-\frac{1}{2\pi} \int_0^{2\pi} f_\epsilon(re^{i\theta},0,\ldots,0)\, d\theta & =
+\frac{1}{2\pi} \int_0^{2\pi} f_\epsilon(a+bre^{i\theta})\, d\theta & =
 \frac{1}{2\pi} \int_0^{2\pi}
 \int_{\C^n}
-f(re^{i\theta}-w_1,-w_2,\ldots,-w_n) g_\epsilon (w) \, dV(w) 
+f\bigl(a+bre^{i\theta}-w\bigr) g_\epsilon (w) \, dV(w) 
 \,d\theta
 \\
 & =
 \int_{\C^n}
 \left(
 \frac{1}{2\pi} \int_0^{2\pi}
-f(re^{i\theta}-w_1,-w_2,\ldots,-w_n) \, d\theta \right) g_\epsilon (w) \, dV(w) 
+f\bigl(a-w+bre^{i\theta}\bigr) \, d\theta \right) g_\epsilon (w) \, dV(w) 
 \\
 & \geq 
 \int_{\C^n}
-f(-w_1,-w_2,\ldots,-w_n) g_\epsilon (w) \, dV(w)  = f_\epsilon(0).
+f(a-w) g_\epsilon (w) \, dV(w)  = f_\epsilon(a).
 \end{split}
 \end{equation*}
 For the inequality we used $g_\epsilon \geq 0$.
@@ -6780,7 +6816,7 @@ As $g_\epsilon(w)$ only depends on $\sabs{w_1},\ldots,\sabs{w_n}$, we notice
 that
 $g_\epsilon(w_1,\ldots,w_n) =
 g_\epsilon(\sabs{w_1},\ldots,\sabs{w_n})$.
-Without loss of generality we consider $z=0$:
+Without loss of generality we consider $z=0$, and we use polar coordinates:
 \begin{equation*}
 \begin{split}
 f_\epsilon(0)
@@ -6829,7 +6865,7 @@ f(0)
 g_\epsilon (r_1,\ldots,r_n) \,
  r_1 \cdots r_n \,d r_1 \cdots d r_n
 \\
-& = f(0) \int_{\C^n} g_\epsilon (w) d(w)
+& = f(0) \int_{\C^n} g_\epsilon (w) dV(w)
 \\
 & = f(0) .
 \end{split}
@@ -6882,7 +6918,9 @@ decreasing in $\epsilon$.
 \end{exercise}
 
 \begin{exercise}
-If $g \colon U \subset \C^n \to V \subset \C^m$ is holomorphic and $f
+Let $U \subset \C^n$
+and $V \subset \C^m$ be open.
+If $g \colon U \to V$ is holomorphic and $f
 \colon V \to \R$ is a $C^2$ plurisubharmonic function, then 
 $f \circ g$ is plurisubharmonic.
 Then use this to show that
@@ -7004,7 +7042,8 @@ then $f \circ \varphi$ is subharmonic.
 
 \begin{defn}
 Let $\sF$ be a class of (extended\footnote{%
-By extended reals we mean $\R \cup \{ -\infty,\infty\}$.})-real-valued functions defined on $U \subset \R^n$.  If $K
+By extended reals we mean $\R \cup \{ -\infty,\infty\}$.})-real-valued
+functions defined on an open $U \subset \R^n$.  If $K
 \subset U$, define $\widehat{K}$, the \emph{\myindex{hull}} of $K$ with
 respect to $\sF$, as the set
 \glsadd{not:Khat}%
@@ -7013,7 +7052,7 @@ respect to $\sF$, as the set
 \text{ for all $f \in \sF$ } \Bigr\} .
 \end{equation*}
 
-A domain $U$ is said to be \emph{convex with respect to $\sF$}\index{convex!with respect to $\sF$}
+An open set $U$ is said to be \emph{convex with respect to $\sF$}\index{convex!with respect to $\sF$}
 if for every $K \subset \subset U$, the hull $\widehat{K} \subset \subset U$.%
 \footnote{Recall that $\subset \subset$ means relatively compact.}
 \end{defn}
@@ -7038,7 +7077,7 @@ convex with respect to the convex functions on $U$.
 \end{exercise}
 
 \begin{exercise}
-Show that any domain $U \subset \R^n$ is convex with respect to real
+Show that any open set $U \subset \R^n$ is convex with respect to real
 polynomials.
 % in real variables $x_1,\ldots,x_n$.  Hint: Weierstrass
 %approximation theorem makes this easy. (would be too easy)
@@ -7053,7 +7092,7 @@ polynomials.
 
 \begin{thm}[Kotinuit\"atssatz---Continuity
 principle\index{Kotinuit\"atssatz}\index{continuity principle}]
-Suppose $U \subset \C^n$ is convex with respect to plurisubharmonic
+Suppose an open set $U \subset \C^n$ is convex with respect to plurisubharmonic
 functions,
 then given any collection of closed analytic discs $\Delta_\alpha$
 such that $\bigcup_\alpha \partial \Delta_\alpha \subset \subset U$,
@@ -7063,7 +7102,7 @@ $\bigcup_\alpha \Delta_\alpha \subset \subset U$.
 
 Various similar theorems are named the \emph{continuity principle}.
 Generally what they have in common is the family of analytic discs whose
-boundaries stay inside the domain, and whose conclusion has to do
+boundaries stay inside a domain, and whose conclusion has to do
 with extension of holomorphic functions, or domains of holomorphy.
 
 \begin{proof}
@@ -7081,7 +7120,7 @@ $\bigcup_\alpha \partial \Delta_\alpha$ and therefore
 $\bigcup_\alpha \Delta_\alpha \subset \subset U$ by convexity.
 \end{proof}
 
-Let us illustrate the failure of the continuity principle.  If the domain
+Let us illustrate the failure of the continuity principle.  If a domain
 is not convex with respect to plurisubharmonic functions, then you could have
 discs (denoted by straight line segments) that approach the boundary as in
 the following picture.  In the diagram, the boundaries of the discs are
@@ -7092,7 +7131,7 @@ denoted by the dark dots at the end of the segments.
 \end{myfig}
 
 \begin{defn}
-Let $U \subset \C^n$ be a domain.  An $f \colon U \to \R$ is an \emph{\myindex{exhaustion function}} for $U$ if
+Let $U \subset \C^n$ be open.  An $f \colon U \to \R$ is an \emph{\myindex{exhaustion function}} for $U$ if
 \begin{equation*}
 \bigl\{ z \in U : f(z) < r \bigr\} \subset \subset U
 \qquad \text{for every $r \in \R$.}
@@ -7623,7 +7662,7 @@ define the
 \sup_{w\in K} \sabs{f(w)}
 \text{ for all $f \in \sO(U)$}  \Bigr\} .
 \end{equation*}
-The domain $U$ is \emph{\myindex{holomorphically convex}} if whenever
+A domain $U$ is \emph{\myindex{holomorphically convex}} if whenever
 $K \subset \subset U$, then $\widehat{K}_U \subset \subset U$.
 In other words, $U$ is holomorphically convex if it is convex with
 respect to moduli of holomorphic functions on $U$.\footnote{Sometimes simply
@@ -7801,7 +7840,8 @@ j
 \end{equation*}
 So $\lim_{j\to\infty} f(p_j) = \infty$.
 Clearly there cannot be any open $W \subset \C^n$
-containing $p$ to which $f$ extends (see definition of domain of holomorphy).  As any
+containing $p$ to which $f$ extends (see
+\hyperref[defn:domainofhol]{definition of domain of holomorphy}).  As any
 connected open $W$ such that $W \setminus U \not= \emptyset$ must contain a
 point of $\partial U$, we are done.
 \end{proof}
@@ -8178,7 +8218,7 @@ functions.  Via complexification we give a simple proof of the following
 result.
 
 \begin{prop}
-Let $U \subset \R^n$, $V \subset \R^k$ be domains and let
+Let $U \subset \R^n$, $V \subset \R^k$ be open and let
 $f \colon U \to V$ and $g \colon V \to \R^m$ be real-analytic.
 Then $g \circ f$ is real-analytic.
 \end{prop}
@@ -8279,7 +8319,8 @@ is trivial.  Therefore, all functions are CR functions.
 \end{remark}
 
 \begin{prop}
-Let $M \subset U$ be a smooth (resp.\ real-analytic) real hypersurface in a domain $U
+Let $M \subset U$ be a smooth (resp.\ real-analytic) real hypersurface in an
+open $U
 \subset \C^n$.  Suppose $F \colon U \to \C$ is a holomorphic function,
 then the restriction $f = F|_M$ is a smooth (resp.\ real-analytic) CR function.
 \end{prop}
@@ -8435,7 +8476,7 @@ CR functions can often be considered as boundary values of
 holomorphic functions.
 
 \begin{prop}
-Suppose $U \subset \C^n$ is a domain with smooth boundary.  Suppose
+Suppose $U \subset \C^n$ is an open set with smooth boundary.  Suppose
 $f \colon \overline{U} \to \C$ is a smooth function, holomorphic on $U$.
 Then $f|_{\partial U}$ is a smooth CR function.
 \end{prop}
@@ -8499,13 +8540,13 @@ identity.
 \begin{exercise}
 Find a domain $U \subset \C^n$, $n \geq 2$, with smooth boundary and a smooth
 CR function $f \colon \partial U \to \C$ such that there is no holomorphic function
-on $U$ or $\C^n \setminus U$ whose boundary values are $f$.
+on $U$ or $\C^n \setminus U$ continuous up to the boundary and whose boundary values are $f$.
 \end{exercise}
 
 \begin{exercise}
 \begin{exparts}
 \item
-Suppose $U \subset \C^n$ is a bounded domain with smooth boundary,
+Suppose $U \subset \C^n$ is a bounded open set with smooth boundary,
 $f \colon \overline{U} \to \C$ is a continuous function, holomorphic in
 $U$, and $f|_{\partial U}$ is real-valued.  Show that $f$ is
 constant.
@@ -9455,7 +9496,7 @@ theorem, let us state it that way.  In applications, the boundary is often
 only piecewise smooth, and again that is all we need for Stokes.
 
 \begin{thm}[Cauchy--Pompeiu] \label{thm:generalizedcauchy}
-Let $U \subset \C$ be a bounded domain with piecewise $C^1$-smooth boundary
+Let $U \subset \C$ be a bounded open set with piecewise $C^1$-smooth boundary
 $\partial U$ oriented positively, and let
 $f \colon \overline{U} \to \C$ be a continuous function
 with bounded continuous partial derivatives in $U$.
@@ -9568,13 +9609,13 @@ The theorem follows.
 \begin{exercise}
 \begin{exparts}
 \item
-Let $U \subset \C$ be a bounded domain with piecewise $C^1$-smooth boundary and
+Let $U \subset \C$ be a bounded open set with piecewise $C^1$-smooth boundary and
 suppose $f \colon \overline{U} \to \C$ is a $C^1$-smooth function such
 that 
 $\int_{U} \frac{\frac{\partial f}{\partial \bar{z}}(\zeta)}{\zeta-z} \,
 dA(\zeta) =
 0$ for every $z \in \partial U$.  Prove that $f|_{\partial U}$ are the boundary
-values of a holomorphic function.
+values of a holomorphic function in $U$.
 \item
 Given arbitrary $\epsilon > 0$, find a $C^1$ function $f$ on the closed unit disc
 $\overline{\D}$,
@@ -9680,7 +9721,7 @@ Then there exists a unique compactly supported smooth function $\psi \colon
 \end{thm}
 
 The compatibility conditions on $g$ are necessary, but the compactness is not.
-However in that case the boundary of the domain where the equation lives
+However in that case the boundary of the set where the equation lives
 would come into play.  Let us not worry about this, and prove this simple
 compactly supported version always has a solution.
 Without the compact support condition
@@ -10027,7 +10068,7 @@ simply left out.
 
 \begin{thm}[Bochner--Martinelli] \label{thm:bochnermartinelli}
 \index{Bochner--Martinelli integral formula}
-Let $U \subset \C^n$ be a bounded domain with smooth boundary and let
+Let $U \subset \C^n$ be a bounded open set with smooth boundary and let
 $f \colon \overline{U} \to \C$ be a smooth function,
 then for $z \in U$:
 \begin{equation*}
@@ -12876,7 +12917,7 @@ if $\gamma|_{[a,b]}$ is one-to-one
 with the possible exception of $\gamma(a) = \gamma(b)$.
 
 As in the introduction, we have the following version of Cauchy integral
-formula.  A bounded domain has piecewise-$C^1$ boundary if $\partial U$
+formula.  An open set has piecewise-$C^1$ boundary if $\partial U$
 is composed of piecewise-$C^1$ paths, and at point $p \in \partial U$,
 every disc $\Delta_\rho(p)$ contains points from $U$ and points from the
 complement of $\overline{U}$.  If 
@@ -12885,7 +12926,7 @@ the domain is on the left ($\gamma'(t)$ rotated by $\pi/2$ points into the
 domain), then the boundary is \emph{\myindex{positively oriented}}.
 
 \begin{thm}[Cauchy integral formula]
-Let $U \subset \C$ be a bounded domain with piecewise-$C^1$ boundary
+Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
 $\partial U$ oriented positively, and let
 $f \colon \overline{U} \to \C$ be a continuous function
 holomorphic in $U$.
@@ -12902,14 +12943,14 @@ d \zeta .
 
 The theorem follows from Green's theorem, which is the Stokes' theorem
 in two dimensions.  In the versions we state, one needs to
-approximate the domain by smaller domains from the inside to insure
+approximate the open set by smaller open sets from the inside to insure
 the partial derivatives are bounded.  See
 \thmref{thm:generalizedcauchy}.  Let us state Green's theorem using
 the $dz$ and $d\bar{z}$ for completeness.  See \appendixref{ap:diffforms}
 for an overview of differential forms.
 
 \begin{thm}[Green's theorem]\index{Green's theorem} \label{thm:greens}
-Let $U \subset \C$ be a bounded domain with piecewise-$C^1$ boundary
+Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
 $\partial U$ oriented positively, and let
 $f \colon \overline{U} \to \C$ be a continuous function
 with bounded continuous partial derivatives in $U$.
@@ -12952,7 +12993,7 @@ The Cauchy integral formula is equivalent to
 what's usually called just Cauchy's theorem:
 
 \begin{thm}[Cauchy]
-Let $U \subset \C$ be a bounded domain with piecewise-$C^1$ boundary
+Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
 $\partial U$ oriented positively, and let
 $f \colon \overline{U} \to \C$ be a continuous function
 holomorphic in $U$.  Then
