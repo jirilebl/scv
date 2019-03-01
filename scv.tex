@@ -2185,7 +2185,8 @@ Such a $U$ is called a
 \emph{\myindex{Reinhardt domain}}.  The domains we were drawing so far are
 Reinhardt domains, they are exactly the domains that you can
 draw by plotting what happens for the moduli of the variables.
-A domain is called a \emph{\myindex{complete Reinhardt domain}} if whenever
+A domain is called a
+\emph{\myindex{complete Reinhardt domain}}\index{Renhardt domain!complete} if whenever
 $z \in U$ then for $r = (r_1,\ldots,r_n)$ where $r_j = \sabs{z_j}$
 for all $j$, we have that the whole polydisc $\overline{\Delta_r(0)} \subset U$.
 So a complete Reinhardt domain is a union (possibly infinite) of polydiscs
@@ -7158,7 +7159,7 @@ $\bigcup_\alpha \Delta_\alpha \subset \subset U$.
 Various similar theorems are named the \emph{continuity principle}.
 Generally what they have in common is the family of analytic discs whose
 boundaries stay inside a domain, and whose conclusion has to do
-with extension of holomorphic functions, or domains of holomorphy.
+with extension of holomorphic functions, or with domains of holomorphy.
 
 \begin{proof}
 Let $f$ be a plurisubharmonic function on $U$.  If $\varphi_\alpha \colon
@@ -7399,6 +7400,12 @@ little bit to avoid the intersection with the complement?
 Think about the continuity principle.
 Compare with \exerciseref{exercise:affinedisctouchingsmooth}.
 \end{exparts}
+\end{exercise}
+
+\begin{exercise}
+Let $U \subset \C^n$ be a domain, and $f \colon \overline{U} \to \R$ be a
+continuous function, subharmonic and negative on $U$, and $f=0 \in \partial
+U$.  Prove that $U$ is Hartogs pseudoconvex.
 \end{exercise}
 \end{exbox}
 
@@ -7740,8 +7747,6 @@ Hartogs pseudoconvex.  This is true at all
 $p \in \partial U$, so $U$ is Hartogs pseudoconvex.
 \end{proof}
 
-%FIXME: Reinhardt/circular domains?
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Holomorphic convexity}
@@ -7767,7 +7772,8 @@ $\widehat{K}_U$ to emphasize the dependence on $U$.}
 
 It is a simple exercise (see below) to show that a holomorphically convex
 domain is Hartogs pseudoconvex.  The converse is the
-Levi problem for Hartogs pseudoconvex domains and is considerably more
+Levi problem\index{Levi problem}
+for Hartogs pseudoconvex domains and is considerably more
 difficult.  The thing is that there are lots of plurisubharmonic functions
 and they are easy to construct; we can even construct them locally and then
 piece them together as we have already seen.  There are far fewer holomorphic functions, and clearly
@@ -8006,6 +8012,97 @@ and $U \subset W$, then either $W=U$ or $W = \C^2$.  Hint:  Suppose $L
 is a complex line and $K$ is a circle in $L$.  What is $\widehat{K}_W$?
 \end{exercise}
 \end{exbox}
+
+In the following series of exercises, which you should most definitely do in
+sequence, we will solve the
+Levi problem\index{Levi problem!for complete Reinhardt domains}
+(and more) for complete Reinhardt domains\index{Reinhardt domain}.
+Recall a domain $U \subset \C^n$ is
+Reinhardt if whenever $(z_1,\ldots,z_n)$ is in $U$ then
+$(e^{i\theta_1}z_1,\ldots,e^{i\theta_n}z_n)$ is in $U$ for all real
+$(\theta_1,\ldots,\theta_n)$.
+A Reinhardt domain is complete\index{complete Reinhardt
+domain}\index{Reinhardt domain!complete}
+if whenever $(z_1,\ldots,z_n)$ is in $U$ and $r_j = \sabs{z_j}$, then the
+entire closed polydisc $\overline{\Delta_r(0)} \subset U$.
+
+A complete Reinhardt domain $U$ is \emph{\myindex{logarithmically convex}}%
+\index{Reinhardt domain!logarithmically convex}
+if there exists a
+convex subset $C \subset \R^n$ such that $z \in U$ if and only if
+$(\log \sabs{z_1},\ldots,\log\sabs{z_n}) \in C$.
+
+\begin{exbox}
+\begin{exercise}
+Prove that a logarithmically convex complete Reinhardt domain
+is the intersection of sets of the form
+\begin{equation*}
+\bigl\{ z \in \C^n : \alpha_1 \log \sabs{z_1} + \cdots + \alpha_n \log
+\sabs{z_n} < \beta  \bigr\} 
+=
+\bigl\{ z \in \C^n : \sabs{z_1}^{\alpha_1} \cdots \sabs{z_n}^{\alpha_n}
+< e^\beta \bigr\} 
+\end{equation*}
+for some nonnegative $\alpha_1,\ldots,\alpha_n$, and $\beta \in \R$.
+\end{exercise}
+
+\begin{exercise}
+Prove that a complete Reinhardt domain that is Hartogs
+pseudoconvex is logaritmically convex.
+\end{exercise}
+
+\begin{exercise}
+For each $k \in \N_0$, let $\ell_m^k \in \N_0$ be the smallest nonnegative integer such that
+$\ell_m^k \geq k \alpha_m$.
+Prove that the domain of convergence of the power series
+\begin{equation*}
+\sum_{k=0}^\infty e^{-k\beta}
+z_1^{\ell_1^k}
+\cdots
+z_n^{\ell_n^k}
+\end{equation*}
+is precisely the set
+$\bigl\{ z \in \C^n :
+\sabs{z_1}^{\alpha_1} \cdots \sabs{z_n}^{\alpha_n}
+< e^\beta \bigr\}$.
+Hint: That it diverges outside is easy, what's hard is that it converges
+inside.  Perhaps useful is to notice
+$\frac{\ell_m^k}{k}-\alpha_m \leq \frac{1}{k}$, and furthermore
+notice that if $z$ is in the set, there is some $\epsilon > 0$ such that
+$(1+\epsilon)\sabs{z_1}^{\alpha_1} \cdots \sabs{z_n}^{\alpha_n} =
+e^{\beta}$.
+\end{exercise}
+
+\begin{exercise}
+Prove that a logarithmically convex Reinhardt domain is holomorphically
+convex and therefore it is a domain of holomorphy.
+\end{exercise}
+
+\begin{exercise}
+Prove that a complete Reinhardt domain is
+a domain of holomorphy if and only if it is the
+domain of convergence of some power series at the origin.  Hint: There is a
+function that does not extend past any boundary point of a holomorphically
+convex domain.
+\end{exercise}
+\end{exbox}
+
+We (you) have proved the following proposition.
+
+\begin{prop}
+Let $U \subset \C^n$ be a complete Reinhardt domain.  Then the following are
+equivalent:
+\begin{enumerate}[(i)]
+\item
+$U$ is logaritmically convex.
+\item
+$U$ is a domain of holomorphy.
+\item
+$U$ is a domain of convergence of some power series.
+\item
+$U$ is Hartogs pseudoconvex.
+\end{enumerate}
+\end{prop}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
