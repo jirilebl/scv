@@ -7148,6 +7148,7 @@ not geometrically convex.
 
 \begin{thm}[Kotinuit\"atssatz---Continuity
 principle\index{Kotinuit\"atssatz}\index{continuity principle}]
+\label{thm:contprinciple}
 Suppose an open set $U \subset \C^n$ is convex with respect to plurisubharmonic
 functions,
 then given any collection of closed analytic discs $\Delta_\alpha \subset U$
@@ -7397,14 +7398,14 @@ and $\partial \Delta \subset U$.
 \item
 What do you think would happen if you tried to move $\Delta$ a
 little bit to avoid the intersection with the complement?
-Think about the continuity principle.
+Think about the \hyperref[thm:contprinciple]{continuity principle}.
 Compare with \exerciseref{exercise:affinedisctouchingsmooth}.
 \end{exparts}
 \end{exercise}
 
 \begin{exercise}
 Let $U \subset \C^n$ be a domain, and $f \colon \overline{U} \to \R$ be a
-continuous function, subharmonic and negative on $U$, and $f=0 \in \partial
+continuous function, plurisubharmonic and negative on $U$, and $f=0 \in \partial
 U$.  Prove that $U$ is Hartogs pseudoconvex.
 \end{exercise}
 \end{exbox}
@@ -7520,7 +7521,7 @@ is in their limit set,
 %whose boundaries were uniformly a positive distance away from $\partial U$,
 %but such that $p$ was in the limit set of their interiors.  In fact we found an entire
 %Hartogs figure in $U$.  So
-Kontinuit\"atssatz is not satisfied, and $U$ is not 
+\hyperref[thm:contprinciple]{Kontinuit\"atssatz} is not satisfied, and $U$ is not 
 convex with respect to the plurisubharmonic functions.  Therefore 
 $U$ is not Hartogs pseudoconvex.
 
@@ -9518,10 +9519,10 @@ was first proved by Helmut Knesser in 1936.
 \begin{thm}[Lewy]%
 \index{Lewy extension theorem}
 Suppose $M \subset \C^n$ is a smooth real hypersurface and $p \in M$.
-There exists a small neighborhood $U$ of $p$ with the following
+There exists a neighborhood $U$ of $p$ with the following
 property.
 Suppose $r \colon U \to \R$ is
-a defining function for $M \cap U$, denote by $U_- \subset U$ the set where $r$
+a smooth defining function for $M \cap U$, denote by $U_- \subset U$ the set where $r$
 is negative and $U_+ \subset U$ the set where $r$ is positive.
 Let $f \colon M \to \R$ be a smooth CR function.
 Then:
@@ -9529,10 +9530,12 @@ Then:
 \begin{enumerate}[(i)]
 \item
 If the Levi form with respect to $r$ has a positive eigenvalue at $p$, then
-$f$ extends to a holomorphic function on $U_-$ continuous up to $M$.
+$f$ extends to a holomorphic function on $U_-$ continuous up to $M$
+(that is, continuous on $\{ z \in U : r(z) \leq 0 \}$).
 \item
 If the Levi form with respect to $r$ has a negative eigenvalue at $p$, then
-$f$ extends to a holomorphic function on $U_+$ continuous up to $M$.
+$f$ extends to a holomorphic function on $U_+$ continuous up to $M$
+(that is, continuous on $\{ z \in U : r(z) \geq 0 \}$).
 \item
 If the Levi form with respect to $r$ has eigenvalues of both signs at $p$, then any smooth
 CR $f$ extends to
