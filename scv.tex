@@ -6142,8 +6142,9 @@ the origin.
 %Let us start with harmonic and subharmonic functions.
 
 \begin{defn}
+Let $U \subset \R^n$ be an open set.
 A $C^2$-smooth
-function $f \colon U \subset \R^n \to \R$ is
+function $f \colon U \to \R$ is
 \emph{\myindex{harmonic}} if\footnote{Recall
 the operator $\nabla^2$, sometimes also written $\Delta$,
 is the \emph{\myindex{Laplacian}}.
@@ -6156,7 +6157,7 @@ It is the trace of the Hessian matrix.}
 \quad \text{ on $U$.}
 \end{equation*}
 
-A function $f \colon U \subset \R^n \to \R \cup \{ -\infty \}$ is 
+A function $f \colon U \to \R \cup \{ -\infty \}$ is 
 \emph{\myindex{subharmonic}} if it is upper-semicontinuous%
 \footnote{Recall $f$ is \emph{\myindex{upper-semicontinuous}}
 if $\limsup_{t\to x} f(t) \leq f(x)$ for all $x$.}
@@ -6211,7 +6212,8 @@ An upper-semicontinuous function achieves a maximum on compact sets.
 \end{exercise}
 
 \begin{exercise}
-Show that for a $C^2$ function $f \colon U \subset \C \to \R$,
+Let $U \subset \C$ be open.
+Show that for a $C^2$ function $f \colon U \to \R$,
 \begin{equation*}
 \frac{\partial^2}{\partial \bar{z}\partial z} f = \frac{1}{4} \nabla^2 f .
 \end{equation*}
@@ -6219,6 +6221,12 @@ Use this to show that $f$ is harmonic if and only if it is
 (locally) the real or imaginary part
 of a holomorphic function.
 Hint: The key is finding an antiderivative of a holomorphic function.
+\end{exercise}
+
+\begin{exercise}
+Prove the identity theorem.  Let $U \subset \C$ be a domain
+and $f \colon U \to \R$ harmonic such that $f=0$ on a nonempty open subset
+of $U$.  Then $f\equiv 0$.
 \end{exercise}
 \end{exbox}
 
@@ -6365,7 +6373,8 @@ Fill in the details of the proof of \propref{prop:meansubmeanprop}.
 \end{exercise}
 
 \begin{exercise}
-Show that if $f \colon U \subset \C \to \R \cup\{- \infty \}$ is subharmonic
+Let $U \subset \C$ be open.
+Show that if $f \colon U \to \R \cup\{- \infty \}$ is subharmonic
 then 
 \begin{equation*}
 \limsup_{w \to z} f(w) = f(z) 
@@ -6409,6 +6418,17 @@ $U \subset \C$, a function $f \colon U \to \R \cup \{ -\infty \}$ is subharmonic
 and only if for every $p \in U$ there exists a neighborhood $W$ of $p$,
 $W \subset U$, such that $f|_{W}$ is subharmonic.  Hint: Perhaps try to use
 the maximum principle and \exerciseref{exercise:fminusgsubharmonic}.
+\end{exercise}
+
+\begin{exercise}
+Prove that the inequality from the definition of subharmonic functions
+works for any any bounded set, not just balls.
+Suppose $U \subset \C$ is a bounded open set, $f \colon \overline{U} \to \R
+\setminus \{-\infty\}$ is an upper-semicontinuous function, such that $f|_U$
+is subharmonic, $g \colon \overline{U} \to \R$ a continuous function
+such that $g|_U$ is harmonic, and such that
+$f(z) \leq g(z)$ for all $z \in \partial U$.  Then prove that
+$f(z) \leq g(z)$ for all $z \in U$.
 \end{exercise}
 \end{exbox}
 
@@ -6768,9 +6788,9 @@ is similar to the solution of the Dirichlet
 problem using the Poisson kernel.
 
 First $f$ is bounded above on compact sets as it is upper semicontinuous.
-If $f$ is not bounded below, we replace $f$ with $\max \{ f ,
+If $f$ is not bounded below, we replace $f$ with $\max \bigl\{ f ,
 \frac{-1}{\epsilon}
-\}$, which is still plurisubharmonic.  Therefore, without loss of generality
+\bigr\}$, which is still plurisubharmonic.  Therefore, without loss of generality
 we assume that $f$ is locally bounded.
 
 For $z \in U_\epsilon$, we define $f_\epsilon$ as
@@ -6958,8 +6978,8 @@ As an application of harmonic functions, let us prove
 another useful theorem about zero sets of holomorphic functions,
 the theorem of
 Rad\'o.  It is sometimes covered in a one-variable course, but it is often
-skipped.  It is very useful in several variables and the proof is a direct
-application of the one-variable theory.
+skipped.  In several variables the proof is a direct
+application of the one-variable theorem.
 It is a complementary result to the
 Riemann extension theorem, when on the one hand the function is
 continuous and vanishes on the set you wish to extend across, but on the
@@ -6996,27 +7016,46 @@ we can without loss of generality assume that $\abs{f(z)} < 1$ for all $z
 $z \mapsto t \log \abs{f(z)}$ is subharmonic on $\Delta'$ and
 upper-semicontinuous on $\overline{\Delta'}$.  Further, it is negative
 on $\partial \Delta$.  The function $z \mapsto -t \log \abs{f(z)}$ is
-superharmonic on $\Delta'$,
+superharmonic (minus a subharmonic function) on $\Delta'$,
 lower-semicontinuous on $\overline{\Delta'}$ and positive on $\partial
-\Delta$.  On the set where $f$ is zero, the two functions are $-\infty$ and
-$\infty$ respectively.  Therefore we have
-\begin{equation*}
-t \log \abs{f(z)} \leq Pu(z)-u(z) \leq -t \log \abs{f(z)} .
-\end{equation*}
-on $\overline{\Delta}$ for all $t > 0$.  Fixing $z \in \Delta'$ and letting
-$t \to 0$ shows that $Pu = u$ on $\Delta'$.  In the same way we find that if
-$v$ is the imaginary part of $f$, $Pv = v$ on $\Delta'$.  So we find that
-$\tilde{f} = Pu + i Pv$ equals $f$ on $\overline{\Delta'}$, which includes
-$\partial \Delta$.
-Let $W = \Delta \setminus \overline{\Delta'}$.  If
-this open set is empty we are finished.  If it is not empty,
-the continuous
-function $\tilde{f}-f$ is zero on $\overline{\Delta'}$, which includes
-the boundary of $\Delta$.  So $\tilde{f}-f$ is zero on $\partial W$.
-As $f$ is zero on $W$ then $\tilde{f}-f$ is holomorphic on $W$ and
-by the maximum principle it must be zero on $W$.  Thus
-$\tilde{f} = f$ everywhere and we are done.  The theorem is proved for
-$n=1$.
+\Delta$.  On the set $\Delta \setminus \Delta'$ where $f$ is zero, the two functions are $-\infty$ and
+$\infty$ respectively.  Therefore for all $t > 0$ and 
+$z \in \partial \Delta \cup (\Delta \setminus \Delta')$
+we have
+\begin{equation} \label{eq:radobound}
+t \log \abs{f(z)} \leq Pu(z)-u(z) \leq -t \log \abs{f(z)}  .
+\end{equation}
+Applying the maximum principle to the subharmonic functions
+$z \mapsto t \log \abs{f(z)} - \bigl(Pu(z)-u(z)\bigr)$
+and
+$z \mapsto t \log \abs{f(z)} - \bigl(u(z)-Pu(z)\bigr)$
+shows that 
+\eqref{eq:radobound} holds for all $z \in \Delta'$ and all $t > 0$.
+
+\begin{myfig}
+\subimport*{figures/}{radosthm.pdf_t}
+\end{myfig}
+
+
+Taking the limit
+$t \to 0$ shows that $Pu = u$ on $\Delta'$.
+Let $W = \Delta \setminus \overline{\Delta'}$.
+%If $W$ is empty we are finished.
+On $W$, $u=0$ and so $Pu-u$ is harmonic on $W$
+and continuous on $\overline{W}$.  Furthermore,
+$Pu-u=0$ on $\overline{\Delta'} \cup \partial \Delta$,
+and so $Pu-u=0$ on $\partial W$.  By the maximum principle, $Pu=u$ on $W$
+and therefore on all of $\overline{\Delta}$.
+Similarly, if $v$ is the imaginary part of $f$, then $Pv = v$ on
+$\overline{\Delta}$.
+In other words, $u$ and $v$ are harmonic on $\Delta$.
+As $\Delta$ is simply connected,
+let $\tilde{v}$ be the harmonic conjugate of $u$ that equals $v$ at
+some point of $\Delta'$.  As $f$ is holomorphic on $\Delta'$,
+the harmonic functions $\tilde{v}$ and $v$
+are equal the nonempty open subset $\Delta'$ of $\Delta$ and so
+they are equal everywhere.  Consequently, $f = u +iv$ is holomorphic on
+$\Delta$.
 
 The extension of the proof to several variables is left as an exercise.
 \end{proof}
@@ -7069,11 +7108,18 @@ hulls.
 %and avoid having to say so in words, but we do not take this shortcut.
 
 \begin{exbox}
-\begin{exercise}
-Show that a domain $U \subset \R^n$
-is geometrically convex (that is, the line segment
-between any two points in $U$ is contained in $U$) if and only if it is
+\begin{exercise} \label{exercise:geomconvexfuncs}
+Suppose $U \subset \R^n$ is a domain.
+\begin{exparts}
+\item
+Show that $U$
+is geometrically convex if and only if it is
 convex with respect to the convex functions on $U$.
+\item
+Show that $U$
+is geometrically convex if and only if it is
+convex with respect to the affine linear functions.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -7082,8 +7128,17 @@ polynomials.
 % in real variables $x_1,\ldots,x_n$.  Hint: Weierstrass
 %approximation theorem makes this easy. (would be too easy)
 \end{exercise}
+
+\begin{exercise}
+The reason for the connectedness hypothesis (domain) in
+\exerciseref{exercise:geomconvexfuncs} is the
+following:  Show that if $U, V \subset \R^n$ are disjoint geometrically convex
+domains, then $U \cup V$ is convex with respect to convex functions, but
+not geometrically convex.
+\end{exercise}
 %
 %\begin{exercise}[Easy]
+%Note:This is just done below.
 %Show that if $\overline{\Delta} \subset U$ is a closed analytic disc, then
 %$\Delta$ is a subset of the hull of $\partial \Delta$ with respect to the
 %plurisubharmonic functions.
@@ -7094,7 +7149,7 @@ polynomials.
 principle\index{Kotinuit\"atssatz}\index{continuity principle}]
 Suppose an open set $U \subset \C^n$ is convex with respect to plurisubharmonic
 functions,
-then given any collection of closed analytic discs $\Delta_\alpha$
+then given any collection of closed analytic discs $\Delta_\alpha \subset U$
 such that $\bigcup_\alpha \partial \Delta_\alpha \subset \subset U$,
 we have
 $\bigcup_\alpha \Delta_\alpha \subset \subset U$.
@@ -7129,6 +7184,22 @@ denoted by the dark dots at the end of the segments.
 \begin{myfig}
 \subimport*{figures/}{contprinc.pdf_t}
 \end{myfig}
+
+\begin{exbox}
+\begin{exercise}
+Suppose $U \subset \C^n$ is a domain and $K \subset \subset U$ is a nonempty
+compact subset.  Prove that $U \setminus K$ is not convex with respect to
+plurisubharmonic functions.
+\end{exercise}
+
+\begin{exercise} \label{exercise:affinedisctouchingsmooth}
+Suppose $U \subset \C^n$ is a domain with smooth boundary,
+$p \in \partial U$,
+and $\Delta$ is an affine linear analytic disc with $p \in \Delta$, but
+$\Delta \setminus \{ p \} \subset U$.  Prove that $U$ is not convex with
+respect to the plurisubharmonic functions.
+\end{exercise}
+\end{exbox}
 
 \begin{defn}
 Let $U \subset \C^n$ be open.  An $f \colon U \to \R$ is an \emph{\myindex{exhaustion function}} for $U$ if
@@ -7301,10 +7372,33 @@ set where $z_1$ and $z_2$ are real).  Show that the set $\C^2 \setminus
 \R^2$ is not Hartogs pseudoconvex.
 \end{exercise}
 
+\begin{exercise}
+Let $U \subset \C^n$ be a domain and $f \in \sO(U)$.  Prove that
+$U' = \bigl\{ z \in U : f(z) \not= 0 \bigr\}$ is a Hartogs pseudoconvex
+domain.  Hint: See also \exerciseref{exercise:connectedcomplement}.
+\end{exercise}
+
 \begin{exercise} \label{exercise:biholHartogs}
 Suppose $U,V \subset \C^n$ are biholomorphic domains.
 Prove that $U$ is Hartogs pseudoconvex if and only if $V$ is
 Hartogs pseudoconvex.
+\end{exercise}
+
+\begin{exercise}
+Let $U = \bigl\{ z \in \C^2 : \sabs{z_1} > \sabs{z_2} \bigr\}$.
+\begin{exparts}
+\item
+Prove that $U$ is a Hartogs pseudoconvex domain.
+\item
+Find a closed analytic disc $\Delta$ in $\C^2$ such that $0 \in \Delta$ ($0
+\notin U$)
+and $\partial \Delta \subset U$.
+\item
+What do you think would happen if you tried to move $\Delta$ a
+little bit to avoid the intersection with the complement?
+Think about the continuity principle.
+Compare with \exerciseref{exercise:affinedisctouchingsmooth}.
+\end{exparts}
 \end{exercise}
 \end{exbox}
 
@@ -7687,6 +7781,18 @@ See \exerciseref{exercise:modholplush}.
 \end{exercise}
 
 \begin{exercise}
+Prove that any domain $U \subset \C$ is holomorphically convex by 
+giving a topological description of $\widehat{K}_U$ for any
+compact $K \subset \subset U$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $f \colon \C^n \to \C$ is holomorphic and $U$ is a topological
+component of $\bigl\{ z \in \C^n : \sabs{f(z)} < 1 \bigr\}$.  Prove
+that $U$ is a holomorphically convex domain.
+\end{exercise}
+
+\begin{exercise}
 Compute the hull
 $\widehat{K}_{\D^n}$ of the set $K = \bigl\{ z \in \D^n : \sabs{z_j} =
 \lambda_j \text{ for } j=1,\ldots,n \bigr\}$, where $0 \leq \lambda_j < 1$.
@@ -7699,7 +7805,8 @@ is holomorphically convex.
 \end{exercise}
 
 \begin{exercise}
-Prove that the Hartogs figure is not holomorphically convex.
+Prove that the Hartogs figure (see \thmref{thm:extensionhartogsfigure})
+is not holomorphically convex.
 \end{exercise}
 
 \begin{exercise}
@@ -7736,6 +7843,21 @@ not holomorphically convex.
 Show that if domains $U_1 \subset \C^n$ and $U_2 \subset \C^n$ are
 holomorphically convex
 then so are all the topological components of $U_1 \cap U_2$.
+\end{exercise}
+
+\begin{exercise}
+\begin{exparts}
+\item
+Suppose $U \subset \C^n$ is a domain and $K \subset \subset U$
+is a nonempty compact subset.  Show that $U \setminus K$ is not
+holomorphically convex.
+\item
+Suppose $U \subset \C^n$ is a bounded domain that is holomorphically
+convex.  Prove that $\C^n \setminus U$ is connected.
+\item
+Find an unbounded domain $U \subset \C^n$ that is holomorphically convex and 
+$\C^n \setminus U$ is disconnected.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}[Behnke--Stein again]
@@ -7872,6 +7994,16 @@ Extend the proof to show that if $U \subset \C^n$
 is holomorphically convex then there
 exists a single function $f \in \sO(U)$, that does not extend through any
 point $p \in \partial U$.
+\end{exercise}
+
+\begin{exercise}
+We know $U = \C^2 \setminus \{ z \in \C^2 : z_1 = 0 \}$ is a domain of
+holomorphy.  Use part 
+\ref{thm:cartthul:disthull}
+of the theorem to show that if $W \subset \C^2$ is a domain of holomorphy
+and $U \subset W$, then either $W=U$ or $W = \C^2$.  Hint:  Suppose $L
+\subset W$
+is a complex line and $K$ is a circle in $L$.  What is $\widehat{K}_W$?
 \end{exercise}
 \end{exbox}
 
