@@ -95,14 +95,19 @@ improvements have been made throughout.
   quite a bit of "CR geometry" in chapter 2 already, it is CR functions that
   we are interested in in chapter 3.
 ** Rework and add exercises in 2.6 which renumbers them
+* State the solution of the Levi problem as a theorem in 2.6 even though we
+  do not prove it.
 * Add definition of logarithmically convex complete Reinhardt domain and
   a series of exercises that prove the Levi problem for complete Reinhardt
   domains after Cartan-Thullen
 * In 3.2, prove the proposition "zero on the boundary means zero inside"
   including in one dimension (using Rado), and add a figure.
 * Add figure to proof of Cauchy-Pompeiu
+* Add figure for Weierstrass preparation theorem
+* Add more complete explanation of what symmetric functions are
 * Add explanation of why simply connectedness is important for global
   definition of roots after Proposition 6.2.6
+* Add a couple of simple examples in 6.4.
 * Add note (and exercise) on well-definedness of dimension, and some
   rewording in 6.4.
 ** Add three exercises in 6.4 renumbering all exercises in 6.4 after 6.4.4

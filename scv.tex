@@ -73,6 +73,13 @@
 \usepackage{framed}
 \usepackage{import}
 
+\usepackage{draftwatermark}
+\SetWatermarkText{Draft of v3.0 as of \today. May change substantially!}
+\SetWatermarkAngle{90}
+\SetWatermarkHorCenter{0.5in}
+\SetWatermarkColor[gray]{0.7}
+\SetWatermarkScale{0.18}
+
 
 \usepackage{tikz}
 \usepackage{rotating}
@@ -5958,8 +5965,7 @@ defined it,
 the Levi problem has an easier direction and a harder direction.
 The easier direction is to show that a domain of holomorphy is pseudoconvex, and
 the harder direction is to show that a pseudoconvex domain is a domain of
-holomorphy.  In order to save a hundred pages or so of work, we will only
-prove the easy direction.  See H\"ormander's book~\cite{Hormander} for the proof
+holomorphy.  See H\"ormander's book~\cite{Hormander} for the proof
 of the hard direction.
 
 \begin{thm}[Tomato can principle\index{tomato can principle}] \label{thm:tomatocan}
@@ -6805,8 +6811,11 @@ f_\epsilon(z) = (f * g_\epsilon)(z) =
 The two forms of the integral follow easily via change of variables.
 We are perhaps abusing notation a bit since $f$ is only defined on $U$,
 but it is not a problem as long as $z \in
-U_\epsilon$.
-By differentiating the first form under the integral, $f_\epsilon$ is smooth.
+U_\epsilon$ as then $g_\epsilon$ is zero when $f$ is undefined under the
+integral.
+By differentiating the first form under the integral, we find that
+$f_\epsilon$ is smooth.
+
 Let us show that $f_\epsilon$ is plurisubharmonic.  We restrict to a
 line $\xi \mapsto a+b\xi$.
 We wish to test subharmonicity by the sub-mean-value property using a disc
@@ -6833,11 +6842,14 @@ f(a-w) g_\epsilon (w) \, dV(w)  = f_\epsilon(a).
 For the inequality we used $g_\epsilon \geq 0$.
 So $f_\epsilon$ is plurisubharmonic.
 
+Let us show that $f_\epsilon(z) \geq f(z)$ for all $z \in U_\epsilon$.
 As $g_\epsilon(w)$ only depends on $\sabs{w_1},\ldots,\sabs{w_n}$, we notice
 that
 $g_\epsilon(w_1,\ldots,w_n) =
 g_\epsilon(\sabs{w_1},\ldots,\sabs{w_n})$.
-Without loss of generality we consider $z=0$, and we use polar coordinates:
+Without loss of generality we consider $z=0$, and we use polar coordinates
+for the integral.
+
 \begin{equation*}
 \begin{split}
 f_\epsilon(0)
@@ -6887,8 +6899,9 @@ g_\epsilon (r_1,\ldots,r_n) \,
  r_1 \cdots r_n \,d r_1 \cdots d r_n
 \\
 & = f(0) \int_{\C^n} g_\epsilon (w) dV(w)
-\\
-& = f(0) .
+%\\
+%&
+= f(0) .
 \end{split}
 \end{equation*}
 The second equality above
@@ -6897,16 +6910,23 @@ done over the polydisc of radius $\epsilon$.
 The penultimate equality follows from the fact that
 $2\pi = \int_0^{2\pi}d \theta$.
 
-We have $\limsup_{w\to z} f(w) = f(z)$ for subharmonic,
-and therefore for plurisubharmonic functions.
-Hence
-for any $\delta >0$ find an $\epsilon
->0$ so that for $w \in B_\epsilon(0)$ we get $f(w)-f(0) \leq \delta$.
+Finally we show $\lim_{\epsilon \to 0} f_\epsilon (z) = f(z)$.
+For subharmonic, and so for plurisubharmonic,
+functions we have $\limsup_{\zeta\to z} f(\zeta) = f(z)$.
+So given $\delta >0$ find an $\epsilon >0$ such that
+$f(\zeta)-f(z) \leq \delta$ for all $\zeta \in B_\epsilon(z)$.
 \begin{equation*}
 \begin{split}
-f_\epsilon(0) - f(0)
+f_\epsilon(z) - f(z)
 & =
-\int_{B_\epsilon(0)} \bigl(f(-w)-f(0)\bigr)\, g_\epsilon (w)
+\int_{B_\epsilon(0)} f(z-w) g_\epsilon (w)
+\, dV(w)
+- f(z) 
+\int_{B_\epsilon(0)} g_\epsilon (w)
+\, dV(w)
+\\
+& =
+\int_{B_\epsilon(0)} \bigl(f(z-w)-f(z)\bigr)\, g_\epsilon (w)
 \, dV(w)
 \\
 & \leq
@@ -6917,9 +6937,10 @@ f_\epsilon(0) - f(0)
 \end{split}
 \end{equation*}
 Again we used that $g_\epsilon$ is nonnegative.
+We find $0 \leq f_\epsilon - f(z) \leq \delta$, and so $f_\epsilon(z) \to
+f(z)$.
 \end{proof}
 
-\pagebreak[2]
 \begin{exbox}
 \begin{exercise}
 Show that $g$ in the proof above is smooth on all of $\C^n$.
@@ -6949,16 +6970,18 @@ this holds for all plurisubharmonic functions (Hint: monotone convergence).
 \end{exercise}
 
 \begin{exercise}
+%\pagebreak[2]
 Show that plurisubharmonicity is a local property, that is,
 $f$ is plurisubharmonic if and only if $f$ is plurisubharmonic in
 some neighborhood of each point.
 \end{exercise}
 
 \begin{exercise}
-Use the computation from
-\thmref{thm:subharlim} to show that if $f$ is pluriharmonic, then
-$f_\epsilon = f$ (where that makes sense), therefore obtaining another proof that 
+Using the computation from
+\thmref{thm:subharlim} show that if $f$ is pluriharmonic, then
+$f_\epsilon = f$ (where it makes sense), obtaining another proof that 
 a pluriharmonic function is $C^\infty$.
+\pagebreak[2]
 \end{exercise}
 
 \begin{exercise}
@@ -7350,13 +7373,13 @@ therefore $-\log \rho_c(a+b\xi)$ is subharmonic.
 
 \begin{exbox}
 \begin{exercise}
-Show that if domains $U_1 \subset \C^n$ and $U_2 \subset \C^n$ are Hartogs
-pseudoconvex then so are all the topological components of $U_1 \cap U_2$.
+Show that if $U_1 \subset \C^n$ and $U_2 \subset \C^n$ are Hartogs
+pseudoconvex domains, then so are all the topological components of $U_1 \cap U_2$.
 \end{exercise}
 
 \begin{exercise}
-Show that if domains $U \subset \C^n$ and $V \subset \C^m$ are Hartogs
-pseudoconvex then so is $U \times V$.
+Show that if $U \subset \C^n$ and $V \subset \C^m$ are Hartogs
+pseudoconvex domains, then so is $U \times V$.
 \end{exercise}
 
 \begin{exercise}
@@ -7451,7 +7474,7 @@ marked and a ball of radius $\nicefrac{r}{2}$ around $q$ is dotted.
 \subimport*{figures/}{hartogs-pseudoconvex-local.pdf_t}
 \end{myfig}
 
-No point of distance $\nicefrac{r}{2}$ from $q$ can be in $\partial W$, and 
+No point of distance $\nicefrac{r}{2}$ from $q$ is in $\partial W$, and 
 the distance of $q$ to $\partial U$ is at most $\nicefrac{r}{2}$ as $p \in \partial U$
 and $p$ is the center of $B$.
 \glsadd{not:dist}%
@@ -7485,6 +7508,7 @@ and is left as an exercise.
 \begin{exbox}
 \begin{exercise}
 Finish the proof of the lemma for unbounded domains.
+\pagebreak[2]
 \end{exercise}
 \end{exbox}
 
@@ -7772,14 +7796,28 @@ $\widehat{K}_U$ to emphasize the dependence on $U$.}
 
 
 It is a simple exercise (see below) to show that a holomorphically convex
-domain is Hartogs pseudoconvex.  The converse is the
+domain is Hartogs pseudoconvex.  We will prove that holomorphic convexity is
+equivalent to being a domain of holomorphy.  That a Hartogs pseudoconvex
+domain is holomorphically convex is the
 Levi problem\index{Levi problem}
 for Hartogs pseudoconvex domains and is considerably more
 difficult.  The thing is that there are lots of plurisubharmonic functions
 and they are easy to construct; we can even construct them locally and then
 piece them together as we have already seen.  There are far fewer holomorphic functions, and clearly
 we cannot just construct them locally and expect the pieces to somehow fit
-together.
+together.  As it is so fundamental, let us state it as a theorem.
+
+\begin{thm}[Solution of the Levi problem]
+A domain $U \subset \C^n$ is holomorphically convex
+if and only it is Hartogs pseudoconvex.
+\end{thm}
+
+\begin{proof}
+The forward direction follows from an exercise below.
+We skip the proof of the backward direction
+in order to save some hundred pages or so.
+See H\"ormander's book~\cite{Hormander} for the proof.
+\end{proof}
 
 \begin{exbox}
 \begin{exercise}
@@ -7853,6 +7891,7 @@ then so are all the topological components of $U_1 \cap U_2$.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 \begin{exparts}
 \item
 Suppose $U \subset \C^n$ is a domain and $K \subset \subset U$
@@ -7929,19 +7968,19 @@ $U$ is not a domain of holomorphy.
 The implication \ref{thm:cartthul:disthull} $\Rightarrow$
 \ref{thm:cartthul:holconv} is easy.
 
-Finally let us prove
+Finally we prove
 \ref{thm:cartthul:holconv} $\Rightarrow$
 \ref{thm:cartthul:domhol}.
 Suppose $U$ is holomorphically convex.  Let $p \in \partial U$.
-By convexity we choose nested compact sets $K_{j-1} \subsetneq K_j \subset
+By convexity choose nested compact sets $K_{j-1} \subsetneq K_j \subset
 \subset U$ such that $\bigcup_j K_j = U$, and $\widehat{(K_j)}_U = K_j$.
-We pick the sequence of $K_j$ in such a way that 
+Pick the sequence of $K_j$ so that
 there exists a 
-sequence of points $p_j \in K_j \setminus K_{j-1}$ such that
+sequence of points $p_j \in K_j \setminus K_{j-1}$ and
 $\lim_{j\to\infty} p_j = p$.
 
-Since $p_j$ is not in the hull of $K_{j-1}$, we find a function $f_j \in
-\sO(U)$ such that $\sabs{f_j} < 2^{-j}$ on $K_{j-1}$, but such that
+As $p_j$ is not in the hull of $K_{j-1}$, there is a function $f_j \in
+\sO(U)$ such that $\sabs{f_j} < 2^{-j}$ on $K_{j-1}$, but
 \begin{equation*}
 \sabs{f_j(p_j)} > j + \abs{\sum_{k=1}^{j-1} f_k(p_j)} .
 \end{equation*}
@@ -7975,13 +8014,13 @@ connected open $W$ such that $W \setminus U \not= \emptyset$ must contain a
 point of $\partial U$, we are done.
 \end{proof}
 
-\exerciseref{exercise:biholholconvex}
-says that holomorphic convexity is a biholomorphic invariant.
-Therefore,
+Bu \exerciseref{exercise:biholholconvex},
+holomorphic convexity is a biholomorphic invariant.
+Thus,
 being a domain of holomorphy is also a biholomorphic invariant.  This
-fact is not easy to prove directly from the definition of a domain of
+fact is not easy to prove from the definition of a domain of
 holomorphy, as the
-biholomorphism is only defined on the interior of our domains.
+biholomorphism is defined only on the interior of our domains.
 
 Holomorphic convexity is an intrinsic notion; that is, it does not require
 knowing anything about points outside of $U$.  Therefore, it is a much
@@ -7989,7 +8028,7 @@ better way to think about domains of holomorphy.  In fact holomorphic
 convexity generalizes easily to more complicated complex
 manifolds\footnote{Manifolds with complex structure, that is, ``manifolds
 with multiplication by $i$ on the tangent space.''}, while
-the notion of a domain of holomorphy only makes sense in $\C^n$.
+the notion of a domain of holomorphy only makes sense for domains in $\C^n$.
 
 \begin{exbox}
 \begin{exercise}
@@ -8015,12 +8054,12 @@ is a complex line and $K$ is a circle in $L$.  What is $\widehat{K}_W$?
 \end{exbox}
 
 In the following series of exercises, which you should most definitely do in
-sequence, we will solve the
+sequence, you will solve the
 Levi problem\index{Levi problem!for complete Reinhardt domains}
 (and more) for complete Reinhardt domains\index{Reinhardt domain}.
 Recall a domain $U \subset \C^n$ is
-Reinhardt if whenever $(z_1,\ldots,z_n)$ is in $U$ then
-$(e^{i\theta_1}z_1,\ldots,e^{i\theta_n}z_n)$ is in $U$ for all real
+Reinhardt if whenever $(z_1,\ldots,z_n) \in U$ then
+$(e^{i\theta_1}z_1,\ldots,e^{i\theta_n}z_n) \in U$ for all real
 $(\theta_1,\ldots,\theta_n)$.
 A Reinhardt domain is complete\index{complete Reinhardt
 domain}\index{Reinhardt domain!complete}
@@ -11195,7 +11234,7 @@ Let $p$ be a point in a topological space $X$.  Let $Y$ be a set and
 $U, V \subset X$ be open neighborhoods of $p$.  We say that
 two functions $f \colon U \to Y$ and
 $g \colon V \to Y$ are equivalent if there exists a neighborhood
-$\Omega$ of $p$ such that $f|_\Omega = g|_\Omega$.
+$W$ of $p$ such that $f|_W = g|_W$.
 
 An equivalence class of functions defined in a neighborhood of $p$
 is called a \emph{\myindex{germ of a function}}.
@@ -11222,10 +11261,10 @@ ${}_n\sO_p = \sO_p$ as the ring of germs at $p$ of holomorphic functions.
 \end{defn}
 
 Given a commutative ring $R$,
-recall that an \emph{\myindex{ideal}} $I \subset R$ is
+an \emph{\myindex{ideal}} $I \subset R$ is
 a subset such that $f g \in I$ whenever $f \in R$ and $g \in I$.
 An ideal $I$ is generated by $f_1,\ldots,f_k$
-if $I$ is the smallest ideal containing $f_1,\ldots,f_k$.  We then usually
+if $I$ is the smallest ideal containing $\{ f_1,\ldots,f_k \}$.  We then 
 \glsadd{not:ideal}%
 write $I = (f_1,\ldots,f_n)$.  A \emph{\myindex{principal ideal}}
 is an ideal generated by a single element, that is, $(f)$.
@@ -11270,8 +11309,8 @@ $I \subset m$, that is $m$ is a \emph{\myindex{maximal ideal}}.
 \begin{defn}
 Let $p$ be a point in a topological space $X$.
 We say that sets $A, B \subset X$ are equivalent
-if there exists a neighborhood $N$ of $p$
-such that $A \cap N = B \cap N$.
+if there exists a neighborhood $W$ of $p$
+such that $A \cap W = B \cap W$.
 An equivalence class of sets 
 is called a \emph{\myindex{germ of a set}} at $p$.
 \glsadd{not:germA}%
@@ -11280,8 +11319,8 @@ the context is clear.
 \end{defn}
 
 The concept of $(X,p) \subset (Y,p)$ is defined in an obvious manner,
-that is, there exist representatives $X$ and $Y$, and a neighborhood $N$
-of $p$ such that $X \cap N \subset Y \cap N$.
+that is, there exist representatives $X$ and $Y$, and a neighborhood $W$
+of $p$ such that $X \cap W \subset Y \cap W$.
 Similarly the intersection $(X,p) \cap (Y,p)$ and
 the union $(X,p) \cup (Y,p)$ can easily be defined: we take the intersection
 and the union of representatives and then consider the germ of the result at $p$.
@@ -11340,8 +11379,8 @@ Suppose a polynomial $P \in \sO(U)[z_n]$ is monic of degree $k$, that is,
 \begin{equation*}
 P(z',z_n) = z_n^k + \sum_{j=0}^{k-1} c_j(z') \, z_n^j ,
 \end{equation*}
-where $c_j$ are holomorphic functions defined on $U$.
-Further suppose $c_j(0) = 0$ for all $j$.  Then $P$ is
+where $c_j$ are holomorphic functions defined on $U$, such that
+$c_j(0) = 0$ for all $j$.  Then $P$ is
 called a \emph{\myindex{Weierstrass polynomial}} of degree $k$.
 \glsadd{not:polyinO0}%
 If the $c_j$ are germs in $\sO_0 = {}_{n-1}\sO_0$, then $P \in \sO_0[z_n]$ and
@@ -11354,20 +11393,16 @@ definition carefully, you will find that if $n=1$, then the only Weierstrass
 polynomial of degree $k$ is $z^k$.
 
 The purpose of this section is to show that every holomorphic function
-in $\sO(U)$ is (up to a unit and a possible small rotation) a Weierstrass
+in $\sO(U)$ is up to a unit and a possible small rotation a Weierstrass
 polynomial.  So zero sets of holomorphic functions
 behave like zero sets of polynomials, and ideals in
 $\sO_p$ are generated by Weierstrass polynomials.
 
 \begin{thm}[\myindex{Weierstrass preparation theorem}]
-Suppose $f \in \sO(U)$ for a domain $U \subset \C^{n-1} \times \C$,
-%$U = U' \times \Delta \subset \C^{n-1} \times \C$,
-%where $0 \in U'$ and
-%$\Delta$ is a disc centered at 0.
-where $0 \in U$.
-Suppose
+Suppose $f \in \sO(U)$ for an open $U \subset \C^{n-1} \times \C$,
+where $0 \in U$, and $f(0)=0$.  Suppose
 $z_n \mapsto f(0,z_n)$ is not identically zero near the origin
-and its order of vanishing at the origin is $k$.
+and its order of vanishing at the origin is $k \geq 1$.
 
 Then there exists an open polydisc $V = V' \times D \subset \C^{n-1} \times \C$
 with $0 \in V \subset U$,
@@ -11380,7 +11415,8 @@ f(z',z_n) = u(z',z_n) \, P(z',z_n) .
 \end{thm}
 
 Thus for a fixed $z'$, the zeros of $f$ coincide with the zeros
-of a degree $k$ monic polynomial whose coefficients depend holomorphically on $z'$.
+of a degree $k$ monic polynomial whose coefficients depend
+holomorphically on $z'$.
 %In one variable, the theorem is rather simple.  If $f$ is holomorphic, not
 %identically zero, and the order of vanishing at 0 is $k$, then $f(z) = z^k
 %g(z)$ where $g(0) \not= 0$.
@@ -11392,6 +11428,10 @@ By continuity
 of $f$ we find a small polydisc $V = V' \times D$ such that
 $\overline{V} \subset U$ and $f$ is not zero on
 $V' \times \partial D$.
+
+\begin{myfig}
+\subimport*{figures/}{wprepdiv.pdf_t}
+\end{myfig}
 
 The one-variable argument principle (see \thmref{thm:onevarargprinc}) implies that the number of zeros (with
 multiplicity) of $z_n
@@ -11425,15 +11465,19 @@ matter in its definition.  It is
 clear that
 $u$ and $P$ are unique if they exist (as holomorphic functions).
 
-We will prove that $c_j(z')$ are holomorphic.  The functions $c_j$ are
-the elementary symmetric functions of the $\alpha_j$s.  It is a standard
-%(and easy)
+The functions $\alpha_j$ are not even continuous (see
+\exampleref{sqrt:example}).  However,
+we will prove that $c_j(z')$ are holomorphic.  The functions $c_j$ are
+(up to sign)
+the \emph{elementary symmetric functions}
+of the $\alpha_j$s.  It is a standard
 theorem in algebra that the elementary symmetric functions are
 polynomials in the so-called power sum functions in the $\alpha_j$s:
 \begin{equation*}
 s_m(z') = \sum_{j=1}^k \alpha_j{(z')}^m .
 \end{equation*}
-Therefore, if we can show that $s_m$ are holomorphic, then $c_j$ are also
+See \exerciseref{exercise:powersums} below.
+Therefore, if we show that $s_m$ are holomorphic, then $c_j$ are 
 holomorphic.
 
 A refinement of the argument principle says:
@@ -11464,7 +11508,7 @@ to obtain that $s_m$
 is holomorphic.
 
 Finally we wish to show that $P$ divides $f$ as claimed.  The Cauchy
-formula on $\frac{f}{P}$ says
+formula on $\nicefrac{f}{P}$ says
 \begin{equation*}
 u(z',z_n) = \int_{\partial D} \frac{f(z',\zeta)}{P(z',\zeta)(\zeta-z_n)} \, d\zeta .
 \end{equation*}
@@ -11472,6 +11516,22 @@ The function $u$ is holomorphic in $z'$ and $z_n$.  Furthermore from
 one-variable theory we know that for each fixed $z'$ the function has no zeros
 as they cancel out exactly.
 \end{proof}
+
+\begin{example} \label{sqrt:example}
+A useful example to keep in mind is $f(z_1,z_2) = z_2^2 - z_1$,
+a Weierstrass polynomial in $z_2$.  So $z' = z_1$.
+For all $z_1$ except the origin there are two zeros, $\pm \sqrt{z_1}$.
+Call one of them $\alpha_1(z_1)$ and one of them $\alpha_2(z_1)$.  Recall
+there is no continuous choice of a square root that works for all $z_1$,
+so no matter how you choose, $\alpha_1$ and $\alpha_2$ will not be continuous.
+At the origin there is only one zero of order two,
+so $\alpha_1(0) = \alpha_2(0) = 0$.
+On the other hand the
+symmetric functions $c_1(z_1) = - \alpha_1(z_1) - \alpha_2(z_1) = 0$
+and $c_0(z_1') = \alpha_1(z_1)\alpha_2(z_1) = -z_1$ are holomorphic.
+\end{example}
+
+
 
 The hypotheses of the theorem are not an obstacle.  If a holomorphic
 function $f$ is such that $z_n \mapsto f(0,z_n)$ vanishes identically,
@@ -11484,8 +11544,45 @@ that $f \circ L$ satisfies the hypotheses of the theorem.
 Prove the above fact about the existence of $L$ arbitrarily close to the
 identity.
 \end{exercise}
+\end{exbox}
 
-\begin{exercise}
+The \emph{\myindex{elementary symmetric functions}} of
+$\alpha_1,\ldots,\alpha_k$ are the coefficients $\sigma_j$ of the polynomial
+\begin{equation*}
+\prod_{j=1}^k \bigl(t+\alpha_j\bigr)
+=
+t^k
++ \sigma_{k-1} \, t^{k-1} +
+\cdots
++ \sigma_2 \, t^2
++ \sigma_1 \, t
++ \sigma_0 .
+\end{equation*}
+In other words:
+\begin{align*}
+\sigma_0 & = \alpha_1 \alpha_2 \cdots \alpha_k, \\
+\sigma_1 & =
+\alpha_2 \alpha_3 \cdots \alpha_{k} \, + \,
+\alpha_1 \alpha_3 \alpha_4 \cdots \alpha_{k} \, + \, \cdots
+\,+\, \alpha_1 \alpha_2 \cdots \alpha_{k-1}, \\
+& \smash{\vdots} \\
+\sigma_{k-1} & = \alpha_1 + \alpha_2 + \cdots + \alpha_k.
+\end{align*}
+So for example when $k=2$, then $\sigma_0 = \alpha_1\alpha_2$ and
+$\sigma_1 = \alpha_1 + \alpha_2$.  The function $\sigma_1$ happens to
+already be a power sum.  We can write $\sigma_0$
+as a polynomial in the power sums:
+\begin{equation*}
+\sigma_0
+=
+\frac{1}{2}
+{\bigl(\alpha_1 + \alpha_2\bigr)}^2
+-
+\bigl(\alpha_1^2 + \alpha_2^2\bigr) .
+\end{equation*}
+
+\begin{exbox}
+\begin{exercise} \label{exercise:powersums}
 Show that elementary symmetric functions are polynomials in the power sums.
 \end{exercise}
 \end{exbox}
@@ -11503,13 +11600,6 @@ Therefore the Weierstrass theorem is a generalization of the
 implicit function theorem to the case when $\frac{\partial f}{\partial z_n}$
 is zero.  We can still ``solve'' for $z_n$, but we find $k$ solutions
 given as the roots of the obtained Weierstrass polynomial.
-
-\begin{example} \label{sqrt:example}
-A useful example to keep in mind is $f(z_1,z_2) = z_2^2 - z_1$,
-a Weierstrass polynomial in $z_2$.  
-For all $z_1$ except the origin there are two zeros, $\pm \sqrt{z_1}$.
-For $z_1 = 0$, there is only one zero.
-\end{example}
 
 There is an obvious statement of the preparation theorem for germs.
 
@@ -11535,7 +11625,7 @@ polynomial in $z_n$ with coefficients that are holomorphic functions
 of the first $n-1$ variables.
 
 \begin{proof}
-The uniqueness is left as an exercise.  Assume we are working
+Uniqueness is left as an exercise.  Assume we are working
 in a neighborhood $V = V' \times D$ for some small disc $D$
 such that $f$ and $P$ are continuous in $\overline{V}$,
 $P$ is not zero on $V' \times \partial D$, and the
@@ -11604,8 +11694,8 @@ unique real solution $y = x^{2/3}$, but that function is not even
 differentiable.
 
 \begin{proof}
-This is a local statement about $\alpha$ so we need only show
-that $\alpha$ is holomorphic near some point, which, without loss
+We must show that $\alpha$ 
+is holomorphic near any point, which, without loss
 of generality, is the origin.
 Apply the preparation
 theorem to find $f = u P$,
@@ -11657,7 +11747,8 @@ $z_2^2 - z_1 =
 \bigl(z_2-\alpha_2(z_1) \bigr)$.
 These would be the two square roots of $z_1$, and there is no continuous
 (let alone holomorphic) square root defined in $\C \setminus \{ 0 \}$.
-You can however define such roots on some smaller simply connected subset of $U'$, for
+Such roots can be chosen to be holomorphic on any smaller
+simply connected open subset of $U'$, for
 example, on any disc $\Delta \subset U'$.
 
 
@@ -11868,10 +11959,10 @@ is a function, let $Z_f = f^{-1}(0) \subset U$ denote the zero set of $f$.
 
 \begin{defn}
 Let $U \subset \C^n$ be an open set.  Let $X \subset U$ be a set such that
-near each point $p \in U$, there exists a neighborhood $N$ of $p$
-and a family of holomorphic functions $\sF$ defined on $N$ such that
+near each point $p \in U$, there exists a neighborhood $W$ of $p$
+and a family of holomorphic functions $\sF$ defined on $W$ such that
 \begin{equation*}
-N \cap X = \bigl\{ z \in N : f(z) = 0 \text{ for all } f \in \sF \bigr\} 
+W \cap X = \bigl\{ z \in W : f(z) = 0 \text{ for all } f \in \sF \bigr\} 
 = \bigcap_{f \in \sF} Z_f .
 \end{equation*}
 Then $X$ is called a
@@ -11884,6 +11975,18 @@ Sometimes $X$ is called an \emph{\myindex{analytic set}}.
 We say $X \subset U$ is a proper subvariety if $\emptyset \not= X \subsetneq
 U$.
 \end{defn}
+
+\begin{example}
+The set $X = \{ 0 \} \subset \C^n$ is a subvariety as it is the only common vanishing
+point of functions $\sF = \{ z_1,\ldots,z_n \}$.  Similarly $X= \C^n$
+is a subvariety of $\C^n$, where we let $\sF = \emptyset$.
+\end{example}
+
+\begin{example}
+The set in $\C^2$ defined by $z_2 = e^{1/z_1}$ is a subvariety of the set
+$U = \bigl\{ z \in \C^1 : z_1 \not=0 \}$.  It is not a subvariety of any set
+larger than $U$.
+\end{example}
 
 It is useful to note what happens when
 we replace ``near each point $p \in U$'' with ``near each point $p \in
@@ -11960,7 +12063,8 @@ zero set happens to be the variety.  A theorem that we will not prove here
 in full generality,
 the \emph{\myindex{Nullstellensatz}}, says that if we take the germ of
 a subvariety defined by functions
-in an ideal $I \subset \sO_p$, and look at the ideal given by that variety we obtain the
+in an ideal $I \subset \sO_p$, and look at the ideal given by that variety,
+we obtain the
 radical\footnote{The radical of $I$ is defined as $\sqrt{I} \overset{\text{def}}{=} \{ f : f^m \in I, \text{ for
 some } m \}$.} of $I$.  In more concise language the Nullstellensatz says
 $I_p\bigl(V(I)\bigr) = \sqrt{I}$.
@@ -12006,13 +12110,13 @@ the \emph{dimension}\index{dimension at a regular point}
 of $X$ at $p$ is $k$ or $\dim_p X = k$.
 If all points of $X$ are regular points of dimension $k$, then $X$ is called
 a \emph{\myindex{complex manifold}}, or
-\emph{\myindex{complex submanifold}} of (complex) dimension $k$.
+\emph{\myindex{complex submanifold}}, of (complex) dimension $k$.
 
 As the ambient dimension is $n$ we say $X$ is of
 \emph{\myindex{codimension}} $n-k$ at $p$.
 
 \glsadd{not:Xreg}%
-The set of regular points of $X$ will be denoted by $X_{\mathit{reg}}$.  Any
+The set of regular points of $X$ is denoted by $X_{\mathit{reg}}$.  Any
 point that is not regular is \emph{singular}\index{singular point}.
 \glsadd{not:Xsing}%
 The set of singular points of $X$ is denoted by $X_{\mathit{sing}}$.
@@ -12026,7 +12130,7 @@ The set of singular points of $X$ is denoted by $X_{\mathit{sing}}$.
 %=
 %\Gamma_f$ for some holomorphic mapping $f \colon U' \to \C^{n-k}$.
 %%\bigl\{ (z,w) \in U' \times U'' : w=f(z) \bigr\}$.
-A couple of remarks are in order, a single $X$ can have
+A couple of remarks are in order, a subvariety $X$ can have
 regular points of several different dimensions, although if a point
 is of dimension $k$, then all nearby points are of dimension $k$
 as the same $U'$ and $U''$ works.
@@ -12068,7 +12172,7 @@ to be
 \begin{equation*}
 \dim_p X \overset{\text{def}}{=}
 \max \bigl\{ k \in \N_0 : \text{ $\forall$ neighborhoods
-$N$ of $p$, $\exists q \in N \cap X_{\mathit{reg}}$ with $\dim_q X = k$}
+$W$ of $p$, $\exists q \in W \cap X_{\mathit{reg}}$ with $\dim_q X = k$}
 \bigr\} .
 \end{equation*}
 If $(X,p)$ is a germ, we say the dimension of $(X,p)$ is the dimension of
@@ -12366,7 +12470,7 @@ is connected.  Hint: See previous exercise.
 
 \begin{example}
 Local and global reducibility can be different.  For example,
-the variety given by
+the subvariety given by
 \begin{equation*}
 z_2^2 = z_1{(z_1-1)}^2
 \end{equation*}
