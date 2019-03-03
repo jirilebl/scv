@@ -8152,7 +8152,7 @@ $U$ is Hartogs pseudoconvex.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Real analytic functions and complexification}
+\section{Real-analytic functions and complexification}
 
 \begin{defn}
 Let $U \subset \R^n$ be open.
@@ -8258,6 +8258,19 @@ connected, so we can apply the lemma above.
 Prove the identity theorem for real-analytic functions.  That is, if $U
 \subset \R^n$ is a domain, $f \colon U \to \R$ a real-analytic function and
 $f$ is zero on a nonempty open subset of $U$, then $f$ is identically zero.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \R^n$ is a domain and $f \colon U \to \R$ a real-analytic
+function.  Suppose that $W \subset U$ is a nonempty open subset and
+$f|_W$ is harmonic.  Prove that $f$ is harmonic.
+\end{exercise}
+
+\begin{exercise}
+Let $(0,1) \subset \R$.  Construct an fixed real-analytic function
+on $(0,1)$ that does not complexify to the rectangle $(0,1) + i(-\epsilon,\epsilon)
+\subset \C$ for any $\epsilon > 0$.  Why does this not contradict the
+proposition?
 \end{exercise}
 \end{exbox}
 
@@ -8441,6 +8454,27 @@ as we have just seen it is completely natural when speaking about
 real-analytic functions.  This is one of the reasons why real-analytic
 functions play a special role in several complex variables.
 
+\begin{exbox}
+\begin{exercise}
+Let $U \subset \C^n$ be an open set and $\varphi \colon U \to \R$ a
+pluriharmonic function.  Prove that $\varphi$ is real-analytic.
+\end{exercise}
+
+\begin{exercise}
+Let $U \subset \C^n$ be an open set, $z_0 \in U$.
+Suppose $\varphi \colon U \to \R$ is a pluriharmonic function.
+You know that $\varphi$ is real-analytic.
+Using complexification, write down a formula for a holomorphic function near
+$z_0$ whose real part is $\varphi$.
+\end{exercise}
+
+\begin{exercise}
+Let $U \subset \C^n$ be a domain, and suppose $f, g \in \sO(U)$.
+Suppose that $f = \bar{g}$ on $U$.  Use complexification (complexify
+$f-\bar{g}$) to show that both $f$ and $g$ are constant.
+\end{exercise}
+\end{exbox}
+
 \begin{example}
 Not every $C^\infty$ smooth function is real-analytic.  For example,
 on the real line
@@ -8454,8 +8488,10 @@ e^{-1/x^2} & \text{if $x > 0$,} \\
 The function
 $f \colon \R \to \R$ is $C^\infty$ and $f^{(k)}(0) = 0$ for all $k$.
 So the Taylor series of $f$ at the origin does
-not converge to $f$ in any neighborhood of the origin.  It converges to the
+not converge to $f$ in any neighborhood of the origin; it converges to the
 zero function but not to $f$.
+Because of this, there is no neighborhood $V$ of the origin in $\C$ such that
+$f$ is the restriction to $V \cap \R$ of a holomorphic function in $V$.
 \end{example}
 
 \begin{exbox}
@@ -8525,10 +8561,11 @@ complexified holomorphic functions.
 
 \begin{exbox}
 \begin{exercise}
-Suppose $\varphi \colon U \to \R$ is a pluriharmonic function for $U \subset
-\C^n$.  Knowing that $\varphi$ is real-analytic, let $z_0 \in U$ be fixed.
-Using complexification, write down a formula for a holomorphic function near
-$z_0$ whose real part is $\varphi$.
+Let $U \subset \R^n$ be open.  Let $\varphi \colon (0,1) \to U$ be a
+real-analytic function (curve), and let $f \colon U \to \R$ be real
+analytic.  Suppose that $(f \circ \varphi)(t) = 0$ for all $t \in
+(0,\epsilon)$ for some $\epsilon > 0$.  Prove that $f$ is zero on the
+image $\varphi\bigl((0,1)\bigr)$.
 \end{exercise}
 \end{exbox}
 
@@ -9752,6 +9789,16 @@ $F \colon \C^3 \to \C$.
 Find an $M \subset \C^n$, $n \geq 2$, such that near some $p \in M$,
 for every neighborhood $W$ of $p$ in $M$, there is a CR function $f \colon
 W \to \C$ that does not extend holomorphically to either side of $M$ at $p$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $f \colon \partial \bB_n \to \C$ is a smooth function, $n \geq 2$.
+Prove that $f$ is a CR function if and only if
+\begin{equation*}
+\int_0^{2\pi} f(e^{i\theta}v) \, e^{ik\theta} d\theta = 0
+\qquad
+\text{for all $v \in \partial \bB_n$ and all $k \in \N$.}
+\end{equation*}
 \end{exercise}
 \end{exbox}
 

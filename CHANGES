@@ -100,9 +100,10 @@ improvements have been made throughout.
 * Add definition of logarithmically convex complete Reinhardt domain and
   a series of exercises that prove the Levi problem for complete Reinhardt
   domains after Cartan-Thullen
-** Add exercise in 3.1 (identity) renumbering the other exercises
+** Add a few exercises in 3.1 renumbering the rest
 * In 3.2, prove the proposition "zero on the boundary means zero inside"
   including in one dimension (using Rado), and add a figure.
+* Add an exercise in 3.4
 * Add figure to proof of Cauchy-Pompeiu
 * Add figure for Weierstrass preparation theorem
 * Add more complete explanation of what symmetric functions are
