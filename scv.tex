@@ -2721,18 +2721,31 @@ real-valued on $\R^n$ (when $y=0$) if and only if $f(z) =
 \end{exbox}
 
 For a $U \subset \C^n$, a holomorphic mapping $f \colon U \to \C^m$,
-and a point $a \in U$,
+and a point $p \in U$,
 define the holomorphic derivative, sometimes called the
 \emph{\myindex{Jacobian matrix}},
 \glsadd{not:Df}%
 \begin{equation*}
-Df(a)
+Df(p)
 \overset{\text{def}}{=}
 \left[
-\frac{\partial f_j}{\partial z_k} (a)
+\frac{\partial f_j}{\partial z_k} (p)
 \right]_{jk} .
 \end{equation*}
-The notation $f'(a) = Df(a)$ is also used.
+The notation $f'(p) = Df(p)$ is also used.
+
+\begin{exbox}
+\begin{exercise}
+Suppose $U \subset \C^n$ is open, $\R^n$ is naturally embedded in $\C^n$.
+Consider a holomorphic mapping $f \colon U \to \C^m$ and suppose that
+$f|_{U \cap \R^n}$ maps into $\R^m \subset \C^m$.  Prove that for
+any $p \in U \cap \R^n$, the real
+Jacobian matrix of the map
+$f|_{U \cap \R^n} \colon U \cap \R^n \to \R^m$ is equal to the holomorphic
+Jacobian matrix of the map $f$ at $p$.  In particular, $Df(p)$ is a matrix
+with real entries.
+\end{exercise}
+\end{exbox}
 
 Using the holomorphic chain rule above, as in the theory of real functions,
 the derivative of the composition is the composition of derivatives
@@ -2741,9 +2754,9 @@ the derivative of the composition is the composition of derivatives
 \begin{prop}[Chain rule for holomorphic mappings\index{chain rule for holomorphic mappings}]
 Let $U \subset \C^n$ and $V \subset \C^m$ be open sets.  Suppose
 $f \colon U \to V$ and $g \colon V \to \C^k$ are both holomorphic,
-and $a \in U$.  Then
+and $p \in U$.  Then
 \begin{equation*}
-D(g \circ f)(a) = Dg\bigl(f(a)\bigr) \, Df(a) .
+D(g \circ f)(p) = Dg\bigl(f(p)\bigr) \, Df(p) .
 \end{equation*}
 \end{prop}
 
@@ -2755,30 +2768,30 @@ Prove the proposition.
 \end{exercise}
 \end{exbox}
 
-Suppose $U \subset \C^n$, $a \in U$, and $f \colon U \to \C^m$
-is a differentiable function at $a$.
+Suppose $U \subset \C^n$, $p \in U$, and $f \colon U \to \C^m$
+is a differentiable function at $p$.
 Since $\C^n$ is identified with $\R^{2n}$, the mapping $f$
-takes $U \subset \R^{2n}$ to $\R^{2m}$.  The normal vector calculus Jacobian at $a$
+takes $U \subset \R^{2n}$ to $\R^{2m}$.  The normal vector calculus Jacobian at $p$
 of this mapping (a $2m \times 2n$ real matrix) is called the
 \emph{\myindex{real Jacobian}}, and we write it as
 \glsadd{not:DRf}%
-$D_\R f (a)$.
+$D_\R f (p)$.
 
 \begin{prop}
-Let $U \subset \C^n$ be an open set, $a \in U$, and 
+Let $U \subset \C^n$ be an open set, $p \in U$, and 
 $f \colon U \to \C^n$ be holomorphic.  Then
 \begin{equation*}
-\abs{\det D f(a) }^2 = 
-\det D_\R f(a) .
+\abs{\det D f(p) }^2 = 
+\det D_\R f(p) .
 \end{equation*}
 \end{prop}
 
-The expression $\det D f(a)$ is called the \emph{\myindex{Jacobian
+The expression $\det D f(p)$ is called the \emph{\myindex{Jacobian
 determinant}} and clearly it is important to know if we are talking about
 the holomorphic Jacobian determinant or the standard real Jacobian
-determinant $\det D_\R f(a)$.  Recall from vector calculus that
+determinant $\det D_\R f(p)$.  Recall from vector calculus that
 if the real Jacobian determinant $\det D_\R
-f(a)$ of a smooth mapping is positive, then the mapping preserves
+f(p)$ of a smooth mapping is positive, then the mapping preserves
 orientation.  In particular, the proposition
 says that holomorphic mappings preserve orientation.
 
@@ -2787,8 +2800,8 @@ The real mapping using our identification is
 $(\Re f_1,\Im f_1, \ldots, \Re f_n, \Im f_n)$
 as a function of $(x_1,y_1,\ldots,x_n,y_n)$.
 The statement is about the two Jacobians, that is the derivatives
-at $a$, and hence, we can assume that
-$a=0$ and $f$ is complex linear, that is $f(z) = Az$ for some $n \times n$
+at $p$, and hence, we can assume that
+$p=0$ and $f$ is complex linear, that is $f(z) = Az$ for some $n \times n$
 matrix $A$.  It is just a statement about matrices.
 So $A$ is the (holomorphic) Jacobian matrix of $f$, and
 let $B$ be the real Jacobian matrix of $f$.
@@ -2865,6 +2878,10 @@ f\bigl(z,g(z)\bigr) = 0 .
 Prove the holomorphic implicit function theorem above.
 Hint: Check that the normal implicit function theorem for $C^1$
 functions applies, and then show that the $g$ you obtain is holomorphic.
+\end{exercise}
+
+\begin{exercise}
+State and prove a holomorphic version of the inverse function theorem.
 \end{exercise}
 \end{exbox}
 
@@ -3099,9 +3116,15 @@ $\bigl\{ f(p_k) \bigr\}$ are in $\partial V$.  Hence $E$ has limit points in
 $\partial V$ and is not compact.
 \end{proof}
 
-A more general version of the above characterization of proper maps is the following exercise:
-
 \begin{exbox}
+\begin{exercise}
+Let $U \subset \R^n$ and $V \subset \R^m$ be bounded domains and
+let $f \colon \overline{U} \to \overline{V}$ be continuous.
+Suppose $f(U) \subset V$, and $g \colon U \to V$ is defined by
+$g(x) = f(x)$ for all $x \in U$.
+Prove that $g$ is proper if and only if $f(\partial U) \subset \partial V$.
+\end{exercise}
+
 \begin{exercise}
 Let $f \colon X \to Y$ be a continuous function of locally compact Hausdorff topological spaces.
 Let $X_\infty$ and $Y_\infty$ be the 
@@ -3195,7 +3218,7 @@ f(z) =
 e^{i\theta} \prod_{j=1}^k \frac{z-a_j}{1-\bar{a_j} z} ,
 \end{equation*}
 for some real $\theta$ and some $a_j \in \bD$ (that is, $f$ is a finite
-Blaschke product).  Hint: Consider the set $f^{-1}(0)$.
+Blaschke product).  Hint: Consider $f^{-1}(0)$.
 \end{exercise}
 \end{exbox}
 
@@ -3209,6 +3232,13 @@ different, it is not solved in general.
 Suppose $f \colon U \to \bD$ be a proper holomorphic map where $U \subset
 \C^n$ is a nonempty domain.  Prove that $n=1$.  Hint: Consider the same idea as in
 \exerciseref{exercise:noisolatedzeros}.
+\end{exercise}
+
+\begin{exercise}
+Suppose $f \colon \overline{\bB_n} \to \C^m$ is a nonconstant continuous
+map such that $f|_{\bB_n}$ is holomorphic and $\snorm{f(z)} = 1$ whenever
+$\snorm{z}=1$.  Prove that 
+$f|_{\bB_n}$ maps into $\bB_m$ and furthermore that this map is proper.
 \end{exercise}
 \end{exbox}
 
@@ -4192,6 +4222,12 @@ U = \bigl\{ z \in \D^3 :
 \end{equation*}
 Prove that every function $f \in \sO(U)$ extends to $\D^3$.
 Compare to \exerciseref{exercise:fatcylinder1}.
+\end{exercise}
+
+\begin{exercise} \label{exercise:codim2extends}
+Suppose $U = \C^n \setminus \{ z \in \C^n : z_1 = z_2 = 0 \}$, $n
+\geq 2$.  Show that every $f \in \sO(U)$ extends holomorphically to
+$\C^n$.
 \end{exercise}
 \end{exbox}
 

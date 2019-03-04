@@ -50,8 +50,9 @@ improvements have been made throughout.
    (past chain rule for mappings and the proposition on the determinant of the
    Jacobian), it is much more natural to prove it then.  So the last three
    results and last three exercises in the section are renumbered.
+** Add a couple of exercises in 1.3
 * Add figure to proof of Rothstein's theorem in 1.4
-** Add two exercises in 1.4, which renumbers the other exercises.
+** Add exercises in 1.4, which renumbers the other exercises.
 * Add a little bit of explanation of the computation for $f^\ell$ in 1.5
 * Add an exercise to 1.5
 * Add examples for analytic sets in 1.6.
@@ -59,7 +60,7 @@ improvements have been made throughout.
   biholomorphic" (was 1.6.3)
 * Add a short blurb about convexity right at the beginning of 2.1
 * Improve figure for Hartogs figure.
-* Add an exercise to 2.1
+* Add exercises to 2.1
 ** Add part b) to exercise 2.2.2 for any function vanishing on $M$ 
 * Add a blurb about tangent space being derivatives along $M$ and give a
   short example, this renumbers the rest of the definitions/lemmas
