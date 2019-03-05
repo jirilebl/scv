@@ -8212,7 +8212,7 @@ $f=g$ on $U \cap \R^n$.  Then $f=g$ on $U$.
 \end{lemma}
 
 \begin{proof}
-By taking $f-g$ we can assume that $g=0$.
+Considering $f-g$ we may assume that $g=0$.
 Let $z = x+iy$ as usual so that $\R^n$ is given by $y=0$.
 Our assumption is that $f = 0$ when $y=0$,
 so the derivative of $f$ with respect to $x_j$ is zero.
@@ -8344,10 +8344,10 @@ f_j\left(
 \frac{z-\bar{z}}{2i}\right) .
 \end{equation*}
 The polynomial $f_j$ becomes a homogeneous polynomial of degree $j$
-in the variables $z$ and $\bar{z}$.  Therefore the entire
-series becomes a power series in $z$ and $\bar{z}$.  As we mentioned before,
-we simply write $f(z,\bar{z})$, and when we consider the
-power series representation it will be in $z$ and $\bar{z}$ rather than
+in the variables $z$ and $\bar{z}$.  The 
+series becomes a power series in $z$ and $\bar{z}$.  As mentioned before,
+we simply write the function as $f(z,\bar{z})$, and when we consider the
+power series representation it is in $z$ and $\bar{z}$ rather than
 in $x$ and $y$.
 In multinomial notation we write a power series at $a \in \C^n$ as
 \begin{equation*}
@@ -8550,7 +8550,7 @@ Compare this definition to \defnref{def:hypersurface}.  In fact, we could
 define a real-analytic hypersurface as in 
 \defnref{def:hypersurface} and then prove an analogue of
 \lemmaref{lemma:realgraphcoords} to show that this would be identical to the
-definition above.  The definition we gave will be sufficient and so we avoid
+definition above.  The definition we gave is sufficient and so we avoid
 the complication and leave it to the interested reader.
 
 \begin{exbox}
@@ -8588,14 +8588,20 @@ real-analytic function.
 The proof demonstrates a very simple application of complexification.  Many
 properties of holomorphic functions are easy to prove because
 holomorphic functions are solutions to certain PDE (the Cauchy--Riemann
-equations).  However, there is no PDE
+equations).  There is no PDE
 that defines real-analytic functions, so complexification provides a useful
 tool to transfer certain properties of holomorphic functions to
-real-analytic functions.  We must be careful however, hypotheses on
+real-analytic functions.  We must be careful, however, hypotheses on
 real-analytic functions only give us hypotheses on certain points of the
 complexified holomorphic functions.
 
 \begin{exbox}
+\begin{exercise}
+Demonstrate the point about complexification we made just above.
+Find a nonconstant bounded real analytic $f \colon \R^n \to \R$,
+that happens to complexify to $\C^n$.
+\end{exercise}
+
 \begin{exercise}
 Let $U \subset \R^n$ be open.  Let $\varphi \colon (0,1) \to U$ be a
 real-analytic function (curve), and let $f \colon U \to \R$ be real
@@ -8733,7 +8739,7 @@ Suppose $M \subset \C^n$, $n \geq 2$, is the hypersurface given by $\Im z_n
 = 0$.  Show that any smooth CR function on $M$ is holomorphic in the variables
 $z_1,\ldots,z_{n-1}$.  Use this to show that for no smooth CR function $f$ on $M$ can
 $\sabs{f}$ attain a \emph{strict} maximum on $M$.  But show that there do
-exist functions such that $\sabs{f}$ attains a (nonstrict) maximum $M$.
+exist nonconstant functions such that $\sabs{f}$ attains a (nonstrict) maximum $M$.
 \end{exercise}
 \end{exbox}
 
@@ -8744,13 +8750,15 @@ equation for a real-analytic hypersurface.
 
 \begin{prop}
 Suppose $M \subset \C^n$ is a real-analytic hypersurface and $p \in M$.
-Then there are holomorphic coordinates near $p$ taking $p$ to 0,
-such that locally $M$ is given by
+Then after an affine change of coordinates, $p=0$, and near
+the origin, $M$ is given by
 \begin{equation*}
 \bar{w} = \Phi(z,\bar{z},w) ,
 \end{equation*}
-for a holomorphic function $\Phi$ defined on a neighborhood of the origin
-in $\C^{n-1} \times \C^{n-1} \times \C$ that is $O(2)$ at the origin.
+where $\Phi$ is a holomorphic function defined on a neighborhood of the origin
+in $\C^{n-1} \times \C^{n-1} \times \C$, at the origin $\Phi$ is $O(2)$,
+and $w = \overline{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$
+for all $z$, $\zeta$, and $w$.
 Furthermore, a local basis for $T^{(0,1)} M$ vector fields is given by
 \begin{equation*}
 \frac{\partial}{\partial \bar{z}_j}
@@ -8776,10 +8784,33 @@ $r = 0$ as
 \begin{equation*}
 \omega = \Phi(z,\zeta,w) .
 \end{equation*}
-Restricting to the diagonal, $\bar{w} = \omega$ and $\bar{z}=\zeta$,
-we get the result.
-The statement about the CR vector fields then follows since those vector
-fields annihilate the defining function $\Phi(z,\bar{z},w)-\bar{w}$.
+We restrict to the diagonal, $\bar{w} = \omega$ and $\bar{z}=\zeta$,
+to get
+$\bar{w} = \Phi(z,\bar{z},w)$.
+
+FIXME: 
+$w = \overline{\Phi}\bigl(\bar{z},z,\Phi(z,\bar{z},w)\bigr)$
+
+%  Taking the conjugate
+%we get that on $M$
+%$w = \overline{\Phi}(\bar{z},z,\bar{w})$,
+%
+%and therefore
+%$w = \overline{\Phi}\bigl(\bar{z},z,\Phi(z,\bar{z},w)\bigr)$.
+%This equation complexifies, and so 
+%$w = \overline{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$,
+%whenever $\omega = \Phi(z,\zeta,w)$, a
+
+The vector field
+$\frac{\partial}{\partial \zeta_j}
++\frac{\partial \Phi}{\partial \zeta_j} \frac{\partial}{\partial \omega}$
+annihilates
+the function $\Phi(z,\bar{z},w)-\bar{w}$, but that is not enough.
+The vector field must annihilate a real defining function such as the
+real part of $\Phi(z,\bar{z},w)-\bar{w}$.  So if it also
+annihilates the conjugate we are done.
+
+FIXME:
 \end{proof}
 
 \begin{prop}[Severi] \label{prop:severi}\index{Severi's theorem}
