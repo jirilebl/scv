@@ -8750,14 +8750,15 @@ equation for a real-analytic hypersurface.
 
 \begin{prop}
 Suppose $M \subset \C^n$ is a real-analytic hypersurface and $p \in M$.
-Then after an affine change of coordinates, $p=0$, and near
-the origin, $M$ is given by
+Then after a translation and rotation by a unitary matrix, $p=0$, and near
+the origin in coordinates $(z,w) \in \C^{n-1} \times \C$,
+the hypersurface $M$ is given by
 \begin{equation*}
 \bar{w} = \Phi(z,\bar{z},w) ,
 \end{equation*}
 where $\Phi$ is a holomorphic function defined on a neighborhood of the origin
 in $\C^{n-1} \times \C^{n-1} \times \C$, at the origin $\Phi$ is $O(2)$,
-and $w = \overline{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$
+and $w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$
 for all $z$, $\zeta$, and $w$.
 Furthermore, a local basis for $T^{(0,1)} M$ vector fields is given by
 \begin{equation*}
@@ -8768,7 +8769,7 @@ Furthermore, a local basis for $T^{(0,1)} M$ vector fields is given by
 \end{prop}
 
 \begin{proof}
-Find coordinates such that $M$ is given by
+Translate and rotate such that $M$ is given by
 \begin{equation*}
 \Im w = \varphi(z,\bar{z},\Re w) .
 \end{equation*}
@@ -8777,10 +8778,14 @@ as $r(z,w,\bar{z},\bar{w}) = -(\nicefrac{1}{2i})(w-\bar{w})
 +\varphi\bigl(z,\bar{z},(\nicefrac{1}{2})(w+\bar{w})\bigr)$.
 Complexifying, write
 $r(z,w,\zeta,\omega)$ as
-a holomorphic function of $2n$ variables, and the derivative in
+a holomorphic function of $2n$ variables,
+and let $\sM$ be the set given by the
+equation 
+$r(z,w,\zeta,\omega) = 0$.
+The derivative of $r$ in
 $\omega$ (that is $\bar{w}$) does not vanish near the origin.
-Use the implicit function theorem for holomorphic functions to write 
-$r = 0$ as
+Use the implicit function theorem for holomorphic functions to write $\sM$
+near the origin as
 \begin{equation*}
 \omega = \Phi(z,\zeta,w) .
 \end{equation*}
@@ -8788,30 +8793,85 @@ We restrict to the diagonal, $\bar{w} = \omega$ and $\bar{z}=\zeta$,
 to get
 $\bar{w} = \Phi(z,\bar{z},w)$.
 
-FIXME: 
-$w = \overline{\Phi}\bigl(\bar{z},z,\Phi(z,\bar{z},w)\bigr)$
-
-%  Taking the conjugate
-%we get that on $M$
-%$w = \overline{\Phi}(\bar{z},z,\bar{w})$,
-%
-%and therefore
-%$w = \overline{\Phi}\bigl(\bar{z},z,\Phi(z,\bar{z},w)\bigr)$.
-%This equation complexifies, and so 
-%$w = \overline{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$,
-%whenever $\omega = \Phi(z,\zeta,w)$, a
+Because $r$ is real-valued, then
+$r(z,\bar{z},w,\bar{w}) =
+\overline{r(z,\bar{z},w,\bar{w})} = \bar{r}(\bar{z},z,\bar{w},w)$.
+Complexify to obtain
+$r(z,\zeta,w,\omega) =
+\bar{r}(\zeta,z,\omega,w)$ for all $(z,\zeta,w,\omega)$.
+If $r(z,\zeta,w,\omega) = 0$,
+then 
+\begin{equation*}
+0 = \overline{r(z,\zeta,w,\omega)} =
+\overline{\bar{r}(\zeta,z,\omega,w)} =
+r(\bar{\zeta},\bar{z},\bar{\omega},\bar{w}) =0.
+\end{equation*}
+In other words,
+$(z,\zeta,w,\omega) \in \sM$
+if and only if
+$(\bar{\zeta},\bar{z},\bar{\omega},\bar{w}) \in \sM$.
+Near the origin,
+$(z,\zeta,w,\omega) \in \sM$ if and only if
+$\omega = \Phi(z,\zeta,w)$, and hence
+if and only if
+$\bar{w} = \Phi(\bar{\zeta},\bar{z},\bar{\omega})$.
+Conjugating, we get that $\sM$ is also given by
+\begin{equation*}
+w = \bar{\Phi}(\zeta,z,\omega).
+\end{equation*}
+As $\bigl(z,\zeta,w,\Phi(z,\zeta,w)\bigr) \in \sM$, then
+for all $z$, $\zeta$, and $w$,
+\begin{equation*}
+w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr).
+\end{equation*}
 
 The vector field
-$\frac{\partial}{\partial \zeta_j}
+$X_j = \frac{\partial}{\partial \zeta_j}
 +\frac{\partial \Phi}{\partial \zeta_j} \frac{\partial}{\partial \omega}$
 annihilates
 the function $\Phi(z,\bar{z},w)-\bar{w}$, but that is not enough.
 The vector field must annihilate a real defining function such as the
-real part of $\Phi(z,\bar{z},w)-\bar{w}$.  So if it also
-annihilates the conjugate we are done.
-
-FIXME:
+real part of $\Phi(z,\bar{z},w)-\bar{w}$.  If must also
+annihilate the conjugate
+$\bar{\Phi}(\bar{z},z,\bar{w})-w$, at least on $M$.  Compute,
+\begin{equation*}
+X_j \bigl[\bar{\Phi}(\bar{z},z,\bar{w})-w\bigr]
+=
+\frac{\partial \bar{\Phi}}{\partial \bar{z}_j}
++
+\frac{\partial \Phi}{\partial \bar{z}_j}
+\frac{\partial \bar{\Phi}}{\partial \bar{w}} .
+\end{equation*}
+We only need this to vanish on $M$, so we set $\bar{w}$ to
+$\Phi(z,\bar{z},w)$.  We get precisely
+the same expression on the right hand side when 
+differentiate
+$w = \bar{\Phi}\bigl(\bar{z},z,\Phi(z,\bar{z},w)\bigr)$
+with respect to $\bar{z}_j$.
 \end{proof}
+
+By using a complexified parametrization such as $(z,\zeta,w) \mapsto
+\bigl(z,\zeta,w,\Phi(z,\zeta,w)\bigr)$ we find that any real-analytic
+function that vanishes on $M$ must vanish on $\sM$ once complexified.
+
+\begin{exbox}
+\begin{exercise}
+Suppose $M\subset \C^n$ is a real-analytic hypersurface given near
+the origin by
+$\bar{w} = \Phi(z,\bar{z},w)$ as in the proposition.  Suppose
+$f(z,\bar{z},w,\bar{w})$ is a real-analytic function such that $f=0$
+on $M$.  Prove that the complexified $f(z,\zeta,w,\omega)$ vanishes on
+$\sM$ (the set near the origin given by $\omega = \Phi(z,\zeta,w)$).
+\end{exercise}
+
+\begin{exercise}
+In the proposition we only rotated and translated.  Sometimes the following
+change of coordinates is also done.  Prove that one can change coordinates
+(no longer linear) so that the $\Phi$ in the proposition is
+such that $\Phi(z,0,w) = \Phi(0,\zeta,w) = w$ for all $z$, $\zeta$, and $w$.
+These coordinates are called \emph{\myindex{normal coordinates}}.
+\end{exercise}
+\end{exbox}
 
 \begin{prop}[Severi] \label{prop:severi}\index{Severi's theorem}
 Suppose $M \subset \C^n$ is a real-analytic hypersurface and $p \in M$.
@@ -8847,7 +8907,7 @@ on the subset of $\sM$ where $\bar{z} = \zeta$ (and $\bar{w}=\omega$).
 Therefore the equation holds on all of $\sM$ or in other words for
 all $z,\zeta,w$ in a neighborhood.  Consequently
 \begin{equation*}
-\frac{\partial F(z,w,\bar{z})}{\partial \bar{z}_j} = 0
+\frac{\partial}{\partial \bar{z}_j} \bigl[ F(z,w,\bar{z}) \bigr] = 0
 \end{equation*}
 for all $j$,
 and $F$ is actually a holomorphic function in $z$ and $w$ only.
