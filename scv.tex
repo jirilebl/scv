@@ -8756,31 +8756,49 @@ the hypersurface $M$ is given by
 \begin{equation*}
 \bar{w} = \Phi(z,\bar{z},w) ,
 \end{equation*}
-where $\Phi$ is a holomorphic function defined on a neighborhood of the origin
-in $\C^{n-1} \times \C^{n-1} \times \C$, at the origin $\Phi$ is $O(2)$,
-and $w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$
+where $\Phi(z,\zeta,w)$ is a holomorphic function defined on a neighborhood of the origin
+in $\C^{n-1} \times \C^{n-1} \times \C$,
+such that
+$\Phi$,
+$\frac{\partial \Phi}{\partial z_j}$,
+$\frac{\partial \Phi}{\partial \zeta_j}$
+vanish at the origin for all $j$,
+and such that $w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$
 for all $z$, $\zeta$, and $w$.
-Furthermore, a local basis for $T^{(0,1)} M$ vector fields is given by
+
+A local basis for $T^{(0,1)} M$ vector fields is given by
 \begin{equation*}
+\frac{\partial}{\partial \bar{z}_j}
++\frac{\partial \Phi}{\partial \zeta_j} \frac{\partial}{\partial \bar{w}}
+=
 \frac{\partial}{\partial \bar{z}_j}
 +\frac{\partial \Phi}{\partial \bar{z}_j} \frac{\partial}{\partial \bar{w}} ,
 \qquad j=1,\ldots,n-1.
 \end{equation*}
+
+Finally if we let $\sM$ be the set in
+$(z,\zeta,w,\omega) \in \C^{n-1} \times \C^{n-1} \times \C \times \C$
+coordinates given
+by $\omega = \Phi(z,\zeta,w)$, $\sM$ is the unique \emph{complexification}
+of $M$\index{complexification of a real hypersurface}
+near the origin in the sense that if $f(z,\bar{z},w,\bar{w})$
+is any real-analytic function that vanishes on $M$ near the origin, then 
+$f(z,\zeta,w,\omega)$ vanishes on $\sM$ near the origin.
 \end{prop}
 
 \begin{proof}
 Translate and rotate such that $M$ is given by
 \begin{equation*}
-\Im w = \varphi(z,\bar{z},\Re w) .
+\Im w = \varphi(z,\bar{z},\Re w) ,
 \end{equation*}
+where $\varphi$ is $O(2)$.
 Write the defining function
-as $r(z,w,\bar{z},\bar{w}) = -(\nicefrac{1}{2i})(w-\bar{w})
-+\varphi\bigl(z,\bar{z},(\nicefrac{1}{2})(w+\bar{w})\bigr)$.
-Complexifying, write
+as $r(z,w,\bar{z},\bar{w}) = -\frac{w-\bar{w}}{2i}
++\varphi\bigl(z,\bar{z},\frac{w+\bar{w}}{2}\bigr)$.
+Complexifying, consider
 $r(z,w,\zeta,\omega)$ as
 a holomorphic function of $2n$ variables,
-and let $\sM$ be the set given by the
-equation 
+and let $\sM$ be the set defined by
 $r(z,w,\zeta,\omega) = 0$.
 The derivative of $r$ in
 $\omega$ (that is $\bar{w}$) does not vanish near the origin.
@@ -8789,9 +8807,10 @@ near the origin as
 \begin{equation*}
 \omega = \Phi(z,\zeta,w) .
 \end{equation*}
-We restrict to the diagonal, $\bar{w} = \omega$ and $\bar{z}=\zeta$,
+Restrict to the diagonal, $\bar{w} = \omega$ and $\bar{z}=\zeta$,
 to get
-$\bar{w} = \Phi(z,\bar{z},w)$.
+$\bar{w} = \Phi(z,\bar{z},w)$.  This is order 2 in the $z$ and the $\bar{z}$
+since $\varphi$ is $O(2)$.
 
 Because $r$ is real-valued, then
 $r(z,\bar{z},w,\bar{w}) =
@@ -8847,21 +8866,50 @@ $\Phi(z,\bar{z},w)$.  We get precisely
 the same expression on the right hand side when 
 differentiate
 $w = \bar{\Phi}\bigl(\bar{z},z,\Phi(z,\bar{z},w)\bigr)$
-with respect to $\bar{z}_j$.
+with respect to $\bar{z}_j$, so it is zero.
+
+The last claim of the proposition is left as an exercise.
 \end{proof}
 
-By using a complexified parametrization such as $(z,\zeta,w) \mapsto
-\bigl(z,\zeta,w,\Phi(z,\zeta,w)\bigr)$ we find that any real-analytic
-function that vanishes on $M$ must vanish on $\sM$ once complexified.
+Why do we say the last claim in the proposition
+proves the ``uniqueness'' of the complexification?
+Suppose we defined a complexification $\sM'$ by another holomorphic
+equation $f=0$.
+Then by the claim, $\sM \subset \sM'$, at least near the origin.
+If the derivative $df$ is nonzero at the origin, then
+$f\bigl(z,\zeta,w,\Phi(z,\zeta,w)\bigr) = 0$ implies that 
+$\frac{\partial f}{\partial \omega}$ is nonzero at the origin.
+Using the holomorphic implicit function theorem we can uniquely solve $f=0$
+for $\omega$ near the origin, that unique solution is $\Phi$,
+and hence $\sM' = \sM$ near the origin.
+
+As an example, recall that the sphere in $\C^2$ is biholomorphic to the set $\Im w =
+\sabs{z}^2$.  That is, $\frac{w-\bar{w}}{2i} = z \bar{z}$.  Solving for
+$\bar{w}$ and using $\zeta$ and $\omega$ obtains the equation for the
+complexification $\omega = -2iz \zeta + w$.  Then
+$\Phi(z,\zeta,w) = 
+-2iz \zeta + w$, and
+$\bar{\Phi}(\zeta,z,\omega) = 2i\zeta z + \omega$.  Let us check
+that $\Phi$ is the right sort of function,
+$\bar{\Phi}\bigl(z,\zeta,\Phi(z,\zeta,w)\bigr)
+=
+2i\zeta z + (-2i z \zeta + w) = w$.  The CR vector field is
+given by
+$\frac{\partial}{\partial \bar{z}}
++2i z \frac{\partial}{\partial \bar{w}}$.
 
 \begin{exbox}
 \begin{exercise}
-Suppose $M\subset \C^n$ is a real-analytic hypersurface given near
-the origin by
-$\bar{w} = \Phi(z,\bar{z},w)$ as in the proposition.  Suppose
-$f(z,\bar{z},w,\bar{w})$ is a real-analytic function such that $f=0$
+Finish the proof of the proposition:
+%prove that the
+%complexification of any real-analytic $f$ vanishing on $M$ near the origin,
+%vanishes on $\sM$.
+Let $M\subset \C^n$ be a real-analytic hypersurface given by
+$\bar{w} = \Phi(z,\bar{z},w)$ near the origin, as in the proposition.  Let
+$f(z,\bar{z},w,\bar{w})$ be a real-analytic function such that $f=0$
 on $M$.  Prove that the complexified $f(z,\zeta,w,\omega)$ vanishes on
-$\sM$ (the set near the origin given by $\omega = \Phi(z,\zeta,w)$).
+$\sM$.
+% (the set near the origin given by $\omega = \Phi(z,\zeta,w)$).
 \end{exercise}
 
 \begin{exercise}
@@ -8873,9 +8921,9 @@ These coordinates are called \emph{\myindex{normal coordinates}}.
 \end{exercise}
 
 \begin{exercise}
-Suppose a 
+Suppose
 $\Phi$ is a holomorphic function defined on a neighborhood of the origin
-in $\C^{n-1} \times \C^{n-1} \times \C$, at the origin $\Phi$ is $O(2)$.
+in $\C^{n-1} \times \C^{n-1} \times \C$.
 \begin{exparts}
 \item
 Show that $\bar{w} = \Phi(z,\bar{z},w)$ defines a real-analytic hypersurface
@@ -8883,7 +8931,7 @@ near the origin if and only
 $w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$
 for all $z$, $\zeta$, and $w$.  Hint: one direction was proved already.
 \item
-As an example, show that $w = z\bar{z}$ does not satisfy the above
+As an example, show that $\bar{w} = z\bar{z}$ does not satisfy the above
 condition, nor does it define a real hypersurface.
 \end{exparts}
 \end{exercise}
@@ -8955,6 +9003,8 @@ Then $X_{q_k} f = 0$ for all $k$ and by continuity $X_p f = 0$.
 
 \pagebreak[2]
 The boundary values of a holomorphic function define the function uniquely.
+That is, if holomorphic functions continuous up to the (smooth) boundary equal on an
+open set of the boundary, then they are equal:
 
 \begin{prop}
 Suppose $U \subset \C^n$ is a domain with smooth boundary and $f \colon \overline{U} \to \C$ is 
@@ -9529,7 +9579,7 @@ A^2 \snorm{\tilde{s}-s}^2
 %) r^2
 \end{split}
 \end{equation*}
-In other words
+In other words,
 \begin{equation*}
 \babs{
 e^{-\ell[w-z(x,s)]^2}}
@@ -11502,8 +11552,6 @@ $I \subset m$, that is $m$ is a \emph{\myindex{maximal ideal}}.
 \end{exercise}
 \end{exbox}
 
-%Similarly we also have germs of sets.
-
 \begin{defn}
 Let $p$ be a point in a topological space $X$.
 We say that sets $A, B \subset X$ are equivalent
@@ -11522,8 +11570,6 @@ of $p$ such that $X \cap W \subset Y \cap W$.
 Similarly the intersection $(X,p) \cap (Y,p)$ and
 the union $(X,p) \cup (Y,p)$ can easily be defined: we take the intersection
 and the union of representatives and then consider the germ of the result at $p$.
-%The main point is to
-%make sure that the germs are at the same point.
 
 \begin{exbox}
 \begin{exercise}
@@ -11532,7 +11578,6 @@ Then check that what you did is well-defined.
 \end{exercise}
 \end{exbox}
 
-%Finally we need an order of vanishing of a function or a germ.
 Suppose
 $f$ is (a germ of) a holomorphic function at a point $a \in \C^n$.
 Write
@@ -11615,9 +11660,6 @@ f(z',z_n) = u(z',z_n) \, P(z',z_n) .
 Thus for a fixed $z'$, the zeros of $f$ coincide with the zeros
 of a degree $k$ monic polynomial whose coefficients depend
 holomorphically on $z'$.
-%In one variable, the theorem is rather simple.  If $f$ is holomorphic, not
-%identically zero, and the order of vanishing at 0 is $k$, then $f(z) = z^k
-%g(z)$ where $g(0) \not= 0$.
 
 \begin{proof}
 There exists a small disc $D \subset \C$ centered at zero such that
@@ -11865,8 +11907,6 @@ Prove the uniqueness part of the theorem.
 \end{exercise}
 \end{exbox}
 
-%\subsection{Dependence of roots on parameters and the discriminant}
-
 Let us prove that the roots change holomorphically as long as they do not
 come together.  Furthermore, the roots come together
 only on a small set; it is a zero set of a certain holomorphic function
@@ -11962,9 +12002,6 @@ Let $D \subset \C$ be a disc,
 $U' \times D \subset \C^{n-1} \times \C$ a bounded domain,
 and
 $f \in \sO(U' \times D)$.
-%Suppose $f \in \sO(U' \times \D)$ for a bounded domain $U' \times D \subset \C^{n-1} \times \C$,
-%Suppose $f$ is holomorphic in a bounded domain $U' \times D \subset \C^{n-1} \times \C$
-%for $U'$ and $D$ open,
 Suppose the zero set $f^{-1}(0)$ has no limit points
 on $U' \times \partial D$,
 and
@@ -12293,8 +12330,6 @@ point.  Suppose there exists a (complex)
 affine change of coordinates (translation, rotation) such that near
 $p$ the set $X$ can be written as a graph of a holomorphic
 mapping.
-% $f \colon U' \subset \C^k \to
-%\C^{n-k}$ (for some $k \in \N_0$).
 That is, after an affine change of coordinates,
 there is a neighborhood $U' \times U'' \subset \C^{k}
 \times \C^{n-k}$ of $p$, where $k \in \N_0$, such that
@@ -12320,14 +12355,6 @@ point that is not regular is \emph{singular}\index{singular point}.
 The set of singular points of $X$ is denoted by $X_{\mathit{sing}}$.
 \end{defn}
 
-%So $p \in X$ is a regular point if after perhaps a complex affine
-%change of coordinates, 
-%there is a neighborhood $U' \times U'' \subset \C^{k}
-%\times \C^{n-k}$ of $p$ such that
-%$X \cap (U' \times U'')
-%=
-%\Gamma_f$ for some holomorphic mapping $f \colon U' \to \C^{n-k}$.
-%%\bigl\{ (z,w) \in U' \times U'' : w=f(z) \bigr\}$.
 A couple of remarks are in order, a subvariety $X$ can have
 regular points of several different dimensions, although if a point
 is of dimension $k$, then all nearby points are of dimension $k$
@@ -12412,22 +12439,9 @@ In fact $X_{\mathit{sing}}$ is a subvariety of $X$.
 
 We proved in \thmref{thm:regptsdense} that if $X$ is a zero set of a single
 holomorphic function, then $X_{\mathit{reg}}$ is open and dense in $X$.
-%Let us look a little bit more at how this works.
-%We will prove the following simpler version to get a feeling for why the
-%theorem is true.
-%
-%\begin{prop}
-%Let $U \subset \C^n$ be open and connected.
-%Let $f \colon U \to \C$ be holomorphic.
-%Then $(Z_f)_{\mathit{reg}}$ is open and dense in $Z_f$.
-%\end{prop}
-%
 
 Let us prove that $(Z_f)_{\mathit{sing}}$ is contained in the zero set of some holomorphic
 function that is not zero on any open set of $Z_f$.
-%
-%\begin{proof}
-%Without loss of generality,
 We need only prove this locally near the origin.  After a possibly
 linear change of coordinates we apply the preparation theorem to find
 that near the origin, $Z_f$ is the zero set of a Weierstrass polynomial
@@ -12437,20 +12451,6 @@ point in $U' \setminus E$ the set is union of $m$ distinct graphs
 of holomorphic functions by \propref{prop:rootshol}.  As above
 each point of $E$ there are only finitely many points of $Z_f$ the conclusion
 follows.
-%The same argument works for a pure codimension 1 subvariety
-%will follow by the results of the next
-%section, where we will prove that a pure codimension 1 subvariety is
-%in fact the zero set of a single holomorphic function.
-%\end{proof}
-
-%A related result we will also not prove is the following.
-%
-%\begin{thm}
-%Let $U \subset \C^n$ be open and connected and let $X \subset U$
-%be a subvariety, then the $X$ is a locally finite union of submanifolds.
-%\end{thm}
-
-%\subsection{Hypervarieties}
 
 Codimension 1 subvarieties are particularly nice.  Sometimes codimension 1
 subvarieties are called \emph{\myindex{hypervarieties}}.
