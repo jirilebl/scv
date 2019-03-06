@@ -2953,10 +2953,12 @@ spaces.  Then $f$ is a \emph{\myindex{proper map}}\index{map!proper} if for ever
 $K \subset \subset Y$, the set $f^{-1}(K)$ is compact.
 \end{defn}
 
-The notation ``$\subset \subset$'' is a common notation for compact, or relatively
-compact subset.  Often the distinction between compact and relatively
+The notation ``$\subset \subset$'' is a common notation for relatively
+compact subset, that is, the closure is compact in the relative (subspace)
+topology.  Often the distinction between compact and relatively
 compact is not important, for example, in the above definition we can replace
-compact with relatively compact.
+compact with relatively compact.  So it is also sometimes used if just
+``compact'' is meant.
 
 Vaguely, ``proper'' means that ``boundary goes to the boundary.''
 As a continuous map, $f$ pushes compacts to compacts; a proper map is
@@ -3092,7 +3094,7 @@ Then take any convergent subsequence $\bigl\{ f(p_{k_j}) \bigr\}$ of
 $\bigl\{ f(p_k) \bigr\}$
 converging to some $q \in \overline{V}$.  Consider
 $E = \bigl\{ f(p_{k_j}) \bigr\}$ as a set.  Let $\overline{E}$ be the closure of $E$
-in $V$ (relative topology).  If $q \in V$, then $\overline{E} = E \cup \{ q
+in $V$ (subspace topology).  If $q \in V$, then $\overline{E} = E \cup \{ q
 \}$ and $\overline{E}$ is compact.
 Otherwise, if $q \notin V$, then
 $\overline{E} = E$.
@@ -3108,7 +3110,7 @@ Let us prove the converse.
 Suppose that for every sequence
 $\{ p_k \}$ in $U$ such that $p_k \to p \in \partial U$,
 the set of limit points of $\bigl\{ f(p_k) \bigr\}$ lies in $\partial V$.
-Take a closed set $E \subset V$ (relative topology) and look at $f^{-1}(E)$.  If $f^{-1}(E)$
+Take a closed set $E \subset V$ (subspace topology) and look at $f^{-1}(E)$.  If $f^{-1}(E)$
 is not compact, then there exists a sequence $\{ p_k \}$ in $f^{-1}(E)$
 such that $p_k \to p \in \partial U$.  That is because $f^{-1}(E)$ is closed
 (in $U$) but not compact.  The hypothesis then says that the limit points of
@@ -3586,7 +3588,7 @@ points.
 \begin{thm} \label{thm:regptsdense}
 Let $U \subset \C^n$ be a domain and
 $f \in \sO(U)$ and $f$ is not identically zero.
-Let $N = f^{-1}(0)$.  Then there exists a open and dense (relative topology) subset
+Let $N = f^{-1}(0)$.  Then there exists a open and dense (subspace topology) subset
 $N_{\mathit{reg}} \subset N$
 such that near each $p \in N_{\mathit{reg}}$, after possibly reordering variables,
 $N$ can be locally written as
@@ -7147,13 +7149,14 @@ functions defined on an open $U \subset \R^n$.  If $K
 respect to $\sF$, as the set
 \glsadd{not:Khat}%
 \begin{equation*}
-\widehat{K} \overset{\text{def}}{=} \Bigl\{ z \in U : f(z) \leq \sup_{w\in K} f(w)
+\widehat{K} \overset{\text{def}}{=} \Bigl\{ x \in U : f(x) \leq \sup_{y\in K} f(y)
 \text{ for all $f \in \sF$ } \Bigr\} .
 \end{equation*}
 
 An open set $U$ is said to be \emph{convex with respect to $\sF$}\index{convex!with respect to $\sF$}
 if for every $K \subset \subset U$, the hull $\widehat{K} \subset \subset U$.%
-\footnote{Recall that $\subset \subset$ means relatively compact.}
+\footnote{Recall that $\subset \subset$ means relatively compact, that is,
+the closure in the relative (subspace) topology is compact.}
 \end{defn}
 
 Clearly $K \subset \widehat{K}$.  The key is to show that $\widehat{K}$
@@ -7167,6 +7170,14 @@ hulls.
 %We will instead explicitly say so in words to avoid too much notation.
 %and avoid having to say so in words, but we do not take this shortcut.
 
+For example, if $U=\R$ and $\sF$ is the set of real-valued smooth
+$f \colon \R \to \R$ with $f''(x) \geq 0$, then for any $a,b \in \R$
+we have $\widehat{\{ a, b \}} = [a,b]$.
+In general, if $\sF$ was the set of convex functions, then 
+a domain $U \subset \R^n$ is geometrically convex if and only if it is
+convex with respect to convex functions, although let us not define
+what that means except for smooth functions in exercises below.
+
 \begin{exbox}
 \begin{exercise} \label{exercise:geomconvexfuncs}
 Suppose $U \subset \R^n$ is a domain.
@@ -7174,11 +7185,14 @@ Suppose $U \subset \R^n$ is a domain.
 \item
 Show that $U$
 is geometrically convex if and only if it is
-convex with respect to the convex functions on $U$.
-\item
-Show that $U$
-is geometrically convex if and only if it is
 convex with respect to the affine linear functions.
+\item
+Suppose $U$
+has smooth boundary.
+Show that $U$ is convex
+convex if and only if it is
+convex with respect to the smooth convex functions on $U$,
+that is smooth functions with positive semidefinite Hessian.
 \end{exparts}
 \end{exercise}
 
@@ -7188,14 +7202,14 @@ polynomials.
 % in real variables $x_1,\ldots,x_n$.  Hint: Weierstrass
 %approximation theorem makes this easy. (would be too easy)
 \end{exercise}
-
-\begin{exercise}
-The reason for the connectedness hypothesis (domain) in
-\exerciseref{exercise:geomconvexfuncs} is the
-following:  Show that if $U, V \subset \R^n$ are disjoint geometrically convex
-domains, then $U \cup V$ is convex with respect to convex functions, but
-not geometrically convex.
-\end{exercise}
+%
+%\begin{exercise}
+%The reason for the connectedness hypothesis (domain) in
+%\exerciseref{exercise:geomconvexfuncs} is the
+%following:  Show that if $U, V \subset \R^n$ are disjoint geometrically convex
+%domains, then $U \cup V$ is convex with respect to $C^2$-convex functions, but
+%not geometrically convex.
+%\end{exercise}
 %
 %\begin{exercise}[Easy]
 %Note:This is just done below.
@@ -7241,6 +7255,8 @@ is not convex with respect to plurisubharmonic functions, then you could have
 discs (denoted by straight line segments) that approach the boundary as in
 the following picture.  In the diagram, the boundaries of the discs are
 denoted by the dark dots at the end of the segments.
+In fact, if we replace discs with line segments, this is the standard
+convexity, see the exercises below.
 
 \begin{myfig}
 \subimport*{figures/}{contprinc.pdf_t}
@@ -7259,6 +7275,18 @@ $p \in \partial U$,
 and $\Delta$ is an affine linear analytic disc with $p \in \Delta$, but
 $\Delta \setminus \{ p \} \subset U$.  Prove that $U$ is not convex with
 respect to the plurisubharmonic functions.
+\end{exercise}
+
+\begin{exercise}
+Prove the corresponding
+Kotinuit\"atssatz, and its converse, for geometric convexity:
+Suppose $U \subset \R^n$ is a domain.
+Prove that $U$ is geometrically convex if and only if
+whenever $[x_\alpha,y_\alpha] \subset U$
+is a collection of straight line segments such that
+$\bigcup_{\alpha} \{ x_\alpha,y_\alpha \} \subset \subset U$
+then
+$\bigcup_{\alpha} [ x_\alpha,y_\alpha ] \subset \subset U$.
 \end{exercise}
 \end{exbox}
 
@@ -7396,10 +7424,10 @@ Convexity with respect to plurisubharmonic  functions implies
 \bigcup_{\sabs{t} < t_0} \varphi_t(\Delta)
 \subset \subset U .
 \end{equation*}
-Again by continuity we have $\varphi_t(\Delta) \subset \subset U$ for
-all $t$ with $\sabs{t} = t_0$, and consequently it is true when $\sabs{t}$
+Again by continuity, $\varphi_t(\Delta) \subset \subset U$ for
+all $t$ with $\sabs{t} \leq t_0$, and consequently it is true when $\sabs{t}$
 is even slightly larger than $t_0$.
-Hence $\varphi_t(\D) \subset U$
+Hence $\varphi_t(\Delta) \subset U$
 for all $t$ with $\sabs{t} < 1$.  Thus
 $(a+b\xi)+cte^{-f(\xi)} \in U$ for all $\xi \in \Delta$ and all $\sabs{t} <
 1$.  And this implies $\rho_c(a+b\xi) \geq e^{-\Re f(\xi)}$, which in
