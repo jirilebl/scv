@@ -84,6 +84,8 @@ improvements have been made throughout.
 * Add graph of Poisson kernel for a few $r$
 * Add a picture for $n=1$ for definition of subharmonic function where it is
   just the convex function 
+* Make the problem with looking for the (weakly/strongly) pseudoconvex
+  points more logical, and include 3 different domains
 ** Move the solution of Dirichlet problem up in 2.4 so that it can be used.
   This renumbers the exercises in 2.4
 * Add a remark about how pluriharmonic and plurisubharmonic functions are
