@@ -95,16 +95,19 @@ improvements have been made throughout.
 * Clarify/simplify the proof of Rado's theorem and add a figure.
 * Add a note about convexity and example of the hull in section 2.5.
 ** Add exercises in 2.5, renumbering the other exercises
-* Rename chapter 3 to "CR functions" from "CR geometry" since we really did
-  quite a bit of "CR geometry" in chapter 2 already, in chapter 3 it is
-  CR functions specifically that we are interested in.
 ** Rework and add exercises in 2.6 which renumbers them
 * State the solution of the Levi problem as a theorem in 2.6 even though we
   do not prove it.
 * Add definition of logarithmically convex complete Reinhardt domain and
   a series of exercises that prove the Levi problem for complete Reinhardt
   domains after Cartan-Thullen
+* Rename chapter 3 to "CR functions" from "CR geometry" since we really did
+  quite a bit of "CR geometry" in chapter 2 already, in chapter 3 it is
+  CR functions specifically that we are interested in.
 ** Add a few exercises in 3.1 renumbering the rest
+* Add a bit more explanation of the complexification and the abuse of notation
+  for treating $\bar{z}$ as an independent variable in the context of
+  real-analytic functions.
 * In 3.2 add the "reality condition" the complexified graph proposition, and
   with it fix the gap showing that the vector fields given give the CR
   vector fields

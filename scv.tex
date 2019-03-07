@@ -82,6 +82,7 @@
 
 
 \usepackage{tikz}
+\usetikzlibrary{cd}
 \usepackage{rotating}
 
 \usepackage{cellspace}
@@ -8248,9 +8249,9 @@ lemma.
 
 \begin{lemma}
 Let $\R^n \subset \C^n$ be the natural inclusion and 
-$U \subset \C^n$ a domain such that $U \cap \R^n \not= \emptyset$.
-Suppose $f,g \colon U \to \C$ are holomorphic functions such that
-$f=g$ on $U \cap \R^n$.  Then $f=g$ on $U$.
+$V \subset \C^n$ a domain such that $V \cap \R^n \not= \emptyset$.
+Suppose $f,g \colon V \to \C$ are holomorphic functions such that
+$f=g$ on $V \cap \R^n$.  Then $f=g$ on $V$.
 \end{lemma}
 
 \begin{proof}
@@ -8270,9 +8271,9 @@ Therefore, on $y=0$,
 \end{equation*}
 The derivative $\frac{\partial f }{\partial z_j}$ is holomorphic
 and $\frac{\partial f }{\partial z_j} = 0$ on $y=0$.  Then
-by induction all derivatives of $f$ at $p \in \R^n \cap U$ vanish, it has a zero 
+by induction all derivatives of $f$ at $p \in \R^n \cap V$ vanish, it has a zero 
 power series.  Hence $f$ is identically zero in a neighborhood of
-$p$ in $\C^n$ and by the identity theorem it is zero on all of $U$.
+$p$ in $\C^n$ and by the identity theorem it is zero on all of $V$.
 \end{proof}
 
 
@@ -8364,7 +8365,7 @@ write the power series of $f$ at $a$ as
 \begin{equation*}
 \sum_{j=0}^{\infty} f_j(x-a) ,
 \end{equation*}
-where $f_j$ is a homogeneous polynomial of degree $j$.  The $f_d$ is then
+where $f_j$ is a homogeneous polynomial of degree $j$.  The $f_d$ is 
 called the
 \emph{\myindex{degree $d$ homogeneous part}}\index{homogeneous part} of $f$
 at $a$.
@@ -8405,32 +8406,32 @@ Before we discuss complexification in terms of $z$ and $\bar{z}$ we need
 the following lemma.
 
 \begin{lemma}
-Let $U \subset \C^n \times \C^n$ be a domain, let the coordinates be $(z,\zeta) \in \C^n \times
+Let $V \subset \C^n \times \C^n$ be a domain, let the coordinates be $(z,\zeta) \in \C^n \times
 \C^n$, let
 \begin{equation*}
 D = \bigl\{ (z,\zeta) \in \C^n \times \C^n : \zeta = \bar{z} \bigr\},
 \end{equation*}
-and suppose $D \cap U \not= \emptyset$.
-Suppose $f,g \colon U \to \C$ be holomorphic functions such that
-$f=g$ on $D \cap U$.  Then $f=g$ on all of $U$.
+and suppose $D \cap V \not= \emptyset$.
+Suppose $f,g \colon V \to \C$ be holomorphic functions such that
+$f=g$ on $D \cap V$.  Then $f=g$ on all of $V$.
 \end{lemma}
 
 The set $D$ is sometimes called the \emph{\myindex{diagonal}}.
 
 \begin{proof}
 Again assume without loss of generality that $g=0$.
-Whenever $(z,\bar{z}) \in U$, we have $f(z,\bar{z}) = 0$, which is really
+Whenever $(z,\bar{z}) \in V$, we have $f(z,\bar{z}) = 0$, which is really
 $f$ composed with the map that takes $z$ to $(z,\bar{z})$.  Using the chain rule
 \begin{equation*}
 0 =
-\frac{\partial}{\partial \bar{z}_j} \bigl(f(z,\bar{z})\bigr)
+\frac{\partial}{\partial \bar{z}_j} \Bigl[f(z,\bar{z})\Bigr]
 =
 \frac{\partial f}{\partial \zeta_j}(z,\bar{z}) .
 \end{equation*}
 Let us do this again with the $z_j$
 \begin{equation*}
 0 =
-\frac{\partial}{\partial z_j} \bigl(f(z,\bar{z})\bigr)
+\frac{\partial}{\partial z_j} \Bigl[f(z,\bar{z})\Bigr]
 =
 \frac{\partial f}{\partial z_j}(z,\bar{z}) .
 \end{equation*}
@@ -8438,7 +8439,7 @@ Each time we get another holomorphic function that is zero on $D$.
 By induction, for all $\alpha$ and $\beta$ we get
 \begin{equation*}
 0 =
-\frac{\partial^{\sabs{\alpha}+\sabs{\beta}}}{\partial z^\alpha \partial \bar{z}^\beta} \bigl(f(z,\bar{z})\bigr)
+\frac{\partial^{\sabs{\alpha}+\sabs{\beta}}}{\partial z^\alpha \partial \bar{z}^\beta} \Bigl[f(z,\bar{z})\Bigr]
 =
 \frac{\partial^{\sabs{\alpha}+\sabs{\beta}} f}{\partial z^\alpha \partial
 \zeta^\beta}(z,\bar{z}) .
@@ -8487,16 +8488,53 @@ and a unique holomorphic function $F \colon V \to \C$ such that
 $F(z,\bar{z}) = f(z,\bar{z})$ for all $z \in U$.
 \end{prop}
 
-The function $f$ can be thought of as the restriction of $F$ to the set
+The function $f$ can be thought of as the restriction of $f$ to the set
 where $\zeta = \bar{z}$.  We will abuse notation and write
 simply $f(z,\zeta)$ both for $f$ and its extension.
+The reason for this abuse if evident from the computations above.
+What we are calling $f$ is a function of $(z,\bar{z})$ if thinking
+of it as a function on the diagonal where $\zeta=\bar{z}$, or it is a function of
+$z$ if thinking of it as just the function $z \mapsto f(z,\bar{z})$, or
+it is the function $(z,\zeta) \mapsto f(z,\zeta)$.  We have the
+following commutative diagram:
+\begin{equation*}
+\begin{tikzcd}
+U \subset \C^n \ar[rr, "{z \, \mapsto \, (z,\bar{z})}"] \ar[dr, "f"']
+&
+&
+V \subset \C^n \times \C^n \ar[dl, "f ~~ {(=F)}"]
+\\
+&
+\C
+\end{tikzcd}
+\end{equation*}
+All three ways of going from one place to another in the diagram
+we are calling $f$.  The arrow from $V$ was called $F$ in the proposition.
+The notation plays well with differentiation and the Wirtinger operators.
+Differentinating $f$ (really the $F$ in the proposition) in $\zeta_j$ and
+evaluating at $(z,\bar{z})$ is the same thing as evaluating at
+$(z,\bar{z})$ and then differentiating in $\bar{z}_j$ using the Wirtinger
+operator:
+\begin{equation*}
+\frac{\partial F}{\partial \zeta_j}(z,\bar{z}) = 
+\frac{\partial f}{\partial \zeta_j}(z,\bar{z}) = 
+\frac{\partial}{\partial \bar{z}_j}\Bigl[ f(z,\bar{z}) \Bigr] = 
+\frac{\partial f}{\partial \bar{z}_j}(z,\bar{z}) .
+\end{equation*}
+If we squint our mind's eye,
+we can't quite see the difference between $\bar{z}$ and $\zeta$.
+We already used this idea for smooth functions, but for
+real-analytic functions we can 
+treat $z$ and $\bar{z}$ as truly independent variables.
+So the abuse of notation is entirely justified, at least once it is
+understood well.
 
 \begin{remark}
-The domain $V$ above is not simply $U$ times the conjugate of $U$.  In
-general it is much smaller.  For example a real-analytic $f \colon \C^n \to
+The domain $V$ in the proposition is not simply $U$ times the conjugate of $U$.
+In general, it is much smaller.  For example, a real-analytic $f \colon \C^n \to
 \C$ does not necessarily complexify to all of $\C^n \times \C^n$.  That is
 because the domain of convergence for a real-analytic function on $\C^n$
-is not necessarily all of $\C^n$.  For example, in one dimension
+is not necessarily all of $\C^n$.  In one dimension,
 the function
 \begin{equation*}
 f(z,\bar{z})
@@ -8509,7 +8547,7 @@ function
 f(z,\zeta)
 = \frac{1}{1+z \zeta}
 \end{equation*}
-cannot be defined along the set where $z \zeta = -1$, which by a fluke
+is undefined on the set where $z \zeta = -1$, which by a fluke
 never happens when $\zeta = \bar{z}$.
 \end{remark}
 
@@ -8811,22 +8849,30 @@ for all $z$, $\zeta$, and $w$.
 A local basis for $T^{(0,1)} M$ vector fields is given by
 \begin{equation*}
 \frac{\partial}{\partial \bar{z}_j}
-+\frac{\partial \Phi}{\partial \zeta_j} \frac{\partial}{\partial \bar{w}}
++\frac{\partial \Phi}{\partial \bar{z}_j} \frac{\partial}{\partial \bar{w}} 
+\quad
+\left(
 =
 \frac{\partial}{\partial \bar{z}_j}
-+\frac{\partial \Phi}{\partial \bar{z}_j} \frac{\partial}{\partial \bar{w}} ,
++\frac{\partial \Phi}{\partial \zeta_j} \frac{\partial}{\partial \bar{w}} 
+\right)
+,
 \qquad j=1,\ldots,n-1.
 \end{equation*}
 
-Finally if we let $\sM$ be the set in
+Finally, let $\sM$ be the set in
 $(z,\zeta,w,\omega) \in \C^{n-1} \times \C^{n-1} \times \C \times \C$
 coordinates given
-by $\omega = \Phi(z,\zeta,w)$, $\sM$ is the unique \emph{complexification}
+by $\omega = \Phi(z,\zeta,w)$.
+Then $\sM$ is the unique \emph{complexification}
 of $M$\index{complexification of a real hypersurface}
 near the origin in the sense that if $f(z,\bar{z},w,\bar{w})$
-is any real-analytic function that vanishes on $M$ near the origin, then 
+is a real-analytic function vanishing on $M$ near the origin, then 
 $f(z,\zeta,w,\omega)$ vanishes on $\sM$ near the origin.
 \end{prop}
+
+Again as a slight abuse of notation $\Phi$ refers to both the function
+$\Phi(z,\zeta,w)$ and $\Phi(z,\bar{z},w)$.
 
 \begin{proof}
 Translate and rotate such that $M$ is given by
@@ -8867,7 +8913,7 @@ then
 \overline{\bar{r}(\zeta,z,\omega,w)} =
 r(\bar{\zeta},\bar{z},\bar{\omega},\bar{w}) =0.
 \end{equation*}
-In other words,
+So,
 $(z,\zeta,w,\omega) \in \sM$
 if and only if
 $(\bar{\zeta},\bar{z},\bar{\omega},\bar{w}) \in \sM$.
@@ -8887,12 +8933,12 @@ w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr).
 \end{equation*}
 
 The vector field
-$X_j = \frac{\partial}{\partial \zeta_j}
-+\frac{\partial \Phi}{\partial \zeta_j} \frac{\partial}{\partial \omega}$
+$X_j = \frac{\partial}{\partial \bar{z}_j}
++\frac{\partial \Phi}{\partial \bar{z}_j} \frac{\partial}{\partial \omega}$
 annihilates
 the function $\Phi(z,\bar{z},w)-\bar{w}$, but that is not enough.
 The vector field must annihilate a real defining function such as the
-real part of $\Phi(z,\bar{z},w)-\bar{w}$.  If must also
+real part of $\Phi(z,\bar{z},w)-\bar{w}$.  So $X_j$ must also
 annihilate the conjugate
 $\bar{\Phi}(\bar{z},z,\bar{w})-w$, at least on $M$.  Compute,
 \begin{equation*}
@@ -8903,12 +8949,12 @@ X_j \bigl[\bar{\Phi}(\bar{z},z,\bar{w})-w\bigr]
 \frac{\partial \Phi}{\partial \bar{z}_j}
 \frac{\partial \bar{\Phi}}{\partial \bar{w}} .
 \end{equation*}
-We only need this to vanish on $M$, so we set $\bar{w}$ to
+We are on $M$ so set $\bar{w}$ to
 $\Phi(z,\bar{z},w)$.  We get precisely
-the same expression on the right hand side when 
+the same expression on the right hand side when we
 differentiate
 $w = \bar{\Phi}\bigl(\bar{z},z,\Phi(z,\bar{z},w)\bigr)$
-with respect to $\bar{z}_j$, so it is zero.
+with respect to $\bar{z}_j$.  So the expression is zero on $M$.
 
 The last claim of the proposition is left as an exercise.
 \end{proof}
@@ -8917,7 +8963,7 @@ Why do we say the last claim in the proposition
 proves the ``uniqueness'' of the complexification?
 Suppose we defined a complexification $\sM'$ by another holomorphic
 equation $f=0$.
-Then by the claim, $\sM \subset \sM'$, at least near the origin.
+By the claim, $\sM \subset \sM'$, at least near the origin.
 If the derivative $df$ is nonzero at the origin, then
 $f\bigl(z,\zeta,w,\Phi(z,\zeta,w)\bigr) = 0$ implies that 
 $\frac{\partial f}{\partial \omega}$ is nonzero at the origin.
@@ -8932,7 +8978,7 @@ complexification $\omega = -2iz \zeta + w$.  Then
 $\Phi(z,\zeta,w) = 
 -2iz \zeta + w$, and
 $\bar{\Phi}(\zeta,z,\omega) = 2i\zeta z + \omega$.  Let us check
-that $\Phi$ is the right sort of function,
+that $\Phi$ is the right sort of function:
 $\bar{\Phi}\bigl(z,\zeta,\Phi(z,\zeta,w)\bigr)
 =
 2i\zeta z + (-2i z \zeta + w) = w$.  The CR vector field is
