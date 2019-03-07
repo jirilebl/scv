@@ -7051,7 +7051,7 @@ exercise.
 \end{exercise}
 \end{exbox}
 
-As an application of harmonic functions, let us prove 
+As an application of subharmonic functions, let us prove 
 another useful theorem about zero sets of holomorphic functions,
 the theorem of
 Rad\'o.  It is sometimes covered in a one-variable course, but it is often
@@ -7182,8 +7182,6 @@ on a larger set, obtaining a smaller $\sF$ and hence a larger
 $\widehat{K}$.  Sometimes it is useful to write $\widehat{K}_{\sF}$ to
 denote the dependence on $\sF$, especially when talking about several different
 hulls.
-%We will instead explicitly say so in words to avoid too much notation.
-%and avoid having to say so in words, but we do not take this shortcut.
 
 For example, if $U=\R$ and $\sF$ is the set of real-valued smooth
 $f \colon \R \to \R$ with $f''(x) \geq 0$, then for any $a,b \in \R$
@@ -7204,7 +7202,7 @@ convex with respect to the affine linear functions.
 \item
 Suppose $U$
 has smooth boundary.
-Show that $U$ is convex
+Show that $U$ is 
 convex if and only if it is
 convex with respect to the smooth convex functions on $U$,
 that is smooth functions with positive semidefinite Hessian.
@@ -7214,24 +7212,7 @@ that is smooth functions with positive semidefinite Hessian.
 \begin{exercise}
 Show that any open set $U \subset \R^n$ is convex with respect to real
 polynomials.
-% in real variables $x_1,\ldots,x_n$.  Hint: Weierstrass
-%approximation theorem makes this easy. (would be too easy)
 \end{exercise}
-%
-%\begin{exercise}
-%The reason for the connectedness hypothesis (domain) in
-%\exerciseref{exercise:geomconvexfuncs} is the
-%following:  Show that if $U, V \subset \R^n$ are disjoint geometrically convex
-%domains, then $U \cup V$ is convex with respect to $C^2$-convex functions, but
-%not geometrically convex.
-%\end{exercise}
-%
-%\begin{exercise}[Easy]
-%Note:This is just done below.
-%Show that if $\overline{\Delta} \subset U$ is a closed analytic disc, then
-%$\Delta$ is a subset of the hull of $\partial \Delta$ with respect to the
-%plurisubharmonic functions.
-%\end{exercise}
 \end{exbox}
 
 \begin{thm}[Kotinuit\"atssatz---Continuity
@@ -7383,7 +7364,7 @@ For $c \in \C^n$ with $\snorm{c}=1$, let us define
 \begin{equation*}
 \rho_c(z) =
 \sup \bigl\{ \lambda > 0 :
-z+ \lambda t c \in U \text{ for all $\sabs{t} < 1$} \bigr\} .
+z+ \zeta c \in U \text{ for all $\zeta \in \lambda\D$} \bigr\} .
 \end{equation*}
 So $\rho_c(z)$ is the radius of the largest affine disc centered at $z$
 in the direction $c$ that still lies in $U$.
@@ -7410,21 +7391,26 @@ For $\xi \in \partial \Delta$ we have  $- \log \rho_c(a+b\xi) \leq \Re
 f(\xi)$,
 or in other words
 \begin{equation*}
-\rho_c(a+b\xi) \geq e^{-\Re f(\xi)} = \babs{e^{-f(\xi)}}.
+\rho_c(a+b\xi) \geq e^{-\Re f(\xi)} = \babs{e^{-f(\xi)}} \quad \text{for
+$\xi \in \partial \Delta$}.
 \end{equation*}
-Using the definition of $\rho_c(a+b\xi)$, the statement above is equivalent
-to saying that whenever $\sabs{t} < 1$ then 
+Using $\zeta = t e^{-f(\xi)}$ in the definition of $\rho_c(a+b\xi)$, the statement above is equivalent
+to saying that 
 \begin{equation*}
-(a+b\xi)+cte^{-f(\xi)} \in U .
+(a+b\xi)+te^{-f(\xi)}c \in U \quad \text{for all $t \in \D$ and all $\xi \in
+\partial \Delta$}.
 \end{equation*}
 This statement holds when $\xi \in \partial \Delta$.  If we prove that it also
 holds for $\xi \in \Delta$, then we are finished.
 
-We think of $\varphi_t(\xi) = 
-(a+b\xi)+cte^{-f(\xi)}$ as a closed analytic disc with boundary inside
+The function $\varphi_t(\xi) = 
+(a+b\xi)+te^{-f(\xi)}c$ gives a closed analytic disc with boundary inside
 $U$.  We have a family of analytic discs, parametrized by $t$, whose boundaries are in
 $U$ for all $t$ with $\sabs{t} < 1$.  For $t=0$ the entire disc is
-inside $U$.  Take $t_0 < 1$ such that
+inside $U$.  As $\varphi_t(\xi)$ is continuous in both $t$ and $\xi$ and
+$\overline{\Delta}$ is compact,
+$\varphi_t(\Delta) \subset U$ for $t$ in some neighborhood of $0$.
+Take $0 < t_0 < 1$ such that
 $\varphi_t(\Delta) \subset U$ for all $t$ with $\sabs{t} < t_0$.
 Then
 \begin{equation*}
@@ -7434,17 +7420,18 @@ Then
 \subset \subset U ,
 \end{equation*}
 because continuous functions take compact sets to compact sets.
-Convexity with respect to plurisubharmonic  functions implies 
+\hyperref[thm:contprinciple]{Kontinuit\"atssatz}
+implies 
 \begin{equation*}
 \bigcup_{\sabs{t} < t_0} \varphi_t(\Delta)
 \subset \subset U .
 \end{equation*}
 Again by continuity, $\varphi_t(\Delta) \subset \subset U$ for
-all $t$ with $\sabs{t} \leq t_0$, and consequently it is true when $\sabs{t}$
+all $t$ with $\sabs{t} = t_0$, and consequently it is true when $\sabs{t}$
 is even slightly larger than $t_0$.
 Hence $\varphi_t(\Delta) \subset U$
 for all $t$ with $\sabs{t} < 1$.  Thus
-$(a+b\xi)+cte^{-f(\xi)} \in U$ for all $\xi \in \Delta$ and all $\sabs{t} <
+$(a+b\xi)+te^{-f(\xi)}c \in U$ for all $\xi \in \Delta$ and all $\sabs{t} <
 1$.  And this implies $\rho_c(a+b\xi) \geq e^{-\Re f(\xi)}$, which in
 turn implies $-\log \rho_c(a+b\xi) \leq \Re f(\xi) = u(\xi)$, and
 therefore $-\log \rho_c(a+b\xi)$ is subharmonic.
@@ -7542,7 +7529,7 @@ $W$ be such that $U \cap W$
 is Hartogs pseudoconvex.  By intersecting with a ball, which is
 Hartogs pseudoconvex, we assume $W = B_r(p)$ (a ball centered at $p$).
 Let $B = B_{r/2}(p)$.  For
-any $z \in B \cap U$, the distance from $z$ to the boundary of $W \cap U$ is the same as
+any $q \in B \cap U$, the distance from $q$ to the boundary of $W \cap U$ is the same as
 the distance to $\partial U$.  The setup is illustrated in the following
 figure.  The part of the boundary $\partial U$ in $W$ is marked by a thick
 black line, the part of the boundary of $\partial (W \cap U)$ that arises as
@@ -7566,9 +7553,9 @@ Then for $z \in B \cap U$
 - \log \, \operatorname{dist}\bigl(z, \partial (U \cap W)\bigr).
 \end{equation*}
 We know the right hand side is plurisubharmonic.  We have such a ball $B$ of
-positive radius around every $p \in \partial U$, so we have a
-plurisubharmonic
-exhaustion function near the boundary.
+positive radius around every $p \in \partial U$, so near
+the boundary $- \log \, \operatorname{dist}(z, \partial U)$ is
+a plurisubharmonic exhaustion function.
 
 If $U$ is bounded, then $\partial U$ is compact.  So there is some
 $\epsilon > 0$ such that $- \log \, \operatorname{dist}(z, \partial U)$
