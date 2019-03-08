@@ -7432,9 +7432,11 @@ is even slightly larger than $t_0$.
 Hence $\varphi_t(\Delta) \subset U$
 for all $t$ with $\sabs{t} < 1$.  Thus
 $(a+b\xi)+te^{-f(\xi)}c \in U$ for all $\xi \in \Delta$ and all $\sabs{t} <
-1$.  And this implies $\rho_c(a+b\xi) \geq e^{-\Re f(\xi)}$, which in
-turn implies $-\log \rho_c(a+b\xi) \leq \Re f(\xi) = u(\xi)$, and
-therefore $-\log \rho_c(a+b\xi)$ is subharmonic.
+1$.  This implies $\rho_c(a+b\xi) \geq e^{-\Re f(\xi)}$ for all $\xi \in
+\Delta$, which in
+turn implies $-\log \rho_c(a+b\xi) \leq \Re f(\xi) = u(\xi)$ for all $\xi
+\in \Delta$. 
+Therefore, $-\log \rho_c(a+b\xi)$ is subharmonic.
 \end{proof}
 
 \begin{exbox}
@@ -7552,8 +7554,8 @@ Then for $z \in B \cap U$
 - \log \, \operatorname{dist}(z, \partial U) = 
 - \log \, \operatorname{dist}\bigl(z, \partial (U \cap W)\bigr).
 \end{equation*}
-We know the right hand side is plurisubharmonic.  We have such a ball $B$ of
-positive radius around every $p \in \partial U$, so near
+We know the right hand side is plurisubharmonic.  Such a ball $B$ of
+positive radius exists around every $p \in \partial U$, so near
 the boundary $- \log \, \operatorname{dist}(z, \partial U)$ is
 a plurisubharmonic exhaustion function.
 
@@ -10137,7 +10139,7 @@ sense (the function is integrable).  Hint: polar coordinates.
 
 \begin{exercise}
 Why can we not differentiate in $\bar{z}$ under the integral in the second
-term?  Notice that would lead to an impossible result.
+term?  Notice that it would lead to an impossible result.
 \end{exercise}
 \end{exbox}
 
@@ -13531,7 +13533,7 @@ is composed of piecewise-$C^1$ paths, and at point $p \in \partial U$,
 every disc $\Delta_\rho(p)$ contains points from $U$ and points from the
 complement of $\overline{U}$.  If 
 at each point where the parametrization of $\partial U$ is differentiable,
-the domain is on the left ($\gamma'(t)$ rotated by $\pi/2$ points into the
+the domain is on the left ($\gamma'(t)$ rotated by $\frac{\pi}{2}$ points into the
 domain), then the boundary is \emph{\myindex{positively oriented}}.
 
 \begin{thm}[Cauchy integral formula]
