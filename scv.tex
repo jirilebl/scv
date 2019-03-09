@@ -6328,7 +6328,7 @@ The following are the graphs of $P_r$ for $r=0.5$,
 $r=0.7$, and $r=0.85$ on $[-\pi,\pi]$:
 
 \begin{myfig}
-\includegraphics[width=0.5\textwidth]{figures/poisson-kernel.pdf}
+\includegraphics[width=0.49\textwidth]{figures/poisson-kernel.pdf}
 \end{myfig}
 
 %\pagebreak[2]
@@ -6461,8 +6461,9 @@ $\overline{\Delta_r(a)} \subset U$ then
 f(a) \leq \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta \leq f(a)
 .
 \end{equation*}
-In particular $f = f(a)$ almost everywhere on $\partial \Delta_r(a)$.
-By upper-semicontinuity it is true everywhere.  This was true for all $r$
+Hence, $f = f(a)$ almost everywhere on $\partial \Delta_r(a)$.
+By upper-semicontinuity, $f = f(a)$ everywhere on $\partial \Delta_r(a)$.
+This was true for all $r$
 with $\overline{\Delta_r(a)} \subset U$, so $f=f(a)$ on $\Delta_r(a)$,
 and so the set where $f=f(a)$ is open.  The set where an upper-semicontinuous
 function attains a maximum is closed.  So $f=f(a)$ on $U$ as $U$ is
@@ -6479,14 +6480,27 @@ the maximum principle and \exerciseref{exercise:fminusgsubharmonic}.
 \end{exercise}
 
 \begin{exercise}
-Prove that the inequality from the definition of subharmonic functions
-works for any any bounded set, not just balls.
+%Prove that the inequality from the definition of subharmonic functions
+%works for any bounded set, not just balls (discs).
 Suppose $U \subset \C$ is a bounded open set, $f \colon \overline{U} \to \R
 \setminus \{-\infty\}$ is an upper-semicontinuous function, such that $f|_U$
-is subharmonic, $g \colon \overline{U} \to \R$ a continuous function
-such that $g|_U$ is harmonic, and such that
-$f(z) \leq g(z)$ for all $z \in \partial U$.  Then prove that
+is subharmonic, $g \colon \overline{U} \to \R$ is a continuous function
+such that $g|_U$ is harmonic and
+$f(z) \leq g(z)$ for all $z \in \partial U$.  Prove that
 $f(z) \leq g(z)$ for all $z \in U$.
+%\pagebreak[2]
+\end{exercise}
+
+\begin{exercise} \label{exercise:onlyniceuneededforsubharmonic}
+Let $g$ be a function
+harmonic on a disc $\Delta \subset \C$ and continuous on
+$\overline{\Delta}$.  Prove that for any $\epsilon > 0$ there exists
+a function $g_\epsilon$, harmonic in a neighborhood of $\overline{\Delta}$,
+such that $g(z) \leq g_\epsilon(z) \leq g(z)+\epsilon$ for all $z \in
+\overline{\Delta}$.
+In particular, to test subharmonicity, we only need to consider those
+$g$ that are harmonic a bit past the boundary of the disc.
+%\pagebreak[2]
 \end{exercise}
 \end{exbox}
 
@@ -6598,8 +6612,8 @@ is subharmonic, then $\varphi \circ f$ is subharmonic.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \C$ is an open set, $\{ f_n \}$ a sequence of 
-subharmonic functions that is uniformly bounded above on compact subsets, and 
+Let $U \subset \C$ be open, $\{ f_n \}$ a sequence of 
+subharmonic functions uniformly bounded above on compact subsets, and 
 $\{ c_n \}$ a sequence of positive real numbers such that
 $\sum_{n=1}^\infty c_n < \infty$.
 Prove that $f = \sum_{n=1}^\infty c_n f_n$ is subharmonic.  Make sure to prove
@@ -6617,13 +6631,12 @@ value $-\infty$.
 Show that $f$ is a subharmonic function in $U$.
 \item
 If $U = \D$ and $p_n = \frac{1}{n}$, show that $f$ is discontinuous at 0
-(with the natural topology on $\R \cup \{ -\infty \}$).
+(the natural topology on $\R \cup \{ -\infty \}$).
 \item
 If $\{ p_n \}$ is dense in $U$, show that $f$ 
 is nowhere continuous.
-Hint: Consider the set where $f$ is $-\infty$, and the trick is to prove
-that it is a small (but dense) set.  Another hint is to try to integrate
-the partial sums, and use polar coordinates to integrate $\log \sabs{z}$.
+Hint: Prove that $f^{-1}(-\infty)$ is a small (but dense) set.  Another
+hint: Integrate the partial sums, and use polar coordinates.
 \pagebreak[2]
 \end{exparts}
 \end{exercise}
@@ -6820,8 +6833,8 @@ C e^{-1/(1-\snorm{z}^2)} & \text{ if $\snorm{z} < 1$,}
 \qquad
 g_\epsilon(z) = \frac{1}{\epsilon^{2n}} g(z/\epsilon) .
 \end{equation*}
-It is left as an exercise that $g$, and therefore $g_\epsilon$, is smooth.
-The function $g$ clearly has compact
+It is left as an exercise that $g$, and so $g_\epsilon$, is smooth.
+The function $g$ has compact
 support as it is only nonzero inside the unit ball.  The support of
 $g_\epsilon$ is the $\epsilon$-ball.  Both are nonnegative.  Choose $C$ so that
 \begin{equation*}
@@ -6831,14 +6844,15 @@ $g_\epsilon$ is the $\epsilon$-ball.  Both are nonnegative.  Choose $C$ so that
 \end{equation*}
 \glsadd{not:dV}%
 Here $dV$ is the volume measure.
-The function $g$ only depends on $\snorm{z}$.  To get an idea of
-how these functions look, consider the following graphs of the
-functions $e^{-1/(1-x^2)}$,
+The function $g$ only depends on $\snorm{z}$.
+To get an idea of
+how these functions work, consider the graphs of
+$e^{-1/(1-x^2)}$,
 $\frac{1}{0.5}e^{-1/\bigl(1-{(x/0.5)}^2\bigr)}$, and
 $\frac{1}{0.25}e^{-1/\bigl(1-{(x/0.25)}^2\bigr)}$.
 
 \begin{myfig}
-\includegraphics[width=0.5\textwidth]{figures/graph-of-mollifier.pdf}
+\includegraphics[width=0.49\textwidth]{figures/graph-of-mollifier.pdf}
 \end{myfig}
 
 Compare the graphs to the graphs of the Poisson kernel as a function of
@@ -6862,10 +6876,9 @@ f_\epsilon(z) = (f * g_\epsilon)(z) =
 \int_{\C^n} f(z-w) g_\epsilon (w) \, dV(w) .
 \end{equation*}
 The two forms of the integral follow easily via change of variables.
-We are perhaps abusing notation a bit since $f$ is only defined on $U$,
+We are perhaps abusing notation a bit as $f$ is only defined on $U$,
 but it is not a problem as long as $z \in
-U_\epsilon$ as then $g_\epsilon$ is zero when $f$ is undefined under the
-integral.
+U_\epsilon$ as $g_\epsilon$ is then zero when $f$ is undefined.
 By differentiating the first form under the integral, we find that
 $f_\epsilon$ is smooth.
 
@@ -6902,7 +6915,7 @@ $g_\epsilon(w_1,\ldots,w_n) =
 g_\epsilon(\sabs{w_1},\ldots,\sabs{w_n})$.
 Without loss of generality we consider $z=0$, and we use polar coordinates
 for the integral.
-
+\pagebreak[1]
 \begin{equation*}
 \begin{split}
 f_\epsilon(0)
@@ -6965,7 +6978,7 @@ $2\pi = \int_0^{2\pi}d \theta$.
 
 Finally we show $\lim_{\epsilon \to 0} f_\epsilon (z) = f(z)$.
 For subharmonic, and so for plurisubharmonic,
-functions we have $\limsup_{\zeta\to z} f(\zeta) = f(z)$.
+functions, $\limsup_{\zeta\to z} f(\zeta) = f(z)$.
 So given $\delta >0$ find an $\epsilon >0$ such that
 $f(\zeta)-f(z) \leq \delta$ for all $\zeta \in B_\epsilon(z)$.
 \begin{equation*}
@@ -7023,7 +7036,6 @@ this holds for all plurisubharmonic functions (Hint: monotone convergence).
 \end{exercise}
 
 \begin{exercise}
-%\pagebreak[2]
 Show that plurisubharmonicity is a local property, that is,
 $f$ is plurisubharmonic if and only if $f$ is plurisubharmonic in
 some neighborhood of each point.
@@ -7034,7 +7046,6 @@ Using the computation from
 \thmref{thm:subharlim} show that if $f$ is pluriharmonic, then
 $f_\epsilon = f$ (where it makes sense), obtaining another proof that 
 a pluriharmonic function is $C^\infty$.
-\pagebreak[2]
 \end{exercise}
 
 \begin{exercise}
@@ -7044,26 +7055,24 @@ Show that $f_\epsilon$ converges uniformly to $f$ on $K$.
 \end{exercise}
 
 \begin{exercise}
-Let the $f$ in \thmref{thm:subharlim} be $C^k$ for some $k \geq 0$.
+Let the $f$ in \thmref{thm:subharlim} be $C^k$-smooth for some $k \geq 0$.
 Show that all derivatives of $f_\epsilon$ up to order $k$ converge uniformly
 on compact sets to the corresponding derivatives of $f$.  See also previous
 exercise.
 \end{exercise}
 \end{exbox}
 
-As an application of subharmonic functions, let us prove 
-another useful theorem about zero sets of holomorphic functions,
-the theorem of
-Rad\'o.  It is sometimes covered in a one-variable course, but it is often
-skipped.  In several variables the proof is a direct
-application of the one-variable theorem.
-It is a complementary result to the
-Riemann extension theorem, when on the one hand the function is
+Let us prove the the theorem of 
+Rad\'o, which is a complementary result to the Riemann extension theorem.
+Here on the one hand the function is
 continuous and vanishes on the set you wish to extend across, but on the
 other hand you know nothing about this set.
+It is sometimes covered in a one-variable course,
+and in several variables it follows directly from
+the one-variable result.
 
 \begin{thm}[Rad\'o] \index{Rad\'o's theorem}\label{thm:rado}
-Let $U \subset \C^n$ be an open set and $f \colon U \to \C$ be a continuous
+Let $U \subset \C^n$ be open and $f \colon U \to \C$ a continuous
 function that is holomorphic on the set
 \begin{equation*}
 U' = \bigl\{ z \in U : f(z) \not= 0 \bigr\} .
@@ -7276,8 +7285,7 @@ respect to the plurisubharmonic functions.
 \begin{exercise}
 Prove the corresponding
 Kotinuit\"atssatz, and its converse, for geometric convexity:
-Suppose $U \subset \R^n$ is a domain.
-Prove that $U$ is geometrically convex if and only if
+Prove that a domain $U \subset \R^n$ is geometrically convex if and only if
 whenever $[x_\alpha,y_\alpha] \subset U$
 is a collection of straight line segments such that
 $\bigcup_{\alpha} \{ x_\alpha,y_\alpha \} \subset \subset U$
@@ -7360,48 +7368,50 @@ $\widehat{K} \subset \{ z \in U : f(z) < r \} \subset \subset U$.
 \ref{thm:pscvx:itemiii}
 $\Rightarrow$
 \ref{thm:pscvx:itemi}:
-For $c \in \C^n$ with $\snorm{c}=1$, let us define
+For $c \in \C^n$ with $\snorm{c}=1$, let
+$\rho_c(z)$ be the radius of the largest affine disc centered at $z$
+in the direction $c$ that still lies in $U$.  That is,
 \begin{equation*}
 \rho_c(z) =
 \sup \bigl\{ \lambda > 0 :
 z+ \zeta c \in U \text{ for all $\zeta \in \lambda\D$} \bigr\} .
 \end{equation*}
-So $\rho_c(z)$ is the radius of the largest affine disc centered at $z$
-in the direction $c$ that still lies in $U$.
 As $\rho(z) = \inf_c \rho_c(z)$,
 \begin{equation*}
 - \log \rho(z) = \sup_{\snorm{c}=1} \bigl(-\log \rho_c(z)\bigr) .
 \end{equation*}
-If we prove that for any $a, b, c$ the function $\xi \mapsto -\log \rho_c(a+b\xi)$ is
+If we prove that for any $a, b \in \C^n$ the function $\xi \mapsto -\log \rho_c(a+b\xi)$ is
 subharmonic, then $\xi \mapsto - \log \rho(a+b\xi)$ is subharmonic and we are done.
 Here is the setup, the disc is drawn as a line:
 \begin{myfig}
 \subimport*{figures/}{distfun-hartogs.pdf_t}
 \end{myfig}
 
-Suppose $\Delta \subset \C$ is a disc such that for all $\xi \in
-\overline{\Delta}$, $a+b\xi \in U$.  We need to show that if there is a
-harmonic function $u$ on $\Delta$ continuous up to the boundary such
-that $- \log \rho_c(a+b\xi) \leq u(\xi)$ on $\partial \Delta$, then
-the inequality holds on $\Delta$.  Let $u = \Re f$ for a holomorphic
-function $f$.
-%Let us also suppose that without loss of generality $\Delta =
-%\D$, $a = 0$.
-For $\xi \in \partial \Delta$ we have  $- \log \rho_c(a+b\xi) \leq \Re
+Suppose $\Delta \subset \C$ is a disc such that
+$a+b\xi \in U$
+for all $\xi \in
+\overline{\Delta}$.
+If $u$ is a harmonic function on $\Delta$ continuous on $\overline{\Delta}$
+such that
+$- \log \rho_c(a+b\xi) \leq u(\xi)$ on $\partial \Delta$, we must
+show that 
+the inequality holds on $\Delta$.
+By \exerciseref{exercise:onlyniceuneededforsubharmonic}
+we may assume $u$ is harmonic on a neighborhood of $\overline{\Delta}$
+and so let $u = \Re f$ for a holomorphic function $f$.
+Fix a $\xi \in \partial \Delta$.  We have  $- \log \rho_c(a+b\xi) \leq \Re
 f(\xi)$,
 or in other words
 \begin{equation*}
-\rho_c(a+b\xi) \geq e^{-\Re f(\xi)} = \babs{e^{-f(\xi)}} \quad \text{for
-$\xi \in \partial \Delta$}.
+\rho_c(a+b\xi) \geq e^{-\Re f(\xi)} = \babs{e^{-f(\xi)}}.
 \end{equation*}
 Using $\zeta = t e^{-f(\xi)}$ in the definition of $\rho_c(a+b\xi)$, the statement above is equivalent
 to saying that 
 \begin{equation*}
-(a+b\xi)+te^{-f(\xi)}c \in U \quad \text{for all $t \in \D$ and all $\xi \in
-\partial \Delta$}.
+(a+b\xi)+te^{-f(\xi)}c \in U \quad \text{for all $t \in \D$}.
 \end{equation*}
-This statement holds when $\xi \in \partial \Delta$.  If we prove that it also
-holds for $\xi \in \Delta$, then we are finished.
+This statement holds whenever $\xi \in \partial \Delta$.  We must prove that
+it also holds for all $\xi \in \Delta$.
 
 The function $\varphi_t(\xi) = 
 (a+b\xi)+te^{-f(\xi)}c$ gives a closed analytic disc with boundary inside
@@ -7522,26 +7532,24 @@ such that $W \cap U$ is Hartogs pseudoconvex.
 \end{lemma}
 
 \begin{proof}
-One direction is trivial,
-%follows by an exercise above.  If $U$ is Hartogs pseudoconvex
-%we pick a Hartogs pseudoconvex $W$ and then $U \cap W$ must be Hartogs
-%pseudoconvex.
-so let us consider the other direction.  For $p \in \partial U$ let
+One direction is trivial, so consider the other.
+Suppose $p \in \partial U$, and let
 $W$ be such that $U \cap W$
-is Hartogs pseudoconvex.  By intersecting with a ball, which is
-Hartogs pseudoconvex, we assume $W = B_r(p)$ (a ball centered at $p$).
-Let $B = B_{r/2}(p)$.  For
-any $q \in B \cap U$, the distance from $q$ to the boundary of $W \cap U$ is the same as
+is Hartogs pseudoconvex.  Intersection of
+Hartogs pseudoconvex domains is Hartogs pseudoconvex, so
+assume $W = B_r(p)$.
+Let $B = B_{r/2}(p)$.  If $q \in B \cap U$, the distance from $q$ to the boundary of $W \cap U$ is the same as
 the distance to $\partial U$.  The setup is illustrated in the following
-figure.  The part of the boundary $\partial U$ in $W$ is marked by a thick
-black line, the part of the boundary of $\partial (W \cap U)$ that arises as
-the boundary of $W$ is marked by a thick gray line.  A point $q \in B$ is
-marked and a ball of radius $\nicefrac{r}{2}$ around $q$ is dotted.
+figure.
 
 \begin{myfig}
 \subimport*{figures/}{hartogs-pseudoconvex-local.pdf_t}
 \end{myfig}
 
+The part of the boundary $\partial U$ in $W$ is marked by a thick
+black line, the part of the boundary of $\partial (W \cap U)$ that arises as
+the boundary of $W$ is marked by a thick gray line.  A point $q \in B$ is
+marked and a ball of radius $\nicefrac{r}{2}$ around $q$ is dotted.
 No point of distance $\nicefrac{r}{2}$ from $q$ is in $\partial W$, and 
 the distance of $q$ to $\partial U$ is at most $\nicefrac{r}{2}$ as $p \in \partial U$
 and $p$ is the center of $B$.
@@ -7554,10 +7562,10 @@ Then for $z \in B \cap U$
 - \log \, \operatorname{dist}(z, \partial U) = 
 - \log \, \operatorname{dist}\bigl(z, \partial (U \cap W)\bigr).
 \end{equation*}
-We know the right hand side is plurisubharmonic.  Such a ball $B$ of
-positive radius exists around every $p \in \partial U$, so near
-the boundary $- \log \, \operatorname{dist}(z, \partial U)$ is
-a plurisubharmonic exhaustion function.
+The right hand side is plurisubharmonic as $U \cap W$ is Hartogs
+pseudoconvex.  Such a ball $B$ exists around every $p \in \partial U$, so near
+the boundary, $- \log \, \operatorname{dist}(z, \partial U)$ is
+plurisubharmonic.
 
 If $U$ is bounded, then $\partial U$ is compact.  So there is some
 $\epsilon > 0$ such that $- \log \, \operatorname{dist}(z, \partial U)$
@@ -7869,9 +7877,9 @@ equivalent to being a domain of holomorphy.  That a Hartogs pseudoconvex
 domain is holomorphically convex is the
 Levi problem\index{Levi problem}
 for Hartogs pseudoconvex domains and is considerably more
-difficult.  The thing is that there are lots of plurisubharmonic functions
+difficult.  The thing is, there are lots of plurisubharmonic functions
 and they are easy to construct; we can even construct them locally and then
-piece them together as we have already seen.  There are far fewer holomorphic functions, and clearly
+piece them together as we have already seen.  There are far fewer holomorphic functions, and 
 we cannot just construct them locally and expect the pieces to somehow fit
 together.  As it is so fundamental, let us state it as a theorem.
 
@@ -7896,7 +7904,7 @@ See \exerciseref{exercise:modholplush}.
 \begin{exercise}
 Prove that any domain $U \subset \C$ is holomorphically convex by 
 giving a topological description of $\widehat{K}_U$ for any
-compact $K \subset \subset U$.
+compact $K \subset \subset U$.  Hint: Runge may be useful.
 \end{exercise}
 
 \begin{exercise}
@@ -7962,14 +7970,14 @@ then so are all the topological components of $U_1 \cap U_2$.
 \pagebreak[2]
 \begin{exparts}
 \item
-Suppose $U \subset \C^n$ is a domain and $K \subset \subset U$
-is a nonempty compact subset.  Show that $U \setminus K$ is not
+Let $U \subset \C^n$ be a domain and $K \subset \subset U$
+a nonempty compact subset.  Show that $U \setminus K$ is not
 holomorphically convex.
 \item
-Suppose $U \subset \C^n$ is a bounded domain that is holomorphically
-convex.  Prove that $\C^n \setminus U$ is connected.
+Let $U \subset \C^n$ be a bounded holomorphically
+convex domain.  Prove that $\C^n \setminus U$ is connected.
 \item
-Find an unbounded domain $U \subset \C^n$ that is holomorphically convex and 
+Find an unbounded holomorphically convex domain $U \subset \C^n$ where
 $\C^n \setminus U$ is disconnected.
 \end{exparts}
 \end{exercise}
@@ -8206,7 +8214,7 @@ $U$ is logaritmically convex.
 \item
 $U$ is a domain of holomorphy.
 \item
-$U$ is a domain of convergence of some power series.
+$U$ is a domain of convergence of some power series at the origin.
 \item
 $U$ is Hartogs pseudoconvex.
 \end{enumerate}
