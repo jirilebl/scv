@@ -7434,12 +7434,15 @@ because continuous functions take compact sets to compact sets.
 implies 
 \begin{equation*}
 \bigcup_{\sabs{t} < t_0} \varphi_t(\Delta)
-\subset \subset U .
+\subset \subset U  .
 \end{equation*}
-Again by continuity, $\varphi_t(\Delta) \subset \subset U$ for
-all $t$ with $\sabs{t} = t_0$, and consequently it is true when $\sabs{t}$
-is even slightly larger than $t_0$.
-Hence $\varphi_t(\Delta) \subset U$
+By continuity again
+$\bigcup_{\sabs{t} \leq t_0} \varphi_t(\Delta)
+\subset \subset U$, and so
+$\bigcup_{\sabs{t} < t_0+\epsilon} \varphi_t(\Delta)
+\subset \subset U$
+for some $\epsilon > 0$.
+Consequently $\varphi_t(\Delta) \subset U$
 for all $t$ with $\sabs{t} < 1$.  Thus
 $(a+b\xi)+te^{-f(\xi)}c \in U$ for all $\xi \in \Delta$ and all $\sabs{t} <
 1$.  This implies $\rho_c(a+b\xi) \geq e^{-\Re f(\xi)}$ for all $\xi \in
@@ -7593,14 +7596,14 @@ Finish the proof of the lemma for unbounded domains.
 It may seem that we defined a totally different concept, but it turns
 out that Levi and Hartogs pseudoconvexity are one and the same on domains
 where both concepts make sense.
+As a consequence of the following theorem we say simply ``pseudoconvex'' and there
+is no ambiguity.
 
 \begin{thm}
 Let $U \subset \C^n$ be a domain with smooth boundary. 
 Then $U$ is Hartogs pseudoconvex if and only if $U$ is Levi pseudoconvex.
 \end{thm}
 
-As a consequence of this theorem we say simply ``pseudoconvex'' and there
-is no ambiguity.
 
 \begin{proof}
 %Let us first suppose $U$ is Hartogs pseudoconvex.
@@ -7613,10 +7616,10 @@ by
 \begin{equation*}
 \Im z_n > - \sabs{z_1}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{z_j}^2 + O(3) .
 \end{equation*}
-For some small fixed $\lambda > 0$, the
-analytic discs defined by $\xi \mapsto (\lambda \xi, 0, \cdots, 0, is)$
-are in $U$ for all small enough $s > 0$.  As the origin
-is in their limit set,
+For a small fixed $\lambda > 0$, the
+closed analytic discs defined by $\xi \in \overline{\D} \mapsto (\lambda \xi, 0, \cdots, 0, is)$
+are in $U$ for all small enough $s > 0$.  The origin
+is a limit point of the insides, but not a limit point of their boundaries.
 %we found a family of analytic discs in $U$
 %whose boundaries were uniformly a positive distance away from $\partial U$,
 %but such that $p$ was in the limit set of their interiors.  In fact we found an entire
@@ -7627,13 +7630,13 @@ $U$ is not Hartogs pseudoconvex.
 
 Next suppose $U$ is Levi pseudoconvex.  Take any $p \in \partial U$.
 After translation and rotation by a unitary, assume $p=0$ and
-write the defining function $r$ as
+write a defining function $r$ as
 \begin{equation*}
 r(z,\bar{z}) = \varphi(z',\bar{z}',\Re z_n) - \Im z_n ,
 \end{equation*}
-where $z' = (z_1,\ldots,z_{n-1})$ and
-$\varphi$ is $O(2)$ at the origin.
-The condition of Levi pseudoconvexity says 
+where $z' = (z_1,\ldots,z_{n-1})$.
+%and $\varphi$ is $O(2)$ at the origin. (This isn't needed)
+Levi pseudoconvexity says 
 \begin{equation} \label{eq:psconvcond}
 \sum_{j=1,\ell=1}^n
 \bar{a}_j a_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q \geq 0 
@@ -7642,23 +7645,25 @@ The condition of Levi pseudoconvexity says
 a_j \frac{\partial r}{\partial z_j} \Big|_q = 0 ,
 \end{equation}
 for all $q \in \partial U$ near $0$.
-If we translate $\partial U$ slightly in the $\Im z_n$ direction, we still
-have a Levi pseudoconvex boundary.  That is, we
-look at the hypersurface given by $r=s$ for a small real constant $s$.
-The condition \eqref{eq:psconvcond} is 
-satisfied for the function $r-s$ instead of $r$,
-as $\frac{\partial r}{\partial z_j} =
-\frac{\partial (r-s)}{\partial z_j}$ for all $j$ and the
-complex Hessians of $r$ and $r-s$ are also equal.
-So condition \eqref{eq:psconvcond} holds for $r$ for all $q \in U$ near $0$.
+%If we translate $\partial U$ slightly in the $\Im z_n$ direction, it is
+%still a Levi pseudoconvex boundary.
+Let $s$ be a small real constant,
+and let $\widetilde{q} = (q_1,\ldots,q_{n-1},q_n + is)$.
+None of the derivatives of $r$ depends on $\Im z_n$, and therefore
+$\frac{\partial r}{\partial z_\ell} \big|_{\widetilde{q}} =
+\frac{\partial r}{\partial z_\ell} \big|_{q}$ and
+$\frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \big|_{\widetilde{q}} =
+\frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \big|_{q}$
+for all $j$ and $\ell$.
+So condition \eqref{eq:psconvcond} holds for all $q \in U$ near $0$.
 We will use $r$ to manufacture a plurisubharmonic exhaustion function, that
-is one with a semidefinite Hessian.  Therefore, we already
+is one with a semidefinite Hessian.  Starting with $r$, we already
 have what we need in all but one direction.
 
 Let $\nabla_z r|_q =
-\Bigl(
-\frac{\partial r}{\partial z_1}\Big|_q,\ldots,
-\frac{\partial r}{\partial z_n}\Big|_q \Bigr)$ denote the gradient of $r$ in
+\bigl(
+\frac{\partial r}{\partial z_1}\big|_q,\ldots,
+\frac{\partial r}{\partial z_n}\big|_q \bigr)$ denote the gradient of $r$ in
 the holomorphic directions only.
 Given $q \in U$ near $0$,
 decompose an arbitrary $c \in \C^n$ as $c = a+b$, where $a = (a_1,\ldots,a_n)$
@@ -7674,29 +7679,33 @@ Taking the orthogonal decomposition, $b$ is a scalar multiple of
 $\overline{\nabla_z r|_q}$.
 By Cauchy--Schwarz,
 \begin{equation*}
-\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
+\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
 =
-\abs{\sum_{j=1}^n b_j \frac{\partial r}{\partial z_j} \Big|_q}
+\BBabs{\sum_{j=1}^n b_j \frac{\partial r}{\partial z_j} \Big|_q}
 =
 \Babs{\blinnprod{b}{\overline{\nabla_z r|_q}}}
 =
 \snorm{b} \snorm {\nabla_z r|_q} .
 \end{equation*}
 As $\nabla_z r|_0 = (0,\ldots,0,-\nicefrac{1}{2i})$, then for $q$ sufficiently near $0$ we have that
-$\snorm{\nabla_z r|_q} \geq \nicefrac{1}{3}$.  Therefore for such $q$,
+$\snorm{\nabla_z r|_q} \geq \nicefrac{1}{3}$, and
 \begin{equation*}
 \snorm{b} =
-\frac{\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}}{\snorm
+\frac{1}{\snorm
 {\nabla_z r|_q}}
+\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
+%\frac{\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}}{\snorm
+%{\nabla_z r|_q}}
 \leq
-3 \abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
+3 \BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
 .
 \end{equation*}
 As $c = a+b$ is the orthogonal decomposition we have that $\snorm{c} \geq
 \snorm{b}$.
 
 \pagebreak[1]
-Next, let $M \geq 0$ be the operator norm of the Hessian matrix of $r$.
+The complex Hessian matrix of $r$ is continuous, and so let
+$M \geq 0$ be an upper bound on its operator norm for $q$ near the origin.
 Again using Cauchy--Schwarz
 \begin{equation*}
 \begin{split}
@@ -7737,7 +7746,7 @@ M\snorm{b}^2
 \end{split}
 \end{equation*}
 Together with what we know about
-$\snorm{b}$ we get:
+$\snorm{b}$, for $q \in U$ near the origin
 \begin{equation*}
 \sum_{j=1,\ell=1}^n
 \bar{c}_j c_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
@@ -7745,7 +7754,7 @@ $\snorm{b}$ we get:
 %-M \frac{\snorm{c}\Babs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j}
 %\big|_q}}{\snorm{\nabla_z r |_q}}
 \geq
--3^2 M \snorm{c}\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j}
+-3^2 M \snorm{c}\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j}
 \Big|_q} .
 \end{equation*}
 For $z \in U$ sufficiently close to $0$ define
@@ -7755,8 +7764,9 @@ f(z) = -\log \bigl(-r(z)\bigr) + A \snorm{z}^2 ,
 where $A > 0$ is some constant we will choose later.
 The log is there to make the function blow up as we approach the boundary
 and the $A \snorm{z}^2$ is adding a constant diagonal matrix to the complex
-Hessian of $f$, which we hope is enough to make it positive semidefinite.
-Let us compute:
+Hessian of $f$, which we hope is enough to make it positive semidefinite at
+all $z$ near $0$.
+Compute:
 \begin{equation*}
 \frac{\partial^2 f}{\partial \bar{z}_j \partial z_\ell}
 =
@@ -7772,15 +7782,15 @@ A\delta_{j}^{\ell} ,
 where $\delta_j^\ell$ is the Kronecker delta\footnote{%
 Recall $\delta_j^\ell = 0$ if $j\not= \ell$ and $\delta_j^\ell = 1$ if $j =
 \ell$.}.
-Apply the complex Hessian of $f$ to $c$ (recall that $r$ is negative
-on $U$ and so for $q \in U$, $-r = \sabs{r}$):
+Apply the complex Hessian of $f$ to $c$ for $q \in U$ near the origin
+(recall that $r$ is negative on $U$ and so for $q \in U$, $-r = \sabs{r}$):
 \begin{equation*}
 \begin{split}
 \sum_{j=1,\ell=1}^n
 \bar{c}_j c_\ell \frac{\partial^2 f}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
 & =
 \frac{1}{r^2}
-\abs{
+\BBabs{
 \sum_{\ell=1}^n
 c_\ell
 \frac{\partial r}{\partial z_\ell} \Big|_q
@@ -7796,14 +7806,14 @@ A \snorm{c}^2
 \\
 & \geq
 \frac{1}{r^2}
-\abs{
+\BBabs{
 \sum_{\ell=1}^n
 c_\ell
 \frac{\partial r}{\partial z_\ell} \Big|_q
 }^2
 -
 \frac{3^2 M}{\sabs{r}}
-\snorm{c}\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q} 
+\snorm{c}\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q} 
 +
 A \snorm{c}^2 .
 \end{split}
@@ -7811,24 +7821,24 @@ A \snorm{c}^2 .
 Now comes a somewhat funky trick.
 As a quadratic polynomial in $\snorm{c}$, the right hand side of the
 inequality
-is always nonnegative if $A > 0$ and the discriminant is negative or zero.
+is always nonnegative if $A > 0$ and if the discriminant is negative or zero.
 Let us set the discriminant to zero:
 \begin{equation*}
 0 = 
-{\left(
+{\Biggl(
 \frac{3^2 M}{\sabs{r}}
-\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
-\right)}^2
+\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
+\Biggr)}^2
 - 4A 
 \frac{1}{r^2}
-\abs{
+\BBabs{
 \sum_{\ell=1}^n
 c_\ell
 \frac{\partial r}{\partial z_\ell} \Big|_q
 }^2 .
 \end{equation*}
 All the nonconstant terms go away and 
-$A=\frac{3^4 M^2}{4}$.  Thus
+$A=\frac{3^4 M^2}{4}$.  Thus for that $A$,
 \begin{equation*}
 \sum_{j=1,\ell=1}^n
 \bar{c}_j c_\ell \frac{\partial^2 f}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
@@ -8042,7 +8052,7 @@ $\Delta_r(p)$ contains points outside of $U$, in other words,
 $U$ is not a domain of holomorphy.
 
 The implication \ref{thm:cartthul:disthull} $\Rightarrow$
-\ref{thm:cartthul:holconv} is easy.
+\ref{thm:cartthul:holconv} is immediate.
 
 Finally we prove
 \ref{thm:cartthul:holconv} $\Rightarrow$
@@ -8090,7 +8100,7 @@ connected open $W$ such that $W \setminus U \not= \emptyset$ must contain a
 point of $\partial U$, we are done.
 \end{proof}
 
-Bu \exerciseref{exercise:biholholconvex},
+By \exerciseref{exercise:biholholconvex},
 holomorphic convexity is a biholomorphic invariant.
 Thus,
 being a domain of holomorphy is also a biholomorphic invariant.  This
@@ -8132,20 +8142,19 @@ is a complex line and $K$ is a circle in $L$.  What is $\widehat{K}_W$?
 In the following series of exercises, which you should most definitely do in
 sequence, you will solve the
 Levi problem\index{Levi problem!for complete Reinhardt domains}
-(and more) for complete Reinhardt domains\index{Reinhardt domain}.
-Recall a domain $U \subset \C^n$ is
-Reinhardt if whenever $(z_1,\ldots,z_n) \in U$ then
-$(e^{i\theta_1}z_1,\ldots,e^{i\theta_n}z_n) \in U$ for all real
-$(\theta_1,\ldots,\theta_n)$.
-A Reinhardt domain is complete\index{complete Reinhardt
-domain}\index{Reinhardt domain!complete}
+(and more) for complete Reinhardt domains.
+%Recall a domain $U \subset \C^n$ is
+%Reinhardt if whenever $(z_1,\ldots,z_n) \in U$ then
+%$(e^{i\theta_1}z_1,\ldots,e^{i\theta_n}z_n) \in U$ for all real
+%$(\theta_1,\ldots,\theta_n)$.
+Recall that a domain $U$ is a
+\myindex{complete Reinhardt domain}\index{Reinhardt domain!complete}
 if whenever $(z_1,\ldots,z_n)$ is in $U$ and $r_j = \sabs{z_j}$, then the
 entire closed polydisc $\overline{\Delta_r(0)} \subset U$.
-
-A complete Reinhardt domain $U$ is \emph{\myindex{logarithmically convex}}%
+We say a complete Reinhardt domain $U$ is \emph{\myindex{logarithmically convex}}%
 \index{Reinhardt domain!logarithmically convex}
 if there exists a
-convex subset $C \subset \R^n$ such that $z \in U$ if and only if
+(geometrically) convex $C \subset \R^n$ such that $z \in U$ if and only if
 $(\log \sabs{z_1},\ldots,\log\sabs{z_n}) \in C$.
 
 \begin{exbox}
