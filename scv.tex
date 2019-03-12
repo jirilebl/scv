@@ -3170,6 +3170,7 @@ $\frac{\partial f}{\partial z_1} \equiv 0$.  By symmetry
 $\frac{\partial f}{\partial z_2} \equiv 0$.  Therefore $f$ is constant,
 which is a contradiction as $f$ was proper.
 
+\pagebreak[2]
 The proof is illustrated in the following picture:
 
 \begin{myfig}
@@ -6328,7 +6329,7 @@ The following are the graphs of $P_r$ for $r=0.5$,
 $r=0.7$, and $r=0.85$ on $[-\pi,\pi]$:
 
 \begin{myfig}
-\includegraphics[width=0.49\textwidth]{figures/poisson-kernel.pdf}
+\includegraphics[width=0.5\textwidth]{figures/poisson-kernel.pdf}
 \end{myfig}
 
 %\pagebreak[2]
@@ -6852,7 +6853,7 @@ $\frac{1}{0.5}e^{-1/\bigl(1-{(x/0.5)}^2\bigr)}$, and
 $\frac{1}{0.25}e^{-1/\bigl(1-{(x/0.25)}^2\bigr)}$.
 
 \begin{myfig}
-\includegraphics[width=0.49\textwidth]{figures/graph-of-mollifier.pdf}
+\includegraphics[width=0.5\textwidth]{figures/graph-of-mollifier.pdf}
 \end{myfig}
 
 Compare the graphs to the graphs of the Poisson kernel as a function of
@@ -7762,8 +7763,8 @@ For $z \in U$ sufficiently close to $0$ define
 f(z) = -\log \bigl(-r(z)\bigr) + A \snorm{z}^2 ,
 \end{equation*}
 where $A > 0$ is some constant we will choose later.
-The log is there to make the function blow up as we approach the boundary
-and the $A \snorm{z}^2$ is adding a constant diagonal matrix to the complex
+The log is there to make $f$ blow up as we approach the boundary.
+The $A \snorm{z}^2$ is there to add a constant diagonal matrix to the complex
 Hessian of $f$, which we hope is enough to make it positive semidefinite at
 all $z$ near $0$.
 Compute:
@@ -7782,7 +7783,7 @@ A\delta_{j}^{\ell} ,
 where $\delta_j^\ell$ is the Kronecker delta\footnote{%
 Recall $\delta_j^\ell = 0$ if $j\not= \ell$ and $\delta_j^\ell = 1$ if $j =
 \ell$.}.
-Apply the complex Hessian of $f$ to $c$ for $q \in U$ near the origin
+Apply the complex Hessian of $f$ to $c$ at $q \in U$ near the origin
 (recall that $r$ is negative on $U$ and so for $q \in U$, $-r = \sabs{r}$):
 \begin{equation*}
 \begin{split}
@@ -7838,7 +7839,7 @@ c_\ell
 }^2 .
 \end{equation*}
 All the nonconstant terms go away and 
-$A=\frac{3^4 M^2}{4}$.  Thus for that $A$,
+$A=\frac{3^4 M^2}{4}$ makes the discriminant zero.  Thus for that $A$,
 \begin{equation*}
 \sum_{j=1,\ell=1}^n
 \bar{c}_j c_\ell \frac{\partial^2 f}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
@@ -7889,7 +7890,7 @@ Levi problem\index{Levi problem}
 for Hartogs pseudoconvex domains and is considerably more
 difficult.  The thing is, there are lots of plurisubharmonic functions
 and they are easy to construct; we can even construct them locally and then
-piece them together as we have already seen.  There are far fewer holomorphic functions, and 
+piece them together by taking maxima.  There are far fewer holomorphic functions, and 
 we cannot just construct them locally and expect the pieces to somehow fit
 together.  As it is so fundamental, let us state it as a theorem.
 
@@ -7978,6 +7979,7 @@ then so are all the topological components of $U_1 \cap U_2$.
 
 \begin{exercise}
 \pagebreak[2]
+Let $n \geq 2$.
 \begin{exparts}
 \item
 Let $U \subset \C^n$ be a domain and $K \subset \subset U$
@@ -8020,7 +8022,8 @@ $U$ is holomorphically convex.
 
 \begin{proof}
 Let us start with \ref{thm:cartthul:domhol} $\Rightarrow$
-\ref{thm:cartthul:disthull}.  Suppose there is a $K \subset
+\ref{thm:cartthul:disthull}.
+Suppose there is a $K \subset
 \subset U$ with $\operatorname{dist}(K,\partial U) > \operatorname{dist}(\widehat{K}_U,\partial U)$.
 After possibly a rotation by a unitary,
 there exists a point $p \in \widehat{K}_U$ and a polydisc
@@ -8060,9 +8063,10 @@ Finally we prove
 Suppose $U$ is holomorphically convex.  Let $p \in \partial U$.
 By convexity choose nested compact sets $K_{j-1} \subsetneq K_j \subset
 \subset U$ such that $\bigcup_j K_j = U$, and $\widehat{(K_j)}_U = K_j$.
-Pick the sequence of $K_j$ so that
+As the sets exhaust $U$, we can perhaps pass to a subsequence
+to ensure that
 there exists a 
-sequence of points $p_j \in K_j \setminus K_{j-1}$ and
+sequence of points $p_j \in K_j \setminus K_{j-1}$ such that
 $\lim_{j\to\infty} p_j = p$.
 
 As $p_j$ is not in the hull of $K_{j-1}$, there is a function $f_j \in
@@ -8071,9 +8075,9 @@ As $p_j$ is not in the hull of $K_{j-1}$, there is a function $f_j \in
 \sabs{f_j(p_j)} > j + \abs{\sum_{k=1}^{j-1} f_k(p_j)} .
 \end{equation*}
 Finding such a function is left as an exercise below.
-The series $\sum_{k=1}^\infty f_k(z)$ converges uniformly on $K_j$
+For any $j$, the series $\sum_{k=1}^\infty f_k(z)$ converges uniformly on $K_j$
 as for all $k > j$, $\sabs{f_k} < 2^{-k}$ on $K_j$.
-As the $K_j$ exhaust $U$ the series converges uniformly on compact
+As the $K_j$ exhaust $U$, the series converges uniformly on compact
 subsets of $U$.  Consequently,
 \begin{equation*}
 f(z) = \sum_{k=1}^\infty f_k(z)
@@ -8118,7 +8122,7 @@ the notion of a domain of holomorphy only makes sense for domains in $\C^n$.
 
 \begin{exbox}
 \begin{exercise}
-Find the function $f_j \in \sO(U)$ as indicated in the proof above.
+Prove the existence of the function $f_j \in \sO(U)$ as indicated in the proof above.
 \end{exercise}
 
 \begin{exercise}
@@ -8212,8 +8216,10 @@ convex domain.
 \end{exercise}
 \end{exbox}
 
+\pagebreak[2]
 We (you) have proved the following proposition.
 
+\pagebreak[2]
 \begin{prop}
 Let $U \subset \C^n$ be a complete Reinhardt domain.  Then the following are
 equivalent:
