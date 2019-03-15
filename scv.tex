@@ -1624,17 +1624,20 @@ z_n^{\alpha_n} ,
 \frac{z}{w} & \overset{\text{def}}{=}
 \left(\frac{z_1}{w_1}, \frac{z_2}{w_2}, \ldots, \frac{z_n}{w_n} \right) ,
 \\
-\sabs{\alpha} & \overset{\text{def}}{=} \alpha_1 + \alpha_2 + \cdots + \alpha_n ,
+\sabs{z}^\alpha & \overset{\text{def}}{=} \sabs{z_1}^{\alpha_1}\sabs{z_2}^{\alpha_2} \cdots
+\sabs{z_n}^{\alpha_n} ,
 &
-\alpha! & \overset{\text{def}}{=} \alpha_1!\alpha_2! \cdots \alpha_n! ,
-&
-dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n ,
-\\
 \frac{\partial^{\sabs{\alpha}}}{\partial z^\alpha} & \overset{\text{def}}{=}
 \frac{\partial^{\alpha_1}}{\partial z_1^{\alpha_1}}
 \frac{\partial^{\alpha_2}}{\partial z_2^{\alpha_2}}
 \cdots
-\frac{\partial^{\alpha_n}}{\partial z_n^{\alpha_n}} .
+\frac{\partial^{\alpha_n}}{\partial z_n^{\alpha_n}} ,
+&
+dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n ,
+\\
+\sabs{\alpha} & \overset{\text{def}}{=} \alpha_1 + \alpha_2 + \cdots + \alpha_n ,
+&
+\alpha! & \overset{\text{def}}{=} \alpha_1!\alpha_2! \cdots \alpha_n! .
 \end{align*}
 We can also make sense of this notation, especially the notation $z^\alpha$,
 if $\alpha \in \Z^n$, that is, if it includes negative integers,
@@ -8338,10 +8341,11 @@ extend our $f$ near every point, we always get the same function.
 That follows from the lemma above; any two such functions are
 equal on $\R^n$, and hence equal.  There is a subtle topological technical
 point in this, so let us elaborate.  A key topological fact is that we define
-$V$ as a union of the polydiscs where the series converges.  If there was a
-point where we get two distinct values, then this point must be in two
-distinct such polydiscs.  The intersection of two polydiscs is always
-connected, so we can apply the lemma above.
+$V$ as a union of the polydiscs where the series converges.  If
+a point $p$ is in two different such polydiscs, we need to show that
+the two definitions of $F$ are the same at $p$.  But the intersection
+of two polydiscs is always connected, and in this case contains a piece
+of $\R^n$ as well, and we may apply the lemma above.
 \end{proof}
 
 \begin{exbox}
