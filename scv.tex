@@ -1624,17 +1624,20 @@ z_n^{\alpha_n} ,
 \frac{z}{w} & \overset{\text{def}}{=}
 \left(\frac{z_1}{w_1}, \frac{z_2}{w_2}, \ldots, \frac{z_n}{w_n} \right) ,
 \\
-\sabs{\alpha} & \overset{\text{def}}{=} \alpha_1 + \alpha_2 + \cdots + \alpha_n ,
+\sabs{z}^\alpha & \overset{\text{def}}{=} \sabs{z_1}^{\alpha_1}\sabs{z_2}^{\alpha_2} \cdots
+\sabs{z_n}^{\alpha_n} ,
 &
-\alpha! & \overset{\text{def}}{=} \alpha_1!\alpha_2! \cdots \alpha_n! ,
-&
-dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n ,
-\\
 \frac{\partial^{\sabs{\alpha}}}{\partial z^\alpha} & \overset{\text{def}}{=}
 \frac{\partial^{\alpha_1}}{\partial z_1^{\alpha_1}}
 \frac{\partial^{\alpha_2}}{\partial z_2^{\alpha_2}}
 \cdots
-\frac{\partial^{\alpha_n}}{\partial z_n^{\alpha_n}} .
+\frac{\partial^{\alpha_n}}{\partial z_n^{\alpha_n}} ,
+&
+dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n ,
+\\
+\sabs{\alpha} & \overset{\text{def}}{=} \alpha_1 + \alpha_2 + \cdots + \alpha_n ,
+&
+\alpha! & \overset{\text{def}}{=} \alpha_1!\alpha_2! \cdots \alpha_n! .
 \end{align*}
 We can also make sense of this notation, especially the notation $z^\alpha$,
 if $\alpha \in \Z^n$, that is, if it includes negative integers,
@@ -3170,6 +3173,7 @@ $\frac{\partial f}{\partial z_1} \equiv 0$.  By symmetry
 $\frac{\partial f}{\partial z_2} \equiv 0$.  Therefore $f$ is constant,
 which is a contradiction as $f$ was proper.
 
+\pagebreak[2]
 The proof is illustrated in the following picture:
 
 \begin{myfig}
@@ -6461,8 +6465,9 @@ $\overline{\Delta_r(a)} \subset U$ then
 f(a) \leq \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta \leq f(a)
 .
 \end{equation*}
-In particular $f = f(a)$ almost everywhere on $\partial \Delta_r(a)$.
-By upper-semicontinuity it is true everywhere.  This was true for all $r$
+Hence, $f = f(a)$ almost everywhere on $\partial \Delta_r(a)$.
+By upper-semicontinuity, $f = f(a)$ everywhere on $\partial \Delta_r(a)$.
+This was true for all $r$
 with $\overline{\Delta_r(a)} \subset U$, so $f=f(a)$ on $\Delta_r(a)$,
 and so the set where $f=f(a)$ is open.  The set where an upper-semicontinuous
 function attains a maximum is closed.  So $f=f(a)$ on $U$ as $U$ is
@@ -6479,14 +6484,27 @@ the maximum principle and \exerciseref{exercise:fminusgsubharmonic}.
 \end{exercise}
 
 \begin{exercise}
-Prove that the inequality from the definition of subharmonic functions
-works for any any bounded set, not just balls.
+%Prove that the inequality from the definition of subharmonic functions
+%works for any bounded set, not just balls (discs).
 Suppose $U \subset \C$ is a bounded open set, $f \colon \overline{U} \to \R
 \setminus \{-\infty\}$ is an upper-semicontinuous function, such that $f|_U$
-is subharmonic, $g \colon \overline{U} \to \R$ a continuous function
-such that $g|_U$ is harmonic, and such that
-$f(z) \leq g(z)$ for all $z \in \partial U$.  Then prove that
+is subharmonic, $g \colon \overline{U} \to \R$ is a continuous function
+such that $g|_U$ is harmonic and
+$f(z) \leq g(z)$ for all $z \in \partial U$.  Prove that
 $f(z) \leq g(z)$ for all $z \in U$.
+%\pagebreak[2]
+\end{exercise}
+
+\begin{exercise} \label{exercise:onlyniceuneededforsubharmonic}
+Let $g$ be a function
+harmonic on a disc $\Delta \subset \C$ and continuous on
+$\overline{\Delta}$.  Prove that for any $\epsilon > 0$ there exists
+a function $g_\epsilon$, harmonic in a neighborhood of $\overline{\Delta}$,
+such that $g(z) \leq g_\epsilon(z) \leq g(z)+\epsilon$ for all $z \in
+\overline{\Delta}$.
+In particular, to test subharmonicity, we only need to consider those
+$g$ that are harmonic a bit past the boundary of the disc.
+%\pagebreak[2]
 \end{exercise}
 \end{exbox}
 
@@ -6598,8 +6616,8 @@ is subharmonic, then $\varphi \circ f$ is subharmonic.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \C$ is an open set, $\{ f_n \}$ a sequence of 
-subharmonic functions that is uniformly bounded above on compact subsets, and 
+Let $U \subset \C$ be open, $\{ f_n \}$ a sequence of 
+subharmonic functions uniformly bounded above on compact subsets, and 
 $\{ c_n \}$ a sequence of positive real numbers such that
 $\sum_{n=1}^\infty c_n < \infty$.
 Prove that $f = \sum_{n=1}^\infty c_n f_n$ is subharmonic.  Make sure to prove
@@ -6617,13 +6635,12 @@ value $-\infty$.
 Show that $f$ is a subharmonic function in $U$.
 \item
 If $U = \D$ and $p_n = \frac{1}{n}$, show that $f$ is discontinuous at 0
-(with the natural topology on $\R \cup \{ -\infty \}$).
+(the natural topology on $\R \cup \{ -\infty \}$).
 \item
 If $\{ p_n \}$ is dense in $U$, show that $f$ 
 is nowhere continuous.
-Hint: Consider the set where $f$ is $-\infty$, and the trick is to prove
-that it is a small (but dense) set.  Another hint is to try to integrate
-the partial sums, and use polar coordinates to integrate $\log \sabs{z}$.
+Hint: Prove that $f^{-1}(-\infty)$ is a small (but dense) set.  Another
+hint: Integrate the partial sums, and use polar coordinates.
 \pagebreak[2]
 \end{exparts}
 \end{exercise}
@@ -6820,8 +6837,8 @@ C e^{-1/(1-\snorm{z}^2)} & \text{ if $\snorm{z} < 1$,}
 \qquad
 g_\epsilon(z) = \frac{1}{\epsilon^{2n}} g(z/\epsilon) .
 \end{equation*}
-It is left as an exercise that $g$, and therefore $g_\epsilon$, is smooth.
-The function $g$ clearly has compact
+It is left as an exercise that $g$, and so $g_\epsilon$, is smooth.
+The function $g$ has compact
 support as it is only nonzero inside the unit ball.  The support of
 $g_\epsilon$ is the $\epsilon$-ball.  Both are nonnegative.  Choose $C$ so that
 \begin{equation*}
@@ -6831,9 +6848,10 @@ $g_\epsilon$ is the $\epsilon$-ball.  Both are nonnegative.  Choose $C$ so that
 \end{equation*}
 \glsadd{not:dV}%
 Here $dV$ is the volume measure.
-The function $g$ only depends on $\snorm{z}$.  To get an idea of
-how these functions look, consider the following graphs of the
-functions $e^{-1/(1-x^2)}$,
+The function $g$ only depends on $\snorm{z}$.
+To get an idea of
+how these functions work, consider the graphs of
+$e^{-1/(1-x^2)}$,
 $\frac{1}{0.5}e^{-1/\bigl(1-{(x/0.5)}^2\bigr)}$, and
 $\frac{1}{0.25}e^{-1/\bigl(1-{(x/0.25)}^2\bigr)}$.
 
@@ -6862,10 +6880,9 @@ f_\epsilon(z) = (f * g_\epsilon)(z) =
 \int_{\C^n} f(z-w) g_\epsilon (w) \, dV(w) .
 \end{equation*}
 The two forms of the integral follow easily via change of variables.
-We are perhaps abusing notation a bit since $f$ is only defined on $U$,
+We are perhaps abusing notation a bit as $f$ is only defined on $U$,
 but it is not a problem as long as $z \in
-U_\epsilon$ as then $g_\epsilon$ is zero when $f$ is undefined under the
-integral.
+U_\epsilon$ as $g_\epsilon$ is then zero when $f$ is undefined.
 By differentiating the first form under the integral, we find that
 $f_\epsilon$ is smooth.
 
@@ -6902,7 +6919,7 @@ $g_\epsilon(w_1,\ldots,w_n) =
 g_\epsilon(\sabs{w_1},\ldots,\sabs{w_n})$.
 Without loss of generality we consider $z=0$, and we use polar coordinates
 for the integral.
-
+\pagebreak[1]
 \begin{equation*}
 \begin{split}
 f_\epsilon(0)
@@ -6965,7 +6982,7 @@ $2\pi = \int_0^{2\pi}d \theta$.
 
 Finally we show $\lim_{\epsilon \to 0} f_\epsilon (z) = f(z)$.
 For subharmonic, and so for plurisubharmonic,
-functions we have $\limsup_{\zeta\to z} f(\zeta) = f(z)$.
+functions, $\limsup_{\zeta\to z} f(\zeta) = f(z)$.
 So given $\delta >0$ find an $\epsilon >0$ such that
 $f(\zeta)-f(z) \leq \delta$ for all $\zeta \in B_\epsilon(z)$.
 \begin{equation*}
@@ -7023,7 +7040,6 @@ this holds for all plurisubharmonic functions (Hint: monotone convergence).
 \end{exercise}
 
 \begin{exercise}
-%\pagebreak[2]
 Show that plurisubharmonicity is a local property, that is,
 $f$ is plurisubharmonic if and only if $f$ is plurisubharmonic in
 some neighborhood of each point.
@@ -7034,7 +7050,6 @@ Using the computation from
 \thmref{thm:subharlim} show that if $f$ is pluriharmonic, then
 $f_\epsilon = f$ (where it makes sense), obtaining another proof that 
 a pluriharmonic function is $C^\infty$.
-\pagebreak[2]
 \end{exercise}
 
 \begin{exercise}
@@ -7044,26 +7059,24 @@ Show that $f_\epsilon$ converges uniformly to $f$ on $K$.
 \end{exercise}
 
 \begin{exercise}
-Let the $f$ in \thmref{thm:subharlim} be $C^k$ for some $k \geq 0$.
+Let the $f$ in \thmref{thm:subharlim} be $C^k$-smooth for some $k \geq 0$.
 Show that all derivatives of $f_\epsilon$ up to order $k$ converge uniformly
 on compact sets to the corresponding derivatives of $f$.  See also previous
 exercise.
 \end{exercise}
 \end{exbox}
 
-As an application of subharmonic functions, let us prove 
-another useful theorem about zero sets of holomorphic functions,
-the theorem of
-Rad\'o.  It is sometimes covered in a one-variable course, but it is often
-skipped.  In several variables the proof is a direct
-application of the one-variable theorem.
-It is a complementary result to the
-Riemann extension theorem, when on the one hand the function is
+Let us prove the the theorem of 
+Rad\'o, which is a complementary result to the Riemann extension theorem.
+Here on the one hand the function is
 continuous and vanishes on the set you wish to extend across, but on the
 other hand you know nothing about this set.
+It is sometimes covered in a one-variable course,
+and in several variables it follows directly from
+the one-variable result.
 
 \begin{thm}[Rad\'o] \index{Rad\'o's theorem}\label{thm:rado}
-Let $U \subset \C^n$ be an open set and $f \colon U \to \C$ be a continuous
+Let $U \subset \C^n$ be open and $f \colon U \to \C$ a continuous
 function that is holomorphic on the set
 \begin{equation*}
 U' = \bigl\{ z \in U : f(z) \not= 0 \bigr\} .
@@ -7276,8 +7289,7 @@ respect to the plurisubharmonic functions.
 \begin{exercise}
 Prove the corresponding
 Kotinuit\"atssatz, and its converse, for geometric convexity:
-Suppose $U \subset \R^n$ is a domain.
-Prove that $U$ is geometrically convex if and only if
+Prove that a domain $U \subset \R^n$ is geometrically convex if and only if
 whenever $[x_\alpha,y_\alpha] \subset U$
 is a collection of straight line segments such that
 $\bigcup_{\alpha} \{ x_\alpha,y_\alpha \} \subset \subset U$
@@ -7360,48 +7372,50 @@ $\widehat{K} \subset \{ z \in U : f(z) < r \} \subset \subset U$.
 \ref{thm:pscvx:itemiii}
 $\Rightarrow$
 \ref{thm:pscvx:itemi}:
-For $c \in \C^n$ with $\snorm{c}=1$, let us define
+For $c \in \C^n$ with $\snorm{c}=1$, let
+$\rho_c(z)$ be the radius of the largest affine disc centered at $z$
+in the direction $c$ that still lies in $U$.  That is,
 \begin{equation*}
 \rho_c(z) =
 \sup \bigl\{ \lambda > 0 :
 z+ \zeta c \in U \text{ for all $\zeta \in \lambda\D$} \bigr\} .
 \end{equation*}
-So $\rho_c(z)$ is the radius of the largest affine disc centered at $z$
-in the direction $c$ that still lies in $U$.
 As $\rho(z) = \inf_c \rho_c(z)$,
 \begin{equation*}
 - \log \rho(z) = \sup_{\snorm{c}=1} \bigl(-\log \rho_c(z)\bigr) .
 \end{equation*}
-If we prove that for any $a, b, c$ the function $\xi \mapsto -\log \rho_c(a+b\xi)$ is
+If we prove that for any $a, b \in \C^n$ the function $\xi \mapsto -\log \rho_c(a+b\xi)$ is
 subharmonic, then $\xi \mapsto - \log \rho(a+b\xi)$ is subharmonic and we are done.
 Here is the setup, the disc is drawn as a line:
 \begin{myfig}
 \subimport*{figures/}{distfun-hartogs.pdf_t}
 \end{myfig}
 
-Suppose $\Delta \subset \C$ is a disc such that for all $\xi \in
-\overline{\Delta}$, $a+b\xi \in U$.  We need to show that if there is a
-harmonic function $u$ on $\Delta$ continuous up to the boundary such
-that $- \log \rho_c(a+b\xi) \leq u(\xi)$ on $\partial \Delta$, then
-the inequality holds on $\Delta$.  Let $u = \Re f$ for a holomorphic
-function $f$.
-%Let us also suppose that without loss of generality $\Delta =
-%\D$, $a = 0$.
-For $\xi \in \partial \Delta$ we have  $- \log \rho_c(a+b\xi) \leq \Re
+Suppose $\Delta \subset \C$ is a disc such that
+$a+b\xi \in U$
+for all $\xi \in
+\overline{\Delta}$.
+If $u$ is a harmonic function on $\Delta$ continuous on $\overline{\Delta}$
+such that
+$- \log \rho_c(a+b\xi) \leq u(\xi)$ on $\partial \Delta$, we must
+show that 
+the inequality holds on $\Delta$.
+By \exerciseref{exercise:onlyniceuneededforsubharmonic}
+we may assume $u$ is harmonic on a neighborhood of $\overline{\Delta}$
+and so let $u = \Re f$ for a holomorphic function $f$.
+Fix a $\xi \in \partial \Delta$.  We have  $- \log \rho_c(a+b\xi) \leq \Re
 f(\xi)$,
 or in other words
 \begin{equation*}
-\rho_c(a+b\xi) \geq e^{-\Re f(\xi)} = \babs{e^{-f(\xi)}} \quad \text{for
-$\xi \in \partial \Delta$}.
+\rho_c(a+b\xi) \geq e^{-\Re f(\xi)} = \babs{e^{-f(\xi)}}.
 \end{equation*}
 Using $\zeta = t e^{-f(\xi)}$ in the definition of $\rho_c(a+b\xi)$, the statement above is equivalent
 to saying that 
 \begin{equation*}
-(a+b\xi)+te^{-f(\xi)}c \in U \quad \text{for all $t \in \D$ and all $\xi \in
-\partial \Delta$}.
+(a+b\xi)+te^{-f(\xi)}c \in U \quad \text{for all $t \in \D$}.
 \end{equation*}
-This statement holds when $\xi \in \partial \Delta$.  If we prove that it also
-holds for $\xi \in \Delta$, then we are finished.
+This statement holds whenever $\xi \in \partial \Delta$.  We must prove that
+it also holds for all $\xi \in \Delta$.
 
 The function $\varphi_t(\xi) = 
 (a+b\xi)+te^{-f(\xi)}c$ gives a closed analytic disc with boundary inside
@@ -7424,12 +7438,15 @@ because continuous functions take compact sets to compact sets.
 implies 
 \begin{equation*}
 \bigcup_{\sabs{t} < t_0} \varphi_t(\Delta)
-\subset \subset U .
+\subset \subset U  .
 \end{equation*}
-Again by continuity, $\varphi_t(\Delta) \subset \subset U$ for
-all $t$ with $\sabs{t} = t_0$, and consequently it is true when $\sabs{t}$
-is even slightly larger than $t_0$.
-Hence $\varphi_t(\Delta) \subset U$
+By continuity again
+$\bigcup_{\sabs{t} \leq t_0} \varphi_t(\Delta)
+\subset \subset U$, and so
+$\bigcup_{\sabs{t} < t_0+\epsilon} \varphi_t(\Delta)
+\subset \subset U$
+for some $\epsilon > 0$.
+Consequently $\varphi_t(\Delta) \subset U$
 for all $t$ with $\sabs{t} < 1$.  Thus
 $(a+b\xi)+te^{-f(\xi)}c \in U$ for all $\xi \in \Delta$ and all $\sabs{t} <
 1$.  This implies $\rho_c(a+b\xi) \geq e^{-\Re f(\xi)}$ for all $\xi \in
@@ -7522,26 +7539,24 @@ such that $W \cap U$ is Hartogs pseudoconvex.
 \end{lemma}
 
 \begin{proof}
-One direction is trivial,
-%follows by an exercise above.  If $U$ is Hartogs pseudoconvex
-%we pick a Hartogs pseudoconvex $W$ and then $U \cap W$ must be Hartogs
-%pseudoconvex.
-so let us consider the other direction.  For $p \in \partial U$ let
+One direction is trivial, so consider the other.
+Suppose $p \in \partial U$, and let
 $W$ be such that $U \cap W$
-is Hartogs pseudoconvex.  By intersecting with a ball, which is
-Hartogs pseudoconvex, we assume $W = B_r(p)$ (a ball centered at $p$).
-Let $B = B_{r/2}(p)$.  For
-any $q \in B \cap U$, the distance from $q$ to the boundary of $W \cap U$ is the same as
+is Hartogs pseudoconvex.  Intersection of
+Hartogs pseudoconvex domains is Hartogs pseudoconvex, so
+assume $W = B_r(p)$.
+Let $B = B_{r/2}(p)$.  If $q \in B \cap U$, the distance from $q$ to the boundary of $W \cap U$ is the same as
 the distance to $\partial U$.  The setup is illustrated in the following
-figure.  The part of the boundary $\partial U$ in $W$ is marked by a thick
-black line, the part of the boundary of $\partial (W \cap U)$ that arises as
-the boundary of $W$ is marked by a thick gray line.  A point $q \in B$ is
-marked and a ball of radius $\nicefrac{r}{2}$ around $q$ is dotted.
+figure.
 
 \begin{myfig}
 \subimport*{figures/}{hartogs-pseudoconvex-local.pdf_t}
 \end{myfig}
 
+The part of the boundary $\partial U$ in $W$ is marked by a thick
+black line, the part of the boundary of $\partial (W \cap U)$ that arises as
+the boundary of $W$ is marked by a thick gray line.  A point $q \in B$ is
+marked and a ball of radius $\nicefrac{r}{2}$ around $q$ is dotted.
 No point of distance $\nicefrac{r}{2}$ from $q$ is in $\partial W$, and 
 the distance of $q$ to $\partial U$ is at most $\nicefrac{r}{2}$ as $p \in \partial U$
 and $p$ is the center of $B$.
@@ -7554,10 +7569,10 @@ Then for $z \in B \cap U$
 - \log \, \operatorname{dist}(z, \partial U) = 
 - \log \, \operatorname{dist}\bigl(z, \partial (U \cap W)\bigr).
 \end{equation*}
-We know the right hand side is plurisubharmonic.  Such a ball $B$ of
-positive radius exists around every $p \in \partial U$, so near
-the boundary $- \log \, \operatorname{dist}(z, \partial U)$ is
-a plurisubharmonic exhaustion function.
+The right hand side is plurisubharmonic as $U \cap W$ is Hartogs
+pseudoconvex.  Such a ball $B$ exists around every $p \in \partial U$, so near
+the boundary, $- \log \, \operatorname{dist}(z, \partial U)$ is
+plurisubharmonic.
 
 If $U$ is bounded, then $\partial U$ is compact.  So there is some
 $\epsilon > 0$ such that $- \log \, \operatorname{dist}(z, \partial U)$
@@ -7585,14 +7600,14 @@ Finish the proof of the lemma for unbounded domains.
 It may seem that we defined a totally different concept, but it turns
 out that Levi and Hartogs pseudoconvexity are one and the same on domains
 where both concepts make sense.
+As a consequence of the following theorem we say simply ``pseudoconvex'' and there
+is no ambiguity.
 
 \begin{thm}
 Let $U \subset \C^n$ be a domain with smooth boundary. 
 Then $U$ is Hartogs pseudoconvex if and only if $U$ is Levi pseudoconvex.
 \end{thm}
 
-As a consequence of this theorem we say simply ``pseudoconvex'' and there
-is no ambiguity.
 
 \begin{proof}
 %Let us first suppose $U$ is Hartogs pseudoconvex.
@@ -7605,10 +7620,10 @@ by
 \begin{equation*}
 \Im z_n > - \sabs{z_1}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{z_j}^2 + O(3) .
 \end{equation*}
-For some small fixed $\lambda > 0$, the
-analytic discs defined by $\xi \mapsto (\lambda \xi, 0, \cdots, 0, is)$
-are in $U$ for all small enough $s > 0$.  As the origin
-is in their limit set,
+For a small fixed $\lambda > 0$, the
+closed analytic discs defined by $\xi \in \overline{\D} \mapsto (\lambda \xi, 0, \cdots, 0, is)$
+are in $U$ for all small enough $s > 0$.  The origin
+is a limit point of the insides, but not a limit point of their boundaries.
 %we found a family of analytic discs in $U$
 %whose boundaries were uniformly a positive distance away from $\partial U$,
 %but such that $p$ was in the limit set of their interiors.  In fact we found an entire
@@ -7619,13 +7634,13 @@ $U$ is not Hartogs pseudoconvex.
 
 Next suppose $U$ is Levi pseudoconvex.  Take any $p \in \partial U$.
 After translation and rotation by a unitary, assume $p=0$ and
-write the defining function $r$ as
+write a defining function $r$ as
 \begin{equation*}
 r(z,\bar{z}) = \varphi(z',\bar{z}',\Re z_n) - \Im z_n ,
 \end{equation*}
-where $z' = (z_1,\ldots,z_{n-1})$ and
-$\varphi$ is $O(2)$ at the origin.
-The condition of Levi pseudoconvexity says 
+where $z' = (z_1,\ldots,z_{n-1})$.
+%and $\varphi$ is $O(2)$ at the origin. (This isn't needed)
+Levi pseudoconvexity says 
 \begin{equation} \label{eq:psconvcond}
 \sum_{j=1,\ell=1}^n
 \bar{a}_j a_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q \geq 0 
@@ -7634,23 +7649,25 @@ The condition of Levi pseudoconvexity says
 a_j \frac{\partial r}{\partial z_j} \Big|_q = 0 ,
 \end{equation}
 for all $q \in \partial U$ near $0$.
-If we translate $\partial U$ slightly in the $\Im z_n$ direction, we still
-have a Levi pseudoconvex boundary.  That is, we
-look at the hypersurface given by $r=s$ for a small real constant $s$.
-The condition \eqref{eq:psconvcond} is 
-satisfied for the function $r-s$ instead of $r$,
-as $\frac{\partial r}{\partial z_j} =
-\frac{\partial (r-s)}{\partial z_j}$ for all $j$ and the
-complex Hessians of $r$ and $r-s$ are also equal.
-So condition \eqref{eq:psconvcond} holds for $r$ for all $q \in U$ near $0$.
+%If we translate $\partial U$ slightly in the $\Im z_n$ direction, it is
+%still a Levi pseudoconvex boundary.
+Let $s$ be a small real constant,
+and let $\widetilde{q} = (q_1,\ldots,q_{n-1},q_n + is)$.
+None of the derivatives of $r$ depends on $\Im z_n$, and therefore
+$\frac{\partial r}{\partial z_\ell} \big|_{\widetilde{q}} =
+\frac{\partial r}{\partial z_\ell} \big|_{q}$ and
+$\frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \big|_{\widetilde{q}} =
+\frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \big|_{q}$
+for all $j$ and $\ell$.
+So condition \eqref{eq:psconvcond} holds for all $q \in U$ near $0$.
 We will use $r$ to manufacture a plurisubharmonic exhaustion function, that
-is one with a semidefinite Hessian.  Therefore, we already
+is one with a semidefinite Hessian.  Starting with $r$, we already
 have what we need in all but one direction.
 
 Let $\nabla_z r|_q =
-\Bigl(
-\frac{\partial r}{\partial z_1}\Big|_q,\ldots,
-\frac{\partial r}{\partial z_n}\Big|_q \Bigr)$ denote the gradient of $r$ in
+\bigl(
+\frac{\partial r}{\partial z_1}\big|_q,\ldots,
+\frac{\partial r}{\partial z_n}\big|_q \bigr)$ denote the gradient of $r$ in
 the holomorphic directions only.
 Given $q \in U$ near $0$,
 decompose an arbitrary $c \in \C^n$ as $c = a+b$, where $a = (a_1,\ldots,a_n)$
@@ -7666,29 +7683,33 @@ Taking the orthogonal decomposition, $b$ is a scalar multiple of
 $\overline{\nabla_z r|_q}$.
 By Cauchy--Schwarz,
 \begin{equation*}
-\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
+\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
 =
-\abs{\sum_{j=1}^n b_j \frac{\partial r}{\partial z_j} \Big|_q}
+\BBabs{\sum_{j=1}^n b_j \frac{\partial r}{\partial z_j} \Big|_q}
 =
 \Babs{\blinnprod{b}{\overline{\nabla_z r|_q}}}
 =
 \snorm{b} \snorm {\nabla_z r|_q} .
 \end{equation*}
 As $\nabla_z r|_0 = (0,\ldots,0,-\nicefrac{1}{2i})$, then for $q$ sufficiently near $0$ we have that
-$\snorm{\nabla_z r|_q} \geq \nicefrac{1}{3}$.  Therefore for such $q$,
+$\snorm{\nabla_z r|_q} \geq \nicefrac{1}{3}$, and
 \begin{equation*}
 \snorm{b} =
-\frac{\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}}{\snorm
+\frac{1}{\snorm
 {\nabla_z r|_q}}
+\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
+%\frac{\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}}{\snorm
+%{\nabla_z r|_q}}
 \leq
-3 \abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
+3 \BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
 .
 \end{equation*}
 As $c = a+b$ is the orthogonal decomposition we have that $\snorm{c} \geq
 \snorm{b}$.
 
 \pagebreak[1]
-Next, let $M \geq 0$ be the operator norm of the Hessian matrix of $r$.
+The complex Hessian matrix of $r$ is continuous, and so let
+$M \geq 0$ be an upper bound on its operator norm for $q$ near the origin.
 Again using Cauchy--Schwarz
 \begin{equation*}
 \begin{split}
@@ -7729,7 +7750,7 @@ M\snorm{b}^2
 \end{split}
 \end{equation*}
 Together with what we know about
-$\snorm{b}$ we get:
+$\snorm{b}$, for $q \in U$ near the origin
 \begin{equation*}
 \sum_{j=1,\ell=1}^n
 \bar{c}_j c_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
@@ -7737,7 +7758,7 @@ $\snorm{b}$ we get:
 %-M \frac{\snorm{c}\Babs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j}
 %\big|_q}}{\snorm{\nabla_z r |_q}}
 \geq
--3^2 M \snorm{c}\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j}
+-3^2 M \snorm{c}\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j}
 \Big|_q} .
 \end{equation*}
 For $z \in U$ sufficiently close to $0$ define
@@ -7745,10 +7766,11 @@ For $z \in U$ sufficiently close to $0$ define
 f(z) = -\log \bigl(-r(z)\bigr) + A \snorm{z}^2 ,
 \end{equation*}
 where $A > 0$ is some constant we will choose later.
-The log is there to make the function blow up as we approach the boundary
-and the $A \snorm{z}^2$ is adding a constant diagonal matrix to the complex
-Hessian of $f$, which we hope is enough to make it positive semidefinite.
-Let us compute:
+The log is there to make $f$ blow up as we approach the boundary.
+The $A \snorm{z}^2$ is there to add a constant diagonal matrix to the complex
+Hessian of $f$, which we hope is enough to make it positive semidefinite at
+all $z$ near $0$.
+Compute:
 \begin{equation*}
 \frac{\partial^2 f}{\partial \bar{z}_j \partial z_\ell}
 =
@@ -7764,15 +7786,15 @@ A\delta_{j}^{\ell} ,
 where $\delta_j^\ell$ is the Kronecker delta\footnote{%
 Recall $\delta_j^\ell = 0$ if $j\not= \ell$ and $\delta_j^\ell = 1$ if $j =
 \ell$.}.
-Apply the complex Hessian of $f$ to $c$ (recall that $r$ is negative
-on $U$ and so for $q \in U$, $-r = \sabs{r}$):
+Apply the complex Hessian of $f$ to $c$ at $q \in U$ near the origin
+(recall that $r$ is negative on $U$ and so for $q \in U$, $-r = \sabs{r}$):
 \begin{equation*}
 \begin{split}
 \sum_{j=1,\ell=1}^n
 \bar{c}_j c_\ell \frac{\partial^2 f}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
 & =
 \frac{1}{r^2}
-\abs{
+\BBabs{
 \sum_{\ell=1}^n
 c_\ell
 \frac{\partial r}{\partial z_\ell} \Big|_q
@@ -7788,14 +7810,14 @@ A \snorm{c}^2
 \\
 & \geq
 \frac{1}{r^2}
-\abs{
+\BBabs{
 \sum_{\ell=1}^n
 c_\ell
 \frac{\partial r}{\partial z_\ell} \Big|_q
 }^2
 -
 \frac{3^2 M}{\sabs{r}}
-\snorm{c}\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q} 
+\snorm{c}\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q} 
 +
 A \snorm{c}^2 .
 \end{split}
@@ -7803,24 +7825,24 @@ A \snorm{c}^2 .
 Now comes a somewhat funky trick.
 As a quadratic polynomial in $\snorm{c}$, the right hand side of the
 inequality
-is always nonnegative if $A > 0$ and the discriminant is negative or zero.
+is always nonnegative if $A > 0$ and if the discriminant is negative or zero.
 Let us set the discriminant to zero:
 \begin{equation*}
 0 = 
-{\left(
+{\Biggl(
 \frac{3^2 M}{\sabs{r}}
-\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
-\right)}^2
+\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
+\Biggr)}^2
 - 4A 
 \frac{1}{r^2}
-\abs{
+\BBabs{
 \sum_{\ell=1}^n
 c_\ell
 \frac{\partial r}{\partial z_\ell} \Big|_q
 }^2 .
 \end{equation*}
 All the nonconstant terms go away and 
-$A=\frac{3^4 M^2}{4}$.  Thus
+$A=\frac{3^4 M^2}{4}$ makes the discriminant zero.  Thus for that $A$,
 \begin{equation*}
 \sum_{j=1,\ell=1}^n
 \bar{c}_j c_\ell \frac{\partial^2 f}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
@@ -7869,9 +7891,9 @@ equivalent to being a domain of holomorphy.  That a Hartogs pseudoconvex
 domain is holomorphically convex is the
 Levi problem\index{Levi problem}
 for Hartogs pseudoconvex domains and is considerably more
-difficult.  The thing is that there are lots of plurisubharmonic functions
+difficult.  The thing is, there are lots of plurisubharmonic functions
 and they are easy to construct; we can even construct them locally and then
-piece them together as we have already seen.  There are far fewer holomorphic functions, and clearly
+piece them together by taking maxima.  There are far fewer holomorphic functions, and 
 we cannot just construct them locally and expect the pieces to somehow fit
 together.  As it is so fundamental, let us state it as a theorem.
 
@@ -7896,7 +7918,7 @@ See \exerciseref{exercise:modholplush}.
 \begin{exercise}
 Prove that any domain $U \subset \C$ is holomorphically convex by 
 giving a topological description of $\widehat{K}_U$ for any
-compact $K \subset \subset U$.
+compact $K \subset \subset U$.  Hint: Runge may be useful.
 \end{exercise}
 
 \begin{exercise}
@@ -7960,16 +7982,17 @@ then so are all the topological components of $U_1 \cap U_2$.
 
 \begin{exercise}
 \pagebreak[2]
+Let $n \geq 2$.
 \begin{exparts}
 \item
-Suppose $U \subset \C^n$ is a domain and $K \subset \subset U$
-is a nonempty compact subset.  Show that $U \setminus K$ is not
+Let $U \subset \C^n$ be a domain and $K \subset \subset U$
+a nonempty compact subset.  Show that $U \setminus K$ is not
 holomorphically convex.
 \item
-Suppose $U \subset \C^n$ is a bounded domain that is holomorphically
-convex.  Prove that $\C^n \setminus U$ is connected.
+Let $U \subset \C^n$ be a bounded holomorphically
+convex domain.  Prove that $\C^n \setminus U$ is connected.
 \item
-Find an unbounded domain $U \subset \C^n$ that is holomorphically convex and 
+Find an unbounded holomorphically convex domain $U \subset \C^n$ where
 $\C^n \setminus U$ is disconnected.
 \end{exparts}
 \end{exercise}
@@ -8002,7 +8025,8 @@ $U$ is holomorphically convex.
 
 \begin{proof}
 Let us start with \ref{thm:cartthul:domhol} $\Rightarrow$
-\ref{thm:cartthul:disthull}.  Suppose there is a $K \subset
+\ref{thm:cartthul:disthull}.
+Suppose there is a $K \subset
 \subset U$ with $\operatorname{dist}(K,\partial U) > \operatorname{dist}(\widehat{K}_U,\partial U)$.
 After possibly a rotation by a unitary,
 there exists a point $p \in \widehat{K}_U$ and a polydisc
@@ -8034,7 +8058,7 @@ $\Delta_r(p)$ contains points outside of $U$, in other words,
 $U$ is not a domain of holomorphy.
 
 The implication \ref{thm:cartthul:disthull} $\Rightarrow$
-\ref{thm:cartthul:holconv} is easy.
+\ref{thm:cartthul:holconv} is immediate.
 
 Finally we prove
 \ref{thm:cartthul:holconv} $\Rightarrow$
@@ -8042,9 +8066,10 @@ Finally we prove
 Suppose $U$ is holomorphically convex.  Let $p \in \partial U$.
 By convexity choose nested compact sets $K_{j-1} \subsetneq K_j \subset
 \subset U$ such that $\bigcup_j K_j = U$, and $\widehat{(K_j)}_U = K_j$.
-Pick the sequence of $K_j$ so that
+As the sets exhaust $U$, we can perhaps pass to a subsequence
+to ensure that
 there exists a 
-sequence of points $p_j \in K_j \setminus K_{j-1}$ and
+sequence of points $p_j \in K_j \setminus K_{j-1}$ such that
 $\lim_{j\to\infty} p_j = p$.
 
 As $p_j$ is not in the hull of $K_{j-1}$, there is a function $f_j \in
@@ -8053,9 +8078,9 @@ As $p_j$ is not in the hull of $K_{j-1}$, there is a function $f_j \in
 \sabs{f_j(p_j)} > j + \abs{\sum_{k=1}^{j-1} f_k(p_j)} .
 \end{equation*}
 Finding such a function is left as an exercise below.
-The series $\sum_{k=1}^\infty f_k(z)$ converges uniformly on $K_j$
+For any $j$, the series $\sum_{k=1}^\infty f_k(z)$ converges uniformly on $K_j$
 as for all $k > j$, $\sabs{f_k} < 2^{-k}$ on $K_j$.
-As the $K_j$ exhaust $U$ the series converges uniformly on compact
+As the $K_j$ exhaust $U$, the series converges uniformly on compact
 subsets of $U$.  Consequently,
 \begin{equation*}
 f(z) = \sum_{k=1}^\infty f_k(z)
@@ -8082,7 +8107,7 @@ connected open $W$ such that $W \setminus U \not= \emptyset$ must contain a
 point of $\partial U$, we are done.
 \end{proof}
 
-Bu \exerciseref{exercise:biholholconvex},
+By \exerciseref{exercise:biholholconvex},
 holomorphic convexity is a biholomorphic invariant.
 Thus,
 being a domain of holomorphy is also a biholomorphic invariant.  This
@@ -8100,7 +8125,7 @@ the notion of a domain of holomorphy only makes sense for domains in $\C^n$.
 
 \begin{exbox}
 \begin{exercise}
-Find the function $f_j \in \sO(U)$ as indicated in the proof above.
+Prove the existence of the function $f_j \in \sO(U)$ as indicated in the proof above.
 \end{exercise}
 
 \begin{exercise}
@@ -8124,20 +8149,19 @@ is a complex line and $K$ is a circle in $L$.  What is $\widehat{K}_W$?
 In the following series of exercises, which you should most definitely do in
 sequence, you will solve the
 Levi problem\index{Levi problem!for complete Reinhardt domains}
-(and more) for complete Reinhardt domains\index{Reinhardt domain}.
-Recall a domain $U \subset \C^n$ is
-Reinhardt if whenever $(z_1,\ldots,z_n) \in U$ then
-$(e^{i\theta_1}z_1,\ldots,e^{i\theta_n}z_n) \in U$ for all real
-$(\theta_1,\ldots,\theta_n)$.
-A Reinhardt domain is complete\index{complete Reinhardt
-domain}\index{Reinhardt domain!complete}
+(and more) for complete Reinhardt domains.
+%Recall a domain $U \subset \C^n$ is
+%Reinhardt if whenever $(z_1,\ldots,z_n) \in U$ then
+%$(e^{i\theta_1}z_1,\ldots,e^{i\theta_n}z_n) \in U$ for all real
+%$(\theta_1,\ldots,\theta_n)$.
+Recall that a domain $U$ is a
+\myindex{complete Reinhardt domain}\index{Reinhardt domain!complete}
 if whenever $(z_1,\ldots,z_n)$ is in $U$ and $r_j = \sabs{z_j}$, then the
 entire closed polydisc $\overline{\Delta_r(0)} \subset U$.
-
-A complete Reinhardt domain $U$ is \emph{\myindex{logarithmically convex}}%
+We say a complete Reinhardt domain $U$ is \emph{\myindex{logarithmically convex}}%
 \index{Reinhardt domain!logarithmically convex}
 if there exists a
-convex subset $C \subset \R^n$ such that $z \in U$ if and only if
+(geometrically) convex $C \subset \R^n$ such that $z \in U$ if and only if
 $(\log \sabs{z_1},\ldots,\log\sabs{z_n}) \in C$.
 
 \begin{exbox}
@@ -8195,8 +8219,10 @@ convex domain.
 \end{exercise}
 \end{exbox}
 
+\pagebreak[2]
 We (you) have proved the following proposition.
 
+\pagebreak[2]
 \begin{prop}
 Let $U \subset \C^n$ be a complete Reinhardt domain.  Then the following are
 equivalent:
@@ -8206,7 +8232,7 @@ $U$ is logaritmically convex.
 \item
 $U$ is a domain of holomorphy.
 \item
-$U$ is a domain of convergence of some power series.
+$U$ is a domain of convergence of some power series at the origin.
 \item
 $U$ is Hartogs pseudoconvex.
 \end{enumerate}
@@ -8315,10 +8341,11 @@ extend our $f$ near every point, we always get the same function.
 That follows from the lemma above; any two such functions are
 equal on $\R^n$, and hence equal.  There is a subtle topological technical
 point in this, so let us elaborate.  A key topological fact is that we define
-$V$ as a union of the polydiscs where the series converges.  If there was a
-point where we get two distinct values, then this point must be in two
-distinct such polydiscs.  The intersection of two polydiscs is always
-connected, so we can apply the lemma above.
+$V$ as a union of the polydiscs where the series converges.  If
+a point $p$ is in two different such polydiscs, we need to show that
+the two definitions of $F$ are the same at $p$.  But the intersection
+of two polydiscs is always connected, and in this case contains a piece
+of $\R^n$ as well, and we may apply the lemma above.
 \end{proof}
 
 \begin{exbox}
