@@ -2692,7 +2692,7 @@ like the familiar vector calculus rule.
 Suppose again
 $U \subset \C^n$ and $V \subset \C^m$ are open sets and 
 $f \colon U \to V$, and $g \colon V \to \C$ are holomorphic.
-Again let the variables be named
+Again name the variables
 $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
 \subset \C^m$.  In formula \eqref{eq:chainrule} for the $z_j$ derivative,
 the $\bar{w}_j$ derivative of $g$ is zero and the $z_j$ derivative of
@@ -4729,7 +4729,7 @@ In the following, \glsadd{not:Ol}%
 we use the \emph{\myindex{big-oh notation}},
 although we use a perhaps less standard short hand\footnote{%
 The standard notation for $O(\ell)$ is $O(\snorm{x}^{\ell})$ and
-is usually defined as saying that
+is usually defined to mean that
 $\abs{\frac{f(x)}{\snorm{x}^\ell}}$ is bounded as $x \to p$.}.
 A smooth function is $O(\ell)$ at a point $p$ (usually the origin),
 if all its derivatives of order $0, 1, \ldots,  \ell-1$ vanish at $p$.
@@ -8386,9 +8386,9 @@ called the
 \emph{\myindex{degree $d$ homogeneous part}}\index{homogeneous part} of $f$
 at $a$.
 
-When dealing with real-analytic functions in $\C^n$, there is usually a better
-way to complexify.
-Suppose $U \subset \C^n \cong \R^{2n}$, and suppose $f \colon U \to
+There is usually a better way to complexify 
+real-analytic functions in $\C^n$.
+Suppose $U \subset \C^n \cong \R^{2n}$, and $f \colon U \to
 \C$ is real-analytic.  Assume $a=0 \in U$ for simplicity.
 Writing $z = x+iy$, near $0$,
 \begin{equation*}
@@ -8405,7 +8405,7 @@ f_j\left(
 The polynomial $f_j$ becomes a homogeneous polynomial of degree $j$
 in the variables $z$ and $\bar{z}$.  The 
 series becomes a power series in $z$ and $\bar{z}$.  As mentioned before,
-we simply write the function as $f(z,\bar{z})$, and when we consider the
+we simply write the function as $f(z,\bar{z})$, and we consider the
 power series representation in $z$ and $\bar{z}$ rather than
 in $x$ and $y$.
 In multinomial notation we write a power series at $a \in \C^n$ as
@@ -8451,7 +8451,8 @@ Let us do this again with the $z_j$
 =
 \frac{\partial f}{\partial z_j}(z,\bar{z}) .
 \end{equation*}
-Each time we get another holomorphic function that is zero on $D$.
+Either way, we get another holomorphic function in $z$ and $\zeta$
+that is zero on $D$.
 By induction, for all $\alpha$ and $\beta$ we get
 \begin{equation*}
 0 =
@@ -8460,8 +8461,9 @@ By induction, for all $\alpha$ and $\beta$ we get
 \frac{\partial^{\sabs{\alpha}+\sabs{\beta}} f}{\partial z^\alpha \partial
 \zeta^\beta}(z,\bar{z}) .
 \end{equation*}
-Therefore all holomorphic derivatives of $f$ are zero on every point
-$(z,\bar{z})$.  So $f$ must be identically zero in a neighborhood of any
+All holomorphic derivatives of $f$ are zero on every point
+$(z,\bar{z})$, so the power series is zero at every point $(z,\bar{z})$,
+and so $f$ is identically zero in a neighborhood of any
 point $(z,\bar{z})$.  The lemma follows by the identity
 theorem.
 \end{proof}
@@ -8481,7 +8483,7 @@ convergence as we discussed before: that is,
 \sabs{\bar{z}-\bar{a}}^\beta
 \end{equation*}
 converges.
-Therefore the series still converges if we replace $\bar{z}_j$  with
+The series still converges if we replace $\bar{z}_j$  with
 $\zeta_j$ where $\sabs{\zeta_j-\bar{a}} \leq \sabs{\bar{z}_j-\bar{a}}$.
 So the series
 \begin{equation*}
@@ -8491,7 +8493,7 @@ F(z,\zeta) =
 \end{equation*}
 converges for all $(z,\zeta) \in \Delta_r(a) \times \Delta_r(\bar{a})$.
 
-Putting together the above with the lemma we obtain.
+Putting together the above discussion with the lemma we obtain:
 
 \begin{prop}[Complexification part II\index{complexification}] \label{prop:complexificationpt2}
 Suppose $U \subset \C^n$ is a domain and $f \colon U \to \C$ is
@@ -8504,10 +8506,10 @@ and a unique holomorphic function $F \colon V \to \C$ such that
 $F(z,\bar{z}) = f(z,\bar{z})$ for all $z \in U$.
 \end{prop}
 
-The function $f$ can be thought of as the restriction of $f$ to the set
+The function $f$ can be thought of as the restriction of $F$ to the set
 where $\zeta = \bar{z}$.  We will abuse notation and write
 simply $f(z,\zeta)$ both for $f$ and its extension.
-The reason for this abuse if evident from the computations above.
+The reason for this abuse is evident from the computations above.
 What we are calling $f$ is a function of $(z,\bar{z})$ if thinking
 of it as a function on the diagonal where $\zeta=\bar{z}$, or it is a function of
 $z$ if thinking of it as just the function $z \mapsto f(z,\bar{z})$, or
@@ -8635,11 +8637,11 @@ Prove the statements of the above example.
 \begin{defn}
 A real hypersurface $M \subset \R^n$ is said to be real-analytic
 if locally at every point it is the graph of a real-analytic function.  That
-is near every point (that is, locally), after perhaps a rotation $M$ can be written as
+is near every point (locally), after perhaps a rotation $M$ can be written as
 \begin{equation*}
 y = \varphi(x) ,
 \end{equation*}
-where $\varphi$ is real-analytic.
+where $\varphi$ is real-analytic, $x \in \R^{n-1}$ and $y \in \R$.
 \end{defn}
 
 Compare this definition to \defnref{def:hypersurface}.  In fact, we could
@@ -8687,7 +8689,7 @@ holomorphic functions are solutions to certain PDE (the Cauchy--Riemann
 equations).  There is no PDE
 that defines real-analytic functions, so complexification provides a useful
 tool to transfer certain properties of holomorphic functions to
-real-analytic functions.  We must be careful, however, hypotheses on
+real-analytic functions.  We must be careful, however.  Hypotheses on
 real-analytic functions only give us hypotheses on certain points of the
 complexified holomorphic functions.
 
@@ -8743,11 +8745,28 @@ Prove the proposition.
 \end{exercise}
 
 \begin{exercise}
-Prove that in the definition if $X$ is a smooth or real-analytic
-hypersurface, then the function $F$ from the definition is never unique,
+Prove that if $M$ is a smooth or real-analytic
+hypersurface, and $f \colon M \to \C$ is smooth or real-analytic, then the function $F$ from the definition is never unique,
 even for a fixed neighborhood $U$.
 \end{exercise}
+
+\begin{exercise}
+Suppose $M$ is a smooth hypersurface, $f \colon M \to \C$
+is a smooth function, $p \in M$, and $X_p \in T_p M$.  Prove that
+$X_p$ is well-defined.
+That is, suppose
+$U$ is a neighborhood of $p$,
+$F \colon U \to \C$ and $G \colon U \to \C$
+are smooth functions that both equal $f$ on $U \cap M$.
+Prove that
+$X_p F = X_p G$.
+\end{exercise}
 \end{exbox}
+
+Due to the last exercise, we can apply vectors of $T_p M$ to
+a smooth function on a hypersurface by simply applying
+them to any smooth extension.  Similarly we can apply vectors of $\C \otimes
+T_p M$ to smooth function on $M$.
 
 \begin{defn}
 Let $M \subset \C^n$ be a smooth real hypersurface.  Then
@@ -8760,14 +8779,15 @@ for all $p \in M$ and all vectors $X_p \in T^{(0,1)}_p M$.
 \end{defn}
 
 \begin{remark}
-Of course one only needs one-derivative in the above definition.  One can also
+One only needs one derivative (rather than $C^\infty$) in the above definition.
+One can also
 define a continuous CR function if the derivative is taken in the
 distribution sense, but we digress.
 \end{remark}
 
 \begin{remark}
 When $n=1$, a real hypersurface $M \subset \C$ is a curve and $T^{(0,1)}_p M$
-is trivial.  Therefore, all functions are CR functions.
+is trivial.  Therefore, all functions $f \colon M \to \C$ are CR functions.
 \end{remark}
 
 \begin{prop}
@@ -8778,7 +8798,7 @@ then the restriction $f = F|_M$ is a smooth (resp.\ real-analytic) CR function.
 \end{prop}
 
 \begin{proof}
-First let us prove that $f$ is smooth.  Given any $p \in M$ write $M$
+First let us prove that $f$ is smooth.  Given any $p \in M$, write $M$
 as $\Im w = \varphi(z,\bar{z},\Re w)$ for a smooth $\varphi$.
 Then $F\bigl(z,\Re w + i \varphi(z,\bar{z},\Re w) \bigr)$
 is clearly smooth as it is a composition of smooth functions.
@@ -8786,7 +8806,7 @@ If both $M$ and $\varphi$ are real-analytic, we obtain that
 $F\bigl(z,\Re w + i \varphi(z,\bar{z},\Re w) \bigr)$ is real-analytic, which
 we could also prove directly by complexifying as before.
 
-Let us show it is CR\@.
+Let us show $f$ is CR\@.
 We have $X_p F = 0$
 for all $X_p \in T_p^{(0,1)} \C^n$.
 As $T_p^{(0,1)} M \subset T_p^{(0,1)} \C^n$ we have
@@ -8798,10 +8818,11 @@ Not every smooth CR function is a restriction of a holomorphic function.
 \begin{example}
 Take the smooth function $f \colon \R \to \R$ we defined before
 that is not real-analytic at the origin.
-Take $M \subset \C^2$ be the set defined by $\Im z_2 = 0$, this is a
+Take $M \subset \C^2$ be the set defined by $\Im z_2 = 0$.
+$M$ is a
 real-analytic real hypersurface.  Clearly
-$T_p^{(0,1)} M$ is one-complex-dimensional and at each point
-$\frac{\partial}{\partial \bar{z}_1}$ is tangent and therefore spans
+$T_p^{(0,1)} M$ is one-complex-dimensional, and at each $p \in M$,
+$\frac{\partial}{\partial \bar{z}_1}\big|_p$ is tangent and spans
 $T_p^{(0,1)} M$.  Define $g \colon M \to \C$ by
 \begin{equation*}
 g(z_1,z_2,\bar{z}_1,\bar{z}_2) = f(\Re z_2) .
@@ -8842,8 +8863,10 @@ exist nonconstant functions such that $\sabs{f}$ attains a (nonstrict) maximum $
 Real-analytic CR functions on a real-analytic
 hypersurface $M$ always extend to holomorphic functions of a neighborhood of $M$.
 Before we prove that fact, let us find a convenient way to write the defining
-equation for a real-analytic hypersurface.
+equation for a real-analytic hypersurface.  That is, we find a convenient
+complexification of a real-analytic hypersurface.
 
+\pagebreak[2]
 \begin{prop}
 Suppose $M \subset \C^n$ is a real-analytic hypersurface and $p \in M$.
 Then after a translation and rotation by a unitary matrix, $p=0$, and near
@@ -8859,7 +8882,7 @@ $\Phi$,
 $\frac{\partial \Phi}{\partial z_j}$,
 $\frac{\partial \Phi}{\partial \zeta_j}$
 vanish at the origin for all $j$,
-and such that $w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$
+and $w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$
 for all $z$, $\zeta$, and $w$.
 
 A local basis for $T^{(0,1)} M$ vector fields is given by
@@ -8878,7 +8901,7 @@ A local basis for $T^{(0,1)} M$ vector fields is given by
 
 Finally, let $\sM$ be the set in
 $(z,\zeta,w,\omega) \in \C^{n-1} \times \C^{n-1} \times \C \times \C$
-coordinates given
+coordinates given near the origin 
 by $\omega = \Phi(z,\zeta,w)$.
 Then $\sM$ is the unique \emph{complexification}
 of $M$\index{complexification of a real hypersurface}
