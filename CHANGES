@@ -108,6 +108,8 @@ improvements have been made throughout.
 * Add a bit more explanation of the complexification and the abuse of notation
   for treating $\bar{z}$ as an independent variable in the context of
   real-analytic functions.
+* In 3.2, explain taking derivatives of functions only defined on a
+  hypersurface, and add a relevant exercise.
 * In 3.2 add the "reality condition" the complexified graph proposition, and
   with it fix the gap showing that the vector fields given give the CR
   vector fields
@@ -115,9 +117,8 @@ improvements have been made throughout.
   and also state that functions vanishing on $M$ vanish on the
   complexification, which is left as an exercise.
 * Add a short example of the complexified graph result.
+* Add a short one dimensional example of extending a function from a circle.
 ** Add a couple of exercises in 3.2, renumbering others
-* In 3.2, explain taking derivatives of functions only defined on a
-  hypersurface, and add a relevant exercise.
 * In 3.2, prove the proposition "zero on the boundary means zero inside"
   including in one dimension (using Rado), and add a figure.
 * Add an exercise in 3.4

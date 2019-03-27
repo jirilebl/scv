@@ -8461,7 +8461,7 @@ By induction, for all $\alpha$ and $\beta$ we get
 \frac{\partial^{\sabs{\alpha}+\sabs{\beta}} f}{\partial z^\alpha \partial
 \zeta^\beta}(z,\bar{z}) .
 \end{equation*}
-All holomorphic derivatives of $f$ are zero on every point
+All holomorphic derivatives in $z$ and $\zeta$ of $f$ are zero on every point
 $(z,\bar{z})$, so the power series is zero at every point $(z,\bar{z})$,
 and so $f$ is identically zero in a neighborhood of any
 point $(z,\bar{z})$.  The lemma follows by the identity
@@ -8862,12 +8862,18 @@ exist nonconstant functions such that $\sabs{f}$ attains a (nonstrict) maximum $
 
 Real-analytic CR functions on a real-analytic
 hypersurface $M$ always extend to holomorphic functions of a neighborhood of $M$.
-Before we prove that fact, let us find a convenient way to write the defining
-equation for a real-analytic hypersurface.  That is, we find a convenient
-complexification of a real-analytic hypersurface.
+To prove this we wish to complexify everything, that is treat the
+$z$s and $\bar{z}$s as separate variables.  The standard way of
+writing a hypersurface as a graph is not as convenient for this setting, so
+let us prove that for a real-analytic hypersurface, we can write it as a
+graph of a holomorphic function in the complexified variables.  That is,
+using variables $(z,w)$,
+we will write $M$ as a graph of $\bar{w}$ over $z$, $\bar{z}$, and $w$.
+This allow us to easily eliminate $\bar{w}$ in any real-analytic
+expression.
 
-\pagebreak[2]
-\begin{prop}
+%\pagebreak[2]
+\begin{prop} \label{prop:complexificationofrasurface}
 Suppose $M \subset \C^n$ is a real-analytic hypersurface and $p \in M$.
 Then after a translation and rotation by a unitary matrix, $p=0$, and near
 the origin in coordinates $(z,w) \in \C^{n-1} \times \C$,
@@ -8944,7 +8950,7 @@ $r(z,\bar{z},w,\bar{w}) =
 \overline{r(z,\bar{z},w,\bar{w})} = \bar{r}(\bar{z},z,\bar{w},w)$.
 Complexify to obtain
 $r(z,\zeta,w,\omega) =
-\bar{r}(\zeta,z,\omega,w)$ for all $(z,\zeta,w,\omega)$.
+\bar{r}(\zeta,z,\omega,w)$ for all $(z,\zeta,w,\omega)$ near the origin.
 If $r(z,\zeta,w,\omega) = 0$,
 then 
 \begin{equation*}
@@ -9010,8 +9016,9 @@ Using the holomorphic implicit function theorem we can uniquely solve $f=0$
 for $\omega$ near the origin, that unique solution is $\Phi$,
 and hence $\sM' = \sM$ near the origin.
 
-As an example, recall that the sphere in $\C^2$ is biholomorphic to the set $\Im w =
-\sabs{z}^2$.  That is, $\frac{w-\bar{w}}{2i} = z \bar{z}$.  Solving for
+As an example, recall that the sphere (minus a point) in $\C^2$ is biholomorphic to the
+hypersurface
+given by $\Im w = \sabs{z}^2$.  That is, $\frac{w-\bar{w}}{2i} = z \bar{z}$.  Solving for
 $\bar{w}$ and using $\zeta$ and $\omega$ obtains the equation for the
 complexification $\omega = -2iz \zeta + w$.  Then
 $\Phi(z,\zeta,w) = 
@@ -9063,6 +9070,23 @@ condition, nor does it define a real hypersurface.
 \end{exparts}
 \end{exercise}
 \end{exbox}
+
+Let us prove that real-analytic CR functions on real-analytic
+hypersurfaces are restrictions
+of holomorphic functions.  To motivate the proof, consider
+a real-analytic function $f$ on the circle $\sabs{z}^2 = z \bar{z} = 1$
+($f$ is vacuously CR).  This $f$
+is a restriction of a real-analytic function on a 
+neighborhood of the circle, that we write $f(z,\bar{z})$.
+On the circle
+$\bar{z} = \nicefrac{1}{z}$.  Thus,
+$F(z) = f\bigl(z,\nicefrac{1}{z}\bigr)$ is a holomorphic function
+defined on a neighborhood of the circle and
+equal to $f$ on the circle.
+Our strategy then is to solve for one of the barred variables via
+\propref{prop:complexificationofrasurface}, and hope
+the CR conditions take care of the rest of the barred variables
+in more than one dimension.
 
 \begin{prop}[Severi] \label{prop:severi}\index{Severi's theorem}
 Suppose $M \subset \C^n$ is a real-analytic hypersurface and $p \in M$.
