@@ -8751,7 +8751,7 @@ even for a fixed neighborhood $U$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $M$ is a smooth hypersurface, $f \colon M \to \C$
+Suppose $M \subset \R^n$ is a smooth hypersurface, $f \colon M \to \C$
 is a smooth function, $p \in M$, and $X_p \in T_p M$.  Prove that
 $X_p$ is well-defined.
 That is, suppose
@@ -8765,8 +8765,9 @@ $X_p F = X_p G$.
 
 Due to the last exercise, we can apply vectors of $T_p M$ to
 a smooth function on a hypersurface by simply applying
-them to any smooth extension.  Similarly we can apply vectors of $\C \otimes
-T_p M$ to smooth function on $M$.
+them to any smooth extension.  Similarly we can apply vectors of
+$\C \otimes T_p M$ to smooth function on $M$, as 
+$\C \otimes T_p M$ is simply the complex span of vectors in $T_p M$.
 
 \begin{defn}
 Let $M \subset \C^n$ be a smooth real hypersurface.  Then
@@ -9088,12 +9089,12 @@ Our strategy then is to solve for one of the barred variables via
 the CR conditions take care of the rest of the barred variables
 in more than one dimension.
 
-\begin{prop}[Severi] \label{prop:severi}\index{Severi's theorem}
+\begin{thm}[Severi] \label{thm:severi}\index{Severi's theorem}
 Suppose $M \subset \C^n$ is a real-analytic hypersurface and $p \in M$.
 For any real-analytic CR function $f \colon M \to \C$, there exists
 a holomorphic function $F \in \sO(U)$ for a neighborhood $U$ of $p$
 such that $F|_{M \cap U} = f$.
-\end{prop}
+\end{thm}
 
 \begin{proof}
 Write $M$ near $p$ as $\bar{w} = \Phi(z,\bar{z},w)$.
@@ -9120,12 +9121,12 @@ $\frac{\partial}{\partial \bar{z}_j}
 \end{equation*}
 on the subset of $\sM$ where $\bar{z} = \zeta$ (and $\bar{w}=\omega$).
 Therefore the equation holds on all of $\sM$ or in other words for
-all $z,\zeta,w$ in a neighborhood.  Consequently
+all $z,\zeta,w$ in a neighborhood of the origin.  Consequently
 \begin{equation*}
 \frac{\partial}{\partial \bar{z}_j} \bigl[ F(z,w,\bar{z}) \bigr] = 0
 \end{equation*}
-for all $j$,
-and $F$ is actually a holomorphic function in $z$ and $w$ only.
+for all $j$ and all $z,w$ near zero.
+Hence $F$ is actually a holomorphic function in $z$ and $w$ only.
 \end{proof}
 
 CR functions can often be considered as boundary values of
@@ -10686,7 +10687,7 @@ $F|_{\partial U} = f$.
 \end{cor}
 
 \begin{proof}
-By Severi's result (\propref{prop:severi}) $f$ extends to a small neighborhood of $\partial U$
+By Severi's result (\thmref{thm:severi}) $f$ extends to a small neighborhood of $\partial U$
 near each point.  Because the local extension is unique for a hypersurface,
 we obtain an extension in a single neighborhood of $\partial U$.
 We write this neighborhood as $U' \setminus K$ for some compact $K$
