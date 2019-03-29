@@ -8730,8 +8730,8 @@ a closure of a domain with smooth boundary.
 
 \begin{prop}
 If $M \subset \R^n$ is a smooth (resp.\ real-analytic) real hypersurface, then $f \colon M \to \C$
-is smooth (resp.\ real-analytic) if and only if whenever near some point we write $M$
-as
+is smooth (resp.\ real-analytic) if and only if whenever near any point if we write
+$M$ in coordinates $(x,y) \in \R^{n-1} \times \R$ as
 \begin{equation*}
 y = \varphi(x)
 \end{equation*}
@@ -8781,7 +8781,7 @@ for all $p \in M$ and all vectors $X_p \in T^{(0,1)}_p M$.
 
 \begin{remark}
 One only needs one derivative (rather than $C^\infty$) in the above definition.
-One can also
+One can even
 define a continuous CR function if the derivative is taken in the
 distribution sense, but we digress.
 \end{remark}
@@ -8799,22 +8799,30 @@ then the restriction $f = F|_M$ is a smooth (resp.\ real-analytic) CR function.
 \end{prop}
 
 \begin{proof}
-First let us prove that $f$ is smooth.  Given any $p \in M$, write $M$
-as $\Im w = \varphi(z,\bar{z},\Re w)$ for a smooth $\varphi$.
-Then $F\bigl(z,\Re w + i \varphi(z,\bar{z},\Re w) \bigr)$
-is clearly smooth as it is a composition of smooth functions.
-If both $M$ and $\varphi$ are real-analytic, we obtain that 
-$F\bigl(z,\Re w + i \varphi(z,\bar{z},\Re w) \bigr)$ is real-analytic, which
-we could also prove directly by complexifying as before.
+First let us prove that $f$ is smooth.  The function $F$ is smooth and
+defined on a neighborhood of any point, and so it can be used in the
+definition.
+Similarly for real-analytic.
+%Given any $p \in M$, write $M$
+%as $\Im w = \varphi(z,\bar{z},\Re w)$ for a smooth $\varphi$.
+%Then $F\bigl(z,\Re w + i \varphi(z,\bar{z},\Re w) \bigr)$
+%is clearly smooth as it is a composition of smooth functions.
+%If both $M$ and $\varphi$ are real-analytic, then
+%$F\bigl(z,\Re w + i \varphi(z,\bar{z},\Re w) \bigr)$ is real-analytic.
 
-Let us show $f$ is CR\@.
-We have $X_p F = 0$
-for all $X_p \in T_p^{(0,1)} \C^n$.
+Let us show $f$ is CR at some $p \in M$.
+Differentiating $f$ with vectors in $\C \otimes
+T_pM$ is the same as differentiating $F$.
+%We have $X_p F = 0$
+%for all $X_p \in T_p^{(0,1)} \C^n$.
 As $T_p^{(0,1)} M \subset T_p^{(0,1)} \C^n$ we have
-$X_p f = 0$ for all $X_p \in T_p^{(0,1)} M$.
+\begin{equation*}
+X_p f = X_p F = 0 \qquad \text{for all} \quad X_p \in T_p^{(0,1)} M.
+\qedhere
+\end{equation*}
 \end{proof}
 
-Not every smooth CR function is a restriction of a holomorphic function.
+On the other hand, not every smooth CR function is a restriction of a holomorphic function.
 
 \begin{example}
 Take the smooth function $f \colon \R \to \R$ we defined before
@@ -8870,7 +8878,7 @@ let us prove that for a real-analytic hypersurface, we can write it as a
 graph of a holomorphic function in the complexified variables.  That is,
 using variables $(z,w)$,
 we will write $M$ as a graph of $\bar{w}$ over $z$, $\bar{z}$, and $w$.
-This allow us to easily eliminate $\bar{w}$ in any real-analytic
+This allows us to easily eliminate $\bar{w}$ in any real-analytic
 expression.
 
 %\pagebreak[2]

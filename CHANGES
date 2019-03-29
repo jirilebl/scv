@@ -110,6 +110,8 @@ improvements have been made throughout.
   real-analytic functions.
 * In 3.2, explain taking derivatives of functions only defined on a
   hypersurface, and add a relevant exercise.
+* In the proposition that a restriction of a holomorphic function is a
+  smooth CR function, use directly the definition, it is easier.
 * In 3.2 add the "reality condition" the complexified graph proposition, and
   with it fix the gap showing that the vector fields given give the CR
   vector fields
