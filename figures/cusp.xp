@@ -14,7 +14,7 @@ int main()
   double c;
   double x;
 
-  picture(P(-0.5,-1.0), P(1.5,1.0), "3x2in");
+  picture(P(-0.5,-1.0), P(1.5,1.0), "2.25x1.5in");
 
   begin();
 
@@ -24,21 +24,26 @@ int main()
   //h_axis_labels(3, P(-1, 2), tl); // align top-left
   //v_axis_labels(3, P(-1, 2), tl);
 
-bottom_axis(4, P(0,-4)).draw();
-  left_axis(2, P(-4,0)).draw();
+  pen(Black(0.4));
+  line_style(".");
+  dash_size(1);
 
-
-  dotted();
-
+  bold();
   line(P(-0.5,0),P(1.5,0));
-  line(P(-0.5,1),P(1.5,1));
   line(P(0,-1),P(0,1));
+
+  plain();
+  line(P(-0.5,1),P(1.5,1));
   line(P(0.5,-1),P(0.5,1));
   line(P(1,-1),P(1,1));
   line(P(1.5,-1),P(1.5,1));
 
   solid();
+  pen(Black());
 
+  font_size("footnotesize");
+  bottom_axis(4, P(0,-4)).draw();
+  left_axis(2, P(-4,0)).draw();
 
   bold();
   plot(f, -1, 1, 40);

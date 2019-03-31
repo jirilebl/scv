@@ -1,126 +1,226 @@
-%% Generated from locallyredcurve.xp on Tue May 11 13:53:50 CDT 2010 by
-%% ePiX-1.2.6
+%% Generated from locallyredcurve.xp on sab Mar 30 19:31:28 CDT 2019 by
+%% ePiX-1.2.18
 %% 
 %%   Cartesian bounding box: [-1,2] x [-1,1]
-%%   Actual size: 3 x 2in
+%%   Actual size: 2.25 x 1.5in
 %%   Figure offset: left by 0in, down by 0in
 %% 
 %% usepackages tikz
 %% 
 \xdefinecolor{rgb_000000}{rgb}{0,0,0}%
+\xdefinecolor{rgb_999999}{rgb}{0.6,0.6,0.6}%
 \begin{tikzpicture}
 \pgfsetlinewidth{0.4pt}
-\useasboundingbox (0in,0in) rectangle (3in,2in);
-\draw (0in,0in)--(3in,0in);
-\pgftext[at={\pgfpoint{0in}{0in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$\rule{0.5pt}{6pt}$}}}
-\pgftext[at={\pgfpoint{1in}{0in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$\rule{0.5pt}{6pt}$}}}
-\pgftext[at={\pgfpoint{2in}{0in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$\rule{0.5pt}{6pt}$}}}
-\pgftext[at={\pgfpoint{3in}{0in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}$\rule{0.5pt}{6pt}$}}}
-\pgftext[at={\pgfpoint{0in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$-1$}}}
-\pgftext[at={\pgfpoint{1in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$0$}}}
-\pgftext[at={\pgfpoint{2in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$1$}}}
-\pgftext[at={\pgfpoint{3in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$2$}}}
-\draw (0in,0in)--(0in,2in);
-\pgftext[at={\pgfpoint{0in}{0in}}] {\makebox(0,0)[l]{\hbox{\color{rgb_000000}$\rule{6pt}{0.5pt}$}}}
-\pgftext[at={\pgfpoint{0in}{1in}}] {\makebox(0,0)[l]{\hbox{\color{rgb_000000}$\rule{6pt}{0.5pt}$}}}
-\pgftext[at={\pgfpoint{0in}{2in}}] {\makebox(0,0)[l]{\hbox{\color{rgb_000000}$\rule{6pt}{0.5pt}$}}}
-\pgftext[at={\pgfpoint{-0.055348in}{0in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}$-1$}}}
-\pgftext[at={\pgfpoint{-0.055348in}{1in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}$0$}}}
-\pgftext[at={\pgfpoint{-0.055348in}{2in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}$1$}}}
-\filldraw[color=rgb_000000] (0.0789474in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (0.236842in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (0.394737in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (0.552632in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (0.710526in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (0.868421in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.02632in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.18421in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.34211in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.5in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.65789in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.81579in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.97368in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2.13158in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2.28947in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2.44737in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2.60526in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2.76316in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2.92105in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (0.0789474in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (0.236842in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (0.394737in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (0.552632in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (0.710526in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (0.868421in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.02632in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.18421in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.34211in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.5in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.65789in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.81579in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1.97368in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2.13158in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2.28947in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2.44737in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2.60526in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2.76316in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2.92105in,2in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,0.0769231in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,0.230769in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,0.384615in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,0.538462in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,0.692308in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,0.846154in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,1.15385in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,1.30769in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,1.46154in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,1.61538in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,1.76923in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (1in,1.92308in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,0.0769231in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,0.230769in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,0.384615in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,0.538462in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,0.692308in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,0.846154in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,1.15385in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,1.30769in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,1.46154in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,1.61538in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,1.76923in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (2in,1.92308in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,0.0769231in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,0.230769in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,0.384615in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,0.538462in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,0.692308in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,0.846154in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,1in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,1.15385in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,1.30769in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,1.46154in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,1.61538in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,1.76923in) circle(0.0027674in);
-\filldraw[color=rgb_000000] (3in,1.92308in) circle(0.0027674in);
+\useasboundingbox (0in,0in) rectangle (2.25in,1.5in);
+\pgfsetstrokecolor{rgb_999999}
 \pgfsetlinewidth{0.8pt}
-\draw (2.7424in,0.020032in)--(2.57252in,0.282065in)--
-  (2.41134in,0.511323in)--(2.25888in,0.709532in)--
-  (2.11514in,0.878416in)--(1.9801in,1.0197in)--
-  (1.85378in,1.13511in)--(1.73616in,1.22637in)--
-  (1.62726in,1.29521in)--(1.52708in,1.34334in)--(1.4356in,1.3725in)--
-  (1.35284in,1.38442in)--(1.27878in,1.3808in)--
-  (1.21344in,1.36339in)--(1.15682in,1.3339in)--(1.1089in,1.29406in)--
-  (1.0697in,1.2456in)--(1.0392in,1.19024in)--(1.01742in,1.1297in)--
-  (1.00436in,1.06571in)--(1in,1in)--(1.00436in,0.934287in)--
-  (1.01742in,0.8703in)--(1.0392in,0.809762in)--(1.0697in,0.7544in)--
-  (1.1089in,0.705937in)--(1.15682in,0.666099in)--
-  (1.21344in,0.636611in)--(1.27878in,0.619198in)--
-  (1.35284in,0.615585in)--(1.4356in,0.627496in)--
-  (1.52708in,0.656657in)--(1.62726in,0.704793in)--
-  (1.73616in,0.773629in)--(1.85378in,0.864889in)--
-  (1.9801in,0.980299in)--(2.11514in,1.12158in)--
-  (2.25888in,1.29047in)--(2.41134in,1.48868in)--
-  (2.57252in,1.71794in)--(2.7424in,1.97997in);
+\filldraw[color=rgb_999999] (0.027439in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.0823171in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.137195in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.192073in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.246951in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.301829in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.356707in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.411585in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.466463in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.521341in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.57622in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.631098in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.685976in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.740854in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.795732in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.85061in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.905488in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.960366in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.01524in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.07012in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.125in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.17988in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.23476in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.28963in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.34451in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.39939in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.45427in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.50915in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.56402in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.6189in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.67378in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.72866in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.78354in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.83841in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.89329in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (1.94817in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (2.00305in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (2.05793in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (2.1128in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (2.16768in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (2.22256in,0.75in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.0267857in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.0803571in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.133929in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.1875in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.241071in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.294643in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.348214in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.401786in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.455357in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.508929in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.5625in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.616071in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.669643in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.723214in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.776786in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.830357in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.883929in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.9375in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,0.991071in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,1.04464in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,1.09821in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,1.15179in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,1.20536in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,1.25893in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,1.3125in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,1.36607in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,1.41964in) circle(0.0055348in);
+\filldraw[color=rgb_999999] (0.75in,1.47321in) circle(0.0055348in);
+\pgfsetlinewidth{0.4pt}
+\filldraw[color=rgb_999999] (0.027439in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.0823171in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.137195in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.192073in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.246951in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.301829in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.356707in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.411585in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.466463in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.521341in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.57622in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.631098in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.685976in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.740854in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.795732in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.85061in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.905488in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (0.960366in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.01524in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.07012in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.125in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.17988in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.23476in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.28963in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.34451in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.39939in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.45427in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.50915in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.56402in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.6189in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.67378in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.72866in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.78354in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.83841in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.89329in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.94817in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.00305in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.05793in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.1128in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.16768in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.22256in,1.5in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.0267857in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.0803571in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.133929in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.1875in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.241071in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.294643in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.348214in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.401786in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.455357in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.508929in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.5625in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.616071in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.669643in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.723214in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.776786in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.830357in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.883929in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.9375in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,0.991071in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,1.04464in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,1.09821in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,1.15179in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,1.20536in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,1.25893in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,1.3125in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,1.36607in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,1.41964in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (1.5in,1.47321in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.0267857in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.0803571in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.133929in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.1875in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.241071in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.294643in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.348214in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.401786in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.455357in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.508929in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.5625in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.616071in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.669643in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.723214in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.776786in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.830357in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.883929in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.9375in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,0.991071in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,1.04464in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,1.09821in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,1.15179in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,1.20536in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,1.25893in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,1.3125in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,1.36607in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,1.41964in) circle(0.0027674in);
+\filldraw[color=rgb_999999] (2.25in,1.47321in) circle(0.0027674in);
+\pgfsetstrokecolor{rgb_000000}
+\draw (0in,0in)--(2.25in,0in);
+\pgftext[at={\pgfpoint{0in}{0in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}\footnotesize $\rule{0.5pt}{6pt}$}}}
+\pgftext[at={\pgfpoint{0.75in}{0in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}\footnotesize $\rule{0.5pt}{6pt}$}}}
+\pgftext[at={\pgfpoint{1.5in}{0in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}\footnotesize $\rule{0.5pt}{6pt}$}}}
+\pgftext[at={\pgfpoint{2.25in}{0in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}\footnotesize $\rule{0.5pt}{6pt}$}}}
+\pgftext[at={\pgfpoint{0in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}\footnotesize $-1$}}}
+\pgftext[at={\pgfpoint{0.75in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}\footnotesize $0$}}}
+\pgftext[at={\pgfpoint{1.5in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}\footnotesize $1$}}}
+\pgftext[at={\pgfpoint{2.25in}{-0.055348in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}\footnotesize $2$}}}
+\draw (0in,0in)--(0in,1.5in);
+\pgftext[at={\pgfpoint{0in}{0in}}] {\makebox(0,0)[l]{\hbox{\color{rgb_000000}\footnotesize $\rule{6pt}{0.5pt}$}}}
+\pgftext[at={\pgfpoint{0in}{0.75in}}] {\makebox(0,0)[l]{\hbox{\color{rgb_000000}\footnotesize $\rule{6pt}{0.5pt}$}}}
+\pgftext[at={\pgfpoint{0in}{1.5in}}] {\makebox(0,0)[l]{\hbox{\color{rgb_000000}\footnotesize $\rule{6pt}{0.5pt}$}}}
+\pgftext[at={\pgfpoint{-0.055348in}{0in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}\footnotesize $-1$}}}
+\pgftext[at={\pgfpoint{-0.055348in}{0.75in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}\footnotesize $0$}}}
+\pgftext[at={\pgfpoint{-0.055348in}{1.5in}}] {\makebox(0,0)[r]{\hbox{\color{rgb_000000}\footnotesize $1$}}}
+\pgfsetlinewidth{0.8pt}
+\draw (2.0568in,0.015024in)--(1.95435in,0.174252in)--
+  (1.85608in,0.317582in)--(1.76199in,0.445677in)--
+  (1.67208in,0.5592in)--(1.58635in,0.658812in)--
+  (1.50481in,0.745177in)--(1.42745in,0.818956in)--
+  (1.35426in,0.880812in)--(1.28527in,0.931408in)--
+  (1.22045in,0.971405in)--(1.15981in,1.00147in)--
+  (1.10336in,1.02225in)--(1.05109in,1.03443in)--(1.003in,1.03866in)--
+  (0.959088in,1.0356in)--(0.919361in,1.02592in)--
+  (0.883816in,1.01028in)--(0.852453in,0.989333in)--
+  (0.825272in,0.963754in)--(0.802272in,0.9342in)--
+  (0.783454in,0.901334in)--(0.768818in,0.865819in)--
+  (0.758364in,0.828317in)--(0.752091in,0.78949in)--(0.75in,0.75in)--
+  (0.752091in,0.71051in)--(0.758364in,0.671683in)--
+  (0.768818in,0.634181in)--(0.783454in,0.598666in)--
+  (0.802272in,0.5658in)--(0.825272in,0.536246in)--
+  (0.852453in,0.510667in)--(0.883816in,0.489724in)--
+  (0.919361in,0.47408in)--(0.959088in,0.464398in)--
+  (1.003in,0.46134in)--(1.05109in,0.465569in)--
+  (1.10336in,0.477745in)--(1.15981in,0.498533in)--
+  (1.22045in,0.528595in)--(1.28527in,0.568592in)--
+  (1.35426in,0.619188in)--(1.42745in,0.681044in)--
+  (1.50481in,0.754823in)--(1.58635in,0.841188in)--
+  (1.67208in,0.9408in)--(1.76199in,1.05432in)--
+  (1.85608in,1.18242in)--(1.95435in,1.32575in)--(2.0568in,1.48498in);
 \end{tikzpicture}
