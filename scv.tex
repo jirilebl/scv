@@ -4326,6 +4326,10 @@ that is, the $r$ above is infinitely differentiable.
 \subimport*{figures/}{deffun.pdf_t}
 \end{myfig}
 
+What we really defined is an \emph{\myindex{embedded hypersurface}}.  In
+particular, in this book the topology on the set $M$ will be the subset
+topology.
+
 For simplicity, in this book we generally deal with smooth
 (that is, $C^\infty$) functions and hypersurfaces.  Dealing with
 $C^k$-smooth functions for finite $k$ introduces technicalities that make
@@ -4405,12 +4409,13 @@ Recall from calculus that the gradient $\nabla r|_p$ is
 the tangent space is given by all the $n$-vectors $a$
 that are orthogonal to the normal, that is $\nabla r|_p \cdot a = 0$.
 
+\pagebreak[1]
 We cheated in the terminology, and assumed without justification that $T_pM$
 depends only on $M$, not on $r$.
 Fortunately, the definition of $T_pM$ is independent of the choice of $r$ by the next two
 exercises.
 
-\pagebreak[2]
+%\pagebreak[2]
 \begin{exbox}
 \begin{exercise} \label{exercise:smoothdivision}
 Suppose $M \subset \R^n$ is a smooth hypersurface and
@@ -4424,7 +4429,9 @@ $\varphi = g r$ (in a neighborhood of $p$).
 \item
 Now suppose $\varphi$ is just any smooth function that vanishes on $M$ (not
 necessarily a defining function).
-Again show that $\varphi = g r$, but now $g$ may possibly vanish.
+Again show that $\varphi = g r$, but now $g$ maySometimes people say \emph{\myindex{embedded hypersurface}}.
+
+ possibly vanish.
 \end{exparts}
 \nopagebreak
 Hint: First suppose $r=x_n$, then %so that $M$ is the set $x_n = 0$,
@@ -8994,21 +9001,47 @@ the function $\Phi(z,\bar{z},w)-\bar{w}$, but that is not enough.
 The vector field must annihilate a real defining function such as the
 real part of $\Phi(z,\bar{z},w)-\bar{w}$.  So $X_j$ must also
 annihilate the conjugate
-$\bar{\Phi}(\bar{z},z,\bar{w})-w$, at least on $M$.  Compute,
+$\bar{\Phi}(\bar{z},z,\bar{w})-w$, at least on $M$.  Compute, for $(z,w) \in M$,
 \begin{equation*}
+\begin{split}
 X_j \bigl[\bar{\Phi}(\bar{z},z,\bar{w})-w\bigr]
-=
+&=
 \frac{\partial \bar{\Phi}}{\partial \bar{z}_j}
+%\Big|_
+{(\bar{z},z,\bar{w})}
 +
 \frac{\partial \Phi}{\partial \bar{z}_j}
-\frac{\partial \bar{\Phi}}{\partial \bar{w}} .
+%\Big|_
+{(z,\bar{z},w)}
+\frac{\partial \bar{\Phi}}{\partial \bar{w}}
+%\Big|_
+{(\bar{z},z,\bar{w})}
+\\
+& =
+\frac{\partial \bar{\Phi}}{\partial \bar{z}_j}
+%\Big|_
+{\bigl(\bar{z},z,\Phi(z,\bar{z},\bar{w})\bigr)}
++
+\frac{\partial \Phi}{\partial \bar{z}_j}
+%\Big|_
+{(z,\bar{z},w)}
+\frac{\partial \bar{\Phi}}{\partial \bar{w}}
+%\Big|_
+{\bigl(\bar{z},z,\Phi(z,\bar{z},\bar{w})\bigr)}
+\\
+& = 
+\frac{\partial}{\partial \bar{z}_j}
+\bigl[
+\bar{\Phi}\bigl(\bar{z},z,\Phi(z,\bar{z},w)\bigr)
+\bigr]
+=
+\frac{\partial}{\partial \bar{z}_j}
+\bigl[
+w
+\bigr]
+= 0 .
+\end{split}
 \end{equation*}
-We are on $M$ so set $\bar{w}$ to
-$\Phi(z,\bar{z},w)$.  We get precisely
-the same expression on the right hand side when we
-differentiate
-$w = \bar{\Phi}\bigl(\bar{z},z,\Phi(z,\bar{z},w)\bigr)$
-with respect to $\bar{z}_j$.  So the expression is zero on $M$.
 
 The last claim of the proposition is left as an exercise.
 \end{proof}
@@ -9101,15 +9134,21 @@ in more than one dimension.
 Suppose $M \subset \C^n$ is a real-analytic hypersurface and $p \in M$.
 For any real-analytic CR function $f \colon M \to \C$, there exists
 a holomorphic function $F \in \sO(U)$ for a neighborhood $U$ of $p$
-such that $F|_{M \cap U} = f$.
+such that $F(q) = f(q)$ for all $q \in M \cap U$.
 \end{thm}
 
 \begin{proof}
 Write $M$ near $p$ as $\bar{w} = \Phi(z,\bar{z},w)$.
 Let $\sM$ be the set in the $2n$ variables $(z,w,\zeta,\omega)$ given by
 $\omega = \Phi(z,\zeta,w)$.
-Take $f(z,w,\bar{z},\bar{w})$ and consider any real-analytic extension
-to a neighborhood.  Complexify as before to
+Take $f$ and consider any real-analytic extension of $f$
+to a neighborhood of $p$ and write it
+$f(z,w,\bar{z},\bar{w})$.  Complexify\footnote{At this point
+$f$ stands for three distinct objects:
+the function on $M$, its real-analytic extension to
+a neighborhood in $\C^n$, and its complexification
+to a neighborhood of $(p,\bar{p})$ in $\C^n \times \C^n$.}
+as before to
 $f(z,w,\zeta,\omega)$.  On $\sM$ we have
 $f(z,w,\zeta,\omega) = f\bigl(z,w,\zeta,\Phi(z,\zeta,w)\bigr)$.  Let
 \begin{equation*}
@@ -9127,14 +9166,24 @@ $\frac{\partial}{\partial \bar{z}_j}
 =
 \frac{\partial F}{\partial \zeta_j} = 0
 \end{equation*}
-on the subset of $\sM$ where $\bar{z} = \zeta$ (and $\bar{w}=\omega$).
-Therefore the equation holds on all of $\sM$ or in other words for
-all $z,\zeta,w$ in a neighborhood of the origin.  Consequently
-\begin{equation*}
-\frac{\partial}{\partial \bar{z}_j} \bigl[ F(z,w,\bar{z}) \bigr] = 0
-\end{equation*}
-for all $j$ and all $z,w$ near zero.
-Hence $F$ is actually a holomorphic function in $z$ and $w$ only.
+on $M \subset \sM$.  We have a real analytic function
+$\frac{\partial F}{\partial \zeta_j}(z,w,\bar{z})$
+that is zero on $M$, so 
+$\frac{\partial F}{\partial \zeta_j}(z,w,\zeta) = 0$
+on $\sM$
+(\propref{prop:complexificationofrasurface} again).
+As $\frac{\partial F}{\partial \zeta_j}$ is a function only of
+$z$, $w$, and $\zeta$ (and not of $\omega$),
+$\frac{\partial F}{\partial \zeta_j} = 0$
+for all
+$(z,w,\zeta) = 0$ in a neighborhood of the origin.  Consequently,
+$F$ does not depend on $\zeta$, and 
+%\begin{equation*}
+%\frac{\partial}{\partial \bar{z}_j} \bigl[ F(z,w,\bar{z}) \bigr] = 0
+%\end{equation*}
+%for all $j$ and all $z,w$ near zero.
+$F$ is actually a holomorphic function of $z$ and $w$ only
+and $F = f$ on $M$.
 \end{proof}
 
 CR functions can often be considered as boundary values of
@@ -9226,6 +9275,13 @@ to be unbounded.
 \begin{exercise}
 Find a smooth CR function on the sphere $S^{2n-1} \subset \C^n$ that is not
 a restriction of a holomorphic function of a neighborhood of $S^{2n-1}$.
+\end{exercise}
+
+\begin{exercise}
+Show a global version of Severi.  Given a real-analytic hypersurface $M
+\subset \C^n$ and a real-analytic CR function $f \colon M \to \C$,
+show that there exists a neighborhood $U$ of $M$, and an $F \in \sO(U)$
+such that $F|_U = f$.
 \end{exercise}
 \end{exbox}
 
