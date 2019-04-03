@@ -9176,7 +9176,7 @@ As $\frac{\partial F}{\partial \zeta_j}$ is a function only of
 $z$, $w$, and $\zeta$ (and not of $\omega$),
 $\frac{\partial F}{\partial \zeta_j} = 0$
 for all
-$(z,w,\zeta) = 0$ in a neighborhood of the origin.  Consequently,
+$(z,w,\zeta)$ in a neighborhood of the origin.  Consequently,
 $F$ does not depend on $\zeta$, and 
 %\begin{equation*}
 %\frac{\partial}{\partial \bar{z}_j} \bigl[ F(z,w,\bar{z}) \bigr] = 0
@@ -9186,10 +9186,10 @@ $F$ is actually a holomorphic function of $z$ and $w$ only
 and $F = f$ on $M$.
 \end{proof}
 
-CR functions can often be considered as boundary values of
-holomorphic functions.
+The most important place where we find CR functions that aren't necessarily
+real-analytic is as boundary values of holomorphic functions.
 
-\begin{prop}
+\begin{prop} \label{prop:boundaryvaluesCR}
 Suppose $U \subset \C^n$ is an open set with smooth boundary.  Suppose
 $f \colon \overline{U} \to \C$ is a smooth function, holomorphic on $U$.
 Then $f|_{\partial U}$ is a smooth CR function.
@@ -9212,10 +9212,10 @@ Then $X_{q_k} f = 0$ for all $k$ and by continuity $X_p f = 0$.
 
 \pagebreak[2]
 The boundary values of a holomorphic function define the function uniquely.
-That is, if holomorphic functions continuous up to the (smooth) boundary equal on an
-open set of the boundary, then they are equal:
+That is, if two holomorphic functions continuous up to the (smooth) boundary
+are equal on an open set of the boundary, then they are equal in the domain:
 
-\begin{prop}
+\begin{prop} \label{prop:boundaryvaluesdeterminef}
 Suppose $U \subset \C^n$ is a domain with smooth boundary and $f \colon \overline{U} \to \C$ is 
 a continuous function, holomorphic on $U$.  If $f=0$ on a nonempty open subset of $\partial
 U$, then $f=0$ on all of $U$.
@@ -9285,6 +9285,19 @@ such that $F|_U = f$.
 \end{exercise}
 \end{exbox}
 
+A problem we tackle next is to try to extend
+a smooth CR function from the boundary of a domain into a holomorphic
+function inside.  This is a PDE problem where the PDE are
+the Cauchy--Riemann equations, and the function on the boundary is
+the boundary condition.
+Cauchy--Riemann equations are
+\emph{\myindex{overdetermined}}, that is, there are too many
+equations.  Not every data on the boundary gives a solution.
+\propref{prop:boundaryvaluesCR} says that the data being CR is a necessary condition
+for a solution (it is not sufficient in general).
+\propref{prop:boundaryvaluesdeterminef} says that a solution is unique
+if it exists.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Approximation of CR functions}
@@ -9321,18 +9334,20 @@ theorem of Mergelyan
 \begin{example}
 Let us show that $K$ cannot possibly be arbitrary.  Let us give an example
 in one dimension.  Let $S^1 \subset \C$ be the unit circle (boundary of the disc),
-then any smooth function on $S^1$ is a smooth CR function.  So pick let us
-say a nonconstant real function such as $\Re z$.  Let us suppose for
-contradiction that we could take $K = S^1$.  Then $\Re z$ would be uniformly
-approximated by holomorphic polynomials on $S^1$.  By the maximum principle, the
+then any smooth function on $S^1$ is a smooth CR function.  Let $f$
+be a nonconstant real function such as $\Re z$.  Suppose for
+contradiction that we could take $K = S^1$ in the theorem.  Then $f(z) = \Re
+z$ could be uniformly
+approximated on $S^1$ by holomorphic polynomials.
+By the maximum principle, the
 polynomials would converge on $\D$ to a holomorphic function on $\D$
-continuous on $\overline{\D}$ this function would have nonconstant real boundary values,
+continuous on $\overline{\D}$.  This function would have nonconstant real boundary values,
 which is impossible.  Clearly $K$ cannot be the entire circle.
 
 The example is easily extended to $\C^n$
 by considering 
 $M = S^1 \times \C^{n-1}$, then $\Re z_1$ is a smooth CR function on $M$ that cannot be
-approximated uniformly by holomorphic polynomials on $S^1 \times \{ 0 \}$.
+approximated uniformly on $S^1 \times \{ 0 \}$ by holomorphic polynomials.
 \end{example}
 
 The technique of the above example will be used later in a more general
@@ -9343,11 +9358,11 @@ It is important to note the difference
 between Baouendi--Tr{\`e}ves (and similar theorems
 in complex analysis)
 and the Weierstrass approximation theorem.  In Baouendi--Tr{\`e}ves we obtain
-approximation by holomorphic polynomials, while Weierstrass gives us
+an approximation by holomorphic polynomials, while Weierstrass gives us
 polynomials in the real variables, or in $z$ and $\bar{z}$.  For example,
 via Weierstrass, any continuous function is uniformly approximable on $S^1$ via polynomials
-in $\Re z$ and $\Im w$, and therefore by polynomials in $z$ and $\bar{z}$,
-but these polynomials will not in general converge anywhere but on $S^1$.
+in $\Re z$ and $\Im z$, and therefore by polynomials in $z$ and $\bar{z}$.
+These polynomials will not in general converge anywhere but on $S^1$.
 \end{remark}
 
 \begin{exbox}
@@ -9410,24 +9425,27 @@ There is some $\epsilon > 0$
 such that $\snorm{(\Im A) x}^2 \leq
 (1-\epsilon^2) \snorm{(\Re A) x}^2$ for all $x \in \R^n$.  That is because
 we only need to check this for $x$ in the unit sphere, which is compact
-(exercise).  Also note that by reality of $\Re A$, $\Im A$, and $x$
+(exercise).  By reality of $\Re A$, $\Im A$, and $x$
 we get 
 ${[(\Re A)x]}^2 = \snorm{(\Re A)x}^2$ and
-${[(\Im A)x]}^2 = \snorm{(\Im A)x}^2$.
+${[(\Im A)x]}^2 = \snorm{(\Im A)x}^2$.  So
 \begin{equation*}
 \abs{e^{-{[Ax]}^2}}
+=
+e^{-\Re {[Ax]}^2}
 \leq
 e^{-{[(\Re A)x]}^2 + {[(\Im A)x]}^2}
 \leq
 e^{-\epsilon^2 {[(\Re A)x]}^2} .
 \end{equation*}
-Therefore the integral exists for all $A$ in $W$.
+Therefore the integral exists for all $A$ in $W$ by a similar computation as
+above.
 
 The expression
 \begin{equation*}
 \int_{\R^n} e^{-{[Ax]}^2} \det A \, dx
 \end{equation*}
-is a well-defined holomorphic function in the entries of $A$ thinking of
+is a well-defined holomorphic function in the entries of $A$, thinking of
 $W$ as a domain (see exercises below) in $\C^{n^2}$.  We have a holomorphic function that is
 constantly equal to $\pi^{n/2}$ on $W \cap \R^{n^2}$ and hence it is equal
 to $\pi^{n/2}$ everywhere on $W$.
@@ -9454,7 +9472,7 @@ the theorem is true.
 \end{exercise}
 \end{exbox}
 
-Below for an $n \times n$ matrix $A$, we use the standard operator norm
+Given an $n \times n$ matrix $A$, let $\snorm{A}$ denote the operator norm,
 \begin{equation*}
 \snorm{A} = \sup_{\snorm{v}=1} \snorm{Av} = \sup_{v \in \C^n, v\not= 0}
 \frac{\snorm{Av}}{\snorm{v}} .
@@ -9477,25 +9495,25 @@ suppose $M$ is given by
 y_n = \psi(x,y') ,
 \end{equation*}
 where $\psi$ is $O(2)$.
-Note that $(x,y')$ parametrize $M$ near 0.  In other words,
+The variables $(x,y')$ parametrize $M$ near 0:
 \begin{equation*}
 z_j = x_j+iy_j , \quad \text{ for $j < n$, and } \quad
 z_n = x_n + i \psi(x,y') .
 \end{equation*}
-Write the mapping
+Define
 \begin{equation*}
 \varphi(x,y') = \bigl(y_1,\ldots,y_{n-1},\psi(x,y')\bigr) .
 \end{equation*}
-We then write $z = x + i\varphi(x,y')$ as our parametrization.
+We then write $(x,y') \mapsto z = x + i\varphi(x,y')$ as our parametrization.
 
 Let $r > 0$ and $d > 0$ be small numbers to be determined later.
-We assume they are small enough such
-that $f$ and $\varphi$ are defined on some neighborhood of the
+Assume they are small enough so
+that $f$ and $\varphi$ are defined and smooth on some neighborhood of the
 set where $\snorm{x} \leq r$ and $\snorm{y'} \leq d$.
 
-There exists a smooth function $g \colon \R^n \to [0,1]$ such that $g \equiv 1$ on
+There exists a smooth $g \colon \R^n \to [0,1]$ such that $g \equiv 1$ on
 $B_{r/2}(0)$ and $g \equiv 0$ outside of $B_{r}(0)$.  Explicit formula
-can be given, or we can also obtain such a function by use of
+can be given.  Alternatively we obtain such a $g$ by use of
 mollifiers on the function that is identically one on
 $B_{3r/4}(0)$ and zero elsewhere.  Such a $g$ is commonly called a
 \emph{\myindex{cutoff function}}.
@@ -9514,7 +9532,7 @@ K' = \bigl\{ (x,y') : \snorm{x} \leq \nicefrac{r}{4} , \snorm{y'} \leq d
 Let $K = z(K')$, that is the image of $K'$ under the mapping $z(x,y')$,
 as we will think of $z$ as a function of $(x,y')$.
 
-Let us consider the CR function $f$ to be a function of $(x,y')$
+Consider the CR function $f$ to be a function of $(x,y')$
 and write $f(x,y')$.
 For $\ell \in \N$,
 let $\alpha_{\ell}$ be a differential $n$-form defined (thinking
@@ -9540,11 +9558,14 @@ e^{-\ell [w - x-i\varphi(x,y')]^2} g(x) f(x,y')
 \bigl(dx_{n} + i d \psi (x,y') \bigr) .
 \end{split}
 \end{equation*}
+
 The key is the exponential, which looks like the bump function
 mollifier, except that now we have $w$ and $z$
-possibly complex.  The exponential is holomorphic in $w$ and that is key.  And as long as we
-do not stray far in the $y'$ direction it should go to zero quickly for
-$w\not=z$.
+possibly complex.  The exponential is also holomorphic in $w$, and that will
+give us entire holomorphic approximating functions.
+%And as long as we
+%do not stray far in the $y'$ direction it should go to zero quickly for
+%$w\not=z$.
 
 %
 %\begin{equation*}
@@ -9572,15 +9593,24 @@ D = \bigl\{ (x,s) \in \R^n \times \R^{n-1} : \snorm{x} < r \text{ and } s = t y'
 $t \in (0,1)$} \bigr\} .
 \end{equation*}
 $D$ is an $(n+1)$-dimensional ``cylinder.''  That is, we take a ball in the
-$x$ direction and then take a single fixed direction $y'$.  We orient $D$ in
+$x$ directions and then take a single fixed point $y'$ in the $s$ variables and make a
+cylinder.  Here is a rough diagram:
+
+\begin{myfig}
+\subimport*{figures/}{cylinder-bt.pdf_t}
+\end{myfig}
+
+We orient $D$ in
 the standard way as if it sat in the $(x,t)$ variables in $\R^n \times \R$.
-Via Stokes' theorem we get
+Stokes' theorem says
 \begin{equation*}
 \int_D d \alpha_{\ell} (x,s)
 =
 \int_{\partial D} \alpha_{\ell} (x,s) .
 \end{equation*}
-Since $g(x) = 0$ if $\snorm{x} \geq r$ then
+Since $g(x) = 0$ if $\snorm{x} \geq r$, $\alpha_\ell$ is zero on the sides
+of the cylinder $D$, and the integral over the top and bottom
+can be taken over all of $\R^n$:
 \begin{equation} \label{eq:BTstokes}
 \begin{split}
 \int_{\partial D} \alpha_{\ell}(x,s)
@@ -9618,10 +9648,11 @@ As is usual in these types of arguments the integral extends to all of
 $\R^n$ because of $g$.  We can ignore that $f$ and $\varphi$ are undefined
 where $g$ is identically zero.
 
-We will show that the left hand side of \eqref{eq:BTstokes} goes to zero uniformly for $w \in K$
-and the first term on the right hand side will go to $f(\tilde{x},y')$
+We will show that as $\ell \to \infty$, the left hand side of \eqref{eq:BTstokes}
+goes to zero uniformly for $w \in K$
+and the first term on the right hand side goes to $f(\tilde{x},y')$
 if $w = z(\tilde{x},y')$ is in $M$.  We
-define entire functions that we will show approximate $f$
+define entire functions that we will show approximate $f$:
 \begin{equation*}
 f_\ell(w)
 =
@@ -9639,6 +9670,7 @@ Clearly each $f_\ell$ is holomorphic and defined for all $w \in \C^n$.
 
 In the next claim it is important that $f$ is a CR function.
 
+\pagebreak[2]
 \begin{claim}
 We have
 \begin{equation*}
@@ -9949,8 +9981,8 @@ Notice how in the exponent we actually have an expression for the derivative
 in the $\xi$ direction with $y'$ fixed.  If $(\tilde{x},y') \in K'$, then
 $g(\tilde{x}) = 1$ and so we can ignore $g$.
 
-Letting $A = I + i \left[ \frac{\partial \varphi}{\partial x}(\tilde{x},y')
-\right]$.  Then using \lemmaref{lemma:matrixint} we obtain 
+Let $A = I + i \left[ \frac{\partial \varphi}{\partial x}(\tilde{x},y')
+\right]$.  \lemmaref{lemma:matrixint} says
 \begin{equation*}
 {\left(\frac{1}{\pi}\right)}^{n/2}
 \int_{\xi \in \R^n}
@@ -11280,7 +11312,7 @@ infinite-dimensional.
 \begin{exercise}
 \begin{exparts}
 \item
-Show that $A^2(\C^n)$ is trivial.
+Show that $A^2(\C^n)$ is trivial (it is just the zero function).
 \item
 Show that $A^2(\D \times \C)$ is trivial.
 \item
