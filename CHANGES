@@ -128,6 +128,9 @@ improvements have been made throughout.
 * Add figure in proof of Baouendi-Treves
 * Add an exercise in 3.4
 * Add figure to proof of Cauchy-Pompeiu
+** Remove two exercises in 4.3 since one was already proved before as
+  and another was just wrong.
+** Add several new exercises to 4.3
 * Add figure for Weierstrass preparation theorem
 * Add more complete explanation of what symmetric functions are
 * Add explanation of why simply connectedness is important for global

@@ -8648,7 +8648,8 @@ Prove the statements of the above example.
 \begin{defn}
 A real hypersurface $M \subset \R^n$ is said to be real-analytic
 if locally at every point it is the graph of a real-analytic function.  That
-is near every point (locally), after perhaps a rotation $M$ can be written as
+is near every point (locally), after perhaps relabeling coordinates $M$ can be written as
+a graph
 \begin{equation*}
 y = \varphi(x) ,
 \end{equation*}
@@ -10079,7 +10080,7 @@ function for $M$.  Either we can extend it to all of $U$ or we could take a
 smaller $U$ such that $r$ is defined on $U$.  As we noticed before,
 once we pick sides (where $r$ is positive and where it is negative), then
 the number of positive eigenvalues and the number of negative eigenvalues of
-the Levi form is fixed.  Taking a different $r$ can at most flip $U_-$
+the Levi form is fixed.  A different $r$ may flip $U_-$
 and $U_+$, but the conclusion of the theorem is exactly the same.
 
 \begin{proof}
@@ -10734,25 +10735,6 @@ is connected.
 \begin{exercise}
 Show that $\varphi$ exists.  Hint: Use mollifiers.
 \end{exercise}
-
-\begin{exercise}
-Suppose $U \subset \C^n$, $n \geq 2$, is a bounded domain with smooth boundary that is
-strongly pseudoconvex
-and $f \colon \partial U \to \C$ is a smooth CR function, then prove
-there exists a continuous function $F \colon \overline{U} \to \C$
-holomorphic in $U$
-such that $F|_{\partial U} = f$.
-\end{exercise}
-
-\begin{exercise}
-Suppose $U \subset \C^n$, $n \geq 2$, is a domain and the sphere $S^{2n-1}
-\subset U$.  Suppose $f \colon U \to \C^n$ is a holomorphic mapping
-such that locally near every point of $S^{2n-1}$, $f$ is a local
-biholomorphism (that is $f$ is locally invertible, i.e.\ the 
-derivative is invertible at every point of $S^{2n-1}$).  Then show that
-$f$ takes the ball $\bB_n$ biholomorphically to some domain $f(\bB_n)$ with smooth
-boundary.
-\end{exercise}
 \end{exbox}
 
 One of many consequences of the Hartogs phenomenon is
@@ -10800,6 +10782,53 @@ relatively compact in $U$.  If we add them to $K$, then $K$
 is still compact and $U' \setminus K$ is connected.
 We apply the Hartogs phenomenon.
 \end{proof}
+
+\begin{exbox}
+\begin{exercise}
+Suppose $U \subset \C^n$, $n \geq 2$, is a bounded domain of
+holomorphy.  Show that $\C^n \setminus U$ is connected using the
+Hartogs phenomenon.
+\end{exercise}
+
+\begin{exercise}
+Suppose $W \subset U \subset \C^n$, $n \geq 3$, are domains such that
+for each fixed $z_3^0,z_4^0,\ldots,z_n^0$,
+\begin{equation*}
+\bigl\{ (z_1,z_2) \in \C^2 :
+(z_1,z_2,z_3^0,\ldots,z_n^0) \in U \setminus W
+\bigr\}
+\quad
+\subset \subset
+\quad
+\bigl\{ (z_1,z_2) \in \C^2 :
+(z_1,z_2,z_3^0,\ldots,z_n^0) \in U
+\bigr\} .
+\end{equation*}
+%and 
+%$\bigl\{ (z_1,z_2) \in \C^2 : (z_1,z_2,z_3^0,\ldots,z_n^0) \in W
+%\bigr\}$ is connected.
+Prove that every $f \in \sO(W)$ extends to a holomorphic function on
+$U$.  Note: The fact that $W$ is connected is important.
+\end{exercise}
+
+\begin{exercise}
+\begin{exparts}
+\item
+Prove that if $n \geq 2$, no domain of the form $U = \C^n \setminus K$
+for a compact $K$ is biholomorphic to a bounded domain.
+\item
+Prove that every domain of the form $U = \C \setminus K$
+for a compact $K$ with nonempty interior is biholomorphic to a bounded domain.
+\end{exparts}
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \C^n$, $n \geq 2$, is a domain such that
+for some affine $A \colon \C^2 \to \C^n$
+the set $A^{-1}\bigl(\C^n \setminus U\bigr)$ has a bounded
+topological component.  Prove that $U$ is not a domain of holomorphy.
+\end{exercise}
+\end{exbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
