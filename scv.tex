@@ -493,13 +493,17 @@ can help or even be required to solve later exercises.
 The prerequisites are a decent knowledge of vector calculus, basic
 real-analysis, and a working knowledge of complex analysis in one variable.
 Measure theory (Lebesgue integral and its convergence theorems) is useful,
-but it is not essential.
-It is accessible to beginning graduate students after one semester
+but it is not essential for the most part.
+The first two chapters and most of the third
+is accessible to beginning graduate students after one semester
 of a standard single-variable complex
 analysis graduate course, and the background actually required is quite minimal.
-Towards the end of the course (mainly \chapterref{ch:integralkernels}),
-differential forms will be useful, and
-in the final chapter, \chapterref{ch:analyticvarieties},
+From time to time (e.g.\ proof of Baouendi--Tr\`eves in
+\chapterref{ch:crfunctions},
+and most of
+\chapterref{ch:dbar}, and \chapterref{ch:integralkernels}),
+basic knowledge of differential forms will be needed, and
+in \chapterref{ch:analyticvarieties}
 we use some basic ring theory from algebra.
 
 This book is not meant as an exhaustive reference.  It is simply a whirlwind
@@ -9724,7 +9728,7 @@ So for any CR function
 $f$ we get that $d(f\,dz) = df \wedge dz = 0$ since $dz_j \wedge dz_j = 0$ of course.
 
 The function
-$e^{-\ell [w - z(x,s)]^2}$ is CR as a function of $(x,s)$, and so
+$(x,s) \mapsto e^{-\ell [w - z(x,s)]^2}$ is CR (as a function on $M$), and so
 is $f(x,s)$.  Therefore
 \begin{equation*}
 d \alpha_{\ell}(x,s)
@@ -9736,7 +9740,7 @@ dg(x)
 \wedge
 dz(x,s) .
 \end{equation*}
-Since $dg$ is zero for $\snorm{x} \leq \nicefrac{r}{2}$, we get that
+Since $dg$ is zero for $\snorm{x} \leq \nicefrac{r}{2}$, the integral
 \begin{equation*}
 \int_D
 d \alpha_\ell(x,s)
@@ -9778,10 +9782,10 @@ A \snorm{\tilde{s}-s} ,
 where $a$ and $A$ are 
 \begin{equation*}
 a = \sup_{\snorm{\hat{x}} \leq r, \snorm{\hat{y}'} \leq d}
-\norm{\frac{\partial \varphi}{\partial x}(\hat{x},\hat{y}')},
+\norm{\,\left[\frac{\partial \varphi}{\partial x}(\hat{x},\hat{y}')\right]\,},
 \qquad
 A = \sup_{\snorm{\hat{x}} \leq r, \snorm{\hat{y}'} \leq d}
-\norm{\frac{\partial \varphi}{\partial y'}(\hat{x},\hat{y}')}.
+\norm{\,\left[\frac{\partial \varphi}{\partial y'}(\hat{x},\hat{y}'))\right]\,}.
 \end{equation*}
 Here $\left[ \frac{\partial \varphi}{\partial x} \right]$ and 
 $\left[ \frac{\partial \varphi}{\partial y'} \right]$ are
@@ -9796,7 +9800,7 @@ r$, but $\snorm{\tilde{x}} \leq \nicefrac{r}{4}$ (recall $w \in K$), so
 \begin{equation*}
 \frac{r}{4} \leq \snorm{\tilde{x}-x} \leq \frac{5r}{4} .
 \end{equation*}
-We also have $\snorm{\tilde{s}-s} \leq 2d$ by triangle inequality.
+Also, $\snorm{\tilde{s}-s} \leq 2d$ by triangle inequality.
 
 Therefore,
 \begin{equation*}
@@ -9848,11 +9852,11 @@ dz(x,s)
 \leq
 C
 \ell^{n/2}
-e^{-\ell r^2  / 64} .
+e^{-\ell r^2  / 64} ,
 \end{equation*}
-For a constant $C$.  Do notice that $D$ depends on $y'$.  By looking at all
-$y'$ with $\snorm{y'} \leq d$, which
-is a compact set, we can make $C$
+for some constant $C$.  Note that $D$ depends on $y'$.  The set of
+all $y'$ with $\snorm{y'} \leq d$,
+is a compact set, so we can make $C$
 large enough to not depend on the $y'$ that was chosen.
 The claim follows.
 \end{proof}
@@ -9876,7 +9880,7 @@ uniformly in $(\tilde{x},y') \in K'$.
 \end{claim}
 
 That is, we look at \eqref{eq:BTstokes} and we plug in $w = z(\tilde{x},y') \in K$.
-Notice that the $g$ (as usual) makes sure we never evaluate $f$, $\psi$, or
+The $g$ (as usual) makes sure we never evaluate $f$, $\psi$, or
 $\varphi$ at
 points where they are not defined.
 
@@ -9893,7 +9897,7 @@ d_x z(x,y')
 =
 \det \left[\frac{\partial z}{\partial x}(x,y')\right] dx ,
 \end{equation*}
-where $\left[\frac{\partial z}{\partial x}(x,y)\right]$ is the matrix
+where $\left[\frac{\partial z}{\partial x}(x,y')\right]$ is the matrix
 corresponding to the derivative of the mapping $z$ with respect to the $x$
 variables evaluated at $(x,y')$.
 
@@ -15077,8 +15081,7 @@ $M$.  Then
 
 One can get away with less regularity, including ``corners,''
 and this can be proved by various
-approximation theorems, but this would require a more complicated statement
-and more complicated definitions.  In $\R^2$, it is easy to state
+approximation theorems.  In $\R^2$, it is easy to state
 in more generality, see \thmref{thm:greens}.
 
 %Another way to state Stokes is to not assume that $\Omega$ is compact, but
