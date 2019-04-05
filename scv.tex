@@ -9490,6 +9490,55 @@ real matrix such that $\snorm{B} < 1$.   Show that $I + iB \in W$.
 \end{exercise}
 \end{exbox}
 
+We will be using differential forms, and the following lemma says
+that as far as the exterior
+derivative is concerned, all CR functions behave as
+restrictions of holomorphic functions.
+
+\begin{lemma} \label{lemma:crdf}
+Let $M \subset \C^n$ be a smooth real hypersurface, $f \colon M \to \C$
+be a smooth CR function, and $(z_1,\ldots,z_n)$ be the holomorphic
+coordinates of $\C^n$.  Then at each point $p \in M$,
+the exterior derivative
+$df$ is a linear combination of $dz_1,\ldots,dz_n$,
+thinking of $z_1,\ldots,z_n$ as functions on $M$.\linebreak[1]
+In particular,
+\begin{equation*}
+d(f \wedge dz) = df \wedge dz = 0.
+\end{equation*}
+\end{lemma}
+
+Recall the notation $dz = dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n$.
+
+\begin{proof}
+After a complex affine change of coordinates we simply
+need to show this at the origin.  Let
+$\xi_1,\ldots,\xi_n$ be
+the new holomorphic coordinates
+and suppose the $T^{(1,0)}_0 M$ tangent space is spanned
+by
+$\frac{\partial}{\partial \xi_1}\big|_0,
+\ldots,
+\frac{\partial}{\partial \xi_{n-1}}\big|_0$,
+and such that $\frac{\partial}{\partial \Re \xi_n}\big|_0$ is tangent
+and $\frac{\partial}{\partial \Im \xi_n}\big|_0$ is normal.
+At the origin, the CR conditions are
+$\frac{\partial f}{\partial \bar{\xi}_j}(0) = 0$ for all $j$, so
+\begin{equation*}
+df(0) =
+\frac{\partial f}{\partial \xi_1}(0) \, d\xi_1(0) + \cdots +
+\frac{\partial f}{\partial \xi_{n-1}}(0) \, d\xi_{n-1}(0)  +
+\frac{\partial f}{\partial \Re \xi_{n}}(0) \, d(\Re \xi_{n})(0) 
+.
+\end{equation*}
+Also, at the origin $d\xi_n(0) = d(\Re \xi_n)(0) + i d(\Im \xi_n)(0) = d(\Re \xi_n)(0)$.
+So $df(0)$ is a linar combination of $d\xi_1(0),\ldots,d\xi_n(0)$.
+As $\xi$ is a complex affine function of $z$, then each $d\xi_j$ is a linear
+combination of $dz_1$ through $dz_n$, and the claim follows.
+So if $f$ is a CR function, then
+$d(f\,dz) = df \wedge dz = 0$ since $dz_j \wedge dz_j = 0$.
+\end{proof}
+
 \begin{proof}[Proof of the theorem of Baouendi--Tr{\`e}ves]
 Suppose $M \subset \C^n$ is a smooth real hypersurface, and without loss
 of generality suppose $p=0 \in M$.
@@ -9509,8 +9558,8 @@ Define
 \begin{equation*}
 \varphi(x,y') = \bigl(y_1,\ldots,y_{n-1},\psi(x,y')\bigr) .
 \end{equation*}
-We write $(x,y') \mapsto z = x + i\varphi(x,y')$ as our parametrization.
-That is, we think of $z$ as a function of $(x,y')$.
+Write $(x,y') \mapsto z = x + i\varphi(x,y')$ as the parametrization.
+That is, think of $z$ as a function of $(x,y')$.
 
 Let $r > 0$ and $d > 0$ be small numbers to be determined later.
 Assume they are small enough so
@@ -9622,7 +9671,9 @@ Since $g(x) = 0$ if $\snorm{x} \geq r$, $\alpha_\ell$ is zero on the sides
 of the cylinder $D$, so the integral over $\partial D$ only needs to 
 consider the top and bottom of the cylinder.  And because of $g$, the integral over the top and bottom
 can be taken over $\R^n$.
-We may ignore that $f$ and $\varphi$ are undefined
+As is usual in these sorts of arguments, we do the slight abuse of notation
+where
+we ignore that $f$ and $\varphi$ are undefined
 where $g$ is identically zero:
 \begin{equation} \label{eq:BTstokes}
 \begin{split}
@@ -9713,30 +9764,9 @@ $y'$).
 \end{claim}
 
 \begin{proof}
-First we claim that at each point $df$ is a linear combination of $dz_1$
-through $dz_n$ (recall that we are considering $f$ and $z_1,\ldots,z_n$ as
-functions on $M$).  After a complex affine change of coordinates we simply
-need to show this at the origin.  Let the new holomorphic coordinates be
-$\xi_1,\ldots,\xi_n$, and suppose the $T^{(1,0)}_0 M$ tangent space is spanned
-by $\frac{\partial}{\partial \xi_1},\ldots,\frac{\partial}{\partial
-\xi_{n-1}}$, and such that $\frac{\partial}{\partial \Re \xi_n}$ is tangent
-and $\frac{\partial}{\partial \Im \xi_n}$ is normal.  At the origin the CR conditions give us
-\begin{equation*}
-df(0) =
-\frac{\partial f}{\partial \xi_1}(0) \, d\xi_1(0) + \cdots +
-\frac{\partial f}{\partial \xi_{n-1}}(0) \, d\xi_{n-1}(0)  +
-\frac{\partial f}{\partial \Re \xi_{n}}(0) \, d(\Re \xi_{n})(0) 
-.
-\end{equation*}
-But at the origin $d\xi_n(0) = d(\Re \xi_n)(0)$.
-As $\xi$ is a complex affine function of $z$, then each $d\xi_j$ is a linear
-combination of $dz_1$ through $dz_n$, and the claim follows.
-So for any CR function
-$f$ we get that $d(f\,dz) = df \wedge dz = 0$ since $dz_j \wedge dz_j = 0$ of course.
-
 The function
 $(x,s) \mapsto e^{-\ell [w - z(x,s)]^2}$ is CR (as a function on $M$), and so
-is $f(x,s)$.  Therefore
+is $f(x,s)$.  Therefore, using \lemmaref{lemma:crdf},
 \begin{equation*}
 d \alpha_{\ell}(x,s)
 =
@@ -9762,12 +9792,14 @@ dz(x,s)
 \end{equation*}
 is only evaluated for the subset of $D$ where $\snorm{x} > \nicefrac{r}{2}$.
 
-Suppose $w \in K$ and $(x,s) \in D$ with $\snorm{x} > \nicefrac{r}{2}$.  We need to estimate
+Suppose $w \in K$ and $(x,s) \in D$ with $\snorm{x} > \nicefrac{r}{2}$.
+Let $w = z(\tilde{x},\tilde{s})$.  
+We need to estimate
 \begin{equation*}
 \babs{e^{ -\ell {[w - z(x,s)]}^2 }} =
 e^{ -\ell \Re {[w - z(x,s)]}^2 } .
 \end{equation*}
-Let $w = z(\tilde{x},\tilde{s})$.  Then
+Then
 \begin{equation*}
 -\Re {[w - z]}^2 =
 -\snorm{\tilde{x}-x}^2
@@ -9794,11 +9826,11 @@ a = \sup_{\snorm{\hat{x}} \leq r, \snorm{\hat{y}'} \leq d}
 A = \sup_{\snorm{\hat{x}} \leq r, \snorm{\hat{y}'} \leq d}
 \norm{\,\left[\frac{\partial \varphi}{\partial y'}(\hat{x},\hat{y}'))\right]\,}.
 \end{equation*}
-Here $\left[ \frac{\partial \varphi}{\partial x} \right]$ and 
-$\left[ \frac{\partial \varphi}{\partial y'} \right]$ are
+Here $\bigl[ \frac{\partial \varphi}{\partial x} \bigr]$ and 
+$\bigl[ \frac{\partial \varphi}{\partial y'} \bigr]$ are
 the derivatives (matrices) of $\varphi$ with respect to $x$ and $y'$
 respectively, and the norm we are taking is the operator norm.
-Because $\left[ \frac{\partial \varphi}{\partial x} \right]$ is zero
+Because $\bigl[ \frac{\partial \varphi}{\partial x} \bigr]$ is zero
 at the origin, we pick $r$ and $d$ small
 enough (and hence $K$ small enough) so that $a \leq \nicefrac{1}{4}$.
 We furthermore pick $d$ possibly even smaller to ensure
@@ -9843,7 +9875,7 @@ In other words,
 \babs{
 e^{-\ell[w-z(x,s)]^2}}
 \leq
-e^{-\ell r^2  / 64}
+e^{-\ell r^2  / 64} ,
 \end{equation*}
 or
 \begin{equation*}
@@ -9904,7 +9936,7 @@ d_x z(x,y')
 =
 \det \left[\frac{\partial z}{\partial x}(x,y')\right] dx ,
 \end{equation*}
-where $\left[\frac{\partial z}{\partial x}(x,y')\right]$ is the matrix
+where $\bigl[\frac{\partial z}{\partial x}(x,y')\bigr]$ is the matrix
 corresponding to the derivative of the mapping $z$ with respect to the $x$
 variables evaluated at $(x,y')$.
 
@@ -9945,7 +9977,9 @@ Recall that $r$ and $d$ are small enough that
 \begin{equation*}
 %a =
 \sup_{\snorm{\hat{x}} \leq r, \snorm{\hat{y}'} \leq d}
-\norm{\frac{ \partial \varphi}{\partial  x}(\hat{x},\hat{y}')} \leq \frac{1}{4} ,
+\norm{\,\left[
+\frac{ \partial \varphi}{\partial  x}(\hat{x},\hat{y}')
+\right]\,} \leq \frac{1}{4} ,
 \end{equation*}
 and as $\snorm{\tilde{x}} \leq \nicefrac{r}{4}$ (as
 $(\tilde{x},y') \in K$) and
@@ -9992,8 +10026,8 @@ Notice how in the exponent we actually have an expression for the derivative
 in the $\xi$ direction with $y'$ fixed.  If $(\tilde{x},y') \in K'$, then
 $g(\tilde{x}) = 1$ and so we can ignore $g$.
 
-Let $A = I + i \left[ \frac{\partial \varphi}{\partial x}(\tilde{x},y')
-\right]$.  \lemmaref{lemma:matrixint} says
+Let $A = I + i \bigl[ \frac{\partial \varphi}{\partial x}(\tilde{x},y')
+\bigr]$.  \lemmaref{lemma:matrixint} says
 \begin{equation*}
 {\left(\frac{1}{\pi}\right)}^{n/2}
 \int_{\xi \in \R^n}
@@ -10036,7 +10070,7 @@ $f$ is real-analytic.
 \begin{exercise}
 Suppose $M \subset \C^n$ is given by $\Im z_n = 0$.  Use the standard
 Weierstrass approximation theorem to show that for any $K \subset \subset M$
-an arbitrary CR function $f \colon M \to \C$ can be uniformly approximated
+an arbitrary smooth CR function $f \colon M \to \C$ can be uniformly approximated
 by holomorphic polynomials on $K$.
 \end{exercise}
 \end{exbox}
@@ -10052,6 +10086,7 @@ Lewy extension theorem.  Lewy's original proof was different
 and predates Baouendi--Tr{\`e}ves.  A local extension theorem of this type
 was first proved by Helmut Knesser in 1936.
 
+\pagebreak[3]
 \begin{thm}[Lewy]%
 \index{Lewy extension theorem}
 Suppose $M \subset \C^n$ is a smooth real hypersurface and $p \in M$.
@@ -10076,6 +10111,7 @@ $f$ extends to a holomorphic function on $U_+$ continuous up to $M$
 If the Levi form with respect to $r$ has eigenvalues of both signs at $p$, then any smooth
 CR $f$ extends to
 a function holomorphic on $U$.
+\pagebreak[3]
 \end{enumerate}
 \end{thm}
 

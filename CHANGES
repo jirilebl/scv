@@ -125,6 +125,7 @@ improvements have been made throughout.
   including in one dimension (using Rado), and add a figure.
 ** Add a couple of exercises in 3.2, renumbering others
 * Add note at end of 3.2 about the "PDE problem" we are about to solve
+* Split of the d(f \wedge dz) = 0 claim as a lemma before Baouendi-Treves
 * Add two figures in the proof of Baouendi-Treves
 * Add an exercise in 3.4
 * Add figure to proof of Cauchy-Pompeiu
