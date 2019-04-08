@@ -9946,33 +9946,33 @@ Let us change variables of integration via $\xi = \sqrt{\ell} ( x-\tilde{x})$:
 \int_{x \in \R^n}
 e^{  -\ell [\tilde{x}+i\varphi(\tilde{x},y') - x-i\varphi(x,y')]^2 } g(x) f(x,y')
 \det \left[\frac{\partial z}{\partial x}(x,y')\right] dx
-\\
 =
+\\
 {\left(\frac{1}{\pi}\right)}^{n/2}
 \int_{\xi \in \R^n}
 e^{-{\left[\xi +
 i\sqrt{\ell}\left(\varphi\left(\tilde{x}+\frac{\xi}{\sqrt{\ell}},y'\right) -
-\varphi(\tilde{x},y')\right)\right]}^2}
-\\
+\varphi(\tilde{x},y')\right)\right  ]}^2}
+%\\
 g\left(\tilde{x}+\frac{\xi}{\sqrt{\ell}}\right)
 f\left(\tilde{x}+\frac{\xi}{\sqrt{\ell}},y'\right)
 \det \left[\frac{\partial z}{\partial
 x}\left(\tilde{x}+\frac{\xi}{\sqrt{\ell}},y'\right)\right] d\xi .
 \end{multline*}
-We now wish to take a limit as $\ell \to \infty$ and for this we need to apply
-the dominated convergence theorem.  So we need to dominate the integrand.
-
-As a function of $\xi$,
+We now wish to take a limit as $\ell \to \infty$ and for this we apply
+the dominated convergence theorem.
+So we need to dominate the integrand.
+The second half of the integrand is uniformly bounded independent of
+$\ell$ as 
 \begin{equation*}
-g\left(\tilde{x}+\frac{\xi}{\sqrt{\ell}}\right)
-f\left(\tilde{x}+\frac{\xi}{\sqrt{\ell}},y'\right)
-\det \left[\frac{\partial z}{\partial
-x}\left(\tilde{x}+\frac{\xi}{\sqrt{\ell}},y'\right)\right]
+x \mapsto g(x) f(x,y') \det \left[\frac{\partial z}{\partial x}(x,y')\right]
 \end{equation*}
-is globally bounded independent of $\ell$, because it has compact support and it is continuous.
-
+is a continuous function with compact support (because of $g$).
+ %(where iit is continuous with compact support because of $g$.
+%is globally bounded independent of $\ell$.  Because of $g$, it iit has compact support and it is continuous.
+%
 Hence it is enough to worry about the exponential term.
-We also only need to consider those $\xi$ where the integrand is not zero.
+We also only consider those $\xi$ where the integrand is not zero.
 Recall that $r$ and $d$ are small enough that
 \begin{equation*}
 %a =
@@ -10012,7 +10012,7 @@ e^{-\snorm{\xi}^2 + \ell
 e^{-(15/16)\snorm{\xi}^2} .
 \end{split}
 \end{equation*}
-Therefore we can take the pointwise limit under the integral to obtain 
+And that is integrable.  Therefore we take the pointwise limit under the integral to obtain 
 \begin{equation*}
 {\left(\frac{1}{\pi}\right)}^{n/2}
 \int_{\xi \in \R^n}
@@ -10037,17 +10037,19 @@ f(\tilde{x},y')
 x}(\tilde{x},y')\right] d\xi  = f(\tilde{x},y') .
 \end{equation*}
 
-The convergence of the integrand is pointwise in $\xi$
-but uniform in $(\tilde{x},y') \in K'$.  That is left as an exercise.
-Hence the limit of the integrals converges uniformly in 
-$(\tilde{x},y') \in K'$ and we are done.
+That the convergence is uniform in
+$(\tilde{x},y') \in K'$ is left as an exercise.
+%Hence the limit of the integrals converges uniformly in 
+%$(\tilde{x},y') \in K'$ and we are done.
 \end{proof}
 
 \begin{exbox}
 \begin{exercise}
-In the proof of the above claim,
-show that for a fixed $\xi$, the integrand converges uniformly in
-$(\tilde{x},y') \in K'$.
+In the above claim, finish the proof that the convergence is 
+uniform in $(\tilde{x},y') \in K'$.
+Hint: It may be easier to
+use the form of the integral before the change of variables
+and prove that the sequence is uniformly Cauchy.
 \end{exercise}
 \end{exbox}
 
@@ -10063,8 +10065,6 @@ simply take the partial sums of Taylor series at the origin.
 Explain why being approximable on $K$ by (holomorphic) polynomials does not
 necessarily mean that
 $f$ is real-analytic.
-%  That is, real-analytic means that $f$ is on some
-%compact neighborhood uniformly approximated by the Taylor polynomials.
 \end{exercise}
 
 \begin{exercise}
@@ -10086,7 +10086,7 @@ Lewy extension theorem.  Lewy's original proof was different
 and predates Baouendi--Tr{\`e}ves.  A local extension theorem of this type
 was first proved by Helmut Knesser in 1936.
 
-\pagebreak[3]
+%\pagebreak[2]
 \begin{thm}[Lewy]%
 \index{Lewy extension theorem}
 Suppose $M \subset \C^n$ is a smooth real hypersurface and $p \in M$.
@@ -10111,7 +10111,7 @@ $f$ extends to a holomorphic function on $U_+$ continuous up to $M$
 If the Levi form with respect to $r$ has eigenvalues of both signs at $p$, then any smooth
 CR $f$ extends to
 a function holomorphic on $U$.
-\pagebreak[3]
+%\pagebreak[2]
 \end{enumerate}
 \end{thm}
 
@@ -10146,10 +10146,10 @@ The (real) Hessian of the function
 z_1 \mapsto \sabs{z_1}^2 +
 E(z_1,0,\bar{z}_1,0,0) 
 \end{equation*}
-is positive definite in an entire
+is positive definite in a 
 neighborhood of the origin and the function has a strict minimum at 0.
 There is some small disc $D \subset \C$ such
-that this function is strictly positive on $\partial D$.  We can also assume
+that this function is strictly positive on $\partial D$.  We also assume
 that the Hessian is positive definite on the closed disc $\overline{D}$.
 
 Therefore,
@@ -10190,8 +10190,8 @@ As $p_j \to f$ uniformly on $K$ then $p_j \to f$ uniformly on
 $\partial D_-$.  As  $p_j$ are holomorphic, then by maximum
 principle $p_j$ converge uniformly on all of $D_-$.  In fact, as $(z_1,z',w)$ was
 an arbitrary point in $(D \times W) \cap \Omega_-$,
-the polynomials $p_j$ converge uniformly on $(D \times W) \cap \{
-\overline{\Omega_-} \}$.
+the polynomials $p_j$ converge uniformly on
+$(D \times W) \cap \overline{\Omega_-}$.
 %
 Let $U = D \times W$, then $U_- = (D \times W) \cap \Omega_-$.  Notice 
 $U$ depends on $K$, but not on $f$.
