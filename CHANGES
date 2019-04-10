@@ -127,10 +127,13 @@ improvements have been made throughout.
 * Add note at end of 3.2 about the "PDE problem" we are about to solve
 * Split of the d(f \wedge dz) = 0 claim as a lemma before Baouendi-Treves
 * Add two figures in the proof of Baouendi-Treves
-* Add an exercise in 3.4
+* Simplify proof of Lewy a tiny bit, and improve notation a bit
+  by changing $D_-$ to $\Delta$.  Since we're not worrying about
+  topology of $\Delta$, no need to worry about the Hessian.
+* Add exercises in 3.4
+* Add remark with a reference to Lewy's example to end of 3.4.
 * Add figure to proof of Cauchy-Pompeiu
-** Remove two exercises in 4.3 since one was already proved before as
-  and another was just wrong.
+** Remove an exercise in 4.3 that was just wrong.
 ** Add several new exercises to 4.3
 * Add figure for Weierstrass preparation theorem
 * Add more complete explanation of what symmetric functions are

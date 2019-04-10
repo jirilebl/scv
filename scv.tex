@@ -493,7 +493,7 @@ can help or even be required to solve later exercises.
 The prerequisites are a decent knowledge of vector calculus, basic
 real-analysis, and a working knowledge of complex analysis in one variable.
 Measure theory (Lebesgue integral and its convergence theorems) is useful,
-but it is not essential for the most part.
+but it is not essential except in a couple of places later in the book.
 The first two chapters and most of the third
 is accessible to beginning graduate students after one semester
 of a standard single-variable complex
@@ -9036,14 +9036,14 @@ X_j \bigl[\bar{\Phi}(\bar{z},z,\bar{w})-w\bigr]
 \\
 & = 
 \frac{\partial}{\partial \bar{z}_j}
-\bigl[
+\Bigl[
 \bar{\Phi}\bigl(\bar{z},z,\Phi(z,\bar{z},w)\bigr)
-\bigr]
+\Bigr]
 =
 \frac{\partial}{\partial \bar{z}_j}
-\bigl[
+\Bigl[
 w
-\bigr]
+\Bigr]
 = 0 .
 \end{split}
 \end{equation*}
@@ -10108,16 +10108,16 @@ If the Levi form with respect to $r$ has a negative eigenvalue at $p$, then
 $f$ extends to a holomorphic function on $U_+$ continuous up to $M$
 (that is, continuous on $\{ z \in U : r(z) \geq 0 \}$).
 \item
-If the Levi form with respect to $r$ has eigenvalues of both signs at $p$, then any smooth
-CR $f$ extends to
-a function holomorphic on $U$.
+If the Levi form with respect to $r$ has eigenvalues of both signs at $p$, then
+$f$ extends to a function holomorphic on $U$.
 %\pagebreak[2]
 \end{enumerate}
 \end{thm}
 
-In particular, if the Levi form has eigenvalues of both signs,
-then near $p$ the CR function is a restriction of a holomorphic
-function on $U$.  The function $r$ can be any defining
+So if the Levi form has eigenvalues of both signs,
+then near $p$ all CR functions are restrictions of holomorphic
+functions.
+The function $r$ can be any defining
 function for $M$.  Either we can extend it to all of $U$ or we could take a
 smaller $U$ such that $r$ is defined on $U$.  As we noticed before,
 once we pick sides (where $r$ is positive and where it is negative), then
@@ -10126,8 +10126,7 @@ the Levi form is fixed.  A different $r$ may flip $U_-$
 and $U_+$, but the conclusion of the theorem is exactly the same.
 
 \begin{proof}
-Without loss of generality, it is enough to suppose the Levi form has one positive eigenvalue to prove the
-first two items, otherwise just take $-r$.
+We prove the first item, and the second item follows by considering $-r$.
 Suppose $p = 0$ and $M$ is given in some neighborhood
 $\Omega$ of the origin as
 \begin{equation*}
@@ -10149,53 +10148,56 @@ E(z_1,0,\bar{z}_1,0,0)
 is positive definite in a 
 neighborhood of the origin and the function has a strict minimum at 0.
 There is some small disc $D \subset \C$ such
-that this function is strictly positive on $\partial D$.  We also assume
-that the Hessian is positive definite on the closed disc $\overline{D}$.
+that this function is strictly positive on $\partial D$.
+%  We also assume
+%that the Hessian is positive definite on the closed disc $\overline{D}$.
 
 Therefore,
-for $(z',w) \in W$ in some small neighborhood $W$ of the origin in $\C^{n-1}$, the 
+for $(z',w) \in W$ in some small neighborhood $W \subset \C^{n-1}$ of the origin, the 
 function
 \begin{equation*}
 z_1 \mapsto \sabs{z_1}^2 + \sum_{j=2}^n \epsilon_j \sabs{z_j}^2 +
 E(z_1,z',\bar{z}_1,\bar{z}',\Re w) - \Im w
 \end{equation*}
-has a positive definite Hessian (as a function of $z_1$ only) on $D$ and
-it is still strictly positive on $\partial D$.
+%has a positive definite Hessian (as a function of $z_1$ only) on $D$, and it
+is still strictly positive on $\partial D$.
 
 We wish to apply
 Baouendi--Tr{\`e}ves and so let $K$ be the compact neighborhood of the
 origin from the theorem.  Take $D$ and $W$ small enough such
 that $(D \times W) \cap M \subset K$.
 Find the polynomials $p_j$ that approximate $f$ uniformly on $K$.
-Take $z_1 \in D$ and fix $(z',w) \in W$ such that
+Consider $z_1 \in D$ and $(z',w) \in W$ such that
 $(z_1,z',w) \in \Omega_-$.
 Let
-$D_- = D \times \{ (z',w) \} \cap \Omega_-$.
-Denote by $\partial D_-$ the boundary of $D_-$ in the subspace topology
+$\Delta = \bigl( D \times \{ (z',w) \} \bigr) \cap \Omega_-$.
+Denote by $\partial \Delta$ the boundary of $\Delta$ in the subspace topology
 of $\C \times \{ (z',w) \}$.
-%Then each connected
-%component\footnote{If we choose $W$ small enough there is only one component, but
-%it is not necessary for our argument.} $\Delta$ of $D_-$ is a closed
-%analytic disc with $\partial \Delta \subset M$.
-Then we find that $r=0$ exactly $\partial D_-$.
-We know this because $r$ is positive on $(\partial D) \times \{ (z',w) \}$
-and hence $r=0$ on $\partial D_-$.
-As $D \times W \cap M \subset K$, we have that $\partial D_- \subset K$.
+
+The set $\Omega_+$ where $r > 0$ is open and it contains
+$(\partial D) \times \{ (z',w) \}$.  Therefore,
+$\partial \Delta$ contains no points of $(\partial D) \times \{ (z',w) \}$.
+Consequently, $\partial \Delta$ contains only points where
+$r = 0$, that is $\partial \Delta \subset M$, and
+also
+$\partial \Delta \subset D \times W$.
+As $(D \times W) \cap M \subset K$ and we have $\partial \Delta \subset K$.
 
 \begin{myfig}
 \subimport*{figures/}{lewy-extension-figure.pdf_t}
 \end{myfig}
 
 As $p_j \to f$ uniformly on $K$ then $p_j \to f$ uniformly on
-$\partial D_-$.  As  $p_j$ are holomorphic, then by maximum
-principle $p_j$ converge uniformly on all of $D_-$.  In fact, as $(z_1,z',w)$ was
+$\partial \Delta$.  As  $p_j$ are holomorphic, then by the maximum
+principle, $p_j$ converge uniformly on all of $\Delta$.  In fact, as $(z_1,z',w)$ was
 an arbitrary point in $(D \times W) \cap \Omega_-$,
 the polynomials $p_j$ converge uniformly on
 $(D \times W) \cap \overline{\Omega_-}$.
 %
 Let $U = D \times W$, then $U_- = (D \times W) \cap \Omega_-$.  Notice 
 $U$ depends on $K$, but not on $f$.
-So $p_j$ converge to a continuous function $F$ on $\overline{U_-}$ and $F$
+So $p_j$ converge to a continuous function $F$ on $\overline{U_-} \cap
+U$ and $F$
 is holomorphic on
 $U_-$.  Clearly $F$ equals $f$ on $M \cap U$.
 
@@ -10205,11 +10207,23 @@ principle (\thmref{thm:tomatocan}) the function also extends across $M$ and
 therefore to a whole neighborhood of $p$.
 \end{proof}
 
+If you were wondering what happened to the analytic discs we promised,
+the $\Delta$ in the above is an analytic disc (simply connected) for a small enough $U$, but it was
+not necessary to prove that fact.
+
 We state the next corollary for a strongly convex domain, even though it
-holds with far more generality.  We will prove it for strongly pseudoconvex
-domains.  In fact, a bounded domain with smooth
-boundary and connected complement
-will work without any assumptions on the Levi form, but 
+holds with far more generality.
+It is a simpler version of the \emph{\myindex{Hartogs--Bochner}}\footnote{What is called
+Hartogs--Bochner is 
+the $C^1$ version of this theorem where the domain is only assumed to be bounded
+and the boundary connected,
+and it was proved by neither Hartogs nor
+Bochner, but by Martinelli in 1961.}.
+Later, in \exerciseref{exercise:HartogsBochnerSPCVX},
+you will prove it for strongly pseudoconvex
+domains.  However, the theorem is true for any bounded domain with connected smooth
+boundary
+with no assumptions on the Levi form, but 
 a different approach would have to be taken.
 
 \begin{cor}
@@ -10260,6 +10274,7 @@ Show that every smooth CR function $f$ on $M$ is in fact real-analytic in
 a neighborhood of $p$.
 \end{exercise}
 
+\pagebreak[2]
 \begin{exercise}
 Let $M \subset \C^3$ be defined by $\Im w = \sabs{z_1}^2-\sabs{z_2}^2$.
 \begin{exparts}
@@ -10288,7 +10303,30 @@ Prove that $f$ is a CR function if and only if
 \text{for all $v \in \partial \bB_n$ and all $k \in \N$.}
 \end{equation*}
 \end{exercise}
+
+\begin{exercise}
+Prove the third item in the Lewy extension theorem without the use
+of the tomato can principle.  That is, prove in a more elementary
+way that if $M \subset U \subset \C^n$ is a smooth hypersurface
+in an open set $U$ and $f \colon U \to \C$ is continuous
+and holomorphic in $U \setminus M$, then $f$ is holomorphic.
+\end{exercise}
 \end{exbox}
+
+\begin{remark}
+Studying solutions to nonhomogeneous CR equations of the form $X f = \psi$
+for a CR vector field $X$,
+and the fact that such conditions can guarantee 
+that a function must be real-analytic, led Lewy to a famous, very
+surprising, and rather simple
+example of a
+linear partial differential equation with smooth coefficients
+that has no solution on any open set\footnote{%
+Lewy, Hans, \emph{An example of a smooth linear partial differential
+equation without solution}, Annals of Mathematics, \textbf{66} (1957), 155--158.}.
+The example is surprising because when a linear PDE has real-analytic
+coefficients, a solution always exists by the theorem of Cauchy--Kowalewski.
+\end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -10385,7 +10423,7 @@ Via Stokes we get
 \bar{\zeta}}(\zeta)}{\zeta-z} \, d\bar{\zeta} \wedge d\zeta .
 \end{equation*}
 The second equality follows because holomorphic derivatives in $\zeta$
-will have a $d\zeta$ and when we wedge with $d\zeta$ we just get zero.
+have a $d\zeta$ and when we wedge them with $d\zeta$ we just get zero.
 We now wish to let the radius $r$ go to zero.
 Via the exercise above,
 $\frac{\frac{\partial f}{\partial \bar{\zeta}}(\zeta)}{\zeta-z} \, d\bar{\zeta} \wedge d\zeta$
@@ -10404,7 +10442,7 @@ is integrable over all of $U$.  Therefore,
 \end{equation*}
 The second equality is simply swapping the order of the $d\zeta$ and
 $d\bar{\zeta}$.
-By continuity of $f$, we find
+By continuity of $f$,
 \begin{equation*}
 \lim_{r \to 0}
 \frac{1}{2\pi i}
@@ -10489,7 +10527,7 @@ Notice $\psi$ is holomorphic if and only if $\bar{\partial} \psi = 0$.
 
 The so-called
 \emph{\myindex{inhomogeneous $\bar{\partial}$-problem}}\index{$\bar{\partial}$-problem}
-(pronounced D-bar) is to
+($\bar{\partial}$ is pronounced ``dee bar'') is to
 solve the equation
 \begin{equation*}
 \bar{\partial} \psi = g ,
@@ -10791,14 +10829,10 @@ Suppose $U \subset \C^n$, $n \geq 2$, is a domain and $f \colon U \to \C$ is
 holomorphic.  If the zero set $f^{-1}(0)$ is not empty, then it is not compact.
 \end{cor}
 
-We can also state a version of a theorem that is nowadays called
-\emph{\myindex{Hartogs--Bochner}}\footnote{What is called
-Hartogs--Bochner is 
-the $C^1$ version of this theorem, and was proved by neither Hartogs nor
-Bochner, but by Martinelli in 1961.}
-although it was first stated
-in the real-analytic case by
-Severi in 1931.
+What is usually called the Hartogs--Bochner theorem (which is the $C^1$
+version)
+was first stated in the
+real-analytic case by Severi in 1931.
 %  Unfortunately the proof relies on the Hartogs phenomenon,
 %so one could say it was not really proved until about 10 years later.
 
@@ -10826,6 +10860,18 @@ We apply the Hartogs phenomenon.
 \end{proof}
 
 \begin{exbox}
+\begin{exercise}[Hartogs--Bochner again] \label{exercise:HartogsBochnerSPCVX}
+Let $U \subset \C^n$, $n \geq 2$, be a bounded domain with connected strongly
+pseudoconvex smooth boundary
+and let $f \colon \partial U \to \C$ be a smooth CR function.  Prove
+that there exists a continuous function $F \colon \overline{U} \to \C$
+holomorphic in $U$
+such that $F|_{\partial U} = f$.
+Note: Strong pseudoconvexity is not needed (bounded with smooth boundary
+will do), but that is more difficult
+to prove.
+\end{exercise}
+
 \begin{exercise}
 Suppose $U \subset \C^n$, $n \geq 2$, is a bounded domain of
 holomorphy.  Show that $\C^n \setminus U$ is connected using the
@@ -14518,7 +14564,7 @@ everything in this appendix is stated for smooth
 ($C^\infty$) objects to avoid worrying about how much regularity is needed.
 
 The main point of differential forms is to find the proper context for the
-Fundamental Theorem of Calculus
+Fundamental Theorem of Calculus,
 \begin{equation*}
 \int_a^b f'(x) \, dx = f(b)-f(a) .
 \end{equation*}
