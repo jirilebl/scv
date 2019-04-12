@@ -132,6 +132,9 @@ improvements have been made throughout.
   topology of $\Delta$, no need to worry about the Hessian.
 * Add exercises in 3.4
 * Add remark with a reference to Lewy's example to end of 3.4.
+* Explicitly say that the exterior derivative in $z$ and $\bar{z}$
+  is the same as in $x$ and $y$ before the proof of Pompeiu,
+  it's also useful later.
 * Add figure to proof of Cauchy-Pompeiu
 ** Remove an exercise in 4.3 that was just wrong.
 ** Add several new exercises to 4.3

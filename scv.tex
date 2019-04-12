@@ -10325,7 +10325,7 @@ that has no solution on any open set\footnote{%
 Lewy, Hans, \emph{An example of a smooth linear partial differential
 equation without solution}, Annals of Mathematics, \textbf{66} (1957), 155--158.}.
 The example is surprising because when a linear PDE has real-analytic
-coefficients, a solution always exists by the theorem of Cauchy--Kowalewski.
+coefficients, a solution always exists by the theorem of Cauchy--Kowalevski.
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -10369,10 +10369,12 @@ d\zeta \wedge d\bar{\zeta} .
 \end{equation*}
 \end{thm}
 
+If $f$ is holomorphic, then the second term is zero, and we
+obtain the standard Cauchy formula.
 \glsadd{not:dA}%
 If $\zeta = x+iy$, then the standard orientation on $\C$ is the one
 corresponding to the area form $dA = dx \wedge dy$.
-Then $d\zeta \wedge d\bar{\zeta}$ is the area form up to a scalar.
+The form $d\zeta \wedge d\bar{\zeta}$ is the area form up to a scalar.
 That is,
 \begin{equation*}
 d\zeta \wedge d\bar{\zeta}
@@ -10382,8 +10384,20 @@ d\zeta \wedge d\bar{\zeta}
 (- 2 i ) dx \wedge dy = (-2i) dA .
 \end{equation*}
 
-If $f$ is holomorphic, then the second term is zero, and we
-obtain the standard Cauchy formula.
+As we want to use Stokes,
+let us note that if $z = x+iy$, then we can
+write the standard exterior derivative in terms of $z$ and $\bar{z}$:
+\begin{equation*}
+d \psi
+=
+\frac{\partial \psi}{\partial x} dx 
++
+\frac{\partial \psi}{\partial y} dy
+=
+\frac{\partial \psi}{\partial z} dz 
++
+\frac{\partial \psi}{\partial \bar{z}} d\bar{z}.
+\end{equation*}
 
 \begin{exbox}
 \begin{exercise}
@@ -10501,7 +10515,8 @@ d\zeta \wedge d\bar{\zeta}
 
 \section{Simple case of the \texorpdfstring{$\bar{\partial}$}{dbar}-problem}
 
-For a smooth function $\psi$, consider the exterior derivative
+For a smooth function $\psi$, consider the exterior
+derivative in terms of $z$ and $\bar{z}$,
 \glsadd{not:dpsi}%
 \begin{equation*}
 d \psi =
@@ -10532,7 +10547,7 @@ solve the equation
 \begin{equation*}
 \bar{\partial} \psi = g ,
 \end{equation*}
-for $\psi$, given a one-form $g$:
+for $\psi$, given a one-form
 \begin{equation*}
 g = g_1 d\bar{z}_1 + \cdots + g_n d\bar{z}_n .
 \end{equation*}
@@ -10685,7 +10700,7 @@ computation above.
 \end{exbox}
 
 That $\psi$ has compact support follows because $g_1$ has compact
-support and by analytic continuation.  In particular, $\psi$ is
+support together with analytic continuation.  In particular, $\psi$ is
 holomorphic for very large $z$ since $\bar{\partial} \psi = g = 0$ when $z$
 is large.  When $z_2,\ldots,z_n$ are large, then $\psi$ is identically zero
 simply from its definition.  See the following diagram:
@@ -10702,8 +10717,8 @@ that is, $\psi$ has compact support.
 \end{proof}
 
 The first part of the proof still works when $n=1$, so we do get a solution
-$\psi$.  However in this case the last bit of the proof does not work, so
-$\psi$ will not have compact support.
+$\psi$.  However the last bit of the proof does not work in one dimension, so
+$\psi$ does not have compact support.
 
 \begin{exbox}
 \begin{exercise} \label{exercise:supportofpsi}
@@ -10738,11 +10753,11 @@ inhomogeneous $\bar{\partial}$-problem.  We proved special
 versions of this phenomenon using Hartogs figures before.
 The proof of the theorem has a complicated history as
 Hartogs' original proof from 1906 contained gaps.
-Finally a fully working proof was supplied by Fueter only in 1939 for $n=2$
+A fully working proof was finally supplied by Fueter in 1939 for $n=2$
 and independently by Bochner and Martinelli for higher $n$
 in the early 40s. 
 The proof we give is the
-standard one used nowadays due to Leon Ehrenpreis from 1961.
+standard one given nowadays due to Leon Ehrenpreis from 1961.
 
 \begin{thm}[Hartogs phenomenon]\index{Hartogs phenomenon}
 Let $U \subset \C^n$ be a domain, $n \geq 2$, and let
