@@ -138,6 +138,9 @@ improvements have been made throughout.
 * Add figure to proof of Cauchy-Pompeiu
 ** Remove an exercise in 4.3 that was just wrong.
 ** Add several new exercises to 4.3
+* Reorganize 6.1, including renaming it to "The ring of germs",
+  adding exercises, and reordering some of the other exercises to be more
+  logical.
 * Add figure for Weierstrass preparation theorem
 * Add more complete explanation of what symmetric functions are
 * Add explanation of why simply connectedness is important for global
