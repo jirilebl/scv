@@ -141,15 +141,22 @@ improvements have been made throughout.
 * Reorganize 6.1, including renaming it to "The ring of germs",
   adding exercises, and reordering some of the other exercises to be more
   logical.
-* Add figure for Weierstrass preparation theorem
+* Add figure for Weierstrass preparation theorem, and add some
+  detail to the proof.
 * Add more complete explanation of what symmetric functions are
 * Add explanation of why simply connectedness is important for global
   definition of roots after Proposition 6.2.6
-* Add a couple of simple examples in 6.4.
+** Add some exercises in 6.2
+** Split 6.2 into two sections renumbering sections, exercises,
+  and everything in chapter 6.
+* Rename what was 6.3 (now 6.4) to the "Properties of the ring of germs"
+* Move the ideal definitions and exercises to what is now 6.4.
+* Add a couple of simple examples in what was 6.4 (now 6.5).
 * Add note (and exercise) on well-definedness of dimension, and some
-  rewording in 6.4.
-** Add three exercises in 6.4 renumbering all exercises in 6.4 after 6.4.4
+  rewording in what was 6.4 (now 6.5).
+** Add exercises in what was 6.4 (now 6.5)
 * Add a very short Appendix A on basic notation, which may not be totally standard
 * Add Appendix B on one complex variable stuff
 * Add Appendix C on differential forms and Stokes' theorem
+* Add Appendix D on basic algebra notation and results
 * Add list of notations

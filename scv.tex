@@ -239,11 +239,6 @@
 % define this to be empty to kill notes
 \newcommand{\sectionnotes}[1]{\noindent \emph{Note: #1} \medskip \par}
 
-% Define this to be empty to not skip page before the sections to
-% save some paper
-%\newcommand{\sectionnewpage}{\clearpage}
-\newcommand{\sectionnewpage}{}
-
 \author{Ji\v{r}\'i Lebl}
 
 \title{Tasty Bits of Several Complex Variables}
@@ -509,10 +504,12 @@ we use some basic ring theory from algebra.
 This book is not meant as an exhaustive reference.  It is simply a whirlwind
 tour of several complex variables.  See the end of the book
 for a \hyperref[ch:furtherreading]{list of books} useful for
-reference and further reading.  There are also two appendices for
-a list of useful one-variable results and overview of differential forms,
-see \appendixref{ap:onevarresults} and
-\appendixref{ap:diffforms}.
+reference and further reading.  There are also appendices for
+a list of useful one-variable results, an overview of differential forms,
+and some basic algebra results.
+See \appendixref{ap:onevarresults},
+\appendixref{ap:diffforms}, and
+\appendixref{ap:algebra}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -11898,17 +11895,26 @@ Usually it is denoted by $(f,p)$, but we simply say $f$ when
 the context is clear.
 \end{defn}
 
-The set of germs of complex-valued functions always forms a
-commutative ring.
+The set of germs of complex-valued functions forms a
+commutative ring, see exercise below to check the details.
 For example, to multiply $(f,p)$ and $(g,p)$, take two representatives
 $f$ and $g$ defined on a common neighborhood multiply them and
 then consider the germ $(fg,p)$.  Similarly $(f,p) + (g,p)$ is
-defined as $(f+g,p)$.  It is easy to check that these operations are well
-defined.
+defined as $(f+g,p)$.  It is easy to check that these operations are
+well-defined.
 
 \begin{exbox}
 \begin{exercise}
-Show that the ring operations on a set of germs are well-defined.
+Let $X$ be a topological space and $p \in X$.
+Let $\sF$ be a class of complex-valued functions defined on open subsets
+of such that whenever $f \colon U \to \C$ is in $\sF$ and $W \subset U$ is open,
+then $f|_W \in \sF$, and such that whenever $f$ and $g$
+are two functions in $\sF$, and $W$ is an open set where both are defined,
+then $fg|_W$ and $(f+g)|_W$ are also in $\sF$.
+Show that the ring operations defined above
+on a set of germs at $p$ of functions from $\sF$ are well-defined,
+and that the set of germs at $p$ of functions from $\sF$ is a commutative
+ring.
 \end{exercise}
 
 \begin{exercise}
@@ -11922,7 +11928,9 @@ such that $(f,0) = (g,0)$, but $g|_W \not= f|_W$.
 
 Germs are particularly useful for holomorphic functions because of the identity
 theorem.  In particular, the behavior of the above exercise does not happen
-for holomorphic functions.
+for holomorphic functions.  Furthermore, for holomorphic functions, the
+ring of germs is the same as the ring of convergent power series, see
+exercise below.  No similar result is true for only smooth functions.
 
 \begin{defn}
 Let $p \in \C^n$.
@@ -11933,7 +11941,8 @@ ${}_n\sO_p = \sO_p$ as the ring of germs at $p$ of holomorphic functions.
 
 The ring of germs $\sO_p$ has many nice properties,
 and it is generally a ``nicer'' ring than the ring $\sO(U)$ for
-some open $U$.
+some open $U$, and so it is easier to work with if we are interested
+in local properties.
 
 \begin{exbox}
 \begin{exercise}
@@ -11941,18 +11950,32 @@ some open $U$.
 \item
 Show that $\sO_p$ is an \myindex{integral domain} (has no zero divisors).
 \item
-Consider the ring of germs at $0 \in \R$ of smooth real-valued functions on $\R$.
-Show that this ring is not an integral domain.
+Prove the ring of germs at $0 \in \R$ of smooth real-valued functions
+is not an integral domain.
 \end{exparts}
 \end{exercise}
 
 \begin{exercise}
-Show that given a germ $(f,p)$ of a holomorphic function,
-we can always pick an open neighborhood $U$
+\begin{exparts}
+\item (easy)
+Show that given a germ $(f,p) \in \sO_p$,
+there exists a fixed open neighborhood $U$
 of $p$ and a representative $f \colon U \to \C$ such that any other
-representative $g$
-of $(f,p)$ will extend to be a holomorphic function on an open set containing
-$U$ such that $g|_U \equiv f$.
+representative $g$ can be analytically continued from $p$ to a holomorphic
+function $U$.
+\item
+(easy) Given two representatives $f \colon U \to \C$
+and $g \colon V \to \C$ of a germ $(f,p) \in \sO_p$,
+let $W$ be the connected component of $U \cap V$
+that contains $p$.  Then $f|_W = g|_W$.
+\item
+There exists a germ $(f,p) \in \sO_p$, such that for
+any open neighborhood $U$ of $p$, and
+any representative $f \colon U \to \C$ we can
+find another representative of $g \colon V \to \C$
+of that same germ such that $g|_{U \cap V} \not= f|_{U \cap V}$.
+Hint: $n=1$ is sufficient.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise}
@@ -11960,46 +11983,6 @@ Show that $\sO_p$ is isomorphic to the ring of convergent power series.
 \end{exercise}
 \end{exbox}
 
-Given a commutative ring $R$,
-an \emph{\myindex{ideal}} $I \subset R$ is
-a subset such that $f g \in I$ whenever $f \in R$ and $g \in I$.
-An intersection of ideals is again an ideal, and hence it makes sense to
-talk about the smallest ideal containing a set of elements.
-An ideal $I$ is generated by $f_1,\ldots,f_k$
-if $I$ is the smallest ideal containing $\{ f_1,\ldots,f_k \}$.  We then 
-\glsadd{not:ideal}%
-write $I = (f_1,\ldots,f_k)$.  A \emph{\myindex{principal ideal}}
-is an ideal generated by a single element, that is, $(f)$.
-
-When talking about germs of functions we often identify a representative
-with the germ when the context is clear.  So by abuse of notation, we often write
-$(f_1,\ldots,f_k)$ instead of $\bigl((f_1,p),\ldots,(f_k,p)\bigr)$.
-
-\begin{exbox}
-\begin{exercise}
-\begin{exparts}
-\item
-Suppose $f \in \sO_p$ is such that $f(p) \not= 0$, and 
-$(f)$ is the ideal generated by $f$.  Prove $(f) = \sO_p$.
-\item
-Let $\mathfrak{m}_p = (z_1-p_1,\ldots,z_n-p_n) \subset \sO_p$ be the ideal generated by the coordinate
-functions.  Show that if $f(p) = 0$, then $f \in
-\mathfrak{m}_p$.
-\item
-Show that if $I \subsetneq \sO_p$ is a \emph{\myindex{proper ideal}}
-(ideal such that $I
-\not= \sO_0$) then
-$I \subset \mathfrak{m}_p$, that is $\mathfrak{m}_p$ is a \emph{\myindex{maximal ideal}}.
-\end{exparts}
-\end{exercise}
-
-\begin{exercise}
-Suppose $n=1$.  Show that ${}_1\sO_p$ is a principal ideal domain (every
-ideal is a principal ideal),
-in fact show that given an ideal $I \subset {}_1 \sO_p$, then there
-exists a $k=0,1,2,\ldots$, such that $I = \bigl( (z-p)^k \bigr)$.
-\end{exercise}
-\end{exbox}
 
 \begin{defn}
 Let $p$ be a point in a topological space $X$.
@@ -12040,27 +12023,27 @@ $(Z_f,p) \cup (Z_g,p) = (Z_{fg},p)$.
 \end{exercise}
 \end{exbox}
 
-\pagebreak[2]
+%\pagebreak[2]
 Suppose
-$f$ is (a germ of) a holomorphic function at a point $a \in \C^n$.
+$f$ is (a germ of) a holomorphic function at a point $p \in \C^n$.
 Write
 \begin{equation*}
-f(z) = \sum_{k=0}^\infty f_k(z-a),
+f(z) = \sum_{k=0}^\infty f_k(z-p),
 \end{equation*}
 where $f_k$ is a homogeneous polynomial of degree $k$,
 that is, $f_k(tz) = t^k f_k(z)$.
 
-\pagebreak[2]
+%\pagebreak[2]
 \begin{defn}
-For $p \in \C^n$ and a function $f$ holomorphic in a neighborhood of $p$.
+Let $p \in \C^n$ and $f$ be a function holomorphic in a neighborhood of $p$.
 If $f$ is not identically zero,
 define
 \glsadd{not:ord}%
 \begin{equation*}
-\ord_a f \overset{\text{def}}{=} \min \{ k \in \N_0 : f_k \not\equiv 0 \} .
+\ord_p f \overset{\text{def}}{=} \min \{ k \in \N_0 : f_k \not\equiv 0 \} .
 \end{equation*}
-If $f \equiv 0$, then define $\ord_a f = \infty$.
-The number $\ord_a f$ is called the \emph{\myindex{order of vanishing}} of $f$ at $p$.
+If $f \equiv 0$, then define $\ord_p f = \infty$.
+The number $\ord_p f$ is called the \emph{\myindex{order of vanishing}} of $f$ at $p$.
 \end{defn}
 
 In other words, if the order of vanishing of $f$ at $p$ is $k$, then all
@@ -12069,7 +12052,6 @@ at least one derivative of order $k$ that does not vanish at $p$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\sectionnewpage
 \section{Weierstrass preparation and division theorems} \label{sec:wpt}
 
 In one complex variable, a holomorphic function 
@@ -12102,8 +12084,9 @@ polynomial of degree $k$ is $z^k$.
 The purpose of this section is to show that every holomorphic function
 in $\sO(U)$ is up to a unit and a possible small rotation a Weierstrass
 polynomial.  So zero sets of holomorphic functions
-behave like zero sets of polynomials, and ideals in
-$\sO_p$ are generated by Weierstrass polynomials.
+behave like zero sets of polynomials, or at least Weierstrass polynomials.
+%, and ideals in
+%$\sO_p$ are generated by Weierstrass polynomials.
 
 \begin{thm}[\myindex{Weierstrass preparation theorem}]
 Suppose $f \in \sO(U)$ for an open $U \subset \C^{n-1} \times \C$,
@@ -12127,6 +12110,7 @@ holomorphically on $z'$.
 
 \begin{proof}
 There exists a small disc $D \subset \C$ centered at zero such that
+$\{0\} \times \overline{D} \subset U$ and such that
 $f(0,z_n) \not= 0$ for $z_n \in \overline{D} \setminus \{ 0 \}$.
 By continuity
 of $f$ we find a small polydisc $V = V' \times D$ such that
@@ -12146,13 +12130,12 @@ multiplicity) of $z_n
 \frac{\frac{\partial f}{\partial z_n} (z',z_n)}{f(z',z_n)} ~dz_n .
 \end{equation*}
 The above expression is an integer-valued
-continuous function that is $k$ when $z'=0$,
+continuous function of $z' \in V'$,
+and it is equal to $k$ when $z'=0$,
 so it is $k$ for all $z' \in V'$.
-Write%
-\footnote{In general you cannot make the
-functions $\alpha_k$ even continuous at all points.}
-the zeros as $\alpha_1(z'),\ldots,\alpha_k(z')$ (including
-multiplicity).  There is no particular order to the zeros,
+Write
+the zeros of $z_n \mapsto f(z',z_n)$ as $\alpha_1(z'),\ldots,\alpha_k(z')$, including
+multiplicity.  There is no particular order to the zeros,
 pick some order for every $z'$.
 %The functions $\alpha_j$ may not be not be holomorphic or even continuous all points.
 %What we do is
@@ -12165,26 +12148,28 @@ P(z',z_n)
 z_n^k + c_{k-1}(z') \, z_n^{k-1} + \cdots + c_0 (z') .
 \end{equation*}
 For a fixed $z'$, $P$ is uniquely defined as the order of roots does not
-matter in its definition.  It is
+matter in its definition (See exercise below).  It is
 clear that
-$u$ and $P$ are unique if they exist (as holomorphic functions).
+$u$ and $P$ are unique if they exist (that is, if they exist as holomorphic functions).
 
-The functions $\alpha_j$ are not even continuous (see
+The functions $\alpha_j$ are not even continuous in general (see
 \exampleref{sqrt:example}).  However,
-we will prove that $c_j(z')$ are holomorphic.  The functions $c_j$ are
+we will prove that the functions $c_j$ are holomorphic.  The functions
+$c_j$ are
 (up to sign)
 the \emph{elementary symmetric functions}
-of the $\alpha_j$s.  It is a standard
+of $\alpha_1,\ldots,\alpha_k$.  It is a standard
 theorem in algebra that the elementary symmetric functions are
 polynomials in the so-called power sum functions in the $\alpha_j$s:
 \begin{equation*}
-s_m(z') = \sum_{j=1}^k \alpha_j{(z')}^m .
+s_m(z') = \sum_{j=1}^k \alpha_j{(z')}^m , \qquad m = 1,\ldots,k.
 \end{equation*}
 See \exerciseref{exercise:powersums} below.
-Therefore, if we show that $s_m$ are holomorphic, then $c_j$ are 
+Therefore, if we show that the power sums $s_m$ are holomorphic, then
+$c_\ell$ are 
 holomorphic.
 
-A refinement of the argument principle says:
+A refinement of the argument principle (see also \thmref{thm:onevarargprinc}) says:
 If $h$ and $g$ are
 holomorphic functions on a disc $D$, continuous on $\overline{D}$,
 such that $g$ has no zeros on $\partial D$, and $\alpha_1,\ldots,\alpha_k$
@@ -12195,7 +12180,7 @@ are the zeros of $g$ in $D$, then
 = \sum_{j=1}^k h(\alpha_j) .
 \end{equation*}
 
-We use the above formula ($h(\xi) = \xi^m$ and $g(\xi)=f(z',\xi)$) and obtain that
+The above formula with $h(\xi) = \xi^m$ and $g(\xi)=f(z',\xi)$ says that
 \begin{equation*}
 s_m(z') = 
 \sum_{j=1}^k \alpha_j{(z')}^m
@@ -12205,25 +12190,33 @@ s_m(z') =
 z_n^m
 \frac{\frac{\partial f}{\partial z_n} (z',z_n)}{f(z',z_n)} ~dz_n .
 \end{equation*}
-We differentiate under the integral
+The function $s_m$ is clearly continuous, and if we
+differentiate under the integral
 with $\frac{\partial}{\partial\bar{z}_\ell}$
-for $\ell=1,\ldots,{n-1}$
-to obtain that $s_m$
+for $\ell=1,\ldots,{n-1}$,
+we find that $s_m$
 is holomorphic.
 
-Finally we wish to show that $P$ divides $f$ as claimed.  The Cauchy
-formula on $\nicefrac{f}{P}$ says
+Finally we wish to show that $P$ divides $f$ as claimed.
+For each fixed $z'$ one variable theory says that
+$\frac{f(z',z_n)}{P(z',z_n)}$ has only removable singularities,
+and in fact, it has no zeros as we defined $P$
+to exactly cancel them all out.
+The Cauchy
+formula on $\nicefrac{f}{P}$ then says that
 \begin{equation*}
-u(z',z_n) = \int_{\partial D} \frac{f(z',\zeta)}{P(z',\zeta)(\zeta-z_n)} \, d\zeta .
+u(z',z_n) = \int_{\partial D} \frac{f(z',\zeta)}{P(z',\zeta)(\zeta-z_n)} \,
+d\zeta ,
 \end{equation*}
-The function $u$ is holomorphic in $z'$ and $z_n$.  Furthermore from
-one-variable theory we know that for each fixed $z'$ the function has no zeros
-as they cancel out exactly.
+is equal to $\frac{f(z',z_n)}{P(z',z_n)}$.
+The function $u$ is clearly continuous and holomorphic in $z_n$
+for each fixed $z'$.  By differentiating under the integral we
+find that it is also holomorphic in $z'$.
 \end{proof}
 
 \begin{example} \label{sqrt:example}
 A useful example to keep in mind is $f(z_1,z_2) = z_2^2 - z_1$,
-a Weierstrass polynomial in $z_2$.  So $z' = z_1$.
+a Weierstrass polynomial in $z_2$ of degree $k=2$.  So $z' = z_1$.
 For all $z_1$ except the origin there are two zeros, $\pm \sqrt{z_1}$.
 Call one of them $\alpha_1(z_1)$ and one of them $\alpha_2(z_1)$.  Recall
 there is no continuous choice of a square root that works for all $z_1$,
@@ -12233,9 +12226,14 @@ so $\alpha_1(0) = \alpha_2(0) = 0$.
 On the other hand the
 symmetric functions $c_1(z_1) = - \alpha_1(z_1) - \alpha_2(z_1) = 0$
 and $c_0(z_1') = \alpha_1(z_1)\alpha_2(z_1) = -z_1$ are holomorphic.
+
+Also notice that the $k$ depends on the coordinates chosen.  If we do a
+linear change of coordinates and consider $g(z_1,z_2) = -f(z_2,z_1)$,
+then $g(z_1,z_2) = z_1^2 - z_2$,
+which is a Weierstrass polynomial in $z_2$ of degree $k=1$.
+There is now only one zero $\alpha_1(z_1) = z_1^2$, and so $c_0(z_1) =
+-z_1^2$.
 \end{example}
-
-
 
 The hypotheses of the theorem are not an obstacle.  If a holomorphic
 function $f$ is such that $z_n \mapsto f(0,z_n)$ vanishes identically,
@@ -12248,6 +12246,14 @@ that $f \circ L$ satisfies the hypotheses of the theorem.
 Prove the above fact about the existence of $L$ arbitrarily close to the
 identity.
 \end{exercise}
+
+\begin{exercise}
+Prove the fact that a monic polynomial $P(\zeta)$ of one variable is
+uniquely determined by its zeros up to multiplicity.  That is, suppose
+$P$ and $Q$ are two monic polynomials with the same zeros
+up to multiplicity,
+then $P=Q$.  That proves the uniqueness of the Weierstrass polynomial.
+\end{exercise}
 \end{exbox}
 
 The \emph{\myindex{elementary symmetric functions}} of
@@ -12256,28 +12262,30 @@ $\alpha_1,\ldots,\alpha_k$ are the coefficients $\sigma_j$ of the polynomial
 \prod_{j=1}^k \bigl(t+\alpha_j\bigr)
 =
 t^k
-+ \sigma_{k-1} \, t^{k-1} +
++ \sigma_{1} \, t^{k-1} +
 \cdots
-+ \sigma_2 \, t^2
-+ \sigma_1 \, t
-+ \sigma_0 .
++ \sigma_{k-2} \, t^2
++ \sigma_{k-1} \, t
++ \sigma_k .
 \end{equation*}
 In other words:
 \begin{align*}
-\sigma_0 & = \alpha_1 \alpha_2 \cdots \alpha_k, \\
-\sigma_1 & =
-\alpha_2 \alpha_3 \cdots \alpha_{k} \, + \,
-\alpha_1 \alpha_3 \alpha_4 \cdots \alpha_{k} \, + \, \cdots
-\,+\, \alpha_1 \alpha_2 \cdots \alpha_{k-1}, \\
+\sigma_{1} & = \alpha_1 + \alpha_2 + \cdots + \alpha_k, \\
+\sigma_{2} & = \alpha_1 \alpha_2 \, + \, \alpha_1 \alpha_3 \, + \,
+  \cdots \, + \, \alpha_{k-1} \alpha_k , \\
 & \;\: \smash{\vdots} \\
-\sigma_{k-1} & = \alpha_1 + \alpha_2 + \cdots + \alpha_k.
+\sigma_{k-1} & =
+  \alpha_2 \alpha_3 \cdots \alpha_{k} \, + \,
+  \alpha_1 \alpha_3 \alpha_4 \cdots \alpha_{k} \, + \, \cdots
+  \,+\, \alpha_1 \alpha_2 \cdots \alpha_{k-1}, \\
+\sigma_k & = \alpha_1 \alpha_2 \cdots \alpha_k.
 \end{align*}
-So for example when $k=2$, then $\sigma_0 = \alpha_1\alpha_2$ and
+So for example when $k=2$, then $\sigma_2 = \alpha_1\alpha_2$ and
 $\sigma_1 = \alpha_1 + \alpha_2$.  The function $\sigma_1$ happens to
-already be a power sum.  We can write $\sigma_0$
+already be a power sum.  We can write $\sigma_2$
 as a polynomial in the power sums:
 \begin{equation*}
-\sigma_0
+\sigma_2
 =
 \frac{1}{2}
 {\bigl(\alpha_1 + \alpha_2\bigr)}^2
@@ -12298,8 +12306,8 @@ linear change of coordinates, you can ensure $k = \ord_0 f$.
 
 The Weierstrass preparation theorem is a generalization of
 the implicit function theorem.  When $k=1$ in the theorem, then we obtain
-the Weierstrass polynomial $z_n - c_0(z')$.  That is, the zero set of 
-$f$ is a graph of a holomorphic function.
+the Weierstrass polynomial $z_n + c_0(z')$.  That is, the zero set of 
+$f$ is a graph of the holomorphic function $-c_0$.
 Therefore the Weierstrass theorem is a generalization of the
 implicit function theorem to the case when $\frac{\partial f}{\partial z_n}$
 is zero.  We can still ``solve'' for $z_n$, but we find $k$ solutions
@@ -12341,7 +12349,13 @@ q(z',z_n) =
 \end{equation*}
 As $P$ is not zero on $V' \times \partial D$,
 the function $q$ 
-is holomorphic in $V$ (differentiate under the integral). 
+is holomorphic in $V$ (differentiate under the integral).
+If $P$ did divide $f$, then $q$ would really be $\nicefrac{f}{P}$.
+But if $P$ does not divide $f$, then
+the Cauchy formula does not apply and $q$ is not necessarily equal to
+$\nicefrac{f}{P}$.  Interestingly
+the formula does give the quotient in the division with remainder.
+
 Write $f$ using the Cauchy integral in the last variable and
 subtract $Pq$ to obtain
 \begin{equation*}
@@ -12352,7 +12366,7 @@ r(z',z_n) = f(z',z_n) - P(z',z_n)q(z',z_n)
 ~d\zeta .
 \end{equation*}
 We need to show $r$ is a polynomial in $z_n$ of degree less than
-$k$.  In the expression inside the integral the numerator is
+$k$.  In the expression inside the integral, the numerator is
 of the form $\sum_j h_j(z',\zeta)(\zeta^j-z_n^j)$ and is therefore
 divisible by $(\zeta-z_n)$.
 The numerator is a polynomial of degree $k$ in
@@ -12369,7 +12383,15 @@ of degree $k-1$ or less.
 \begin{exercise}
 Prove the uniqueness part of the theorem.
 \end{exercise}
+
+\begin{exercise}
+State and prove a germ version of the division theorem.
+\end{exercise}
 \end{exbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The dependence of roots on parameters} \label{sec:dependenceofroots}
 
 Let us prove that the roots change holomorphically as long as they do not
 come together.  Furthermore, the roots come together
@@ -12543,27 +12565,72 @@ simply connected if $E \not= \emptyset$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\sectionnewpage
-\section{The ring of germs} \label{sec:ring of germs}
+\section{Properties of the ring of germs} \label{sec:propertiesofringofgerms}
 
 Let us prove some basic properties of the
-ring of germs of holomorphic functions.
+ring of germs of holomorphic functions.  First some algebra terminology.
+Given a commutative ring $R$,
+an \emph{\myindex{ideal}} $I \subset R$ is
+a subset such that $f g \in I$ whenever $f \in R$ and $g \in I$.
+An intersection of ideals is again an ideal, and hence it makes sense to
+talk about the smallest ideal containing a set of elements.
+An ideal $I$ is generated by $f_1,\ldots,f_k$
+if $I$ is the smallest ideal containing $\{ f_1,\ldots,f_k \}$.  We then 
+\glsadd{not:ideal}%
+write $I = (f_1,\ldots,f_k)$.  A \emph{\myindex{principal ideal}}
+is an ideal generated by a single element, that is, $(f)$.
+
+When talking about germs of functions we often identify a representative
+with the germ when the context is clear.  So by abuse of notation, we often write
+$(f_1,\ldots,f_k)$ instead of $\bigl((f_1,p),\ldots,(f_k,p)\bigr)$.  As in
+the following exercises.
+
+\begin{exbox}
+\begin{exercise}
+\begin{exparts}
+\item
+Suppose $f \in \sO_p$ is such that $f(p) \not= 0$, and 
+$(f)$ is the ideal generated by $f$.  Prove $(f) = \sO_p$.
+\item
+Let $\mathfrak{m}_p = (z_1-p_1,\ldots,z_n-p_n) \subset \sO_p$ be the ideal generated by the coordinate
+functions.  Show that if $f(p) = 0$, then $f \in
+\mathfrak{m}_p$.
+\item
+Show that if $I \subsetneq \sO_p$ is a \emph{\myindex{proper ideal}}
+(ideal such that $I
+\not= \sO_0$) then
+$I \subset \mathfrak{m}_p$, that is $\mathfrak{m}_p$ is a \emph{\myindex{maximal ideal}}.
+\end{exparts}
+\end{exercise}
+
+\begin{exercise}
+Suppose $n=1$.  Show that ${}_1\sO_p$ is a
+\emph{\myindex{principal ideal domain}}\index{PID} (PID)\@,
+that is every ideal is a principal ideal.
+In fact show that given an ideal $I \subset {}_1 \sO_p$, then there
+exists a $k=0,1,2,\ldots$, such that $I = \bigl( (z-p)^k \bigr)$.
+\end{exercise}
+\end{exbox}
+
+A commutative ring $R$ is
+\emph{\myindex{Noetherian}} if every ideal in $R$ is finitely generated.
+That is, for every ideal $I \subset R$
+there exist finitely many elements $f_1,\ldots,f_k \in I$ such that
+every $g \in I$ can be written as $g = c_1 f_1 + \cdots + c_k f_k$,
+for $c_1,\ldots,c_k \in R$,
+that is $I = (f_1,\ldots,f_k)$.
+In an exercise you proved that ${}_1\sO_p$ is a PID\@, and therefore
+it is Noetherian.  For higher dimensions, the ring of germs may not
+be a PID, but it is Noetherian.
 
 \begin{thm}
 $\sO_p$ is Noetherian.
 \end{thm}
 
-\emph{\myindex{Noetherian}} means that every ideal is finitely generated.
-That is, for every ideal $I \subset \sO_p$
-there exist finitely many elements $f_1,\ldots,f_k \in I$ such that
-every $g \in I$ can be written as $g = c_1 f_1 + \cdots + c_k f_k$,
-for $c_1,\ldots,c_k \in \sO_p$,
-that is $I = (f_1,\ldots,f_k)$.
-
 \begin{proof}
 Without loss of generality assume that $p$ is the origin.  The proof is by
-induction on dimension.  That ${}_1\sO_0$ is Noetherian is a simple
-one-variable argument that is left as an exercise.
+induction on dimension.  That ${}_1\sO_0$ is Noetherian follows from
+an exercise above.
 
 For induction suppose ${}_{n-1}\sO_0$ is Noetherian.  If $I = \{ 0 \}$
 or if $I = \sO_p$, then the assertion is obvious.  Therefore, we assume
@@ -12578,24 +12645,26 @@ every element $f \in I$ is of the form $f = gq+r$ where $r$
 is a polynomial in $z_n$.  The function 
 $r$ is an element of ${}_{n-1}\sO_0[z_n]$ and $r \in I$.
 The set $J= {}_{n-1}\sO_0[z_n] \cap I$ is an ideal in the
-ring ${}_{n-1}\sO_0[z_n]$.  By the Hilbert basis theorem, as
+ring ${}_{n-1}\sO_0[z_n]$.  By the Hilbert basis theorem (See
+\thmref{thm:hilbertbasis} in the appendix for a proof), as
 ${}_{n-1}\sO_0$ is Noetherian, the polynomial ring
 ${}_{n-1}\sO_0[z_n]$ is Noetherian.  Thus $J$ has finitely many generators.
 The generators of $J$ together with $g$ must generate $I$ as any
 element in $I$ is $gq+r$.
 \end{proof}
 
-\begin{exbox}
-\begin{exercise}
-Find all the ideals in ${}_1\sO_0$.
-\end{exercise}
+Notice that we have effectively proved that an ideal in $\sO_0$
+is generated by Weierstrass polynomials.
 
+\begin{exbox}
+%\begin{exercise}
+%Find all the ideals in ${}_1\sO_0$.
+%\end{exercise}
+%
 \begin{exercise}
-Finish the proof by proving
-${}_1\sO_0$ is Noetherian.  In fact, prove that it is a
-\emph{\myindex{principal ideal domain}}\index{PID}
-(PID)\@, in other words, every ideal is generated by a single element.
-Then prove that if $n > 1$, then ${}_n\sO_p$ is not a PID\@.
+We saw above that
+${}_1\sO_0$ is a PID\@.  Prove that
+if $n > 1$, then ${}_n\sO_p$ is not a PID\@.
 \end{exercise}
 \end{exbox}
 
@@ -12610,7 +12679,8 @@ irreducible elements of $\sO_p$.
 Again assume $p$ is the origin and induct on the dimension.
 The one-dimensional statement is again
 an exercise.  If ${}_{n-1}\sO_0$ is a UFD\@, then
-${}_{n-1}\sO_0[z_n]$ is a UFD by the Gauss lemma.
+${}_{n-1}\sO_0[z_n]$ is a UFD by the Gauss lemma (see
+\thmref{thm:gausslemma}).
 
 Take $f \in {}_n\sO_0$.  After perhaps a linear change of coordinates
 $f = qW$, for $q$ a unit in ${}_n\sO_0$,
@@ -12649,7 +12719,6 @@ ${}_{n}\sO_0$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\sectionnewpage
 \section{Varieties} \label{sec:varieties}
 
 If $f \colon U \to \C$
@@ -13402,7 +13471,6 @@ enough one-dimensional curves through any point and parametrize those.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\sectionnewpage
 \section{Segre varieties and CR geometry} \label{sec:crgeomcr}
 
 The existence of analytic discs (or subvarieties)
@@ -15305,6 +15373,218 @@ using differential forms, the line integral is an integral of a vector field
 instead of a $1$-form
 $\omega$, and its derivative $d\omega$ is the curl operator.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Basic terminology and results from algebra} \label{ap:algebra}
+
+\begin{defn}
+A set $G$ is called a \emph{\myindex{group}} if it has an operation
+$x * y$ defined on it and it satisfies the following axioms:
+\begin{enumerate}[({G}1)]
+\item If $x \in G$ and $y \in G$, then $x * y \in G$.
+\item \emph{(associativity)}
+$(x*y)*z = x*(y*z)$ for all $x,y,z \in G$.
+\item \emph{(identity)}
+There exists an element $1 \in G$ such that
+$1*x = x$ for all $x \in G$.
+\item \emph{(inverse)}
+For every element $x\in G$ there exists an element $x^{-1} \in G$
+such that $x * x^{-1} = 0$.
+\end{enumerate}
+A group $G$ is called \emph{\myindex{abelian}} if it also satisfies:
+\begin{enumerate}[resume*]
+\item \emph{(commutativity)}
+$x*y = y*x$ for all $x,y \in G$.
+\end{enumerate}
+
+A subset $K \subset G$ is called a \emph{\myindex{subgroup}}
+if $K$ is a group with the same operation as the group $G$.
+\end{defn}
+
+An example of a group is a group of automorphisms.  For example, let
+$U \subset \C$ be an open set, and suppose that $G$ is the set of
+bijective holomorphic functions $f \colon U \to U$.  Then $G$ is a group
+under composition, but $G$ is not necessarily abelian.  For example, if
+$U=\C$, then $f(z)= z+1$ and $g(z)=-z$ are members of $G$, but
+$f\circ g (z) = -z+1$ but $g \circ f(z) = -z-1$.
+
+\begin{defn}
+A set $R$ is called a \emph{\myindex{commutative ring}}\index{ring} if it has two operations
+defined on it, addition $x+y$ and multiplication $xy$, and if it satisfies
+the following axioms:
+\begin{enumerate}[({A}1)]
+\item If $x \in R$ and $y \in R$, then $x+y \in R$.
+\item \emph{(commutativity of addition)}
+$x+y = y+x$ for all $x,y \in R$.
+\item \emph{(associativity of addition)}
+$(x+y)+z = x+(y+z)$ for all $x,y,z \in R$.
+\item There exists an element $0 \in R$ such that
+$0+x = x$ for all $x \in R$.
+\item For every element $x\in R$ there exists an element $-x \in R$
+such that $x + (-x) = 0$.
+\end{enumerate}
+\begin{enumerate}[({M}1)]
+\item If $x \in R$ and $y \in R$, then $xy \in R$.
+\item \emph{(commutativity of multiplication)}
+$xy = yx$ for all $x,y \in R$.
+\item \emph{(associativity of multiplication)}
+$(xy)z = x(yz)$ for all $x,y,z \in R$.
+\item There exists an element $1 \in R$ (and $1 \not= 0$) such that
+$1x = x$ for all $x \in R$.
+%\item For every $x\in R$ such that $x \not= 0$ there exists an element
+%$\nicefrac{1}{x} \in R$
+%such that $x(\nicefrac{1}{x}) = 1$.
+%\end{enumerate}
+%\begin{enumerate}
+\item[(D)] \emph{(distributive law)} $x(y+z) = xy+xz$
+for all $x,y,z \in R$.
+\end{enumerate}
+
+The ring $R$ is called a \emph{\myindex{field}} if furthermore:
+\begin{enumerate}[({F}1)]
+\item For every $x\in R$ such that $x \not= 0$ there exists an element
+$\nicefrac{1}{x} \in R$
+such that $x(\nicefrac{1}{x}) = 1$.
+\end{enumerate}
+
+In a commutative ring $R$, the set of elements $u \in R$ such that
+there exists a $\nicefrac{1}{u}$ as above are called
+\emph{units}\index{unit}.
+\end{defn}
+
+That is a commutative ring is an abelian additive group (by
+additive group we just mean we use $+$ for the operation and
+$0$ for the identity for $+$), with multiplication.  If the multiplication
+also defines a group on the set of nonzero elements then the ring is a
+field.
+
+A ring that often comes up in this book is the ring of holomorphic
+functions.  Let $\sO(U)$ be the set of holomorphic functions defined
+on an open set $U$.  Then pointwise addition and multiplication give
+a ring structure on $\sO(U)$.  The set of units are the set of
+functions that never vanish in $U$.  The set of units
+is a multiplicative group.
+
+Given a commutative ring $R$, let $R[x]$ be the set of polynomials
+\begin{equation}
+P(x) = c_k x^k + c_{k-1} x^{k-1} + \cdots + c_1 x + c_0 ,
+\end{equation}
+where $c_0,\ldots,c_k \in R$.  The integer $k$ is called the
+\emph{\myindex{degree}} of the polynomial and $c_k$ is called the
+\emph{\myindex{leading coefficient}} of $P(x)$.  If the
+leading coefficient is 1, then $P$ is said to be \emph{\myindex{monic}}.
+If $R$ is a commutative ring, then so is $R[x]$.
+Similarly, we define the commutative ring $R[x_1,\ldots,x_n]$ of
+polynomials in $n$ indeterminates.
+
+\begin{defn}
+Let $R$ be a commutative ring.
+A subset $I \subset R$ is
+an \emph{\myindex{ideal}} 
+if $f g \in I$ whenever $f \in R$ and $g \in I$.
+
+Given a set of elements 
+$S \subset R$, the intersection $I$ of all ideals containing $S$
+is called the \emph{\myindex{ideal generated by $S$}}.
+\glsadd{not:ideal}%
+If $S = \{ f_1,\ldots,f_k \}$ is a finite set, we say $I$ is
+\emph{finitely generated}\index{finitely generated ideal},
+and we write $I = (f_1,\ldots,f_k)$.
+
+A \emph{\myindex{principal ideal}} is an ideal generated by a single
+element.
+A commutative ring where every ideal is a principal ideal is called
+a \emph{\myindex{principal ideal domain}}\index{PID} or a PID\@.
+
+A commutative ring $R$ is \emph{\myindex{Noetherian}}
+if every ideal in $R$ is finitely generated.
+\end{defn}
+
+One must of course prove that ``an ideal generated by $S$'' really is
+an ideal, that is, that intersection of ideals is an ideal.
+Note that if an ideal $I$ is generated by $f_1,\ldots,f_k$, then every
+$g \in I$ can be written as
+\begin{equation*}
+g = c_1 f_1 + \cdots + c_k f_k,
+\end{equation*}
+for some $c_1,\ldots,c_k \in R$.  Clearly the set of such elements is
+the smallest ideal containing $f_1,\ldots,f_k$.
+
+\begin{thm}[Hilbert basis theorem] \label{thm:hilbertbasis}
+\index{Hilbert basis theorem}%
+If $R$ is a Noetherian commutative ring, then $R[x]$ is Noetherian.
+\end{thm}
+
+\begin{proof}
+Suppose $R$ is Noetherian, and
+$I \subset R[x]$ is an ideal.
+Starting with the polynomial $f_1$ of minimal degree in $I$,
+construct a (possibly finite) sequence of polynomials $f_1,f_2,\ldots$
+such that $f_k$ is the polynomial of minimal degree
+from the set $I \setminus (f_1,\ldots,f_{k-1})$.
+The sequence of degrees $\deg(f_1),\deg(f_2),\ldots$ is by construction
+nondecreasing.
+Let $c_k$ be the leading coefficient of $f_k$.
+
+As $R$ is Noetherian, then there exists a finite $k$ such
+that $(c_1,c_2,\ldots,c_m) \subset (c_1,c_2,\ldots,c_k)$ for all $m$.
+Suppose for contradiction there exists a $f_{k+1}$, that is, the sequence
+of polynomials
+did not end at $k$.  In particular
+$(c_1,\ldots,c_{k+1}) \subset (c_1,\ldots,c_k)$ or
+\begin{equation*}
+c_{k+1} = a_1 c_1 + \cdots a_k c_k .
+\end{equation*}
+As degree of $f_{k+1}$ is at least the degree of $f_1$, through $f_k$,
+we can define the polynomial
+\begin{equation*}
+g =
+a_1 x^{\deg(f_{k+1})-\deg(f_1)} f_1
++
+a_2 x^{\deg(f_{k+1})-\deg(f_2)} f_2
++
+\cdots
++
+a_k x^{\deg(f_{k+1})-\deg(f_k)} f_k .
+\end{equation*}
+The polynomial $g$ has the same degree as $f_{k+1}$,
+and in fact it also has the same leading term, 
+$c_{k+1}$.  On the other hand $g \in (f_1,\ldots,f_{k})$ while
+$f_{k+1} \notin (f_1,\ldots,f_k)$ by construction.  The polynomial
+$g-f_{k+1}$ is also not in 
+$(f_1,\ldots,f_k)$, but as the leading terms canceled,
+$\deg(g-f_{k+1}) < \deg(f_{k+1})$, but that is a contradiction, so $f_{k+1}$
+does not exist and
+$I = (f_1,\ldots,f_k)$.
+\end{proof}
+
+\begin{defn}
+An element $f \in R$ is said to be \emph{\myindex{irreducible}}
+if whenever $f = gh$ for two elements $g,h \in R$, then either $g$ or
+$h$ is a unit.
+A commutative ring $R$ is a
+\emph{\myindex{unique factorization domain}}\index{UFD}
+(UFD)\@ if up to 
+multiplication by a unit, every element has a unique factorization into
+irreducible elements of $R$.
+\end{defn}
+
+One version of a result called the Gauss lemma says that just like
+the property of being Notherian, the property of being a UFD is retained
+when we take polynomials.
+
+\begin{thm}[Gauss lemma]\label{thm:gausslemma}
+\index{Gauss lemma}%
+If $R$ is a commutative ring that is a UFD, then $R[x]$ is a UFD.
+\end{thm}
+
+\begin{proof}
+FIXME
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
