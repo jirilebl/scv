@@ -149,6 +149,8 @@ improvements have been made throughout.
 ** Add some exercises in 6.2
 ** Split 6.2 into two sections renumbering sections, exercises,
   and everything in chapter 6.
+* Add some examples in 6.2
+* Add a note on the division theorem from algebra
 * Rename what was 6.3 (now 6.4) to the "Properties of the ring of germs"
 * Move the ideal definitions and exercises to what is now 6.4.
 * Add a couple of simple examples in what was 6.4 (now 6.5).
@@ -160,3 +162,4 @@ improvements have been made throughout.
 * Add Appendix C on differential forms and Stokes' theorem
 * Add Appendix D on basic algebra notation and results
 * Add list of notations
+* Add Zariski-Samuel to the list of further reading

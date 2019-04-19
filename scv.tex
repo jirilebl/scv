@@ -11458,6 +11458,7 @@ Consequently, $A^2(U)$ is a closed subspace of $L^2(U)$, and hence complete.
 For a bounded domain $A^2(U)$ is always infinite-dimensional, see exercise
 below.  However, there do exist unbounded domains for which either 
 $A^2(U)$ is trivial (just the zero function) or even finite-dimensional.
+When $n=1$, however, $A^2(U)$ is either trivial, or infinite-dimensional.
 
 \begin{exbox}
 \begin{exercise}
@@ -11911,6 +11912,7 @@ of such that whenever $f \colon U \to \C$ is in $\sF$ and $W \subset U$ is open,
 then $f|_W \in \sF$, and such that whenever $f$ and $g$
 are two functions in $\sF$, and $W$ is an open set where both are defined,
 then $fg|_W$ and $(f+g)|_W$ are also in $\sF$.
+Assume that all constant functions are in $\sF$.
 Show that the ring operations defined above
 on a set of germs at $p$ of functions from $\sF$ are well-defined,
 and that the set of germs at $p$ of functions from $\sF$ is a commutative
@@ -12064,7 +12066,7 @@ division theorems.
 Let $U \subset \C^{n-1}$ be open, and let $z' \in \C^{n-1}$ denote the
 coordinates.
 \glsadd{not:polyinOU}%
-Suppose a polynomial $P \in \sO(U)[z_n]$ is monic of degree $k$, that is,
+Suppose a polynomial $P \in \sO(U)[z_n]$ is monic of degree $k \geq 0$, that is,
 \begin{equation*}
 P(z',z_n) = z_n^k + \sum_{j=0}^{k-1} c_j(z') \, z_n^j ,
 \end{equation*}
@@ -12080,6 +12082,7 @@ The definition (and the theorem that follows) still holds for $n=1$.
 If you read the
 definition carefully, you will find that if $n=1$, then the only Weierstrass
 polynomial of degree $k$ is $z^k$.
+Note that for any $n$, if $k=0$, then $P = 1$.
 
 The purpose of this section is to show that every holomorphic function
 in $\sO_0$ is up to a unit and a possible small rotation a Weierstrass
@@ -12127,12 +12130,15 @@ multiplicity) of $z_n
 \begin{equation*}
 \frac{1}{2\pi i}
 \int_{\partial D}
-\frac{\frac{\partial f}{\partial z_n} (z',z_n)}{f(z',z_n)} ~dz_n .
+\frac{\frac{\partial f}{\partial z_n} (z',\zeta)}{f(z',\zeta)} ~d\zeta .
 \end{equation*}
-The above expression is an integer-valued
-continuous function of $z' \in V'$,
-and it is equal to $k$ when $z'=0$,
-so it is $k$ for all $z' \in V'$.
+As $f(z',\zeta)$ does not vanish when $z' \in V'$ and $\zeta \in \partial
+D$,
+the above expression is a continuous integer-valued
+function of $z' \in V'$.
+The expression
+is equal to $k$ when $z'=0$, and
+so it is equal to $k$ for all $z' \in V'$.
 Write
 the zeros of $z_n \mapsto f(z',z_n)$ as $\alpha_1(z'),\ldots,\alpha_k(z')$, including
 multiplicity.  There is no particular order to the zeros,
@@ -12180,15 +12186,15 @@ are the zeros of $g$ in $D$, then
 = \sum_{j=1}^k h(\alpha_j) .
 \end{equation*}
 
-The above formula with $h(\xi) = \xi^m$ and $g(\xi)=f(z',\xi)$ says that
+The above formula with $h(\zeta) = \zeta^m$ and $g(\zeta)=f(z',\zeta)$ says that
 \begin{equation*}
 s_m(z') = 
 \sum_{j=1}^k \alpha_j{(z')}^m
 =
 \frac{1}{2\pi i}
 \int_{\partial D}
-z_n^m
-\frac{\frac{\partial f}{\partial z_n} (z',z_n)}{f(z',z_n)} ~dz_n .
+\zeta^m
+\frac{\frac{\partial f}{\partial \zeta} (z',\zeta)}{f(z',\zeta)} ~d\zeta .
 \end{equation*}
 The function $s_m$ is clearly continuous, and if we
 differentiate under the integral
@@ -12240,6 +12246,14 @@ function $f$ is such that $z_n \mapsto f(0,z_n)$ vanishes identically,
 then we can make a small linear change of
 coordinates $L$ ($L$ can be a matrix arbitrarily close to the identity) such
 that $f \circ L$ satisfies the hypotheses of the theorem.
+For example, $f(z_1,z_2,z_3) = z_1z_3+z_2z_3$ does not satisfy the
+hypotheses of the theorem as $f(0,0,z_3) \equiv 0$.  But for an arbitrarily
+small $\epsilon \not= 0$, replacing
+$z_2$ with $z_2 + \epsilon z_3$ leads to $\tilde{f}(z_1,z_2,z_3)
+= f(z_1,z_2+\epsilon z_3,z_3) = 
+z_1z_3+z_2z_3 + \epsilon z_3^2$, and $\tilde{f}(0,0,z_3) = \epsilon z_3^2$.
+Thence $\tilde{f}$
+satisfies the hypotheses of the theorem.
 
 \begin{exbox}
 \begin{exercise}
@@ -12248,7 +12262,7 @@ identity.
 \end{exercise}
 
 \begin{exercise}
-Prove the fact that a monic polynomial $P(\zeta)$ of one variable is
+Prove that a monic polynomial $P(\zeta)$ of one variable is
 uniquely determined by its zeros up to multiplicity.  That is, suppose
 $P$ and $Q$ are two monic polynomials with the same zeros
 up to multiplicity,
@@ -12299,10 +12313,14 @@ Show that elementary symmetric functions are polynomials in the power sums.
 \end{exercise}
 \end{exbox}
 
-The order of vanishing of $f$ at the origin is only a lower bound
+The order of vanishing of $f$ at the origin is a lower bound
 on the number $k$ in the theorem.  The order of vanishing for a certain
-variable may be larger than this lower bound.  If you, however, make a small
-linear change of coordinates, you can ensure $k = \ord_0 f$.
+variable may be larger than this lower bound.  If $f(z_1,z_2) =
+z_1^2 + z_2^3$, then the $k$ you get is 3, but $\ord_0 f = 2$.
+One can make a small
+linear change of coordinates to ensure $k = \ord_0 f$.
+With the $f$ as above for example, $f(z_1 + \epsilon z_2,z_2)$ gives $k = 2$
+as expected.
 
 The Weierstrass preparation theorem is a generalization of
 the implicit function theorem.  When $k=1$ in the theorem, then we obtain
@@ -12323,7 +12341,7 @@ State and prove a germ version of the preparation theorem.
 
 \begin{thm}[\myindex{Weierstrass division theorem}]
 Suppose $f$ is holomorphic near the origin, and suppose $P$
-is a Weierstrass polynomial of degree $k$ in $z_n$.  Then there exists
+is a Weierstrass polynomial of degree $k \geq 1$ in $z_n$.  Then there exists
 a neighborhood $V$ of the origin and unique $q,r \in \sO(V)$,
 where $r$ is a polynomial in $z_n$ of degree less than $k$, and on $V$,
 \begin{equation*}
@@ -12337,8 +12355,8 @@ polynomial in $z_n$ with coefficients that are holomorphic functions
 of the first $n-1$ variables.
 
 \begin{proof}
-Uniqueness is left as an exercise.  Assume we are working
-in a neighborhood $V = V' \times D$ for some small disc $D$
+Uniqueness is left as an exercise.  Consider
+a neighborhood $V = V' \times D$ of the origin for some small disc $D$
 such that $f$ and $P$ are continuous in $\overline{V}$,
 $P$ is not zero on $V' \times \partial D$, and the
 only zeros of $z_n \mapsto P(0,z_n)$ in $D$ are at the origin.  Write
@@ -12352,11 +12370,11 @@ the function $q$
 is holomorphic in $V$ (differentiate under the integral).
 If $P$ did divide $f$, then $q$ would really be $\nicefrac{f}{P}$.
 But if $P$ does not divide $f$, then
-the Cauchy formula does not apply and $q$ is not necessarily equal to
+the Cauchy integral formula does not apply and $q$ is not equal to
 $\nicefrac{f}{P}$.  Interestingly
-the formula does give the quotient in the division with remainder.
+the expression does give the quotient in the division with remainder.
 
-Write $f$ using the Cauchy integral in the last variable and
+Write $f$ using the Cauchy integral formula in $z_n$ and
 subtract $Pq$ to obtain
 \begin{equation*}
 r(z',z_n) = f(z',z_n) - P(z',z_n)q(z',z_n)
@@ -12374,10 +12392,28 @@ $z_n$ and after dividing by $(\zeta-z_n)$
 the numerator is a polynomial of degree $k-1$.
 Use linearity of the integral
 to integrate the coefficients of the polynomial.  Each coefficient is a
-holomorphic function and we are done.  Some coefficients may have
+holomorphic function and the proof is finished.  Some coefficients may have
 integrated to zero, so we can only say that $r$ is a polynomial
 of degree $k-1$ or less.
 \end{proof}
+
+For example, let $f(z,w) = e^z + z^3 e^w + z w^2 e^w + zw$ and $P(z,w)
+= w^2 + z^2$.  Then $P$ is a Weierstrass polynomial in $w$ of degree $k=2$.  A bit
+of computation shows
+\begin{equation*}
+\frac{1}{2\pi i}
+\int_{\partial \D}
+\frac{e^z + z^3 e^{\zeta} + z {\zeta}^2 e^{\zeta} + z \zeta}{(\zeta^2-z^2)(\zeta-w)}
+d\zeta
+=
+z e^w
+,
+\quad \text{so} \quad
+f(z,w) = \underbrace{\bigl( ze^w \bigr)}_{q} \underbrace{\bigl( w^2 + z^2 \bigr)}_{P} +
+\underbrace{z w + e^z}_{r} .
+\end{equation*}
+Notice that $r$ is a polynomial of degree 1 in $w$, but it is neither monic,
+nor do coefficients vanish at 0.
 
 \begin{exbox}
 \begin{exercise}
@@ -12389,12 +12425,25 @@ State and prove a germ version of the division theorem.
 \end{exercise}
 \end{exbox}
 
+The Weierstrass division theorem is a generalization of the division
+algorithm for polynomials with coefficients in a field, such as the
+complex numbers:  If $f(\zeta)$ is a
+polynomial, and $P(\zeta)$ is a nonzero polynomial of degree $k$, then there exist
+polynomials $q(\zeta)$ and $r(\zeta)$ with degree of $r$ less than $k$ such
+that $f = Pq + r$.  If the coefficients are in a commutative ring,
+we can divide as long as $P$ is monic.
+The Weierstrass division theorem says that in the case of the ring $\sO_p$,
+we can divide by a monic $P \in {}_{n-1}\sO_p[z_n]$,
+even if $f$ is a holomorphic function (in some sense, a polynomial of
+infinite degree) as long as $f(0,z_n)$ has
+finite order.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{The dependence of roots on parameters} \label{sec:dependenceofroots}
 
 Let us prove that the roots change holomorphically as long as they do not
-come together.  Furthermore, the roots come together
+come together.  We will prove shortly that the roots come together
 only on a small set; it is a zero set of a certain holomorphic function
 called the discriminant.  Roots are
 \emph{\myindex{geometrically distinct}} if they are distinct
@@ -14101,7 +14150,7 @@ path once counterclockwise
 around $p$ inside $\Delta_\rho(p)$,
 \begin{equation*}
 c_k = \frac{f^{(k)}(p)}{k!} =
-\frac{k!}{2\pi i}
+\frac{1}{2\pi i}
 \int_{\gamma}
 \frac{f(\zeta)}{{(\zeta-z)}^{k+1}}
 \,
@@ -14424,7 +14473,7 @@ is a simple closed piecewise-$C^1$ path going once counterclockwise around
 $p$ in $\Delta$, then
 \begin{equation*}
 c_k = 
-\frac{k!}{2\pi i}
+\frac{1}{2\pi i}
 \int_{\gamma}
 \frac{f(\zeta)}{{(\zeta-z)}^{k+1}}
 \,
@@ -14440,6 +14489,33 @@ such that $c_k \not= 0$.
 \pagebreak[3]
 \end{enumerate}
 \end{prop}
+
+If $p$ is an isolated singularity of $f$, then call the corresponding
+$c_{-1}$ the \emph{\myindex{residue}} of $f$ at $p$, and write it
+as $\operatorname{Res}(f,p)$.  
+The proposition says that for a small $\gamma$ around $p$ in the positive direction,
+\begin{equation*}
+\operatorname{Res}(f,p) = c_{-1} = \frac{1}{2\pi i} \int_\gamma f(z) \, dz
+.
+\end{equation*}
+Combining with Cauchy's theorem tells us that to compute
+integrals of functions with isolated singularities we simply need to find the residues,
+which tend to be simpler to
+compute.  For example, if $p$ is a simple pole (of order 1), then 
+\begin{equation*}
+\operatorname{Res}(f,p) = \lim_{z \to p} (z-p)f(z) .
+\end{equation*}
+
+\begin{thm}[Residue theorem]\index{residue theorem}\label{thm:residue}
+Suppose $U \subset \C$ is an open set, and $\gamma$ is a piecewise-$C^1$
+simple closed path in $U$ such that the interior of $\gamma$ is in $U$.
+Suppose that $f \colon U \setminus S \to \C$ is a holomorphic function with isolated
+singularities in a finite set $S$, and suppose $S$ lies in the interior of $\gamma$.
+Then
+\begin{equation*}
+\int_{\gamma} f(z) \, dz = 2\pi i \sum_{p \in S} \operatorname{Res}(f,p) .
+\end{equation*}
+\end{thm}
 
 The identity theorem says that zeros of a nonconstant holomorphic $f$
 have no limit points, and so are isolated points.
@@ -14461,25 +14537,33 @@ Then
 where $N$ is the number of zeros of $f$ inside $\gamma$ and $P$ is the
 number of poles, both counted with multiplicity.
 
-Furthermore, if $g \colon U \to \C$ is holomorphic, and $\#(p)$ is the order
+Furthermore, if $h \colon U \to \C$ is holomorphic, and $\#(p)$ is the order
 (multiplicity) of a zero or pole at $p$, then
 \begin{equation*}
 \frac{1}{2\pi i}
-\int_\gamma g(z) \frac{f'(z)}{f(z)} \, dz
+\int_\gamma h(z) \frac{f'(z)}{f(z)} \, dz
 =
 \sum_{p \in f^{-1}(0)}
-\#(p) \, g(p)
+\#(p) \, h(p)
 \quad
 -
 \quad
 \sum_{p \in f^{-1}(\infty)}
-\#(p) \, g(p) .
+\#(p) \, h(p) .
 \end{equation*}
 \end{thm}
 
-We avoided introducing winding numbers by making $\gamma$ a simple closed curve,
-so the above statement may be slightly different than what you have seen in
+The proof is an immediate application of the residue theorem.  Simply
+compute the residues at the zeros and poles of $f$.  In particular,
+if $f$ has a zero at $p$, then $h(z) \frac{f'(z)}{f(z)}$ has a simple pole
+at $p$ with residue $\#(p) h(p)$.  Similarly, if $f$ has a pole at $p$,
+then $h(z) \frac{f'(z)}{f(z)}$ has residue $-\#(p) h(p)$ at $p$.
+
+In the above couple of theorems
+we avoided introducing winding numbers by making $\gamma$ a simple closed curve,
+so the above statements may be slightly different than what you have seen in
 your one-variable course.
+
 Another useful way to count zeros is Rouch\`e's theorem.
 
 \begin{thm}[Rouch\`e]\index{Rouch\`e's theorem}\label{thm:onevarrouche}
@@ -14528,9 +14612,11 @@ $f(\C)$ is either $\C$ or $\C$ minus a point.
 
 One theorem from algebra that is important in complex analysis, and becomes
 perhaps even more important in several variables is the fundamental theorem
-of algebra.
+of algebra.  It really is a theorem of complex analysis and its standard
+proof is via the maximum principle.
 
 \begin{thm}[Fundamental theorem of algebra]\index{fundamental theorem of algebra}
+\label{thm:fundamentalthmalg}%
 If $P \colon \C \to \C$ is a nonzero polynomial of degree $k$,\linebreak[2]
 then $P$
 has exactly $k$ roots (zeros) in $\C$ counted with multiplicity.
@@ -15437,6 +15523,11 @@ result.
 
 \chapter{Basic terminology and results from algebra} \label{ap:algebra}
 
+Let us quickly go over some of the basic definitions from commutative
+algebra for reference, and a result or two that we will need in
+\chapterref{ch:analyticvarieties}.  See a book such as
+Zariski--Samuel~\cite{ZariskiSamuel} for a full reference.
+
 \begin{defn}
 A set $G$ is called a \emph{\myindex{group}} if it has an operation
 $x * y$ defined on it and it satisfies the following axioms:
@@ -15531,9 +15622,12 @@ bijective, then it is called a
 
 That is a commutative ring is an abelian additive group (by
 additive group we just mean we use $+$ for the operation and
-$0$ for the identity for $+$), with multiplication.  If the multiplication
+$0$ for the respective identity), with multiplication thrown in.
+If the multiplication
 also defines a group on the set of nonzero elements then the ring is a
-field.
+field.  A ring that is not commutative, is one that doesn't satisfy
+commutativity of multiplication.  Some authors also define ring
+without asking for an existence of $1$.
 
 A ring that often comes up in this book is the ring of holomorphic
 functions.  Let $\sO(U)$ be the set of holomorphic functions defined
@@ -15555,6 +15649,12 @@ leading coefficient is 1, then $P$ is said to be \emph{\myindex{monic}}.
 If $R$ is a commutative ring, then so is $R[x]$.
 Similarly, we define the commutative ring $R[x_1,\ldots,x_n]$ of
 polynomials in $n$ indeterminates.
+
+The most basic result about polynomials,
+\thmref{thm:fundamentalthmalg}
+the fundamental theorem of algebra, which states that every
+nonconstant polynomial over $R=\C$ has a root, is really a theorem in
+one complex variable.
 
 \begin{defn}
 Let $R$ be a commutative ring.
@@ -15858,6 +15958,18 @@ The proof is not difficult, but it is perhaps beyond the scope of this book.
    pages={xii+399},
    review={\MR{0387634}},
    %review={\MR{0387634 (52 \#8473)}},
+}
+
+\bib{ZariskiSamuel}{book}{
+   author={Zariski, Oscar},
+   author={Samuel, Pierre},
+   title={Commutative algebra, Volume I},
+   series={The University Series in Higher Mathematics},
+   note={With the cooperation of I.\ S.\ Cohen},
+   publisher={D.\ Van Nostrand Company, Inc., Princeton, New Jersey},
+   date={1958},
+   pages={xi+329},
+   %review={\MR{0090581}},
 }
 
 \end{biblist}
