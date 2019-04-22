@@ -12388,28 +12388,29 @@ $k$.  In the expression inside the integral, the numerator is
 of the form $\sum_j h_j(z',\zeta)(\zeta^j-z_n^j)$ and is therefore
 divisible by $(\zeta-z_n)$.
 The numerator is a polynomial of degree $k$ in
-$z_n$ and after dividing by $(\zeta-z_n)$
-the numerator is a polynomial of degree $k-1$.
+$z_n$.  After dividing by $(\zeta-z_n)$,
+the integrand becomes
+a polynomial in $z_n$ of degree $k-1$. 
 Use linearity of the integral
 to integrate the coefficients of the polynomial.  Each coefficient is a
-holomorphic function and the proof is finished.  Some coefficients may have
+holomorphic function in $V'$ and the proof is finished.  Some coefficients may have
 integrated to zero, so we can only say that $r$ is a polynomial
 of degree $k-1$ or less.
 \end{proof}
 
-For example, let $f(z,w) = e^z + z^3 e^w + z w^2 e^w + zw$ and $P(z,w)
-= w^2 + z^2$.  Then $P$ is a Weierstrass polynomial in $w$ of degree $k=2$.  A bit
+For example, let $f(z,w) = e^z + z^4 e^w + z w^2 e^w + zw$ and $P(z,w)
+= w^2 + z^3$.  Then $P$ is a Weierstrass polynomial in $w$ of degree $k=2$.  A bit
 of computation shows
 \begin{equation*}
 \frac{1}{2\pi i}
 \int_{\partial \D}
-\frac{e^z + z^3 e^{\zeta} + z {\zeta}^2 e^{\zeta} + z \zeta}{(\zeta^2-z^2)(\zeta-w)}
+\frac{e^z + z^4 e^{\zeta} + z {\zeta}^2 e^{\zeta} + z \zeta}{(\zeta^2+z^3)(\zeta-w)}
 d\zeta
 =
 z e^w
 ,
 \quad \text{so} \quad
-f(z,w) = \underbrace{\bigl( ze^w \bigr)}_{q} \underbrace{\bigl( w^2 + z^2 \bigr)}_{P} +
+f(z,w) = \underbrace{\bigl( ze^w \bigr)}_{q} \underbrace{\bigl( w^2 + z^3 \bigr)}_{P} +
 \underbrace{z w + e^z}_{r} .
 \end{equation*}
 Notice that $r$ is a polynomial of degree 1 in $w$, but it is neither monic,
@@ -12445,9 +12446,13 @@ finite order.
 Let us prove that the roots change holomorphically as long as they do not
 come together.  We will prove shortly that the roots come together
 only on a small set; it is a zero set of a certain holomorphic function
-called the discriminant.  Roots are
+called the discriminant.  A set of roots are said to be
 \emph{\myindex{geometrically distinct}} if they are distinct
-points of $\C$.
+points of $\C$.  A root is called
+\emph{\myindex{geometrically unique}} if it is a unique complex number.
+For example, ${(z_n-1)}^2$ has a geometrically unique root $1$, and 
+${(z_n-1)}^2(z_n+1)$ has two geometrically distinct roots, $1$ and $-1$.
+
 
 \begin{prop} \label{prop:roothol}
 Let $D \subset \C$ be a disc, 
@@ -12534,15 +12539,19 @@ Prove \propref{prop:rootshol}.  See
 
 \begin{thm} \label{thm:discrthm}
 Let $D \subset \C$ be a disc, 
-$U' \times D \subset \C^{n-1} \times \C$ a bounded domain,
+$U' \times D \subset \C^{n-1} \times \C$ a
+%bounded
+domain,
 and
 $f \in \sO(U' \times D)$.
 Suppose the zero set $f^{-1}(0)$ has no limit points
-on $U' \times \partial D$,
+on $U' \times \partial D$.
+Then there exists an $m \in \N$
 and
-for each $z' \in U'$, the function $z_n \mapsto f(z',z_n)$ has
-at most $m < \infty$ geometrically distinct zeros, and has exactly $m$
-zeros somewhere.  Then there exists 
+%such thatand
+%for each $z' \in U'$, the function $z_n \mapsto f(z',z_n)$ has
+%at most $m < \infty$ geometrically distinct zeros, and has exactly $m$
+%zeros somewhere.  Then there exists 
 a holomorphic function $\Delta \colon U' \to \C$, not identically zero, such
 that for every $z' \in U'$ not in $E = \Delta^{-1}(0)$,
 $z_n \mapsto f(z',z_n)$ has exactly $m$ geometrically distinct zeros in $D$.
@@ -12556,50 +12565,97 @@ $E$ is called the
 $\Delta$ is the discriminant we learned about in high school.
 
 \begin{proof}
+The roots of $z_n \mapsto f(z',z_n)$ are isolated.
+Fix $p' \in U'$.  Let us set up two paths around the roots
+at any particular $p'$.
+Let $\gamma$ be the union of nonintersecting
+small simple closed curves
+in $D$, one around exactly one root of $z_n \mapsto f(p',z_n)$.
+Let $\lambda$ be a large simple closed curve in $D$ going around
+counterclockwise around all the roots.  If we wish we may take $\lambda$ be the
+boundary of a slightly smaller disc in $D$.  Suppose $\gamma$ and $\lambda$
+instersect no roots.
+By continuity,
+the curves $\gamma$
+and $\lambda$ do not intersect any roots for $z'$ near $p'$.
+And since the set $f^{-1}(0)$ is closed, and the roots
+do not
+accumulate on $U' \times \partial D$, the $\lambda$ goes around all
+the roots exactly once for $z'$ near $p'$.
+
+\begin{myfig}
+\subimport*{figures/}{curve-around-each-zero.pdf_t}
+\end{myfig}
+
+The argument principle applied to $z_n \mapsto f(z',z_n)$ using $\lambda$ for $z'$ near
+$p'$ shows that the number of zeros (with multiplicity) is bounded by some $M \in \N$
+near $p'$.  The $M$ is locally well-defined (it does not depend on $\lambda$ as
+long as it contains all the roots), and it is a locally constant function of
+$z' \in U'$.
+As $U'$ is connected, and it is a fixed number.  The maximum number of
+geometrically distinct roots must be bounded by $M$.  Let $m$ be the maximal
+number of geometrically distinct roots and suppose that at some point
+in $U'$, there are exactly $m$ geometrically distinct roots.
+
 Let $U_m$ be the subset of $U'$ for which $z_n \mapsto f(z',z_n)$
-has exactly $m$ zeros.  Write $U'$ 
-as a union of disjoint sets $U' = U_m \cup E$, where $E = U' \setminus U_m$.
+has exactly $m$ zeros.
+Write $U'$ as a union of disjoint sets $U' = U_m \cup E$, where $E = U' \setminus U_m$.
+By definition of $m$, $U_m$ is nonempty.  Suppose $p' \in U_m$ and $\gamma$
+goes around the roots as above.  Let $\gamma'$ be a single component curve
+of the path $\gamma$ going around one of the roots.
+The argument principle with respect to $\gamma'$ says that
+$\gamma'$ must contain at least one root for all $z'$ near $p'$.
+There are only finitely many roots, and so for $z'$ in some 
+some neighborhood of $p'$,
+$z_n \mapsto f(z',z_n)$ has at least $m$
+roots in $\gamma$, and as $m$ is the maximum, it has exactly $m$ roots.  In other words,
+$U_m$ is open.
 
-As the roots do not accumulate on the boundary, near each $z' \in U_m$ there is a
-curve in the $z_n$ variable going around one of the roots and the same curve
-will not intersect any roots for nearby $z'$.
-By the argument principle, if there was a root 
-inside a small curve, there still is for nearby $z'$.  In other words, no
-root can disappear for some small open neighborhood of $z'$, and hence $U_m$ is open.
-
-By the previous
-proposition, locally on $U_m$ there exist $m$ holomorphic functions
-$\alpha_1, \ldots, \alpha_m$ giving the roots.  We cannot define
+Locally on $U_m$, there exist $m$ holomorphic functions
+$\alpha_1, \ldots, \alpha_m$ giving the roots by the previous proposition.  We cannot define
 these on all of $U_m$ as we do not know their order.  The function
 \begin{equation*}
 \Delta(z') = \prod_{j \not= k} \bigl( \alpha_j(z') - \alpha_k(z') \bigr) 
 \end{equation*}
-does not depend on the order and hence is a well-defined holomorphic
+does not depend on the order, and hence it can be written using
+elementary symmetric functions of $\alpha_j$ and hence is a well-defined holomorphic
 function in all of $U_m$.
 
-Let $p' \in E \cap \overline{U_m}$.
-By the argument principle, there are some roots
-that must have coalesced.  There are fewer than $m$ roots at $p'$.  By the
-argument principle, no root
-can suddenly appear inside any curve that contained no roots above $p'$ as $z'$
-varies near $p'$.  Hence there must be at least one root such that if we
-make a small curve around it and move $z'$ into $U_m$ (but stay near $p'$),
-the root will split into multiple geometrically distinct roots.
-In other words, since $D$ and therefore the $\alpha_j$ were all bounded, we
-find that $\Delta(z') \to 0$ as $z' \to p'$.
+Let $p' \in E \cap \overline{U_m}$,
+so there are fewer than $m$ roots at $p'$.
+Suppose $\gamma$ and $\lambda$ are as above.
+In each particular component $\gamma'$ of $\gamma$, there must
+be at least one root for all $z'$ near $p'$ by the same argument as above.
+There exist $z'$ arbitrarily near $p'$ where there are $m$ roots.
+The region between $\lambda$ and $\gamma$ (including the curves) is compact, and so by
+continuity, if $f(p',z_n)$ was nonzero on it, so is $f(z',z_n)$ for $z'$ near
+$p'$.  As no roots of $f(z',z_n)$ lie outside $\lambda$, we have that all
+roots lie in one of the components of $\gamma$.  So if $z' \in U_m$ near
+$p'$, there must be one
+component $\gamma'$ that contains at least two roots.  Let $\{ z'_\ell \}$ be a
+sequence of points in $U_m$ going to $p'$.  As the number of roots is
+finite, any subsequence of $\{ z'_\ell \}$ has a
+subsequence such that $z_n \mapsto f(z'_\ell,z_n)$ has at least two roots in
+some fixed component $\gamma'$ of $\gamma$ for $z'_\ell$.  Assume $\{ z'_\ell
+\}$ is this subsequence.  Label the two distinct roots as $\alpha_1(z'_\ell)$ and
+$\alpha_2(z'_\ell)$.  There is only a single root, let's name it
+$\alpha_1(p')$, inside $\gamma'$.  As $f^{-1}(0)$ is closed it must be that
+$\alpha_1(z'_\ell)$ and $\alpha_2(z'_\ell)$ both approach $\alpha_1(p')$ as
+$\ell \to \infty$.  As all roots are necessarily bounded,
+$\lim_{z' \to p'} \Delta(z') = 0$.
 
-We defined $\Delta$ on $U_m$.  Set $\Delta(z') = 0$ for $z' \in E$.
-As $\Delta(z') \to 0$ as $z'$ goes to $E$, $\Delta$ is continuous,
-and it is holomorphic outside its zero set.  We apply Rad{\'o}'s theorem
-(\thmref{thm:rado}) to find $\Delta$
-is holomorphic in $U'$.
+We have already defined $\Delta$ on $U_m$, so set $\Delta(z') = 0$ if $z' \in E$.
+The function $\Delta$ is a continuous function on $U'$ that is zero precisely on
+$E$ and holomorphic on $U_m$.
+Rad{\'o}'s theorem
+(\thmref{thm:rado}) says that $\Delta$ is holomorphic in $U'$.
 \end{proof}
 
 The discriminant given above is really the discriminant of the set
 $f^{-1}(0)$ rather than of the corresponding Weierstrass polynomial.  Often
 for Weierstrass polynomials the discriminant is defined as 
 $\prod_{j \not= k} \bigl( \alpha_j(z') - \alpha_k(z') \bigr)$ taking
-multiple roots into account, and therefore the discriminant could be
+multiple roots into account, and therefore the ``discriminant'' could be
 identically zero.  It will be clear from upcoming exercises that if
 the Weierstrass polynomial is irreducible, then the two notions do in fact
 coincide.

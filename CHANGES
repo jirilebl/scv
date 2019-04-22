@@ -151,6 +151,11 @@ improvements have been made throughout.
   and everything in chapter 6.
 * Add some examples in 6.2
 * Add a note on the division theorem from algebra
+* Describe better what geometrically distinct is and define geometrically
+  unique explicitly
+* Improve (strenghten) the statement of the Theorem on the existence of 
+  discriminant, add a figure to the proof and give a more detailed proof
+  of the slightly stronger theorem.
 * Rename what was 6.3 (now 6.4) to the "Properties of the ring of germs"
 * Move the ideal definitions and exercises to what is now 6.4.
 * Add a couple of simple examples in what was 6.4 (now 6.5).
