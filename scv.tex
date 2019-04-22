@@ -12337,6 +12337,17 @@ There is an obvious statement of the preparation theorem for germs.
 \begin{exercise}
 State and prove a germ version of the preparation theorem.
 \end{exercise}
+
+\begin{exercise}
+Suppose $U' \times D \subset \C^{n-1} \times \C$ is a domain,
+$D$ is a disc, $f \in \sO(U' \times D)$, $z_n \mapsto f(z',z_n)$
+has finitely many zeros for each $z' \in U'$,
+and $\gamma \colon [0,1] \to U'$ is a continuous function
+such that $f\bigl(\gamma(0),c\bigr) = 0$.
+Prove that there exists a continuous function $\alpha \colon [0,1] \to \C$
+such that $\alpha(0) = c$ and
+$f\bigl(\gamma(t),\alpha(t)\bigr) = 0$ for all $t \in [0,1]$.
+\end{exercise}
 \end{exbox}
 
 \begin{thm}[\myindex{Weierstrass division theorem}]
@@ -12460,7 +12471,7 @@ $U' \times D \subset \C^{n-1} \times \C$ a domain,
 and
 $f \in \sO(U' \times D)$.
 Suppose that for each fixed $z' \in U'$ the function
-$z_n \mapsto f(z',z_n)$ has a geometrically unique zero $\alpha(z') \in D$.  Then $\alpha$ is
+$z_n \mapsto f(z',z_n)$ has a geometrically unique root $\alpha(z') \in D$.  Then $\alpha$ is
 holomorphic in $U'$.
 \end{prop}
 
@@ -12494,7 +12505,7 @@ and
 $f \in \sO(U' \times D)$.
 Let $m \in \N$ be such that
 for each $z' \in U'$, the function $z_n \mapsto f(z',z_n)$ has
-precisely $m$ geometrically distinct zeros.
+precisely $m$ geometrically distinct roots.
 Then locally near each point in $U'$ there exist $m$ holomorphic functions
 $\alpha_1(z'),\ldots,\alpha_m(z')$,
 %(defined on a perhaps smaller $V' \subset U'$),
@@ -12532,8 +12543,22 @@ example, on any disc $\Delta \subset U'$.
 
 \begin{exbox}
 \begin{exercise}
+Let $D \subset \C$ be a disc, 
+$U' \times D \subset \C^{n-1} \times \C$ a domain,
+and
+$f \in \sO(U' \times D)$ and $f$ is never zero on
+$U' \times \partial D$.
+Suppose that for each fixed $z' \in U'$ the function
+$z_n \mapsto f(z',z_n)$
+has at most one root in $D$.  Prove that for each $z' \in U'$
+$z_n \mapsto f(z',z_n)$ has exactly one root in $D$.
+Note: And therefore by \propref{prop:roothol}, that root is
+a holomorphic function.
+\end{exercise}
+
+\begin{exercise}
 Prove \propref{prop:rootshol}.  See 
-\propref{prop:roothol}.
+the above exercise and \propref{prop:roothol}.
 \end{exercise}
 \end{exbox}
 
@@ -12550,11 +12575,14 @@ Then there exists an $m \in \N$
 and
 %such thatand
 %for each $z' \in U'$, the function $z_n \mapsto f(z',z_n)$ has
-%at most $m < \infty$ geometrically distinct zeros, and has exactly $m$
+%at most $m < \infty$ geometrically distinct roots, and has exactly $m$
 %zeros somewhere.  Then there exists 
 a holomorphic function $\Delta \colon U' \to \C$, not identically zero, such
-that for every $z' \in U'$ not in $E = \Delta^{-1}(0)$,
-$z_n \mapsto f(z',z_n)$ has exactly $m$ geometrically distinct zeros in $D$.
+that for every $z' \in U' \setminus E$, where $E = \Delta^{-1}(0)$,
+$z_n \mapsto f(z',z_n)$ has exactly $m$ geometrically distinct roots in $D$,
+and 
+$z_n \mapsto f(z',z_n)$ has strictly less than $m$ geometrically distinct roots
+for $z' \in E$.
 \end{thm}
 
 The complement of a zero set of a holomorphic function is connected, open
@@ -12588,7 +12616,7 @@ the roots exactly once for $z'$ near $p'$.
 \end{myfig}
 
 The argument principle applied to $z_n \mapsto f(z',z_n)$ using $\lambda$ for $z'$ near
-$p'$ shows that the number of zeros (with multiplicity) is bounded by some $M \in \N$
+$p'$ shows that the number of roots (with multiplicity) is bounded by some $M \in \N$
 near $p'$.  The $M$ is locally well-defined (it does not depend on $\lambda$ as
 long as it contains all the roots), and it is a locally constant function of
 $z' \in U'$.
@@ -12598,7 +12626,7 @@ number of geometrically distinct roots and suppose that at some point
 in $U'$, there are exactly $m$ geometrically distinct roots.
 
 Let $U_m$ be the subset of $U'$ for which $z_n \mapsto f(z',z_n)$
-has exactly $m$ zeros.
+has exactly $m$ roots.
 Write $U'$ as a union of disjoint sets $U' = U_m \cup E$, where $E = U' \setminus U_m$.
 By definition of $m$, $U_m$ is nonempty.  Suppose $p' \in U_m$ and $\gamma$
 goes around the roots as above.  Let $\gamma'$ be a single component curve
