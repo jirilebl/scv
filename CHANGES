@@ -143,6 +143,8 @@ improvements have been made throughout.
   logical.
 * Add figure for Weierstrass preparation theorem, and add some
   detail to the proof.
+* Explicitly state that roots of P are inside D for the Weierstrass
+  preparation
 * Add more complete explanation of what symmetric functions are
 * Add explanation of why simply connectedness is important for global
   definition of roots after Proposition 6.2.6
@@ -154,7 +156,9 @@ improvements have been made throughout.
 ** Add some exercises in what is now 6.3
 * Describe better what geometrically distinct is and define geometrically
   unique explicitly
-* Improve (strenghten) the statement of the Theorem on the existence of 
+* Make the D in the dependence on roots propositions and the discriminant
+  theorem be a domain (bounded in the case of the discriminant theorem
+* Improve (strenghten) the statement of the theorem on the existence of 
   discriminant, add a figure to the proof and give a more detailed proof
   of the slightly stronger theorem.
 * Rename what was 6.3 (now 6.4) to the "Properties of the ring of germs"

@@ -12103,13 +12103,11 @@ a unique $u \in \sO(V)$, $u(z) \not=0$ for all $z \in V$, and a unique
 Weierstrass polynomial $P$ of degree $k$
 with coefficients holomorphic in $V'$ such that
 \begin{equation*}
-f(z',z_n) = u(z',z_n) \, P(z',z_n) .
+f(z',z_n) = u(z',z_n) \, P(z',z_n) ,
 \end{equation*}
+and such that all $k$ roots of $z_n \mapsto P(z',z_n)$ lie in $D$ for all $z'
+\in V'$
 \end{thm}
-
-Thus for a fixed $z'$, the zeros of $f$ coincide with the zeros
-of a degree $k$ monic polynomial whose coefficients depend
-holomorphically on $z'$.
 
 \begin{proof}
 There exists a small disc $D \subset \C$ centered at zero such that
@@ -12220,6 +12218,49 @@ for each fixed $z'$.  By differentiating under the integral we
 find that it is also holomorphic in $z'$.
 \end{proof}
 
+The \emph{\myindex{elementary symmetric functions}} of
+$\alpha_1,\ldots,\alpha_k$ are the coefficients $\sigma_j$ of the polynomial
+\begin{equation*}
+\prod_{j=1}^k \bigl(t+\alpha_j\bigr)
+=
+t^k
++ \sigma_{1} \, t^{k-1} +
+\cdots
++ \sigma_{k-2} \, t^2
++ \sigma_{k-1} \, t
++ \sigma_k .
+\end{equation*}
+In other words:
+\begin{align*}
+\sigma_{1} & = \alpha_1 + \alpha_2 + \cdots + \alpha_k, \\
+\sigma_{2} & = \alpha_1 \alpha_2 \, + \, \alpha_1 \alpha_3 \, + \,
+  \cdots \, + \, \alpha_{k-1} \alpha_k , \\
+& \;\: \smash{\vdots} \\
+\sigma_{k-1} & =
+  \alpha_2 \alpha_3 \cdots \alpha_{k} \, + \,
+  \alpha_1 \alpha_3 \alpha_4 \cdots \alpha_{k} \, + \, \cdots
+  \,+\, \alpha_1 \alpha_2 \cdots \alpha_{k-1}, \\
+\sigma_k & = \alpha_1 \alpha_2 \cdots \alpha_k.
+\end{align*}
+So for example when $k=2$, then $\sigma_2 = \alpha_1\alpha_2$ and
+$\sigma_1 = \alpha_1 + \alpha_2$.  The function $\sigma_1$ happens to
+already be a power sum.  We can write $\sigma_2$
+as a polynomial in the power sums:
+\begin{equation*}
+\sigma_2
+=
+\frac{1}{2}
+{\bigl(\alpha_1 + \alpha_2\bigr)}^2
+-
+\bigl(\alpha_1^2 + \alpha_2^2\bigr) .
+\end{equation*}
+
+\begin{exbox}
+\begin{exercise} \label{exercise:powersums}
+Show that elementary symmetric functions are polynomials in the power sums.
+\end{exercise}
+\end{exbox}
+
 \begin{example} \label{sqrt:example}
 A useful example to keep in mind is $f(z_1,z_2) = z_2^2 - z_1$,
 a Weierstrass polynomial in $z_2$ of degree $k=2$.  So $z' = z_1$.
@@ -12268,48 +12309,41 @@ $P$ and $Q$ are two monic polynomials with the same zeros
 up to multiplicity,
 then $P=Q$.  That proves the uniqueness of the Weierstrass polynomial.
 \end{exercise}
-\end{exbox}
 
-The \emph{\myindex{elementary symmetric functions}} of
-$\alpha_1,\ldots,\alpha_k$ are the coefficients $\sigma_j$ of the polynomial
-\begin{equation*}
-\prod_{j=1}^k \bigl(t+\alpha_j\bigr)
-=
-t^k
-+ \sigma_{1} \, t^{k-1} +
-\cdots
-+ \sigma_{k-2} \, t^2
-+ \sigma_{k-1} \, t
-+ \sigma_k .
-\end{equation*}
-In other words:
-\begin{align*}
-\sigma_{1} & = \alpha_1 + \alpha_2 + \cdots + \alpha_k, \\
-\sigma_{2} & = \alpha_1 \alpha_2 \, + \, \alpha_1 \alpha_3 \, + \,
-  \cdots \, + \, \alpha_{k-1} \alpha_k , \\
-& \;\: \smash{\vdots} \\
-\sigma_{k-1} & =
-  \alpha_2 \alpha_3 \cdots \alpha_{k} \, + \,
-  \alpha_1 \alpha_3 \alpha_4 \cdots \alpha_{k} \, + \, \cdots
-  \,+\, \alpha_1 \alpha_2 \cdots \alpha_{k-1}, \\
-\sigma_k & = \alpha_1 \alpha_2 \cdots \alpha_k.
-\end{align*}
-So for example when $k=2$, then $\sigma_2 = \alpha_1\alpha_2$ and
-$\sigma_1 = \alpha_1 + \alpha_2$.  The function $\sigma_1$ happens to
-already be a power sum.  We can write $\sigma_2$
-as a polynomial in the power sums:
-\begin{equation*}
-\sigma_2
-=
-\frac{1}{2}
-{\bigl(\alpha_1 + \alpha_2\bigr)}^2
--
-\bigl(\alpha_1^2 + \alpha_2^2\bigr) .
-\end{equation*}
+\begin{exercise}
+Suppose $U' \subset \C^{n-1}$ and $D \subset \C$ are domains, $0 \in U'$,
+$0 \in D$,
+and $P \in \sO(U')[z_n]$ is a Weierstrass polynomial
+such that $P(z',z_n)$ is not zero on $U' \times \partial D$.
+Then for any $z' \in U$, all roots of $z_n \mapsto P(z',z_n)$ are in $D$.
+\end{exercise}
 
-\begin{exbox}
-\begin{exercise} \label{exercise:powersums}
-Show that elementary symmetric functions are polynomials in the power sums.
+\begin{exercise}
+Let $D \subset \C$ and
+$U' \subset \C^{n-1}$ be domains.
+Suppose
+$f$ is a continuous function on
+$U' \times \overline{D}$ holomorphic on $U' \times D$,
+where $f$ is zero on at least one point
+of $U' \times D$, and $f$ is never zero on
+$U' \times \partial D$.
+prove that
+$z_n \mapsto f(z',z_n)$ has at least one root in $D$ for every $z' \in U'$.
+\end{exercise}
+
+\begin{exercise}
+Let $D \subset \C$ and
+$U' \subset \C^{n-1}$ be domains.
+Suppose
+$f$ is a continuous function on
+$U' \times \overline{D}$ holomorphic on $U' \times D$,
+and $f$ is never zero on
+$U' \times \partial D$.
+Suppose $\gamma \colon [0,1] \to U'$ is a continuous function
+such that $f\bigl(\gamma(0),c\bigr) = 0$ for some $c \in D$.
+Prove that there exists a continuous function $\alpha \colon [0,1] \to \C$
+such that $\alpha(0) = c$ and
+$f\bigl(\gamma(t),\alpha(t)\bigr) = 0$ for all $t \in [0,1]$.
 \end{exercise}
 \end{exbox}
 
@@ -12337,17 +12371,6 @@ There is an obvious statement of the preparation theorem for germs.
 \begin{exercise}
 State and prove a germ version of the preparation theorem.
 \end{exercise}
-
-\begin{exercise}
-Suppose $U' \times D \subset \C^{n-1} \times \C$ is a domain,
-$D$ is a disc, $f \in \sO(U' \times D)$, $z_n \mapsto f(z',z_n)$
-has finitely many zeros for each $z' \in U'$,
-and $\gamma \colon [0,1] \to U'$ is a continuous function
-such that $f\bigl(\gamma(0),c\bigr) = 0$.
-Prove that there exists a continuous function $\alpha \colon [0,1] \to \C$
-such that $\alpha(0) = c$ and
-$f\bigl(\gamma(t),\alpha(t)\bigr) = 0$ for all $t \in [0,1]$.
-\end{exercise}
 \end{exbox}
 
 \begin{thm}[\myindex{Weierstrass division theorem}]
@@ -12367,10 +12390,13 @@ of the first $n-1$ variables.
 
 \begin{proof}
 Uniqueness is left as an exercise.  Consider
-a neighborhood $V = V' \times D$ of the origin for some small disc $D$
-such that $f$ and $P$ are continuous in $\overline{V}$,
-$P$ is not zero on $V' \times \partial D$, and the
-only zeros of $z_n \mapsto P(0,z_n)$ in $D$ are at the origin.  Write
+a connected neighborhood $V = V' \times D$ of the origin for some disc $D$
+such that $f$ and $P$ are continuous in $V' \times \overline{D}$,
+and 
+$P$ is not zero on $V' \times \partial D$.
+%, and hence
+%$z_n \mapsto P(z',z_n)$ has $k$ roots up to multiplicity in $D$ for all $z'
+%\in V'$.
 \begin{equation*}
 q(z',z_n) =
 \frac{1}{2\pi i} \int_{\partial D} \frac{f(z',\zeta)}{P(z',\zeta)(\zeta-z_n)}
@@ -12466,8 +12492,7 @@ ${(z_n-1)}^2(z_n+1)$ has two geometrically distinct roots, $1$ and $-1$.
 
 
 \begin{prop} \label{prop:roothol}
-Let $D \subset \C$ be a disc, 
-$U' \times D \subset \C^{n-1} \times \C$ a domain,
+Let $D \subset \C$ and $U' \subset \C^{n-1}$ be domains,
 and
 $f \in \sO(U' \times D)$.
 Suppose that for each fixed $z' \in U'$ the function
@@ -12489,18 +12514,19 @@ of generality, is the origin.
 Apply the preparation
 theorem to find $f = u P$,
 where $P$ is a
-Weierstrass polynomial in $\sO(V')[z_n]$ for some $V' \subset U'$.
-As $\alpha$ is a geometrically unique root,
+Weierstrass polynomial in $\sO(V')[z_n]$ for some $V' \subset U'$
+and all roots of $z' \mapsto P(z',z_n)$ are in $D$.
+As $\alpha$ is a geometrically unique root in $D$,
 \begin{equation*}
 P(z',z_n) = {\bigl(z_n-\alpha(z') \bigr)}^k = z_n^k - k \alpha(z') z_n^{k-1}
 + \cdots
 \end{equation*}
-As the coefficients of $P$ are holomorphic then $\alpha$ is holomorphic.
+The coefficients of $P$ are holomorphic, so $\alpha$ is holomorphic.
 \end{proof}
 
 \begin{prop} \label{prop:rootshol}
-Let $D \subset \C$ be a disc, 
-$U' \times D \subset \C^{n-1} \times \C$ a domain,
+Let $D \subset \C$ and $U' \subset \C^{n-1}$
+be domains,
 and
 $f \in \sO(U' \times D)$.
 Let $m \in \N$ be such that
@@ -12543,10 +12569,12 @@ example, on any disc $\Delta \subset U'$.
 
 \begin{exbox}
 \begin{exercise}
-Let $D \subset \C$ be a disc, 
-$U' \times D \subset \C^{n-1} \times \C$ a domain,
-and
-$f \in \sO(U' \times D)$ and $f$ is never zero on
+Let $D \subset \C$ and $U' \subset \C^{n-1}$
+be domains,
+$f$ be a continuous function on $U' \times \overline{D}$ holomorphic
+on $U' \times D$,
+where $f$ is zero on at least one point
+of $U' \times D$, and $f$ is never zero on
 $U' \times \partial D$.
 Suppose that for each fixed $z' \in U'$ the function
 $z_n \mapsto f(z',z_n)$
@@ -12562,11 +12590,10 @@ the above exercise and \propref{prop:roothol}.
 \end{exercise}
 \end{exbox}
 
+\pagebreak[2]
 \begin{thm} \label{thm:discrthm}
-Let $D \subset \C$ be a disc, 
-$U' \times D \subset \C^{n-1} \times \C$ a
-%bounded
-domain,
+Let $D \subset \C$ be a bounded domain,
+$U' \subset \C^{n-1}$ a domain,
 and
 $f \in \sO(U' \times D)$.
 Suppose the zero set $f^{-1}(0)$ has no limit points
@@ -12593,15 +12620,18 @@ $E$ is called the
 $\Delta$ is the discriminant we learned about in high school.
 
 \begin{proof}
-The roots of $z_n \mapsto f(z',z_n)$ are isolated.
-Fix $p' \in U'$.  Let us set up two paths around the roots
-at any particular $p'$.
+The roots of $z_n \mapsto f(z',z_n)$ are isolated, and there are finitely
+many for every $z'$ as $D$ is bounded and $f^{-1}(0)$ has no limit points on
+$U' \times \partial D$.
+Fix $p' \in U'$.
+%Let us set up two paths around the roots
+%at any particular $p'$.
 Let $\gamma$ be the union of nonintersecting
 small simple closed curves
-in $D$, one around exactly one root of $z_n \mapsto f(p',z_n)$.
-Let $\lambda$ be a large simple closed curve in $D$ going around
-counterclockwise around all the roots.  If we wish we may take $\lambda$ be the
-boundary of a slightly smaller disc in $D$.  Suppose $\gamma$ and $\lambda$
+in $D$, one around each geometrically distinct root of $z_n \mapsto f(p',z_n)$.
+Let $\lambda$ be a large closed path in $D$ going 
+exactly once around all the roots and such that the interior of $\lambda$ is
+in $D$.  Suppose $\gamma$ and $\lambda$
 instersect no roots.
 By continuity,
 the curves $\gamma$
@@ -12733,6 +12763,7 @@ Show that if $I \subsetneq \sO_p$ is a \emph{\myindex{proper ideal}}
 (ideal such that $I
 \not= \sO_0$) then
 $I \subset \mathfrak{m}_p$, that is $\mathfrak{m}_p$ is a \emph{\myindex{maximal ideal}}.
+\pagebreak[2]
 \end{exparts}
 \end{exercise}
 
