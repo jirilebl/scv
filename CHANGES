@@ -41,8 +41,7 @@ improvements have been made throughout.
 ** Make the Cauchy estimates and computation of coefficients into a
    proposition, which renumbers the propositions/theorems/etc.. in 1.2
 * The proposition about normal convergence only needs an open set, not a domain
-** Add two exercises in 1.2, which renumbers the other exercises.  (??? and
-   1.2.18)
+** Add exercises in 1.2, which renumbers the other exercises.
 * Say "local maximum" for the maximum principle ... why not.
 * Makes more sense to define complete Reinhardt domains with closed
   polydiscs, so do that
