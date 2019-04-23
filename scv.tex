@@ -12140,7 +12140,7 @@ $V' \times \partial D$.
 \subimport*{figures/}{wprepdiv.pdf_t}
 \end{myfig}
 
-The one-variable argument principle (see \thmref{thm:onevarargprinc}) implies that the number of zeros (with
+By the one-variable argument principle (\thmref{thm:onevarargprinc}) the number of zeros (with
 multiplicity) of $z_n
 \mapsto f(z',z_n)$ in $D$ is
 \begin{equation*}
@@ -12181,12 +12181,13 @@ $c_j$ are
 (up to sign)
 the \emph{elementary symmetric functions}
 of $\alpha_1,\ldots,\alpha_k$.  It is a standard
-theorem in algebra that the elementary symmetric functions are
+theorem in algebra
+(see \exerciseref{exercise:powersums})
+that the elementary symmetric functions are
 polynomials in the so-called power sum functions in the $\alpha_j$s:
 \begin{equation*}
 s_m(z') = \sum_{j=1}^k \alpha_j{(z')}^m , \qquad m = 1,\ldots,k.
 \end{equation*}
-See \exerciseref{exercise:powersums} below.
 Therefore, if we show that the power sums $s_m$ are holomorphic, then
 $c_\ell$ are 
 holomorphic.
@@ -12236,6 +12237,8 @@ for each fixed $z'$.  By differentiating under the integral we
 find that it is also holomorphic in $z'$.
 \end{proof}
 
+A function $f(z_1,\ldots,z_n)$ is \emph{symmetric}\index{symmetric function}
+if $f = f \circ p$ for all permutations of the variables $p$.
 The \emph{\myindex{elementary symmetric functions}} of
 $\alpha_1,\ldots,\alpha_k$ are the coefficients $\sigma_j$ of the polynomial
 \begin{equation*}
@@ -12276,6 +12279,43 @@ as a polynomial in the power sums:
 \begin{exbox}
 \begin{exercise} \label{exercise:powersums}
 Show that elementary symmetric functions are polynomials in the power sums.
+\end{exercise}
+
+\begin{exercise} \label{exercise:symmetric}
+Prove the \emph{\myindex{fundamental theorem of symmetric polynomials}},
+that is, that every symmetric polynomial can be written as a polynomial in
+the elementary symmetric functions.  Use the following procedure.
+Use a double induction.  Suppose that the theorem is proved if the number of
+variables is less than $k$, and also the theorem is proved in $k$ variables
+in degree less than $d$.
+Start with a symmetric $P(z_1,\ldots,z_k)$ of degree $d$.
+Write $P(z_1,\ldots,z_{k-1},0)$ by induction hypothesis as a polynomial
+in the elementary symmetric functions of one less variable.  Then use the
+same coefficients but plug in the elementary symmetric functions of $k$
+variables to obtain a symmetric function $L(z_1,\ldots,z_k)$ and show that
+$L(z_1,\ldots,z_{k-1},0) = P(z_1,\ldots,z_{k-1},0)$.  Now use symmetry to
+prove that
+\begin{equation*}
+P(z_1,\ldots,z_k) =
+L(z_1,\ldots,z_k) +
+z_1\cdots z_k Q(z_1,\ldots,z_k) .
+\end{equation*}
+Then note that $Q$ has lower degree and finish by induction.
+\end{exercise}
+
+\begin{exercise} \label{exercise:symmetricseries}
+Extend the previous exercise to power series.  Suppose $f(z_1,\ldots,z_k)$
+is a convergent symmetric power series at 0, show that $f$ can be written
+as a convergent power series in the elementary symmetric functions.
+\end{exercise}
+
+\begin{exercise} \label{exercise:symmetricseriesweier}
+Suppose $P(z',z_n)$ is a Weierstrass polynomial of degree $k$,
+and write $\alpha_1(z'), \ldots, \alpha_k(z')$ as the roots.
+These are not holomorphic, but suppose that $f$ is a symmetric convergent
+power series at the origin in $k$ variables.  Show that
+$f\bigl(\alpha_1(z'), \ldots, \alpha_k(z')\bigr)$ is a holomorphic function
+of $z'$ near the origin.
 \end{exercise}
 \end{exbox}
 
@@ -13384,8 +13424,8 @@ is connected.  Hint: See previous exercise.
 \end{exbox}
 
 \begin{example}
-Local and global reducibility can be different.  For example,
-the subvariety given by
+Local and global reducibility are different.
+The subvariety given by
 \begin{equation*}
 z_2^2 = z_1{(z_1-1)}^2
 \end{equation*}
@@ -13496,8 +13536,8 @@ and so they have a natural topological manifold structure even at singular
 points.
 
 \begin{example}
-\begin{samepage}
-For example, the image of the analytic disc
+\pagebreak[2]
+The image of the analytic disc
 $\xi \mapsto (\xi^2,\xi^3)$ is the variety
 defined by $z_1^3-z_2^2 = 0$ in $\C^2$, the so-called ``cusp''.  Here is a
 plot in two real dimensions:
@@ -13507,7 +13547,6 @@ plot in two real dimensions:
 \subimport*{figures/}{cusp.eepic}
 \bigskip
 \end{myfig}
-\end{samepage}
 \end{example}
 
 
