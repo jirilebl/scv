@@ -12367,16 +12367,17 @@ then $P=Q$.  That proves the uniqueness of the Weierstrass polynomial.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U' \subset \C^{n-1}$ and $D \subset \C$ are domains, $0 \in U'$,
-$0 \in D$,
+Suppose $D \subset \C$ is a bounded domain, $0 \in D$,
+$U' \subset \C^{n-1}$ is a domain, $0 \in U'$,
 and $P \in \sO(U')[z_n]$ is a Weierstrass polynomial
 such that $P(z',z_n)$ is not zero on $U' \times \partial D$.
 Then for any $z' \in U$, all roots of $z_n \mapsto P(z',z_n)$ are in $D$.
 \end{exercise}
 
 \begin{exercise}
-Let $D \subset \C$ and
-$U' \subset \C^{n-1}$ be domains.
+Let $D \subset \C$ be a bounded domain,
+and
+$U' \subset \C^{n-1}$ a domain.
 Suppose
 $f$ is a continuous function on
 $U' \times \overline{D}$ holomorphic on $U' \times D$,
@@ -12385,21 +12386,6 @@ of $U' \times D$, and $f$ is never zero on
 $U' \times \partial D$.
 Prove that
 $z_n \mapsto f(z',z_n)$ has at least one root in $D$ for every $z' \in U'$.
-\end{exercise}
-
-\begin{exercise}
-Let $D \subset \C$ and
-$U' \subset \C^{n-1}$ be domains.
-Suppose
-$f$ is a continuous function on
-$U' \times \overline{D}$ holomorphic on $U' \times D$,
-and $f$ is never zero on
-$U' \times \partial D$.
-Suppose $\gamma \colon [0,1] \to U'$ is a continuous function
-such that $f\bigl(\gamma(0),c\bigr) = 0$ for some $c \in D$.
-Prove that there exists a continuous function $\alpha \colon [0,1] \to \C$
-such that $\alpha(0) = c$ and
-$f\bigl(\gamma(t),\alpha(t)\bigr) = 0$ for all $t \in [0,1]$.
 \end{exercise}
 \end{exbox}
 
@@ -12627,9 +12613,9 @@ example, on any disc $\Delta \subset U'$.
 
 \begin{exbox}
 \begin{exercise}
-Let $D \subset \C$ and $U' \subset \C^{n-1}$
-be domains,
-$f$ be a continuous function on $U' \times \overline{D}$ holomorphic
+Let $D \subset \C$ be a bounded domain, $U' \subset \C^{n-1}$
+a domain,
+$f$ a continuous function on $U' \times \overline{D}$ holomorphic
 on $U' \times D$,
 where $f$ is zero on at least one point
 of $U' \times D$, and $f$ is never zero on
@@ -12792,6 +12778,25 @@ coincide.
 Prove that if $f \in \sO(U)$, then $U \setminus f^{-1}(0)$ is not simply
 connected if $f^{-1}(0)$ is nonempty.  In particular, in the theorem, $U' \setminus E$ is not
 simply connected if $E \not= \emptyset$.
+\end{exercise}
+
+\begin{exercise}
+Let $D \subset \C$ be a bounded domain,
+and
+$U' \subset \C^{n-1}$ a domain.
+Suppose
+$f$ is a continuous function on
+$U' \times \overline{D}$ holomorphic on $U' \times D$,
+and $f$ is never zero on
+$U' \times \partial D$.
+Suppose $\gamma \colon [0,1] \to U'$ is a continuous function
+such that $f\bigl(\gamma(0),c\bigr) = 0$ for some $c \in D$.
+Prove that there exists a continuous function $\alpha \colon [0,1] \to \C$
+such that $\alpha(0) = c$ and
+$f\bigl(\gamma(t),\alpha(t)\bigr) = 0$ for all $t \in [0,1]$.
+Hint: Show it is possible for a path
+arbitrarily close to $\gamma$, but one that stays away from
+the discriminant.
 \end{exercise}
 \end{exbox}
 
