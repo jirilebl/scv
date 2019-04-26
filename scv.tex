@@ -11973,6 +11973,12 @@ is not an integral domain.
 \end{exercise}
 
 \begin{exercise}
+Show that the units (elements with multiplicative inverse)
+of $\sO_p$ are the germs of functions which do not vanish at
+$p$.
+\end{exercise}
+
+\begin{exercise}
 \begin{exparts}
 \item (easy)
 Show that given a germ $(f,p) \in \sO_p$,
@@ -12030,17 +12036,35 @@ subset, union, and intersection of germs
 of sets
 is well-defined.
 \end{exercise}
+\end{exbox}
+
+
+Let $R$ be some ring of germs of complex-valued
+functions at $p \in X$ for some topological space $X$.
+\glsadd{not:Zf}%
+If $f$ is a complex-valued function,
+let $Z_f$ be the zero set of $f$, that is $f^{-1}(0)$.
+When $(f,p) \in R$ is a germ of a function
+it makes sense to talk about the germ $(Z_f,p)$.  We take the zero
+set of some representative and look at its germ at $p$.
+
+\begin{exbox}
+\begin{exercise}
+Suppose $f$ and $g$ are two representatives of a germ $(f,p)$
+show that the germs $(Z_f,p)$ and $(Z_g,p)$ are the same.
+\end{exercise}
 
 \begin{exercise}
-Consider some ring $R$ of germs of complex-valued functions at $p \in X$ for some
-topological space $X$.  Let $Z_f$ be the zero set of $f$, that is
-$f^{-1}(0)$.  Show that if $(f,p)$ and $(g,p)$ are in $R$
+Show that if $(f,p)$ and $(g,p)$ are in $R$
 and $f$ and $g$ are some representatives, then
 $(Z_f,p) \cup (Z_g,p) = (Z_{fg},p)$.
 \end{exercise}
 \end{exbox}
 
-%\pagebreak[2]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Weierstrass preparation and division theorems} \label{sec:wpt}
+
 Suppose
 $f$ is (a germ of) a holomorphic function at a point $p \in \C^n$.
 Write
@@ -12050,7 +12074,6 @@ f(z) = \sum_{k=0}^\infty f_k(z-p),
 where $f_k$ is a homogeneous polynomial of degree $k$,
 that is, $f_k(tz) = t^k f_k(z)$.
 
-%\pagebreak[2]
 \begin{defn}
 Let $p \in \C^n$ and $f$ be a function holomorphic in a neighborhood of $p$.
 If $f$ is not identically zero,
@@ -12066,10 +12089,6 @@ The number $\ord_p f$ is called the \emph{\myindex{order of vanishing}} of $f$ a
 In other words, if the order of vanishing of $f$ at $p$ is $k$, then all
 partial derivatives of order less than $k$ vanish at $p$, and there exists
 at least one derivative of order $k$ that does not vanish at $p$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Weierstrass preparation and division theorems} \label{sec:wpt}
 
 In one complex variable, a holomorphic function 
 vanishing to order $k$ at 0 equals (locally) $z^k u(z)$ for a nonvanishing $u$.
@@ -12100,7 +12119,8 @@ polynomial of degree $k$ is $z^k$.
 Note that for any $n$, if $k=0$, then $P = 1$.
 
 The purpose of this section is to show that every holomorphic function
-in $\sO_0$ is up to a unit and a possible small rotation a Weierstrass
+in $\sO_0$ is up to a unit 
+and a possible small rotation a Weierstrass
 polynomial, which carries the zeros of $f$.
 Consequently the 
 algebraic and geometric properties of 
@@ -12178,7 +12198,7 @@ we will prove that the functions $c_j$ are holomorphic.  The functions
 $c_j$ are
 (up to sign)
 the \emph{elementary symmetric functions}
-of $\alpha_1,\ldots,\alpha_k$.  It is a standard
+of $\alpha_1,\ldots,\alpha_k$ (see below).  It is a standard
 theorem in algebra
 (see \exerciseref{exercise:powersums})
 that the elementary symmetric functions are
@@ -12224,16 +12244,40 @@ $\frac{f(z',z_n)}{P(z',z_n)}$ has only removable singularities,
 and in fact, it has no zeros as we defined $P$
 to exactly cancel them all out.
 The Cauchy
-formula on $\nicefrac{f}{P}$ then says that
+formula on $\nicefrac{f}{P}$ then says that the function
 \begin{equation*}
-u(z',z_n) = \int_{\partial D} \frac{f(z',\zeta)}{P(z',\zeta)(\zeta-z_n)} \,
-d\zeta ,
+u(z',z_n) =
+\frac{1}{2\pi i}
+\int_{\partial D} \frac{f(z',\zeta)}{P(z',\zeta)(\zeta-z_n)} \,
+d\zeta
 \end{equation*}
 is equal to $\frac{f(z',z_n)}{P(z',z_n)}$.
 The function $u$ is clearly continuous and holomorphic in $z_n$
 for each fixed $z'$.  By differentiating under the integral we
 find that it is also holomorphic in $z'$.
 \end{proof}
+
+\begin{example} \label{sqrt:example}
+A useful example to keep in mind is $f(z_1,z_2) = z_2^2 - z_1$,
+a Weierstrass polynomial in $z_2$ of degree $k=2$.  So $z' = z_1$.
+For all $z_1$ except the origin there are two zeros, $\pm \sqrt{z_1}$.
+Call one of them $\alpha_1(z_1)$ and one of them $\alpha_2(z_1)$.  Recall
+there is no continuous choice of a square root that works for all $z_1$,
+so no matter how you choose, $\alpha_1$ and $\alpha_2$ will not be continuous.
+At the origin there is only one zero of order two,
+so $\alpha_1(0) = \alpha_2(0) = 0$.
+On the other hand the
+symmetric functions $c_1(z_1) = - \alpha_1(z_1) - \alpha_2(z_1) = 0$
+and $c_0(z_1') = \alpha_1(z_1)\alpha_2(z_1) = -z_1$ are holomorphic.
+
+Also notice that the $k$ depends on the coordinates chosen.  If we do a
+linear change of coordinates and consider $g(z_1,z_2) = -f(z_2,z_1)$,
+then $g(z_1,z_2) = z_1^2 - z_2$,
+which is a Weierstrass polynomial in $z_2$ of degree $k=1$.
+There is now only one zero $\alpha_1(z_1) = z_1^2$, and so $c_0(z_1) =
+-z_1^2$.
+\end{example}
+
 
 A function $f(z_1,\ldots,z_n)$ is \emph{symmetric}\index{symmetric function}
 if $f = f \circ p$ for all permutations of the variables $p$.
@@ -12280,17 +12324,20 @@ Show that elementary symmetric functions are polynomials in the power sums.
 \end{exercise}
 
 \begin{exercise} \label{exercise:symmetric}
-Prove the \emph{\myindex{fundamental theorem of symmetric polynomials}},
-that is, that every symmetric polynomial can be written as a polynomial in
+Prove the \emph{\myindex{fundamental theorem of symmetric polynomials}}:
+Every symmetric polynomial can be written as a polynomial in
 the elementary symmetric functions.  Use the following procedure.
-Use a double induction.  Suppose that the theorem is proved if the number of
-variables is less than $k$, and also the theorem is proved in $k$ variables
-in degree less than $d$.
-Start with a symmetric $P(z_1,\ldots,z_k)$ of degree $d$.
+Using double induction, suppose the theorem is true if the number of
+variables is less than $k$, and the theorem is true in $k$ variables
+for degree less than $d$.
+Consider a symmetric $P(z_1,\ldots,z_k)$ of degree $d$.
 Write $P(z_1,\ldots,z_{k-1},0)$ by induction hypothesis as a polynomial
-in the elementary symmetric functions of one less variable.  Then use the
-same coefficients but plug in the elementary symmetric functions of $k$
-variables to obtain a symmetric function $L(z_1,\ldots,z_k)$ and show that
+in the elementary symmetric functions of one less variable.  Use the
+same coefficients, but plug in the elementary symmetric functions of $k$
+variables except the symmetric polynomial in $k$ variables of degree $k$,
+that is except the $z_1\cdots z_k$.
+You will obtain a symmetric function $L(z_1,\ldots,z_k)$ and you need to
+show 
 $L(z_1,\ldots,z_{k-1},0) = P(z_1,\ldots,z_{k-1},0)$.  Now use symmetry to
 prove that
 \begin{equation*}
@@ -12317,28 +12364,7 @@ of $z'$ near the origin.
 \end{exercise}
 \end{exbox}
 
-\begin{example} \label{sqrt:example}
-A useful example to keep in mind is $f(z_1,z_2) = z_2^2 - z_1$,
-a Weierstrass polynomial in $z_2$ of degree $k=2$.  So $z' = z_1$.
-For all $z_1$ except the origin there are two zeros, $\pm \sqrt{z_1}$.
-Call one of them $\alpha_1(z_1)$ and one of them $\alpha_2(z_1)$.  Recall
-there is no continuous choice of a square root that works for all $z_1$,
-so no matter how you choose, $\alpha_1$ and $\alpha_2$ will not be continuous.
-At the origin there is only one zero of order two,
-so $\alpha_1(0) = \alpha_2(0) = 0$.
-On the other hand the
-symmetric functions $c_1(z_1) = - \alpha_1(z_1) - \alpha_2(z_1) = 0$
-and $c_0(z_1') = \alpha_1(z_1)\alpha_2(z_1) = -z_1$ are holomorphic.
-
-Also notice that the $k$ depends on the coordinates chosen.  If we do a
-linear change of coordinates and consider $g(z_1,z_2) = -f(z_2,z_1)$,
-then $g(z_1,z_2) = z_1^2 - z_2$,
-which is a Weierstrass polynomial in $z_2$ of degree $k=1$.
-There is now only one zero $\alpha_1(z_1) = z_1^2$, and so $c_0(z_1) =
--z_1^2$.
-\end{example}
-
-The hypotheses of the theorem are not an obstacle.  If a holomorphic
+The hypotheses of the preparation theorem are not an obstacle.  If a holomorphic
 function $f$ is such that $z_n \mapsto f(0,z_n)$ vanishes identically,
 then we can make a small linear change of
 coordinates $L$ ($L$ can be a matrix arbitrarily close to the identity) such
@@ -12386,6 +12412,7 @@ of $U' \times D$, and $f$ is never zero on
 $U' \times \partial D$.
 Prove that
 $z_n \mapsto f(z',z_n)$ has at least one root in $D$ for every $z' \in U'$.
+\pagebreak[2]
 \end{exercise}
 \end{exbox}
 
@@ -12421,7 +12448,7 @@ is a Weierstrass polynomial of degree $k \geq 1$ in $z_n$.  Then there exists
 a neighborhood $V$ of the origin and unique $q,r \in \sO(V)$,
 where $r$ is a polynomial in $z_n$ of degree less than $k$, and on $V$,
 \begin{equation*}
-f = Pq + r .
+f = qP + r .
 \end{equation*}
 \end{thm}
 
@@ -12436,6 +12463,7 @@ a connected neighborhood $V = V' \times D$ of the origin for some disc $D$
 such that $f$ and $P$ are continuous in $V' \times \overline{D}$,
 and 
 $P$ is not zero on $V' \times \partial D$.
+Let
 %, and hence
 %$z_n \mapsto P(z',z_n)$ has $k$ roots up to multiplicity in $D$ for all $z'
 %\in V'$.
@@ -12454,9 +12482,9 @@ $\nicefrac{f}{P}$.  Interestingly
 the expression does give the quotient in the division with remainder.
 
 Write $f$ using the Cauchy integral formula in $z_n$ and
-subtract $Pq$ to obtain $r$:
+subtract $qP$ to obtain $r$:
 \begin{equation*}
-r(z',z_n) = f(z',z_n) - P(z',z_n)q(z',z_n)
+r(z',z_n) = f(z',z_n) - q(z',z_n)P(z',z_n)
 =
 \frac{1}{2\pi i}
 \int_{\partial D} \frac{f(z',\zeta)P(z',\zeta) - f(z',\zeta)P(z',z_n)}{P(z',\zeta)(\zeta-z_n)}
@@ -12510,7 +12538,7 @@ algorithm for polynomials with coefficients in a field, such as the
 complex numbers:  If $f(\zeta)$ is a
 polynomial, and $P(\zeta)$ is a nonzero polynomial of degree $k$, then there exist
 polynomials $q(\zeta)$ and $r(\zeta)$ with degree of $r$ less than $k$ such
-that $f = Pq + r$.  If the coefficients are in a commutative ring,
+that $f = qP + r$.  If the coefficients are in a commutative ring,
 we can divide as long as $P$ is monic.
 The Weierstrass division theorem says that in the case of the ring $\sO_p$,
 we can divide by a monic $P \in {}_{n-1}\sO_p[z_n]$,
@@ -12559,7 +12587,7 @@ Apply the preparation
 theorem to find $f = u P$,
 where $P$ is a
 Weierstrass polynomial in $\sO(V')[z_n]$ for some $V' \subset U'$
-and all roots of $z' \mapsto P(z',z_n)$ are in $D$.
+and all roots of $z_n \mapsto P(z',z_n)$ are in $D$.
 As $\alpha$ is a geometrically unique root in $D$,
 \begin{equation*}
 P(z',z_n) = {\bigl(z_n-\alpha(z') \bigr)}^k = z_n^k - k \alpha(z') z_n^{k-1}
@@ -12578,8 +12606,9 @@ for each $z' \in U'$, the function $z_n \mapsto f(z',z_n)$ has
 precisely $m$ geometrically distinct roots.
 Then locally near each point in $U'$ there exist $m$ holomorphic functions
 $\alpha_1(z'),\ldots,\alpha_m(z')$,
+positive integers
 %(defined on a perhaps smaller $V' \subset U'$),
-$k_1,\ldots,k_m \in \N$,
+$k_1,\ldots,k_m$,
 and a nonvanishing holomorphic function $u$
 such that
 \begin{equation*}
@@ -12703,10 +12732,11 @@ geometrically distinct roots must be bounded by $M$.  Let $m$ be the maximal
 number of geometrically distinct roots and suppose that at some point
 in $U'$, there are exactly $m$ geometrically distinct roots.
 
-Let $U_m \subset U'$ be the set of $z' \in U'$ for which $z_n \mapsto f(z',z_n)$
+Let $U_m' \subset U'$ be the set of $z' \in U'$ for which $z_n \mapsto f(z',z_n)$
 has exactly $m$ roots.
-Write $U'$ as a union of disjoint sets $U' = U_m \cup E$, where $E = U' \setminus U_m$.
-By definition of $m$, $U_m$ is nonempty.  Suppose $p' \in U_m$ and $\gamma$
+Write $U'$ as a union of disjoint sets $U' = U_m' \cup E$, where $E = U'
+\setminus U_m'$.
+By definition of $m$, $U_m'$ is nonempty.  Suppose $p' \in U_m'$ and $\gamma$
 goes around the roots as above.  Let $\gamma'$ be a single component curve
 of the path $\gamma$ going around one of the roots.
 The argument principle with respect to $\gamma'$ says that
@@ -12715,20 +12745,20 @@ There are only finitely many roots, and so for $z'$ in
 some neighborhood of $p'$,
 $z_n \mapsto f(z',z_n)$ has at least $m$
 roots in $\gamma$, and as $m$ is the maximum, it has exactly $m$ roots.  In other words,
-$U_m$ is open.
+$U_m'$ is open.
 
-Locally on $U_m$, there exist $m$ holomorphic functions
+Locally on $U_m'$, there exist $m$ holomorphic functions
 $\alpha_1, \ldots, \alpha_m$ giving the roots by the previous proposition.  We cannot define
-these on all of $U_m$ as we do not know their order.  The function
+these on all of $U_m'$ as we do not know their order.  The function
 \begin{equation*}
 \Delta(z') = \prod_{j \not= k} \bigl( \alpha_j(z') - \alpha_k(z') \bigr) 
 \end{equation*}
-defined for $z' \in U_m$
+defined for $z' \in U_m'$
 does not depend on the order.  That means $\Delta$ is well-defined as a function
-on the open set $U_m$,
+on the open set $U_m'$,
 and since $\alpha_j$ are locally holomorphic, $\Delta$ is holomorphic.
 
-Let $p' \in E \cap \overline{U_m}$,
+Let $p' \in E \cap \overline{U_m'}$,
 so there are fewer than $m$ roots at $p'$.
 Suppose $\gamma$ and $\lambda$ are as above.
 In each particular component $\gamma'$ of $\gamma$, there must
@@ -12737,10 +12767,10 @@ There exist $z'$ arbitrarily near $p'$ where there are $m$ roots.
 The region between $\lambda$ and $\gamma$ (including the curves) is compact, and so by
 continuity, if $f(p',z_n)$ was nonzero on it, so is $f(z',z_n)$ for $z'$ near
 $p'$.  As no roots of $f(z',z_n)$ lie outside $\lambda$, we have that all
-roots lie in one of the components of $\gamma$.  So if $z' \in U_m$ near
+roots lie in one of the components of $\gamma$.  So if $z' \in U_m'$ near
 $p'$, there must be one
 component $\gamma'$ that contains at least two roots.  Let $\{ z'_\ell \}$
-be an arbitrary sequence of points in $U_m$ going to $p'$.  As the number of roots is
+be an arbitrary sequence of points in $U_m'$ going to $p'$.  As the number of roots is
 finite, $\{ z'_\ell \}$ has a
 subsequence such that $z_n \mapsto f(z'_\ell,z_n)$ has at least two roots in
 some fixed component $\gamma'$ of $\gamma$ for $z'_\ell$.  Assume $\{ z'_\ell
@@ -12754,12 +12784,12 @@ As all roots are necessarily bounded,
 $\lim_{\ell \to \infty} \Delta(z'_\ell) = 0$.  As the limit is zero for a 
 subsequence of an arbitrary sequence,
 \begin{equation*}
-\lim_{z' \in U_m \to p'} \Delta(z') = 0 .
+\lim_{z' \in U_m' \to p'} \Delta(z') = 0 .
 \end{equation*}
 
-We have already defined $\Delta$ on $U_m$, so set $\Delta(z') = 0$ if $z' \in E$.
+We have already defined $\Delta$ on $U_m'$, so set $\Delta(z') = 0$ if $z' \in E$.
 The function $\Delta$ is a continuous function on $U'$ that is zero precisely on
-$E$ and holomorphic on $U_m$.
+$E$ and holomorphic on $U_m'$.
 Rad{\'o}'s theorem
 (\thmref{thm:rado}) says that $\Delta$ is holomorphic in $U'$.
 \end{proof}
@@ -12846,8 +12876,16 @@ $I \subset \mathfrak{m}_p$, that is $\mathfrak{m}_p$ is a \emph{\myindex{maximal
 Suppose $n=1$.  Show that ${}_1\sO_p$ is a
 \emph{\myindex{principal ideal domain}}\index{PID} (PID)\@,
 that is every ideal is a principal ideal.
-In fact show that given an ideal $I \subset {}_1 \sO_p$, then there
+More precisely, show that given an ideal $I \subset {}_1 \sO_p$, then there
 exists a $k=0,1,2,\ldots$, such that $I = \bigl( (z-p)^k \bigr)$.
+\end{exercise}
+
+\begin{exercise}
+If $U,V \subset \C^n$ are two neighborhoods of $p$
+and $h \colon U \to V$ is a biholomorphism.  First
+prove that it makes sense to talk about $f \circ h$
+for any $(f,p) \in \sO_p$.  Then
+prove that $f \mapsto f \circ h$ is a ring isomorphism.
 \end{exercise}
 \end{exbox}
 
@@ -12869,28 +12907,38 @@ $\sO_p$ is Noetherian.
 \begin{proof}
 Without loss of generality $p=0$.  The proof is by
 induction on dimension.  By an exercise above, ${}_1\sO_0$ is Noetherian.
+By another exercise, we are allowed to do a change of coordinates at zero.
 
 For induction suppose ${}_{n-1}\sO_0$ is Noetherian, and let $I \subset
-{}_n \sO_0 = \sO_0$ be an ideal.
+{}_n \sO_0$ be an ideal.
 If $I = \{ 0 \}$
-or if $I = \sO_0$, then the assertion is obvious.  Therefore, assume
-that all elements of $I$ vanish at the origin (otherwise $I = \sO_0$), and
-that there exist elements that are not identically zero.  Let $g$
+or $I = {}_n \sO_0$, then the assertion is obvious.  Therefore, assume
+that all elements of $I$ vanish at the origin ($I \not= {}_n \sO_0$), and
+that there exist elements that are not identically zero
+($I \not= \{ 0 \}$).  Let $g$
 be such an element.  After perhaps a linear change of coordinates, 
 assume $g$ is a Weierstrass polynomial in $z_n$
 by the preparation theorem.
 
-By the division theorem,
-every element $f \in I$ is of the form $f = gq+r$ where $r$
-is a polynomial in $z_n$.  The function 
-$r$ is an element of ${}_{n-1}\sO_0[z_n]$ and $r \in I$.
+The ring ${}_{n-1}\sO_0[z_n]$ is a subring of ${}_n \sO_0$.
 The set $J= {}_{n-1}\sO_0[z_n] \cap I$ is an ideal in the
 ring ${}_{n-1}\sO_0[z_n]$.  By the Hilbert basis theorem (see
 \thmref{thm:hilbertbasis} in the appendix for a proof), as
-${}_{n-1}\sO_0$ is Noetherian, the polynomial ring
-${}_{n-1}\sO_0[z_n]$ is Noetherian.  Thus $J$ has finitely many generators.
-The generators of $J$ together with $g$ must generate $I$ as any
-element in $I$ is $gq+r$.
+${}_{n-1}\sO_0$ is Noetherian, the ring
+${}_{n-1}\sO_0[z_n]$ is also Noetherian.  Thus $J$ has finitely many
+generators,
+that is $J = (h_1,\ldots,h_k)$, in the ring ${}_{n-1}\sO_0[z_n]$.
+
+By the division theorem,
+every $f \in I$ is of the form $f = qg+r$, where $r \in {}_{n-1}\sO_0[z_n]$
+and $q \in {}_n\sO_0$.
+As $f$ and $g$ are in $I$, so is $r$.
+Write
+$g = c_1 h_1 + \cdots + c_k h_k$ and
+$r = d_1 h_1 + \cdots + d_k h_k$.  Then
+$f = (qc_1 + d_1) h_1 + \cdots + (qc_k + d_k) h_k$.
+So
+$h_1,\ldots,h_k$ also generate $I$ in ${}_n \sO_0$.
 \end{proof}
 
 %Notice that we have effectively proved that an ideal in $\sO_0$
@@ -12919,30 +12967,29 @@ irreducible elements of $\sO_p$.
 \end{thm}
 
 \begin{proof}
-Again assume $p$ is the origin and induct on the dimension.
-The one-dimensional statement is again
-an exercise.  If ${}_{n-1}\sO_0$ is a UFD\@, then
+Again assume $p=0$ and induct on the dimension.
+The one-dimensional statement is an exercise below.  If ${}_{n-1}\sO_0$ is a UFD\@, then
 ${}_{n-1}\sO_0[z_n]$ is a UFD by the Gauss lemma (see
 \thmref{thm:gausslemma}).
 
 Take $f \in {}_n\sO_0$.  After perhaps a linear change of coordinates
-$f = qW$, for $q$ a unit in ${}_n\sO_0$,
-and $W$ a Weierstrass polynomial in $z_n$.
+$f = qP$, for $q$ a unit in ${}_n\sO_0$,
+and $P$ a Weierstrass polynomial in $z_n$.
 As 
-${}_{n-1}\sO_0[z_n]$ is a UFD\@, $W$ has a unique
+${}_{n-1}\sO_0[z_n]$ is a UFD\@, $P$ has a unique
 factorization in 
-${}_{n-1}\sO_0[z_n]$ into $W = W_1 W_2 \cdots W_k$.
-So $f = q W_1 W_2 \cdots W_k$.  That $W_j$ are irreducible
+${}_{n-1}\sO_0[z_n]$ into $P = P_1 P_2 \cdots P_k$.
+So $f = q P_1 P_2 \cdots P_k$.  That $P_j$ are irreducible
 in ${}_n\sO_0$ is left as an exercise.
 
 Suppose 
-$f = \tilde{q} g_1 g_2 \cdots g_m$ is another factorization.  We notice that
-the preparation theorem applies to each $g_j$.  Therefore write
-$g_j = u_j \widetilde{W}_j$ for a unit $u_j$ and a Weierstrass polynomial
-$\widetilde{W}_j$.  We obtain
-$f = u \widetilde{W}_1 \widetilde{W}_2 \cdots \widetilde{W}_m$ for a unit $u$.  By
+$f = \tilde{q} g_1 g_2 \cdots g_m$ is another factorization. 
+The preparation theorem applies to each $g_j$.  Therefore write
+$g_j = u_j \widetilde{P}_j$ for a unit $u_j$ and a Weierstrass polynomial
+$\widetilde{P}_j$.  We obtain
+$f = u \widetilde{P}_1 \widetilde{P}_2 \cdots \widetilde{P}_m$ for a unit $u$.  By
 uniqueness part of the preparation theorem we obtain
-$W = \widetilde{W}_1 \widetilde{W}_2 \cdots \widetilde{W}_m$.  Conclusion is then
+$P = \widetilde{P}_1 \widetilde{P}_2 \cdots \widetilde{P}_m$.  Conclusion is then
 obtained by noting that
 ${}_{n-1}\sO_0[z_n]$ is a UFD\@.
 \end{proof}
@@ -12964,7 +13011,7 @@ ${}_{n}\sO_0$.
 
 \section{Varieties} \label{sec:varieties}
 
-If $f \colon U \to \C$
+As before, if $f \colon U \to \C$
 \glsadd{not:Zf}%
 is a function, let $Z_f = f^{-1}(0) \subset U$ denote the zero set of $f$.
 
@@ -12985,6 +13032,7 @@ subvariety}\index{complex-analytic subvariety} of $U$.
 Sometimes $X$ is called an \emph{\myindex{analytic set}}.
 We say $X \subset U$ is a proper subvariety if $\emptyset \not= X \subsetneq
 U$.
+\pagebreak[2]
 \end{defn}
 
 \begin{example}
@@ -12994,9 +13042,9 @@ is a subvariety of $\C^n$, where we let $\sF = \emptyset$.
 \end{example}
 
 \begin{example}
-The set in $\C^2$ defined by $z_2 = e^{1/z_1}$ is a subvariety of the set
-$U = \bigl\{ z \in \C^1 : z_1 \not=0 \}$.  It is not a subvariety of any set
-larger than $U$.
+The set defined by $z_2 = e^{1/z_1}$ is a subvariety of
+$U = \bigl\{ z \in \C^2 : z_1 \not=0 \bigr\}$.  It is not a subvariety of
+any open set larger than $U$.
 \end{example}
 
 It is useful to note what happens when
@@ -13009,19 +13057,13 @@ $X = \bigl\{ z \in \C^2 : z_1 = 0, \abs{z_2} < 1 \bigr\}$ is a
 local variety, but not a subvariety of $\C^2$.  On the other hand $X$
 is a subvariety of the unit ball $\bigl\{ z \in \C^2 : \norm{z} < 1 \bigr\}$.
 
-The family $\sF$ of functions can always be taken to be finite by the
-Noetherian property of $\sO_p$.
-We will work with germs of functions.  When $(f,p)$ is a germ of a function
-it makes sense to talk about the germ $(Z_f,p)$.  We take the zero
-set of some representative and look at its germ at $p$.
+Note that $\sF$ depends on $p$ and near each point may have a different set of
+functions.  Clearly the family $\sF$ is not unique.  We will prove below
+that we would obtain the same definition if we restricted to finite
+families $\sF$.
 
-\begin{exbox}
-\begin{exercise}
-Suppose $f$ and $g$ are two representatives of a germ $(f,p)$
-show that the germs $(Z_f,p)$ and $(Z_g,p)$ are the same.
-\end{exercise}
-\end{exbox}
-
+We work with germs of functions.  Recall, that when $(f,p)$ is a germ of a function
+the germ $(Z_f,p)$ is the germ of the zero set of some representative.
 Let
 \glsadd{not:idealfromset}%
 \begin{equation*}
@@ -13040,7 +13082,7 @@ Write
 V(I) \overset{\text{def}}{=}
 (Z_{f_1},p) \cap (Z_{f_2},p) \cap \cdots \cap (Z_{f_k},p) .
 \end{equation*}
-That is, $V(I)$ is the germ of the variety cut out by the elements of $I$,
+That is, $V(I)$ is the germ of the variety ``cut out'' by the elements of $I$,
 since every
 element of $I$ vanishes on the points where all the generators vanish.
 
@@ -13089,8 +13131,8 @@ the ideal $I_p(X)$.  Therefore, the study of subvarieties often
 involves the study of
 the various algebraic properties of the ideals of $\sO_p$.
 
-Let us define the
-regular points of a variety and their dimension.
+Some (most) points of a variety behave like a piece of $\C^k$, more
+precisely like a graph over $\C^k$.
 By a graph of a mapping
 $f \colon U' \subset \C^k \to \C^{n-k}$
 we mean the set $\Gamma_f \subset U' \times \C^{n-k} \subset \C^k \times
@@ -13122,7 +13164,10 @@ If all points of $X$ are regular points of dimension $k$, then $X$ is called
 a \emph{\myindex{complex manifold}}, or
 \emph{\myindex{complex submanifold}}, of (complex) dimension $k$.
 
-As the ambient dimension is $n$ we say $X$ is of
+As the ambient\footnote{\emph{Ambient}\index{ambient}
+is used often to mean the set
+that contains whatever object we are talking about.} dimension
+is $n$ we say $X$ is of
 \emph{\myindex{codimension}} $n-k$ at $p$.
 
 \glsadd{not:Xreg}%
@@ -13134,12 +13179,13 @@ The set of singular points of $X$ is denoted by $X_{\mathit{sing}}$.
 
 A couple of remarks are in order, a subvariety $X$ can have
 regular points of several different dimensions, although if a point
-is of dimension $k$, then all nearby points are of dimension $k$
-as the same $U'$ and $U''$ works.
+is a regular point of dimension $k$, then all nearby points are regular
+points of dimension $k$ as the same $U'$ and $U''$ works.
 Any isolated point of $X$ is automatically a regular point of dimension
 0.
-
 Final remark is that dimension is well-defined.  We leave it as an exercise.
+Sometimes the empty set is considered a complex manifold of dimension $-1$ (or
+$-\infty$).
 
 \begin{exbox}
 \begin{exercise}
@@ -13174,10 +13220,11 @@ to be
 \begin{equation*}
 \dim_p X \overset{\text{def}}{=}
 \max \bigl\{ k \in \N_0 : \text{ $\forall$ neighborhoods
-$W$ of $p$, $\exists q \in W \cap X_{\mathit{reg}}$ with $\dim_q X = k$}
+$W$ of $p$, $\exists \, q \in W \cap X_{\mathit{reg}}$ with $\dim_q X = k$}
 \bigr\} .
 \end{equation*}
-If $(X,p)$ is a germ, we say the dimension of $(X,p)$ is the dimension of
+If $(X,p)$ is a germ and $X$ a representative,
+we say the dimension of $(X,p)$ is the dimension of
 $X$ at $p$.
 
 The dimension of the entire subvariety $X$ is defined to be
@@ -13218,16 +13265,23 @@ We proved in \thmref{thm:regptsdense} that if $X$ is a zero set of a single
 holomorphic function, then $X_{\mathit{reg}}$ is open and dense in $X$.
 
 Let us prove that $(Z_f)_{\mathit{sing}}$ is contained in the zero set of some holomorphic
-function that is not zero on any open set of $Z_f$.
-We need only prove this locally near the origin.  After a possibly
-linear change of coordinates we apply the preparation theorem to find
-that near the origin, $Z_f$ is the zero set of a Weierstrass polynomial
-$p(z',z_n)$ defined on some $U' \times \C$.
-Let $E$ be the discriminant set for $p$.  Above each
-point in $U' \setminus E$ the set is union of $m$ distinct graphs
-of holomorphic functions by \propref{prop:rootshol}.  As above
-each point of $E$ there are only finitely many points of $Z_f$ the conclusion
-follows.
+function that is not zero on any nonempty open subset of $Z_f$.
+It suffices to assume $0 \in Z_f$ and to prove this locally near the origin.
+After possibly a linear change of coordinates, we as usual assume
+that near the origin $Z_f$ is contained in some $U' \times D \subset
+\C^{n-1} \times \C$ for a disc $D$ and $Z_f$ does not
+intersect $U' \times \partial D$.
+Apply \thmref{thm:discrthm} to find
+the discriminant function
+$\Delta$ and the discriminant $E = \Delta^{-1}(0)$.
+Above each
+point in $U' \setminus E$, the set $Z_f$ is union of $m$ distinct graphs
+of holomorphic functions (see \propref{prop:rootshol}), so those
+points are regular.  Above
+each point of $E$ there are only finitely many points of $Z_f$,
+and $E$ is nowhere dense in $U'$.  So the
+function $(z',z_n) \mapsto \Delta(z')$ does not vanish on any nonempty open
+subset of $Z_f$.
 
 Codimension 1 subvarieties are particularly nice.  Sometimes codimension 1
 subvarieties are called \emph{\myindex{hypervarieties}}.
@@ -13246,61 +13300,65 @@ We already proved all the relevant pieces of the first part of this
 theorem.
 
 For the second part there has to exist a germ of a function that vanishes on
-$(X,p)$.  Suppose $p=0$ and that after a possible linear
-change of coordinates we apply Weierstrass preparation theorem.  Hence
-let $f(z',z_n)$ be a germ of a Weierstrass
-polynomial vanishing on the germ of a codimension 1 subvariety $(X,0)$.
-The function $f$ is defined in $U' \times D \subset \C^{n-1} \times \C$,
-where $U'$ is a neighborhood
-of the origin and $D$ is a disc around the origin.
-Suppose $U'$ and $D$ are small enough so that there exists a 
-representative $X$ of $(X,0)$ that is closed in $U' \times D$.
-We also pick $U'$ and $D$ small enough so that the zero set $Z_f$
-contains $X$, and $U'$ small enough so that $X$ has no limit points
-on 
-$U' \times \partial D$.
-Outside a discriminant set $E \subset U'$, which is a zero set of a
+$(X,p)$.  Assume $p=0$, and after a linear change
+of coordinates assume we can apply the Weierstrass prepration theorem
+to the function.  Taking representatives of the germs, we assume
+$X$ is a pure codimension 1 subvariety of a small enough
+neighborhood
+$U' \times D \subset \C^{n-1} \times \C$ of the origin, where $D$ is a disc,
+and the function that vanishes on $X$ is a
+Weierstrass polynomial $f(z',z_n)$ defined for $z' \in U'$, and
+all zeros of $z_n \mapsto f(z',z_n)$ are in $D$ for $z' \in U$.
+
+\thmref{thm:discrthm} applies and so let
+$E$ be the discriminant set.
+Outside $E \subset U'$, which is a zero set of a
 holomorphic function, there are a certain number of geometrically
-distinct roots of $z_n \mapsto f(z',z_n)$.  Let $X'$ be a topological component of $X \setminus ( E
-\times D )$.  The set $X'$ contains only regular points of $X$ of
-dimension $n-1$.
+distinct roots of $z_n \mapsto f(z',z_n)$.
+
+Let $X'$ be a topological component of $X \setminus ( E \times D )$.
 Above each point $z' \in U' \setminus E$, let 
-$\alpha_1(z'),\ldots,\alpha_m(z')$ denote the distinct roots that are in $X'$,
-that is $\bigl(z',\alpha_k(z')\bigr) \in X'$.
-If $\alpha_k$ is a holomorphic function in some small neighborhood and
-$\bigl(z',\alpha_k(z')\bigr) \in X'$ at one point, then 
-$\bigl(z',\alpha_k(z')\bigr) \in X'$ for all nearby points too.
+$\alpha_1(z'),\ldots,\alpha_k(z')$ denote the distinct roots that are in $X'$,
+that is $\bigl(z',\alpha_j(z')\bigr) \in X'$.
+If $\alpha_j$ is a holomorphic function in some small neighborhood and
+$\bigl(z',\alpha_j(z')\bigr) \in X'$ at one point, then 
+$\bigl(z',\alpha_j(z')\bigr) \in X'$ for all nearby points too.
+Furthermore this means that the set $X'$ contains only regular points of $X$ of
+dimension $n-1$.
+
 The number of
 such geometrically distinct roots above each point in
 $U' \setminus E$ is locally constant, and as $U' \setminus E$ is connected
-there exists a unique $m$.  Taking
+there exists a unique $k$.  Take
 \begin{equation*}
-F(z',z_n) = \prod_{j=1}^m \bigl( z_n-\alpha_j(z')\bigr)
+F(z',z_n) = \prod_{j=1}^k \bigl( z_n-\alpha_j(z')\bigr)
+= 
+z_n^k + \sum_{j=0}^{k-1} g_j(z') z_n^j .
 \end{equation*}
-we find a monic polynomial in $z_n$ with coefficients that are holomorphic
-functions on $U' \setminus E$, as they are symmetric in the roots.
-The coefficients are locally bounded
-on $U'$ and therefore extend to holomorphic functions of $U'$.  We find
-a polynomial
-\begin{equation*}
-F(z',z_n) = z_n^m + \sum_{j=0}^{m-1} g_j(z') z_n^j ,
-\end{equation*}
-whose roots
+The coefficients $g_j$ are holomorphic for $z \in U' \setminus E$
+we they are independent of the order of $\alpha_1,\ldots,\alpha_k$
+and locally we can choose the order so that those are
+holomorphic.
+The coefficients $g_j$ are locally bounded
+on $U'$ and therefore extend to holomorphic functions of $U'$.
+Therefore the polynomial $F$ is a polynomial
+in $\sO(U')[z_n]$.
+The roots of $F$
 above $z' \in U' \setminus E$
-are simple and give precisely $X'$
-and $g_j(z')$ are holomorphic in $U'$. 
+are simple and give precisely $X'$.
 By using the argument principle
 again, we find that all roots above points of $E$ are limits of roots
-above points in $U \setminus E$.
-Therefore by continuity we find that
+above points in $U' \setminus E$.
+Therefore by continuity
 the zero set of $F$ is the closure of $X'$ in $U' \times D$.
 It is left to the reader to check that (using the argument principle)
 all the functions $g_j$ vanish at the origin and $F$ is a Weierstrass
 polynomial, a fact that will be useful in the exercises below.
-We can do this for every topological component above.
 %  If there was more
 %than one topological component, then clearly $(X,0)$ was not irreducible.
 
+We can find an $F$ for every topological component of
+$X \setminus ( E \times D )$.
 The fact that $f$ can be chosen in such as way as to generate $I_p(X)$
 is left as an exercise below.
 \end{proof}
