@@ -168,8 +168,10 @@ improvements have been made throughout.
 ** Add exercises in what was 6.4 (now 6.5)
 ** What was 6.4.1 is now a separate section (that was really an oversight,
   that should have been a separate section to begin with)
-** Add examples in what is now 6.5
+** Add examples in what is now 6.5, and move the cusp figure up to where
+  the example first appears now
 ** Add exercises in what is now 6.5
+** Split out the hypervariety results to a separate section in chapter 6
 * Add a very short Appendix A on basic notation, which may not be totally standard
 * Add Appendix B on one complex variable stuff
 * Add Appendix C on differential forms and Stokes' theorem

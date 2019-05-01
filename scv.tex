@@ -3513,6 +3513,7 @@ $\lim_{\ell \to \infty} f^{\ell}(z) = a$ for all $z \in W$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Riemann extension theorem, zero sets, and injective maps}
+\label{sec:riemannextzerosetsinjmaps}
 
 In one dimension if a function is holomorphic in $U
 \setminus \{ p \}$ and
@@ -13225,13 +13226,21 @@ The set $Y = \bigl\{ z \in \C^3 : z_3 = z_1^2 - z_2^2 \bigr\}$ is a complex subm
 dimension $2$ (codimension 1).  Again,
 $Y_{\mathit{reg}} = Y$ and $Y_{\mathit{sing}} = \emptyset$.
 
-On the other hand, $Z = \bigl\{ (z,w) \in \C^2 : z^2 = w^3 \bigr\}$ is not a complex
-submanifold.  In fact, the origin is a singular point
+On the other hand, the so-called \emph{\myindex{cusp}},
+$C = \bigl\{ z \in \C^2 : z_1^3-z_2^2 = 0 \bigr\}$ is not a complex
+submanifold.  The origin is a singular point of $C$
 (see exercise below).
-At every other point we can write $z = \pm w^{3/2}$,
-so $Z_{\mathit{reg}} = Z \setminus \{0\}$, and so $Z_{\mathit{sing}} = \{ 0
+At every other point we can write $z_2 = \pm z_1^{3/2}$,
+so $C_{\mathit{reg}} = C \setminus \{0\}$, and so $C_{\mathit{sing}} = \{ 0
 \}$.
 The dimension at every regular point is 1.
+Here is a plot of $C$ in two real dimensions:
+
+\begin{myfig}
+\medskip
+\subimport*{figures/}{cusp.eepic}
+\bigskip
+\end{myfig}
 \end{example}
 
 
@@ -13244,8 +13253,9 @@ from one such $U'$ to another such $U'$ with nonvanishing derivative.
 \end{exercise}
 
 \begin{exercise}
-Consider the subvariety $Z = \bigl\{ (z,w) \in \C^2 : z^2 = w^3 \bigr\}$.  Prove that
-the origin is not a regular point of $Z$.
+Consider the cusp 
+$C = \bigl\{ z \in \C^2 : z_1^3-z_2^2 = 0 \bigr\}$.  Prove that
+the origin is not a regular point of $C$.
 \end{exercise}
 
 \begin{exercise}
@@ -13296,19 +13306,11 @@ ambient dimension minus the dimension of $X$.
 \end{defn}
 
 \begin{example}
-We saw that $Z = \bigl\{ (z,w) \in \C^2 : z^2 = w^3 \bigr\}$ is of
+We saw that $C = \bigl\{ z \in \C^2 : z_1^3-z_2^2 = 0 \bigr\}$ is of
 dimension 1 at all the regular points, and the only singular point is the
-origin.  Hence $\dim_0 Z = 1$, and so $\dim Z = 1$.  The subvariety $Z$ is
+origin.  Hence $\dim_0 C = 1$, and so $\dim C = 1$.  The subvariety $C$ is
 of pure dimension 1.
 \end{example}
-
-\begin{exbox}
-\begin{exercise}
-Suppose that $X \subset U \subset \C^n$ is a subvariety
-of a domain $U$, such that $X_{\mathit{reg}}$ is connected.  Show that $X$ is of
-pure dimension.
-\end{exercise}
-\end{exbox}
 
 
 We have the following theorem, which we
@@ -13321,10 +13323,35 @@ is open and dense in $X$.
 In fact, $X_{\mathit{sing}} \subset X$ is a subvariety.
 \end{thm}
 
-We proved in \thmref{thm:regptsdense} that if $X$ is a zero set of a single
-holomorphic function, then $X_{\mathit{reg}}$ is open and dense in $X$.
+\begin{exbox}
+\begin{exercise}
+Suppose that $X \subset U \subset \C^n$ is a subvariety
+of a domain $U$, such that $X_{\mathit{reg}}$ is connected.  Show that $X$ is of
+pure dimension.  Feel free to assume $X_{\mathit{reg}}$ is dense in $X$.
+\end{exercise}
+\end{exbox}
 
-Let us prove that $(Z_f)_{\mathit{sing}}$ is contained in the zero set of some holomorphic
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Hypervarieties} \label{section:hypervarieties}
+
+
+Pure codimension 1 subvarieties are particularly nice.  Sometimes pure codimension 1
+subvarieties are called \emph{\myindex{hypervarieties}}.
+We have already proved, back in \sectionref{sec:riemannextzerosetsinjmaps},
+the following theorem (\thmref{thm:regptsdense}).  We restate it in the
+language of varieties.
+
+\begin{thm} \label{thm:regptsdense2}
+Let $U \subset \C^n$ be a domain and
+$f \in \sO(U)$.  Then $Z_f$ is empty, a subvariety of pure codimension 1, or
+$Z_f = U$.
+Furthermore, if $Z_f$ is a pure codimension 1 subvariety, then
+$(Z_f)_{\mathit{reg}}$ is open and dense in $Z_f$.
+\end{thm}
+
+We can improve on that slightly.
+Let us prove that $(Z_f)_{\mathit{sing}}$ is (locally) contained in the zero set of some holomorphic
 function that is not zero on any nonempty open subset of $Z_f$.
 It suffices to assume $0 \in Z_f$ and to prove this locally near the origin.
 After possibly a linear change of coordinates, we as usual assume
@@ -13343,14 +13370,8 @@ and $E$ is nowhere dense in $U'$.  So the
 function $(z',z_n) \mapsto \Delta(z')$ does not vanish on any nonempty open
 subset of $Z_f$.
 
-Codimension 1 subvarieties are particularly nice.  Sometimes codimension 1
-subvarieties are called \emph{\myindex{hypervarieties}}.
-
 \begin{thm} \label{thm:codim1var}
-Let $U \subset \C^n$ be a domain and $f \in \sO(U)$.
-Then $Z_f$ is either empty, of pure codimension 1, or $Z_f = U$.
-
-Conversely, if $(X,p)$ is a germ of a pure codimension 1 subvariety, then
+If $(X,p)$ is a germ of a pure codimension 1 subvariety, then
 there is a germ holomorphic function $f$ at $p$
 such that $(Z_f,p) = (X,p)$.  Furthermore $I_p(X)$ is generated by $(f,p)$.
 \end{thm}
@@ -13367,14 +13388,14 @@ $X$ is a pure codimension 1 subvariety of a small enough
 neighborhood
 $U' \times D \subset \C^{n-1} \times \C$ of the origin, where $D$ is a disc,
 and the function that vanishes on $X$ is a
-Weierstrass polynomial $f(z',z_n)$ defined for $z' \in U'$, and
-all zeros of $z_n \mapsto f(z',z_n)$ are in $D$ for $z' \in U$.
+Weierstrass polynomial $P(z',z_n)$ defined for $z' \in U'$, and
+all zeros of $z_n \mapsto P(z',z_n)$ are in $D$ for $z' \in U$.
 
-\thmref{thm:discrthm} applies and so let
-$E$ be the discriminant set.
-Outside $E \subset U'$, which is a zero set of a
-holomorphic function, there are a certain number of geometrically
-distinct roots of $z_n \mapsto f(z',z_n)$.
+\thmref{thm:discrthm} applies. Let
+$E \subset U'$ be the discriminant set, a zero set of a
+holomorphic function.
+On $U' \setminus E$, there are a certain number of geometrically
+distinct roots of $z_n \mapsto P(z',z_n)$.
 
 Let $X'$ be a topological component of $X \setminus ( E \times D )$.
 Above each point $z' \in U' \setminus E$, let 
@@ -13395,13 +13416,14 @@ F(z',z_n) = \prod_{j=1}^k \bigl( z_n-\alpha_j(z')\bigr)
 = 
 z_n^k + \sum_{j=0}^{k-1} g_j(z') z_n^j .
 \end{equation*}
-The coefficients $g_j$ are holomorphic for $z \in U' \setminus E$
-we they are independent of the order of $\alpha_1,\ldots,\alpha_k$
-and locally we can choose the order so that those are
+The coefficients $g_j$ are well-defined for $z \in U' \setminus E$
+as they are independent of the order of $\alpha_1,\ldots,\alpha_k$.
+The $g_j$ are holomorphic for $z \in U' \setminus E$
+as locally we can choose the order so that each $\alpha_j$ is 
 holomorphic.
-The coefficients $g_j$ are locally bounded
+The coefficients $g_j$ are bounded
 on $U'$ and therefore extend to holomorphic functions of $U'$.
-Therefore the polynomial $F$ is a polynomial
+Hence, the polynomial $F$ is a polynomial
 in $\sO(U')[z_n]$.
 The roots of $F$
 above $z' \in U' \setminus E$
@@ -13409,16 +13431,22 @@ are simple and give precisely $X'$.
 By using the argument principle
 again, we find that all roots above points of $E$ are limits of roots
 above points in $U' \setminus E$.
-Therefore by continuity
-the zero set of $F$ is the closure of $X'$ in $U' \times D$.
-It is left to the reader to check that (using the argument principle)
+Consequently,
+the zero set of $F$ is the closure of $X'$ in $U' \times D$ by continuity.
+It is left to the reader to check that %(using the argument principle)
 all the functions $g_j$ vanish at the origin and $F$ is a Weierstrass
 polynomial, a fact that will be useful in the exercises below.
 
-We can find an $F$ for every topological component of
-$X \setminus ( E \times D )$.
-The fact that $f$ can be chosen in such as way as to generate $I_p(X)$
-is left as an exercise below.
+If the polynomial $P(z',z_n)$ is of degree $m$,
+then $z' \mapsto P(z',z_n)$ has at most $m$ roots.  Together with
+the fact that $U' \setminus E$ is connected, this means that
+$X \setminus (E \times D)$ has at most finitely many components (at
+most $m$).
+So we can find an $F$ for every topological component of
+$X \setminus ( E \times D )$.  Then we multiply those functions together
+to get $f$.
+
+The fact that this $f$ will generate $I_p(X)$ is left as an exercise below.
 \end{proof}
 
 In other words, local properties of a codimension 1 subvariety can be
@@ -13426,8 +13454,9 @@ studied by studying the zero set of a single Weierstrass polynomial.
 
 \begin{example}
 It is not true that
-if a dimension of a subvariety in $\C^n$ is $n-k$, then there are $k$
-holomorphic functions that ``cut it out.''
+if a dimension of a subvariety in $\C^n$ is $n-k$ (codimension $k$),
+there are $k$
+holomorphic functions that ``cut it out.''  That only works for $k=1$.
 The set defined by
 \begin{equation*}
 \rank
@@ -13437,7 +13466,8 @@ z_4 & z_5 & z_6
 \end{bmatrix}
 < 2
 \end{equation*}
-is a pure 4-dimensional subvariety of $\C^6$ and the defining equations are
+is a pure 4-dimensional subvariety of $\C^6$, so of codimension 2,
+and the defining equations are
 $z_1z_5-z_2z_4 = 0$,
 $z_1z_6-z_3z_4 = 0$, and
 $z_2z_6-z_3z_5 = 0$.  Let us state without proof that the unique singular point is the origin and there exist
@@ -13459,7 +13489,29 @@ However, the subvariety has no singular points.  A less trivial example
 is given in an exercise below.
 \end{example}
 
-\pagebreak[2]
+Interestingly we also proved the following theorem.  Same theorem is true
+for higher codimension, but it is harder to prove.
+
+\begin{cor}
+Let $(X,p)$ is a germ of a subvariety of pure codimension 1.  Then there exists
+a neighborhood $U$ of $p$, a representative $X \subset U$ of $(X,p)$
+and subvarieties $X_1,\ldots,X_k \subset U$
+of pure codimension 1 such that $(X_j)_{\mathit{reg}}$ is connected for
+every $j$, and
+$X = X_1 \cup \cdots \cup X_k$.
+\end{cor}
+
+\begin{proof}
+A particular $X_j$ is defined by considering a topological component of $X \setminus
+(E \times D)$ as in the proof of \thmref{thm:codim1var}, getting the $F$,
+and setting $X_j = Z_F$.
+The topological component is of course a connected set and it is dense in
+$(X_j)_{\mathit{reg}}$, which proves the corollary.
+\end{proof}
+
+
+
+%\pagebreak[2]
 \begin{exbox}
 \begin{exercise}
 \begin{exparts}
@@ -13550,7 +13602,7 @@ if $ab \in I$ implies either $a \in I$ or $b
 Suppose a germ of a subvariety $(X,p)$ is of pure codimension 1.
 Prove $(X,p)$ is irreducible if and only if there
 exists a representative of $X$ whose set of regular points
-is connected.  Hint: See the proof of \thmref{thm:codim1var}.
+is connected.  %Hint: See the proof of \thmref{thm:codim1var}.
 \end{exercise}
 
 \begin{exercise}
@@ -13580,15 +13632,16 @@ Here is a plot in two real dimensions:
 \end{myfig}
 \end{example}
 
-
-Each subvariety can be split into its irreducible parts.
+For complex subvarieties, a subvariety is irreducible if
+and only if the set of regular points is connected.  We omit the proof
+in the general case, and for hypervarieties it is an exercise above.
+It makes sense then, that we can split a subvariety into its irreducible parts.
 
 \begin{prop}
 Let $(X,p) \subset (\C^n,p)$ be a germ of a subvariety.  Then there exist
 finitely many irreducible subvarieties $(X_1,p),\ldots,(X_k,p)$ such that
 $(X_1,p) \cup \ldots \cup (X_k,p) = (X,p)$ and such that $(X_j,p)
-\not\subset (X_\ell,p)$ for all $j$ and $\ell$.  These are called the
-\emph{\myindex{irreducible components}}.
+\not\subset (X_\ell,p)$ for all $j$ and $\ell$.
 \end{prop}
 
 \begin{proof}
@@ -13603,10 +13656,13 @@ reducible.  After finitely many steps you must come to a stop as you cannot
 have an infinite ascending chain of ideals since $\sO_p$ is Noetherian.
 \end{proof}
 
-For a germ of a subvariety defined by the vanishing of
-a single holomorphic function,
+These $(X_1,p),\ldots,(X_k,p)$ are called
+\emph{\myindex{irreducible components}}, we omit the proof in general
+that they are unique.
+For a germ of a hypervariety
 the UFD property of ${}_{n}\sO_p$ gives the irreducible
-components.  You found this factorization in an exercise above.
+components.  You found this factorization in an exercise above,
+and so this factorization is unique.
 
 For each irreducible component, we have the following structure.
 We give the theorem without proof in the general case, although we have
@@ -13650,26 +13706,20 @@ with $X$ is an isolated point at the origin.  This is precisely
 the same condition needed to apply Weierstrass preparation theorem in the case
 when $X$ is the zero set of a single function.
 
+\medskip
+
 We saw hypersurfaces are the simpler cases of complex-analytic
 subvarieties.  At the other end of the spectrum, complex-analytic
-subvarieties of dimension 1 are also easier to handle for different reasons.
-All complex-analytic subvarieties of dimension 1 are locally just analytic discs.
-In fact, they are locally the one-to-one holomorphic images of discs
+subvarieties of dimension 1 are also reasonably simple for different reasons.
+Locally, complex-analytic subvarieties of dimension 1 are analytic discs.
+Moreover, they are locally the one-to-one holomorphic images of discs,
 and so they have a natural topological manifold structure even at singular
 points.
 
 \begin{example}
-\pagebreak[2]
 The image of the analytic disc
-$\xi \mapsto (\xi^2,\xi^3)$ is the subvariety
-defined by $z_1^3-z_2^2 = 0$ in $\C^2$, the so-called ``cusp''.  Here is a
-plot in two real dimensions:
-
-\begin{myfig}
-\medskip
-\subimport*{figures/}{cusp.eepic}
-\bigskip
-\end{myfig}
+$\xi \mapsto (\xi^2,\xi^3)$ is the cusp subvariety
+defined by $z_1^3-z_2^2 = 0$ in $\C^2$.
 \end{example}
 
 
@@ -13953,7 +14003,7 @@ real-analytic function that complexifies to
 $U \times U^*$.  Show that
 $r(z,\bar{w}) = 0$
 if and only if
-$r(w,\bar{z}) = 0$.  In other words
+$r(w,\bar{z}) = 0$.  In other words,
 $z \in \Sigma_w(U,r)$ if and only if
 $w \in \Sigma_z(U,r)$.
 \end{exercise}
