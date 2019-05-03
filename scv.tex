@@ -3669,9 +3669,10 @@ zeros of $f$ are contained in the zeros of $h$, we are done.
 \end{proof}
 
 The zero set $N$ of a holomorphic function is a so-called
-\emph{\myindex{analytic set}} or a \emph{\myindex{subvariety}},
-although the general definition of an
-analytic set is a little more complicated, and includes more sets.
+\emph{\myindex{subvariety}}
+or an \emph{\myindex{analytic set}}
+although the general definition of a
+subvariety is a little more complicated, and includes more sets.
 See \chapterref{ch:analyticvarieties}.
 Points where $N$ is written as a graph of a holomorphic mapping are called
 \emph{regular points}\index{regular point}, and we write them as
@@ -3681,7 +3682,7 @@ regular points of (complex) dimension $n-1$, or (complex) codimension 1.
 The set of regular points is what is called an
 $(n-1)$-dimensional \emph{\myindex{complex submanifold}}.  It is also a real
 submanifold of real dimension $2n-2$.
-The points on an analytic set that are not regular are called
+The points on a subvariety that are not regular are called
 \emph{singular points}\index{singular point}.
 
 \begin{example}
@@ -3716,7 +3717,7 @@ the $h$ you find is either $2x_1$ or $2x_2$, and its zero set is too big.
 \pagebreak[1]
 \begin{exbox}
 \begin{exercise}
-Find all the regular points of the analytic set
+Find all the regular points of the subvariety
 $X = \bigl\{ z \in \C^2 : z_1^2 = z_2^3 \bigr\}$.
 Hint: The trick is showing that you've found all of them.
 \end{exercise}
@@ -3847,7 +3848,7 @@ mapping are not equal.
 
 \begin{exbox}
 \begin{exercise}
-Take the analytic set
+Take the subvariety
 $X = \bigl\{ z \in \C^2 : z_1^2 = z_2^3 \bigr\}$.
 Find a one-to-one holomorphic mapping $f \colon \C \to X$.
 Then note that the derivative of $f$ vanishes at a certain point.
@@ -8666,7 +8667,7 @@ a graph
 \begin{equation*}
 y = \varphi(x) ,
 \end{equation*}
-where $\varphi$ is real-analytic, $x \in \R^{n-1}$ and $y \in \R$.
+where $\varphi$ is real-analytic, $(x,y) \in \R^{n-1} \times \R = \R^n$.
 \end{defn}
 
 Compare this definition to \defnref{def:hypersurface}.  In fact, we could
@@ -13163,6 +13164,12 @@ encoded in the properties of
 the ideal $I_p(X)$.  Therefore, the study of subvarieties often
 involves the study of
 the various algebraic properties of the ideals of $\sO_p$.
+Let us also mention in passing that the other object
+that is studied is the so-called
+\emph{\myindex{coordinate ring}}
+$\sO_p / I_p(X)$, which represents the functions on $(X,p)$.  That is, we
+identify two functions if they differ by something in the ideal, since then
+they are equal on $X$.
 
 \medskip
 
@@ -13180,11 +13187,11 @@ is the set $\Gamma_f \subset U' \times \C^{n-k} \subset \C^k \times
 
 \begin{defn}
 Let $X \subset U \subset \C^n$ be a subvariety of an open set $U$.  Let $p \in X$ be a
-point.  Suppose there exists a (complex)
-affine change of coordinates (translation, rotation) such that near
+point.
+Suppose that after a permutation of coordinates, near
 $p$ the set $X$ can be written as a graph of a holomorphic
 mapping.
-That is, after an affine change of coordinates,
+That is, after relabeling coordinates,
 there is a neighborhood $U' \times U'' \subset \C^{k}
 \times \C^{n-k}$ of $p$, where $k \in \N_0$, such that
 \begin{equation*}
@@ -13263,9 +13270,10 @@ the origin is not a regular point of $C$.
 \end{exercise}
 
 \begin{exercise}
-Show that if $p$ is a regular point of dimension $k$ of a subvariety $X$, show that there
-exists a local biholomorphic change of coordinates, which put $p$ to the
-origin, and near $0$, $X$ is given by $w=0$, where $(z,w) \in \C^{k} \times
+Show that $p$ is a regular point of dimension $k$ of a subvariety $X$
+if and only if there
+exists a local biholomorphic change of coordinates that puts $p$ to the
+origin and near $0$, $X$ is given by $w=0$, where $(z,w) \in \C^{k} \times
 \C^{n-k}$.  In other words, if we allow a biholomorphic change of
 coordinates, we can let $f=0$ in the definition.
 \end{exercise}
@@ -13570,6 +13578,12 @@ Let $I \subset \sO_p$ be a principal ideal.  Prove the
 $I_p\bigl(V(I)\bigr) = \sqrt{I}$.  That is, show that if 
 $(f,p) \in I_p\bigl(V(I)\bigr)$, then $(f^k,p) \in I$ for some integer $k$.
 \end{exercise}
+
+\begin{exercise}
+Suppose $X \subset U$ is a subvariety of pure codimension 1 for an open set $U \subset \C^n$.
+Let $X'$ be a topological component of $X_{\textit{reg}}$.  Prove that the
+closure $\overline{X'}$ is a subvariety of $U$ of pure codimension 1.
+\end{exercise}
 \end{exbox}
 
 \section{Irreducibility, local parametrization, and Puiseux theorem}
@@ -13593,30 +13607,6 @@ $X = X_1 \cup X_2$.
 Otherwise, the subvariety $X$ is \emph{irreducible} in $U$.
 \end{defn}
 
-\begin{exbox}
-\begin{exercise}
-Prove a germ of a subvariety $(X,p)$ is irreducible
-if and only if $I_p(X)$ is a prime ideal.
-Recall an ideal $I$ is \emph{prime}\index{prime ideal}
-if $ab \in I$ implies either $a \in I$ or $b
-\in I$.
-\end{exercise}
-
-\begin{exercise}
-Suppose a germ of a subvariety $(X,p)$ is of pure codimension 1.
-Prove $(X,p)$ is irreducible if and only if there
-exists a representative of $X$ whose set of regular points
-is connected.  %Hint: See the proof of \thmref{thm:codim1var}.
-\end{exercise}
-
-\begin{exercise}
-Suppose $X \subset U$ is a subvariety of a domain $U \subset \C^n$
-of pure codimension 1.
-Prove $X$ is irreducible if and only if the set of regular points
-is connected.  Hint: See previous exercise.
-\end{exercise}
-\end{exbox}
-
 \begin{example}
 Local and global reducibility are different.
 The subvariety given by
@@ -13635,6 +13625,31 @@ Here is a plot in two real dimensions:
 \bigskip
 \end{myfig}
 \end{example}
+
+\begin{exbox}
+\begin{exercise}
+Prove a germ of a subvariety $(X,p)$ is irreducible
+if and only if $I_p(X)$ is a prime ideal.
+Recall an ideal $I$ is \emph{prime}\index{prime ideal}
+if $ab \in I$ implies either $a \in I$ or $b
+\in I$.
+\end{exercise}
+
+\begin{exercise}
+Suppose a germ of a subvariety $(X,p)$ is of pure codimension 1.
+Prove $(X,p)$ is irreducible if and only if there
+exists a representative of $X$, such that $X_{\textit{reg}}$
+%whose set of regular points
+is connected.  %Hint: See the proof of \thmref{thm:codim1var}.
+\end{exercise}
+
+\begin{exercise}
+Let $X \subset U$ be a subvariety of pure codimension 1 of a domain $U
+\subset \C^n$.
+Prove $X$ is irreducible if and only if the set of regular points
+is connected.  Hint: See previous exercise.
+\end{exercise}
+\end{exbox}
 
 For complex subvarieties, a subvariety is irreducible if
 and only if the set of regular points is connected.  We omit the proof
@@ -13885,20 +13900,27 @@ Apply a local biholomorphic change of coordinates at $p$, so
 that in the new coordinates
 $(z,w) \in \C^{n-1} \times \C$,
 $X$ is given by $w=0$, and $p$ is the origin.
-As $T_0 X \subset T_0 M$, we may rotate the $w$ coordinate
-so that $T_0 M = T_0 X \oplus \operatorname{span} \bigl\{
-\frac{\partial}{\partial \Re w}\big|_0 \bigr\}$,
-or in other words, $M$ is given by
+The tangent hyperplane to $M$ at 0 must contain $w=0$,
+and after rotating the $w$ coordinate (multiplying it by $e^{i\theta}$),
+we can assume that $M$ is tangent to the set $\{ (z,w) : \Im w = 0 \}$.
+In other words,
+%As $T_0 X \subset T_0 M$, we may rotate the $w$ coordinate
+%so that $T_0 M = T_0 X \oplus \operatorname{span} \bigl\{
+%\frac{\partial}{\partial \Re w}\big|_0 \bigr\}$,
+%or in other words,
+$M$ is given by
 \begin{equation*}
 \Im w = \rho(z,\bar{z},\Re w) ,
 \end{equation*}
 where $d\rho = 0$.
-Then $\rho$
-is divisible by $\Re w$, that is,
+As $w = 0$ on $M$, then $\rho = 0$
+when $\Re w = 0$. That is, $\rho$
+is divisible by $\Re w$, that is $M$ is defined by,
 \begin{equation*}
-\Im w = (\Re w) \widetilde{\rho}(z,\bar{z},\Re w)  .
+\Im w = (\Re w) \widetilde{\rho}(z,\bar{z},\Re w), 
 \end{equation*}
-So the Levi form at the origin must vanish.
+for a smooth function $\widetilde{\rho}$.
+So the Levi form at the origin vanishes.
 As $p=0$ was an arbitrary point on $M \cap X$,
 the Levi form of $M$ vanishes on $M \cap X$.
 \end{example}
@@ -13913,7 +13935,7 @@ Levi form:
 For any $\theta \in \R$,
 $M$ contains the complex line $L_\theta$,
 given by $z_1 = e^{i\theta} z_2$ and
-$w = 0$.  Note that in this case, the union $\bigcup_\theta L_\theta$ of those
+$w = 0$.  In this case, the union $\bigcup_\theta L_\theta$ of those
 complex lines is not
 contained in some unique complex subvariety inside $M$.  Any complex
 subvariety that contains all $L_\theta$ must contain the hypersurface given
@@ -13942,7 +13964,6 @@ complex-analytic subvariety through a point $p$ and this subvariety is singular.
 \end{exercise}
 \end{exbox}
 
-
 Let us discuss a tool, \emph{\myindex{Segre variety}}, that allows us to
 find such complex subvarieties inside $M$, and much more.  Segre varieties only
 work in the real-analytic setting and rely on complexification.
@@ -13959,11 +13980,12 @@ U^* = \bigl\{ z \in \C^n : \bar{z} \in U \bigr\} .
 \end{equation*}
 Suppose $U$ is small enough so that the Taylor series for $r$
 converges in $U \times U^*$ when treating $z$ and $\bar{z}$ as separate
-variables.  That is, $r(z,w)$ is a well-defined function on
-$U \times U^*$, and $r(z,w) = 0$ defines a complexification $\sM$
+variables.  That is, $r(z,\zeta)$ is a well-defined function on
+$U \times U^*$, and $r(z,\zeta) = 0$ defines a complexification $\sM$
 in $U \times U^*$.  Assume also that $U$ is small enough that
 the complexified
 $dr$ does not vanish on $\sM$ and that $\sM$ is connected.
+See also \propref{prop:complexificationofrasurface}.
 
 Given $q \in U$,
 define the \emph{Segre variety}
@@ -13980,7 +14002,7 @@ and vanishes on $M$, it must also vanish on the complexification $\sM$.
 If $\widetilde{r}$ is a defining function as above,
 that is, $d\widetilde{r}$ does not vanish on its zero set
 and the zero set of the complexified $\widetilde{r}$ is connected
-in $U \times U^*$, then $\widetilde{r}(z,w) = 0$ also
+in $U \times U^*$, then $\widetilde{r}(z,\zeta) = 0$ also
 defines $\sM$.
 Hence the actual $r$ does not matter.
 As long as $q \in M$, then
@@ -14005,11 +14027,11 @@ representative of a Segre variety or the germ itself.
 Let $r \colon U \to \R$ be a real-valued
 real-analytic function that complexifies to
 $U \times U^*$.  Show that
-$r(z,\bar{w}) = 0$
+$r(z,\bar{\zeta}) = 0$
 if and only if
-$r(w,\bar{z}) = 0$.  In other words,
-$z \in \Sigma_w(U,r)$ if and only if
-$w \in \Sigma_z(U,r)$.
+$r(w,\bar{\zeta}) = 0$.  In other words,
+$z \in \Sigma_{\zeta}(U,r)$ if and only if
+$\zeta \in \Sigma_z(U,r)$.
 \end{exercise}
 \end{exbox}
 
@@ -14044,13 +14066,13 @@ as we have seen.
 
 \begin{prop}
 Let $M \subset \C^n$ be a real-analytic hypersurface and $p \in M$.
-Suppose $\Delta \subset M$ is a nonconstant analytic disc
+Suppose $\Delta \subset M$ is an analytic disc
 through $p$.  Then as germs $(\Delta,p) \subset \Sigma_p$.
 \end{prop}
 
 \begin{proof}
 Let $U$ be a neighborhood of $p$ where a representative
-of $\Sigma_p$ is defined, that is, we will assume that $\Sigma_p$ is
+of $\Sigma_p$ is defined, that is, we assume that $\Sigma_p$ is
 a closed subset of $U$, and suppose $r(z,\bar{z})$ is the corresponding
 defining function.
 Let $\varphi \colon \D \to \C^n$ be the parametrization of $\Delta$
@@ -14067,7 +14089,7 @@ r\bigl(\varphi(\xi),\bar{\varphi}(\bar{\xi})\bigr) = 0 .
 The function $\xi \mapsto
 r\bigl(\varphi(\xi),\bar{\varphi}(\bar{\xi})\bigr)$ is a real-analytic
 function of $\xi$, and therefore for some
-small neighborhood of the origin, it complexifies.  In fact it complexifies
+small neighborhood of the origin, it complexifies.  In fact, it complexifies
 to $\D \times \D$ as $\varphi(\xi) \in U$ for all $\xi \in \D$.
 So we can treat $\xi$ and $\bar{\xi}$ as separate variables.  By
 complexification, the equation holds for all such independent
@@ -14156,7 +14178,7 @@ image of an open subset $V \subset \C^k$ via a holomorphic surjective mapping $\
 X$.  Since $r\bigl(\varphi(\xi),\overline{\varphi(\xi)}\bigr) = 0$
 for all $\xi \in V$, then we may treat $\xi$ and $\bar{\xi}$ separately.
 In particular, we find 
-$r(z,\bar{w}) = 0$ for all $z,w \in X$.
+$r(z,\bar{\zeta}) = 0$ for all $z,\zeta \in X$.
 
 Define complex subvarieties $Y', Y \subset U$ (closed in $U$) by
 \begin{equation*}
@@ -14202,6 +14224,33 @@ The picture would look as follows:
 \subimport*{figures/}{forndied.pdf_t}
 \end{myfig}
 \end{proof}
+
+\begin{example}
+The above results do not work
+in the smooth setting.  First let us disprove the theorem in the smooth
+setting, and the corollary is left as an exercise.
+Let $g \colon \R \to \R$ be a smooth function that is
+strictly positive for $\sabs{t} > 1$ and $g(t) = 0$ for all $\sabs{t} \leq 1$.
+Then let $M$ in $(z,w) \in \C^{n-1} \times \C$ be defined by
+\begin{equation*}
+\Im w = g\bigl(\snorm{z}^2\bigr) .
+\end{equation*}
+$M$ is a smooth hypersurface.
+Consider $p = (1,0,\ldots,0) \in M$.  For every $0 < s < 1$, let
+$q_s = (s,0,\ldots,0) \in M$ and $X_s = \bigl\{ (z,w) \in M :
+w = s \bigr\}$.  Each $X_s$ is a local complex subvariety of dimension $n-1$
+and $(X_s,q_s) \subset (M,q_s)$.  The size of $X_s$ goes to
+zero as $s \to 1$ and $X_s$ cannot extend to a
+larger complex subvariety inside $M$.  So, no neighborhood $U$ at
+$p$ (as in the theorem) exists.
+\end{example}
+
+\begin{exbox}
+\begin{exercise}
+Find a smooth compact hypersurface $M \subset \C^n$ that contains a germ
+of a positive dimensional complex subvariety.
+\end{exercise}
+\end{exbox}
 
 \vspace{1in}
 

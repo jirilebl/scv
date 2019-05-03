@@ -167,11 +167,15 @@ improvements have been made throughout.
   rewording in what was 6.4 (now 6.5).
 ** Add exercises in what was 6.4 (now 6.5)
 ** What was 6.4.1 is now a separate section (that was really an oversight,
-  that should have been a separate section to begin with)
+   that should have been a separate section to begin with)
 ** Add examples in what is now 6.5, and move the cusp figure up to where
-  the example first appears now
+   the example first appears now
+* Simplify definition of regular point to jive with what was used
+  previously in 1.6 (just relabeling coordinates)
 ** Add exercises in what is now 6.5
 ** Split out the hypervariety results to a separate section in chapter 6
+* Use zeta instead of w in the Segre variety section to avoid confusion
+* Add example and exercise in Segre variety section
 * Add a very short Appendix A on basic notation, which may not be totally standard
 * Add Appendix B on one complex variable stuff
 * Add Appendix C on differential forms and Stokes' theorem
