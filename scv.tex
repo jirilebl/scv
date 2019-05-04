@@ -2173,7 +2173,7 @@ Such a $U$ is called a
 Reinhardt domains, they are exactly the domains that you can
 draw by plotting what happens for the moduli of the variables.
 A domain is called a
-\emph{\myindex{complete Reinhardt domain}}\index{Renhardt domain!complete} if whenever
+\emph{\myindex{complete Reinhardt domain}}\index{Reinhardt domain!complete} if whenever
 $z \in U$ then for $r = (r_1,\ldots,r_n)$ where $r_j = \sabs{z_j}$
 for all $j$, we have that the whole polydisc $\overline{\Delta_r(0)} \subset U$.
 So a complete Reinhardt domain is a union (possibly infinite) of polydiscs
@@ -5332,7 +5332,7 @@ Prove \propref{prop:inertiainvariant}.
 \begin{exercise}
 Show that a convex domain with smooth boundary
 is pseudoconvex, and show that (a bounded) strongly convex
-domain with smooth boundaryis strongly pseudoconvex.
+domain with smooth boundary is strongly pseudoconvex.
 \end{exercise}
 
 \begin{exercise}
@@ -5380,7 +5380,7 @@ semidefinite, then $\partial U$ is pseudoconvex at $0$.
 \begin{example}
 Let us change variables to show how we write the ball $\bB_n$ in different
 local holomorphic coordinates where the Levi form is displayed nicely.
-Suppose the shphere $\partial \bB_n$ is defined in the variables $Z = (Z_1,\ldots,Z_n) \in \C^n$
+Suppose the sphere $\partial \bB_n$ is defined in the variables $Z = (Z_1,\ldots,Z_n) \in \C^n$
 by $\snorm{Z} = 1$.
 
 Let us change variables 
@@ -5860,7 +5860,7 @@ a_{jk} z_jz_k
 b_{jk} \bar{z}_j\bar{z}_k 
 \bigr) ,
 \end{equation*}
-as $\overline{a_{jk}} = b_{jk}$.  Pluging
+as $\overline{a_{jk}} = b_{jk}$.  Plugging
 \eqref{eq:wprimeexpression} into $\Im w' = q(z,\bar{z}) + E(z,\bar{z},\Re w')$
 and solving for $\Im w''$ cancels the
 holomorphic and antiholomorphic terms in $q$, and leaves $E$ as $O(3)$.
@@ -8031,7 +8031,7 @@ for some nonnegative $\alpha_1,\ldots,\alpha_n$, and $\beta \in \R$.
 
 \begin{exercise}
 Prove that a complete Reinhardt domain that is Hartogs
-pseudoconvex is logaritmically convex.
+pseudoconvex is logarithmically convex.
 \end{exercise}
 
 \begin{exercise}
@@ -8079,7 +8079,7 @@ Let $U \subset \C^n$ be a complete Reinhardt domain.  Then the following are
 equivalent:
 \begin{enumerate}[(i)]
 \item
-$U$ is logaritmically convex.
+$U$ is logarithmically convex.
 \item
 $U$ is a domain of holomorphy.
 \item
@@ -8378,7 +8378,7 @@ V \subset \C^n \times \C^n \ar[dl, "f ~~ {(=F)}"]
 All three ways of going from one place to another in the diagram
 we are calling $f$.  The arrow from $V$ was called $F$ in the proposition.
 The notation plays well with differentiation and the Wirtinger operators.
-Differentinating $f$ (really the $F$ in the proposition) in $\zeta_j$ and
+Differentiating $f$ (really the $F$ in the proposition) in $\zeta_j$ and
 evaluating at $(z,\bar{z})$ is the same thing as evaluating at
 $(z,\bar{z})$ and then differentiating in $\bar{z}_j$ using the Wirtinger
 operator:
@@ -9339,7 +9339,7 @@ df(0) =
 .
 \end{equation*}
 Also, at the origin $d\xi_n(0) = d(\Re \xi_n)(0) + i d(\Im \xi_n)(0) = d(\Re \xi_n)(0)$.
-So $df(0)$ is a linar combination of $d\xi_1(0),\ldots,d\xi_n(0)$.
+So $df(0)$ is a linear combination of $d\xi_1(0),\ldots,d\xi_n(0)$.
 As $\xi$ is a complex affine function of $z$, then each $d\xi_j$ is a linear
 combination of $dz_1$ through $dz_n$, and the claim follows.
 So if $f$ is a CR function, then
@@ -12416,7 +12416,7 @@ in $D$, one around each geometrically distinct root of $z_n \mapsto f(p',z_n)$.
 Let $\lambda$ be a large closed path in $D$ going 
 exactly once around all the roots and such that the interior of $\lambda$ is
 in $D$.  Suppose $\gamma$ and $\lambda$
-instersect no roots.
+intersect no roots.
 By continuity,
 the curves $\gamma$
 and $\lambda$ do not intersect any roots for $z'$ near $p'$.
@@ -13102,7 +13102,7 @@ theorem.
 
 For the second part there has to exist a germ of a function that vanishes on
 $(X,p)$.  Assume $p=0$, and after a linear change
-of coordinates assume we can apply the Weierstrass prepration theorem
+of coordinates assume we can apply the Weierstrass preparation theorem
 to the function.  Taking representatives of the germs, we assume
 $X$ is a pure codimension 1 subvariety of a small enough
 neighborhood
@@ -15559,7 +15559,7 @@ As to at least get a flavor of the theorem, let us prove it in a simpler
 setting, which however is often almost good enough, and it is the key idea
 in the proof.
 Suppose that $U \subset \R^n$ is a domain such that for any $k=1,\ldots,n$
-there exist two smooth functions $\alpha$ and $\beta$ such that
+there exist two smooth functions $\alpha_k$ and $\beta_k$ such that
 for any $k$, the set
 $U$ is given by
 \begin{align*}
@@ -15576,11 +15576,11 @@ Orient $\partial U$ as usual.
 Write $x' = (x_1,\ldots,x_{k-1},x_{k+1},\ldots,x_n)$, and let $dV_{n-1}$ be the
 volume form for $\R^{n-1}$.
 Consider the $(n-1)$-form
-\begin{equation}
+\begin{equation*}
 \omega = f
 dx_1 \wedge \cdots \wedge dx_{k-1} \wedge dx_{k+1} \wedge \cdots \wedge dx_n
 .
-\end{equation}
+\end{equation*}
 Then $d\omega = \frac{\partial f}{\partial x_k} dx_1 \wedge \cdots \wedge
 dx_n$.
 By the fundamental theorem of
@@ -15731,9 +15731,9 @@ is a multiplicative group.
 \medskip
 
 Given a commutative ring $R$, let $R[x]$ be the set of polynomials
-\begin{equation}
+\begin{equation*}
 P(x) = c_k x^k + c_{k-1} x^{k-1} + \cdots + c_1 x + c_0 ,
-\end{equation}
+\end{equation*}
 where $c_0,\ldots,c_k \in R$.  The integer $k$ is called the
 \emph{\myindex{degree}} of the polynomial and $c_k$ is called the
 \emph{\myindex{leading coefficient}} of $P(x)$.  If the
@@ -15845,7 +15845,7 @@ irreducible elements of $R$.
 \end{defn}
 
 One version of a result called the Gauss lemma says that just like
-the property of being Notherian, the property of being a UFD is retained
+the property of being Noetherian, the property of being a UFD is retained
 when we take polynomials.
 
 \begin{thm}[Gauss lemma]\label{thm:gausslemma}
