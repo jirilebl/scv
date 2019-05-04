@@ -476,11 +476,12 @@ at github: \url{https://github.com/jirilebl/scv}
 
 This book is a polished version of my course notes for Math 6283, Several
 Complex Variables, given in
-Spring 2014, Spring 2016, and then Spring 2019 semesters
+Spring 2014, Spring 2016, and Spring 2019 semesters
 at Oklahoma State University.
 It is meant for a semester-long course.
 There are quite a few
-exercises sprinkled throughout the text, and I am assuming that a reader is
+exercises of various difficulty
+sprinkled throughout the text, and I hope a reader is
 at least attempting all of them.  Many are required later in the
 text.  The reader should attempt exercises in sequence as earlier exercises
 can help or even be required to solve later exercises.
@@ -492,21 +493,23 @@ but it is not essential except in a couple of places later in the book.
 The first two chapters and most of the third
 is accessible to beginning graduate students after one semester
 of a standard single-variable complex
-analysis graduate course, and the background actually required is quite minimal.
+analysis graduate course.
 From time to time (e.g.\ proof of Baouendi--Tr\`eves in
 \chapterref{ch:crfunctions},
 and most of
 \chapterref{ch:dbar}, and \chapterref{ch:integralkernels}),
-basic knowledge of differential forms will be needed, and
+basic knowledge of differential forms is useful, and
 in \chapterref{ch:analyticvarieties}
 we use some basic ring theory from algebra.
+By design it can replace the second semester of complex analysis.
 
 This book is not meant as an exhaustive reference.  It is simply a whirlwind
-tour of several complex variables.  See the end of the book
-for a \hyperref[ch:furtherreading]{list of books} useful for
+tour of several complex variables that has slightly more material than can
+be covered within a semester.  See the end of the book
+for a \hyperref[ch:furtherreading]{list of books} for
 reference and further reading.  There are also appendices for
-a list of useful one-variable results, an overview of differential forms,
-and some basic algebra results.
+a list of one-variable results, an overview of differential forms,
+and some basic algebra.
 See \appendixref{ap:onevarresults},
 \appendixref{ap:diffforms}, and
 \appendixref{ap:algebra}.
@@ -522,13 +525,13 @@ for real numbers,
 \glsadd{not:Z}$\Z$ for integers,
 \glsadd{not:N}$\N = \{ 1,2,3,\ldots \}$ for natural
 numbers,
-\glsadd{not:i}$i = \sqrt{-1}$, etc.  Throughout this book, we will use
+\glsadd{not:i}$i = \sqrt{-1}$.  Throughout this book, we use
 the standard terminology of \emph{\myindex{domain}} to mean connected open
 set.  We will try to avoid using it if connectedness is not needed, but
 sometimes we use it just for simplicity.
 
-As complex analysis deals with the complex numbers, perhaps we should start
-with $\sqrt{-1}$.  We start with the real numbers, $\R$, and wish to add
+As complex analysis deals with the complex numbers, perhaps we should begin
+with $\sqrt{-1}$.  We start with the real numbers, $\R$, and we add
 $\sqrt{-1}$ into our field.  We call this square root $i$, and we write the
 complex numbers, $\C$, by
 identifying 
@@ -559,7 +562,7 @@ which is just the \emph{\myindex{Euclidean distance}}:
 
 If $z = x+iy \in \C$ for $x,y \in \R$, then $x$ is called the
 \emph{\myindex{real part}} and $y$ is called the
-\emph{\myindex{imaginary part}} and we write
+\emph{\myindex{imaginary part}}.  We write
 \glsadd{not:real}%
 \glsadd{not:imag}%
 \begin{equation*}
@@ -596,13 +599,13 @@ or in other words, if it is $C^k$ for all $k \in \N$.
 
 Complex analysis is the study of holomorphic (or complex-analytic)
 functions.
+Holomorphic functions are a generalization of polynomials,
+and to get there one leaves the land of algebra to arrive in the realm of
+analysis.
 There is an awful lot one can do with polynomials, but sometimes they are
 just not enough.  For example, there is no nonzero polynomial function that solves
 the simplest of differential equations, $f' = f$.  We need the exponential
 function, which is holomorphic.  
-Holomorphic functions are a generalization of polynomials,
-and to get there one leaves the land of algebra to arrive in the realm of
-analysis.
 
 Let us start with polynomials.  In one variable, a polynomial in $z$ is
 an expression of the form
@@ -696,7 +699,7 @@ The function $f$ is holomorphic if and only if
 \frac{\partial f}{\partial \bar{z}} = 0 .
 \end{equation*}
 That seems a far nicer statement of the Cauchy--Riemann equations, and it is
-now just one complex equation.  It says
+just one complex equation.  It says
 a function is holomorphic if and only if it depends on $z$ but not on
 $\bar{z}$ (perhaps that might not make a whole lot of sense at first
 glance).
@@ -818,7 +821,7 @@ z^2 ( 3 \bar{z}^2 ) + 0 .
 \end{equation*}
 So a holomorphic function is a function not depending on $\bar{z}$.
 
-One of the most important theorems in one variable is
+The most important theorem in one variable is
 the \emph{\myindex{Cauchy integral formula}}\index{Cauchy formula}.
 
 \begin{thm}[Cauchy integral formula]
@@ -848,7 +851,11 @@ d \zeta
 
 The Cauchy formula is the essential ingredient we need from 
 one complex variable.  It follows, for example,
-from Green's theorem (Stokes' theorem in two
+from Green's theorem\footnote{If you wish to feel inadequate,
+note that this theorem on which all of complex analysis (and all of physics)
+rests was proved by
+George Green, who was the son of a miller and had one year of formal
+schooling.}  (Stokes' theorem in two
 dimensions).  You can look forward to
 \thmref{thm:generalizedcauchy} for a proof of a more general formula,
 the Cauchy--Pompeiu integral formula.
@@ -897,8 +904,8 @@ integral formula.
 An important theorem from one variable that follows from
 the Cauchy formula is the
 \emph{\myindex{maximum modulus principle}} (or just
-the \emph{\myindex{maximum principle})},
-which has several versions.  Let us give the simplest one.
+the \emph{\myindex{maximum principle})}.
+Let us give its simplest version.
 
 \begin{thm}[Maximum modulus principle]
 Suppose $U \subset \C$ is a domain and $f \colon U \to \C$
@@ -1033,9 +1040,9 @@ d \zeta
 {(z-a)}^j .
 \end{split}
 \end{equation*}
-In the last equality, we are allowed to 
+In the last equality, we may 
 interchange the limit on the sum with the integral either
-by Fubini's theorem or by uniform convergence:
+via Fubini's theorem or via uniform convergence:
 $z$ is fixed and if $M$ is the supremum of $\abs{\frac{f(\zeta)}{\zeta-a}} =
 \frac{\sabs{f(\zeta)}}{\rho}$ on $\partial \Delta_\rho(a)$,
 then
@@ -1074,7 +1081,7 @@ c_j =
 d \zeta  .
 \end{equation*}
 
-For a set $K$ denote the \emph{\myindex{supremum norm}}:
+For a set $K$, denote the \emph{\myindex{supremum norm}}:
 \glsadd{not:supnorm}%
 \begin{equation*}
 \snorm{f}_K
@@ -1122,11 +1129,8 @@ f^{(j)}(a)
 =
 \frac{\partial^j f}{\partial z^j}(a) .
 \end{equation*}
-Consequently,
-This estimate says that we can control derivatives of $f$
-by the size of the function.  This is one of the key properties of
-holomorphic functions, and the reason why the proper topology for
-the set of holomorphic functions is the same as the topology for continuous functions.
+Hence, we can control derivatives of $f$
+by the size of the function:
 \begin{equation*}
 \babs{f^{(j)}(a)}
 =
@@ -1134,14 +1138,14 @@ the set of holomorphic functions is the same as the topology for continuous func
 \leq
 \frac{j! \snorm{f}_{\gamma}}{\rho^{j}} .
 \end{equation*}
-This estimate says that we can control derivatives of $f$ by the size of the
-function.  This is one of the key properties of holomorphic functions, and
-the reason why the proper topology for the set of holomorphic functions is
-the same as the topology for continuous functions.  Consequently,
+This estimate is one of the key properties of
+holomorphic functions, and the reason why the correct topology for
+the set of holomorphic functions is the same as the topology for continuous functions.
+Consequently,
 obstructions to solving problems in complex analysis are often topological
 in character.
 
-For further review of one-variable results useful in this book,
+For further review of one-variable results,
 see \appendixref{ap:onevarresults}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1882,30 +1886,6 @@ d \zeta .
 \end{equation*}
 Notice how strikingly similar the computation is to one variable.
 
-%To prove the converse statement,
-%let $\Delta'' \subset \Delta' \subset \Delta$
-%be two polydiscs with the same center $a$
-%such that $\overline{\Delta''} \subset \Delta'$
-%and $\overline{\Delta'} \subset \Delta$.
-%Let $\Gamma'$ be the distinguished boundary of $\Delta'$.
-%The partial sums are holomorphic so
-%write the partial sums as
-%\begin{equation*}
-%\sum_{\abs{\alpha} \leq k}
-%c_\alpha {(z-a)}^\alpha
-%=
-%\frac{1}{{(2\pi i)}^n}
-%\int_{\Gamma'}
-%\frac{1}{{(\zeta-z)}^{\alpha+1}}
-%\sum_{\abs{\alpha} \leq k}
-%c_\alpha {(\zeta-a)}^\alpha
-%\,
-%d \zeta .
-%\end{equation*}
-%The convergence of the series is uniform on $\overline{\Gamma'}$, and
-%therefore we can take a limit as $k \to \infty$.  Same computation also
-%works ... this is too complicated ...
-
 To prove the converse statement,
 we note that the limit
 is continuous as it is a uniform-on-compact-sets limit of continuous
@@ -1923,7 +1903,6 @@ series also converges uniformly absolutely on compact subsets.  It is left as an
 exercise.  Then you apply the theorem from real analysis about derivatives
 of limits: if a sequence of functions and its derivatives converges
 uniformly, then the derivatives converge to the derivative of the limit.
-%The proof is similar as the one for one-variable series.
 
 \begin{exbox}
 \begin{exercise}
@@ -1953,8 +1932,6 @@ such that $\overline{\Delta''} \subset \Delta'$
 and $\overline{\Delta'} \subset \Delta$.
 Apply Cauchy formula on $\Delta'$
 for $z \in \overline{\Delta''}$.
-%pass limit into the integral, then
-%show the result is holomorphic by differentiating under the integral.
 \end{exercise}
 \end{exbox}
 
@@ -2128,8 +2105,6 @@ In one variable, every domain of convergence is a disc, and hence it is
 described with a single number (the radius).
 In several variables, the domain of convergence
 is not as easy to describe.
-%We content ourselves for now with
-%a few simple examples.
 For the multivariable geometric series 
 the domain of convergence is the unit polydisc, but more
 complicated examples are easy to find.
@@ -2560,7 +2535,6 @@ i
 \right) .
 \end{split}
 \end{equation*}
-%For any $\ell = 1, \ldots, m$, we solve
 For $\ell = 1, \ldots, m$,
 \begin{equation*}
 \frac{\partial}{\partial s_\ell}
@@ -3127,7 +3101,6 @@ compact either as $f$ is proper.  Thus $q \notin V$, and hence $q \in
 \partial V$.  As we took an arbitrary subsequence of $\bigl\{ f(p_k) \bigr\}$, $q$ was
 an arbitrary limit point.  Therefore, all limit points are in $\partial V$.
 
-%We prove the converse by contrapositive.
 Let us prove the converse.
 Suppose that for every sequence
 $\{ p_k \}$ in $U$ such that $p_k \to p \in \partial U$,
@@ -3177,7 +3150,6 @@ and hence $g$ must be constant.
 
 Let $g_k'$ denote the derivative (we differentiate each component).
 The functions $g_k'$ converge
-%(uniformly on compact subsets) %%%%that's not needed
 to $g' = 0$. So for any fixed $\zeta \in \bD$,
 $\frac{\partial f}{\partial z_1} (\zeta, w_k) \to 0$.
 This limit holds for all $e^{i\theta}$ and some subsequence of
@@ -3549,10 +3521,6 @@ is a holomorphic function of one variable, and it
 is either identically zero, or
 the zero at $\xi=0$ is isolated.
 The function $g$ is not identically zero in any neighborhood of $p$.
-%The function $g \circ \varphi$ cannot be identically zero for all lines
-%going through $p$, as otherwise $g$ would be identically zero in a
-%neighborhood of $p$ and hence
-%everywhere in $U$.
 So there is some line $L$ such that $g \circ \varphi$
 is not identically zero, or in other words, $p$
 is an isolated point of $L \cap N$.
@@ -3598,11 +3566,6 @@ $U \setminus N$ in the subspace topology,
 $\overline{(U \setminus N)} \cap U$.  The set $N$ has empty interior,
 so $\overline{(U \setminus N)} \cap U = U$.  Hence, $F$ is the unique
 continuous extension of $f$ to $U$.
-%We made the extension locally so we have to show that the extension is
-%unique.  
-%By the identity theorem, $g^{-1}(0)$ has empty interior and its complement
-%is connected by \exerciseref{exercise:connectedcomplement}, so as any extension
-%$F$ is continuous, it must be unique.
 \end{proof}
 
 \pagebreak[2]
@@ -3662,7 +3625,6 @@ nonzero on the circle $\partial \Delta$.  By
 $\xi \mapsto f(z',\xi)$ must have a zero for all $z'$ sufficiently close to $p'$
 (close enough to make $\sabs{f(q',\xi)-f(z',\xi)} < \sabs{f(q',\xi)}$ for all $\xi \in
 \partial \Delta$).
-%since $f(z',\xi)$ is close to $f(p',\xi)$ for $\xi \in \partial \Delta$).
 Since $g(z')$ is the unique solution $z_n$ to $h(z',z_n) = 0$
 near $p$ and the
 zeros of $f$ are contained in the zeros of $h$, we are done.
@@ -3774,9 +3736,6 @@ Suppose $n > 1$ and suppose we know the theorem is true for dimension $n-1$.
 
 Suppose for contradiction that $J_f = 0$ somewhere.
 First suppose that $J_f$ is not identically zero.
-%The Jacobian determinant cannot be identically zero.  For example, by the
-%classical theorem of Sard the set of critical values (the image of the set
-%where the Jacobian determinant vanishes) is a null set.
 Find a regular point $q$ on the zero set of $J_f$.
 Write the zero set of $J_f$ near $q$ as
 \begin{equation*}
@@ -3819,7 +3778,6 @@ f \circ G^{-1} (w_1,\ldots,w_n) = \bigl(w_1,h(w)\bigr) ,
 \end{equation*}
 where $h$ is a holomorphic mapping taking a neighborhood of the
 origin in $\C^n$ to $\C^{n-1}$.
-%For any small $\xi \in \C$ near the origin,
 The mapping
 \begin{equation*}
 \varphi(w_2,\ldots,w_n) = h(0,w_2,\ldots,w_n)
@@ -3838,7 +3796,6 @@ We obtain a contradiction, as at the origin
 \begin{equation*}
 \det 
 D(f \circ G^{-1})
-%= \det Dh =
 = \det D\varphi \not= 0 . \qedhere
 \end{equation*}
 \end{proof}
@@ -3967,9 +3924,7 @@ In $\C$, every domain is a domain of holomorphy.
 \begin{exercise}
 If $U_j \subset \C^n$ are domains of holomorphy (possibly an infinite set of
 domains), then the interior of
-%\begin{equation*}
 $\bigcap_{j} U_j$
-%\end{equation*}
 is either empty or every connected component is a domain of holomorphy.
 \pagebreak[1]
 \end{exercise}
@@ -4118,8 +4073,6 @@ Let us state a simple but useful case of the so-called
 Let $U \subset \C^n$, $n \geq 2$, be an open set and $p \in U$.
 Then every $f \in \sO(U \setminus \{ p \} )$
 extends holomorphically to $U$.
-%In particular, holomorphic functions
-%in several variables have no isolated zeros.
 \end{cor}
 
 \begin{proof}
@@ -4307,8 +4260,6 @@ But we should not discard convexity completely, there is a notion of
 \emph{pseudoconvexity}, which vaguely means ``convexity in the 
 complex directions,'' that is the correct notion to classify which
 domains are domains of holomorphy.
-%In this course
-%we will only define the notion for domains with smooth boundaries.
 Let us figure out what classical convexity means locally for a smooth boundary.
 
 \begin{defn} \label{def:hypersurface}
@@ -4435,7 +4386,6 @@ depends only on $M$, not on $r$.
 Fortunately, the definition of $T_pM$ is independent of the choice of $r$ by the next two
 exercises.
 
-%\pagebreak[2]
 \begin{exbox}
 \begin{exercise} \label{exercise:smoothdivision}
 Suppose $M \subset \R^n$ is a smooth hypersurface and
@@ -4672,19 +4622,6 @@ find a single nonzero tangent vector at each point.
 Consider the gradient
 \glsadd{not:gradient}%
 $\nabla r = (2x,2y)$ to check that
-%the tangent space at $p = (x,y)$ on the
-%circle, that is when $x^2+y^2 = 1$, is composed of vectors
-%\begin{equation*}
-%a \frac{\partial}{\partial x}|_p + 
-%b \frac{\partial}{\partial y}|_p,
-%\qquad
-%\text{where} \qquad
-%a \frac{\partial r}{\partial x}|_p + 
-%b \frac{\partial r}{\partial y}|_p =
-%2(ax + by) = 0 .
-%\end{equation*}
-%Without loss of generality assume that $y\not=0$, then $b= -a \frac{x}{y}$.
-%So any vector in $T_p \partial U$ is a multiple of the vector
 \begin{equation*}
 X = y \frac{\partial}{\partial x} - x \frac{\partial}{\partial y}
 \end{equation*}
@@ -5115,7 +5052,6 @@ The proposition is local, if $U$ is only a neighborhood of $p$,
 replace $M$ with $M \cap U$.
 
 \begin{proof}
-%Without loss of generality assume that $M \subset U$.
 The proof is an application of \propref{prop:holvectmap}.
 As the map is a biholomorphism at $p$,
 \begin{multline*}
@@ -5391,11 +5327,6 @@ is, the matrix is equal to its conjugate transpose.
 
 \begin{exercise}
 Prove \propref{prop:inertiainvariant}.
-%Show that pseudoconvexity of $U$ at $p \in \partial U$ is not dependent
-%on the defining function.
-%(In fact the inertia
-%%, the number of positive negative and zero eigenvalues,
-%of the Levi form does not depend on $r$.)
 \end{exercise}
 
 \begin{exercise}
@@ -5452,11 +5383,6 @@ local holomorphic coordinates where the Levi form is displayed nicely.
 Suppose the shphere $\partial \bB_n$ is defined in the variables $Z = (Z_1,\ldots,Z_n) \in \C^n$
 by $\snorm{Z} = 1$.
 
-%Let us take the change of variables given by 
-%\begin{equation*}
-%(Z_1,Z_2,\ldots,Z_{n-1},Z_n) \mapsto
-%\left(\frac{iZ_1}{1-Z_n},\frac{iZ_2}{1-Z_n},\ldots,\frac{iZ_2}{1-Z_n},\frac{i(1+Z_n)}{1-Z_n}\right).
-%\end{equation*}
 Let us change variables 
 to $(z_1,\ldots,z_{n-1},w)$ where
 \begin{equation*}
@@ -5502,12 +5428,10 @@ i\frac{1+Z_n}{1-Z_n}}
 \frac{1+\bar{Z}_n}{2(1-\bar{Z}_n)}
 \\
 & = 
-\frac{\sabs{Z_1}^2 %}{\sabs{1-Z_n}^2}
+\frac{\sabs{Z_1}^2
 + \cdots +
-%\frac{
-\sabs{Z_{n-1}}^2 %}{\sabs{1-Z_n}^2}
+\sabs{Z_{n-1}}^2
 +
-%\frac{
 \sabs{Z_n}^2-1}{\sabs{1-Z_n}^2} .
 \end{split}
 \end{equation*}
@@ -5745,15 +5669,6 @@ to always get rid of the dependence on $\Re w$ in the higher order terms.
 Recall that $O(k)$ at the origin means
 a function that together with its derivatives up to order $k-1$ vanish
 at the origin.
-%We use the \emph{\myindex{big-oh notation}}.
-%A smooth function is $O(k)$ (or ``$O(k)$ at the origin'' to be
-%precise), if
-%the function and its first, second, \ldots, $(k-1)$th
-%derivatives vanish at the origin.
-%For example, if $E$ is $O(3)$ at the origin
-%then $E(0)=0$, and its first and second derivatives vanish.
-%Often we write
-%$O(k)$ to denote any function in $O(k)$ to simplify notation.
 
 \begin{lemma} \label{lemma:normformquad}
 Let $M$ be a smooth real hypersurface in $\C^n$ and $p \in M$.  Then there
@@ -5770,25 +5685,10 @@ $\beta$ is the number of negative eigenvalues, and $\alpha+\beta \leq
 n-1$.
 \end{lemma}
 
-%While it is possible to do better than this proposition, it is not possible
-%to completely get rid of the dependence on $\Re w$ except in the quadratic
-%terms.
-
 \begin{proof}
 Change coordinates so that $M$ is given by
 $\Im w = \varphi(z,\bar{z},\Re w)$,  where $\varphi$ is $O(2)$.
 Apply Taylor's theorem to $\varphi$ up to the second order:
-%Take $r = \varphi - \Im w$.
-%We have seen in the computation above that we can use a local
-%biholomorphic transformation $f$ where the first derivative is the identity
-%and the second derivative is picked appropriately to make sure the Hessian
-%of $r \circ f$ has no non-mixed terms.  That is, we let $f_j(z,w) = z_j +
-%g_j(z,w)$ for $j=1,\ldots,n-1$ and $f_n(z,w) = w + g_n(z,w)$ and all the
-%$g_j$ vanish to second order.  So using Taylor's theorem we see
-%\begin{equation*}
-%r \circ f =
-%\varphi(z,\bar{z},\Re w) - \Im w - \Im g_n(z,w) + O(2)
-%\end{equation*}
 \begin{equation*}
 \varphi(z,\bar{z},\Re w) = q(z,\bar{z}) + (\Re w) (Lz + \overline{Lz}) +
 a {(\Re w)}^2 +
@@ -5927,7 +5827,6 @@ matrix $[b_{jk}]$ is the complex conjugate of $[a_{jk}]$ and
 $[c_{jk}]$ is Hermitian.
 
 We make another change of coordinates; we fix the $z$s again and we set
-%$w' = w'' + g(z)$, where $g$
 \begin{equation} \label{eq:wprimeexpression}
 w' = w'' + i
 \sum_{j,k=1}^{n-1}
@@ -6067,10 +5966,8 @@ E(z_1,z',\bar{z}_1,\bar{z}',\Re w) ,
 \end{equation*}
 where $z' = (z_2,\ldots,z_{n-1})$, $\epsilon_j = -1,0,1$, and $E$ is $O(3)$.
 We embed an analytic disc via the map
-$\xi \overset{\varphi}{\mapsto} (\lambda \xi, 0, 0, \ldots, 0)$ for some small $\lambda > 0$.
-%That is we can
-%think of simply setting $z_2$ through $z_n$ and $w$ to 0.
-%
+$\xi \overset{\varphi}{\mapsto} (\lambda \xi, 0, 0, \ldots, 0)$
+for some small $\lambda > 0$.
 Clearly $\varphi(0) = 0 \in \partial U$.  For $\xi \not= 0$ near the origin
 \begin{equation*}
 -\lambda^2 \sabs{\xi}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{0}^2 + E(\lambda
@@ -6171,7 +6068,6 @@ and a holomorphic function $f \colon W \to
 $f$ is never zero on $W \cap U$.  Show that $U$ is pseudoconvex
 at $p$.  Hint: You may need the holomorphic implicit function theorem, see
 \thmref{thm:ift}.
-%apply the implicit function theorem and prove the result is holomorphic.
 Note: The result does not require the derivative of $f$ to not vanish, but is
 much harder to prove without that hypothesis.
 \end{exercise}
@@ -6223,10 +6119,6 @@ the origin.
 
 \section{Harmonic, subharmonic, and plurisubharmonic functions}
 \label{sec:harmonic}
-
-%Let us briefly touch on plurisubharmonic functions and their relation to
-%pseudoconvexity.
-%Let us start with harmonic and subharmonic functions.
 
 \begin{defn}
 Let $U \subset \R^n$ be an open set.
@@ -6345,9 +6237,6 @@ Pu(re^{i\theta})
 Pu(e^{i\theta}) = u(e^{i\theta}),
 \end{equation*}
 is harmonic in $\D$ and continuous on $\overline{\D}$.
-%  Further as $z \in \D$ tends to $z_0 \in \partial \D$,
-%$\tilde{u}(z)$ tends to $u(z_0)$.  In other words,
-%$\tilde{u}$ extends to a continuous function on $\overline{D}$.
 \end{thm}
 
 \pagebreak[2]
@@ -6359,12 +6248,6 @@ $r=0.7$, and $r=0.85$ on $[-\pi,\pi]$:
 \begin{myfig}
 \includegraphics[width=0.5\textwidth]{figures/poisson-kernel.pdf}
 \end{myfig}
-
-%\pagebreak[2]
-
-%In other words, there exists a continuous function $\tilde{u}$ defined on
-%the closed disc, which is harmonic inside and is equal to $u$
-%on $\partial \D$.
 
 \begin{exbox}
 \begin{exercise}
@@ -6509,15 +6392,12 @@ the maximum principle and \exerciseref{exercise:fminusgsubharmonic}.
 \end{exercise}
 
 \begin{exercise}
-%Prove that the inequality from the definition of subharmonic functions
-%works for any bounded set, not just balls (discs).
 Suppose $U \subset \C$ is a bounded open set, $f \colon \overline{U} \to \R
 \setminus \{-\infty\}$ is an upper-semicontinuous function, such that $f|_U$
 is subharmonic, $g \colon \overline{U} \to \R$ is a continuous function
 such that $g|_U$ is harmonic and
 $f(z) \leq g(z)$ for all $z \in \partial U$.  Prove that
 $f(z) \leq g(z)$ for all $z \in U$.
-%\pagebreak[2]
 \end{exercise}
 
 \begin{exercise} \label{exercise:onlyniceuneededforsubharmonic}
@@ -6529,13 +6409,8 @@ such that $g(z) \leq g_\epsilon(z) \leq g(z)+\epsilon$ for all $z \in
 \overline{\Delta}$.
 In particular, to test subharmonicity, we only need to consider those
 $g$ that are harmonic a bit past the boundary of the disc.
-%\pagebreak[2]
 \end{exercise}
 \end{exbox}
-
-
-%We will need some results about subharmonic functions, let's prove them for
-%completeness.
 
 \begin{prop}
 Suppose $U \subset \C$ is an open set and $f \colon U \to \R$ is a $C^2$ function.
@@ -6553,8 +6428,6 @@ harmonic on $\Delta_r(a)$, and such that
 $f \leq g$ on the boundary $\partial \Delta_r(a)$.  Because
 $\nabla^2 (f-g) = \nabla^2 f \geq 0$, we assume $g = 0$ and $f \leq 0$
 on the boundary $\partial \Delta_r(a)$. 
-% We can also assume that $f = 0$ on at least one point on
-%the boundary.
 
 Suppose $\nabla^2 f > 0$ at all points on $\Delta_r(a)$.
 Suppose $f$ attains a maximum in $\Delta_r(a)$,
@@ -6576,28 +6449,6 @@ on all of $\overline{\Delta_r(a)}$.  As $f_n \to f$ we obtain that
 $f \leq 0$ on all of $\overline{\Delta_r(a)}$.
 
 The other direction is left as an exercise.
-%
-%FIXME: this is too long I think, can be left as exercise.
-%For the other direction suppose $f$ is subharmonic and $C^2$.
-%Suppose that at some $p \in U$, $\nabla^2 f (p) < 0$.  So the Hessian
-%of $f$ at $p$ has at least one negative eigenvalue.
-%Without loss of generality we can assume $p = 0$.
-%If $h(z,\bar{z})$ is harmonic, then so is
-%$u(re^{i\theta}z,\overline{re^{i\theta} z})$, so such a transformation
-%also prserves subharmonic functions.  As the eigenspaces of a
-%$2\times 2$ real symmetric matrix are orthogonal, we can rotate and scale
-%so that the Hessian of $f$ at $p$ is diagonal and we can make one of the
-%eigenvalues $-1$, that is, we can make $f$ be
-%\begin{equation*}
-%f(x,y)
-%=
-%a_1+a_2y - x^2 + \lambda y^2 + o(2) .
-%\end{equation*}
-%The function
-%$u(x,y) = a_1x+a_2y - a_3 (x^2 - y^2)$ is harmonic and $f-u$ is
-%subharmonic.  $f-u = (-1+a_3)x^2 + (\lambda-a_3)y^2 + o(2)$.  We can pick
-%$a_3$ so taht $f-u$ has a maximum yielding a contradiction
-%
 \end{proof}
 
 \begin{exbox}
@@ -6671,11 +6522,8 @@ hint: Integrate the partial sums, and use polar coordinates.
 \end{exercise}
 \end{exbox}
 
-%Recall from complex analysis in one variable that harmonic functions were
-%precisely (locally) the real and imaginary parts of holomorphic functions.
-There are too many
-harmonic functions in $\C^n \cong \R^{2n}$.  To get the real and imaginary parts of
-holomorphic functions in $\C^n$,
+There are too many harmonic functions in $\C^n \cong \R^{2n}$.
+To get the real and imaginary parts of holomorphic functions in $\C^n$,
 we require a smaller class of functions than all harmonic functions.
 
 \begin{defn}
@@ -6698,8 +6546,6 @@ $a,b \in \C^n$, the function of one variable
 \xi \mapsto f(a+b\xi)
 \end{equation*}
 is subharmonic (whenever $a+b\xi \in U$).
-%\glsadd{not:PSH}%
-%The notation $PSH(U)$ is used to denote these functions.
 \end{defn}
 
 A harmonic function of one complex variable is in some sense a
@@ -6726,8 +6572,6 @@ only if
 \begin{exercise}
 Show that a pluriharmonic function is harmonic.  On the other hand, find an
 example of a harmonic function that is not pluriharmonic.
-%Hint: It is
-%enough to look at quadratic polynomials.
 \end{exercise}
 
 \begin{exercise}
@@ -7116,10 +6960,6 @@ on the closure $\overline{\Delta}$, let $\Delta'$ be the part of the disc
 where $f$ is nonzero.  If $\Delta'$ is empty, then we are done as
 $f$ is just identically zero and hence holomorphic.
 
-%Let us first show $\overline{\Delta'} = \overline{\Delta}$. Suppose
-%the zero set of $f$ on $\Delta$ has interior.  Without loss of generality
-%after composing with an automorphism of the disc
-
 Let $u$ be the real part of $f$.  On $\Delta'$, $u$ is a harmonic function.
 Let $Pu$ be the Poisson integral of $u$ on $\Delta$.  Hence $Pu$
 equals $u$ on $\partial \Delta$, and $Pu$ is harmonic in all of $\Delta$.
@@ -7155,7 +6995,6 @@ shows that
 Taking the limit
 $t \to 0$ shows that $Pu = u$ on $\Delta'$.
 Let $W = \Delta \setminus \overline{\Delta'}$.
-%If $W$ is empty we are finished.
 On $W$, $u=0$ and so $Pu-u$ is harmonic on $W$
 and continuous on $\overline{W}$.  Furthermore,
 $Pu-u=0$ on $\overline{\Delta'} \cup \partial \Delta$,
@@ -7332,7 +7171,6 @@ Let $U \subset \C^n$ be open.  An $f \colon U \to \R$ is an \emph{\myindex{exhau
 
 A domain $U \subset \C^n$ is
 \emph{\myindex{Hartogs pseudoconvex}}\index{pseudoconvex}
-%(or usually just \emph{\myindex{pseudoconvex}})
 if
 there exists a continuous plurisubharmonic exhaustion function.
 The set
@@ -7635,7 +7473,6 @@ Then $U$ is Hartogs pseudoconvex if and only if $U$ is Levi pseudoconvex.
 
 
 \begin{proof}
-%Let us first suppose $U$ is Hartogs pseudoconvex.
 Suppose
 $U \subset \C^n$ is a domain with smooth boundary that is not
 Levi pseudoconvex at $p \in \partial U$.
@@ -7649,10 +7486,6 @@ For a small fixed $\lambda > 0$, the
 closed analytic discs defined by $\xi \in \overline{\D} \mapsto (\lambda \xi, 0, \cdots, 0, is)$
 are in $U$ for all small enough $s > 0$.  The origin
 is a limit point of the insides, but not a limit point of their boundaries.
-%we found a family of analytic discs in $U$
-%whose boundaries were uniformly a positive distance away from $\partial U$,
-%but such that $p$ was in the limit set of their interiors.  In fact we found an entire
-%Hartogs figure in $U$.  So
 \hyperref[thm:contprinciple]{Kontinuit\"atssatz} is not satisfied, and $U$ is not 
 convex with respect to the plurisubharmonic functions.  Therefore 
 $U$ is not Hartogs pseudoconvex.
@@ -7664,7 +7497,6 @@ write a defining function $r$ as
 r(z,\bar{z}) = \varphi(z',\bar{z}',\Re z_n) - \Im z_n ,
 \end{equation*}
 where $z' = (z_1,\ldots,z_{n-1})$.
-%and $\varphi$ is $O(2)$ at the origin. (This isn't needed)
 Levi pseudoconvexity says 
 \begin{equation} \label{eq:psconvcond}
 \sum_{j=1,\ell=1}^n
@@ -7674,8 +7506,6 @@ Levi pseudoconvexity says
 a_j \frac{\partial r}{\partial z_j} \Big|_q = 0 ,
 \end{equation}
 for all $q \in \partial U$ near $0$.
-%If we translate $\partial U$ slightly in the $\Im z_n$ direction, it is
-%still a Levi pseudoconvex boundary.
 Let $s$ be a small real constant,
 and let $\widetilde{q} = (q_1,\ldots,q_{n-1},q_n + is)$.
 None of the derivatives of $r$ depends on $\Im z_n$, and therefore
@@ -8175,10 +8005,6 @@ In the following series of exercises, which you should most definitely do in
 sequence, you will solve the
 Levi problem\index{Levi problem!for complete Reinhardt domains}
 (and more) for complete Reinhardt domains.
-%Recall a domain $U \subset \C^n$ is
-%Reinhardt if whenever $(z_1,\ldots,z_n) \in U$ then
-%$(e^{i\theta_1}z_1,\ldots,e^{i\theta_n}z_n) \in U$ for all real
-%$(\theta_1,\ldots,\theta_n)$.
 Recall that a domain $U$ is a
 \myindex{complete Reinhardt domain}\index{Reinhardt domain!complete}
 if whenever $(z_1,\ldots,z_n)$ is in $U$ and $r_j = \sabs{z_j}$, then the
@@ -8399,8 +8225,6 @@ $P(s x) = s^d P(x)$ for all $s \in \R$ and $x \in \R^n$.
 That is, a homogeneous polynomial of degree $d$ is a polynomial whose
 every monomial
 is of total degree $d$.
-%  For example, $x^2y-iy^3+9xy^2$ is homogeneous of
-%degree 3.
 If $f$ is real-analytic near $a \in \R^n$, then
 write the power series of $f$ at $a$ as
 \begin{equation*}
@@ -8829,18 +8653,10 @@ First let us prove that $f$ is smooth.  The function $F$ is smooth and
 defined on a neighborhood of any point, and so it can be used in the
 definition.
 Similarly for real-analytic.
-%Given any $p \in M$, write $M$
-%as $\Im w = \varphi(z,\bar{z},\Re w)$ for a smooth $\varphi$.
-%Then $F\bigl(z,\Re w + i \varphi(z,\bar{z},\Re w) \bigr)$
-%is clearly smooth as it is a composition of smooth functions.
-%If both $M$ and $\varphi$ are real-analytic, then
-%$F\bigl(z,\Re w + i \varphi(z,\bar{z},\Re w) \bigr)$ is real-analytic.
 
 Let us show $f$ is CR at some $p \in M$.
 Differentiating $f$ with vectors in $\C \otimes
 T_pM$ is the same as differentiating $F$.
-%We have $X_p F = 0$
-%for all $X_p \in T_p^{(0,1)} \C^n$.
 As $T_p^{(0,1)} M \subset T_p^{(0,1)} \C^n$ we have
 \begin{equation*}
 X_p f = X_p F = 0 \qquad \text{for all} \quad X_p \in T_p^{(0,1)} M.
@@ -8907,7 +8723,6 @@ we will write $M$ as a graph of $\bar{w}$ over $z$, $\bar{z}$, and $w$.
 This allows us to easily eliminate $\bar{w}$ in any real-analytic
 expression.
 
-%\pagebreak[2]
 \begin{prop} \label{prop:complexificationofrasurface}
 Suppose $M \subset \C^n$ is a real-analytic hypersurface and $p \in M$.
 Then after a translation and rotation by a unitary matrix, $p=0$, and near
@@ -9096,15 +8911,11 @@ $\frac{\partial}{\partial \bar{z}}
 \begin{exbox}
 \begin{exercise}
 Finish the proof of the proposition:
-%prove that the
-%complexification of any real-analytic $f$ vanishing on $M$ near the origin,
-%vanishes on $\sM$.
 Let $M\subset \C^n$ be a real-analytic hypersurface given by
 $\bar{w} = \Phi(z,\bar{z},w)$ near the origin, as in the proposition.  Let
 $f(z,\bar{z},w,\bar{w})$ be a real-analytic function such that $f=0$
 on $M$.  Prove that the complexified $f(z,\zeta,w,\omega)$ vanishes on
 $\sM$.
-% (the set near the origin given by $\omega = \Phi(z,\zeta,w)$).
 \end{exercise}
 
 \begin{exercise}
@@ -9197,10 +9008,6 @@ $\frac{\partial F}{\partial \zeta_j} = 0$
 for all
 $(z,w,\zeta)$ in a neighborhood of the origin.  Consequently,
 $F$ does not depend on $\zeta$, and 
-%\begin{equation*}
-%\frac{\partial}{\partial \bar{z}_j} \bigl[ F(z,w,\bar{z}) \bigr] = 0
-%\end{equation*}
-%for all $j$ and all $z,w$ near zero.
 $F$ is actually a holomorphic function of $z$ and $w$ only
 and $F = f$ on $M$.
 \end{proof}
@@ -9255,20 +9062,6 @@ identity.
 \begin{myfig}
 \subimport*{figures/}{zero-onbound.pdf_t}
 \end{myfig}
-%
-%Now consider $n \geq 2$.
-%Take $p \in \partial U$ such that $f=0$ on a neighborhood of $p$ in
-%$\partial U$.  Without loss of generality $p=0$ and near $0$ write $U$ as
-%\begin{equation*}
-%\Im w > \varphi(z,\bar{z},\Re w)
-%\end{equation*}
-%for $(z,w) \in \C^{n-1} \times \C$, and where $\varphi$ is $O(2)$.
-%Next fix any small $z$.  Considering $f$ as a function of $w$
-%defined on
-%$\Im w \geq \varphi(z,\bar{z},\Re w)$ the corresponding
-%one-dimensional result says that $f$ is identically zero inside the domain.
-%This holds for every small fixed $z$, so it holds in an open subset of $U$ and by
-%identity it holds everywhere.
 \end{proof}
 
 \begin{exbox}
@@ -9603,7 +9396,6 @@ K' = \bigl\{ (x,y') : \snorm{x} \leq \nicefrac{r}{4} , \snorm{y'} \leq d
 \bigr\} .
 \end{equation*}
 Let $K = z(K')$, that is the image of $K'$ under the mapping $z(x,y')$.
-%as we will think of $z$ as a function of $(x,y')$.
 
 Consider the CR function $f$ to be a function of $(x,y')$
 and write $f(x,y')$.
@@ -9636,30 +9428,7 @@ The key is the exponential, which looks like the bump function
 mollifier, except that now we have $w$ and $z$
 possibly complex.  The exponential is also holomorphic in $w$, and that will
 give us entire holomorphic approximating functions.
-%And as long as we
-%do not stray far in the $y'$ direction it should go to zero quickly for
-%$w\not=z$.
 
-%
-%\begin{equation*}
-%{\left(\frac{\ell}{\pi}\right)}^{n/2}
-%\exp \bigl( -\ell [z - x-i\varphi(x,y')]^2 \bigr) g(x) f(x,y')
-%(dx_1 + idy_1) \wedge
-%\cdots \wedge
-%(dx_{n-1} + idy_{n-1})
-%\wedge
-%\bigl(dx_{n} + i
-%(
-%\psi_{x_1} (x,y') dx_1
-%+ \cdots +
-%\psi_{x_n} (x,y') dx_n
-%+
-%\psi_{y_1} (x,y') dy_1
-%+ \cdots +
-%\psi_{y_{n-1}} (x,y') dy_{n-1}
-%)
-%\bigr)
-%\end{equation*}
 Fix $y'$ with $0 < \snorm{y'} < d$ and let $D$ be defined by
 \begin{equation*}
 D = \bigl\{ (x,s) \in \R^n \times \R^{n-1} : \snorm{x} < r \text{ and } s = t y' \text{ for
@@ -9982,14 +9751,10 @@ $\ell$ as
 x \mapsto g(x) f(x,y') \det \left[\frac{\partial z}{\partial x}(x,y')\right]
 \end{equation*}
 is a continuous function with compact support (because of $g$).
- %(where iit is continuous with compact support because of $g$.
-%is globally bounded independent of $\ell$.  Because of $g$, it iit has compact support and it is continuous.
-%
 Hence it is enough to worry about the exponential term.
 We also only consider those $\xi$ where the integrand is not zero.
 Recall that $r$ and $d$ are small enough that
 \begin{equation*}
-%a =
 \sup_{\snorm{\hat{x}} \leq r, \snorm{\hat{y}'} \leq d}
 \norm{\,\left[
 \frac{ \partial \varphi}{\partial  x}(\hat{x},\hat{y}')
@@ -10053,8 +9818,6 @@ x}(\tilde{x},y')\right] d\xi  = f(\tilde{x},y') .
 
 That the convergence is uniform in
 $(\tilde{x},y') \in K'$ is left as an exercise.
-%Hence the limit of the integrals converges uniformly in 
-%$(\tilde{x},y') \in K'$ and we are done.
 \end{proof}
 
 \begin{exbox}
@@ -10100,7 +9863,6 @@ Lewy extension theorem.  Lewy's original proof was different
 and predates Baouendi--Tr{\`e}ves.  A local extension theorem of this type
 was first proved by Helmut Knesser in 1936.
 
-%\pagebreak[2]
 \begin{thm}[Lewy]%
 \index{Lewy extension theorem}
 Suppose $M \subset \C^n$ is a smooth real hypersurface and $p \in M$.
@@ -10124,7 +9886,6 @@ $f$ extends to a holomorphic function on $U_+$ continuous up to $M$
 \item
 If the Levi form with respect to $r$ has eigenvalues of both signs at $p$, then
 $f$ extends to a function holomorphic on $U$.
-%\pagebreak[2]
 \end{enumerate}
 \end{thm}
 
@@ -10163,8 +9924,6 @@ is positive definite in a
 neighborhood of the origin and the function has a strict minimum at 0.
 There is some small disc $D \subset \C$ such
 that this function is strictly positive on $\partial D$.
-%  We also assume
-%that the Hessian is positive definite on the closed disc $\overline{D}$.
 
 Therefore,
 for $(z',w) \in W$ in some small neighborhood $W \subset \C^{n-1}$ of the origin, the 
@@ -10173,7 +9932,6 @@ function
 z_1 \mapsto \sabs{z_1}^2 + \sum_{j=2}^n \epsilon_j \sabs{z_j}^2 +
 E(z_1,z',\bar{z}_1,\bar{z}',\Re w) - \Im w
 \end{equation*}
-%has a positive definite Hessian (as a function of $z_1$ only) on $D$, and it
 is still strictly positive on $\partial D$.
 
 We wish to apply
@@ -10207,7 +9965,6 @@ principle, $p_j$ converge uniformly on all of $\Delta$.  In fact, as $(z_1,z',w)
 an arbitrary point in $(D \times W) \cap \Omega_-$,
 the polynomials $p_j$ converge uniformly on
 $(D \times W) \cap \overline{\Omega_-}$.
-%
 Let $U = D \times W$, then $U_- = (D \times W) \cap \Omega_-$.  Notice 
 $U$ depends on $K$, but not on $f$.
 So $p_j$ converge to a continuous function $F$ on $\overline{U_-} \cap
@@ -10417,8 +10174,6 @@ d \psi
 \begin{exercise}
 Observe the singularity in the second term, and prove that the integral still makes
 sense (the function is integrable).  Hint: polar coordinates.
-%because we integrate in $\R^2$, use polar coordinates and note the $r$ in
-%$r\,dr\, d\theta$.
 \end{exercise}
 
 \begin{exercise}
@@ -10885,8 +10640,6 @@ What is usually called the Hartogs--Bochner theorem (which is the $C^1$
 version)
 was first stated in the
 real-analytic case by Severi in 1931.
-%  Unfortunately the proof relies on the Hartogs phenomenon,
-%so one could say it was not really proved until about 10 years later.
 
 \begin{cor}[Severi]\index{Severi's theorem}
 Suppose $U \subset \C^n$, $n \geq 2$, is a bounded domain with connected real-analytic boundary and
@@ -10944,9 +10697,6 @@ for each fixed $z_3^0,z_4^0,\ldots,z_n^0$,
 (z_1,z_2,z_3^0,\ldots,z_n^0) \in U
 \bigr\} .
 \end{equation*}
-%and 
-%$\bigl\{ (z_1,z_2) \in \C^2 : (z_1,z_2,z_3^0,\ldots,z_n^0) \in W
-%\bigr\}$ is connected.
 Prove that every $f \in \sO(W)$ extends to a holomorphic function on
 $U$.  Note: The fact that $W$ is connected is important.
 \end{exercise}
@@ -11031,7 +10781,6 @@ Recall that if $\zeta = x+iy$ are the coordinates in $\C^n$, the orientation tha
 this book\footnote{Again, there is
 no canonical orientation of $\C^n$, and
 not all authors follow this (perhaps more prevalent) convention.}
-%more prevalent.}
 is the one corresponding to the volume form
 \glsadd{not:dV}%
 \begin{equation*}
@@ -11149,15 +10898,6 @@ We compute
 Therefore 
 $d \bigl( f(\zeta) \omega(\zeta,z) \bigr) = \bar{\partial} f(\zeta) \wedge
 \omega(\zeta,z)$.
-%$$
-%\frac{\partial}{\partial \bar{\zeta}_j}
-%\frac{\bar{\zeta}_j-\bar{z}_j}{\norm{\zeta-z}^{2n}}
-%=
-%\frac{\norm{\zeta-z}^{2n} - (\bar{\zeta}_j-\bar{z}_j) (n)
-%\norm{\zeta-z}^{2n} (\zeta_j-z_j)}{\norm{\zeta-z}^{4n}}
-%=
-%\frac{1 - n \abs{\zeta_j-z_j}^2}{\norm{\zeta-z}^{2n}}
-%$$
 We apply Stokes as before:
 \begin{equation*}
 \begin{split}
@@ -11201,7 +10941,6 @@ To finish the proof,
 we will show that
 $\int_{\partial B_r(z)}
 \omega(\zeta,z) = 1$, and that the second term goes to zero.
-%Let us go in order.
 We apply Stokes again
 and note that the volume of $B_r(z)$ is
 $\frac{\pi^n}{n!}r^{2n}$.
@@ -11405,28 +11144,10 @@ of holomorphic functions $f \in \sO(U)$ such that
 The space $A^2(U)$ is called the
 \emph{\myindex{Bergman space}} of $U$.
 The inner product is the $L^2(U)$ inner product
-%Define an inner product on $A^2(U)$ via
 \glsadd{not:L2innprod}%
 \begin{equation*}
 \linnprod{f}{g} \overset{\text{def}}{=} \int_U f(z) \overline{g(z)} \, dV .
 \end{equation*}
-%Clearly $\linnprod{f}{g}$ is sesquilinear and
-%by Cauchy--Schwarz, if $f$ and $g$ are in $A^2(U)$,
-%\begin{equation*}
-%\begin{split}
-%\abs{\linnprod{f}{g}}^2 & = \abs{ \int_U f(z) \overline{g(z)} \, dV }^2
-%\\
-%& \leq
-%\left(\int_U \abs{f(z)}^2 \, dV \right)
-%\left(\int_U \abs{g(z)}^2 \, dV \right)
-%\\
-%& = 
-%\snorm{f}_{A^2(U)}^2
-%\snorm{g}_{A^2(U)}^2
- %< \infty .
-%\end{split}
-%\end{equation*}
-%So $A^2(U)$ is an inner product space.
 We need to prove that $A^2(U)$ is
 complete, in other words that it is a Hilbert space.  We first
 have to prove that we can bound
@@ -12179,8 +11900,6 @@ Write
 the zeros of $z_n \mapsto f(z',z_n)$ as $\alpha_1(z'),\ldots,\alpha_k(z')$, including
 multiplicity.  There is no particular order to the zeros,
 pick some order for every $z'$.
-%The functions $\alpha_j$ may not be not be holomorphic or even continuous all points.
-%What we do is
 Write
 \begin{equation*}
 P(z',z_n)
@@ -12466,9 +12185,6 @@ such that $f$ and $P$ are continuous in $V' \times \overline{D}$,
 and 
 $P$ is not zero on $V' \times \partial D$.
 Let
-%, and hence
-%$z_n \mapsto P(z',z_n)$ has $k$ roots up to multiplicity in $D$ for all $z'
-%\in V'$.
 \begin{equation*}
 q(z',z_n) =
 \frac{1}{2\pi i} \int_{\partial D} \frac{f(z',\zeta)}{P(z',\zeta)(\zeta-z_n)}
@@ -12609,7 +12325,6 @@ precisely $m$ geometrically distinct roots.
 Then locally near each point in $U'$ there exist $m$ holomorphic functions
 $\alpha_1(z'),\ldots,\alpha_m(z')$,
 positive integers
-%(defined on a perhaps smaller $V' \subset U'$),
 $k_1,\ldots,k_m$,
 and a nonvanishing holomorphic function $u$
 such that
@@ -12675,10 +12390,6 @@ Suppose the zero set $f^{-1}(0)$ has no limit points
 on $U' \times \partial D$.
 Then there exists an $m \in \N$
 and
-%such thatand
-%for each $z' \in U'$, the function $z_n \mapsto f(z',z_n)$ has
-%at most $m < \infty$ geometrically distinct roots, and has exactly $m$
-%zeros somewhere.  Then there exists 
 a holomorphic function $\Delta \colon U' \to \C$, not identically zero, such
 that for every $z' \in U' \setminus E$, where $E = \Delta^{-1}(0)$,
 $z_n \mapsto f(z',z_n)$ has exactly $m$ geometrically distinct roots in $D$,
@@ -12699,8 +12410,6 @@ The roots of $z_n \mapsto f(z',z_n)$ are isolated, and there are finitely
 many for every $z'$ as $D$ is bounded and $f^{-1}(0)$ has no limit points on
 $U' \times \partial D$.
 For any $p' \in U'$ we define two useful paths.
-%Let us set up two paths around the roots
-%at any particular $p'$.
 Let $\gamma$ be the union of nonintersecting
 small simple closed curves
 in $D$, one around each geometrically distinct root of $z_n \mapsto f(p',z_n)$.
@@ -12901,7 +12610,6 @@ That is, for every ideal $I \subset R$
 there exist finitely many generators $f_1,\ldots,f_k \in I$: that is,
 every $g \in I$ can be written as $g = c_1 f_1 + \cdots + c_k f_k$,
 for some $c_1,\ldots,c_k \in R$.
-%that is $I = (f_1,\ldots,f_k)$.
 In an exercise you proved ${}_1\sO_p$ is a PID\@, and so
 it is Noetherian.  For higher dimensions, the ring of germs may not
 be a PID\@, but it is Noetherian.
@@ -13521,9 +13229,6 @@ The topological component is of course a connected set and it is dense in
 $(X_j)_{\mathit{reg}}$, which proves the corollary.
 \end{proof}
 
-
-
-%\pagebreak[2]
 \begin{exbox}
 \begin{exercise}
 \begin{exparts}
@@ -13639,7 +13344,6 @@ if $ab \in I$ implies either $a \in I$ or $b
 Suppose a germ of a subvariety $(X,p)$ is of pure codimension 1.
 Prove $(X,p)$ is irreducible if and only if there
 exists a representative of $X$, such that $X_{\textit{reg}}$
-%whose set of regular points
 is connected.  %Hint: See the proof of \thmref{thm:codim1var}.
 \end{exercise}
 
@@ -13828,13 +13532,11 @@ is one-to-one and onto a neighborhood of 0 in $X$.
 Suppose $(X,0) \subset (\C^2,0)$ is a germ of a dimension 1 subvariety.
 Show that after perhaps a linear change of coordinates,
 there are natural numbers
-%$\ell_1,\ldots,\ell_k$,
 $d_1,\ldots,d_k$
 and
 holomorphic functions $c_1(z),\ldots,c_k(z)$ vanishing at $0$,
 such that $X$ can be defined near 0 by
 \begin{equation*}
-%\prod_{j=1}^k {\bigl( w^{d_j} - c_j(z) \bigr)}^{\ell_j} = 0.
 \prod_{j=1}^k {\bigl( w^{d_j} - c_j(z) \bigr)} = 0.
 \end{equation*}
 \end{exercise}
@@ -13904,10 +13606,6 @@ The tangent hyperplane to $M$ at 0 must contain $w=0$,
 and after rotating the $w$ coordinate (multiplying it by $e^{i\theta}$),
 we can assume that $M$ is tangent to the set $\{ (z,w) : \Im w = 0 \}$.
 In other words,
-%As $T_0 X \subset T_0 M$, we may rotate the $w$ coordinate
-%so that $T_0 M = T_0 X \oplus \operatorname{span} \bigl\{
-%\frac{\partial}{\partial \Re w}\big|_0 \bigr\}$,
-%or in other words,
 $M$ is given by
 \begin{equation*}
 \Im w = \rho(z,\bar{z},\Re w) ,
@@ -14152,27 +13850,6 @@ $(X,q)$ is a germ of a complex submanifold.
 Let $X$ be a representative of the germ $(X,q)$ such that $X \subset M$,
 and $X \subset U$, although we do not assume it is closed.
 
-%Define
-%\begin{equation*}
-%Y' = \bigcap_{a \in X} \Sigma_a(U,r) 
-%= \{ z \in U : r(z,\bar{a}) = 0, \text{ for all } a \in X \} .
-%\end{equation*}
-%$Y'$ is clearly a closed subset of $U$ and a subvariety.
-%We have proved above that $(X,a)$ must be contained in the 
-%germ $(\Sigma_a(U,r),a)$ and hence $X \subset Y'$.  However it is not clear
-%if $Y'$ is a subset of $M$.  As $r$ is real, then $r(z,\bar{w}) = 0$ implies
-%$r(w,\bar{z}) = 0$, so
-%$z \in \Sigma_w(U,r)$ if and only if
-%$w \in \Sigma_z(U,r)$.  So define
-%\begin{equation*}
-%Y = \bigcap_{b \in Y'} \Sigma_b(U,r) 
-%= \{ z \in U : r(b,\bar{z}) = 0, \text{ for all } b \in Y' \} .
-%\end{equation*}
-%If $z \in Y$, then
-%$r(b,\bar{z}) = 0$,
-%for a $b$ such that $r(b,\bar{a}) = 0$,
-%and $a \in X$ that is $a \in M$.
-
 Assume $X$ is a holomorphic
 image of an open subset $V \subset \C^k$ via a holomorphic surjective mapping $\varphi \colon V \to
 X$.  Since $r\bigl(\varphi(\xi),\overline{\varphi(\xi)}\bigr) = 0$
@@ -14274,9 +13951,7 @@ earthquakes!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%FIXME: add to notation index
-
-%FIXME: Is this overly too nitpicky to include?
+% Is this overly too nitpicky to include?
 
 Let us just quickly review some of the basic notation that we use in this
 book, that is perhaps not described elsewhere.
@@ -14289,6 +13964,7 @@ and $\Z$ for all integers.
 When we write $\C^n$ or $\R^n$ we implicitly mean that $n \geq 1$, unless
 otherwise stated.
 
+\glsadd{not:function}%
 The notation $f \colon X \to Y$ means a function with domain $X$ and
 codomain $Y$.  By $f(S)$ we mean the direct image of $S$ by $f$.
 We use the notation $f^{-1}$ for the inverse image of sets and
@@ -14301,29 +13977,33 @@ mapping to $q$.
 
 If we wish to define a function without necessarily giving it a name, we use
 the notation
+\glsadd{not:mapsto}%
 \begin{equation*}
 x \mapsto F(x)
 \end{equation*}
 where $F(x)$ would generally be some formula giving the output.
 
+\glsadd{not:mapsto}%
 The notation $f|_S$ means the restriction of $f$ to $S$, that is,
 it is a function
 $f|_S \colon S \to Y$ such that $f|_S(x) = f(x)$ for all $x \in S$.
 
+\glsadd{not:setminus}%
 We denote the set subtraction by $A \setminus B$, meaning all elements of
 $A$ which are not in $B$.
 We denote the complement of a set by $X^c$.  In this case, the ambient set
 should be clear.  So, for example, if $X \subset \C$ naturally,
 then $X^c = \C \setminus X$.
 
+\glsadd{not:closure}%
 The topological closure of a set $S$ is denoted by $\overline{S}$, its
 boundary is denoted by
 \glsadd{not:boundary}%
 $\partial S$.  If $S$ is relatively compact subset of $X$
 (its closure in $X$ is compact) or compact we write $S \subset \subset X$.
 
-A function $f \colon U \to \C$ is said to be \emph{\myindex{compactly
-supported}} if
+A function $f \colon U \to \C$ is said to be
+\emph{\myindex{compactly supported}} if
 the \emph{\myindex{support}}, that is the set
 $\overline{\{ p \in U : f(p) \not= 0 \}}$, is compact.
 
@@ -14337,15 +14017,13 @@ $f \circ g$ denotes the composition defined by $x \mapsto
 f\bigl(g(x)\bigr)$.
 
 We write
+\glsadd{not:definition}%
 \begin{equation*}
 X
 \overset{\text{def}}{=}
 Y
 \end{equation*}
 to define $X$ to be $Y$ rather than just show equality.
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -15871,9 +15549,6 @@ $\partial M$) including ``corners.''
 In $\R^2$, it is easy to state
 in more generality, see \thmref{thm:greens}.
 
-%Another way to state Stokes is to not assume that $\Omega$ is compact, but
-%instead assume that $\omega$ has compact support.
-
 A final note is that the classical Stokes' theorem is just the generalized
 Stokes' theorem with $n=3$, $k=2$.  Classically instead of 
 using differential forms, the line integral is an integral of a vector field
@@ -16012,18 +15687,13 @@ $xy = yx$ for all $x,y \in R$.
 $(xy)z = x(yz)$ for all $x,y,z \in R$.
 \item There exists an element $1 \in R$ (and $1 \not= 0$) such that
 $1x = x$ for all $x \in R$.
-%\item For every $x\in R$ such that $x \not= 0$ there exists an element
-%$\nicefrac{1}{x} \in R$
-%such that $x(\nicefrac{1}{x}) = 1$.
-%\end{enumerate}
-%\begin{enumerate}
 \item[(D)] \emph{(distributive law)} $x(y+z) = xy+xz$
 for all $x,y,z \in R$.
 \end{enumerate}
 
 The ring $R$ is called a \emph{\myindex{field}} if furthermore:
-\begin{enumerate}[({F}1)]
-\item For every $x\in R$ such that $x \not= 0$ there exists an element
+\begin{enumerate}%[({F}1)]
+\item[(F)] For every $x\in R$ such that $x \not= 0$ there exists an element
 $\nicefrac{1}{x} \in R$
 such that $x(\nicefrac{1}{x}) = 1$.
 \end{enumerate}
@@ -16393,7 +16063,7 @@ The proof is not difficult, but it is perhaps beyond the scope of this book.
    publisher={D.\ Van Nostrand Company, Inc., Princeton, New Jersey},
    date={1958},
    pages={xi+329},
-   %review={\MR{0090581}},
+   review={\MR{0090581}},
 }
 
 \end{biblist}
