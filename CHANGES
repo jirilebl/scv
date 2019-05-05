@@ -1,184 +1,186 @@
 The main goals of this revision are several-fold:
-1) Fill in some more of the details/examples/figures to make the course more
-accessible with just a basic knowledge of undergraduate reals and vector
-calculus and a one-complex variable course, especially in chapters 1-4.
-This was the goal before, but there were gaps in this goal.
-2) Add appendices on basic theorems in one complex variable and on Stokes
-theorem and differential forms (without proofs)
-3) Do some minor reordering to make the flow a bit more logical, reword some
-theorems/lemmas/propositions, and make some results that were just mentioned
-in text or exercises into proper propositions.
-4) Fix any issues found along the way, and simplify a few proofs.
-5) Add a few exercises and one or two concepts, but really, there's not much
-new material in this edition, mostly just more motivation for what we are
-doing, and hopefully clearer (and cleaner) exposition.
+
+<ul>
+<li>Fill in some more of the details to make the course more
+accessible.
+<li>Add more figures where appropriate.
+<li>Add more examples throughout.
+<li>Reorganize some of the more confusing sections, to make the flow more logical.
+<li>Reword some of the results.
+<li>Add many exercises.
+<li>Make some results that were just mentioned
+in text or exercises into proper propositions/theorems.
+<li>Fix any issues found along the way, and simplify a few proofs.
+<li>Add one or two concepts (Levi-flat and solution of the Levi
+problem for Reinhardt domains), but really, there's not much new material in
+this edition, mostly just more motivation for what we are doing, and hopefully
+clearer (and cleaner) exposition.
+<li>Add appendices on basic theorems in one complex variable, on Stokes
+theorem and differential forms (without proofs), and algebra.
+</ul>
 
 These are only the somewhat larger changes.  Lots of small minor
 improvements have been made throughout.
 
-* New slightly different font
-* A bunch of places used "domain" where "open set" is just as good.
-* Slightly more general Cauchy-Pompeiu
-* Add Re/Im notation in 0.1
-* Make difference quotient in 0.1 look like the one in 1.1 for consistency.
-* Add $C^k$ and $C^\infty$ and smooth in 0.1 since its needed all over.
-* Include "minimum principle" in the max principle for harmonic functions in 0.1
-* Add a bit more algebra detail and make sure to point out the rings are
-  commutative
-* Move all the $O(\ell)$ explanation into one place
-* Add a note (and a footnote) about the more standard big-oh notation vs our
-  shorthand
-* Clarifications and rewordings throughout
-* Add picture of unit ball in two dimensions
-* Equations renumbered in chapter 1
-* Add note on integrability in 1.1
-* Add note on partial z derivative being the limit of difference quotients
-** Add three exercises in 1.1, but that renumbers the last exercise
-* Add more on the multiindex notation as it is used to hopefully make the
-  computations less mysterious, also add more details on the convergence.
-* Use the "reduce to one variable proof" as the main one for converse of the
+<ul>
+<li>New slightly different font
+<li><b>Theorems, exercises, and even some sections have been renumbered due to
+some of the reordering, the new material, and the new exercises.</b>  This was
+unavoidable.
+<li>A bunch of places used "domain" where "open set" is just as good.  So try to use domain
+only when connectedness is needed.
+<li>Slightly more general Cauchy-Pompeiu
+<li>Add Re/Im notation in 0.1
+<li>Make difference quotient in 0.1 look like the one in 1.1 for consistency.
+<li>Add definition $C^k$ and $C^\infty$ and smooth in 0.1 since its needed all over.
+<li>Include "minimum principle" in the max principle for harmonic functions in 0.1
+<li>Add a bit more algebra detail and make sure to point out the rings are
+  commutative.
+<li>Move all the $O(\ell)$ explanation into one place, and explain the difference
+between the more standard big-oh notation vs our shorthand
+<li>Add picture of unit ball in two dimensions
+<li>Fill in some more details in 1.1.
+<li>Add exercises in 1.1.
+<li>Add more on the multiindex notation as it is used to hopefully make the
+  computations less mysterious.
+<li>Use the "reduce to one variable proof" as the main one for converse of the
   power series theorem, and add one more alternative proof with an exercise
-** Make the Cauchy estimates and computation of coefficients into a
-   proposition, which renumbers the propositions/theorems/etc.. in 1.2
-* The proposition about normal convergence only needs an open set, not a domain
-** Add exercises in 1.2, which renumbers the other exercises.
-* Say "local maximum" for the maximum principle ... why not.
-* Makes more sense to define complete Reinhardt domains with closed
+<li>Make the Cauchy estimates and computation of coefficients into a
+   proposition in 1.2
+<li>Add exercises in 1.2
+<li>Say "local maximum" for the maximum principle ... why not.
+<li>Makes more sense to define complete Reinhardt domains with closed
   polydiscs, so do that
-** In 1.3, move the implicit function theorem to the end of the section
+<li>In 1.3, move the implicit function theorem to the end of the section
    (past chain rule for mappings and the proposition on the determinant of the
-   Jacobian), it is much more natural to prove it then.  So the last three
-   results and last three exercises in the section are renumbered.
-** Add a couple of exercises in 1.3
-* Add figure to proof of Rothstein's theorem in 1.4
-** Add exercises in 1.4, which renumbers the other exercises.
-* Add a little bit of explanation of the computation for $f^\ell$ in 1.5
-* Add an exercise to 1.5
-* Add examples for analytic sets in 1.6.
-* Avoid unnecessary use of Sard's theorem in the theorem "one-to-one implies
+   Jacobian), it is much more natural to prove it then.
+<li>Add exercises in 1.3
+<li>Add figure to proof of Rothstein's theorem in 1.4
+<li>Add exercises in 1.4
+<li>Add a little bit of explanation of the computation for $f^\ell$ in 1.5
+<li>Add an exercise to 1.5
+<li>Add examples for analytic sets in 1.6.
+<li>Avoid unnecessary use of Sard's theorem in the theorem "one-to-one implies
   biholomorphic" (was 1.6.3)
-* Add a short blurb about convexity right at the beginning of 2.1
-* Improve figure for Hartogs figure.
-* Add exercises to 2.1
-** Add part b) to exercise 2.2.2 for any function vanishing on $M$ 
-* Add a blurb about tangent space being derivatives along $M$ and give a
-  short example, this renumbers the rest of the definitions/lemmas
-* Split up the numbered definitions in 2.2 a bit more.
-* Add a bit more clarification to how this relates to standard vector calculus
-* Add proposition for the "inertia of Levi form" does not depend on the
-  defining function and exercise 2.3.3 now just says to prove this
+<li>Add a short blurb about convexity right at the beginning of 2.1
+<li>Improve figure for Hartogs figure.
+<li>Add exercises to 2.1
+<li>Add part b) to exercise 2.2.2 for any function vanishing on $M$ 
+<li>Add a blurb about tangent space being derivatives along $M$ and give a
+  short example
+<li>Split up the numbered definitions in 2.2 a bit more.
+<li>Add proposition for the "inertia of Levi form" does not depend on the
+  defining function and relevant exercise now just says to prove this
   proposition.
-* Similarly, add the "inertia is preserved" to the change of variables
-  theorem (was 2.3.7) right after instead of just making it a remark after
+<li>Similarly, add the "inertia is preserved" to the change of variables
+  theorem (was 2.3.7) instead of just making it a remark after
   the theorem
-* Add discussion in 2.3 of the Levi form in terms of graph coordinates
+<li>Add discussion in 2.3 of the Levi form in terms of graph coordinates
   before the Lewy hypersurface example
-* Add figure of the Lewy hypersurface
-* Simplify the lemma normalizing the Levi form.  There is really no reason
+<li>Add figure of the Lewy hypersurface
+<li>Simplify the lemma normalizing the Levi form.  There is really no reason
   for the derivatives.
-** Add 2 exercises to 2.3 towards the end, renumbering exercises.
-* Add definition of Levi-flat to end of 2.3 and add 5 related exercises
-* Computation of the complex Hessian under change of coordinates is done
+<li>Add exercises to 2.3.
+<li>Add definition of Levi-flat to end of 2.3 and add related exercises
+<li>Computation of the complex Hessian under change of coordinates is done
   with different variable names on source and target for more clarity
-* Add graph of Poisson kernel for a few $r$
-* Add a picture for $n=1$ for definition of subharmonic function where it is
+<li>Add graph of Poisson kernel for a few $r$
+<li>Add a figure for $n=1$ for definition of subharmonic function where it is
   just the convex function 
-* Make the problem with looking for the (weakly/strongly) pseudoconvex
+<li>Make the exercise about the (weakly/strongly) pseudoconvex
   points more logical, and include 3 different domains
-** Move the solution of Dirichlet problem up in 2.4 so that it can be used.
-  This renumbers the exercises in 2.4
-* Add a remark about how pluriharmonic and plurisubharmonic functions are
+<li>Move the solution of Dirichlet problem up in 2.4 so that it can be used.
+<li>Add a remark about how pluriharmonic and plurisubharmonic functions are
   in some sense the correct several complex variable generalizations of
   affine linear and convex functions.
-* Rework and add exercises in 2.4
-* Clarify/simplify the proof of Rado's theorem and add a figure.
-* Add a note about convexity and example of the hull in section 2.5.
-** Add exercises in 2.5, renumbering the other exercises
-** Rework and add exercises in 2.6 which renumbers them
-* State the solution of the Levi problem as a theorem in 2.6 even though we
+<li>Rework and add exercises in 2.4
+<li>Clarify/simplify the proof of Rado's theorem and add a figure.
+<li>Add a note about convexity and example of the hull in section 2.5.
+<li>Add exercises in 2.5
+<li>Rework and add exercises in 2.6
+<li>State the solution of the Levi problem as a theorem in 2.6 even though we
   do not prove it.
-* Add definition of logarithmically convex complete Reinhardt domain and
+<li>Add definition of logarithmically convex complete Reinhardt domain and
   a series of exercises that prove the Levi problem for complete Reinhardt
   domains after Cartan-Thullen
-* Rename chapter 3 to "CR functions" from "CR geometry" since we really did
+<li>Rename chapter 3 to "CR functions" from "CR geometry" since we really did
   quite a bit of "CR geometry" in chapter 2 already, in chapter 3 it is
   CR functions specifically that we are interested in.
-** Add a few exercises in 3.1 renumbering the rest
-* Add a bit more explanation of the complexification and the abuse of notation
+<li>Add exercises in 3.1 
+<li>Add a bit more explanation of the complexification and the abuse of notation
   for treating $\bar{z}$ as an independent variable in the context of
   real-analytic functions.
-* In 3.2, explain taking derivatives of functions only defined on a
+<li>In 3.2, explain taking derivatives of functions only defined on a
   hypersurface, and add a relevant exercise.
-* In the proposition that a restriction of a holomorphic function is a
-  smooth CR function, use directly the definition, it is easier.
-* In 3.2 add the "reality condition" the complexified graph proposition, and
+<li>In the proposition that a restriction of a holomorphic function is a
+  smooth CR function, use the directly definition, it is easier.
+<li>In 3.2 add the "reality condition" the complexified graph proposition, and
   with it fix the gap showing that the vector fields given give the CR
   vector fields
-* In the complexified graph proposition, define complexification of $M$
+<li>In the complexified graph proposition, define complexification of $M$
   and also state that functions vanishing on $M$ vanish on the
   complexification, which is left as an exercise.
-* Add a short example of the complexified graph result.
-* Add a short one dimensional example of extending a function from a circle.
-* Make Severi's theorem a "Theorem" rather than just "Proposition"
-* In 3.2, prove the proposition "zero on the boundary means zero inside"
-  including in one dimension (using Rado), and add a figure.
-** Add a couple of exercises in 3.2, renumbering others
-* Add note at end of 3.2 about the "PDE problem" we are about to solve
-* Split of the d(f \wedge dz) = 0 claim as a lemma before Baouendi-Treves
-* Add two figures in the proof of Baouendi-Treves
-* Simplify proof of Lewy a tiny bit, and improve notation a bit
-  by changing $D_-$ to $\Delta$.  Since we're not worrying about
-  topology of $\Delta$, no need to worry about the Hessian.
-* Add exercises in 3.4
-* Add remark with a reference to Lewy's example to end of 3.4.
-* Explicitly say that the exterior derivative in $z$ and $\bar{z}$
-  is the same as in $x$ and $y$ before the proof of Pompeiu,
-  it's also useful later.
-* Add figure to proof of Cauchy-Pompeiu
-** Remove an exercise in 4.3 that was just wrong.
-** Add several new exercises to 4.3
-* Reorganize 6.1, including renaming it to "The ring of germs",
+<li>Add a short example of the complexified graph result.
+<li>Add a short one dimensional example of extending a function from a circle.
+<li>Make Severi's theorem a "Theorem" rather than just "Proposition"
+<li>In 3.2, prove the proposition "zero on the boundary means zero inside"
+  including in one dimension (using Radó), and add a figure.
+<li>Add a couple of exercises in 3.2, renumbering others
+<li>Add note at end of 3.2 about the "PDE problem" we are about to solve
+<li>Split off the $d(f \wedge dz) = 0$ claim as a lemma before Baouendi-Treves
+<li>Add two figures in the proof of Baouendi-Trèves
+<li>Simplify proof of Lewy a tiny bit, and improve notation a bit.
+<li>Add exercises in 3.4
+<li>Add remark with a reference to Lewy's example to end of 3.4.
+<li>Explicitly say that the exterior derivative in $z$ and $\bar{z}$
+  is the same as in $x$ and $y$ before the proof of Pompeiu.
+<li>Add figure to proof of Cauchy-Pompeiu
+<li>Remove an exercise in 4.3 that was just wrong.
+<li>Add new exercises to 4.3
+<li>Reorganize 6.1, including renaming it to "The ring of germs",
   adding exercises, and reordering some of the other exercises to be more
   logical.
-* Add figure for Weierstrass preparation theorem, and add some
+<li>Add figure for Weierstrass preparation theorem, and add some
   detail to the proof.
-* Explicitly state that roots of P are inside D for the Weierstrass
+<li>Explicitly state that roots of P are inside D for the Weierstrass
   preparation
-* Add more complete explanation of what symmetric functions are
-* Add explanation of why simply connectedness is important for global
+<li>Add more complete explanation of what symmetric functions are
+<li>Add explanation of why simply connectedness is important for global
   definition of roots after Proposition 6.2.6
-** Add some exercises in 6.2
-** Split 6.2 into two sections renumbering sections, exercises,
-  and everything in chapter 6.
-* Add some examples in 6.2
-* Add a note on the division theorem from algebra
-** Add some exercises in what is now 6.3
-* Describe better what geometrically distinct is and define geometrically
+<li>Add some exercises in 6.2
+<li>Split 6.2 into two sections
+<li>Add some examples in 6.2
+<li>Add a note on the division theorem from algebra
+<li>Add exercises in what is now 6.3
+<li>Describe better what geometrically distinct is and define geometrically
   unique explicitly
-* Make the D in the dependence on roots propositions and the discriminant
+<li>Make the D in the dependence on roots propositions and the discriminant
   theorem be a domain (bounded in the case of the discriminant theorem
-* Improve (strenghten) the statement of the theorem on the existence of 
+<li>Improve (strenghten) the statement of the theorem on the existence of 
   discriminant, add a figure to the proof and give a more detailed proof
   of the slightly stronger theorem.
-* Rename what was 6.3 (now 6.4) to the "Properties of the ring of germs"
-* Move the ideal definitions and exercises to what is now 6.4.
-* Add a couple of simple examples in what was 6.4 (now 6.5).
-* Add note (and exercise) on well-definedness of dimension, and some
+<li>Rename what was 6.3 (now 6.4) to the "Properties of the ring of germs"
+<li>Move the ideal definitions and exercises to what is now 6.4.
+<li>Add a couple of simple examples in what was 6.4 (now 6.5).
+<li>Add note (and exercise) on well-definedness of dimension, and some
   rewording in what was 6.4 (now 6.5).
-** Add exercises in what was 6.4 (now 6.5)
-** What was 6.4.1 is now a separate section (that was really an oversight,
+<li>Add exercises in what was 6.4 (now 6.5)
+<li>What was 6.4.1 is now a separate section (that was really an oversight,
    that should have been a separate section to begin with)
-** Add examples in what is now 6.5, and move the cusp figure up to where
+<li>Add examples in what is now 6.5, and move the cusp figure up to where
    the example first appears now
-* Simplify definition of regular point to jive with what was used
+<li>Simplify definition of regular point to jive with what was used
   previously in 1.6 (just relabeling coordinates)
-** Add exercises in what is now 6.5
-** Split out the hypervariety results to a separate section in chapter 6
-* Use zeta instead of w in the Segre variety section to avoid confusion
-* Add example and exercise in Segre variety section
-* Add a very short Appendix A on basic notation, which may not be totally standard
-* Add Appendix B on one complex variable stuff
-* Add Appendix C on differential forms and Stokes' theorem
-* Add Appendix D on basic algebra notation and results
-* Add list of notations
-* Add Zariski-Samuel to the list of further reading
+<li>Add exercises in what is now 6.5
+<li>Split out the hypervariety results to a separate section in chapter 6
+<li>Use $\zeta$ instead of $w$ in the Segre variety section to avoid confusion
+<li>Add example and exercise in Segre variety section
+<li>Add a very short Appendix A on basic notation, which may not be totally standard
+<li>Add Appendix B on one complex variable stuff
+<li>Add Appendix C on differential forms and Stokes' theorem
+<li>Add Appendix D on basic algebra notation and results
+<li>Add list of notations
+<li>Add Zariski-Samuel to the list of further reading
+<li>And many other minor (and some not so minor) clarifications and
+improvements that were either too small to note down, or that I forgot to note.
+</ul>
