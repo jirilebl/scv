@@ -1,3 +1,7 @@
-No new items since version 3.0.
+Since 3.0
+
+* Fix errata
+* A couple of minor improvements in wording
+* In analytic continuation definition explicitly state that the path begins at p, although it seems implied.
 
 See https://www.jirka.org/scv/changes.html for older changes.
