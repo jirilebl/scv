@@ -429,6 +429,7 @@ use at least one of the licenses.
 \\
 I would like to thank Debraj Chakrabarti, Anirban Dawn, Alekzander Malcom,
 John Treuer, Jianou Zhang, Liz Vivas, Trevor Fancher,
+Nicholas Lawson McLean,
 and students in my classes for pointing out typos/errors
 and helpful suggestions. 
 
@@ -1557,9 +1558,9 @@ $\sabs{f(z)}$ achieves its maximum on $\Gamma$.
 \end{exercise}
 
 \begin{exercise}
-A ball is different from a polydisc.  Prove that for any $z \in \partial \bB_n$
+A ball is different from a polydisc.  Prove that for any $p \in \partial \bB_n$
 there exists a continuous $f \colon \overline{\bB_n} \to \C$, holomorphic
-on $\bB_n$ such that $\sabs{f(z)}$ achieves a strict maximum at $z$.
+on $\bB_n$ such that $\sabs{f(z)}$ achieves a strict maximum at $p$.
 \end{exercise}
 
 \begin{exercise}
@@ -1569,14 +1570,14 @@ the function is locally bounded.
 Let $f(x,y) = \frac{xy}{x^2+y^2}$ outside the origin
 and $f(0,0) = 0$.  Prove that $f$ is a
 locally bounded function in $\R^2$, which is differentiable
-in each variable separately (all partial derivatives exist), but 
-the function is not even continuous.  There is something very
+in each variable separately (all partial derivatives exist at every point), but 
+$f$ is not even continuous.  There is something very
 special about the holomorphic category.
 \end{exercise}
 
 \begin{exercise}
 Suppose $U \subset \C^n$ is open.
-Prove that $f \colon U \to \C$ is holomorphic, if and only if,
+Prove that $f \colon U \to \C$ is holomorphic if and only if
 $f$ is locally bounded and
 for every $a,b \in \C^n$, the
 function
@@ -1588,14 +1589,18 @@ the open set $\{ \zeta \in \C : \zeta a + b \in U \}$.
 Prove a several complex variables version of Morera's theorem (see
 \thmref{thm:onevarmorera}).
 A triangle $T \subset \C^n$ is the closed convex hull of three points, so
-including the inside.  Orient $T$ in some way (will not matter which way)
+including the inside.  Orient $T$ in some way %(will not matter which way)
 and orient $\partial T$ accordingly.
+A triangle $T$ \emph{lies in a complex line} if
+its vertices $a,b,c$ satisfy
+$\zeta (b-a) = c-a$ for some $\zeta \in \C$.
 Suppose $U \subset \C^n$ is open and $f \colon U \to \C$ is continuous.
 Prove that $f$ is holomorphic if and only if
 \begin{equation*}
 \int_{\partial T} f(z) \, dz_k = 0
 \end{equation*}
-for every triangle $T \subset U$ and every $k=1,2,\ldots,n$.
+for every triangle $T \subset U$ that lies in a complex line,
+and every $k=1,2,\ldots,n$.
 Hint: The previous exercise may be useful.
 \end{exercise}
 \end{exbox}
@@ -2084,10 +2089,12 @@ proposition.
 
 \begin{prop}
 Let $U \subset \C^n$ be an open set.
-Suppose $f_j \colon U \to \C$ converge uniformly on compact subsets
+Suppose the sequence $f_j \colon U \to \C$ converges uniformly on compact subsets
 to $f \colon U \to \C$.  If every $f_j$ is holomorphic, then $f$ is
 holomorphic and 
-$\frac{\partial^{\sabs{\alpha}} f_j}{\partial z^\alpha}$ converge to
+the sequence
+$\left\{ \frac{\partial^{\sabs{\alpha}} f_j}{\partial z^\alpha}\right\}$
+converges to
 $\frac{\partial^{\sabs{\alpha}} f}{\partial z^\alpha}$ uniformly on compact
 subsets.
 \end{prop}
@@ -2309,8 +2316,8 @@ complex lines through the origin.
 
 \begin{exercise}
 Prove the several variables version of \emph{\myindex{Montel's theorem}}:
-Suppose $\{ f_k \}$ is a sequence of holomorphic functions on $U
-\subset \C^n$ that is uniformly bounded.
+Suppose $\{ f_k \}$ is a uniformly bounded sequence of holomorphic functions on an open set $U
+\subset \C^n$.
 Show that there exists a subsequence $\{ f_{k_j} \}$ that converges
 uniformly on compact subsets to some holomorphic function $f$.
 Hint: Mimic the one-variable proof.
@@ -2330,7 +2337,7 @@ Suppose $p \in \C^n$ is a point and $D \subset \C^n$ is a ball with $p \in D$.
 A holomorphic function $f \colon D \to \C$ can be
 \emph{analytically continued}\index{analytic continuation}
 along a path
-$\gamma \colon [0,1] \to \C^n$ if for every $t \in [0,1]$ there exists
+$\gamma \colon [0,1] \to \C^n$, $\gamma(0) = p$, if for every $t \in [0,1]$ there exists
 a ball $D_t$ centered at $\gamma(t)$ and a holomorphic function
 $f_t \colon D_t \to \C$ and for each $t_0 \in [0,1]$ there is an
 $\epsilon > 0$ such that if $\sabs{t-t_0} < \epsilon$, then $f_t = f_{t_0}$
@@ -2370,7 +2377,8 @@ Prove that $\sO(U)$ is actually a commutative ring with the operations
 Show that $\sO(U)$ is an \myindex{integral domain} (has no zero divisors) if and only
 if $U$ is connected.  
 That is, show that $U$ being connected is equivalent to showing that
-if $h(z) = f(z)g(z)$ is identically zero for $f,g \in \sO(U)$, then either $f(z)$ or $g(z)$ are
+if $h(z) = f(z)g(z)$ is identically zero for $f,g \in \sO(U)$,
+then either $f$ or $g$ is
 identically zero.
 \end{exercise}
 \end{exbox}
@@ -2390,8 +2398,8 @@ once we generalize $U$ to complex manifolds.
 
 The points where
 $g=0$ are called the \emph{\myindex{poles}} of $F$.
-Unlike in one variable we do not require poles to be isolated, and 
-in fact poles are never isolated in more than one variable.
+Unlike in one variable, we do not require poles to be isolated.
+In fact, poles are never isolated in more than one variable.
 There is also a new type of singular
 point for meromorphic functions in more than one
 variable:
@@ -2713,7 +2721,7 @@ However if we write $\bar{f}(z)$ we really mean $z \mapsto \overline{f(\bar{z})}
 that is composing both the function and the argument with conjugation.
 Prove $z \mapsto \bar{f}(z)$ is holomorphic and prove $f$ is
 real-valued on $\R^n$ (when $y=0$) if and only if $f(z) =
-\bar{f}(z)$ for all $z$.
+\bar{f}(z)$ for all $z \in \C$.
 \end{exercise}
 \end{exbox}
 
@@ -3062,7 +3070,7 @@ $\overline{\bB_n}$.
 Let $\Delta$ be an analytic disc.
 Prove that $\Delta \cap \partial \bB_n$ is nowhere dense in $\Delta$.
 \item
-Find an analytic disc, such that $(1,0) \in \Delta$, $\Delta \cap \bB_n =
+Find an analytic disc in $\C^2$, such that $(1,0) \in \Delta$, $\Delta \cap \bB_2 =
 \emptyset$, and 
 locally near
 $(1,0) \in \partial \bB_2$, the set
@@ -10470,7 +10478,7 @@ computation above.
 \end{exbox}
 
 That $\psi$ has compact support follows because $g_1$ has compact
-support together with analytic continuation.  In particular, $\psi$ is
+support together with the identity theorem.  In particular, $\psi$ is
 holomorphic for very large $z$ since $\bar{\partial} \psi = g = 0$ when $z$
 is large.  When $z_2,\ldots,z_n$ are large, then $\psi$ is identically zero
 simply from its definition.  See the following diagram:
@@ -10481,7 +10489,7 @@ simply from its definition.  See the following diagram:
 
 As $\bar{\partial} \psi = 0$ on the light gray and white areas in the
 diagram, $\psi$ is holomorphic there. As $\psi$ is zero on the light
-gray region it is zero also on the white region by analytic continuation.
+gray region it is zero also on the white region by the identity theorem.
 That is, $\psi$ is zero on the unbounded component of the set where $g=0$,
 that is, $\psi$ has compact support.
 \end{proof}
@@ -14796,7 +14804,8 @@ Suppose $p$ is a point and $D$ is a disc with $p \in D$.
 A holomorphic function $f \colon D \to \C$ can be
 \emph{analytically continued}\index{analytic continuation}
 along a path
-$\gamma \colon [0,1] \to \C$ if for every $t \in [0,1]$ there exists
+$\gamma \colon [0,1] \to \C$, $\gamma(0) = p$,
+if for every $t \in [0,1]$ there exists
 a disc $D_t$ centered at $\gamma(t)$ and a holomorphic function
 $f_t \colon D_t \to \C$ and for each $t_0 \in [0,1]$ there is an
 $\epsilon > 0$ such that if $\sabs{t-t_0} < \epsilon$, then
