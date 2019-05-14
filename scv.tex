@@ -4809,7 +4809,7 @@ Prove the above statement about $H$ and convexity at $p$.
 \end{exercise}
 
 \begin{exercise}
-$M$ is convex from both sides at $p$ if and only if for a
+We say $M$ is convex from both sides at $p$ if for a
 defining function $r$ for $M$ at $p$, both the set given by
 $r > 0$ and the set given by $r < 0$ are convex at $p$.
 Prove that if a hypersurface $M \subset \R^n$ is convex from both sides at all
@@ -6428,34 +6428,34 @@ $\nabla^2 f \geq 0$.
 \end{prop}
 
 \begin{proof}
-We have a $C^2$-smooth function on a subset of $\C \cong \R^2$
-with $\nabla^2 f \geq 0$ and we wish to show that it is subharmonic.
-Take a disc $\Delta_r(a)$ such that $\overline{\Delta_r(a)} \subset U$.
+Suppose $f$ is a $C^2$-smooth function on a subset of $\C \cong \R^2$
+with $\nabla^2 f \geq 0$.  We wish to show that $f$ is subharmonic.
+Take a disc $\Delta$ such that $\overline{\Delta} \subset U$.
 Consider a function
-$g$ continuous on $\overline{\Delta_r(a)}$,
-harmonic on $\Delta_r(a)$, and such that
-$f \leq g$ on the boundary $\partial \Delta_r(a)$.  Because
+$g$ continuous on $\overline{\Delta}$,
+harmonic on $\Delta$, and such that
+$f \leq g$ on the boundary $\partial \Delta$.  Because
 $\nabla^2 (f-g) = \nabla^2 f \geq 0$, we assume $g = 0$ and $f \leq 0$
-on the boundary $\partial \Delta_r(a)$. 
+on the boundary $\partial \Delta$. 
 
-Suppose $\nabla^2 f > 0$ at all points on $\Delta_r(a)$.
-Suppose $f$ attains a maximum in $\Delta_r(a)$,
+Suppose $\nabla^2 f > 0$ at all points on $\Delta$.
+Suppose $f$ attains a maximum in $\Delta$,
 call this point $p$.  
 The Laplacian $\nabla^2 f$ is the trace of the Hessian matrix, but for $f$ to have a
 maximum, the Hessian must have only nonpositive eigenvalues at the critical
 points, which is a
 contradiction as the trace is the sum of the eigenvalues.  So $f$ has no
 maximum inside, and therefore $f \leq 0$ on all of
-$\overline{\Delta_r(a)}$.
+$\overline{\Delta}$.
 
 Next suppose $\nabla^2 f \geq 0$.
-Let $M$ be the maximum of $x^2+y^2$ on $\overline{\Delta_r(a)}$.
+Let $M$ be the maximum of $x^2+y^2$ on $\overline{\Delta}$.
 Take $f_n(x,y) = f(x,y) + \frac{1}{n}
 ( x^2+y^2 ) - \frac{1}{n}M$.  Clearly $\nabla^2 f_n > 0$ everywhere on
-$\Delta_r(a)$ and
+$\Delta$ and
 $f_n \leq 0$ on the boundary, so $f_n \leq 0$ 
-on all of $\overline{\Delta_r(a)}$.  As $f_n \to f$ we obtain that
-$f \leq 0$ on all of $\overline{\Delta_r(a)}$.
+on all of $\overline{\Delta}$.  As $f_n \to f$ we obtain that
+$f \leq 0$ on all of $\overline{\Delta}$.
 
 The other direction is left as an exercise.
 \end{proof}
