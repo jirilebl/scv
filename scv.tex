@@ -1505,7 +1505,7 @@ slight generalization is contained within the next two exercises.
 \begin{exbox}
 \begin{exercise}
 Suppose $f \colon \overline{\D^2} \to \C$ is continuous and holomorphic
-on $\D^2$.  For any $\theta \in \R$, prove
+on $\D^2$.  For every $\theta \in \R$, prove
 \begin{equation*}
 g_1(\xi) = f(\xi,e^{i\theta}) \qquad \text{and} \qquad
 g_2(\xi) = f(e^{i\theta},\xi)
@@ -1558,7 +1558,7 @@ $\sabs{f(z)}$ achieves its maximum on $\Gamma$.
 \end{exercise}
 
 \begin{exercise}
-A ball is different from a polydisc.  Prove that for any $p \in \partial \bB_n$
+A ball is different from a polydisc.  Prove that for every $p \in \partial \bB_n$
 there exists a continuous $f \colon \overline{\bB_n} \to \C$, holomorphic
 on $\bB_n$ such that $\sabs{f(z)}$ achieves a strict maximum at $p$.
 \end{exercise}
@@ -1824,7 +1824,7 @@ in one variable, and geometric series in one variable
 are uniformly absolutely convergent on compact subsets of the unit disc.
 So the series
 above converges uniformly absolutely for $(z,\zeta) \in K \times \Gamma$ 
-for any compact subset $K$ of $\Delta$.
+for every compact subset $K$ of $\Delta$.
 
 Compute
 \begin{equation*}
@@ -2345,7 +2345,7 @@ in $D_t \cap D_{t_0}$.
 Prove a several variables version of the \emph{\myindex{Monodromy theorem}}:
 If $U \subset \C^n$ is a simply connected domain, $D \subset U$ a ball and
 $f \colon D \to \C$ a holomorphic function that can be analytically
-continued from $p \in D$ to any $q \in U$, then there exists
+continued from $p \in D$ to every $q \in U$, then there exists
 a unique holomorphic function $F \colon U \to \C$ such that $F|_D = f$.
 \end{exercise}
 \end{exbox}
@@ -2456,7 +2456,7 @@ $U \subset \C^n$ and $V \subset \C^m$ are open sets and suppose
 $f \colon U \to V$, and $g \colon V \to \C$ are (real) differentiable
 functions (mappings).  Write the variables as
 $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
-\subset \C^m$.  Then for any $j=1,\ldots,n$,
+\subset \C^m$.  Then for $j=1,\ldots,n$,
 \begin{equation} \label{eq:chainrule}
 \frac{\partial}{\partial z_j} \left[ g \circ f \right]
 =
@@ -2743,9 +2743,9 @@ The notation $f'(p) = Df(p)$ is also used.
 \begin{exercise}
 Suppose $U \subset \C^n$ is open, $\R^n$ is naturally embedded in $\C^n$.
 Consider a holomorphic mapping $f \colon U \to \C^m$ and suppose that
-$f|_{U \cap \R^n}$ maps into $\R^m \subset \C^m$.  Prove that for
-any $p \in U \cap \R^n$, the real
-Jacobian matrix of the map
+$f|_{U \cap \R^n}$ maps into $\R^m \subset \C^m$.  Prove that given
+$p \in U \cap \R^n$, the real
+Jacobian matrix at $p$ of the map
 $f|_{U \cap \R^n} \colon U \cap \R^n \to \R^m$ is equal to the holomorphic
 Jacobian matrix of the map $f$ at $p$.  In particular, $Df(p)$ is a matrix
 with real entries.
@@ -3158,13 +3158,13 @@ a limit $g \colon \bD \to \overline{\bB}_2$.  As $(\zeta,w_k) \to
 and hence $g$ must be constant.
 
 Let $g_k'$ denote the derivative (we differentiate each component).
-The functions $g_k'$ converge
-to $g' = 0$. So for any fixed $\zeta \in \bD$,
+The functions $g_k'$ converge to $g' = 0$.
+So for an arbitrary fixed $\zeta \in \bD$,
 $\frac{\partial f}{\partial z_1} (\zeta, w_k) \to 0$.
 This limit holds for all $e^{i\theta}$ and some subsequence of
 an arbitrary sequence $\{ w_k \}$ where $w_k \to e^{i\theta}$.  The
-holomorphic mapping $w \mapsto \frac{\partial f}{\partial z_1} (\zeta, w)$
-therefore extends continuously
+holomorphic mapping $w \mapsto \frac{\partial f}{\partial z_1} (\zeta, w)$,
+therefore, extends continuously
 to the closure $\overline{\D}$ and is zero on $\partial \D$.
 We apply the maximum
 principle or the Cauchy formula and the fact that $\zeta$ was arbitrary to find 
@@ -3664,7 +3664,7 @@ let $f(z) = z_1^2-z_2^2$ and consider $X = f^{-1}(0)$. As $\nabla f =
 outside of the origin, we can solve for $z_1$ or $z_2$ and so
 all points of $X \setminus 0$ are regular.  In fact,
 $z_1 = z_2$ and $z_1 = -z_2$ are the two possibilities.
-In any neighborhood of the origin, however, there is no way to solve for either
+In no neighborhood of the origin, however, is there a way to solve for either
 $z_1$ or $z_2$, since you always get two possible solutions:  If you could
 solve $z_1 = g(z_2)$, then both $z_2 = g(z_2)$ and $-z_2 = g(z_2)$ must be
 true, a contradiction for any nonzero $z_2$.  Similarly we cannot solve for $z_1$.
@@ -3968,7 +3968,7 @@ A set $S$ is \emph{\myindex{geometrically convex}}\index{convex}
 if $t x + (1-t)y \in S$ 
 for all $x,y \in S$ and $t \in [0,1]$.
 The exercise below
-says that any geometrically convex domain is a domain of holomorphy.
+says that every geometrically convex domain is a domain of holomorphy.
 There are other,
 nonconvex domains of holomorphy (any domain in $\C$),
 so classical convexity is not the correct notion, but it is
@@ -4127,7 +4127,7 @@ is connected, however, the proof is much harder.
 The single-valuedness of the extension is the key point that makes the
 general proof harder.
 
-Notice the surprising fact that any holomorphic function on
+Notice the surprising fact that every holomorphic function on
 the shell
 \begin{equation*}
 \bB_n \setminus \overline{B_{1-\epsilon}(0)} =
@@ -4252,7 +4252,7 @@ so a unitary matrix.
 
 \section{Tangent vectors, the Hessian, and convexity}
 
-An exercise in the previous section showed that any convex domain is a
+An exercise in the previous section showed that every convex domain is a
 domain of holomorphy.  However, classical convexity is too strong.
 
 \begin{exbox}
@@ -4342,7 +4342,7 @@ to distinguish it from a complex hypersurface that would be the zero set of
 a holomorphic function.
 
 \begin{defn}
-For any $p \in \R^n$, the set of \emph{tangent vectors}\index{vector} $T_p \R^n$ is given by
+For a point $p \in \R^n$, the set of \emph{tangent vectors}\index{vector} $T_p \R^n$ is given by
 \glsadd{not:realtangentspace}%
 \begin{equation*}
 T_p \R^n = \operatorname{span}_{\R} \left\{
@@ -4357,7 +4357,7 @@ That is, a vector $X_p \in T_p \R^n$ is an object of the form
 X_p = \sum_{j=1}^n a_j 
 \frac{\partial}{\partial x_j}\Big|_p ,
 \end{equation*}
-for real numbers $a_j$.  So for computations, $X_p$ could be represented
+for real numbers $a_j$.  For computations, $X_p$ could be represented
 by an $n$-vector $a = (a_1,\ldots,a_n)$.  However, if $p \not= q$, then
 $T_p \R^n$ and
 $T_q \R^n$ are distinct spaces.
@@ -4371,7 +4371,7 @@ it is computed as $X_p f = \nabla f|_p \cdot (a_1,\ldots,a_n)$.
 
 \begin{defn}
 Let $M \subset \R^n$ be a smooth hypersurface,
-$p \in M$, and $r$ is the defining function at $p$,
+$p \in M$, and $r$ is a defining function at $p$,
 then a vector $X_p \in T_p \R^n$ is \emph{tangent}\index{tangent vector}
 to $M$ at $p$ if
 \begin{equation*}
@@ -4407,7 +4407,7 @@ smooth defining function of $M$ on a neighborhood of $p$.
 Show that there exists a smooth nonvanishing function $g$ such that
 $\varphi = g r$ (in a neighborhood of $p$).
 \item
-Now suppose $\varphi$ is just any smooth function that vanishes on $M$ (not
+Now suppose $\varphi$ is an arbitrary smooth function that vanishes on $M$ (not
 necessarily a defining function).
 Again show that $\varphi = g r$, but now $g$ may possibly vanish.
 \end{exparts}
@@ -4749,7 +4749,7 @@ What is left is to show that the derivative at 0 of $\varphi$ vanishes.
 As
 $r\bigl(x,\varphi(x)\bigr) = 0$ for all $x$ in a neighborhood of the
 origin, we differentiate.
-For any $j=1,\ldots,n-1$,
+For every $j=1,\ldots,n-1$,
 \begin{equation*}
 0 = 
 \frac{\partial}{\partial x_j} \Bigl[
@@ -4783,7 +4783,7 @@ r}{\partial y}(0,0) = v_n < 0$.
 
 The advantage of this representation is that the tangent space at $p$
 can be identified with the $x$ coordinates for the purposes of computation.
-Considering $x$ as a column vector, the Taylor expansion of any smooth function $\varphi$ at the origin is
+Considering $x$ as a column vector, the Taylor expansion of a smooth function $\varphi$ at the origin is
 \begin{equation*}
 \varphi(x) = \varphi(0) + \nabla \varphi|_0 \cdot x + \frac{1}{2}\, x^t H x + E(x) ,
 \end{equation*}
@@ -6163,7 +6163,7 @@ B_r(a) .
 \end{equation*}
 \end{defn}
 
-In other words, a subharmonic function is a function that is less than any
+In other words, a subharmonic function is a function that is less than every
 harmonic function on every ball.
 We remark that when $n=1$ in the definition of a subharmonic function,
 it is the same as the standard definition of a
@@ -6237,7 +6237,8 @@ P_r(\theta)
 \end{equation*}
 
 \begin{thm} \label{thm:dirichsol}
-Given any continuous function $u \colon \partial \D \to \C$, the function
+Let $u \colon \partial \D \to \C$ be a continuous function.
+The function
 $Pu \colon \overline{\D} \to \C$, defined by
 \begin{equation*}
 Pu(re^{i\theta})
@@ -6413,7 +6414,7 @@ $f(z) \leq g(z)$ for all $z \in U$.
 \begin{exercise} \label{exercise:onlyniceuneededforsubharmonic}
 Let $g$ be a function
 harmonic on a disc $\Delta \subset \C$ and continuous on
-$\overline{\Delta}$.  Prove that for any $\epsilon > 0$ there exists
+$\overline{\Delta}$.  Prove that for every $\epsilon > 0$ there exists
 a function $g_\epsilon$, harmonic in a neighborhood of $\overline{\Delta}$,
 such that $g(z) \leq g_\epsilon(z) \leq g(z)+\epsilon$ for all $z \in
 \overline{\Delta}$.
@@ -6564,7 +6565,7 @@ Similarly, as far as several complex variables are concerned, a
 pluriharmonic function is the right generalization to $\C^n$
 of an affine linear function on $\R^n$.
 In the same way plurisubharmonic functions are the correct complex variable generalizations
-of convex functions.  One real variable convex function is like a
+of convex functions.  A convex function of one real variable is like a
 subharmonic function, and a convex function of several real variables is
 a function that is convex when restricted to any real line.
 
@@ -7097,7 +7098,7 @@ that is smooth functions with positive semidefinite Hessian.
 \end{exercise}
 
 \begin{exercise}
-Show that any open set $U \subset \R^n$ is convex with respect to real
+Show that every open set $U \subset \R^n$ is convex with respect to real
 polynomials.
 \end{exercise}
 \end{exbox}
@@ -7781,7 +7782,7 @@ See \exerciseref{exercise:modholplush}.
 \end{exercise}
 
 \begin{exercise}
-Prove that any domain $U \subset \C$ is holomorphically convex by 
+Prove that every domain $U \subset \C$ is holomorphically convex by 
 giving a topological description of $\widehat{K}_U$ for any
 compact $K \subset \subset U$.  Hint: Runge may be useful.
 \end{exercise}
@@ -8223,7 +8224,7 @@ $f|_W$ is harmonic.  Prove that $f$ is harmonic.
 \end{exercise}
 
 \begin{exercise}
-Let $(0,1) \subset \R$.  Construct an fixed real-analytic function
+Let $(0,1) \subset \R$.  Construct a real-analytic function
 on $(0,1)$ that does not complexify to the rectangle $(0,1) + i(-\epsilon,\epsilon)
 \subset \C$ for any $\epsilon > 0$.  Why does this not contradict the
 proposition?
@@ -8589,8 +8590,9 @@ is very natural, however, if $X$ is nice, such as a hypersurface, or if $X$ is
 a closure of a domain with smooth boundary.
 
 \begin{prop}
-If $M \subset \R^n$ is a smooth (resp.\ real-analytic) real hypersurface, then $f \colon M \to \C$
-is smooth (resp.\ real-analytic) if and only if whenever near any point if we write
+Suppose $M \subset \R^n$ is a smooth (resp.\ real-analytic) real hypersurface.
+A function $f \colon M \to \C$
+is smooth (resp.\ real-analytic) if and only if whenever near any point we write
 $M$ in coordinates $(x,y) \in \R^{n-1} \times \R$ as
 \begin{equation*}
 y = \varphi(x)
@@ -8613,7 +8615,7 @@ even for a fixed neighborhood $U$.
 \begin{exercise}
 Suppose $M \subset \R^n$ is a smooth hypersurface, $f \colon M \to \C$
 is a smooth function, $p \in M$, and $X_p \in T_p M$.  Prove that
-$X_p$ is well-defined.
+$X_p f$ is well-defined.
 That is, suppose
 $U$ is a neighborhood of $p$,
 $F \colon U \to \C$ and $G \colon U \to \C$
@@ -8714,7 +8716,7 @@ $f$ on $M$ such that $\sabs{f}$ attains a strict maximum at a point.
 
 \begin{exercise}
 Suppose $M \subset \C^n$, $n \geq 2$, is the hypersurface given by $\Im z_n
-= 0$.  Show that any smooth CR function on $M$ is holomorphic in the variables
+= 0$.  Show that every smooth CR function on $M$ is holomorphic in the variables
 $z_1,\ldots,z_{n-1}$.  Use this to show that for no smooth CR function $f$ on $M$ can
 $\sabs{f}$ attain a \emph{strict} maximum on $M$.  But show that there do
 exist nonconstant functions such that $\sabs{f}$ attains a (nonstrict) maximum $M$.
@@ -8972,7 +8974,7 @@ in more than one dimension.
 
 \begin{thm}[Severi] \label{thm:severi}\index{Severi's theorem}
 Suppose $M \subset \C^n$ is a real-analytic hypersurface and $p \in M$.
-For any real-analytic CR function $f \colon M \to \C$, there exists
+For every real-analytic CR function $f \colon M \to \C$, there exists
 a holomorphic function $F \in \sO(U)$ for a neighborhood $U$ of $p$
 such that $F(q) = f(q)$ for all $q \in M \cap U$.
 \end{thm}
@@ -9137,7 +9139,7 @@ Suppose $M \subset \C^n$ is a smooth real hypersurface.
 Let $p \in M$ be fixed and let $z=(z_1,\ldots,z_n)$ be holomorphic
 coordinates near $p$.
 Then there exists a compact
-neighborhood $K \subset M$ of $p$, such that for any smooth CR function $f \colon M \to \C$,
+neighborhood $K \subset M$ of $p$, such that for every smooth CR function $f \colon M \to \C$,
 there exists a sequence $\{ p_j \}$ of polynomials in $z$ such that
 \begin{equation*}
 p_j(z) \to f(z)
@@ -9156,7 +9158,7 @@ theorem of Mergelyan
 \begin{example}
 Let us show that $K$ cannot possibly be arbitrary.  For simplicity $n=1$.
 Let $S^1 \subset \C$ be the unit circle (boundary of the disc),
-then any smooth function on $S^1$ is a smooth CR function.  Let $f$
+then every smooth function on $S^1$ is a smooth CR function.  Let $f$
 be a nonconstant real function such as $\Re z$.  Suppose for
 contradiction that we could take $K = S^1$ in the theorem.  Then $f(z) = \Re
 z$ could be uniformly
@@ -9182,7 +9184,7 @@ in complex analysis)
 and the Weierstrass approximation theorem.  In Baouendi--Tr{\`e}ves we obtain
 an approximation by holomorphic polynomials, while Weierstrass gives us
 polynomials in the real variables, or in $z$ and $\bar{z}$.  For example,
-via Weierstrass, any continuous function is uniformly approximable on $S^1$ via polynomials
+via Weierstrass, every continuous function is uniformly approximable on $S^1$ via polynomials
 in $\Re z$ and $\Im z$, and therefore by polynomials in $z$ and $\bar{z}$.
 These polynomials do not in general converge anywhere but on $S^1$.
 \end{remark}
@@ -9206,7 +9208,7 @@ we only do the convolution in the
 $x$ variables keeping $y=0$.  Then we use the fact that the
 function is CR to show that we get an approximation even for other $y$.
 
-In the formulas below, given any vector $v = (v_1,\ldots,v_n)$,
+In the formulas below, given a vector $v = (v_1,\ldots,v_n)$,
 it will be useful to write
 \glsadd{not:bracketsquare}%
 \begin{equation*}
@@ -9856,8 +9858,8 @@ $f$ is real-analytic.
 
 \begin{exercise}
 Suppose $M \subset \C^n$ is given by $\Im z_n = 0$.  Use the standard
-Weierstrass approximation theorem to show that for any $K \subset \subset M$
-an arbitrary smooth CR function $f \colon M \to \C$ can be uniformly approximated
+Weierstrass approximation theorem to show that given a $K \subset \subset M$,
+and a smooth CR function $f \colon M \to \C$, then $f$ can be uniformly approximated
 by holomorphic polynomials on $K$.
 \end{exercise}
 \end{exbox}
@@ -10002,7 +10004,7 @@ and it was proved by neither Hartogs nor
 Bochner, but by Martinelli in 1961.}.
 Later, in \exerciseref{exercise:HartogsBochnerSPCVX},
 you will prove it for strongly pseudoconvex
-domains.  However, the theorem is true for any bounded domain with connected smooth
+domains.  However, the theorem is true for every bounded domain with connected smooth
 boundary
 with no assumptions on the Levi form, but 
 a different approach would have to be taken.
@@ -10018,7 +10020,7 @@ such that $F|_{\partial U} = f$.
 
 \begin{proof}
 A strongly convex domain is strongly pseudoconvex, so $f$ must extend to the
-inside locally near any point.  The extension is locally unique as any two
+inside locally near every point.  The extension is locally unique as any two
 extensions have the same boundary values.  Therefore, there exists a set
 $K \subset \subset U$ such that $f$ extends to $U \setminus K$.
 Via an exercise below we can assume that $K$ is strongly convex and
@@ -10416,7 +10418,7 @@ We use the generalized Cauchy formula on the $z_1$
 variable.
 Take $R$ large enough so that 
 $g_j(\zeta,z_2,\ldots,z_n)$ is zero when $\sabs{\zeta}\geq R$ for all $j$.
-For any $j$ we get
+For every $j$,
 \begin{equation*}
 \begin{split}
 g_j(z_1,\ldots,z_n) & =
@@ -11165,7 +11167,7 @@ the uniform norm on compact sets via the $A^2(U)$ norm.
 
 \begin{lemma} \label{lemma:bergmanKbound}
 Let $U \subset \C^n$ be a domain and $K \subset \subset U$ compact.  Then
-there exists a constant $C_K$, such that for any $f\in A^2(U)$ we have
+there exists a constant $C_K$, such that for every $f\in A^2(U)$ we have
 \begin{equation*}
 \snorm{f}_K
 =
@@ -11552,7 +11554,8 @@ $H^2(\partial \bB_n)$.
 \end{exercise}
 
 \begin{exercise}
-Show that for any bounded $U \subset \C^n$ with smooth boundary,
+Let $U \subset \C^n$ be a bounded domain with smooth boundary.
+Prove that 
 $H^2(\partial U)$ is infinite-dimensional.
 \end{exercise}
 \end{exbox}
@@ -12669,7 +12672,7 @@ $h_1,\ldots,h_k$ also generate $I$ in ${}_n \sO_0$.
 
 \begin{exbox}
 \begin{exercise}
-Prove that any proper ideal $I \subset \sO_0$ where $I \not= \{ 0 \}$
+Prove that every proper ideal $I \subset \sO_0$ where $I \not= \{ 0 \}$
 is generated by Weierstrass polynomials.  As a technicality,
 note that a
 Weierstrass polynomial of degree 0 is just 1, so it works for $I = \sO_0$.
@@ -13640,7 +13643,7 @@ Levi form:
 \begin{equation*}
 \Im w = \abs{z_1}^2-\abs{z_2}^2 .
 \end{equation*}
-For any $\theta \in \R$,
+For every $\theta \in \R$,
 $M$ contains the complex line $L_\theta$,
 given by $z_1 = e^{i\theta} z_2$ and
 $w = 0$.  In this case, the union $\bigcup_\theta L_\theta$ of those
@@ -14343,9 +14346,11 @@ then
 \item $\sabs{f(z)} \leq \sabs{z}$, and
 \item $\sabs{f'(0)} \leq 1$.
 \end{enumerate}
-Furthermore, if $\sabs{f(z)} = \sabs{z}$ for any $z \in \D$
-or $\sabs{f'(0)} = 1$, then $f(z) =
-e^{i\theta} z$ for some $\theta \in \R$.
+Furthermore, if $\sabs{f(z_0)} = \sabs{z_0}$ for some $z_0 \in \D \setminus
+\{ 0 \}$
+or $\sabs{f'(0)} = 1$, then
+for some $\theta \in \R$ we have $f(z) =
+e^{i\theta} z$ for all $z \in \D$.
 \end{lemma}
 
 The above theorem is actually quite general.
@@ -14405,7 +14410,7 @@ holomorphic function $L \colon U \to \C$ such that
 e^L = f .
 \end{equation*}
 In particular, we can take roots:
-for any $k \in \N$, there exists a holomorphic function
+for every $k \in \N$, there exists a holomorphic function
 $g \colon U \to \C$ such that
 \begin{equation*}
 g^k = f .
@@ -14677,14 +14682,14 @@ An function with an essential singularity actually achieves essentially
 every value.  A weak version of this result (and an easy to prove one)
 is the \emph{\myindex{Casorati--Weierstrass theorem}}:
 If $f$ has an essential singularity at $p$,
-then for any neighborhood $W$ of $p$, $f\bigl(W \setminus \{p\}\bigr)$ is dense in
+then for every neighborhood $W$ of $p$, $f\bigl(W \setminus \{p\}\bigr)$ is dense in
 $\C$.  Let us state the much stronger theorem of Picard:
 A function with an essential singularity is very wild.
 It achieves every value (except possibly one) infinitely often.
 
 \begin{thm}[Picard's big theorem]\index{Picard's big theorem}
 Suppose $U \subset \C$ is open, $f \colon U \setminus \{ p \} \to \C$
-is holomorphic, and $f$ has an essential singularity at $p$.  Then for any
+is holomorphic, and $f$ has an essential singularity at $p$.  Then for every
 neighborhood $W$ of $p$, $f\bigl(W \setminus \{ p \}\bigr)$ is either $\C$
 or $\C$ minus a point.
 \end{thm}
@@ -14817,7 +14822,7 @@ no holes, analytic continuation defines a function uniquely.
 \begin{thm}[Monodromy theorem]\index{Monodromy theorem}
 If $U \subset \C$ is a simply connected domain, $D \subset U$ a disc and
 $f \colon D \to \C$ a holomorphic function that can be analytically
-continued from $p \in D$ to any $q \in U$, then there exists
+continued from $p \in D$ to every $q \in U$, then there exists
 a unique holomorphic function $F \colon U \to \C$ such that $F|_D = f$.
 \end{thm}
 
@@ -15570,8 +15575,8 @@ As to at least get a flavor of the theorem, let us prove it in a simpler
 setting, which however is often almost good enough, and it is the key idea
 in the proof.
 Suppose that $U \subset \R^n$ is a domain such that for any $k=1,\ldots,n$
-there exist two smooth functions $\alpha_k$ and $\beta_k$ such that
-for any $k$, the set
+there exist two smooth functions $\alpha_k$ and $\beta_k$, such that
+the set
 $U$ is given by
 \begin{align*}
 & (x_1,\ldots,x_{k-1},x_{k+1},\ldots,x_n) \in \pi_k(U) ,
