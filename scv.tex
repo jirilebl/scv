@@ -6746,7 +6746,7 @@ integrating against the right approximate delta function with the desired proper
 is similar to the solution of the Dirichlet
 problem using the Poisson kernel.
 
-First $f$ is bounded above on compact sets as it is upper semicontinuous.
+The function $f$ is bounded above on compact sets as it is upper semicontinuous.
 If $f$ is not bounded below, we replace $f$ with $\max \bigl\{ f ,
 \frac{-1}{\epsilon}
 \bigr\}$, which is still plurisubharmonic.  Therefore, without loss of generality
@@ -6763,13 +6763,13 @@ f_\epsilon(z) = (f * g_\epsilon)(z) =
 The two forms of the integral follow easily via change of variables.
 We are perhaps abusing notation a bit as $f$ is only defined on $U$,
 but it is not a problem as long as $z \in
-U_\epsilon$ as $g_\epsilon$ is then zero when $f$ is undefined.
+U_\epsilon$, because $g_\epsilon$ is then zero when $f$ is undefined.
 By differentiating the first form under the integral, we find that
 $f_\epsilon$ is smooth.
 
 Let us show that $f_\epsilon$ is plurisubharmonic.  We restrict to a
 line $\xi \mapsto a+b\xi$.
-We wish to test subharmonicity by the sub-mean-value property using a disc
+We wish to test subharmonicity by the sub-mean-value property using a circle
 of radius $r$ around $\xi = 0$:
 \begin{equation*}
 \begin{split}
@@ -6856,8 +6856,9 @@ g_\epsilon (r_1,\ldots,r_n) \,
 \end{split}
 \end{equation*}
 The second equality above
-follows because integral of $g_\epsilon$ only needs to be
-done over the polydisc of radius $\epsilon$.
+follows as $g_\epsilon$ is zero
+outside the polydisc of radius $\epsilon$.
+For the inequalities, we again needed that $g_\epsilon \geq 0$.
 The penultimate equality follows from the fact that
 $2\pi = \int_0^{2\pi}d \theta$.
 
@@ -6900,12 +6901,12 @@ Show that $g$ in the proof above is smooth on all of $\C^n$.
 \begin{exercise}
 \begin{exparts}
 \item
-Show that for a subharmonic function $\int_0^{2\pi} f(a+re^{i\theta}) \,
+Show that for a subharmonic function, $\int_0^{2\pi} f(a+re^{i\theta}) \,
 d\theta$ is a monotone function of $r$ (Hint: Try a $C^2$ function first and
 use Green's theorem).
 \item
 Use this
-fact to show that $f_\epsilon(z)$ from \thmref{thm:subharlim} are monotone
+fact to show that the $f_\epsilon(z)$ from \thmref{thm:subharlim} is monotone
 decreasing in $\epsilon$.
 \end{exparts}
 \end{exercise}
@@ -6913,11 +6914,12 @@ decreasing in $\epsilon$.
 \begin{exercise}
 Let $U \subset \C^n$
 and $V \subset \C^m$ be open.
-If $g \colon U \to V$ is holomorphic and $f
+Prove that
+if $g \colon U \to V$ is holomorphic and $f
 \colon V \to \R$ is a $C^2$ plurisubharmonic function, then 
 $f \circ g$ is plurisubharmonic.
-Then use this to show that
-this holds for all plurisubharmonic functions (Hint: monotone convergence).
+Then use it to prove the same fact
+for all plurisubharmonic functions (Hint: monotone convergence).
 \end{exercise}
 
 \begin{exercise}
@@ -6935,7 +6937,7 @@ a pluriharmonic function is $C^\infty$.
 
 \begin{exercise}
 Let the $f$ in \thmref{thm:subharlim} be continuous and suppose $K \subset
-\subset U$, in particular for small enough $\epsilon >0$, $K \subset U_\epsilon$.
+\subset U$.  For small enough $\epsilon >0$, $K \subset U_\epsilon$.
 Show that $f_\epsilon$ converges uniformly to $f$ on $K$.
 \end{exercise}
 
@@ -7169,7 +7171,7 @@ Prove that a domain $U \subset \R^n$ is geometrically convex if and only if
 whenever $[x_\alpha,y_\alpha] \subset U$
 is a collection of straight line segments such that
 $\bigcup_{\alpha} \{ x_\alpha,y_\alpha \} \subset \subset U$
-then
+implies
 $\bigcup_{\alpha} [ x_\alpha,y_\alpha ] \subset \subset U$.
 \end{exercise}
 \end{exbox}
