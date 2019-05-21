@@ -489,7 +489,7 @@ text.  The reader should attempt exercises in sequence as earlier exercises
 can help or even be required to solve later exercises.
 
 The prerequisites are a decent knowledge of vector calculus, basic
-real-analysis, and a working knowledge of complex analysis in one variable.
+real analysis, and a working knowledge of complex analysis in one variable.
 Measure theory (Lebesgue integral and its convergence theorems) is useful,
 but it is not essential except in a couple of places later in the book.
 The first two chapters and most of the third
@@ -1446,7 +1446,7 @@ and $\delta_j^k = 0$ if $j \not= k$.  One-forms are objects of the form
 \beta_j \, d \bar{z}_j ,
 \end{equation*}
 where $\alpha_j$ and $\beta_j$ are functions (of $z$).
-Also recall the wedge product $\omega \wedge \eta$ is anti-commutative on
+Also recall the wedge product $\omega \wedge \eta$ is anticommutative on
 one-forms,
 that is, for one-forms $\omega$ and $\eta$,
 $\omega \wedge \eta = - \eta \wedge \omega$.  A wedge product of two
@@ -1713,7 +1713,7 @@ talk about conditional convergence.  When we say the series
 Fortunately power series converge
 absolutely, and so the ordering does not matter.  So if you want to write
 down the limit in terms of partial sums, you pick some ordering of the
-multiindices: $\alpha(1), \alpha(2), \ldots$, and then
+multi-indices: $\alpha(1), \alpha(2), \ldots$, and then
 \begin{equation*}
 \sum_{\alpha}
 c_\alpha {z}^\alpha 
@@ -2304,7 +2304,7 @@ bounded (hence constant) on these complex lines.
 \item
 Prove that if an entire holomorphic function in $\C^2$ is bounded on
 countably many distinct
-complex lines through the origin then it is constant.
+complex lines through the origin, then it is constant.
 \item
 Find a nonconstant entire holomorphic function in $\C^3$ that is
 bounded on
@@ -2443,7 +2443,7 @@ of the Wirtinger operators,
 \text{for all $j=1,\ldots,n$.}
 \end{equation*}
 
-For functions that are neither holomorphic or anti-holomorphic we
+For functions that are neither holomorphic or antiholomorphic we
 pretend they depend on both $z$ and $\bar{z}$.
 Since we want to write functions in terms of $z$ and $\bar{z}$,
 let us figure out how the chain rule works for Wirtinger derivatives,
@@ -2627,7 +2627,7 @@ The $\bar{z}$ derivative works similarly.
 
 Because of the proposition,
 when we deal with an arbitrary, possibly
-non-holomorphic, function $f$, we often write $f(z,\bar{z})$ and treat $f$ as
+nonholomorphic, function $f$, we often write $f(z,\bar{z})$ and treat $f$ as
 a function of $z$ and $\bar{z}$.
 
 \begin{remark}
@@ -2765,7 +2765,7 @@ D(g \circ f)(p) = Dg\bigl(f(p)\bigr) \, Df(p) .
 \end{equation*}
 \end{prop}
 
-In short-hand we often simply write $D(g \circ f) = Dg Df$.
+In shorthand we often simply write $D(g \circ f) = Dg Df$.
 
 \begin{exbox}
 \begin{exercise}
@@ -3001,7 +3001,7 @@ understanding the boundary behavior of holomorphic functions.  It also
 prominently appears in complex geometry.
 
 \begin{defn}
-A non-constant holomorphic mapping
+A nonconstant holomorphic mapping
 $\varphi \colon \D \to \C^n$ is called an \emph{\myindex{analytic disc}}.
 If the mapping $\varphi$ extends continuously to the closed unit disc
 $\overline{\D}$, then the mapping
@@ -3208,7 +3208,7 @@ Prove \thmref{thm:nopropmapprodandnodisc}.
 \end{exercise}
 \end{exbox}
 
-The key take-away from this section is that
+The key takeaway from this section is that
 in several variables, to see if two domains are equivalent,
 the geometry 
 of the boundaries makes a difference, not just the topology
@@ -3393,7 +3393,7 @@ also circular and bounded.
 \begin{proof}
 The map $g(z) = f^{-1}\bigl(e^{-i\theta}f(e^{i\theta} z)\bigr)$ is an
 automorphism of $U$ and via the
-chain-rule, $g'(0) = I$.  Therefore,
+chain rule, $g'(0) = I$.  Therefore,
 $f^{-1}\bigl(e^{-i\theta}f(e^{i\theta} z)\bigr) = z$, or in other words
 \begin{equation*}
 f(e^{i\theta} z) = e^{i\theta}f(z) .
@@ -3483,10 +3483,10 @@ $R'(0) = \alpha$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \C^n$ is an open set, $a \in U$.
-Suppose $f \colon U \to U$ is a holomorphic mapping,
+Suppose $U \subset \C^n$ is an open set, $a \in U$,
+$f \colon U \to U$ is a holomorphic mapping,
 $f(a) = a$, and suppose that $\sabs{\lambda} < 1$
-for any eigenvalue $\lambda$ of
+for every eigenvalue $\lambda$ of
 $D f(a)$.  Prove that there exists a neighborhood $W$ of $a$, such that
 $\lim_{\ell \to \infty} f^{\ell}(z) = a$ for all $z \in W$.
 \end{exercise}
@@ -3680,7 +3680,7 @@ $h= \frac{\partial \varphi}{\partial z_2}$ in the proof will work.
 \end{example}
 
 \begin{example}
-The theorem is not true in the non-holomorphic setting.  For example, $x_1^2
+The theorem is not true in the nonholomorphic setting.  For example, $x_1^2
 +  x_2^2 = 0$ in $\R^2$ is only the origin, clearly not a graph
 of any function of one variable.  The first part of the theorem works, but
 the $h$ you find is either $2x_1$ or $2x_2$, and its zero set is too big.
@@ -3737,7 +3737,7 @@ with $g(z_0) = 0$ such that
 $f(z) = c + {\bigl( g(z) \bigr)}^d$.
 Such a simple result
 does not hold in several variables in general, but if the mapping is
-locally one-to-one then the present theorem says that such a mapping can be
+locally one-to-one, then the present theorem says that such a mapping can be
 locally written as the identity.
 
 \begin{proof}[Proof of the theorem]
@@ -3762,7 +3762,7 @@ $f \circ \Psi^{-1}$ instead of $f$, we may assume
 that $J_f = 0$ on the set given by $z_n=0$.  We may also
 assume that $f(0) = 0$.
 
-If $J_f$ vanishes identically then there is no need to do anything other
+If $J_f$ vanishes identically, then there is no need to do anything other
 than a translation.  In either case,
 we may assume that $0 \in U$, $f(0)=0$, and
 $J_f = 0$ when $z_n=0$.
@@ -3860,7 +3860,7 @@ Prove that the Jacobian conjecture is false if
 \end{exercise}
 
 \begin{exercise}
-Prove that if a holomorphic $f \colon \C \to \C$ is injective then it is
+Prove that if a holomorphic $f \colon \C \to \C$ is injective, then it is
 onto, and therefore $f(z) = az + b$ for $a \not= 0$.
 \end{exercise}
 \end{exbox}
@@ -3888,7 +3888,7 @@ holomorphic functions.
 
 \begin{defn} \label{defn:domainofhol}
 Let $U \subset \C^n$ be a domain\footnote{\emph{Domain of
-holomorphy} can make sense for disconnected sets (non-domains), and some authors
+holomorphy} can make sense for disconnected sets (not domains), and some authors
 do define it so.}
 (connected open set).  The set $U$ is
 a \emph{\myindex{domain of holomorphy}} if there do not exist
@@ -4003,8 +4003,8 @@ the following theorem.  The domain $H$ in the theorem is called the
 
 \begin{thm} \label{thm:extensionhartogsfigure}
 Let $(z,w) = (z_1,\ldots,z_m,w_{1},\ldots,w_{k}) \in \C^m \times \C^k$ be the coordinates.  For two numbers
-$0 < a,b < 1$, let the set $H \subset \D^{m+k}$
-be defined by
+$0 < a,b < 1$, define the set $H \subset \D^{m+k}$
+by
 \begin{equation*}
 H = \bigl\{ (z,w) \in \D^{m+k} : \sabs{z_j} > a ~\text{for $j=1,\ldots,m$}
 \bigr\} \cup
@@ -4265,7 +4265,7 @@ holomorphy, then $U \times V$ is a domain of holomorphy.
 In particular, the exercise says that
 given any domain $U \subset \C$ and any domain $V \subset \C$, the domain
 $U \times V$ is a domain of holomorphy in $\C^2$.  The domains
-$U$ and $V$, and therefore $U \times V$ can be spectacularly non-convex.
+$U$ and $V$, and therefore $U \times V$ can be spectacularly nonconvex.
 But we should not discard convexity completely, there is a notion of
 \emph{pseudoconvexity}, which vaguely means ``convexity in the 
 complex directions,'' that is the correct notion to classify which
@@ -4699,13 +4699,13 @@ strongly convex at all points except the origin, where it is just convex
 
 In the following, \glsadd{not:Ol}%
 we use the \emph{\myindex{big-oh notation}},
-although we use a perhaps less standard short hand\footnote{%
+although we use a perhaps less standard shorthand\footnote{%
 The standard notation for $O(\ell)$ is $O(\snorm{x}^{\ell})$ and
 is usually defined to mean that
 $\abs{\frac{f(x)}{\snorm{x}^\ell}}$ is bounded as $x \to p$.}.
 A smooth function is $O(\ell)$ at a point $p$ (usually the origin),
 if all its derivatives of order $0, 1, \ldots,  \ell-1$ vanish at $p$.
-For example, if $f$ is $O(3)$ at the origin
+For example, if $f$ is $O(3)$ at the origin,
 then $f(0)=0$, and its first and second derivatives vanish at the origin.
 
 For computations it is often useful to use a more convenient
@@ -4815,7 +4815,7 @@ $M \subset \R^n$.
 We say $M$ is convex from both sides at $p$ if both the set given by
 $r > 0$ and the set given by $r < 0$ are convex at $p$.
 Prove that if a hypersurface $M \subset \R^n$ is convex from both sides at all
-points then it is locally just a hyperplane (the zero set of a real affine
+points, then it is locally just a hyperplane (the zero set of a real affine
 function).
 \end{exercise}
 \end{exbox}
@@ -5358,13 +5358,14 @@ is concerned we are interested in local changes of coordinates as
 pseudoconvexity is a local property.  Before proving 
 that pseudoconvexity is a biholomorphic invariant, let us note where the
 Levi form appears in the graph coordinates from 
-\propref{prop:graphcoordinatesCn}, that is, if our boundary (the
-hypersurface) is given by
+\propref{prop:graphcoordinatesCn}, that is, when our boundary (the
+hypersurface) is given near the origin by
 \begin{equation*}
-\Im w = \varphi(z,\bar{z},\Re w) .
+\Im w = \varphi(z,\bar{z},\Re w) ,
 \end{equation*}
+where $\varphi$ is $O(2)$.
 Let $r(z,\bar{z},w,\bar{w}) = \varphi(z,\bar{z},\Re w) - \Im w$ be our
-defining function.  Then the complex Hessian of $r$ is of the form
+defining function.  The complex Hessian of $r$ has the form
 \begin{equation*}
 \begin{bmatrix}
 L & 0 \\
@@ -5376,20 +5377,21 @@ L = \left[
 \right]_{j \ell} .
 \end{equation*}
 Note that $L$ is an $(n-1) \times (n-1)$ matrix.
-The vectors in $T_0^{(1,0)} \partial U$ are in the span
+The vectors in $T_0^{(1,0)} \partial U$ are the span
 of $\left\{
 \frac{\partial}{\partial z_1}\big|_0,
 \ldots,
 \frac{\partial}{\partial z_{n-1}}\big|_0 \right\}$.
 That is, as an $n$-vector,
-a vector in $T_0^{(1,0)} \partial U$ is represented by $(a,0) \in \C^n$ for an
-arbitrary $a \in \C^{n-1}$.  The Levi form is then $a^* L a$,
+a vector in $T_0^{(1,0)} \partial U$ is represented by $(a,0) \in \C^n$ for
+some
+$a \in \C^{n-1}$.  The Levi form at the origin is then $a^* L a$,
 in other words, it is given by the $(n-1) \times (n-1)$ matrix $L$.
 If this matrix $L$ is positive
 semidefinite, then $\partial U$ is pseudoconvex at $0$.
 
 \begin{example}
-Let us change variables to show how we write the ball $\bB_n$ in different
+Let us change variables to write the ball $\bB_n$ in different
 local holomorphic coordinates where the Levi form is displayed nicely.
 Suppose the sphere $\partial \bB_n$ is defined in the variables $Z = (Z_1,\ldots,Z_n) \in \C^n$
 by $\snorm{Z} = 1$.
@@ -5406,7 +5408,7 @@ sufficient to notice that the map is invertible near
 $(0,\ldots,0,-1)$, which follows by simply computing the derivative.
 Notice
 that the last component is the inverse of the Cayley transform (that takes
-the disc to the upper half plane).
+the disc to the upper half-plane).
 
 We claim that the mapping takes the unit sphere given by $\snorm{Z} = 1$
 (without the point $(0,\ldots,0,1)$), to
@@ -5465,13 +5467,13 @@ origin.  In particular the domain is strongly pseudoconvex.
 We have not yet proved that pseudoconvexity is a biholomorphic invariant,
 but when we do, it will also mean that the ball is strongly pseudoconvex.
 
-Of course not the entire sphere gets transformed, the points where $Z_n=1$
+Not the entire sphere gets transformed, the points where $Z_n=1$
 get ``sent to infinity.''
 The hypersurface $\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$
 is sometimes called the \emph{\myindex{Lewy hypersurface}}, and in the
 literature some even say it \emph{is} the sphere\footnote{That is not, in
 fact, completely incorrect.
-If you think of the sphere in the complex projective space,
+If we think of the sphere in the complex projective space,
 we are simply looking at the sphere in a different coordinate patch.}.
 Pretending $z$ is just one real direction, it looks like this:
 
@@ -5500,11 +5502,11 @@ of coordinates.  That is, let $f \colon V \to V'$ be a biholomorphic map
 between two domains in $\C^n$, and let $r \colon V' \to \R$ be a smooth
 function with nonvanishing derivative.  Let us compute the Hessian of
 $r \circ f \colon V \to \R$.
-We first compute what happens to the non-mixed derivatives.
+We first compute what happens to the nonmixed derivatives.
 As we have to apply chain rule twice, to keep track better track of things,
 we write the
 derivatives as functions.  Also for clarity, let $z$ be the coordinates in $V$
-and $\zeta$ be the coordinates in $V'$.
+and $\zeta$ the coordinates in $V'$.
 That is, $r$ is a function of $\zeta$ and $\bar{\zeta}$,
 $f$ is a function of $z$, and $\bar{f}$ is a function of $\bar{z}$.
 Therefore $r \circ f$ is a function of $z$ and $\bar{z}$.
@@ -6356,7 +6358,7 @@ Fill in the details of the proof of \propref{prop:meansubmeanprop}.
 
 \begin{exercise}
 Let $U \subset \C$ be open.
-Show that if $f \colon U \to \R \cup\{- \infty \}$ is subharmonic
+Show that if $f \colon U \to \R \cup\{- \infty \}$ is subharmonic,
 then 
 \begin{equation*}
 \limsup_{w \to z} f(w) = f(z) 
@@ -7815,7 +7817,7 @@ is not holomorphically convex.
 
 \begin{exercise}
 Let $U \subset \C^n$ be a domain and $f \in \sO(U)$.  Show that if
-$U$ is holomorphically convex then
+$U$ is holomorphically convex, then
 $\widetilde{U} = \bigl\{ z \in U : f(z) \not= 0 \bigr\}$
 is holomorphically convex.  
 Hint: First see \exerciseref{exercise:connectedcomplement}.
@@ -7845,7 +7847,7 @@ not holomorphically convex.
 
 \begin{exercise}
 Show that if domains $U_1 \subset \C^n$ and $U_2 \subset \C^n$ are
-holomorphically convex
+holomorphically convex,
 then so are all the topological components of $U_1 \cap U_2$.
 \end{exercise}
 
@@ -7999,8 +8001,8 @@ Prove the existence of the function $f_j \in \sO(U)$ as indicated in the proof a
 
 \begin{exercise}
 Extend the proof to show that if $U \subset \C^n$
-is holomorphically convex then there
-exists a single function $f \in \sO(U)$, that does not extend through any
+is holomorphically convex, then there
+exists a single function $f \in \sO(U)$ that does not extend through any
 point $p \in \partial U$.
 \end{exercise}
 
@@ -8278,7 +8280,7 @@ In multinomial notation we write a power series at $a \in \C^n$ as
 \end{equation*}
 
 Notice that a holomorphic function
-is real-analytic, but not vice-versa.  A holomorphic function
+is real-analytic, but not vice versa.  A holomorphic function
 is a real-analytic function that does not depend on $\bar{z}$.
 
 Before we discuss complexification in terms of $z$ and $\bar{z}$ we need
@@ -10832,7 +10834,7 @@ becomes the standard Cauchy--Pompeiu formula.
 
 We will, again, apply Stokes formula, but we need to apply it to forms of higher
 degree.  As before, we split the derivatives into the holomorphic and
-antiholomorphic parts.  We work with multiindices.  For $\alpha$ and $\beta$
+antiholomorphic parts.  We work with multi-indices.  For $\alpha$ and $\beta$
 with $\abs{\alpha}=p$ and 
 $\abs{\beta}=q$, a differential form
 \begin{equation*}
@@ -11453,7 +11455,7 @@ And so the convergence is uniform on $K \times K^*$.
 \begin{exercise}
 \begin{exparts}
 \item
-Show that if $U \subset \C^n$ is bounded then for all $z \in U$
+Show that if $U \subset \C^n$ is bounded, then for all $z \in U$
 we find $K_U(z,\bar{z}) > 0$.
 \item
 Why can this fail if $U$ is unbounded?
@@ -12718,7 +12720,7 @@ $g_j = u_j \widetilde{P}_j$ for a unit $u_j$ and a Weierstrass polynomial
 $\widetilde{P}_j$.  We obtain
 $f = u \widetilde{P}_1 \widetilde{P}_2 \cdots \widetilde{P}_m$ for a unit $u$.  By
 uniqueness part of the preparation theorem we obtain
-$P = \widetilde{P}_1 \widetilde{P}_2 \cdots \widetilde{P}_m$.  Conclusion is then
+$P = \widetilde{P}_1 \widetilde{P}_2 \cdots \widetilde{P}_m$.  Conclusion is 
 obtained by noting that
 ${}_{n-1}\sO_0[z_n]$ is a UFD\@.
 \end{proof}
@@ -12874,7 +12876,7 @@ one-to-one correspondence with radical ideals of $\sO_p$.
 The subvariety $X = \{ 0 \} \subset \C^2$ can be given by
 $\sF = \{ z_1^2, z_2^2 \}$.
 If $I = (z_1^2,z_2^2) \subset \sO_0$ is the ideal of germs
-generated by these two functions then $I_0(X) \not= I$.  We have
+generated by these two functions, then $I_0(X) \not= I$.  We have
 seen that the ideal $I_0(X)$ is the maximal ideal $\mathfrak{m}_0 =
 (z_1,z_2)$.  If we prove that 
 all the nonconstant monomials are in $\sqrt{I}$, then
@@ -13374,7 +13376,7 @@ is connected.  Hint: See previous exercise.
 For complex subvarieties, a subvariety is irreducible if
 and only if the set of regular points is connected.  We omit the proof
 in the general case, and for hypervarieties it is an exercise above.
-It makes sense then, that we can split a subvariety into its irreducible parts.
+It then makes sense that we can split a subvariety into its irreducible parts.
 
 \begin{prop}
 Let $(X,p) \subset (\C^n,p)$ be a germ of a subvariety.  Then there exist
@@ -13502,8 +13504,9 @@ origin.  The continuation equals one of the roots, e.g.\ $\alpha_j(z)$
 becomes $\alpha_\ell(z)$ (and by continuity it is the
 same root along the entire $N$).  So there is
 a permutation $\sigma$ on $m$ elements such that as $z$ moves
-counter-clockwise around the origin from the upper half plane across $N$ to the lower half
-plane, $\alpha_j(z)$ is continued as $\alpha_{\sigma(j)}(z)$.
+counter-clockwise around the origin from the upper half-plane across $N$ to the
+lower half-plane,
+$\alpha_j(z)$ is continued as $\alpha_{\sigma(j)}(z)$.
 There exists some number $k$ (e.g.\ $k=m!$) such that $\sigma^k$ is the identity.
 As $\xi$ goes around
 a circle around the origin, $\xi^k$ goes around the origin $k$ times.
@@ -14511,7 +14514,7 @@ $\sabs{f(z)} \to \infty$ as $\sabs{z} \to \infty$)}.
 An isolated singularity that is neither removable nor a pole is said to be
 \emph{essential}\index{essential singularity}.
 
-At non-essential isolated singularities
+At nonessential isolated singularities
 the function blows up to a finite integral order.
 The first part of the following proposition is
 usually called the \emph{\myindex{Riemann extension theorem}}.
@@ -14702,7 +14705,7 @@ and the function is never 0.
 Since we stated the big theorem, let us also state the little theorem.
 
 \begin{thm}[Picard's little theorem]\index{Picard's little theorem}
-If $f \colon \C \to \C$ is holomorphic
+If $f \colon \C \to \C$ is holomorphic,
 then
 $f(\C)$ is either $\C$ or $\C$ minus a point.
 \end{thm}
@@ -15083,7 +15086,7 @@ An orientation allows us to have a well-defined integral on $M$, just
 like a curve needs to be oriented in order to define a line integral.
 However, unlike for curves, not every submanifold of dimension
 more than one is \emph{orientable}, that is, admits an orientation.
-A classical non-orientable example is the M\"obius strip.
+A classical nonorientable example is the M\"obius strip.
 
 \medskip
 
@@ -15168,7 +15171,7 @@ Define
 \end{equation*}
 The definition makes sense only
 if this sum actually exists.  For example, if $\omega$ is
-compactly supported then this sum is only finite, and so it exists.
+compactly supported, then this sum is only finite, and so it exists.
 
 Higher degree forms are constructed out of $1$-forms and $0$-forms
 by the so-called wedge product.  Given a $k$-form $\omega$
@@ -15195,9 +15198,8 @@ then
 \begin{equation*}
 \omega \wedge \eta = - \eta \wedge \omega .
 \end{equation*}
-The negative keeps track of orientation for us.
-When $\omega$ is a $k$-form and $\eta$ is an $\ell$-form then
-we get
+The negative keeps track of orientation.
+When $\omega$ is a $k$-form and $\eta$ is an $\ell$-form, 
 \begin{equation*}
 \omega \wedge \eta = {(-1)}^{k\ell} \eta \wedge \omega .
 \end{equation*}
@@ -15219,7 +15221,7 @@ dx_{j_2} \wedge
 dx_{j_k}  ,
 \end{equation*}
 where $g_{j_1,\ldots,j_k}$ are smooth functions.
-But we can simplify even more.  Since the wedge
+We can simplify even more.  Since the wedge
 is anticommutative on $1$-forms,
 \begin{equation*}
 dx_j \wedge dx_m = 
@@ -15735,15 +15737,15 @@ That is a commutative ring is an abelian additive group (by
 additive group we just mean we use $+$ for the operation and
 $0$ for the respective identity), with multiplication thrown in.
 If the multiplication
-also defines a group on the set of nonzero elements then the ring is a
-field.  A ring that is not commutative, is one that doesn't satisfy
-commutativity of multiplication.  Some authors also define ring
-without asking for an existence of $1$.
+also defines a group on the set of nonzero elements, then the ring is a
+field.  A ring that is not commutative is one that does not satisfy
+commutativity of multiplication.  Some authors define ring
+without asking for the existence of $1$.
 
 A ring that often comes up in this book is the ring of holomorphic
 functions.  Let $\sO(U)$ be the set of holomorphic functions defined
-on an open set $U$.  Then pointwise addition and multiplication give
-a ring structure on $\sO(U)$.  The set of units are the set of
+on an open set $U$.  Pointwise addition and multiplication give
+a ring structure on $\sO(U)$.  The set of units is the set of
 functions that never vanish in $U$.  The set of units
 is a multiplicative group.
 
