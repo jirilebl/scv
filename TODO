@@ -1,0 +1,4 @@
+* A good exercise early on could be hartogs for a single missing point and a
+  bounded function.  Or perhaps a more general set that hits direction only in
+  isolated points.  That's an immediate application of one-var Riemann
+  extension and our definition of holomorphic.
