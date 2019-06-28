@@ -6153,7 +6153,7 @@ It is the trace of the Hessian matrix.}
 A function $f \colon U \to \R \cup \{ -\infty \}$ is 
 \emph{\myindex{subharmonic}} if it is upper-semicontinuous%
 \footnote{Recall $f$ is \emph{\myindex{upper-semicontinuous}}
-if $\limsup_{t\to x} f(t) \leq f(x)$ for all $x$.}
+if $\limsup_{t\to x} f(t) \leq f(x)$ for all $x \in U$.}
 and for every
 ball $B_r(a)$ with $\overline{B_r(a)} \subset U$,
 and every function $g$
@@ -11218,7 +11218,7 @@ When $n=1$, however, $A^2(U)$ is either trivial, or infinite-dimensional.
 
 \begin{exbox}
 \begin{exercise}
-Show that if $U \subset \C^n$ is bounded, then $A^2(U)$ is
+Show that if a domain $U \subset \C^n$ is bounded, then $A^2(U)$ is
 infinite-dimensional.
 \end{exercise}
 
@@ -11364,26 +11364,28 @@ d\bar{\zeta} \wedge d\zeta
 \end{equation*}
 The Bergman kernel in the unit disc is, therefore,
 \begin{equation*}
-K_U(z,\bar{\zeta}) = \frac{1}{\pi} \frac{1}{{(1-z\bar{\zeta})}^2} .
+K_{\D}(z,\bar{\zeta}) = \frac{1}{\pi} \frac{1}{{(1-z\bar{\zeta})}^2} .
 \end{equation*}
 The fact that this really is the Bergman kernel follows from the exercises
-below.  That is, that $K_U$ is the unique conjugate symmetric
+below.  That is, that $K_{\D}$ is the unique conjugate symmetric
 reproducing function that is in
-$A^2(U)$ for a fixed $\zeta$.  
+$A^2({\D})$ for a fixed $\zeta$.  
 We have only shown the formula for functions continuous up to the boundary,
-but those are dense in $A^2(U)$.
+but those are dense in $A^2({\D})$.
 \end{example}
 
 \begin{example}
-On the other hand you found in an exercise that $A^2(\C^n) = \{ 0 \}$.  Therefore we have trivially
+In an exercise you found that
+$A^2(\C^n) = \{ 0 \}$.  Therefore, 
 $K_{\C^n}(z,\bar{\zeta}) \equiv 0$.
 \end{example}
 
-In general it is difficult to compute the kernel explicitly
-for just any $U$, although we have the following formula for it.
+The Bergman kernel for a more general domain is diffcult (usually impossible)
+to compute explicitly.  We do have the following formula however.
 
 \begin{prop}
-Suppose $\{ \varphi_j (z) \}_{j\in I}$ is a complete orthonormal system
+Suppose $U \subset \C^n$ is a domain and
+$\{ \varphi_j (z) \}_{j\in I}$ is a complete orthonormal system
 for $A^2(U)$.  Then
 \begin{equation*}
 K_U(z,\bar{\zeta})
@@ -11480,7 +11482,8 @@ holds.
 \end{exercise}
 
 \begin{exercise}
-Let $U \subset \C^n$ be a bounded domain with smooth boundary. Show that the functions
+Let $U \subset \C^n$ be either the unit ball or the unit polydisc.
+Show that the functions
 in $A^2(U) \cap C(\overline{U})$ are dense in $A^2(U)$.  In particular this
 exercise says we
 only need to check the reproducing property on functions continuous up to
@@ -11531,8 +11534,9 @@ where $\linnprod{z}{\zeta}$ is the standard inner product on $\C^n$.
 
 \section{The Szeg{\"o} kernel}
 
-We can use the same techniques to create a reproducing kernel on the
-boundary by starting with $L^2(\partial U, d\sigma)$ instead of $L^2(U)$ to obtain a
+We use the same techniques to create a reproducing kernel on the
+boundary by starting with $L^2(\partial U, d\sigma)$ instead of $L^2(U)$.
+We obtain a
 kernel where we integrate over the boundary rather than the domain itself.
 We will give a quick overview here though we will leave out the details.
 
