@@ -429,7 +429,7 @@ use at least one of the licenses.
 \\
 I would like to thank Debraj Chakrabarti, Anirban Dawn, Alekzander Malcom,
 John Treuer, Jianou Zhang, Liz Vivas, Trevor Fancher,
-Nicholas Lawson McLean,
+Nicholas Lawson McLean, Alan Sola,
 and students in my classes for pointing out typos/errors
 and helpful suggestions. 
 
@@ -1886,7 +1886,7 @@ c_\alpha
 =
 \frac{1}{{(2\pi i)}^n}
 \int_{\Gamma}
-\frac{f(\zeta)}{{(\zeta-z)}^{\alpha+1}}
+\frac{f(\zeta)}{{(\zeta-a)}^{\alpha+1}}
 \,
 d \zeta .
 \end{equation*}
@@ -2393,7 +2393,7 @@ for domains $U \subset \C^n$, every meromorphic function can be represented
 as $\nicefrac{f}{g}$ globally.  That is, the ring of meromorphic functions
 is the field of fractions of $\sO(U)$.
 This problem is the so-called
-\emph{\myindex{Poincar\`e problem}}, and its solution is no longer positive
+\emph{\myindex{Poincar\'e problem}}, and its solution is no longer positive
 once we generalize $U$ to complex manifolds.
 
 The points where
@@ -4613,13 +4613,6 @@ Show that the definition of convexity is independent of the defining
 function.  Hint: If $\tilde{r}$ is another defining function near $p$,
 then there is a smooth function $g > 0$ such that $\tilde{r} = g r$.
 \end{exercise}
-
-\begin{exercise}
-Show that if an open set with smooth boundary is strongly convex at a point, then it is
-strongly convex at all nearby points.  On the other hand find an example of
-an open set with smooth boundary that is convex at one point $p$, but not convex at points
-arbitrarily near $p$.
-\end{exercise}
 \end{exbox}
 
 \begin{example}
@@ -4684,8 +4677,14 @@ $r_y \frac{\partial}{\partial x} - r_x \frac{\partial}{\partial y}$.  In
 higher dimensions we can just run through enough pairs of variables to get
 a basis of $TM$.
 
-\pagebreak[2]
 \begin{exbox}
+\begin{exercise}
+Show that if an open set with smooth boundary is strongly convex at a point, then it is
+strongly convex at all nearby points.  On the other hand find an example of
+an open set with smooth boundary that is convex at one point $p$, but not convex at points
+arbitrarily near $p$.
+\end{exercise}
+
 \begin{exercise}
 Show that the domain in $\R^2$ defined by $x^4+y^4 < 1$ is convex, but not strongly convex.
 Find all the points where the domain is not strongly convex.
