@@ -429,7 +429,7 @@ use at least one of the licenses.
 \\
 I would like to thank Debraj Chakrabarti, Anirban Dawn, Alekzander Malcom,
 John Treuer, Jianou Zhang, Liz Vivas, Trevor Fancher,
-Nicholas Lawson McLean,
+Nicholas Lawson McLean, Alan Sola,
 and students in my classes for pointing out typos/errors
 and helpful suggestions. 
 
@@ -1886,7 +1886,7 @@ c_\alpha
 =
 \frac{1}{{(2\pi i)}^n}
 \int_{\Gamma}
-\frac{f(\zeta)}{{(\zeta-z)}^{\alpha+1}}
+\frac{f(\zeta)}{{(\zeta-a)}^{\alpha+1}}
 \,
 d \zeta .
 \end{equation*}
@@ -2173,7 +2173,7 @@ Show that the domain of convergence is a polydisc.
 \end{exercise}
 \end{exbox}
 
-Suppose $U \subset \C^n$ is a domain is such that if $z \in U$
+Suppose $U \subset \C^n$ is a domain such that if $z \in U$
 and
 $\sabs{z_j} = \sabs{w_j}$ for all $j$, then $w \in U$.
 Such a $U$ is called a
@@ -2393,7 +2393,7 @@ for domains $U \subset \C^n$, every meromorphic function can be represented
 as $\nicefrac{f}{g}$ globally.  That is, the ring of meromorphic functions
 is the field of fractions of $\sO(U)$.
 This problem is the so-called
-\emph{\myindex{Poincar\`e problem}}, and its solution is no longer positive
+\emph{\myindex{Poincar\'e problem}}, and its solution is no longer positive
 once we generalize $U$ to complex manifolds.
 
 The points where
@@ -3623,8 +3623,9 @@ h\bigr(z_1,\ldots,z_{n-1},g(z_1,\ldots,z_{n-1})\bigr) = 0 ,
 and $z_n = g(z_1,\ldots,z_{n-1})$ is the unique solution to
 $h=0$ near $p$.
 
-Near $p$ the zero set of $h$ contains the zero set of $f$, and
-we need to show equality.
+The zero set of $h$ contains $N$, the zero set of $f$.
+We must show equality near $p$.  That is, we need to show that
+near $p$, every zero of $h$ is also a zero of $f$.
 Write $p = (p',p_n)$.  Then the function
 \begin{equation*}
 \xi \mapsto f(p',\xi)
@@ -3637,16 +3638,16 @@ $\xi \mapsto f(z',\xi)$ must have a zero for all $z'$ sufficiently close to $p'$
 \partial \Delta$).
 Since $g(z')$ is the unique solution $z_n$ to $h(z',z_n) = 0$
 near $p$ and the
-zeros of $f$ are contained in the zeros of $h$, we are done.
+zero set of $f$ is contained in the zero set of $h$, we are done.
 \end{proof}
 
 The zero set $N$ of a holomorphic function is a so-called
 \emph{\myindex{subvariety}}
 or an \emph{\myindex{analytic set}}
 although the general definition of a
-subvariety is a little more complicated, and includes more sets.
+subvariety is more complicated, and includes more sets.
 See \chapterref{ch:analyticvarieties}.
-Points where $N$ is written as a graph of a holomorphic mapping are called
+Points where $N$ is a graph of a holomorphic mapping are called
 \emph{regular points}\index{regular point}, and we write them as
 $N_{\mathit{reg}}$ as above.  In particular,
 since $N$ is a graph of a single holomorphic function, they are called
@@ -4612,13 +4613,6 @@ Show that the definition of convexity is independent of the defining
 function.  Hint: If $\tilde{r}$ is another defining function near $p$,
 then there is a smooth function $g > 0$ such that $\tilde{r} = g r$.
 \end{exercise}
-
-\begin{exercise}
-Show that if an open set with smooth boundary is strongly convex at a point, then it is
-strongly convex at all nearby points.  On the other hand find an example of
-an open set with smooth boundary that is convex at one point $p$, but not convex at points
-arbitrarily near $p$.
-\end{exercise}
 \end{exbox}
 
 \begin{example}
@@ -4683,8 +4677,14 @@ $r_y \frac{\partial}{\partial x} - r_x \frac{\partial}{\partial y}$.  In
 higher dimensions we can just run through enough pairs of variables to get
 a basis of $TM$.
 
-\pagebreak[2]
 \begin{exbox}
+\begin{exercise}
+Show that if an open set with smooth boundary is strongly convex at a point, then it is
+strongly convex at all nearby points.  On the other hand find an example of
+an open set with smooth boundary that is convex at one point $p$, but not convex at points
+arbitrarily near $p$.
+\end{exercise}
+
 \begin{exercise}
 Show that the domain in $\R^2$ defined by $x^4+y^4 < 1$ is convex, but not strongly convex.
 Find all the points where the domain is not strongly convex.
@@ -6152,7 +6152,7 @@ It is the trace of the Hessian matrix.}
 A function $f \colon U \to \R \cup \{ -\infty \}$ is 
 \emph{\myindex{subharmonic}} if it is upper-semicontinuous%
 \footnote{Recall $f$ is \emph{\myindex{upper-semicontinuous}}
-if $\limsup_{t\to x} f(t) \leq f(x)$ for all $x$.}
+if $\limsup_{t\to x} f(t) \leq f(x)$ for all $x \in U$.}
 and for every
 ball $B_r(a)$ with $\overline{B_r(a)} \subset U$,
 and every function $g$
@@ -9328,7 +9328,7 @@ $df$ is a linear combination of $dz_1,\ldots,dz_n$,
 thinking of $z_1,\ldots,z_n$ as functions on $M$.\linebreak[1]
 In particular,
 \begin{equation*}
-d(f \wedge dz) = df \wedge dz = 0.
+d(f \, dz) = df \wedge dz = 0.
 \end{equation*}
 \end{lemma}
 
@@ -11217,7 +11217,7 @@ When $n=1$, however, $A^2(U)$ is either trivial, or infinite-dimensional.
 
 \begin{exbox}
 \begin{exercise}
-Show that if $U \subset \C^n$ is bounded, then $A^2(U)$ is
+Show that if a domain $U \subset \C^n$ is bounded, then $A^2(U)$ is
 infinite-dimensional.
 \end{exercise}
 
@@ -11363,26 +11363,28 @@ d\bar{\zeta} \wedge d\zeta
 \end{equation*}
 The Bergman kernel in the unit disc is, therefore,
 \begin{equation*}
-K_U(z,\bar{\zeta}) = \frac{1}{\pi} \frac{1}{{(1-z\bar{\zeta})}^2} .
+K_{\D}(z,\bar{\zeta}) = \frac{1}{\pi} \frac{1}{{(1-z\bar{\zeta})}^2} .
 \end{equation*}
 The fact that this really is the Bergman kernel follows from the exercises
-below.  That is, that $K_U$ is the unique conjugate symmetric
+below.  That is, that $K_{\D}$ is the unique conjugate symmetric
 reproducing function that is in
-$A^2(U)$ for a fixed $\zeta$.  
+$A^2({\D})$ for a fixed $\zeta$.  
 We have only shown the formula for functions continuous up to the boundary,
-but those are dense in $A^2(U)$.
+but those are dense in $A^2({\D})$.
 \end{example}
 
 \begin{example}
-On the other hand you found in an exercise that $A^2(\C^n) = \{ 0 \}$.  Therefore we have trivially
+In an exercise you found that
+$A^2(\C^n) = \{ 0 \}$.  Therefore, 
 $K_{\C^n}(z,\bar{\zeta}) \equiv 0$.
 \end{example}
 
-In general it is difficult to compute the kernel explicitly
-for just any $U$, although we have the following formula for it.
+The Bergman kernel for a more general domain is diffcult (usually impossible)
+to compute explicitly.  We do have the following formula however.
 
 \begin{prop}
-Suppose $\{ \varphi_j (z) \}_{j\in I}$ is a complete orthonormal system
+Suppose $U \subset \C^n$ is a domain and
+$\{ \varphi_j (z) \}_{j\in I}$ is a complete orthonormal system
 for $A^2(U)$.  Then
 \begin{equation*}
 K_U(z,\bar{\zeta})
@@ -11479,7 +11481,8 @@ holds.
 \end{exercise}
 
 \begin{exercise}
-Let $U \subset \C^n$ be a bounded domain with smooth boundary. Show that the functions
+Let $U \subset \C^n$ be either the unit ball or the unit polydisc.
+Show that the functions
 in $A^2(U) \cap C(\overline{U})$ are dense in $A^2(U)$.  In particular this
 exercise says we
 only need to check the reproducing property on functions continuous up to
@@ -11530,8 +11533,9 @@ where $\linnprod{z}{\zeta}$ is the standard inner product on $\C^n$.
 
 \section{The Szeg{\"o} kernel}
 
-We can use the same techniques to create a reproducing kernel on the
-boundary by starting with $L^2(\partial U, d\sigma)$ instead of $L^2(U)$ to obtain a
+We use the same techniques to create a reproducing kernel on the
+boundary by starting with $L^2(\partial U, d\sigma)$ instead of $L^2(U)$.
+We obtain a
 kernel where we integrate over the boundary rather than the domain itself.
 We will give a quick overview here though we will leave out the details.
 
@@ -14346,7 +14350,7 @@ The maximum principle immediately implies the following lemma.
 
 \pagebreak[2]
 \begin{lemma}[Schwarz's lemma]\index{Schwarz's lemma}
-Suppose $f \colon \D \to \C$ is holomorphic and $f(0) = 0$,
+Suppose $f \colon \D \to \D$ is holomorphic and $f(0) = 0$,
 then 
 \begin{enumerate}[(i)]
 \item $\sabs{f(z)} \leq \sabs{z}$, and
@@ -14599,8 +14603,9 @@ The proposition says that for a small $\gamma$ around $p$ in the positive direct
 \operatorname{Res}(f,p) = c_{-1} = \frac{1}{2\pi i} \int_\gamma f(z) \, dz
 .
 \end{equation*}
-Combining with Cauchy's theorem tells us that to compute
-integrals of functions with isolated singularities we simply need to find the residues,
+Combining this equation with Cauchy's theorem tells us that to compute
+integrals of functions with isolated singularities we simply need to find
+the residues,
 which tend to be simpler to
 compute.  For example, if $p$ is a simple pole (of order 1), then 
 \begin{equation*}
@@ -14684,10 +14689,10 @@ In the classical statement of the theorem the weaker
 inequality $\sabs{f(z)-g(z)} < \sabs{f(z)}$ is used.
 Notice that either inequality precludes any zeros on $\gamma$ itself.
 
-An function with an essential singularity actually achieves essentially
+A holomorphic function with an essential singularity achieves essentially
 every value.  A weak version of this result (and an easy to prove one)
 is the \emph{\myindex{Casorati--Weierstrass theorem}}:
-If $f$ has an essential singularity at $p$,
+If a holomorphic $f$ has an essential singularity at $p$,
 then for every neighborhood $W$ of $p$, $f\bigl(W \setminus \{p\}\bigr)$ is dense in
 $\C$.  Let us state the much stronger theorem of Picard:
 A function with an essential singularity is very wild.
@@ -14794,7 +14799,7 @@ g(z) =
 is holomorphic on $U$.
 \end{thm}
 
-In fact, the extension is really about harmonic functions.
+In fact, the reflection is really about harmonic functions.
 
 \begin{thm}[Schwarz reflection principle for harmonic functions]
 % this is probably not needed: \index{Schwarz reflection principle for harmonic functions}%

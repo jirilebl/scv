@@ -1,7 +1,10 @@
-Since 3.0
+Since 3.1
 
 * Fix errata
 * A couple of minor improvements in wording
-* In analytic continuation definition explicitly state that the path begins at p, although it seems implied.
+* In Exercise 5.2.6, let U be either the unit ball or the unit polydisc.  The
+  original was way too hard and didn't immediately apply to help with 5.2.8
+* Move exercise 2.2.5 just past example 2.2.7 since that makes a bit more sense
+  (no numbers were changed, but it appears one page later).
 
 See https://www.jirka.org/scv/changes.html for older changes.
