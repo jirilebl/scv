@@ -10752,12 +10752,12 @@ topological component.  Prove that $U$ is not a domain of holomorphy.
 \section{The Bochner--Martinelli kernel}
 
 A generalization of
-the Cauchy's formula to several variables
+Cauchy's formula to several variables
 is called the Bochner--Martinelli integral formula,
 which in fact reduces 
-to Cauchy's formula when $n=1$.
+to Cauchy's (Cauchy--Pompeiu) formula when $n=1$.
 And just like for Cauchy's formula, we will prove the formula for all
-smooth functions using Stokes theorem.
+smooth functions via Stokes theorem.
 
 First, let us define the \emph{\myindex{Bochner--Martinelli kernel}}:
 \begin{equation*}
@@ -10780,8 +10780,8 @@ simply left out.
 \begin{thm}[Bochner--Martinelli] \label{thm:bochnermartinelli}
 \index{Bochner--Martinelli integral formula}
 Let $U \subset \C^n$ be a bounded open set with smooth boundary and let
-$f \colon \overline{U} \to \C$ be a smooth function,
-then for $z \in U$:
+$f \colon \overline{U} \to \C$ be a smooth function.
+Then for $z \in U$,
 \begin{equation*}
 f(z) =
 \int_{\partial U}
@@ -10832,7 +10832,7 @@ sense (the function is integrable).
 
 \begin{exercise}
 Check that for $n=1$, the Bochner--Martinelli formula
-becomes the standard Cauchy--Pompeiu formula.
+reduces to the standard Cauchy--Pompeiu formula.
 \end{exercise}
 \end{exbox}
 
@@ -10874,7 +10874,7 @@ The structure of the proof is essentially the same as that of
 the Cauchy--Pompeiu theorem for $n=1$, although some of the formulas are somewhat
 more involved.
 
-Let $z \in U$ be fixed.  Suppose $r > 0$ is small enough such that
+Let $z \in U$ be fixed.  Suppose $r > 0$ is small enough so that
 $\overline{B_r(z)} \subset U$.  We orient $\partial U$ and $\partial B_r(z)$
 both positively.  Notice that 
 $f(\zeta) \omega(\zeta,z)$ contains all the holomorphic $d\zeta_j$.
