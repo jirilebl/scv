@@ -6462,7 +6462,7 @@ Take $f_n(x,y) = f(x,y) + \frac{1}{n}
 ( x^2+y^2 ) - \frac{1}{n}M$.  Clearly $\nabla^2 f_n > 0$ everywhere on
 $\Delta$ and
 $f_n \leq 0$ on the boundary, so $f_n \leq 0$ 
-on all of $\overline{\Delta}$.  As $f_n \to f$ we obtain that
+on all of $\overline{\Delta}$.  As $f_n \to f$, we obtain that
 $f \leq 0$ on all of $\overline{\Delta}$.
 
 The other direction is left as an exercise.
@@ -9980,7 +9980,7 @@ As $(D \times W) \cap M \subset K$, we have $\partial \Delta \subset K$.
 \subimport*{figures/}{lewy-extension-figure.pdf_t}
 \end{myfig}
 
-As $p_j \to f$ uniformly on $K$ then $p_j \to f$ uniformly on
+As $p_j \to f$ uniformly on $K$, then $p_j \to f$ uniformly on
 $\partial \Delta$.  As  $p_j$ are holomorphic, then by the maximum
 principle, $p_j$ converge uniformly on all of $\Delta$.  In fact, as $(z_1,z',w)$ was
 an arbitrary point in $(D \times W) \cap \Omega_-$,
@@ -11131,9 +11131,9 @@ Use part a) to prove the maximum principle for holomorphic functions.
 
 \begin{exercise}
 Use Bochner--Martinelli for the solution of $\bar{\partial}$ with compact
-support.  That is, suppose $g$ is a smooth compactly supported $(0,1)$-form
-on $\C^n$, $n \geq 2$, $g = g_1 d\bar{z}_1 + \cdots + g_n d\bar{z}_n$,
-and
+support.  That is, suppose $g = g_1 d\bar{z}_1 + \cdots + g_n d\bar{z}_n$
+is a smooth compactly supported $(0,1)$-form
+on $\C^n$, $n \geq 2$, and
 $\frac{\partial g_k}{\partial \bar{z}_\ell} =
 \frac{\partial g_\ell}{\partial \bar{z}_k}$ for all $k, \ell$.
 Prove that
@@ -11150,45 +11150,51 @@ Hint: Look at the previous proof.
 \section{The Bergman kernel}
 
 Let $U \subset \C^n$ be a domain.  Define
+\emph{\myindex{Bergman space}} of $U$:
 \glsadd{not:A2}%
 \glsadd{not:L2}%
 \begin{equation*}
 A^2(U) \overset{\text{def}}{=} \sO(U) \cap L^2(U) .
 \end{equation*}
-That is, let $A^2(U)$ denote the space
+That is, $A^2(U)$ denotes the space
 of holomorphic functions $f \in \sO(U)$ such that
 \glsadd{not:L2norm}%
 \begin{equation*}
 \snorm{f}_{A^2(U)}^2 \overset{\text{def}}{=} \snorm{f}_{L^2(U)}^2
 = \int_U \sabs{f(z)}^2 dV < \infty .
 \end{equation*}
-The space $A^2(U)$ is called the
-\emph{\myindex{Bergman space}} of $U$.
-The inner product is the $L^2(U)$ inner product
+$A^2(U)$ is
+an inner product space with the
+$L^2(U)$ inner product
 \glsadd{not:L2innprod}%
 \begin{equation*}
 \linnprod{f}{g} \overset{\text{def}}{=} \int_U f(z) \overline{g(z)} \, dV .
 \end{equation*}
-We need to prove that $A^2(U)$ is
-complete, in other words that it is a Hilbert space.  We first
-have to prove that we can bound
-the uniform norm on compact sets via the $A^2(U)$ norm.
+We will prove that $A^2(U)$ is
+complete, in other words, it is a Hilbert space.  We first
+prove that
+the $A^2(U)$ norm bounds the
+uniform norm on compact sets.
 
 \begin{lemma} \label{lemma:bergmanKbound}
 Let $U \subset \C^n$ be a domain and $K \subset \subset U$ compact.  Then
-there exists a constant $C_K$, such that for every $f\in A^2(U)$ we have
+there exists a constant $C_K$, such that
 \begin{equation*}
 \snorm{f}_K
 =
 \sup_{z \in K} \sabs{f(z)} 
-\leq C_K \snorm{f}_{A^2(U)} .
+\leq C_K \snorm{f}_{A^2(U)} 
+\qquad \text{ for all } f\in A^2(U) .
 \end{equation*}
+Consequently, $A^2(U)$ is complete.
 \end{lemma}
 
 \begin{proof}
-As $K$ is compact there exists an $r > 0$ such that for all $z \in K$
-we have $\overline{\Delta_r(z)} \subset U$.  Fix $z \in K$,
-apply \exerciseref{exercise:averageDelta} and Cauchy--Schwarz again:
+As $K$ is compact there exists an $r > 0$ such that
+$\overline{\Delta_r(z)} \subset U$
+for all $z \in K$.
+Take any $z \in K$, and
+apply \exerciseref{exercise:averageDelta} and Cauchy--Schwarz:
 \begin{equation*}
 \begin{split}
 \abs{f(z)} &=
@@ -11205,19 +11211,20 @@ dV(\xi)}
 \snorm{f}_{A^2(\Delta_r(z))} 
 \leq
 \frac{1}{\pi^{n/2} r^n}
-\snorm{f}_{A^2(U)} . \qedhere
+\snorm{f}_{A^2(U)} .
 \end{split}
 \end{equation*}
+Taking supremum over $z \in K$ proves the estimate.
+Therefore, if $\{ f_j \}$ is a sequence of functions in $A^2(U)$
+converging in $L^2(U)$ to some $f \in
+L^2(U)$, then it converges uniformly on compact sets, and so $f \in \sO(U)$.
+Consequently, $A^2(U)$ is a closed subspace of $L^2(U)$, and hence complete.
 \end{proof}
 
-A sequence $\{ f_j \}$ of functions in $A^2(U)$
-converging in $L^2(U)$ to some $f \in
-L^2(U)$ converges uniformly on compact sets.  Therefore, $f \in \sO(U)$.
-Consequently, $A^2(U)$ is a closed subspace of $L^2(U)$, and hence complete.
-For a bounded domain $A^2(U)$ is always infinite-dimensional, see exercise
-below.  However, there do exist unbounded domains for which either 
+For a bounded domain, $A^2(U)$ is always infinite-dimensional, see exercise
+below.  There exist unbounded domains for which either 
 $A^2(U)$ is trivial (just the zero function) or even finite-dimensional.
-When $n=1$, however, $A^2(U)$ is either trivial, or infinite-dimensional.
+When $n=1$, $A^2(U)$ is either trivial, or infinite-dimensional.
 
 \begin{exbox}
 \begin{exercise}
@@ -11245,12 +11252,14 @@ former.
 \end{exercise}
 \end{exbox}
 
-Again using the lemma, we notice that point evaluation is a bounded linear
-functional, that is take $K= \{ z \}$, then the linear operator
+The lemma says that 
+point evaluation is a bounded linear
+functional.
+That is, fix $z \in U$ and take $K= \{ z \}$, then the linear operator
 \begin{equation*}
 f \mapsto f(z)
 \end{equation*}
-is a bounded linear functional.  By Riesz--Fisher theorem, there exists
+is a bounded linear functional.  By the Riesz--Fisher theorem, there exists
 a $k_z \in A^2(U)$, such that
 \begin{equation*}
 f(z) = \linnprod{f}{k_z} .
@@ -11276,15 +11285,15 @@ It should be noted that the Bergman kernel depends on $U$, which is why we write
 as $K_U(z,\bar{\zeta})$.
 
 \begin{prop}
-The Bergman kernel $K_U(z,\bar{\zeta})$ is holomorphic in $z$ and
-antiholomorphic in $\zeta$, and furthermore
+The Bergman kernel $K_U(z,\bar{\zeta})$ is holomorphic in $z$, 
+antiholomorphic in $\zeta$, and
 \begin{equation*}
 \overline{K_U(z,\bar{\zeta})} = K_U(\zeta,\bar{z}) .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-As each $k_z$ is in $A^2(U)$ it is holomorphic in $\zeta$.  Hence, $K_U$ is
+As each $k_z$ is in $A^2(U)$, it is holomorphic in $\zeta$.  Hence, $K_U$ is
 antiholomorphic in $\zeta$.  Thus if we prove
 $\overline{K_U(z,\bar{\zeta})} = K_U(\zeta,\bar{z})$, then we find that $K_U$
 is holomorphic in $z$.
@@ -13932,12 +13941,12 @@ The picture would look as follows:
 \end{proof}
 
 \begin{example}
-The above results do not work
-in the smooth setting.  First let us disprove the theorem in the smooth
-setting, and the corollary is left as an exercise.
+The results above do not work
+in the smooth setting.  Let us disprove the theorem in the smooth
+setting.  Disproving the corollary is an exercise.
 Let $g \colon \R \to \R$ be a smooth function that is
-strictly positive for $\sabs{t} > 1$ and $g(t) = 0$ for all $\sabs{t} \leq 1$.
-Then let $M$ in $(z,w) \in \C^{n-1} \times \C$ be defined by
+strictly positive for $\sabs{t} > 1$, and $g(t) = 0$ for all $\sabs{t} \leq 1$.
+Define $M$ in $(z,w) \in \C^{n-1} \times \C$ by
 \begin{equation*}
 \Im w = g\bigl(\snorm{z}^2\bigr) .
 \end{equation*}
@@ -14029,7 +14038,7 @@ The topological closure of a set $S$ is denoted by $\overline{S}$, its
 boundary is denoted by
 \glsadd{not:boundary}%
 $\partial S$.  If $S$ is relatively compact subset of $X$
-(its closure in $X$ is compact) or compact we write $S \subset \subset X$.
+(its closure in $X$ is compact) or compact, we write $S \subset \subset X$.
 
 A function $f \colon U \to \C$ is said to be
 \emph{\myindex{compactly supported}} if

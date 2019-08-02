@@ -2,9 +2,12 @@ Since 3.1
 
 * Fix errata
 * A couple of minor improvements in wording
-* In Exercise 5.2.6, let U be either the unit ball or the unit polydisc.  The
-  original was way too hard and didn't immediately apply to help with 5.2.8
 * Move exercise 2.2.5 just past example 2.2.7 since that makes a bit more sense
   (no numbers were changed, but it appears one page later).
+* In Exercise 5.2.6, let U be either the unit ball or the unit polydisc.  The
+  original was way too hard and didn't immediately apply to help with 5.2.8
+* Add the statement of completeness of the Bergman space into Lemma 5.2.1
+  as that makes more sense, and essentially it just moves where the QED symbol
+  appears.
 
 See https://www.jirka.org/scv/changes.html for older changes.
