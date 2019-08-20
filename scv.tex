@@ -1894,15 +1894,15 @@ d \zeta .
 \end{equation*}
 Notice how strikingly similar the computation is to one variable.
 
-To prove the converse statement,
-we note that the limit
+Let us prove the converse statement.
+The limit of the series
 is continuous as it is a uniform-on-compact-sets limit of continuous
-functions, and hence it is locally bounded in $\Delta$.  Second
+functions, and hence it is locally bounded in $\Delta$.  Next,
 we restrict to each variable in turn, that is,
 \begin{equation*}
-z_j \mapsto \sum_{\alpha} c_\alpha {(z-a)}^\alpha ,
+z_j \mapsto \sum_{\alpha} c_\alpha {(z-a)}^\alpha .
 \end{equation*}
-and this function is holomorphic via the corresponding one-variable argument.
+This function is holomorphic via the corresponding one-variable argument.
 \end{proof}
 
 The converse statement also follows by applying the Cauchy--Riemann equations to the series
@@ -1963,7 +1963,7 @@ Then, for $z \in \Delta$,
 \,
 d \zeta .
 \end{equation*}
-In particular if $f$ is given by \eqref{holfunc:ps}, 
+In particular, if $f$ is given by \eqref{holfunc:ps}, 
 \begin{equation*}
 c_\alpha = \frac{1}{\alpha!} \frac{\partial^{\sabs{\alpha}}f}{\partial
 z^\alpha} (a),
@@ -1975,8 +1975,9 @@ and we have the \emph{\myindex{Cauchy estimates}}:
 \end{equation*}
 \end{prop}
 
-In particular the coefficients of the power series only depend on
-derivatives of $f$ at $a$ (and so the values of $f$ in an arbitrarily small
+In particular, the coefficients of the power series depend only on
+the derivatives of $f$ at $a$
+(and so on the values of $f$ in an arbitrarily small
 neighborhood of $a$) and not the specific polydisc used in the theorem.
 
 \begin{proof}
@@ -2042,7 +2043,7 @@ d \zeta_n .
 \end{equation*}
 Notice the 2 before the $f$.  Next derivative, a 3 is coming out.  After $j$
 derivatives in $z_1$ you get the constant $j!$.
-It is exactly the same thing that is happening in one variable.  A moment's
+It is exactly the same thing that happens in one variable.  A moment's
 thought will convince you that the following formula is correct for
 $\alpha \in \N_0^n$:
 \begin{equation*}
@@ -2059,7 +2060,7 @@ Therefore,
 \alpha! \, c_\alpha = 
 \frac{\partial^{\sabs{\alpha}} f}{\partial z^\alpha} (a) .
 \end{equation*}
-And we obtain the Cauchy estimates as before:
+We obtain the Cauchy estimates as before:
 \begin{equation*}
 \abs{\frac{\partial^{\sabs{\alpha}}f}{\partial z^\alpha}(a)}
 =
@@ -2180,7 +2181,8 @@ and
 $\sabs{z_j} = \sabs{w_j}$ for all $j$, then $w \in U$.
 Such a $U$ is called a
 \emph{\myindex{Reinhardt domain}}.  The domains we were drawing so far are
-Reinhardt domains, they are exactly the domains that you can
+Reinhardt domains.
+They are exactly the domains that you can
 draw by plotting what happens for the moduli of the variables.
 A domain is called a
 \emph{\myindex{complete Reinhardt domain}}\index{Reinhardt domain!complete} if whenever
@@ -3716,7 +3718,7 @@ Suppose $U \subset \C^n$ is an open set and $f \colon U \to \C^n$ is
 holomorphic and one-to-one.  Then the Jacobian determinant is never equal to zero 
 on $U$.
 
-In particular if a holomorphic map $f \colon U \to V$ is
+In particular, if a holomorphic map $f \colon U \to V$ is
 one-to-one and onto for two open sets $U,V \subset \C^n$, then $f$ is
 biholomorphic.
 \end{thm}
@@ -4245,7 +4247,7 @@ where either $\Re z_2 \not= 0$ or $\Im z_2 \not= 0$.
 
 The condition of being a domain of holomorphy,
 requires something more than just some real geometric condition on the
-set.  In particular we have shown that the image of a domain of holomorphy
+set.  In particular, we have shown that the image of a domain of holomorphy
 via an orthonormal
 real-linear mapping 
 (so preserving distances, angles, straight lines,
@@ -4731,7 +4733,9 @@ that is $\varphi(0) = 0$ and $d\varphi(0) = 0$.
 If $M$ is the boundary of an open set $U$ with smooth boundary and
 $r < 0$ on $U$,
 then the rotation can be chosen
-such that for points in $U$ we have $y > \varphi(x)$.
+such that 
+$y > \varphi(x)$
+for points in $U$.
 \end{lemma}
 
 \begin{myfig}
@@ -4828,11 +4832,12 @@ function).
 Recall that $U$ is \emph{\myindex{geometrically convex}} if for every $p,q \in U$ the
 line between $p$ and $q$ is in $U$, or in other words
 $tp +(1-t)q \in U$ for all $t \in [0,1]$.
-In particular note that geometric convexity is a \emph{global} condition.  You need 
+In particular, geometric convexity is a \emph{global} condition.  You need 
 to know all of $U$.  On the other hand, the notion of convex for a smooth boundary is
 \emph{local} in that you only need to know $\partial U$ in a small
-neighborhood.  It turns out for domains with
-smooth boundaries the two notions are equivalent.  One direction is easy.
+neighborhood.  For domains with
+smooth boundaries the two notions are equivalent.  Proving
+one direction is easy.
 
 \begin{exbox}
 \begin{exercise}
@@ -5468,7 +5473,7 @@ In the coordinates $(z,w)$, the ball (the inside of the sphere) is the set given
 \end{equation*}
 
 In these new coordinates, the Levi form is just the identity matrix at the
-origin.  In particular the domain is strongly pseudoconvex.
+origin.  In particular, the domain is strongly pseudoconvex.
 We have not yet proved that pseudoconvexity is a biholomorphic invariant,
 but when we do, it will also mean that the ball is strongly pseudoconvex.
 
@@ -6186,7 +6191,7 @@ derivative vanishes, and it is therefore affine linear.
 In one real dimension it is also easier to picture.
 The function $f$ is convex if on
 every interval $[\alpha,\beta]$, $f \leq g$ for every affine linear $g$
-bigger than $f$ at the endpoints $\alpha$ and $\beta$.  In particular we can
+bigger than $f$ at the endpoints $\alpha$ and $\beta$.  In particular, we can
 take the $g$ that is equal to $f$ at the endpoints.
 The picture is analogous for subharmonic functions for $n > 1$,
 but it is harder to draw.
@@ -7582,8 +7587,7 @@ $\snorm{\nabla_z r|_q} \geq \nicefrac{1}{3}$, and
 3 \BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
 .
 \end{equation*}
-As $c = a+b$ is the orthogonal decomposition we have that $\snorm{c} \geq
-\snorm{b}$.
+As $c = a+b$ is the orthogonal decomposition, $\snorm{c} \geq \snorm{b}$.
 
 \pagebreak[1]
 The complex Hessian matrix of $r$ is continuous, and so let
@@ -7733,7 +7737,7 @@ So for every $t \in \R$, the $t$-sublevel set
 (the set where $f(z) < t$) must be a positive
 distance away from $\partial U$ near $0$.
 
-We have a local continuous plurisubharmonic
+We have constructed a local continuous plurisubharmonic
 exhaustion function for $U$ near $p$.  If we intersect
 with a small ball $B$ centered at $p$, then we get that $U \cap B$ is
 Hartogs pseudoconvex.  This is true at all
@@ -8681,7 +8685,7 @@ Similarly for real-analytic.
 Let us show $f$ is CR at some $p \in M$.
 Differentiating $f$ with vectors in $\C \otimes
 T_pM$ is the same as differentiating $F$.
-As $T_p^{(0,1)} M \subset T_p^{(0,1)} \C^n$ we have
+As $T_p^{(0,1)} M \subset T_p^{(0,1)} \C^n$, we have
 \begin{equation*}
 X_p f = X_p F = 0 \qquad \text{for all} \quad X_p \in T_p^{(0,1)} M.
 \qedhere
@@ -9302,7 +9306,7 @@ integral is holomorphic in the entries of $A$.
 \end{exercise}
 
 \begin{exercise}
-Show that some hypotheses are needed for the lemma.  In particular take
+Show that some hypotheses are needed for the lemma.  In particular, take
 $n=1$ and find the exact set of $A$ (now a complex number) for which
 the conclusion of the lemma is true.
 \end{exercise}
@@ -11499,7 +11503,7 @@ holds.
 \begin{exercise}
 Let $U \subset \C^n$ be either the unit ball or the unit polydisc.
 Show that the functions
-in $A^2(U) \cap C(\overline{U})$ are dense in $A^2(U)$.  In particular this
+in $A^2(U) \cap C(\overline{U})$ are dense in $A^2(U)$.  In particular, this
 exercise says we
 only need to check the reproducing property on functions continuous up to
 the boundary to show we have the Bergman kernel.
@@ -15851,7 +15855,7 @@ As $R$ is Noetherian, then there exists a finite $k$ such
 that $(c_1,c_2,\ldots,c_m) \subset (c_1,c_2,\ldots,c_k)$ for all $m$.
 Suppose for contradiction there exists a $f_{k+1}$, that is, the sequence
 of polynomials
-did not end at $k$.  In particular
+did not end at $k$.  In particular,
 $(c_1,\ldots,c_{k+1}) \subset (c_1,\ldots,c_k)$ or
 \begin{equation*}
 c_{k+1} = a_1 c_1 + \cdots a_k c_k .
