@@ -543,7 +543,7 @@ z = x+iy,
 \end{equation*}
 where $z \in \C$, and $(x,y) \in \R^2$.  
 A subtle philosophical issue is that there are two square roots of $-1$.
-Two chickens are running around in our yard, and because we like to
+Two chickens\index{chicken!imaginary} are running around in our yard, and because we like to
 know which is which, we catch one and write ``$i$'' on it.  If we happened
 to have caught the other chicken, we would have gotten an exactly equivalent
 theory, which we could not tell apart from the original.
@@ -11384,8 +11384,8 @@ The Bergman kernel in the unit disc is, therefore,
 \begin{equation*}
 K_{\D}(z,\bar{\zeta}) = \frac{1}{\pi} \frac{1}{{(1-z\bar{\zeta})}^2} .
 \end{equation*}
-The fact that this really is the Bergman kernel follows from the exercises
-below.  That is, that $K_{\D}$ is the unique conjugate symmetric
+The fact that this function really is the Bergman kernel follows from exercises
+below.  That is, $K_{\D}$ is the unique conjugate symmetric
 reproducing function that is in
 $A^2({\D})$ for a fixed $\zeta$.  
 We have only shown the formula for functions continuous up to the boundary,
@@ -11402,7 +11402,7 @@ The Bergman kernel for a more general domain is diffcult (usually impossible)
 to compute explicitly.  We do have the following formula however.
 
 \begin{prop}
-Suppose $U \subset \C^n$ is a domain and
+Suppose $U \subset \C^n$ is a domain, and
 $\{ \varphi_j (z) \}_{j\in I}$ is a complete orthonormal system
 for $A^2(U)$.  Then
 \begin{equation*}
@@ -11476,8 +11476,9 @@ And so the convergence is uniform on $K \times K^*$.
 \begin{exercise}
 \begin{exparts}
 \item
-Show that if $U \subset \C^n$ is bounded, then for all $z \in U$
-we find $K_U(z,\bar{z}) > 0$.
+Show that if $U \subset \C^n$ is bounded, then
+$K_U(z,\bar{z}) > 0$
+for all $z \in U$.
 \item
 Why can this fail if $U$ is unbounded?
 Find a (trivial) counterexample.
@@ -11526,11 +11527,12 @@ K_{\D^n}(z,\bar{\zeta}) =
 \end{exercise}
 
 \begin{exercise}[Hard]
-Show that for the unit ball $\bB_n$, then for some constants $c_\alpha$,
+Show that for
+some constants $c_\alpha$,
 the set of all monomials $\frac{z^\alpha}{c_\alpha}$ gives a complete orthonormal
-system.  Hint: To show orthonormality
+system of $A^2(\bB_n)$.  Hint: To show orthonormality
 compute the integral using polar coordinates in each variable
-separately, that is let $z_j = r_j e^{i\theta_j}$ where $\theta \in
+separately, that is, let $z_j = r_j e^{i\theta_j}$ where $\theta \in
 [0,2\pi]^n$ and $\sum_j r_j^2 < 1$.  Then show completeness by showing that
 if $f \in A^2(\bB_n)$ is orthogonal to all $z^\alpha$ then $f = 0$.
 Finding $c_\alpha = \sqrt{\frac{\pi^n \alpha!}{(n+\abs{\alpha})!}}$ requires
@@ -11556,19 +11558,21 @@ We use the same techniques to create a reproducing kernel on the
 boundary by starting with $L^2(\partial U, d\sigma)$ instead of $L^2(U)$.
 We obtain a
 kernel where we integrate over the boundary rather than the domain itself.
-We will give a quick overview here though we will leave out the details.
+Let us give a quick overview, but let us not get into the details.
 
 Let $U \subset \C^n$ be a bounded domain with smooth boundary.  Let
 $C(\overline{U}) \cap \sO(U)$ be the holomorphic functions in $U$
 continuous up to the boundary.  The restriction of
-$f \in C(\overline{U}) \cap \sO(U)$ to $\partial U$ is a continuous function
+$f \in C(\overline{U}) \cap \sO(U)$ to $\partial U$ is a continuous
+function,
 and hence $f|_{\partial U}$ is in $L^2(\partial U,d\sigma)$, where $d\sigma$
-is the surface measure on $\partial U$.  Taking a closure
+is the surface measure on $\partial U$.
+Taking a closure
 of these restrictions in $L^2(\partial U)$ obtains the Hilbert space
 $H^2(\partial U)$,
 \glsadd{not:H2}%
 which is called the \emph{\myindex{Hardy space}}.
-The inner product in this case is the $L^2(\partial U,
+The inner product on $H^2(\partial U)$ is the $L^2(\partial U,
 d\sigma)$ inner product:
 \begin{equation*}
 \linnprod{f}{g} \overset{\text{def}}{=} \int_{\partial U} f(z)
@@ -11593,20 +11597,22 @@ Let
 Pf(z) = \int_{\partial U} f(\zeta) \, P(z,\zeta) \, d \sigma(\zeta)
 \end{equation*}
 be the Poisson integral, that is, $P(z,\zeta)$ is the Poisson kernel, which
-reproduces harmonic functions.  As holomorphic functions are harmonic we
+reproduces harmonic functions.  As holomorphic functions are harmonic, we
 find that if $f \in C(\overline{U}) \cap \sO(U)$, then $Pf = f$.
 
-For $z \in U$ we can also find $Pf(z)$ for $f \in H^2(\partial U)$.  
+Although $f \in H^2(\partial U)$ is only defined on the boundary,
+through the Poisson integral, we have the values
+$Pf(z)$ for $z \in U$.
 For each $z \in U$,
 \begin{equation*}
 f \mapsto Pf(z)
 \end{equation*}
-defines a continuous linear functional.  So again we find a $s_z \in
+defines a continuous linear functional.  Again we find a $s_z \in
 H^2(\partial U)$ such that
 \begin{equation*}
 Pf(z) = \linnprod{f}{s_z} .
 \end{equation*}
-Hence for $z \in U$ and $\zeta \in \partial U$ we define
+For $z \in U$ and $\zeta \in \partial U$, we define
 \glsadd{not:Szegoker}%
 \begin{equation*}
 S_U(z,\bar{\zeta}) \overset{\text{def}}{=} \overline{s_z(\zeta)} ,
@@ -11624,19 +11630,19 @@ $f \in H^2(\partial U)$ is considered a function on
 $\overline{U}$ where values in $U$ are given by $Pf$.  Similarly, we 
 extend $S(z,\bar{\zeta})$ to a function on $U \times \overline{U}^*$ (where
 the values on the boundary are defined only almost everywhere).
-We state without proof that if $\{ \varphi_j \}$ is a complete
+We state without proof that if $\{ \varphi_j \}_{j\in I}$ is a complete
 orthonormal system for $H^2(\partial U)$, then 
 \begin{equation} \label{eq:formulaszego}
-S_U(z,\bar{\zeta}) = \sum_{j} \varphi_j(z)\overline{\varphi_j(\zeta)}
+S_U(z,\bar{\zeta}) = \sum_{j \in I} \varphi_j(z)\overline{\varphi_j(\zeta)}
 \end{equation}
-for $(z,\bar{\zeta}) \in U \times U^*$ uniformly on compact subsets.
+for $(z,\bar{\zeta}) \in U \times U^*$, converging uniformly on compact subsets.
 As before, from this formula it can be seen that $S$ is conjugate symmetric,
 and so it extends to 
 $(U \times \overline{U}^*) \cup (\overline{U} \times U^*)$.
 
 \begin{example}
 For the unit disc,
-we computed before that for $f \in C(\overline{\D}) \cap \sO(\D)$:
+we computed before that if $f \in C(\overline{\D}) \cap \sO(\D)$, then
 \begin{equation*}
 f(z) = \frac{1}{2\pi} \int_{\partial \D} \frac{f(\zeta)}{1-z\bar{\zeta}} \, ds .
 \end{equation*}
@@ -11844,18 +11850,19 @@ If $f$ is not identically zero,
 define
 \glsadd{not:ord}%
 \begin{equation*}
-\ord_p f \overset{\text{def}}{=} \min \{ k \in \N_0 : f_k \not\equiv 0 \} .
+\ord_p f \overset{\text{def}}{=} \min \bigl\{ k \in \N_0 : f_k \not\equiv 0 \bigr\} .
 \end{equation*}
 If $f \equiv 0$, then define $\ord_p f = \infty$.
 The number $\ord_p f$ is called the \emph{\myindex{order of vanishing}} of $f$ at $p$.
 \end{defn}
 
-In other words, if the order of vanishing of $f$ at $p$ is $k$, then all
+In other words, the order of vanishing of $f$ at $p$ is $k$, whenever all
 partial derivatives of order less than $k$ vanish at $p$, and there exists
 at least one derivative of order $k$ that does not vanish at $p$.
 
-In one complex variable, a holomorphic function 
-vanishing to order $k$ at 0 equals (locally) $z^k u(z)$ for a nonvanishing $u$.
+In one complex variable, a holomorphic function $f$ with $\ord_0 f = k$
+can be written
+(locally) as $f(z) = z^k u(z)$ for a nonvanishing $u$.
 In several variables, there is a similar theorem, or in fact a pair of theorems,
 the so-called Weierstrass preparation and
 division theorems.
@@ -12001,7 +12008,7 @@ we find that $s_m$
 is holomorphic.
 
 Finally, we wish to show that $P$ divides $f$ as claimed.
-For each fixed $z'$ one variable theory says that
+For each fixed $z'$, one variable theory says that
 $\frac{f(z',z_n)}{P(z',z_n)}$ has only removable singularities,
 and in fact, it has no zeros as we defined $P$
 to exactly cancel them all out.
@@ -12015,7 +12022,7 @@ d\zeta
 \end{equation*}
 is equal to $\frac{f(z',z_n)}{P(z',z_n)}$.
 The function $u$ is clearly continuous and holomorphic in $z_n$
-for each fixed $z'$.  By differentiating under the integral we
+for each fixed $z'$.  By differentiating under the integral, we
 find that it is also holomorphic in $z'$.
 \end{proof}
 
