@@ -506,7 +506,7 @@ we use some basic ring theory from algebra.
 By design it can replace the second semester of complex analysis.
 
 This book is not meant as an exhaustive reference.  It is simply a whirlwind
-tour of several complex variables that has slightly more material than can
+tour of several complex variables with slightly more material than can
 be covered within a semester.  See the end of the book
 for a \hyperref[ch:furtherreading]{list of books} for
 reference and further reading.  There are also appendices for
@@ -656,7 +656,7 @@ $\xi$.
 Another vantage point is to start with a continuously 
 differentiable\footnote{Holomorphic functions end up being infinitely
 differentiable anyway, so this hypothesis is not overly restrictive.} $f$,
-and say that $f = u + i\, v$ is holomorphic if it satisfies
+and say $f = u + i\, v$ is holomorphic if it satisfies
 the \emph{\myindex{Cauchy--Riemann equations}}:
 \begin{equation*}
 \frac{\partial u}{\partial x} = 
@@ -854,8 +854,8 @@ d \zeta
 The Cauchy formula is the essential ingredient we need from 
 one complex variable.  It follows, for example,
 from Green's theorem\footnote{If you wish to feel inadequate,
-note that this theorem on which all of complex analysis (and all of physics)
-rests was proved by
+note that this theorem, on which all of complex analysis (and all of physics)
+rests, was proved by
 George Green, who was the son of a miller and had one year of formal
 schooling.}  (Stokes' theorem in two
 dimensions).  You can look forward to
@@ -1252,8 +1252,8 @@ A ball centered at the origin
 can also be pictured by plotting against the modulus of the
 variables since the inequality defining the ball only
 depends on the moduli of the variables.
-Not every domain can be drawn like this, but those that can
-are called \emph{\myindex{Reinhardt domain}}, more on this later.
+Not every domain can be drawn like this, but if it can,
+it is called a \emph{\myindex{Reinhardt domain}}, more on this later.
 Here is a picture of $\bB_2$:
 \begin{myfig}
 \subimport*{figures/}{ball.pdf_t}
@@ -1405,7 +1405,7 @@ For a good introduction to differential forms
 see Rudin~\cite{Rudin:principles}.
 
 Recall that given real coordinates $x = (x_1,\ldots,x_n)$, a one-form $d x_j$ is a linear functional on tangent vectors
-such that when $d x_j \bigl( \frac{\partial}{\partial x_j} \bigr) = 1$ and
+such that $d x_j \bigl( \frac{\partial}{\partial x_j} \bigr) = 1$ and
 $d x_j \bigl( \frac{\partial}{\partial x_k} \bigr) = 0$ if $j \not= k$.
 Because
 $z_j = x_j + i y_j$ and
@@ -1531,9 +1531,10 @@ $\partial \Delta$.  In fact, the $\Gamma$ is of real dimension $n$, while
 the boundary of the polydisc has real dimension $2n-1$.
 
 \begin{samepage}
-The set $\Gamma = \partial \Delta_1 \times \cdots \times \partial \Delta_n$
-is called the \emph{\myindex{distinguished boundary}}.  For
-the unit bidisc we have:
+We call the set $\Gamma = \partial \Delta_1 \times \cdots \times \partial \Delta_n$
+the \emph{\myindex{distinguished boundary}}.
+Let us draw the 
+unit bidisc:
 \begin{myfig}
 \subimport*{figures/}{polydisc-dist.pdf_t}
 \end{myfig}
@@ -1545,7 +1546,8 @@ donut.  Whereas the set $\partial \D^2 =
 (\overline{\D} \times \partial \D)$ is the union of two filled donuts, or more
 precisely it is both the inside and the outside of the donut put together,
 and these two things meet on the surface of the donut.  So the
-set $\Gamma$ is quite small in comparison to the entire boundary.
+set $\Gamma$ is quite small in comparison to the entire boundary
+$\partial \D^2$.
 
 \begin{exbox}
 \begin{exercise}
@@ -1651,10 +1653,10 @@ dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n ,
 \alpha! & \overset{\text{def}}{=} \alpha_1!\alpha_2! \cdots \alpha_n! .
 \end{align*}
 We can also make sense of this notation, especially the notation $z^\alpha$,
-if $\alpha \in \Z^n$, that is, if it includes negative integers,
-although usually $\alpha$ is assumed to be in $\N_0^n$.
+if $\alpha \in \Z^n$, that is, if it includes negative integers.
+Although usually, $\alpha$ is assumed to be in $\N_0^n$.
 Furthermore, when we use $1$ as a vector it means $(1,1,\ldots,1)$.
-For example, if $z \in \C^n$ then,
+If $z \in \C^n$ then,
 \begin{equation*}
 1-z = (1-z_1,1-z_2,\ldots,1-z_n) ,
 \qquad \text{or} \qquad
@@ -1663,7 +1665,7 @@ z^{\alpha+1} = z_1^{\alpha_1+1}z_2^{\alpha_2+1} \cdots z_n^{\alpha_n+1} .
 It goes without saying that when using this notation it is
 important to be careful to always realize which symbol lives where,
 and most of all, to not get carried away.  For
-example one could interpret $\frac{1}{z}$ in two different ways depending
+example, one could interpret $\frac{1}{z}$ in two different ways depending
 on if we interpret $1$ as a vector or not, and if we are
 expecting a vector or a number.  Best to just keep to the limited set of
 cases as given above.
@@ -1679,7 +1681,7 @@ d \zeta .
 \end{equation*}
 
 Let us move to power series.  For simplicity, we start with
-power series at the origin.  Using the multinomial notation we write
+power series at the origin.  Using the multinomial notation, we write
 such a series as
 \begin{equation*}
 \sum_{\alpha \in \N_0^n} c_\alpha {z}^\alpha .
@@ -1705,15 +1707,15 @@ we often write just
 
 It is important to note what this means.  The sum does not
 have a natural ordering.  We are summing over $\alpha \in \N_0^n$, and there
-is no natural ordering of $\N_0^n$.  So it makes no sense to
+is no natural ordering of $\N_0^n$.  It makes no sense to
 talk about conditional convergence.  When we say the series
 \emph{converges}%
 \index{power series convergence}%
 \index{convergence of power series}, we mean absolutely.
-Fortunately power series converge
-absolutely, and so the ordering does not matter.  So if you want to write
+Fortunately, power series converge
+absolutely, and so the ordering does not matter.  If you want to write
 down the limit in terms of partial sums, you pick some ordering of the
-multi-indices: $\alpha(1), \alpha(2), \ldots$, and then
+multi-indices, $\alpha(1), \alpha(2), \ldots$, and then
 \begin{equation*}
 \sum_{\alpha}
 c_\alpha {z}^\alpha 
@@ -1722,10 +1724,10 @@ c_\alpha {z}^\alpha
 \sum_{k=1}^m 
 c_{\alpha(k)} {z}^{\alpha(k)} .
 \end{equation*}
-By the Fubini theorem (for sums) this is also equal to the iterated
-sum such as in \eqref{eq:iteratedsum}.
+By the Fubini theorem (for sums) this limit is also equal to the iterated
+sum such as \eqref{eq:iteratedsum}.
 
-We say a power series $\sum_\alpha c_\alpha z^\alpha$
+A power series $\sum_\alpha c_\alpha z^\alpha$
 \emph{\myindex{converges uniformly absolutely}}
 \index{uniform absolute convergence}
 for $z \in X$ when $\sum_\alpha \sabs{c_\alpha z^\alpha}$
@@ -2038,8 +2040,8 @@ d \zeta_2
 \wedge
 d \zeta_n .
 \end{equation*}
-Notice the 2 before the $f$.  Next time 3 is coming out, so after $j$
-derivatives in $z_1$ you will get the constant $j!$.
+Notice the 2 before the $f$.  Next derivative, a 3 is coming out.  After $j$
+derivatives in $z_1$ you get the constant $j!$.
 It is exactly the same thing that is happening in one variable.  A moment's
 thought will convince you that the following formula is correct for
 $\alpha \in \N_0^n$:
@@ -3347,7 +3349,7 @@ of $U$ to $U$.  As $U$ is bounded, there is an $M$ such that $\snorm{z} \leq
 M$ for all $z \in U$.  Therefore, $\snorm{f(z)} \leq M$ for all $z \in U$, and
 $\snorm{f^\ell(z)} \leq M$ for all $z \in U$.
 
-Notice that if we plug in $z + f_k(z) + {}$higher order terms
+If we plug in $z + f_k(z) + {}$higher order terms
 into $f_k$, we get $f_k(z) + {}$some other higher order terms.
 Therefore, $f^2(z) = z + 2 f_k(z) + {}$higher order terms.
 Continuing this procedure,
@@ -3386,7 +3388,7 @@ V$, and $f \colon U \to V$ is
 a biholomorphic map such that $f(0) = 0$.  Then $f$ is linear.
 \end{cor}
 
-For example, $\bB_n$ is circular and bounded, so a biholomorphism of $\bB_n$
+For example, $\bB_n$ is circular and bounded.  So a biholomorphism of $\bB_n$
 (an automorphism)
 that fixes the origin is linear.  Similarly, a polydisc centered at zero is
 also circular and bounded.
@@ -4140,10 +4142,11 @@ for any $\epsilon > 0$ automatically
 extends to a holomorphic function of $\bB_n$.  We need $n > 1$.
 The extension result decisively does not work in one dimension; for
 example take $\nicefrac{1}{z}$.
-Notice that if $n \geq 2$, then if $f \in \sO(\bB_n)$
+A related fact is the following.
+If $n \geq 2$ and $f \in \sO(\bB_n)$
 the set of its zeros must 
 ``touch the boundary'' (in other words $f^{-1}(0)$ is not compact)
-or be empty:  If the set of zeros was 
+or be empty:  If the set of zeros were 
 compact in $\bB_n$, then we could try to
 extend the function $\nicefrac{1}{f}$.
 
@@ -4326,7 +4329,7 @@ hypersurface if it is locally a set defined by
 $x_j = \varphi(x_1,\ldots,x_{j-1},x_{j+1},\ldots,x_n)$ for some $j$ and some
 smooth function $\varphi$.
 
-Notice that the definition of an open set with smooth boundary is not just that the
+The definition of an open set with smooth boundary is not just that the
 boundary is a smooth hypersurface, that is not enough.  It also says that 
 one side of that hypersurface is in $U$ and one side is not in $U$.  That is
 because if the derivative of $r$ never vanishes, then $r$ must have
@@ -8283,7 +8286,7 @@ In multinomial notation we write a power series at $a \in \C^n$ as
 {(\bar{z}-\bar{a})}^\beta .
 \end{equation*}
 
-Notice that a holomorphic function
+A holomorphic function
 is real-analytic, but not vice versa.  A holomorphic function
 is a real-analytic function that does not depend on $\bar{z}$.
 
@@ -9822,7 +9825,7 @@ f(\tilde{x},y')
 \det \left[\frac{\partial z}{\partial
 x}(\tilde{x},y')\right] d\xi .
 \end{equation*}
-Notice how in the exponent we actually have an expression for the derivative
+In the exponent, we have an expression for the derivative
 in the $\xi$ direction with $y'$ fixed.  If $(\tilde{x},y') \in K'$, then
 $g(\tilde{x}) = 1$, and so we can ignore $g$.
 
@@ -12026,11 +12029,12 @@ On the other hand the
 symmetric functions $c_1(z_1) = - \alpha_1(z_1) - \alpha_2(z_1) = 0$
 and $c_0(z_1') = \alpha_1(z_1)\alpha_2(z_1) = -z_1$ are holomorphic.
 
-Notice that the $k$ depends on the coordinates chosen.  If we do a
+The $k$ depends on the coordinates chosen.  If we do a
 linear change of coordinates and consider $g(z_1,z_2) = -f(z_2,z_1)$,
 then $g(z_1,z_2) = z_1^2 - z_2$,
 which is a Weierstrass polynomial in $z_2$ of degree $k=1$.
-There is now only one zero $\alpha_1(z_1) = z_1^2$, and so $c_0(z_1) =
+After the change, there is only one zero,
+$\alpha_1(z_1) = z_1^2$, and so $c_0(z_1) =
 -z_1^2$.
 \end{example}
 
@@ -12210,15 +12214,16 @@ f = qP + r .
 \end{equation*}
 \end{thm}
 
-Do note that $r$ need not be a Weierstrass polynomial; it need not be monic
+Note that $r$ need not be a Weierstrass polynomial; it need not be monic
 nor do the coefficients need to vanish at the origin.  It is simply a
 polynomial in $z_n$ with coefficients that are holomorphic functions
 of the first $n-1$ variables.
 
 \begin{proof}
 Uniqueness is left as an exercise.  Consider
-a connected neighborhood $V = V' \times D$ of the origin for some disc $D$
-such that $f$ and $P$ are continuous in $V' \times \overline{D}$,
+a connected neighborhood $V = V' \times D$ of the origin, where
+$D$ is a disc,
+$f$ and $P$ are continuous in $V' \times \overline{D}$,
 and 
 $P$ is not zero on $V' \times \partial D$.
 Let
@@ -15320,7 +15325,7 @@ Then
 Again, the sum has to exist, such as when $\omega$ is compactly supported
 and the sum is finite.
 
-Notice that the only nontrivial differential forms on $\R^n$
+The only nontrivial differential forms on $\R^n$
 are $0,1,2,\ldots,n$ forms.  The only $n$-forms are
 object of the form
 \begin{equation*}
