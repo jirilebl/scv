@@ -9,5 +9,6 @@ Since 3.1
 * Add the statement of completeness of the Bergman space into Lemma 5.2.1
   as that makes more sense, and essentially it just moves where the QED symbol
   appears.
+* Use "zero" consistently instead of mixing "zero" and "root" in chapter 6
 
 See https://www.jirka.org/scv/changes.html for older changes.
