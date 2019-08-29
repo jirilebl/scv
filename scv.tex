@@ -11912,11 +11912,8 @@ with coefficients holomorphic in $V'$ such that
 \begin{equation*}
 f(z',z_n) = u(z',z_n) \, P(z',z_n) ,
 \end{equation*}
-and such that all $k$ zeros\footnote{They are the zeros of the function $z_n
-\mapsto P(z',z_n)$ or the roots of $P(z',z_n)=0$, so we may also call them
-\emph{roots}.}
-(counting multiplicity) of $z_n \mapsto P(z',z_n)$ lie in $D$ for all $z'
-\in V'$
+and such that all $k$ zeros (counting multiplicity)
+of $z_n \mapsto P(z',z_n)$ lie in $D$ for all $z' \in V'$
 \end{thm}
 
 \begin{proof}
@@ -11949,8 +11946,8 @@ is equal to $k$ when $z'=0$, and
 so it is equal to $k$ for all $z' \in V'$.
 Write
 the zeros of $z_n \mapsto f(z',z_n)$ as $\alpha_1(z'),\ldots,\alpha_k(z')$, including
-multiplicity.  There is no particular order to the zeros.
-Pick \emph{some} order for every $z'$.
+multiplicity.  The zeros are not ordered in any particular way.
+Pick \emph{some} ordering for every $z'$.
 Write
 \begin{equation*}
 P(z',z_n)
@@ -11959,7 +11956,7 @@ P(z',z_n)
 =
 z_n^k + c_{k-1}(z') \, z_n^{k-1} + \cdots + c_0 (z') .
 \end{equation*}
-For a fixed $z'$, $P$ is uniquely defined as the order of roots does not
+For a fixed $z'$, $P$ is uniquely defined as the ordering of zeros does not
 matter in its definition (see exercise below).  It is
 clear that
 $u$ and $P$ are unique if they exist (that is, if they exist as holomorphic functions).
@@ -12131,8 +12128,9 @@ as a convergent power series in the elementary symmetric functions.
 
 \begin{exercise} \label{exercise:symmetricseriesweier}
 Suppose $P(z',z_n)$ is a Weierstrass polynomial of degree $k$,
-and write $\alpha_1(z'), \ldots, \alpha_k(z')$ as the roots.
-These are not holomorphic, but suppose that $f$ is a symmetric convergent
+and write the zeros as $\alpha_1(z'), \ldots, \alpha_k(z')$.
+These are not holomorphic functions,
+but suppose that $f$ is a symmetric convergent
 power series at the origin in $k$ variables.  Show that
 $f\bigl(\alpha_1(z'), \ldots, \alpha_k(z')\bigr)$ is a holomorphic function
 of $z'$ near the origin.
@@ -12172,7 +12170,7 @@ Suppose $D \subset \C$ is a bounded domain, $0 \in D$,
 $U' \subset \C^{n-1}$ is a domain, $0 \in U'$,
 and $P \in \sO(U')[z_n]$ is a Weierstrass polynomial
 such that $P(z',z_n)$ is not zero on $U' \times \partial D$.
-Then for any $z' \in U$, all roots of $z_n \mapsto P(z',z_n)$ are in $D$.
+Then for any $z' \in U$, all zeros of $z_n \mapsto P(z',z_n)$ are in $D$.
 \end{exercise}
 
 \begin{exercise}
@@ -12186,7 +12184,7 @@ where $f$ is zero on at least one point
 of $U' \times D$, and $f$ is never zero on
 $U' \times \partial D$.
 Prove that
-$z_n \mapsto f(z',z_n)$ has at least one root in $D$ for every $z' \in U'$.
+$z_n \mapsto f(z',z_n)$ has at least one zero in $D$ for every $z' \in U'$.
 \pagebreak[2]
 \end{exercise}
 \end{exbox}
@@ -12194,8 +12192,8 @@ $z_n \mapsto f(z',z_n)$ has at least one root in $D$ for every $z' \in U'$.
 The order of vanishing of $f$ at the origin is a lower bound
 on the number $k$ in the theorem.  The order of vanishing for a certain
 variable may be larger than this lower bound.  If $f(z_1,z_2) =
-z_1^2 + z_2^3$, then the $k$ you get is 3, but $\ord_0 f = 2$.
-One can make a small
+z_1^2 + z_2^3$, then the $k$ we get is 3, but $\ord_0 f = 2$.
+We can make a small
 linear change of coordinates to ensure $k = \ord_0 f$.
 With the $f$ as above for example, $f(z_1 + \epsilon z_2,z_2)$ gives $k = 2$
 as expected.
@@ -12207,7 +12205,7 @@ $f$ is a graph of the holomorphic function $-c_0$.
 Therefore, the Weierstrass theorem is a generalization of the
 implicit function theorem to the case when $\frac{\partial f}{\partial z_n}$
 is zero.  We can still ``solve'' for $z_n$, but we find $k$ solutions
-given as the roots of the obtained Weierstrass polynomial.
+given as the zeros of the obtained Weierstrass polynomial.
 
 There is an obvious statement of the preparation theorem for germs.
 
@@ -12321,27 +12319,27 @@ finite order.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The dependence of roots on parameters} \label{sec:dependenceofroots}
+\section{The dependence of zeros on parameters} \label{sec:dependenceofzeros}
 
-Let us prove that the roots change holomorphically as long as they do not
-come together.  We will prove shortly that the roots come together
+Let us prove that the zeros change holomorphically as long as they do not
+come together.  We will prove shortly that the zeros come together
 only on a small set; it is a zero set of a certain holomorphic function
 called the discriminant.
 
-A set of roots are said to be
+A set of zeros are said to be
 \emph{\myindex{geometrically distinct}} if they are distinct
-points of $\C$.  A root is called
+points of $\C$.  A zero is called
 \emph{\myindex{geometrically unique}} if it is a unique complex number.
-For example, ${(z_n-1)}^2$ has a geometrically unique root $1$, and 
-${(z_n-1)}^2(z_n+1)$ has two geometrically distinct roots, $1$ and $-1$.
+For example, ${(z_n-1)}^2$ has a geometrically unique zero at $1$, and 
+${(z_n-1)}^2(z_n+1)$ has two geometrically distinct zeros, $1$ and $-1$.
 
 
-\begin{prop} \label{prop:roothol}
+\begin{prop} \label{prop:zerohol}
 Let $D \subset \C$ and $U' \subset \C^{n-1}$ be domains,
 and
 $f \in \sO(U' \times D)$.
 Suppose that for each fixed $z' \in U'$ the function
-$z_n \mapsto f(z',z_n)$ has a geometrically unique root $\alpha(z') \in D$.  Then $\alpha$ is
+$z_n \mapsto f(z',z_n)$ has a geometrically unique zero $\alpha(z') \in D$.  Then $\alpha$ is
 holomorphic in $U'$.
 \end{prop}
 
@@ -12360,8 +12358,8 @@ Apply the preparation
 theorem to find $f = u P$,
 where $P$ is a
 Weierstrass polynomial in $\sO(V')[z_n]$ for some $V' \subset U'$
-and all roots of $z_n \mapsto P(z',z_n)$ are in $D$.
-As $\alpha$ is a geometrically unique root in $D$,
+and all zeros of $z_n \mapsto P(z',z_n)$ are in $D$.
+As $\alpha$ is a geometrically unique zero in $D$,
 \begin{equation*}
 P(z',z_n) = {\bigl(z_n-\alpha(z') \bigr)}^k = z_n^k - k \alpha(z') z_n^{k-1}
 + \cdots
@@ -12369,14 +12367,14 @@ P(z',z_n) = {\bigl(z_n-\alpha(z') \bigr)}^k = z_n^k - k \alpha(z') z_n^{k-1}
 The coefficients of $P$ are holomorphic, so $\alpha$ is holomorphic.
 \end{proof}
 
-\begin{prop} \label{prop:rootshol}
+\begin{prop} \label{prop:zeroshol}
 Let $D \subset \C$ and $U' \subset \C^{n-1}$
 be domains,
 and
 $f \in \sO(U' \times D)$.
 Let $m \in \N$ be such that
 for each $z' \in U'$, the function $z_n \mapsto f(z',z_n)$ has
-precisely $m$ geometrically distinct roots.
+precisely $m$ geometrically distinct zeros.
 Then locally near each point in $U'$ there exist $m$ holomorphic functions
 $\alpha_1(z'),\ldots,\alpha_m(z')$,
 positive integers
@@ -12391,7 +12389,7 @@ f(z',z_n) = u(z',z_n) \prod_{j=1}^m {\bigl( z_n - \alpha_j(z') \bigr)}^{k_j}
 
 We can only define $\alpha_1$ through $\alpha_m$ locally (on a
 smaller domain) as we do not know
-the order of $\alpha_1$ through $\alpha_m$, and the order could change 
+how $\alpha_1$ through $\alpha_m$ are ordered, and the order could change 
 as we move around 
 $U'$ if it is not simply connected.  If $U'$ is simply connected, then
 the functions can be defined globally by analytic continuation.
@@ -12400,7 +12398,7 @@ recall \exampleref{sqrt:example}. Consider $U' = \C \setminus \{ 0 \}$ and
 think $D=\C$ rather than a disc for simplicity.  Then $U'$ is not simply
 connected, and there do not exist continuous functions
 $\alpha_1(z_1)$ and
-$\alpha_2(z_1)$ that are roots
+$\alpha_2(z_1)$ that are zeros
 of the Weierstrass polynomial, that is
 $z_2^2 - z_1 =
 \bigl(z_2-\alpha_1(z_1) \bigr)
@@ -12423,15 +12421,15 @@ of $U' \times D$, and $f$ is never zero on
 $U' \times \partial D$.
 Suppose that for each fixed $z' \in U'$ the function
 $z_n \mapsto f(z',z_n)$
-has at most one root in $D$.  Prove that for each $z' \in U'$
-$z_n \mapsto f(z',z_n)$ has exactly one root in $D$.
-Note: And therefore by \propref{prop:roothol}, that root is
+has at most one zero in $D$.  Prove that for each $z' \in U'$
+$z_n \mapsto f(z',z_n)$ has exactly one zero in $D$.
+Note: And therefore by \propref{prop:zerohol}, that zero is
 a holomorphic function.
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{prop:rootshol}.  See 
-the above exercise and \propref{prop:roothol}.
+Prove \propref{prop:zeroshol}.  See 
+the above exercise and \propref{prop:zerohol}.
 \end{exercise}
 \end{exbox}
 
@@ -12447,9 +12445,10 @@ Then there exists an $m \in \N$
 and
 a holomorphic function $\Delta \colon U' \to \C$, not identically zero, such
 that for every $z' \in U' \setminus E$, where $E = \Delta^{-1}(0)$,
-$z_n \mapsto f(z',z_n)$ has exactly $m$ geometrically distinct roots in $D$,
+$z_n \mapsto f(z',z_n)$ has exactly $m$ geometrically distinct zeros in $D$,
 and 
-$z_n \mapsto f(z',z_n)$ has strictly less than $m$ geometrically distinct roots
+$z_n \mapsto f(z',z_n)$ has strictly less than $m$ geometrically distinct
+zeros
 for $z' \in E$.
 \end{thm}
 
@@ -12461,92 +12460,96 @@ $E$ is called the
 $\Delta$ is the discriminant we learned about in high school.
 
 \begin{proof}
-The roots of $z_n \mapsto f(z',z_n)$ are isolated, and there are finitely
+The zeros of $z_n \mapsto f(z',z_n)$ are isolated, and there are finitely
 many for every $z'$ as $D$ is bounded and $f^{-1}(0)$ has no limit points on
 $U' \times \partial D$.
 For any $p' \in U'$ we define two useful paths.
 Let $\gamma$ be the union of nonintersecting
 small simple closed curves
-in $D$, one around each geometrically distinct root of $z_n \mapsto f(p',z_n)$.
+in $D$, one around each geometrically distinct zero of $z_n \mapsto f(p',z_n)$.
 Let $\lambda$ be a large closed path in $D$ going 
-exactly once around all the roots and such that the interior of $\lambda$ is
+exactly once around all the zeros and such that the interior of $\lambda$ is
 in $D$.  Suppose $\gamma$ and $\lambda$
-intersect no roots.
+intersect no zeros.
 By continuity,
 the curves $\gamma$
-and $\lambda$ do not intersect any roots for $z'$ near $p'$.
-Since the set $f^{-1}(0)$ is closed and the roots
+and $\lambda$ do not intersect any zeros for $z'$ near $p'$.
+Since the set $f^{-1}(0)$ is closed and the zeros
 do not
 accumulate on $U' \times \partial D$,
 then
-for $z'$ near $p'$ the roots stay a positive distance away from
+for $z'$ near $p'$ the zeros stay a positive distance away from
 the boundary.  So $\lambda$ can be picked to go 
 around all
-the roots exactly once for $z'$ near $p'$.
+the zeros exactly once for $z'$ near $p'$.
 
 \begin{myfig}
 \subimport*{figures/}{curve-around-each-zero.pdf_t}
 \end{myfig}
 
 The argument principle applied to $z_n \mapsto f(z',z_n)$ using $\lambda$ for $z'$ near
-$p'$ shows that the number of roots (with multiplicity) is bounded by some $M \in \N$
+$p'$ shows that the number of zeros (with multiplicity) is bounded by some $M \in \N$
 near $p'$.  The $M$ is locally well-defined (it does not depend on $\lambda$ as
-long as it contains all the roots), and it is a locally constant function of
+long as it contains all the zeros), and it is a locally constant function of
 $z' \in U'$.
 As $U'$ is connected, and it is a fixed number.  The maximum number of
-geometrically distinct roots must be bounded by $M$.  Let $m$ be the maximal
-number of geometrically distinct roots and suppose that at some point
-in $U'$, there are exactly $m$ geometrically distinct roots.
+geometrically distinct zeros must be bounded by $M$.  Let $m$ be the maximal
+number of geometrically distinct zeros and suppose that at some point
+in $U'$, there are exactly $m$ geometrically distinct zeros.
 
 Let $U_m' \subset U'$ be the set of $z' \in U'$ for which $z_n \mapsto f(z',z_n)$
-has exactly $m$ roots.
+has exactly $m$ zeros.
 Write $U'$ as a union of disjoint sets $U' = U_m' \cup E$, where $E = U'
 \setminus U_m'$.
 By definition of $m$, $U_m'$ is nonempty.  Suppose $p' \in U_m'$ and $\gamma$
-goes around the roots as above.  Let $\gamma'$ be a single component curve
-of the path $\gamma$ going around one of the roots.
+goes around the zeros as above.  Let $\gamma'$ be a single component curve
+of the path $\gamma$ going around one of the zeros.
 The argument principle with respect to $\gamma'$ says that
-$\gamma'$ must contain at least one root for all $z'$ near $p'$.
-There are only finitely many roots, and so for $z'$ in 
+$\gamma'$ must contain at least one zero for all $z'$ near $p'$.
+There are only finitely many zeros, and so for $z'$ in 
 some neighborhood of $p'$,
 $z_n \mapsto f(z',z_n)$ has at least $m$
-roots in $\gamma$, and as $m$ is the maximum, it has exactly $m$ roots.  In other words,
-$U_m'$ is open.
+zeros in $\gamma$, and as $m$ is the maximum, it has exactly $m$ zeros.
+In other words, $U_m'$ is open.
 
 Locally on $U_m'$, there exist $m$ holomorphic functions
-$\alpha_1, \ldots, \alpha_m$ giving the roots by the previous proposition.  We cannot define
-these on all of $U_m'$ as we do not know their order.  The function
+$\alpha_1, \ldots, \alpha_m$ giving the zeros by the previous proposition.
+We cannot define these on all of $U_m'$ as we do not know how they are
+ordered.
+The function
 \begin{equation*}
 \Delta(z') = \prod_{j \not= k} \bigl( \alpha_j(z') - \alpha_k(z') \bigr) 
 \end{equation*}
-defined for $z' \in U_m'$
-does not depend on the order.  That means $\Delta$ is well-defined as a function
-on the open set $U_m'$,
+defined for $z' \in U_m'$ does not depend on the order.
+That means $\Delta$ is well-defined as a function on the open set $U_m'$,
 and since $\alpha_j$ are locally holomorphic, $\Delta$ is holomorphic.
 
 Let $p' \in E \cap \overline{U_m'}$,
-so there are fewer than $m$ roots at $p'$.
+so there are fewer than $m$ zeros at $p'$.
 Suppose $\gamma$ and $\lambda$ are as above.
 In each particular component $\gamma'$ of $\gamma$, there must
-be at least one root for all $z'$ near $p'$ by the same argument as above.
-There exist $z'$ arbitrarily near $p'$ where there are $m$ roots.
-The region between $\lambda$ and $\gamma$ (including the curves) is compact, and so by
-continuity, if $f(p',z_n)$ was nonzero on it, so is $f(z',z_n)$ for $z'$ near
-$p'$.  As no roots of $f(z',z_n)$ lie outside $\lambda$, we have that all
-roots lie in one of the components of $\gamma$.  So if $z' \in U_m'$ near
+be at least one zero for all $z'$ near $p'$ by the same argument as above.
+There exist $z'$ arbitrarily near $p'$ where there are $m$ zeros.
+The region between $\lambda$ and $\gamma$ (including the curves) is compact,
+and so by continuity,
+if $z_n \mapsto f(p',z_n)$ was nonzero on it,
+so is $z_n \mapsto f(z',z_n)$ for $z'$ near $p'$.
+As no zeros of $z_n \mapsto f(z',z_n)$ lie outside $\lambda$,
+we have that all
+zeros lie in one of the components of $\gamma$.  So if $z' \in U_m'$ near
 $p'$, there must be one
-component $\gamma'$ that contains at least two roots.  Let $\{ z'_\ell \}$
-be an arbitrary sequence of points in $U_m'$ going to $p'$.  As the number of roots is
-finite, $\{ z'_\ell \}$ has a
-subsequence such that $z_n \mapsto f(z'_\ell,z_n)$ has at least two roots in
+component $\gamma'$ that contains at least two zeros.  Let $\{ z'_\ell \}$
+be an arbitrary sequence of points in $U_m'$ going to $p'$.
+As the number of zeros is finite, $\{ z'_\ell \}$ has a
+subsequence such that $z_n \mapsto f(z'_\ell,z_n)$ has at least two zeros in
 some fixed component $\gamma'$ of $\gamma$ for $z'_\ell$.  Assume $\{ z'_\ell
-\}$ is this subsequence.  Label the two distinct roots at $z'_\ell$
+\}$ is this subsequence.  Label the two distinct zeros at $z'_\ell$
 as $\alpha_1(z'_\ell)$ and
-$\alpha_2(z'_\ell)$.  At $p'$ there is only a single (geometrically) root in $\gamma'$, let
+$\alpha_2(z'_\ell)$.  At $p'$ there is only a single (geometrically) zero in $\gamma'$, let
 us name it $\alpha_1(p')$.  As $f^{-1}(0)$ is closed it must be that
 $\alpha_1(z'_\ell)$ and $\alpha_2(z'_\ell)$ both approach $\alpha_1(p')$ as
 $\ell \to \infty$.
-As all roots are necessarily bounded,
+As all zeros are necessarily bounded,
 $\lim_{\ell \to \infty} \Delta(z'_\ell) = 0$.  As the limit is zero for a 
 subsequence of an arbitrary sequence,
 \begin{equation*}
@@ -12564,7 +12567,7 @@ The discriminant given above is really the discriminant of the set
 $f^{-1}(0)$ rather than of the corresponding Weierstrass polynomial.  Often
 for Weierstrass polynomials the discriminant is defined as 
 $\prod_{j \not= k} \bigl( \alpha_j(z') - \alpha_k(z') \bigr)$ taking
-multiple roots into account, and therefore the ``discriminant'' could be
+multiple zeros into account, and therefore the ``discriminant'' could be
 identically zero.  It will be clear from upcoming exercises that if
 the Weierstrass polynomial is irreducible, then the two notions do in fact
 coincide.
@@ -13138,7 +13141,7 @@ the discriminant function
 $\Delta$ and the discriminant $E = \Delta^{-1}(0)$.
 Above each
 point in $U' \setminus E$, the set $Z_f$ is union of $m$ distinct graphs
-of holomorphic functions (see \propref{prop:rootshol}), so those
+of holomorphic functions (see \propref{prop:zeroshol}), so those
 points are regular.  Above
 each point of $E$ there are only finitely many points of $Z_f$,
 and $E$ is nowhere dense in $U'$.  So the
@@ -13170,11 +13173,11 @@ all zeros of $z_n \mapsto P(z',z_n)$ are in $D$ for $z' \in U$.
 $E \subset U'$ be the discriminant set, a zero set of a
 holomorphic function.
 On $U' \setminus E$, there are a certain number of geometrically
-distinct roots of $z_n \mapsto P(z',z_n)$.
+distinct zeros of $z_n \mapsto P(z',z_n)$.
 
 Let $X'$ be a topological component of $X \setminus ( E \times D )$.
 Above each point $z' \in U' \setminus E$, let 
-$\alpha_1(z'),\ldots,\alpha_k(z')$ denote the distinct roots that are in $X'$,
+$\alpha_1(z'),\ldots,\alpha_k(z')$ denote the distinct zeros that are in $X'$,
 that is $\bigl(z',\alpha_j(z')\bigr) \in X'$.
 If $\alpha_j$ is a holomorphic function in some small neighborhood and
 $\bigl(z',\alpha_j(z')\bigr) \in X'$ at one point, then 
@@ -13183,7 +13186,7 @@ Furthermore, this means that the set $X'$ contains only regular points of $X$ of
 dimension $n-1$.
 
 The number of
-such geometrically distinct roots above each point in
+such geometrically distinct zeros above each point in
 $U' \setminus E$ is locally constant, and as $U' \setminus E$ is connected
 there exists a unique $k$.  Take
 \begin{equation*}
@@ -13192,7 +13195,7 @@ F(z',z_n) = \prod_{j=1}^k \bigl( z_n-\alpha_j(z')\bigr)
 z_n^k + \sum_{j=0}^{k-1} g_j(z') z_n^j .
 \end{equation*}
 The coefficients $g_j$ are well-defined for $z \in U' \setminus E$
-as they are independent of the order of $\alpha_1,\ldots,\alpha_k$.
+as they are independent of how $\alpha_1,\ldots,\alpha_k$ are ordered.
 The $g_j$ are holomorphic for $z \in U' \setminus E$
 as locally we can choose the order so that each $\alpha_j$ is 
 holomorphic.
@@ -13200,11 +13203,11 @@ The coefficients $g_j$ are bounded
 on $U'$ and therefore extend to holomorphic functions of $U'$.
 Hence, the polynomial $F$ is a polynomial
 in $\sO(U')[z_n]$.
-The roots of $F$
+The zeros of $F$
 above $z' \in U' \setminus E$
 are simple and give precisely $X'$.
 By using the argument principle
-again, we find that all roots above points of $E$ are limits of roots
+again, we find that all zeros above points of $E$ are limits of zeros
 above points in $U' \setminus E$.
 Consequently,
 the zero set of $F$ is the closure of $X'$ in $U' \times D$ by continuity.
@@ -13213,7 +13216,7 @@ all the functions $g_j$ vanish at the origin and $F$ is a Weierstrass
 polynomial, a fact that will be useful in the exercises below.
 
 If the polynomial $P(z',z_n)$ is of degree $m$,
-then $z' \mapsto P(z',z_n)$ has at most $m$ roots.  Together with
+then $z' \mapsto P(z',z_n)$ has at most $m$ zeros.  Together with
 the fact that $U' \setminus E$ is connected, this means that
 $X \setminus (E \times D)$ has at most finitely many components (at
 most $m$).
@@ -13300,7 +13303,7 @@ of singular points is a subvariety of dimension $k$.
 \begin{exercise}
 Suppose $p(z',z_n)$ is a Weierstrass polynomial of degree $k$ such that
 for an open dense set of $z'$ near the origin 
-$z_n \mapsto p(z',z_n)$ has geometrically $k$ roots, and such that the
+$z_n \mapsto p(z',z_n)$ has geometrically $k$ zeros, and such that the
 regular points of $Z_p$ are connected.  Show that $p$ is
 irreducible in the sense that if $p = rs$ for two Weierstrass polynomials
 $r$ and $s$, then either $r=1$ or $s=1$.
@@ -13314,8 +13317,8 @@ $z_n \mapsto f(0,z_n)$ being of finite order.  Show that
 f = u p_1^{d_1} p_2^{d_2} \cdots p_\ell^{d_\ell} ,
 \end{equation*}
 where $p_j$ are Weierstrass polynomials of degree $k_j$ that have
-generically (that is, on an open dense set) $k_j$ distinct roots
-(no multiple roots), the regular points of $Z_{p_j}$ are
+generically (that is, on an open dense set) $k_j$ distinct zeros
+(no multiple zeros), the regular points of $Z_{p_j}$ are
 connected, and $u$ is a nonzero holomorphic function
 in a neighborhood of the origin.  See also the next section, these
 polynomials will be the irreducible factors in the factorization of $f$.
@@ -13537,9 +13540,9 @@ As $D \setminus N$ is simply connected we have the well-defined functions
 $\alpha_1(z),\ldots,\alpha_m(z)$ holomorphic on $D \setminus N$
 that are solutions to $f\bigl(z,\alpha_j(z)\bigr) = 0$.
 These functions continue analytically across $N$ away from the
-origin.  The continuation equals one of the roots, e.g.\ $\alpha_j(z)$
+origin.  The continuation equals one of the zeros, e.g.\ $\alpha_j(z)$
 becomes $\alpha_\ell(z)$ (and by continuity it is the
-same root along the entire $N$).  So there is
+same zero along the entire $N$).  So there is
 a permutation $\sigma$ on $m$ elements such that as $z$ moves
 counter-clockwise around the origin from the upper half-plane across $N$ to the
 lower half-plane,
@@ -14758,7 +14761,7 @@ proof is via the maximum principle.
 \label{thm:fundamentalthmalg}%
 If $P \colon \C \to \C$ is a nonzero polynomial of degree $k$,\linebreak[2]
 then $P$
-has exactly $k$ roots (zeros) in $\C$ counted with multiplicity.
+has exactly $k$ zeros (roots) in $\C$ counted with multiplicity.
 \end{thm}
 
 The set of rational functions is dense in the space of holomorphic
