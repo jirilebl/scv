@@ -3975,8 +3975,8 @@ if $t x + (1-t)y \in S$
 for all $x,y \in S$ and $t \in [0,1]$.
 The exercise below
 says that every geometrically convex domain is a domain of holomorphy.
-There are other,
-nonconvex domains of holomorphy (any domain in $\C$),
+Domains of holomorphy are often not geometrically convex
+(e.g.\ any domain in $\C$ is a domain of holomorphy),
 so classical convexity is not the correct notion, but it is
 in the right direction.
 
@@ -4047,7 +4047,7 @@ F(z,w)
 \frac{1}{{(2\pi i)}^m}
 \int_\Gamma \frac{f(\xi,w)}{\xi-z} \, d\xi .
 \end{equation*}
-Clearly $F$ is well-defined on
+Clearly, $F$ is well-defined on
 \begin{equation*}
 c\D^m \times \D^k
 \end{equation*}
@@ -4094,7 +4094,7 @@ extends holomorphically to $U$.
 \begin{proof}
 Without loss of generality,
 by translating and scaling (those operations are after all holomorphic),
-we assume that $p = (\frac{3}{4},0,\ldots,0)$
+we assume that $p = \bigl(\frac{3}{4},0,\ldots,0\bigr)$
 and the unit polydisc $\D^n$ is contained in $U$.  We fit a Hartogs figure $H$
 in $U$
 by letting $m=1$ and $k=n-1$, writing $\C^n = \C^{1} \times \C^{n-1}$,
@@ -4105,7 +4105,7 @@ $f$ extends to be holomorphic at $p$.
 \end{proof}
 
 This result provides another reason why holomorphic functions in several
-variables have no isolated zeros.  That is, suppose $U \subset \C^n$,
+variables have no isolated zeros (or poles).  Suppose $U \subset \C^n$,
 $n \geq 2$, and $f \in \sO(U)$ with $f$ being zero only at $p$, that
 is $f^{-1}(0) = \{ p \}$.  Then $\frac{1}{f}$ would be holomorphic in
 $U \setminus \{ p \}$.  It would not be possible to extend $f$
@@ -4143,7 +4143,7 @@ for any $\epsilon > 0$ automatically
 extends to a holomorphic function of $\bB_n$.  We need $n > 1$.
 The extension result decisively does not work in one dimension; for
 example take $\nicefrac{1}{z}$.
-A related fact is the following.
+There is a related fact about zero sets.
 If $n \geq 2$ and $f \in \sO(\bB_n)$
 the set of its zeros must 
 ``touch the boundary'' (in other words $f^{-1}(0)$ is not compact)
@@ -4275,8 +4275,8 @@ $U \times V$ is a domain of holomorphy in $\C^2$.  The domains
 $U$ and $V$, and therefore $U \times V$ can be spectacularly nonconvex.
 But we should not discard convexity completely, there is a notion of
 \emph{pseudoconvexity}, which vaguely means ``convexity in the 
-complex directions,'' that is the correct notion to classify which
-domains are domains of holomorphy.
+complex directions'' and is the correct notion to distinguish 
+domains of holomorphy.
 Let us figure out what classical convexity means locally for a smooth boundary.
 
 \begin{defn} \label{def:hypersurface}
@@ -4515,11 +4515,14 @@ Given a smooth mapping
 $f \colon U \subset \R^n \to \R^m$,
 the derivative at $p$ is a linear mapping of
 the tangent spaces: $Df(p) \colon T_p \R^n \to T_{f(p)} \R^m$.
-That is, given $X_p \in T_p \R^n$, then 
+If $X_p \in T_p \R^n$, then 
 $Df(p) X_p$ should be in $T_{f(p)} \R^m$.
-So if $\varphi$ is a smooth function of a neighborhood
-of $f(p)$ in $\R^m$, then
-$Df(p) X_p$ acts on $\varphi$ as
+The vector 
+$Df(p) X_p$ is defined by how it acts on
+smooth functions $\varphi$ of a neighborhood
+of $f(p)$ in $\R^m$:
+%then
+%$Df(p) X_p$ acts on $\varphi$ as
 \glsadd{not:Df}%
 \begin{equation*}
 Df(p) X_p \varphi = X_p (\varphi \circ f) .
@@ -4533,9 +4536,10 @@ to distinguish it from the holomorphic derivative.
 As far as calculus computations are concerned,
 the linear mapping $Df(p)$ is
 the Jacobian matrix acting on vectors in the standard basis of the tangent space
-as given above.  This is why we use the same notation for the Jacobian
+as given above.
+This is why we use the same notation for the Jacobian
 matrix and the derivative acting on tangent spaces.
-To see that this is so, it is enough to see where the basis element
+To verify this claim, it is enough to see where the basis element
 $\frac{\partial}{\partial x_j}\big|_p$ goes, and the form of $Df(p)$
 as a matrix
 follows by the chain rule.
@@ -5295,7 +5299,7 @@ T
 .
 \end{equation*}
 
-Let us also mention how a complex linear change of variables
+Let us also see how a complex linear change of variables
 acts on the Hessian matrix.  A complex linear change of variables is not an
 arbitrary $2n \times 2n$ matrix.  If the Hessian is in the 
 basis of $\frac{\partial}{\partial z}$s and
@@ -5320,7 +5324,7 @@ where $A^* = \overline{A}^t$ is the conjugate
 transpose of $A$.
 So $A$
 transforms the complex Hessian $L$ as $A^* L A$, that is, by $*$-congruence.
-Star congruence preserves the \emph{\myindex{inertia}}
+Star-congruence preserves the \emph{\myindex{inertia}}
 (the number of positive, negative, and zero eigenvalues)
 of a Hermitian matrix
 by the Sylvester's law of inertia from linear algebra.
@@ -5834,7 +5838,7 @@ So if we write $M$ as a graph,
 \end{equation*}
 then $E$ is $O(3)$.
 
-The quadratic polynomial $q$ can be written as
+We write the quadratic polynomial $q$ as
 \begin{equation} \label{eq:generalquadraticq}
 q(z,\bar{z}) =
 \sum_{j,k=1}^{n-1}
@@ -13114,9 +13118,10 @@ pure dimension.  Feel free to assume $X_{\mathit{reg}}$ is dense in $X$.
 \section{Hypervarieties} \label{section:hypervarieties}
 
 
-Pure codimension 1 subvarieties are particularly nice.  Sometimes pure codimension 1
-subvarieties are called \emph{\myindex{hypervarieties}}.
-We have already proved, back in \sectionref{sec:riemannextzerosetsinjmaps},
+Pure codimension 1 subvarieties are particularly nice.
+Sometimes pure codimension 1 subvarieties are called
+\emph{hypervarieties}\index{hypervariety}.
+Back in \sectionref{sec:riemannextzerosetsinjmaps} we proved
 the following theorem (\thmref{thm:regptsdense}).  We restate it in the
 language of varieties.
 
@@ -13132,14 +13137,14 @@ We can improve on that slightly.
 Let us prove that $(Z_f)_{\mathit{sing}}$ is (locally) contained in the zero set of some holomorphic
 function that is not zero on any nonempty open subset of $Z_f$.
 It suffices to assume $0 \in Z_f$ and to prove this locally near the origin.
-After possibly a linear change of coordinates, we as usual assume
+As usual, after possibly a linear change of coordinates, we assume
 that near the origin $Z_f$ is contained in some $U' \times D \subset
 \C^{n-1} \times \C$ for a disc $D$ and $Z_f$ does not
 intersect $U' \times \partial D$.
 Apply \thmref{thm:discrthm} to find
 the discriminant function
 $\Delta$ and the discriminant $E = \Delta^{-1}(0)$.
-Above each
+Above a neighborhood of each
 point in $U' \setminus E$, the set $Z_f$ is union of $m$ distinct graphs
 of holomorphic functions (see \propref{prop:zeroshol}), so those
 points are regular.  Above
