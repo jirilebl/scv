@@ -10029,7 +10029,7 @@ boundary
 with no assumptions on the Levi form, but 
 a different approach would have to be taken.
 
-\begin{cor}
+\begin{cor} \label{cor:bochnerhartogsstrconvex}
 Suppose $U \subset \C^n$, $n \geq 2$, is a bounded domain with smooth boundary that is
 strongly convex 
 and $f \colon \partial U \to \C$ is a smooth CR function, then
@@ -10051,7 +10051,8 @@ extension holomorphic in $U$.
 
 \begin{exbox}
 \begin{exercise}
-Prove the existence of the strongly convex $K$ above.
+Prove the existence of the strongly convex $K$ in the proof of
+\corref{cor:bochnerhartogsstrconvex} above.
 \end{exercise}
 
 \begin{exercise}
@@ -10065,15 +10066,16 @@ Write down an explicit formula for the extension $F$.
 \end{exercise}
 
 \begin{exercise}
-Suppose a smooth hypersurface $M \subset \C^3$ is defined by $\Im w = \sabs{z_1}^2-\sabs{z_2}^2 + O(3)$
+A smooth hypersurface $M \subset \C^3$ is defined by $\Im w = \sabs{z_1}^2-\sabs{z_2}^2 + O(3)$
 and $f$ is a real-valued smooth CR function on $M$.  Show
 that $\sabs{f}$ does not attain a maximum at the origin.
 \end{exercise}
 
 \begin{exercise}
-Suppose $M \subset \C^n$, $n \geq 3$, is a real-analytic hypersurface
+A real-analytic hypersurface
+$M \subset \C^n$, $n \geq 3$, is
 such that the Levi form at $p \in M$ has eigenvalues of both signs.
-Show that every smooth CR function $f$ on $M$ is in fact real-analytic in
+Show that every smooth CR function $f$ on $M$ is, in fact, real-analytic in
 a neighborhood of $p$.
 \end{exercise}
 
@@ -10082,8 +10084,9 @@ a neighborhood of $p$.
 Let $M \subset \C^3$ be defined by $\Im w = \sabs{z_1}^2-\sabs{z_2}^2$.
 \begin{exparts}
 \item
-Show that an arbitrary compact subset $K \subset \subset M$ will work
-for the conclusion Baouendi--Tr{\`e}ves.
+Show that for this $M$,
+the conclusion of Baouendi--Tr{\`e}ves holds with
+an arbitrary compact subset $K \subset \subset M$.
 \item
 Use this to show that every
 smooth CR function $f \colon M \to \C$ is a restriction of an entire holomorphic function
@@ -10098,7 +10101,7 @@ W \to \C$ that does not extend holomorphically to either side of $M$ at $p$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon \partial \bB_n \to \C$ is a smooth function, $n \geq 2$.
+Suppose $f \colon \partial \bB_n \to \C$ is a smooth function and $n \geq 2$.
 Prove that $f$ is a CR function if and only if
 \begin{equation*}
 \int_0^{2\pi} f(e^{i\theta}v) \, e^{ik\theta} d\theta = 0
@@ -10129,6 +10132,10 @@ Lewy, Hans, \emph{An example of a smooth linear partial differential
 equation without solution}, Annals of Mathematics, \textbf{66} (1957), 155--158.}.
 The example is surprising because when a linear PDE has real-analytic
 coefficients, a solution always exists by the theorem of Cauchy--Kowalevski.
+Furthermore, if $X$ is a real vector field ($X$ is in $TM$ not in $\C
+\otimes TM$),
+then a solution to $Xf = \psi$ exists by the method of characteristics, even
+if $X$ and $\psi$ are only smooth.
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -10145,9 +10152,9 @@ coefficients, a solution always exists by the theorem of Cauchy--Kowalevski.
 Before we get into the $\bar{\partial}$-problem, let us prove a more general
 version of Cauchy's formula using Stokes' theorem (really Green's theorem).
 This version is called the \emph{\myindex{Cauchy--Pompeiu integral formula}}.
-We will only need the theorem for smooth functions, but as it is often 
+We only need the theorem for smooth functions, but as it is often 
 applied in less regular contexts and it is just an application of Stokes'
-theorem, let us state it that way.  In applications, the boundary is often
+theorem, let us state it more generally.  In applications, the boundary is often
 only piecewise smooth, and again that is all we need for Stokes.
 
 \begin{thm}[Cauchy--Pompeiu] \label{thm:generalizedcauchy}
@@ -10187,9 +10194,9 @@ d\zeta \wedge d\bar{\zeta}
 (- 2 i ) dx \wedge dy = (-2i) dA .
 \end{equation*}
 
-As we want to use Stokes,
-let us note that if $z = x+iy$, then we can
-write the standard exterior derivative in terms of $z$ and $\bar{z}$:
+As we want to use Stokes, we need to write the standard
+exterior derivative in terms of $z$ and $\bar{z}$.
+For $z = x+iy$, we compute:
 \begin{equation*}
 d \psi
 =
@@ -10204,13 +10211,15 @@ d \psi
 
 \begin{exbox}
 \begin{exercise}
-Observe the singularity in the second term, and prove that the integral still makes
+Observe the singularity in the second term of the Cauchy--Pompeiu formula,
+and prove that the integral still makes
 sense (the function is integrable).  Hint: polar coordinates.
 \end{exercise}
 
 \begin{exercise}
 Why can we not differentiate in $\bar{z}$ under the integral in the second
-term?  Notice that it would lead to an impossible result.
+term of the Cauchy--Pompeiu formula?
+Notice that it would lead to an impossible result.
 \end{exercise}
 \end{exbox}
 
@@ -10503,7 +10512,8 @@ computation above.
 That $\psi$ has compact support follows because $g_1$ has compact
 support together with the identity theorem.  In particular, $\psi$ is
 holomorphic for very large $z$ since $\bar{\partial} \psi = g = 0$ when $z$
-is large.  When $z_2,\ldots,z_n$ are large, then $\psi$ is identically zero
+is large.  When at least one of $z_2,\ldots,z_n$ is large,
+then $\psi$ is identically zero
 simply from its definition.  See the following diagram:
 
 \begin{myfig}
@@ -10514,11 +10524,11 @@ As $\bar{\partial} \psi = 0$ on the light gray and white areas in the
 diagram, $\psi$ is holomorphic there. As $\psi$ is zero on the light
 gray region, it is zero also on the white region by the identity theorem.
 That is, $\psi$ is zero on the unbounded component of the set where $g=0$,
-that is, $\psi$ has compact support.
+and so $\psi$ has compact support.
 \end{proof}
 
-The first part of the proof still works when $n=1$, so we do get a solution
-$\psi$.  However the last bit of the proof does not work in one dimension, so
+The first part of the proof still works when $n=1$, we get a solution
+$\psi$.  However, the last bit of the proof does not work in one dimension, so
 $\psi$ does not have compact support.
 
 \begin{exbox}
