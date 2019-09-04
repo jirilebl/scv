@@ -1446,16 +1446,16 @@ and $\delta_j^k = 0$ if $j \not= k$.  One-forms are objects of the form
 \end{equation*}
 where $\alpha_j$ and $\beta_j$ are functions (of $z$).
 Also, recall the wedge product $\omega \wedge \eta$ is anticommutative on
-one-forms,
-that is, for one-forms $\omega$ and $\eta$,
+one-forms:
+for one-forms $\omega$ and $\eta$,
 $\omega \wedge \eta = - \eta \wedge \omega$.  A wedge product of two
 one-forms is a two-form, and so on.  A $k$-form is an object that 
 can be integrated on a so-called $k$-chain, for example, a
 $k$-dimensional surface.  The wedge product takes care of the orientation.
 
 At this point, we need to talk about orientation in $\C^n$.  There are two
-natural real-linear isomorphisms of $\C^n$ and $\R^{2n}$.  That is, we
-identify $z = x+iy$ as
+natural real-linear isomorphisms of $\C^n$ and $\R^{2n}$.  We
+identify $z = x+iy$ as either
 \begin{equation*}
 (x,y) = (x_1,\ldots,x_n,y_1,\ldots,y_n) \qquad
 \text{or} \qquad
@@ -1514,7 +1514,7 @@ are holomorphic in $\D$.
 
 \begin{exercise}
 Prove the theorem above, that is, the slightly more general Cauchy integral
-formula given $f$ is only continuous on $\overline{\Delta}$ and
+formula where $f$ is only continuous on $\overline{\Delta}$ and
 holomorphic in $\Delta$.
 \end{exercise}
 \end{exbox}
@@ -1767,7 +1767,6 @@ $z \in \D^n$ (unit polydisc),
 \end{split}
 \end{equation*}
 The series converges uniformly absolutely
-%(that is, $\sum_\alpha \sabs{z^\alpha}$ converges uniformly)
 on all compact subsets of the unit
 polydisc:  Any compact set in the unit
 polydisc is contained in a closed polydisc $\overline{\Delta}$
@@ -1897,7 +1896,7 @@ Let us prove the converse statement.
 The limit of the series
 is continuous as it is a uniform-on-compact-sets limit of continuous
 functions, and hence it is locally bounded in $\Delta$.  Next,
-we restrict to each variable in turn, that is,
+we restrict to each variable in turn, 
 \begin{equation*}
 z_j \mapsto \sum_{\alpha} c_\alpha {(z-a)}^\alpha .
 \end{equation*}
@@ -2808,17 +2807,17 @@ says that holomorphic mappings preserve orientation.
 The real mapping using our identification is
 $(\Re f_1,\Im f_1, \ldots, \Re f_n, \Im f_n)$
 as a function of $(x_1,y_1,\ldots,x_n,y_n)$.
-The statement is about the two Jacobians, that is the derivatives
-at $p$, and hence, we can assume that
-$p=0$ and $f$ is complex linear, that is $f(z) = Az$ for some $n \times n$
+The statement is about the two Jacobians at $p$, that is, the derivatives
+at $p$.  Hence, we can assume that
+$p=0$ and $f$ is complex linear, $f(z) = Az$ for some $n \times n$
 matrix $A$.  It is just a statement about matrices.
-So $A$ is the (holomorphic) Jacobian matrix of $f$, and
-let $B$ be the real Jacobian matrix of $f$.
+The matrix $A$ is the (holomorphic) Jacobian matrix of $f$.
+Let $B$ be the real Jacobian matrix of $f$.
 
-Let us change basis of $B$ to be $(z,\bar{z})$
-using $z = x+iy$ and $\bar{z}=x-iy$,
+Let us change the basis of $B$ to be $(z,\bar{z})$
+using $z = x+iy$ and $\bar{z}=x-iy$
 on both the target and the source.
-In other words, there is some invertible
+The change of basis is some invertible
 complex matrix $M$ such that
 $M^{-1} B M$ (the real Jacobian matrix $B$ in these new coordinates)
 is a matrix 
@@ -2845,7 +2844,7 @@ Thus
 =
 \det(A) \, \overline{\det(A)}
 =
-\abs{\det(A)}^2 .  \qedhere.
+\abs{\det(A)}^2 .  \qedhere
 \end{equation*}
 \end{proof}
 
@@ -3423,7 +3422,7 @@ If $j\not=1$, we obtain that $f_j \equiv
 
 \begin{exbox}
 \begin{exercise}
-Show that every automorphism $f$ of $\D^n$ (that is a biholomorphism $f \colon \D^n \to \D^n$)
+Show that every automorphism $f$ of $\D^n$ (that is, a biholomorphism $f \colon \D^n \to \D^n$)
 is given as
 \begin{equation*}
 f(z) = P \left(
@@ -3439,7 +3438,7 @@ a permutation matrix $P$.
 Given $a \in \bB_n$, define the linear map $P_a z =
 \frac{\linnprod{z}{a}}{\linnprod{a}{a}}a$ if $a \not= 0$ and $P_0z = 0$.
 Let $s_a = \sqrt{1-\snorm{a}^2}$.  Show that every automorphism $f$ of
-$\bB_n$ (that is a biholomorphism $f \colon \bB_n \to \bB_n$)
+$\bB_n$ (that is, a biholomorphism $f \colon \bB_n \to \bB_n$)
 can be written as
 \begin{equation*}
 f(z) = U \frac{a-P_az-s_a(I-P_a)z}{1-\linnprod{z}{a}}
@@ -3514,12 +3513,13 @@ variables the same theorem holds, and the analogue of a single point
 is the zero set of a holomorphic function.
 
 \begin{thm}[\myindex{Riemann extension theorem}]
-Let $U \subset \C^n$ be a domain and let $g \in \sO(U)$ that is not
+Let $U \subset \C^n$ be a domain,  $g \in \sO(U)$, and $g$ is not
 identically zero.  Let
-$N = g^{-1}(0)$ be the zero set of $g$.  Suppose 
-$f \in \sO(U \setminus N)$ %and suppose $f$
-is locally bounded in $U$.
-Then there exists a unique $F \in \sO(U)$ such that $F|_{U \setminus N} = f$.
+$N = g^{-1}(0)$ be the zero set of $g$.
+If 
+$f \in \sO(U \setminus N)$
+is locally bounded in $U$,
+then there exists a unique $F \in \sO(U)$ such that $F|_{U \setminus N} = f$.
 \end{thm}
 
 The proof is an application of the Riemann extension theorem from one dimension.
@@ -3876,7 +3876,7 @@ map of $f \colon \C \to \C$ is onto, the same is not true in higher
 dimensions.
 In $\C^n$, $n \geq 2$, there exist so-called
 \emph{Fatou--Bieberbach domains}\index{Fatou--Bieberbach domain},
-that is proper subsets of $\C^n$ that are biholomorphic to $\C^n$.
+that is, proper subsets of $\C^n$ that are biholomorphic to $\C^n$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3921,7 +3921,7 @@ points in $W$ that are not in $\bB_n$, so there
 is a path $\gamma$ in $W$ that goes
 from a point $q \in V$ to some $p \in \partial \bB_n \cap W$.
 Without loss of generality (after composing with
-rotations, that is unitary matrices), assume $p =
+rotations, that is, unitary matrices), assume $p =
 (1,0,0,\ldots,0)$.  Take the function $f(z) = \frac{1}{1-z_1}$.  
 The function $F$ must agree with $f$ on the component of
 $\bB_n \cap W$ that contains $q$.  But that component also contains $p$ and
@@ -4203,10 +4203,10 @@ $f(\lambda z) = f(z)$ whenever $z \in U$, $\lambda \in \C$ and $\lambda z
 (easy) Prove that $f$ is constant.
 \item
 (hard) Relax the requirement on
-$f$ to being meromorphic, that is $f = \nicefrac{g}{h}$
-for holomorphic $g$ and $h$,
-find a nonconstant example and prove that such an $f$ must be rational (that
-is $g$ and $h$ must be polynomials).
+$f$ to being meromorphic: $f = \nicefrac{g}{h}$
+for holomorphic $g$ and $h$.
+Find a nonconstant example, and prove that such an $f$ must be rational (that
+is, $g$ and $h$ must be polynomials).
 \end{exparts}
 \end{exercise}
 
@@ -5406,7 +5406,7 @@ semidefinite, then $\partial U$ is pseudoconvex at $0$.
 \begin{example}
 Let us change variables to write the ball $\bB_n$ in different
 local holomorphic coordinates where the Levi form is displayed nicely.
-Suppose the sphere $\partial \bB_n$ is defined in the variables $Z = (Z_1,\ldots,Z_n) \in \C^n$
+The sphere $\partial \bB_n$ is defined in the variables $Z = (Z_1,\ldots,Z_n) \in \C^n$
 by $\snorm{Z} = 1$.
 
 Let us change variables 
@@ -6127,9 +6127,9 @@ $M$ is a Levi-flat hypersurface.
 
 
 \begin{exercise}
-Suppose $M \subset \C^n$ is a smooth Levi-flat hypersurface
-and $p \in M$.
-Suppose a complex line $L$ is tangent to $M$ at $p$.
+Suppose $M \subset \C^n$ is a smooth Levi-flat hypersurface,
+$p \in M$, and
+a complex line $L$ is tangent to $M$ at $p$.
 Prove that $p$ is not an isolated point of $L \cap M$.
 \end{exercise}
 
@@ -8251,9 +8251,9 @@ proposition?
 \end{exercise}
 \end{exbox}
 
-Recall that a polynomial $P(x)$ in $n$ real variables $(x_1,\ldots,x_n)$ is homogeneous of degree $d$ if
+A polynomial $P(x)$ in $n$ real variables $(x_1,\ldots,x_n)$ is homogeneous of degree $d$ if
 $P(s x) = s^d P(x)$ for all $s \in \R$ and $x \in \R^n$.
-That is, a homogeneous polynomial of degree $d$ is a polynomial whose
+A homogeneous polynomial of degree $d$ is a polynomial whose
 every monomial
 is of total degree $d$.
 If $f$ is real-analytic near $a \in \R^n$, then
@@ -8288,7 +8288,7 @@ series becomes a power series in $z$ and $\bar{z}$.  As mentioned before,
 we simply write the function as $f(z,\bar{z})$, and we consider the
 power series representation in $z$ and $\bar{z}$ rather than
 in $x$ and $y$.
-In multinomial notation we write a power series at $a \in \C^n$ as
+In multinomial notation, we write a power series at $a \in \C^n$ as
 \begin{equation*}
 \sum_{\alpha,\beta} c_{\alpha,\beta} {(z-a)}^\alpha
 {(\bar{z}-\bar{a})}^\beta .
@@ -8490,8 +8490,8 @@ $f-\bar{g}$) to show that both $f$ and $g$ are constant.
 \end{exbox}
 
 \begin{example}
-Not every $C^\infty$ smooth function is real-analytic.  For example,
-on the real line
+Not every $C^\infty$ smooth function is real-analytic.  For $x \in \R$,
+define
 \begin{equation*}
 f(x) =
 \begin{cases}
@@ -8501,7 +8501,7 @@ e^{-1/x^2} & \text{if $x > 0$,} \\
 \end{equation*}
 The function
 $f \colon \R \to \R$ is $C^\infty$ and $f^{(k)}(0) = 0$ for all $k$.
-So the Taylor series of $f$ at the origin does
+The Taylor series of $f$ at the origin does
 not converge to $f$ in any neighborhood of the origin; it converges to the
 zero function but not to $f$.
 Because of this, there is no neighborhood $V$ of the origin in $\C$ such that
@@ -8647,8 +8647,8 @@ $X_p F = X_p G$.
 
 Due to the last exercise, we can apply vectors of $T_p M$ to
 a smooth function on a hypersurface by simply applying
-them to any smooth extension.  Similarly, we can apply vectors of
-$\C \otimes T_p M$ to smooth function on $M$, as 
+them to any smooth extension.  We can similarly apply vectors of
+$\C \otimes T_p M$ to smooth functions on $M$, as 
 $\C \otimes T_p M$ is simply the complex span of vectors in $T_p M$.
 
 \begin{defn}
@@ -10581,7 +10581,7 @@ extends uniquely to a holomorphic function on $U$.
 \subimport*{figures/}{hartogs-fig.pdf_t}
 \end{myfig}
 
-The idea of the proof is extending in some way and then using the solution
+The idea of the proof is extending in any way whatsoever and then using the solution
 to the $\bar{\partial}$-problem to correct the result to make it
 holomorphic.
 
