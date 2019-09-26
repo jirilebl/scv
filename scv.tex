@@ -10641,9 +10641,12 @@ on an open set) and thus everywhere in $U \setminus K$ since $U \setminus K$
 is connected.
 \end{proof}
 
-The hypotheses in the theorem are ideal.  Clearly, no such theorem is true
-in one dimension, and similarly if $U \setminus K$ is disconnected, a simple
-counterexample can be constructed.  See the exercise below.
+The hypotheses on dimension and on connectedness of $U \setminus K$
+are necessary.
+No such theorem is true in one dimension.
+If $U \setminus K$ is disconnected, a simple
+counterexample can be constructed.
+See the exercise below.
 
 \begin{exbox}
 \begin{exercise}
@@ -10678,10 +10681,10 @@ Suppose $U \subset \C^n$, $n \geq 2$, is a domain and $f \colon U \to \C$ is
 holomorphic.  If the zero set $f^{-1}(0)$ is not empty, then it is not compact.
 \end{cor}
 
-What is usually called the Hartogs--Bochner theorem (which is the $C^1$
-version)
-was first stated in the
-real-analytic case by Severi in 1931.
+Replacing $U \setminus K$ with a hypersurface
+is usually called the Hartogs--Bochner theorem (when the hypersurface is
+$C^1$ or smooth).
+The real-analytic case was stated first by Severi in 1931.
 
 \begin{cor}[Severi]\index{Severi's theorem}
 Suppose $U \subset \C^n$, $n \geq 2$, is a bounded domain with connected real-analytic boundary and
@@ -10692,9 +10695,13 @@ $F|_{\partial U} = f$.
 \end{cor}
 
 \begin{proof}
-By Severi's result (\thmref{thm:severi}) $f$ extends to a small neighborhood of $\partial U$
-near each point.  Because the local extension is unique for a hypersurface,
-we obtain an extension in a single neighborhood of $\partial U$.
+By Severi's result (\thmref{thm:severi}), for every $p \in \partial U$,
+there is a small ball $B_p$, such that $f$ extends to $B_p$.  Cover $\partial
+U$ by finitely many such balls so that if $B_p$ intersects $B_q$, then 
+the (connected) intersection $B_p \cap B_q$ contains points of $\partial U$.
+The extension in $B_p$ and in $B_q$ then agree on a piece of a hypersurface
+$\partial U$, and hence agree.  Taking a union of the $B_p$ we find
+a unique extension in single neighborhood of $\partial U$.
 We write this neighborhood as $U' \setminus K$ for some compact $K$
 and a connected $U'$ such that $\overline{U} \subset U'$.
 Consider the topological components of $\C^n \setminus K$.  As
@@ -10714,9 +10721,8 @@ and let $f \colon \partial U \to \C$ be a smooth CR function.  Prove
 that there exists a continuous function $F \colon \overline{U} \to \C$
 holomorphic in $U$
 such that $F|_{\partial U} = f$.
-Note: Strong pseudoconvexity is not needed (bounded with smooth boundary
-will do), but that is more difficult
-to prove.
+Note: Strong pseudoconvexity is not needed (``bounded with smooth boundary''
+will do), but that is much more difficult to prove.
 \end{exercise}
 
 \begin{exercise}
@@ -10777,8 +10783,8 @@ Cauchy's formula to several variables
 is called the Bochner--Martinelli integral formula,
 which in fact reduces 
 to Cauchy's (Cauchy--Pompeiu) formula when $n=1$.
-And just like for Cauchy's formula, we will prove the formula for all
-smooth functions via Stokes theorem.
+As for Cauchy's formula, we will prove the formula for all
+smooth functions via Stokes' theorem.
 
 First, let us define the \emph{\myindex{Bochner--Martinelli kernel}}:
 \begin{equation*}
@@ -10857,8 +10863,7 @@ reduces to the standard Cauchy--Pompeiu formula.
 \end{exercise}
 \end{exbox}
 
-We will, again, apply Stokes formula, but we need to apply it to forms of higher
-degree.  As before, we split the derivatives into the holomorphic and
+As usual, we split the derivatives into the holomorphic and
 antiholomorphic parts.  We work with multi-indices.  For $\alpha$ and $\beta$
 with $\abs{\alpha}=p$ and 
 $\abs{\beta}=q$, a differential form
@@ -10896,8 +10901,9 @@ the Cauchy--Pompeiu theorem for $n=1$, although some of the formulas are somewha
 more involved.
 
 Let $z \in U$ be fixed.  Suppose $r > 0$ is small enough so that
-$\overline{B_r(z)} \subset U$.  We orient $\partial U$ and $\partial B_r(z)$
-both positively.  Notice that 
+$\overline{B_r(z)} \subset U$.  Orient both
+$\partial U$ and $\partial B_r(z)$
+positively.  Notice that 
 $f(\zeta) \omega(\zeta,z)$ contains all the holomorphic $d\zeta_j$.
 Therefore,
 \begin{equation*}
@@ -10940,7 +10946,7 @@ We compute
 Therefore,
 $d \bigl( f(\zeta) \omega(\zeta,z) \bigr) = \bar{\partial} f(\zeta) \wedge
 \omega(\zeta,z)$.
-We apply Stokes as before:
+We apply Stokes:
 \begin{equation*}
 \begin{split}
 \int_{\partial U}
@@ -11113,8 +11119,9 @@ n 2^n Mr \, dV
 Therefore, this term goes to zero as $r \to 0$.
 \end{proof}
 
-One drawback of the Bochner--Martinelli formula is that the kernel is not
-holomorphic in $z$ unless $n=1$.  That is, it does not simply produce
+One drawback of the Bochner--Martinelli formula $\int_{\partial U} f(\zeta)
+\omega(\zeta,z)$ is that the kernel is not
+holomorphic in $z$ unless $n=1$.  It does not simply produce
 holomorphic functions.  If we differentiate in $\bar{z}$ underneath the
 $\partial U$ integral, we do not necessarily obtain zero.
 On the other hand, we have an explicit formula and this formula does not
