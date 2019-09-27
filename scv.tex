@@ -766,7 +766,7 @@ f'(z_0)
 =
 \lim_{\xi \to 0} \frac{f(z_0+\xi)-f(z_0)}{\xi} .
 \end{equation*}
-That's because 
+That is because 
 \begin{equation*}
 \begin{split}
 \frac{\partial f}{\partial z} 
@@ -4474,7 +4474,7 @@ The disjoint union
 T\R^n = \bigcup_{p \in \R^n} T_p \R^n
 \end{equation*}
 is called the \emph{\myindex{tangent bundle}}.  There is a
-natural identification $\R^n \times \R^n \cong T\R^n$, that is,
+natural identification $\R^n \times \R^n \cong T\R^n$:
 \begin{equation*}
 (p,a) \in \R^n \times \R^n
 \quad
@@ -8000,9 +8000,9 @@ fact is not easy to prove from the definition of a domain of
 holomorphy, as the
 biholomorphism is defined only on the interior of our domains.
 
-Holomorphic convexity is an intrinsic notion; that is, it does not require
+Holomorphic convexity is an intrinsic notion; it does not require
 knowing anything about points outside of $U$.  It is a much
-better way to think about domains of holomorphy.  In fact holomorphic
+better way to think about domains of holomorphy.  Holomorphic
 convexity generalizes easily to more complicated complex
 manifolds\footnote{Manifolds with complex structure, that is, ``manifolds
 with multiplication by $i$ on the tangent space.''}, while
@@ -8078,7 +8078,7 @@ is precisely the set
 $\bigl\{ z \in \C^n :
 \sabs{z_1}^{\alpha_1} \cdots \sabs{z_n}^{\alpha_n}
 < e^\beta \bigr\}$.
-Hint: That it diverges outside is easy, what's hard is that it converges
+Hint: That it diverges outside is easy, what is hard is that it converges
 inside.  Perhaps useful is to notice
 $\frac{\ell_m^k}{k}-\alpha_m \leq \frac{1}{k}$, and furthermore
 notice that if $z$ is in the set, there is some $\epsilon > 0$ such that
@@ -8174,7 +8174,7 @@ $p$ in $\C^n$ and by the identity theorem it is zero on all of $V$.
 \end{proof}
 
 
-Let us return to $\R^n$ for a moment.
+We return to $\R^n$ for a moment.
 We write a power series in $\R^n$ in multinomial notation as usual.
 Suppose that for some
 $a \in \R^n$
@@ -8206,8 +8206,8 @@ Then there exists a domain $V \subset \C^n$ such that $U \subset V$
 and a unique holomorphic function $F \colon V \to \C$ such that $F|_U = f$.
 \end{prop}
 
-In particular, among many other things that follow from this proposition, we
-can now conclude that a real-analytic function is $C^\infty$.  Be careful
+Among many other things that follow from this proposition, we
+can now conclude that a real-analytic function is $C^\infty$ smooth.  Be careful
 and notice that $U$ is a domain in $\R^n$, but it is not an open set
 when considered as a subset of $\C^n$.  Furthermore, $V$ may be a very
 ``thin'' neighborhood around $U$.  There is no way of finding $V$ just from
@@ -8218,7 +8218,7 @@ real-analytic on $\R$, but the complexification is not holomorphic at $\pm
 \epsilon i$.
 
 \begin{proof}
-We already proved the local version.  But we must prove that if we
+We proved the local version already.  But we must prove that if we
 extend our $f$ near every point, we always get the same function.
 That follows from the lemma above; any two such functions are
 equal on $\R^n$, and hence equal.  There is a subtle topological technical
@@ -8298,7 +8298,7 @@ A holomorphic function
 is real-analytic, but not vice versa.  A holomorphic function
 is a real-analytic function that does not depend on $\bar{z}$.
 
-Before we discuss complexification in terms of $z$ and $\bar{z}$ we need
+Before we discuss complexification in terms of $z$ and $\bar{z}$, we need
 the following lemma.
 
 \begin{lemma}
@@ -8525,7 +8525,7 @@ y = \varphi(x) ,
 where $\varphi$ is real-analytic, $(x,y) \in \R^{n-1} \times \R = \R^n$.
 \end{defn}
 
-Compare this definition to \defnref{def:hypersurface}.  In fact, we could
+Compare this definition to \defnref{def:hypersurface}.  We could
 define a real-analytic hypersurface as in 
 \defnref{def:hypersurface} and then prove an analogue of
 \lemmaref{lemma:realgraphcoords} to show that this would be identical to the
@@ -12916,7 +12916,7 @@ $I_p\bigl(V(I)\bigr) \supset I$.
 \end{exercise}
 \end{exbox}
 
-As $\sO_p$ is Noetherian, $I_p(X)$ must be finitely
+As $\sO_p$ is Noetherian, $I_p(X)$ is finitely
 generated.  Near each point $p$ only finitely many functions are
 necessary to define a subvariety, that is, by an exercise above, those functions 
 ``cut out'' the subvariety.  When one says 
@@ -12929,15 +12929,15 @@ a subvariety defined by functions
 in an ideal $I \subset \sO_p$, and look at the ideal given by that subvariety,
 we obtain the
 radical\footnote{The radical of $I$ is defined as $\sqrt{I} \overset{\text{def}}{=} \{ f : f^m \in I, \text{ for
-some } m \}$.} of $I$.  In more concise language the Nullstellensatz says
+some } m \}$.} of $I$.  In more concise language, the Nullstellensatz says
 $I_p\bigl(V(I)\bigr) = \sqrt{I}$.
 Germs of subvarieties are in
 one-to-one correspondence with radical ideals of $\sO_p$.
 
 \begin{example}
 The subvariety $X = \{ 0 \} \subset \C^2$ can be given by
-$\sF = \{ z_1^2, z_2^2 \}$.
-If $I = (z_1^2,z_2^2) \subset \sO_0$ is the ideal of germs
+$\sF = \bigl\{ z_1^2, z_2^2 \bigr\}$.
+If $I = \bigl(z_1^2,z_2^2\bigr) \subset \sO_0$ is the ideal of germs
 generated by these two functions, then $I_0(X) \not= I$.  We have
 seen that the ideal $I_0(X)$ is the maximal ideal $\mathfrak{m}_0 =
 (z_1,z_2)$.  If we prove that 
@@ -12961,7 +12961,7 @@ they are equal on $X$.
 
 \medskip
 
-Most points of a subvariety behave like a piece of $\C^k$, more
+At most points a subvariety behaves like a piece of $\C^k$, more
 precisely like a graph over $\C^k$.
 A graph of a mapping
 $f \colon U' \subset \C^k \to \C^{n-k}$
@@ -12977,7 +12977,7 @@ is the set $\Gamma_f \subset U' \times \C^{n-k} \subset \C^k \times
 Let $X \subset U \subset \C^n$ be a subvariety of an open set $U$.  Let $p \in X$ be a
 point.
 Suppose that after a permutation of coordinates, near
-$p$ the set $X$ can be written as a graph of a holomorphic
+$p$ the set $X$ is a graph of a holomorphic
 mapping.
 That is, after relabeling coordinates,
 there is a neighborhood $U' \times U'' \subset \C^{k}
@@ -13007,13 +13007,14 @@ point that is not regular is \emph{singular}\index{singular point}.
 The set of singular points of $X$ is denoted by $X_{\mathit{sing}}$.
 \end{defn}
 
-A couple of remarks are in order, a subvariety $X$ can have
+A couple of remarks are in order.
+A subvariety $X$ can have
 regular points of several different dimensions, although if a point
 is a regular point of dimension $k$, then all nearby points are regular
 points of dimension $k$ as the same $U'$ and $U''$ works.
 Any isolated point of $X$ is automatically a regular point of dimension
 0.
-Final remark is that dimension is well-defined.  We leave it as an exercise.
+Finally remark is that dimension is well-defined.  We leave it as an exercise.
 Sometimes the empty set is considered a complex manifold of dimension $-1$ (or
 $-\infty$).
 
@@ -13046,7 +13047,7 @@ Here is a plot of $C$ in two real dimensions:
 \begin{exbox}
 \begin{exercise}
 Prove that if $p$ is a regular point of a subvariety $X \subset U \subset
-\C^n$ of a domain $U$, then the dimension is well-defined.  Hint: If there were two possible
+\C^n$ of a domain $U$, then the dimension at $p$ is well-defined.  Hint: If there were two possible
 $U'$ of different dimension (possibly different affine coordinates), construct a map
 from one such $U'$ to another such $U'$ with nonvanishing derivative.
 \end{exercise}
@@ -13381,7 +13382,7 @@ two germs $(X_1,p)$ and $(X_2,p)$ with
 $(X_1,p) \not\subset (X_2,p)$ and
 $(X_2,p) \not\subset (X_1,p)$ such that
 $(X,p) = (X_1,p) \cup (X_2,p)$.
-Else the germ $(X,p)$ is \emph{\myindex{irreducible}} at $p$.
+Otherwise, the germ $(X,p)$ is \emph{\myindex{irreducible}} at $p$.
 
 Similarly globally, a subvariety $X \subset U$ is
 \emph{reducible} in $U$ if there exist
@@ -13468,7 +13469,7 @@ the UFD property of ${}_{n}\sO_p$ gives the irreducible
 components.  You found this factorization in an exercise above,
 and so this factorization is unique.
 
-For each irreducible component, we have the following structure.
+Each irreducible component has the following structure.
 We give the theorem without proof in the general case, although we have
 essentially proved it already for pure codimension 1 (to put it
 together is left as an exercise).
@@ -13554,7 +13555,7 @@ f\bigl(\xi^k,g(\xi)\bigr) = 0 .
 \begin{proof}
 Without loss of generality
 assume $(X,0)$
-is irreducible so that
+is irreducible, so that
 the local parametrization theorem applies.
 We work in a small disc $D \subset \C$ centered at the origin, such that the
 origin is the unique point of the discriminant set (the subvariety
@@ -14141,7 +14142,7 @@ A piecewise-$C^1$ path (or curve)\index{path}\index{curve} in $\C$
 is a continuous function $\gamma \colon [a,b] \to \C$,
 continuously differentiable except at finitely many points,
 such that one-sided limits of $\gamma'$ exist at all points of $[a,b]$.
-By abuse of notation, when $\gamma$ is used as a set, then we mean
+By abuse of notation, when $\gamma$ is used as a set, we mean
 the image
 $\gamma\bigl([a,b]\bigr)$.
 For a continuous function $f \colon \gamma \to \C$, define
@@ -14198,7 +14199,7 @@ formula.  An open set has piecewise-$C^1$ boundary if $\partial U$
 is composed of piecewise-$C^1$ paths, and at point $p \in \partial U$,
 every disc $\Delta_\rho(p)$ contains points from $U$ and points from the
 complement of $\overline{U}$.  If 
-at each point where the parametrization of $\partial U$ is differentiable,
+at each point where the parametrization of $\partial U$ is differentiable
 the domain is on the left ($\gamma'(t)$ rotated by $\frac{\pi}{2}$ points into the
 domain), then the boundary is \emph{\myindex{positively oriented}}.
 
@@ -14267,7 +14268,7 @@ Then
 \end{thm}
 
 The Cauchy integral formula is equivalent to
-what's usually called just Cauchy's theorem:
+what is usually called just Cauchy's theorem:
 
 \begin{thm}[Cauchy]
 Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
@@ -14281,10 +14282,10 @@ f(z) \, dz = 0 .
 \end{thm}
 
 There is a converse to Cauchy as well.  A triangle $T \subset \C$ is
-the convex hull of the three vertices (so we include the inside of the
+the convex hull of the three vertices (we include the inside of the
 triangle), and $\partial T$ is the boundary of the triangle oriented
 counter-clockwise.  Let us state the following theorem as an
-if and only if, even though, usually it is only the reverse direction that
+``if and only if,'' even though, usually it is only the reverse direction that
 is called Morera's theorem.
 
 \begin{thm}[Morera] \label{thm:onevarmorera}
