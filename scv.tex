@@ -11298,7 +11298,12 @@ Define the \emph{\myindex{Bergman kernel}} for $U$ as
 K_U(z,\bar{\zeta}) \overset{\text{def}}{=} \overline{k_z(\zeta)} .
 \end{equation*}
 The function $K_U$ is defined as $(z,\bar{\zeta})$ vary over
-$U \times U^*$, where $U^* = \{ \zeta \in \C^n : \bar{\zeta} \in U \}$.
+\glsadd{not:Ustar}%
+$U \times U^*$, where we write
+\begin{equation*}
+U^* = \{ \zeta \in \C^n : \bar{\zeta} \in U \}.
+\end{equation*}
+
 
 Then for all $f \in A^2(U)$ we have
 \begin{equation} \label{eq:repropropBergman}
@@ -11322,8 +11327,8 @@ antiholomorphic in $\zeta$, and
 
 \begin{proof}
 As each $k_z$ is in $A^2(U)$, it is holomorphic in $\zeta$.  Hence, $K_U$ is
-antiholomorphic in $\zeta$.  Thus if we prove
-$\overline{K_U(z,\bar{\zeta})} = K_U(\zeta,\bar{z})$, then we find that $K_U$
+antiholomorphic in $\zeta$.  If we prove
+$\overline{K_U(z,\bar{\zeta})} = K_U(\zeta,\bar{z})$, then we prove $K_U$
 is holomorphic in $z$.
 
 As $\overline{K_U(z,\bar{\zeta})} = k_z(\zeta)$ is in $A^2(U)$, then
@@ -11350,18 +11355,18 @@ K_U(\zeta,\bar{z}) . \qedhere
 \end{equation*}
 \end{proof}
 
-In particular, by the proposition $K_U$ is analytic; thinking of
+Therefore, thinking of
 $\bar{\zeta}$ as the variable, then $K_U$ is a holomorphic function of
 $2n$ variables.
 
-\begin{example}
+\begin{example} \label{example:bergmankerneldisc}
 \index{Bergman kernel!unit disc}%
 \index{Szeg{\"o} kernel!unit disc}%
 Let us compute the Bergman kernel (and
 the Szeg{\"o} kernel of the next section while we're at it)
 explicitly for the
 unit disc $\D \subset \C$.  Let $f \in \sO(\D) \cap C(\overline{D})$, that
-is holomorphic in $\D$ and continuous up to the boundary.
+is, $f$ is holomorphic in $\D$ and continuous up to the boundary.
 Let $z \in \D$.
 Then
 \begin{equation*}
@@ -11369,24 +11374,22 @@ f(z) = \frac{1}{2\pi i} \int_{\partial \D} \frac{f(\zeta)}{\zeta-z} \,
 d\zeta .
 \end{equation*}
 On the unit circle $\zeta \bar{\zeta} = 1$.  Let $ds$ be
-the arc-length measure on the circle.  Parametrize the circle as $\zeta =
+the arc-length measure on the circle, parametrized as $\zeta =
 e^{is}$.
 Then $d\zeta = i e^{is} ds$, and 
 \begin{equation*}
-\begin{split}
-f(z) &= \frac{1}{2\pi i} \int_{\partial \D} \frac{f(\zeta)}{\zeta-z} \,
-d\zeta \\
-&= \frac{1}{2\pi i} \int_{\partial \D} \frac{f(\zeta)}{1-z\bar{\zeta}}
-\bar{\zeta} \, d\zeta \\
-&= \frac{1}{2\pi} \int_{\partial \D} \frac{f(\zeta)}{1-z\bar{\zeta}} \, ds .
-\end{split}
+f(z) = \frac{1}{2\pi i} \int_{\partial \D} \frac{f(\zeta)}{\zeta-z} \,
+d\zeta
+= \frac{1}{2\pi i} \int_{\partial \D} \frac{f(\zeta)}{1-z\bar{\zeta}}
+\bar{\zeta} \, d\zeta
+= \frac{1}{2\pi} \int_{\partial \D} \frac{f(\zeta)}{1-z\bar{\zeta}} \, ds .
 \end{equation*}
 The integral is now a regular line integral of a function whose
 singularity, which used to be inside the unit disc, disappeared (we 
 ``reflected it'' to the outside).  The kernel 
 $\frac{1}{2\pi} \frac{1}{1-z\bar{\zeta}}$ is called the
 \emph{Szeg{\"o} kernel}, which we
-will briefly mention next.  We apply Stokes to the second integral above.
+will briefly mention next.  We apply Stokes to the second integral above:
 \begin{equation*}
 \begin{split}
 \frac{1}{2\pi i} \int_{\partial \D} \frac{f(\zeta)}{1-z\bar{\zeta}}
@@ -11406,8 +11409,9 @@ The Bergman kernel in the unit disc is, therefore,
 \begin{equation*}
 K_{\D}(z,\bar{\zeta}) = \frac{1}{\pi} \frac{1}{{(1-z\bar{\zeta})}^2} .
 \end{equation*}
-The fact that this function really is the Bergman kernel follows from exercises
-below.  That is, $K_{\D}$ is the unique conjugate symmetric
+It follows from the exercises below that
+this function really is the Bergman kernel.
+That is, $K_{\D}$ is the unique conjugate symmetric
 reproducing function that is in
 $A^2({\D})$ for a fixed $\zeta$.  
 We have only shown the formula for functions continuous up to the boundary,
@@ -11524,16 +11528,16 @@ holds.
 
 \begin{exercise}
 Let $U \subset \C^n$ be either the unit ball or the unit polydisc.
-Show that the functions
-in $A^2(U) \cap C(\overline{U})$ are dense in $A^2(U)$.  In particular, this
+Show that 
+$A^2(U) \cap C(\overline{U})$ is dense in $A^2(U)$.  In particular, this
 exercise says we
 only need to check the reproducing property on functions continuous up to
 the boundary to show we have the Bergman kernel.
 \end{exercise}
 
 \begin{exercise}
-Let $U, V \subset \C^n$ be two domains with a biholomorphism $f \colon U \to
-V$.  Show that
+Let $U, V \subset \C^n$ be two domains and $f \colon U \to V$ a
+biholomorphism.  Prove
 \begin{equation*}
 K_U(z,\bar{\zeta}) = \det D f(z) \, \overline{\det D f (\zeta)} \,
 K_V\bigl(f(z),\overline{f(\zeta)}\bigr) .
@@ -11576,7 +11580,7 @@ where $\linnprod{z}{\zeta}$ is the standard inner product on $\C^n$.
 
 \section{The Szeg{\"o} kernel}
 
-We use the same techniques to create a reproducing kernel on the
+We use the same technique to create a reproducing kernel on the
 boundary by starting with $L^2(\partial U, d\sigma)$ instead of $L^2(U)$.
 We obtain a
 kernel where we integrate over the boundary rather than the domain itself.
@@ -11614,11 +11618,11 @@ $H^2(\partial U)$ is infinite-dimensional.
 \end{exercise}
 \end{exbox}
 
-Let
+Given an $f \in H^2(\partial U)$, write the Poisson integral
 \begin{equation*}
-Pf(z) = \int_{\partial U} f(\zeta) \, P(z,\zeta) \, d \sigma(\zeta)
+Pf(z) = \int_{\partial U} f(\zeta) \, P(z,\zeta) \, d \sigma(\zeta) ,
 \end{equation*}
-be the Poisson integral, that is, $P(z,\zeta)$ is the Poisson kernel, which
+where $P(z,\zeta)$ is the Poisson kernel.  The Poisson integral
 reproduces harmonic functions.  As holomorphic functions are harmonic, we
 find that if $f \in C(\overline{U}) \cap \sO(U)$, then $Pf = f$.
 
@@ -11647,9 +11651,9 @@ If $f \in H^2(\partial U)$, then
 Pf(z) = \int_{\partial U} f(\zeta) \, S_U(z,\bar{\zeta}) \, d\sigma(\zeta) .
 \end{equation*}
 
-As functions in $H^2(\partial U)$ extend to $\overline{U}$, then often
-$f \in H^2(\partial U)$ is considered a function on
-$\overline{U}$ where values in $U$ are given by $Pf$.  Similarly, we 
+As functions in $H^2(\partial U)$ extend to $\overline{U}$, then 
+$f \in H^2(\partial U)$ may be considered a function on
+$\overline{U}$, where values in $U$ are given by $Pf$.  Similarly, we 
 extend $S(z,\bar{\zeta})$ to a function on $U \times \overline{U}^*$ (where
 the values on the boundary are defined only almost everywhere).
 We state without proof that if $\{ \varphi_j \}_{j\in I}$ is a complete
@@ -11658,24 +11662,24 @@ orthonormal system for $H^2(\partial U)$, then
 S_U(z,\bar{\zeta}) = \sum_{j \in I} \varphi_j(z)\overline{\varphi_j(\zeta)}
 \end{equation}
 for $(z,\bar{\zeta}) \in U \times U^*$, converging uniformly on compact subsets.
-As before, from this formula it can be seen that $S$ is conjugate symmetric,
+As before, this formula shows that $S$ is conjugate symmetric,
 and so it extends to 
 $(U \times \overline{U}^*) \cup (\overline{U} \times U^*)$.
 
 \begin{example}
-For the unit disc,
-we computed before that if $f \in C(\overline{\D}) \cap \sO(\D)$, then
+In \exerciseref{example:bergmankerneldisc}, we computed that
+if $f \in C(\overline{\D}) \cap \sO(\D)$, then
 \begin{equation*}
 f(z) = \frac{1}{2\pi} \int_{\partial \D} \frac{f(\zeta)}{1-z\bar{\zeta}} \, ds .
 \end{equation*}
-That is, $S_{\D}(z,\zeta) = 
+In other words, $S_{\D}(z,\zeta) = 
 \frac{1}{\pi}
 \frac{1}{1-z\bar{\zeta}}$ .
 \end{example}
 
 \begin{exbox}
 \begin{exercise}
-Using \eqref{eq:formulaszego} compute $S_{\bB_n}$.
+Using the formula \eqref{eq:formulaszego} compute $S_{\bB_n}$.
 \end{exercise}
 \end{exbox}
 
@@ -13716,10 +13720,10 @@ Levi form:
 For every $\theta \in \R$,
 $M$ contains the complex line $L_\theta$,
 given by $z_1 = e^{i\theta} z_2$ and
-$w = 0$.  In this case, the union $\bigcup_\theta L_\theta$ of those
+$w = 0$.  The union $\bigcup_\theta L_\theta$ of those
 complex lines is not
 contained in some unique complex subvariety inside $M$.  Any complex
-subvariety that contains all $L_\theta$ must contain the hypersurface given
+subvariety that contains all $L_\theta$ must contain the entire complex hypersurface given
 by $w = 0$, which is not contained in $M$.
 \end{example}
 
@@ -13745,7 +13749,7 @@ complex-analytic subvariety through a point $p$ and this subvariety is singular.
 \end{exercise}
 \end{exbox}
 
-Let us discuss a tool, \emph{\myindex{Segre variety}}, that allows us to
+Let us discuss a tool, the \emph{\myindex{Segre variety}}, that allows us to
 find such complex subvarieties inside $M$, and much more.  Segre varieties only
 work in the real-analytic setting and rely on complexification.
 
@@ -13822,12 +13826,12 @@ Suppose we start with the real-analytic hypersurface $M$ given by
 \Im w = (\Re w) \rho(z,\bar{z},\Re w) ,
 \end{equation*}
 with $\rho$ vanishing at the origin.
-Rewriting in terms of $w$ and $\bar{w}$ we find
+Rewriting in terms of $w$ and $\bar{w}$, we find
 \begin{equation*}
 \frac{w-\bar{w}}{2i} = \left(\frac{w+\bar{w}}{2}\right)
 \rho\left(z,\bar{z},\frac{w+\bar{w}}{2}\right) .
 \end{equation*}
-Setting $\bar{z} = \bar{w} = 0$ we find 
+Setting $\bar{z} = \bar{w} = 0$, we obtain 
 \begin{equation*}
 \frac{w}{2i} = \left(\frac{w}{2}\right)
 \rho\left(z,0,\frac{w}{2}\right) .
