@@ -2,3 +2,12 @@
   bounded function.  Or perhaps a more general set that hits direction only in
   isolated points.  That's an immediate application of one-var Riemann
   extension and our definition of holomorphic.
+
+* Perhaps another short appendix on the real analysis stuff that is needed.
+  Differentiation under the integral, taking limits under the integral, taking
+  limits past sums, perhaps a quick definition for lebesgue integral and the
+  convergence theorems.  No more than a couple of pages should be needed.
+
+* Perhaps shorten "line length" by making margins larger and using a font
+  like newpx (Palatino) for better readability.  Right now it is at around
+  100cpl, which is too long, want to shoot for 80 or so.
