@@ -10,4 +10,6 @@
 
 * Perhaps shorten "line length" by making margins larger and using a font
   like newpx (Palatino) for better readability.  Right now it is at around
-  100cpl, which is too long, want to shoot for 80 or so.
+  100cpl, which is too long, want to shoot for 80 or so.  Palatino will get
+  it down a bit, but not all the way.  But it might be more acceptable, plus
+  it might look better than Times.
