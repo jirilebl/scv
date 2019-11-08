@@ -1656,7 +1656,7 @@ We can also make sense of this notation, especially the notation $z^\alpha$,
 if $\alpha \in \Z^n$, that is, if it includes negative integers.
 Although usually, $\alpha$ is assumed to be in $\N_0^n$.
 Furthermore, when we use $1$ as a vector it means $(1,1,\ldots,1)$.
-If $z \in \C^n$ then,
+If $z \in \C^n$, then
 \begin{equation*}
 1-z = (1-z_1,1-z_2,\ldots,1-z_n) ,
 \qquad \text{or} \qquad
@@ -2185,7 +2185,7 @@ They are exactly the domains that you can
 draw by plotting what happens for the moduli of the variables.
 A domain is called a
 \emph{\myindex{complete Reinhardt domain}}\index{Reinhardt domain!complete} if whenever
-$z \in U$ then for $r = (r_1,\ldots,r_n)$ where $r_j = \sabs{z_j}$
+$z \in U$, then for $r = (r_1,\ldots,r_n)$ where $r_j = \sabs{z_j}$
 for all $j$, we have that the whole polydisc $\overline{\Delta_r(0)} \subset U$.
 So a complete Reinhardt domain is a union (possibly infinite) of polydiscs
 centered at the origin.
@@ -2658,7 +2658,7 @@ antiholomorphic.  This is a subtle philosophical as much as a mathematical point
 \begin{defn}
 Let $U \subset \C^n$ be an open set.  A mapping $f \colon U \to \C^m$
 is said to be holomorphic if each component is holomorphic.  That
-is, if $f = (f_1,\ldots,f_m)$ then each $f_j$ is a holomorphic function.
+is, if $f = (f_1,\ldots,f_m)$, then each $f_j$ is a holomorphic function.
 \end{defn}
 
 As in one variable, the composition of holomorphic functions (mappings) is
@@ -6397,7 +6397,7 @@ is subharmonic.  If $f$ attains a maximum in $U$, then $f$ is constant.
 \begin{proof}
 Suppose $f$ attains a maximum at $a \in U$.
 If
-$\overline{\Delta_r(a)} \subset U$ then
+$\overline{\Delta_r(a)} \subset U$, then
 \begin{equation*}
 f(a) \leq \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta \leq f(a)
 .
@@ -7458,7 +7458,7 @@ and $p$ is the center of $B$.
 \glsadd{not:dist}%
 Let $\operatorname{dist}(x,y)$ denote the
 euclidean distance function\footnote{If either $x$ and/or $y$ are sets
-of points we take the infimum of the euclidean distance over all the points.}.
+of points, we take the infimum of the euclidean distance over all the points.}.
 Then for $z \in B \cap U$
 \begin{equation*}
 - \log \, \operatorname{dist}(z, \partial U) = 
@@ -9796,7 +9796,7 @@ Recall that $r$ and $d$ are small enough that
 and as $\snorm{\tilde{x}} \leq \nicefrac{r}{4}$ (as
 $(\tilde{x},y') \in K$) and
 $\norm{\tilde{x}+\frac{\xi}{\sqrt{\ell}}} \leq r$ (because $g$ is
-zero otherwise) then
+zero otherwise), then
 \begin{equation*}
 \norm{\varphi\left(\tilde{x}+\frac{\xi}{\sqrt{\ell}},y'\right) -
 \varphi(\tilde{x},y')}
@@ -11561,7 +11561,7 @@ system of $A^2(\bB_n)$.  Hint: To show orthonormality
 compute the integral using polar coordinates in each variable
 separately, that is, let $z_j = r_j e^{i\theta_j}$ where $\theta \in
 [0,2\pi]^n$ and $\sum_j r_j^2 < 1$.  Then show completeness by showing that
-if $f \in A^2(\bB_n)$ is orthogonal to all $z^\alpha$ then $f = 0$.
+if $f \in A^2(\bB_n)$ is orthogonal to all $z^\alpha$, then $f = 0$.
 Finding $c_\alpha = \sqrt{\frac{\pi^n \alpha!}{(n+\abs{\alpha})!}}$ requires
 the classical $\beta$ function of special function theory.
 \end{exercise}
@@ -12666,7 +12666,7 @@ functions.  Show that if $f(p) = 0$, then $f \in
 \item
 Show that if $I \subsetneq \sO_p$ is a \emph{\myindex{proper ideal}}
 (ideal such that $I
-\not= \sO_0$) then
+\not= \sO_0$), then
 $I \subset \mathfrak{m}_p$, that is $\mathfrak{m}_p$ is a \emph{\myindex{maximal ideal}}.
 \pagebreak[2]
 \end{exparts}
@@ -12914,9 +12914,9 @@ Prove
 \end{exercise}
 
 \begin{exercise}
-Show that given a germ $(X,p)$ of a subvariety at $p$ then
-$V\bigl(I_p(X)\bigr) = (X,p)$ (see above), and
-given an ideal $I \subset \sO_p$, then
+Given a germ $(X,p)$ of a subvariety at $p$, show
+$V\bigl(I_p(X)\bigr) = (X,p)$ (see above).
+Then given an ideal $I \subset \sO_p$, show
 $I_p\bigl(V(I)\bigr) \supset I$.
 \end{exercise}
 \end{exbox}
@@ -14056,11 +14056,11 @@ otherwise stated.
 The notation $f \colon X \to Y$ means a function with domain $X$ and
 codomain $Y$.  By $f(S)$ we mean the direct image of $S$ by $f$.
 We use the notation $f^{-1}$ for the inverse image of sets and
-single points, and when the mapping is bijective (one-to-one and onto)
-then we use it for the inverse mapping.  So for example $f^{-1}(T)$ for
+single points, and when the mapping is bijective (one-to-one and onto),
+we use it for the inverse mapping.  So for example $f^{-1}(T)$ for
 a set $T \subset Y$ denotes all the points of $X$ that $f$ maps to $T$.
 Similarly, $f^{-1}(q)$ could denote all the points that map to $q$,
-but if the mapping is bijective then it would just mean the unique point
+but if the mapping is bijective, then it would just mean the unique point
 mapping to $q$.
 
 If we wish to define a function without necessarily giving it a name, we use
@@ -14445,7 +14445,7 @@ $f^{-1}$ are holomorphic) self maps of the
 disc to itself.
 
 \begin{prop}
-If $f \in \operatorname{Aut}(\D)$ then there exists an $a \in \D$
+If $f \in \operatorname{Aut}(\D)$, then there exists an $a \in \D$
 and $\theta \in \R$ such that
 \begin{equation*}
 f(z) = e^{i\theta} \frac{z-a}{1-\bar{a}z} .
