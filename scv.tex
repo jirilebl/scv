@@ -1401,11 +1401,12 @@ are unfamiliar with differential forms, think of the integral
 as the iterated integral above, and you can read the next few paragraphs
 a little lightly.
 It is enough to understand real differential forms; we simply allow
-complex coefficients.
-For a good introduction to differential forms
-see Rudin~\cite{Rudin:principles}.
+complex coefficients here.
+See \appendixref{ap:diffforms} for an overview of differential forms,
+or
+Rudin~\cite{Rudin:principles} for an introduction with all the details.
 
-Recall that given real coordinates $x = (x_1,\ldots,x_n)$, a one-form $d x_j$ is a linear functional on tangent vectors
+Given real coordinates $x = (x_1,\ldots,x_n)$, a one-form $d x_j$ is a linear functional on tangent vectors
 such that $d x_j \bigl( \frac{\partial}{\partial x_j} \bigr) = 1$ and
 $d x_j \bigl( \frac{\partial}{\partial x_k} \bigr) = 0$ if $j \not= k$.
 Because
@@ -1417,7 +1418,10 @@ d z_j = d x_j + i \, d y_j ,
 \qquad
 d \bar{z}_j = d x_j - i \, d y_j . 
 \end{equation*}
-As expected,
+Let
+\glsadd{not:kronecker}%
+$\delta_{j}^k$ be the Kronecker delta, that is, $\delta_j^j = 1$,
+and $\delta_j^k = 0$ if $j \not= k$.  Then as expected,
 \begin{equation*}
 d z_j \left( \frac{\partial}{\partial z_k} \right) = \delta_j^k ,
 \qquad
@@ -1426,7 +1430,7 @@ d z_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = 0 ,
 d \bar{z}_j \left( \frac{\partial}{\partial z_k} \right) = 0 ,
 \qquad
 d \bar{z}_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = \delta_j^k
-,
+.
 \end{equation*}
 %\begin{equation*}
 %\begin{array}{lll}
@@ -1439,26 +1443,27 @@ d \bar{z}_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = \delta_j^k
 %,
 %\end{array}
 %\end{equation*}
-\glsadd{not:kronecker}%
-where $\delta_{j}^k$ is the Kronecker delta, that is, $\delta_j^j = 1$,
-and $\delta_j^k = 0$ if $j \not= k$.  One-forms are objects of the form
+%\glsadd{not:kronecker}%
+%where $\delta_{j}^k$ is the Kronecker delta, that is, $\delta_j^j = 1$,
+%and $\delta_j^k = 0$ if $j \not= k$.
+One-forms are objects of the form
 \begin{equation*}
 \sum_{j=1}^n \alpha_j \, d z_j + 
 \beta_j \, d \bar{z}_j ,
 \end{equation*}
 where $\alpha_j$ and $\beta_j$ are functions (of $z$).
-Two-forms are things are combinations of wedge products,
+Two-forms are combinations of wedge products,
 $\omega \wedge \eta$, of one-forms.  A wedge of a two-form and
 a one-form is a three-form, etc.
 A $k$-form is an object that 
 can be integrated on a so-called $k$-chain, for example, a
 $k$-dimensional surface.  The wedge product takes care of the orientation
 as it is anticommutative on one-forms:
-For one-forms $\omega$ and $\eta$,
+For one-forms $\omega$ and $\eta$, we have
 $\omega \wedge \eta = - \eta \wedge \omega$.
-See \appendixref{ap:diffforms} for an introduction to differential forms.
 
-At this point, we need to talk about orientation in $\C^n$.  There are two
+At this point, we need to talk about orientation in $\C^n$, that is,
+ordering of the real coordinates.  There are two
 natural real-linear isomorphisms of $\C^n$ and $\R^{2n}$.  We
 identify $z = x+iy$ as either
 \begin{equation*}
@@ -1467,13 +1472,14 @@ identify $z = x+iy$ as either
 (x_1,y_1,x_2,y_2,\ldots,x_n,y_n) .
 \end{equation*}
 If we take the natural orientation of $\R^{2n}$,
-it is possible that we obtain (if $n$ is even)
-two opposite orientations on $\C^n$.
-The one we take as the natural orientation of $\C^n$ (in this book)
+it is possible (if $n$ is even) that we obtain
+two opposite orientations on $\C^n$ (if $n$ is even, the real linear map
+that takes one ordering to the other has determinant $-1$).
+The orientation we take as the natural orientation of $\C^n$ (in this book)
 corresponds to
 the second ordering above, that
-is, $(x_1,y_1,\ldots,x_n,y_n)$.  Both isomorphisms may be used
-in computation as long as they are used consistently, and the underlying
+is, $(x_1,y_1,\ldots,x_n,y_n)$.  Either isomorphism may be used
+in computation as long as it is used consistently, and the underlying
 orientation is kept in mind.
 
 \begin{thm}[Cauchy integral formula]
@@ -1615,8 +1621,9 @@ Hint: The previous exercise may be useful.
 
 \section{Power series representation}
 
-As you noticed, writing out all the components can be a pain.  It would become
-even more painful later on.  Just as we write 
+As you noticed, writing out all the components can be a pain.
+%It would become even more painful later on.
+Just as we write 
 vectors as $z$ instead of $(z_1,z_2,\ldots,z_n)$, we similarly
 define the so-called
 \emph{\myindex{multi-index notation}}
