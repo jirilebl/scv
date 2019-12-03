@@ -504,7 +504,7 @@ and most of
 basic knowledge of differential forms is useful, and
 in \chapterref{ch:analyticvarieties}
 we use some basic ring theory from algebra.
-By design it can replace the second semester of complex analysis.
+By design, it can replace the second semester of complex analysis.
 
 This book is not meant as an exhaustive reference.  It is simply a whirlwind
 tour of several complex variables with slightly more material than can
@@ -922,7 +922,7 @@ then $f$ is constant, that is, $f \equiv f(z_0)$.
 
 That is, if the supremum is attained in the interior of the domain,
 then the function must be constant.  Another way to state the maximum
-principle is to say: if $f$ extends continuously to the boundary of a
+principle is to say: If $f$ extends continuously to the boundary of a
 domain, then the supremum of $\sabs{f(z)}$ is attained on the boundary.
 In
 one variable you learned that the maximum principle is really a
@@ -1393,7 +1393,8 @@ We may differentiate as many times as we wish.
 %the Cauchy--Riemann equations.  However, the way we stated the
 %definition makes it easier to apply.
 
-Above in \eqref{iteratedcauchy:eq}, we derived the Cauchy integral formula in several variables.  To
+In \eqref{iteratedcauchy:eq} above,
+we derived the Cauchy integral formula in several variables.  To
 write the formula more concisely we apply the Fubini's theorem to write it as
 a single integral.  We will write it down using differential forms.  If you
 are unfamiliar with differential forms, think of the integral
@@ -1446,13 +1447,16 @@ and $\delta_j^k = 0$ if $j \not= k$.  One-forms are objects of the form
 \beta_j \, d \bar{z}_j ,
 \end{equation*}
 where $\alpha_j$ and $\beta_j$ are functions (of $z$).
-Also, recall the wedge product $\omega \wedge \eta$ is anticommutative on
-one-forms:
-for one-forms $\omega$ and $\eta$,
-$\omega \wedge \eta = - \eta \wedge \omega$.  A wedge product of two
-one-forms is a two-form, and so on.  A $k$-form is an object that 
+Two-forms are things are combinations of wedge products,
+$\omega \wedge \eta$, of one-forms.  A wedge of a two-form and
+a one-form is a three-form, etc.
+A $k$-form is an object that 
 can be integrated on a so-called $k$-chain, for example, a
-$k$-dimensional surface.  The wedge product takes care of the orientation.
+$k$-dimensional surface.  The wedge product takes care of the orientation
+as it is anticommutative on one-forms:
+For one-forms $\omega$ and $\eta$,
+$\omega \wedge \eta = - \eta \wedge \omega$.
+See \appendixref{ap:diffforms} for an introduction to differential forms.
 
 At this point, we need to talk about orientation in $\C^n$.  There are two
 natural real-linear isomorphisms of $\C^n$ and $\R^{2n}$.  We
@@ -1524,7 +1528,7 @@ holomorphic in $\Delta$.
 The Cauchy integral formula shows
 an important and subtle point about holomorphic functions in several
 variables:
-the value of
+The value of
 the function $f$ on $\Delta$ is completely determined by the values of $f$ on
 the set $\Gamma$, which is much smaller than the boundary of the polydisc
 $\partial \Delta$.  In fact, the $\Gamma$ is of real dimension $n$, while
@@ -1904,11 +1908,13 @@ z_j \mapsto \sum_{\alpha} c_\alpha {(z-a)}^\alpha .
 This function is holomorphic via the corresponding one-variable argument.
 \end{proof}
 
-The converse statement also follows by applying the Cauchy--Riemann equations to the series
-termwise.  First one must show that the term-by-term derivative
-series also converges uniformly absolutely on compact subsets.  It is left as an
-exercise.  Then you apply the theorem from real analysis about derivatives
-of limits: if a sequence of functions and its derivatives converges
+The converse statement also follows by applying the Cauchy--Riemann
+equations to the series termwise.
+We leave that as an exercise.
+First, one must show that the term-by-term derivative
+series also converges uniformly absolutely on compact subsets.
+Then one applies the theorem from real analysis about derivatives
+of limits: If a sequence of functions and its derivatives converges
 uniformly, then the derivatives converge to the derivative of the limit.
 
 \begin{exbox}
@@ -1981,7 +1987,7 @@ neighborhood of $a$) and not the specific polydisc used in the theorem.
 
 \begin{proof}
 Using the Leibniz rule (taking derivatives under the integral),
-as long as $z \in \Delta$ and not on the boundary,
+as long as $z \in \Delta$ (not on the boundary),
 we can differentiate under the integral.  We are talking regular real
 partial differentiation, and we use it to apply the Wirtinger operator.
 The point is that
@@ -2417,8 +2423,8 @@ a \emph{\myindex{point of indeterminacy}}.
 
 \begin{exercise} \label{exercise:noisolatedzeros}
 Prove that zeros (and so poles) are never isolated in $\C^n$ for $n \geq 2$.
-In particular, consider $z_1 \mapsto f(z_1,z_2,\ldots,z_n)$ as you move
-$z_2,\ldots,z_n$ around, and use for example
+Hint: Consider $z_1 \mapsto f(z_1,z_2,\ldots,z_n)$ as you move
+$z_2,\ldots,z_n$ around, and use, for example,
 \hyperref[thm:onevarhurwitz]{Hurwitz}.
 \end{exercise}
 \end{exbox}
@@ -2432,7 +2438,7 @@ Given a function $f = u+iv$, the complex conjugate is $\bar{f} = u-iv$,
 defined simply by $z \mapsto \overline{f(z)}$.
 When $f$ is holomorphic, then $\bar{f}$ is
 called an \emph{\myindex{antiholomorphic function}}.  An antiholomorphic function is a
-function that does not depend on $z$, but only on $\bar{z}$.
+function that depends on $\bar{z}$ but not on $z$.
 So if we write the variable, we write $\bar{f}$ as
 $\bar{f}(\bar{z})$.  Let us see why this makes sense.  Using the definitions
 of the Wirtinger operators,
@@ -2446,12 +2452,12 @@ of the Wirtinger operators,
 \text{for all $j=1,\ldots,n$.}
 \end{equation*}
 
-For functions that are neither holomorphic or antiholomorphic we
+For functions that are neither holomorphic or antiholomorphic, we
 pretend they depend on both $z$ and $\bar{z}$.
 Since we want to write functions in terms of $z$ and $\bar{z}$,
 let us figure out how the chain rule works for Wirtinger derivatives,
 rather than writing derivatives in terms of $x$ and $y$, which
-gets tedious very quick.
+gets tedious rather quickly.
 
 \begin{prop}[Complex chain rule]\index{complex chain rule}
 Suppose 
@@ -3097,7 +3103,7 @@ the set of limit points of $\bigl\{ f(p_k) \bigr\}$ lies in $\partial V$.
 \end{lemma}
 
 \begin{proof}
-First suppose $f$ is proper.  Take a 
+Suppose $f$ is proper.  Take a 
 sequence $\{ p_k \}$ in $U$ such that $p_k \to p \in \partial U$.
 Then take any convergent subsequence $\bigl\{ f(p_{k_j}) \bigr\}$ of
 $\bigl\{ f(p_k) \bigr\}$
@@ -3217,6 +3223,8 @@ in several variables, to see if two domains are equivalent,
 the geometry 
 of the boundaries makes a difference, not just the topology
 of the domains.
+
+\medskip
 
 The following is a fun exercise in one dimension about proper maps of discs:
 
@@ -6303,7 +6311,7 @@ as a function of $z=re^{i\theta} \in \D$, and hence
 $Pu$ is harmonic.
 \item
 $P$ acts like an
-approximate identity: prove that
+approximate identity: Prove that
 $Pu(re^{i\theta}) \to u(e^{i\theta})$ uniformly as
 $r \to 1$ (Hint: Split the integral to $[-\delta,\delta]$ and the rest
 and use the previous exercise).
@@ -8359,7 +8367,7 @@ f(z,\bar{z}) =
 \end{equation*}
 converges in a polydisc $\Delta_r(a) \subset \C^n$.
 By convergence we mean absolute
-convergence as we discussed before: that is,
+convergence as we discussed before.  That is,
 \begin{equation*}
 \sum_{\alpha,\beta} \sabs{c_{\alpha,\beta}} \, \sabs{z-a}^\alpha
 \sabs{\bar{z}-\bar{a}}^\beta
@@ -8970,7 +8978,7 @@ in $\C^{n-1} \times \C^{n-1} \times \C$.
 Show that $\bar{w} = \Phi(z,\bar{z},w)$ defines a real-analytic hypersurface
 near the origin if and only 
 $w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$
-for all $z$, $\zeta$, and $w$.  Hint: one direction was proved already.
+for all $z$, $\zeta$, and $w$.  Hint: One direction was proved already.
 \item
 As an example, show that $\bar{w} = z\bar{z}$ does not satisfy the 
 condition above, nor does it define a real hypersurface.
@@ -12694,11 +12702,11 @@ prove that $f \mapsto f \circ h$ is a ring isomorphism.
 A commutative ring $R$ is
 \emph{\myindex{Noetherian}} if every ideal in $R$ is finitely generated.
 That is, for every ideal $I \subset R$
-there exist finitely many generators $f_1,\ldots,f_k \in I$: that is,
-every $g \in I$ can be written as $g = c_1 f_1 + \cdots + c_k f_k$,
+there exist finitely many generators $f_1,\ldots,f_k \in I$:
+Every $g \in I$ can be written as $g = c_1 f_1 + \cdots + c_k f_k$,
 for some $c_1,\ldots,c_k \in R$.
-In an exercise you proved ${}_1\sO_p$ is a PID\@, and so
-it is Noetherian.  For higher dimensions, the ring of germs may not
+In an exercise, you proved ${}_1\sO_p$ is a PID\@.
+So ${}_1\sO_p$ is Noetherian.  In higher dimensions, the ring of germs may not
 be a PID\@, but it is Noetherian.
 
 \begin{thm}
@@ -14487,7 +14495,7 @@ holomorphic function $L \colon U \to \C$ such that
 e^L = f .
 \end{equation*}
 In particular, we can take roots:
-for every $k \in \N$, there exists a holomorphic function
+For every $k \in \N$, there exists a holomorphic function
 $g \colon U \to \C$ such that
 \begin{equation*}
 g^k = f .
@@ -15253,7 +15261,7 @@ and an $\ell$-form $\eta$,
 \omega \wedge \eta
 \end{equation*}
 is a $(k+\ell)$-form.  We require the wedge product to be bilinear at each point:
-if $f$ and $g$ are smooth functions, then
+If $f$ and $g$ are smooth functions, then
 \begin{equation*}
 (f \omega + g \eta) \wedge \xi =
 f (\omega \wedge \xi) + g (\eta \wedge \xi)
