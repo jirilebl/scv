@@ -1,5 +1,10 @@
 Since 3.2
 
-* nothing yet
+* State Exercise 2.3.13 in a simpler way asking for the function to just 
+  be holomorphic in $W$.  It is asking for something slightly stronger, but      
+  that is the way to really solve it anyway, and it should be easier this way
+* Add hint to Exercise 2.4.7, it was probably a tiny bit too hard if we do
+  not have all the harmonic function machinery.
+* A bunch of improvements in language and grammar.
 
 See https://www.jirka.org/scv/changes.html for older changes.
