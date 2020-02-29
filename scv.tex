@@ -14074,37 +14074,12 @@ and $\Z$ for all integers.
 When we write $\C^n$ or $\R^n$ we implicitly mean that $n \geq 1$, unless
 otherwise stated.
 
-\glsadd{not:function}%
-The notation $f \colon X \to Y$ means a function with domain $X$ and
-codomain $Y$.  By $f(S)$ we mean the direct image of $S$ by $f$.
-We use the notation $f^{-1}$ for the inverse image of sets and
-single points, and when the mapping is bijective (one-to-one and onto),
-we use it for the inverse mapping.  So for example $f^{-1}(T)$ for
-a set $T \subset Y$ denotes all the points of $X$ that $f$ maps to $T$.
-Similarly, $f^{-1}(q)$ could denote all the points that map to $q$,
-but if the mapping is bijective, then it would just mean the unique point
-mapping to $q$.
-
-If we wish to define a function without necessarily giving it a name, we use
-the notation
-\glsadd{not:mapsto}%
-\begin{equation*}
-x \mapsto F(x)
-\end{equation*}
-where $F(x)$ would generally be some formula giving the output.
-
-\glsadd{not:mapsto}%
-The notation $f|_S$ means the restriction of $f$ to $S$, that is,
-it is a function
-$f|_S \colon S \to Y$ such that $f|_S(x) = f(x)$ for all $x \in S$.
-
 \glsadd{not:setminus}%
 We denote the set subtraction by $A \setminus B$, meaning all elements of
-$A$ which are not in $B$.
-We denote the complement of a set by $X^c$.  In this case, the ambient set
+$A$ that are not in $B$.
+We denote the complement of a set by $X^c$.  The ambient set
 should be clear.  So, for example, if $X \subset \C$ naturally,
 then $X^c = \C \setminus X$.
-
 \glsadd{not:closure}%
 The topological closure of a set $S$ is denoted by $\overline{S}$, its
 boundary is denoted by
@@ -14112,18 +14087,47 @@ boundary is denoted by
 $\partial S$.  If $S$ is relatively compact subset of $X$
 (its closure in $X$ is compact) or compact, we write $S \subset \subset X$.
 
+\glsadd{not:function}%
+The notation $f \colon X \to Y$ means a function with domain $X$ and
+codomain $Y$.  By $f(S)$ we mean the direct image of $S$ by $f$.
+We use the notation $f^{-1}$ for the inverse image of sets and
+single points.  When $f$ is bijective (one-to-one and onto),
+we use $f^{-1}$ for the inverse mapping.  So $f^{-1}(T)$ for
+a set $T \subset Y$ denotes all the points of $X$ that $f$ maps to $T$.
+Similarly, $f^{-1}(q)$ could denote all the points that map to $q$,
+but if the mapping is bijective, then it means just the unique point
+mapping to $q$.
+If we wish to define a function without necessarily giving it a name, we use
+the notation
+\glsadd{not:mapsto}%
+\begin{equation*}
+x \mapsto F(x),
+\end{equation*}
+where $F(x)$ would generally be some formula giving the output.
+The notation
+\glsadd{not:restriction}%
+\begin{equation*}
+f|_S
+\end{equation*}
+means the restriction of $f$ to $S$:
+it is a function
+$f|_S \colon S \to Y$ such that $f|_S(x) = f(x)$ for all $x \in S$.
 A function $f \colon U \to \C$ is said to be
 \emph{\myindex{compactly supported}} if
 the \emph{\myindex{support}}, that is the set
 $\overline{\{ p \in U : f(p) \not= 0 \}}$, is compact.
-
-When we wish to say that two functions are identically equal, we write
+To say that two functions are identically equal, we write
 \glsadd{not:identeq}%
-$f \equiv g$.  This means that $f(x) = g(x)$ for all $x$ in the domain.
-
+\begin{equation*}
+f \equiv g .
+\end{equation*}
+This means that $f(x) = g(x)$ for all $x$ in the domain.
 The notation
 \glsadd{not:composition}%
-$f \circ g$ denotes the composition defined by $x \mapsto
+\begin{equation*}
+f \circ g
+\end{equation*}
+denotes the composition defined by $x \mapsto
 f\bigl(g(x)\bigr)$.
 
 We write
