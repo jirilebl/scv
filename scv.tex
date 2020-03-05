@@ -430,7 +430,7 @@ use at least one of the licenses.
 I would like to thank Debraj Chakrabarti, Anirban Dawn, Alekzander Malcom,
 John Treuer, Jianou Zhang, Liz Vivas, Trevor Fancher,
 Nicholas Lawson McLean, Alan Sola, Achinta Nandi,
-Sivaguru Ravisankar,
+Sivaguru Ravisankar, Richard L\"ark\"ang,
 and students in my classes for pointing out typos/errors
 and helpful suggestions. 
 
@@ -1959,8 +1959,8 @@ for $z \in \overline{\Delta''}$.
 Next we organize some immediate consequences of the theorem
 and the calculation in the proof.
 
-\pagebreak[2]
 \begin{prop}
+\pagebreak[2]
 Let $\Delta = \Delta_\rho(a) \subset \C^n$ be a polydisc,
 and $\Gamma$ its distinguished boundary.
 Suppose
@@ -3618,9 +3618,12 @@ for a holomorphic function $g$.
 \begin{proof}
 If $N$ is locally a graph at $p$, then it is a graph
 for every point of $N$ near $p$.  So $N_{\mathit{reg}}$
-is open.  Hence, once we show that $N_{\mathit{reg}}$ is nonempty, 
-we will be done as we can
-repeat the procedure on any open subset of $N$.
+is open.
+If for every point $p_0 \in N$
+and every neighborhood $W$ of $p_0$, we show that
+$N \cap W$ has a regular point, then $N_{\mathit{reg}}$ is dense.
+Replacing $N$ with $N \cap W$, it thus suffices to show
+$N_{\mathit{reg}}$ is nonempty.
 
 Since $f$ is not identically zero, then not all derivatives (of arbitrary
 order) of $f$
@@ -3699,16 +3702,25 @@ $\frac{\partial \varphi}{\partial z_1}$ and
 $\frac{\partial \varphi}{\partial z_2}$ vanish on $X$.  Using
 $h= \frac{\partial \varphi}{\partial z_1}$ or
 $h= \frac{\partial \varphi}{\partial z_2}$ in the proof will work.
+
+It may be also good to consider a function such as $f(z) = z_1^2z_2$ to see
+that we do not always get the entire set of regular functions with one
+neighborhood $W$.  The
+zero set is where $z_1=0$ or where $z_2=0$, and all points except the origin
+are regular.  We use $h=f$ to show that points outside the origin
+where $z_2=0$ are regular.
+To show that points outside the origin
+where $z_1=0$ are regular, we must restrict to some neighborhood $W$
+of those points and use $h = \frac{\partial f}{\partial z_1}$.
 \end{example}
 
 \begin{example}
-The theorem is not true in the nonholomorphic setting.  For example, $x_1^2
-+  x_2^2 = 0$ in $\R^2$ is only the origin, clearly not a graph
+The theorem is not true in the nonholomorphic setting.  For example, the set
+where $x_1^2 +  x_2^2 = 0$ in $\R^2$ is only the origin, clearly not a graph
 of any function of one variable.  The first part of the theorem works, but
 the $h$ you find is either $2x_1$ or $2x_2$, and its zero set is too big.
 \end{example}
 
-\pagebreak[1]
 \begin{exbox}
 \begin{exercise}
 Find all the regular points of the subvariety
@@ -5108,8 +5120,8 @@ $T_p^{(0,1)}M$ to $T_{f(p)}^{(0,1)}f(M)$.
 In the next proposition it is important to note that a translation and
 applying a unitary matrix are biholomorphic changes of coordinates.
 
-\pagebreak[2]
 \begin{prop} \label{prop:graphcoordinatesCn}
+\pagebreak[2]
 Let $M \subset \C^n$ be a smooth real hypersurface, $p \in M$.
 After a translation and a rotation by a unitary
 matrix, $p$ is the origin, and near the origin,
@@ -6350,8 +6362,8 @@ Poisson kernel exists for higher dimensions as well.
 Solving the Dirichlet problem using the Poisson kernel leads to
 the following result.
 
-\pagebreak[2]
 \begin{prop}[Mean-value property and sub-mean-value property]
+\pagebreak[2]
 \label{prop:meansubmeanprop}
 \index{mean-value property}
 \index{sub-mean-value property}
@@ -6507,8 +6519,8 @@ Finish the proof of the proposition above.
 In analogy to convex functions, a $C^2$-smooth function $f$ of one
 real variable is convex if and only if $f''(x) \geq 0$ for all $x$.
 
-\pagebreak[2]
 \begin{prop}
+\pagebreak[2]
 Suppose $U \subset \C$ is an open set and $f_\alpha \colon U \to \R \cup \{ -\infty \}$
 is a family of subharmonic functions.  Let
 \begin{equation*}
@@ -6716,8 +6728,8 @@ $a f + b g$ is plurisubharmonic.
 \end{exercise}
 \end{exbox}
 
-\pagebreak[2]
 \begin{thm} \label{thm:subharlim}
+\pagebreak[2]
 Suppose $U \subset \C^n$ is an open set and $f \colon U \to \R \cup \{
 -\infty \}$ is plurisubharmonic.  For every $\epsilon > 0$,
 let $U_\epsilon \subset U$
@@ -7912,8 +7924,8 @@ Using an exercise above we see that $\C^n$ is both holomorphically convex and
 a domain of holomorphy.  In fact, these two notions are equivalent for all
 other domains in $\C^n$.
 
-\pagebreak[2]
 \begin{thm}[Cartan--Thullen\index{Cartan--Thullen theorem}]
+\pagebreak[2]
 \label{thm:cartthul}
 Let $U \subsetneq \C^n$ be a domain.  The following are equivalent:
 \begin{enumerate}[(i)]
@@ -8122,8 +8134,8 @@ convex domain.
 \pagebreak[2]
 We (you) have proved the following proposition.
 
-\pagebreak[2]
 \begin{prop}
+\pagebreak[2]
 Let $U \subset \C^n$ be a complete Reinhardt domain.  Then the following are
 equivalent:
 \begin{enumerate}[(i)]
@@ -9174,8 +9186,8 @@ we consider only smooth CR functions here, although the theorem holds even
 for continuous CR functions where the CR conditions are interpreted in the
 sense of distributions.
 
-\pagebreak[2]
 \begin{thm}[Baouendi--Tr{\`e}ves]%
+\pagebreak[2]
 \index{Baouendi--Tr{\`e}ves approximation theorem}
 Suppose $M \subset \C^n$ is a smooth real hypersurface,
 $z=(z_1,\ldots,z_n)$ are the holomorphic coordinates of $\C^n$,
@@ -9569,8 +9581,8 @@ Clearly each $f_\ell$ is holomorphic and defined for all $w \in \C^n$.
 
 In the next claim it is important that $f$ is a CR function.
 
-\pagebreak[2]
 \begin{claim}
+\pagebreak[2]
 We have
 \begin{equation*}
 %\int_D
@@ -10101,8 +10113,8 @@ Show that every smooth CR function $f$ on $M$ is, in fact, real-analytic in
 a neighborhood of $p$.
 \end{exercise}
 
-\pagebreak[2]
 \begin{exercise}
+\pagebreak[2]
 Let $M \subset \C^3$ be defined by $\Im w = \sabs{z_1}^2-\sabs{z_2}^2$.
 \begin{exparts}
 \item
@@ -12482,8 +12494,8 @@ the exercise above and \propref{prop:zerohol}.
 \end{exercise}
 \end{exbox}
 
-\pagebreak[2]
 \begin{thm} \label{thm:discrthm}
+\pagebreak[2]
 Let $D \subset \C$ be a bounded domain,
 $U' \subset \C^{n-1}$ a domain,
 and
@@ -13501,8 +13513,8 @@ We give the theorem without proof in the general case, although we have
 essentially proved it already for pure codimension 1 (to put it
 together is left as an exercise).
 
-\pagebreak[2]
 \begin{thm}[\myindex{Local parametrization theorem}]
+\pagebreak[2]
 \label{localparthm}
 Let $(X,0)$ be an irreducible germ of a subvariety of dimension $k$
 in $\C^n$.  Let $X$ denote a representative of the germ.
@@ -14440,8 +14452,8 @@ and continuous, then $f$ achieves its maximum and minimum on $\partial U$.
 
 The maximum principle immediately implies the following lemma.
 
-\pagebreak[2]
 \begin{lemma}[Schwarz's lemma]\index{Schwarz's lemma}
+\pagebreak[2]
 Suppose $f \colon \D \to \D$ is holomorphic and $f(0) = 0$,
 then 
 \begin{enumerate}[(i)]
