@@ -14745,29 +14745,31 @@ Then
 = N - P ,
 \end{equation*}
 where $N$ is the number of zeros of $f$ inside $\gamma$ and $P$ is the
-number of poles, both counted with multiplicity.
+number of poles inside $\gamma$, both counted with multiplicity.
 
-Furthermore, if $h \colon U \to \C$ is holomorphic, and $\#(p)$ is the order
-(multiplicity) of a zero or pole at $p$, then
+furthermore, suppose $h \colon U \to \C$ is holomorphic,
+Let $z_1,\ldots,z_N$ be the zeros of $f$ inside $\gamma$ and
+$w_1,\ldots,w_P$ be the poles of $f$ inside $\gamma$.
+Then
 \begin{equation*}
 \frac{1}{2\pi i}
 \int_\gamma h(z) \frac{f'(z)}{f(z)} \, dz
 =
-\sum_{p \in f^{-1}(0)}
-\#(p) \, h(p)
+\sum_{j=1}^N h(z_j)
 \quad
 -
 \quad
-\sum_{p \in f^{-1}(\infty)}
-\#(p) \, h(p) .
+\sum_{j=1}^P h(w_j) .
 \end{equation*}
 \end{thm}
 
 The proof is an immediate application of the residue theorem.  Simply
 compute the residues at the zeros and poles of $f$.  In particular,
-if $f$ has a zero at $p$, then $h(z) \frac{f'(z)}{f(z)}$ has a simple pole
-at $p$ with residue $\#(p) h(p)$.  Similarly, if $f$ has a pole at $p$,
-then $h(z) \frac{f'(z)}{f(z)}$ has residue $-\#(p) h(p)$ at $p$.
+if $f$ has a zero at $p$ or multiplicity $k$, then $h(z) \frac{f'(z)}{f(z)}$
+has a simple pole
+at $p$ with residue $k\, h(p)$.  Similarly, if $f$ has a pole at $p$ of
+order $k$,
+then $h(z) \frac{f'(z)}{f(z)}$ has a simple pole with residue $-k\, h(p)$ at $p$.
 
 In the couple of theorems above,
 we avoided introducing winding numbers by making $\gamma$ a simple closed curve,
