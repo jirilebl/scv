@@ -2349,13 +2349,14 @@ Hint: Feel free to use the \hyperref[thm:onevarhurwitz]{one-variable result}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $p \in \C^n$ is a point and $D \subset \C^n$ is a ball with $p \in D$.
+Suppose $p \in \C^n$ is a point and $D \subset \C^n$ is a ball centered at
+$p \in D$.
 A holomorphic function $f \colon D \to \C$ can be
 \emph{analytically continued}\index{analytic continuation}
 along a path
 $\gamma \colon [0,1] \to \C^n$, $\gamma(0) = p$, if for every $t \in [0,1]$ there exists
-a ball $D_t$ centered at $\gamma(t)$ and a holomorphic function
-$f_t \colon D_t \to \C$ and for each $t_0 \in [0,1]$ there is an
+a ball $D_t$ centered at $\gamma(t)$, where $D_0 = D$, and a holomorphic function
+$f_t \colon D_t \to \C$, where $f_0 = f$, and for each $t_0 \in [0,1]$ there is an
 $\epsilon > 0$ such that if $\sabs{t-t_0} < \epsilon$, then $f_t = f_{t_0}$
 in $D_t \cap D_{t_0}$.
 Prove a several variables version of the \emph{\myindex{Monodromy theorem}}:
@@ -14924,14 +14925,14 @@ is harmonic on $U$.
 \end{thm}
 
 Functions may be defined locally, and continued along paths.
-Suppose $p$ is a point and $D$ is a disc with $p \in D$.
+Suppose $p$ is a point and $D$ is a disc centered at $p \in D$.
 A holomorphic function $f \colon D \to \C$ can be
 \emph{analytically continued}\index{analytic continuation}
 along a path
 $\gamma \colon [0,1] \to \C$, $\gamma(0) = p$,
 if for every $t \in [0,1]$ there exists
-a disc $D_t$ centered at $\gamma(t)$ and a holomorphic function
-$f_t \colon D_t \to \C$ and for each $t_0 \in [0,1]$ there is an
+a disc $D_t$ centered at $\gamma(t)$, where $D_0=D$, and a holomorphic function
+$f_t \colon D_t \to \C$, where $f_0 = f$, and for each $t_0 \in [0,1]$ there is an
 $\epsilon > 0$ such that if $\sabs{t-t_0} < \epsilon$, then
 $f_t = f_{t_0}$
 in $D_t \cap D_{t_0}$.  The monodromy theorem says that as long as there are
