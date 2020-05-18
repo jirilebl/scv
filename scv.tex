@@ -14386,8 +14386,8 @@ And as a holomorphic function has a power series it satisfies the
 identity theorem:
 
 \begin{thm}[Identity]\index{identity theorem}
-If $U \subset \C$ is a domain, and $f \colon U \to \C$ holomorphic
-such that the zero set $f^{-1}(0)$ has a limit point in $U$, then
+Suppose $U \subset \C$ is a domain and $f \colon U \to \C$ is holomorphic.
+If the zero set $f^{-1}(0)$ has a limit point in $U$, then
 $f \equiv 0$.
 \end{thm}
 
@@ -14395,11 +14395,18 @@ Another consequence  of the Cauchy integral formula is that there is
 a differential equation characterizing holomorphic functions.
 
 \begin{prop}[Cauchy--Riemann equations]
-Given an open set $U \subset \C$,
-a function $f \colon U \to \C$ is holomorphic if and only if
+Let $U \subset \C$ be open.
+A function $f \colon U \to \C$ is holomorphic if and only if
 $f$ is continuously differentiable and
 \begin{equation*}
-\frac{\partial f}{\partial \bar{z}} = 0 \qquad \text{on $U$.}
+\frac{\partial f}{\partial \bar{z}}
+=
+\frac{1}{2}
+\left(
+\frac{\partial f}{\partial x} + i
+\frac{\partial f}{\partial y}
+\right)
+ = 0 \qquad \text{on $U$.}
 \end{equation*}
 \end{prop}
 
@@ -14408,8 +14415,9 @@ that everything in this appendix is a consequence of the Cauchy formula)
 is the open mapping theorem.
 
 \begin{thm}[Open mapping theorem]\index{open mapping theorem}
-Suppose $U \subset \C$ is open and
-$f \colon U \to \C$ is holomorphic.  Then $f$ is an open mapping, that is,
+Suppose $U \subset \C$ is a domain and
+$f \colon U \to \C$ is holomorphic and not constant.
+Then $f$ is an open mapping, that is,
 $f(V)$ is open whenever $V$ is open.
 \end{thm}
 
@@ -14451,6 +14459,7 @@ and continuous, then $f$ achieves its maximum and minimum on $\partial U$.
 \end{enumerate}
 \end{thm}
 
+The first two items are sometimes called the \emph{\myindex{maximum modulus principle}}.
 The maximum principle immediately implies the following lemma.
 
 \begin{lemma}[Schwarz's lemma]\index{Schwarz's lemma}
@@ -14584,9 +14593,10 @@ to the derivative $f^{(\ell)}$.
 Holomorphic functions satisfy a Heine--Borel-like property:
 
 \begin{thm}[Montel]\index{Montel's theorem}\label{thm:onevarmontel}
-If $U \subset \C$ is an open set and
-$f_n \subset U \to \C$ is a sequence of holomorphic functions
-that is uniformly bounded on compact subsets of $U$,
+Suppose
+$U \subset \C$ is open and
+$f_n \subset U \to \C$ is a sequence of holomorphic functions.
+If $\{ f_n \}$ is uniformly bounded on compact subsets of $U$,
 then there exists a subsequence converging uniformly on compact subsets
 of $U$.
 \end{thm}
@@ -14749,7 +14759,7 @@ Then
 where $N$ is the number of zeros of $f$ inside $\gamma$ and $P$ is the
 number of poles inside $\gamma$, both counted with multiplicity.
 
-furthermore, suppose $h \colon U \to \C$ is holomorphic,
+Furthermore, suppose $h \colon U \to \C$ is holomorphic.  
 Let $z_1,\ldots,z_N$ be the zeros of $f$ inside $\gamma$ and
 $w_1,\ldots,w_P$ be the poles of $f$ inside $\gamma$.
 Then
