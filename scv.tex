@@ -95,12 +95,16 @@
 % But we do want helvetica for sans
 %\usepackage{helvet}
 
-% Nicer times, perhaps use this but it changes the pagination etc.,
-% and it really needs to be checked if it works well.
-% Should be done for the next big version
 \usepackage[tighter,defaultsups]{newtxtext}
 \usepackage[vvarbb]{newtxmath}
 \usepackage[mathscr]{euscript} % but we want the nice fancy script fonts
+
+%Palatino
+% Should be done for the next big version
+%\usepackage[theoremfont]{newpxtext}
+%\usepackage[vvarbb]{newpxmath}
+%\linespread{1.05}
+%\usepackage[scr=boondoxo]{mathalfa} % but we want the nice fancy script fonts
 
 
 % useful
@@ -13416,7 +13420,7 @@ closure $\overline{X'}$ is a subvariety of $U$ of pure codimension 1.
 \section{Irreducibility, local parametrization, and Puiseux theorem}
 
 \begin{defn}
-A germ of a subvariety $(X,p) \subset (\C^n,p)$ is said to be
+A germ of a subvariety $(X,p) \subset (\C^n,p)$ is 
 \emph{\myindex{reducible}} at $p$ if there exist
 two germs $(X_1,p)$ and $(X_2,p)$ with
 $(X_1,p) \not\subset (X_2,p)$ and
@@ -13490,8 +13494,8 @@ $(X_1,p) \cup \ldots \cup (X_k,p) = (X,p)$ and such that $(X_j,p)
 \end{prop}
 
 \begin{proof}
-Suppose $(X,p)$ is reducible, so
-find $(Y_1,p) \not\subset (Y_2,p)$ and $(Y_2,p) \not\subset (Y_1,p)$
+Suppose $(X,p)$ is reducible:
+Find $(Y_1,p) \not\subset (Y_2,p)$ and $(Y_2,p) \not\subset (Y_1,p)$,
 such that $(Y_1,p) \cup (Y_2,p) = (X,p)$.
 As $(Y_j,p) \subsetneq (X,p)$, then
 $I_p(Y_j) \supsetneq I_p(X)$ for both $j$.  If both
@@ -13501,10 +13505,11 @@ reducible.  After finitely many steps you must come to a stop as you cannot
 have an infinite ascending chain of ideals since $\sO_p$ is Noetherian.
 \end{proof}
 
-These $(X_1,p),\ldots,(X_k,p)$ are called
-\emph{\myindex{irreducible components}}, we omit the proof in general
+These $(X_1,p),\ldots,(X_k,p)$ are the
+\emph{\myindex{irreducible components}}.
+We omit the proof in general
 that they are unique.
-For a germ of a hypervariety
+For a germ of a hypervariety,
 the UFD property of ${}_{n}\sO_p$ gives the irreducible
 components.  You found this factorization in an exercise above,
 and so this factorization is unique.
@@ -13725,9 +13730,10 @@ Apply a local biholomorphic change of coordinates at $p$, so
 that in the new coordinates
 $(z,w) \in \C^{n-1} \times \C$,
 $X$ is given by $w=0$, and $p$ is the origin.
-The tangent hyperplane to $M$ at 0 must contain $w=0$,
-and after rotating the $w$ coordinate (multiplying it by $e^{i\theta}$),
-we can assume that $M$ is tangent to the set $\{ (z,w) : \Im w = 0 \}$.
+The tangent hyperplane to $M$ at 0 contains $\{ w=0 \}$.
+After rotating the $w$ coordinate (multiplying it by $e^{i\theta}$),
+we assume $M$ is tangent to the set $\bigl\{ (z,w) : \Im w = 0
+\bigr\}$.
 In other words,
 $M$ is given by
 \begin{equation*}
@@ -13736,12 +13742,12 @@ $M$ is given by
 where $d\rho = 0$.
 As $w = 0$ on $M$, then $\rho = 0$
 when $\Re w = 0$. That is, $\rho$
-is divisible by $\Re w$, that is $M$ is defined by,
+is divisible by $\Re w$.  So $M$ is defined by
 \begin{equation*}
 \Im w = (\Re w) \widetilde{\rho}(z,\bar{z},\Re w), 
 \end{equation*}
 for a smooth function $\widetilde{\rho}$.
-So the Levi form at the origin vanishes.
+The Levi form at the origin vanishes.
 As $p=0$ was an arbitrary point on $M \cap X$,
 the Levi form of $M$ vanishes on $M \cap X$.
 \end{example}
@@ -13758,14 +13764,14 @@ $M$ contains the complex line $L_\theta$,
 given by $z_1 = e^{i\theta} z_2$ and
 $w = 0$.  The union $\bigcup_\theta L_\theta$ of those
 complex lines is not
-contained in some unique complex subvariety inside $M$.  Any complex
+contained in some single unique complex subvariety inside $M$.  Any complex
 subvariety that contains all $L_\theta$ must contain the entire complex hypersurface given
 by $w = 0$, which is not contained in $M$.
 \end{example}
 
 \begin{exbox}
 \begin{exercise}
-Let $M \subset \C^n$ be a real hypersurface.
+Let $M \subset \C^n$ be a smooth real hypersurface.
 Show that if $M$ at $p$ contains a complex submanifold of (complex)
 dimension more than
 $\frac{n-1}{2}$, then the Levi form must be degenerate, that is, it must
@@ -13773,15 +13779,17 @@ have at least one zero eigenvalue.
 \end{exercise}
 
 \begin{exercise}
-Let $M \subset \C^n$ be a pseudoconvex real hypersurface
+Let $M \subset \C^n$ be a smooth pseudoconvex real hypersurface
 (one side of $M$ is pseudoconvex).
 Suppose $M$ at $p$ contains a dimension $k$ complex submanifold $X$.
 Show that the Levi form has at least $k$ zero eigenvalues.
 \end{exercise}
 
 \begin{exercise}
-Find an example of a real hypersurface $M \subset \C^n$ that contains a unique
-complex-analytic subvariety through a point $p$ and this subvariety is singular.
+Find an example of a smooth real hypersurface $M \subset \C^n$ that contains a
+germ of a singular complex-analytic subvariety $(X,p)$ through a point $p$,
+which is unique in the sense that if $(Y,p)$ is another germ of a complex
+analytic subvariety in $M$ then $(Y,p) \subset (X,p)$.
 \end{exercise}
 \end{exbox}
 
@@ -13939,9 +13947,9 @@ pseudoconvex, then $M$ contains no analytic discs.
 \end{exercise}
 \end{exbox}
 
-Let us end our discussion of Segre varieties by its perhaps most well-known
+We end our discussion of Segre varieties by its perhaps most well-known
 application, the so-called Diederich--Forn\ae ss lemma.  Although
-we state it only for real-analytic hypersurfaces it works in greater generality.
+we state and prove it only for real-analytic hypersurfaces it works in greater generality.
 There are two parts to it, although it is generally the corollary
 that is called the \emph{\myindex{Diederich--Forn\ae ss lemma}}.
 
@@ -13973,11 +13981,11 @@ $(X,q)$ is a germ of a complex submanifold.
 Let $X$ be a representative of the germ $(X,q)$ such that $X \subset M$,
 and $X \subset U$, although we do not assume it is closed.
 
-Assume $X$ is a holomorphic
+Assume $X$ is an
 image of an open subset $V \subset \C^k$ via a holomorphic surjective mapping $\varphi \colon V \to
 X$.  Since $r\bigl(\varphi(\xi),\overline{\varphi(\xi)}\bigr) = 0$
 for all $\xi \in V$, then we may treat $\xi$ and $\bar{\xi}$ separately.
-In particular, we find 
+In particular,
 $r(z,\bar{\zeta}) = 0$ for all $z,\zeta \in X$.
 
 Define complex subvarieties $Y', Y \subset U$ (closed in $U$) by
@@ -14161,28 +14169,28 @@ to define $X$ to be $Y$ rather than just show equality.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Let us review some results from one complex variable that may be useful for
+We review some results from one complex variable that may be useful for
 reading this book.
 The reader should first look through \sectionref{sec:motivation}
 for basic notation and motivation, although we will review some of the
-results again here.  We start with holomorphic functions.
+results again here.
 Let $U \subset \C$ be open.
 A function
 $f \colon U \to \C$ is \emph{holomorphic} if it is complex
-differentiable at every point, that is
+differentiable at every point, that is,
 \begin{equation*}
 f'(z) = \lim_{h \in \C \to 0} \frac{f(z+h) - f(z)}{h}
 \end{equation*}
 exists for all $z \in U$.  For example, polynomials and rational
-functions in $z$ are holomorphic.  One of the most important examples
-is the solution to the differential equation $f'(z) = f(z)$, $f(0) = 1$, that is
+functions in $z$ are holomorphic.  Perhaps the most important holomorphic
+function is the solution to the differential equation $f'(z) = f(z)$, $f(0) = 1$, that is
 the complex exponential, defined in the entire complex plane:
 \begin{equation*}
 f(z) = e^z = e^{x+iy} = e^x \bigl( \cos y + i \sin(y) \bigr) .
 \end{equation*}
 
 
-A piecewise-$C^1$ path (or curve)\index{path}\index{curve} in $\C$
+A piecewise-$C^1$ \emph{path} (or curve)\index{path}\index{curve} in $\C$
 is a continuous function $\gamma \colon [a,b] \to \C$,
 continuously differentiable except at finitely many points,
 such that one-sided limits of $\gamma'$ exist at all points of $[a,b]$
@@ -14346,15 +14354,15 @@ for all triangles $T \subset U$.
 As we saw in the introduction, a holomorphic function has a power series.
 
 \begin{prop}
-If $U \subset \C$ is an open set, and $f \colon U \to \C$ holomorphic,
+If $U \subset \C$ is open and $f \colon U \to \C$ is holomorphic,
 then $f$ is infinitely differentiable, and if $\Delta_\rho(p) \subset \C$
 is a disc, then $f$ has a power series that
 converges absolutely uniformly on compact subsets of $\Delta_\rho(p)$:
 \begin{equation*}
 f(z) = \sum_{k=0}^\infty c_k {(z-p)}^k ,
 \end{equation*}
-where given a $\gamma$ that is a simple closed (piecewise-$C^1$)
-path once counter-clockwise
+where given a simple closed (piecewise-$C^1$) path $\gamma$
+going once counter-clockwise
 around $p$ inside $\Delta_\rho(p)$,
 \begin{equation*}
 c_k = \frac{f^{(k)}(p)}{k!} =
@@ -14371,10 +14379,10 @@ is the maximum of $\sabs{f}$ on the circle $\partial \Delta_r(p)$, then
 \begin{equation*}
 \sabs{c_k} \leq \frac{M}{r^k} .
 \end{equation*}
-Conversely, if a power series satisfies the Cauchy estimates,
+Conversely, if a power series satisfies such estimates,
 it converges on $\Delta_r(p)$.
 
-A function $f \colon \C \to \C$ that is holomorphic is
+A holomorphic $f \colon \C \to \C$ that is
 \emph{\myindex{entire}}.  An immediate application of Cauchy estimates
 is Liouville's theorem:
 
@@ -14583,7 +14591,7 @@ functions: uniform convergence on compact subsets.
 Sometimes this is called \emph{\myindex{normal convergence}}.
 
 \begin{prop}
-Suppose $U \subset \C$ is an open set, and $f_k \colon U \to \C$
+Suppose $U \subset \C$ is open and $f_k \colon U \to \C$ is
 a sequence of holomorphic functions which converge uniformly
 on compact subsets of $U$ to $f \colon U \to \C$.  Then $f$ is holomorphic,
 and every derivative $f_k^{(\ell)}$ converges uniformly on compact subsets
@@ -14620,7 +14628,7 @@ either the limit $f$ is identically zero, or it also has no zeros.
 
 \pagebreak[2]
 If $U \subset \C$ is open, $p \in U$, and
-$f \colon U \setminus \{ p \} \to \C$ is holomorphic we say that
+$f \colon U \setminus \{ p \} \to \C$ is holomorphic, we say that
 $f$ has an \emph{\myindex{isolated singularity}} at $p$. 
 An isolated singularity is \emph{removable}\index{removable singularity}
 if 
@@ -15702,10 +15710,9 @@ $\omega$, and its derivative $d\omega$ is the curl operator.
 As to at least get a flavor of the theorem, let us prove it in a simpler
 setting, which however is often almost good enough, and it is the key idea
 in the proof.
-Suppose that $U \subset \R^n$ is a domain such that for any $k=1,\ldots,n$
-there exist two smooth functions $\alpha_k$ and $\beta_k$, such that
-the set
-$U$ is given by
+Suppose $U \subset \R^n$ is a domain such that for any $k=1,\ldots,n$
+there exist two smooth functions $\alpha_k$ and $\beta_k$ and $U$
+as a set is given by
 \begin{align*}
 & (x_1,\ldots,x_{k-1},x_{k+1},\ldots,x_n) \in \pi_k(U) ,
 \\
@@ -15764,8 +15771,10 @@ result.
 
 \chapter{Basic terminology and results from algebra} \label{ap:algebra}
 
-Let us quickly go over some of the basic definitions from commutative
-algebra for reference, and a result or two that we will need in
+Let us quickly review some basic definitions
+and a result or two
+from commutative
+that we need in
 \chapterref{ch:analyticvarieties}.  See a book such as
 Zariski--Samuel~\cite{ZariskiSamuel} for a full reference.
 
@@ -15791,20 +15800,19 @@ $x*y = y*x$ for all $x,y \in G$.
 
 A subset $K \subset G$ is called a \emph{\myindex{subgroup}}
 if $K$ is a group with the same operation as the group $G$.
-
 If $G$ and $H$ are groups, a function $f \colon G \to H$ is a
 \emph{\myindex{group homomorphism}}\index{homomorphism}
 if it respects the group law, that is, $f(a * b) = f(a) * f(b)$.  If $f$ is
-bijective, then it is called a
+bijective, then it is a
 \emph{\myindex{group isomorphism}}\index{isomorphism}.
 \end{defn}
 
 An example of a group is a group of automorphisms.  For example, let
-$U \subset \C$ be an open set, and suppose that $G$ is the set of
-bijective holomorphic functions $f \colon U \to U$.  Then $G$ is a group
-under composition, but $G$ is not necessarily abelian.  For example, if
+$U \subset \C$ be open and suppose $G$ is the set of
+biholomorphisms $f \colon U \to U$.  Then $G$ is a group
+under composition, but $G$ is not necessarily abelian:  If
 $U=\C$, then $f(z)= z+1$ and $g(z)=-z$ are members of $G$, but
-$f\circ g (z) = -z+1$ but $g \circ f(z) = -z-1$.
+$f\circ g (z) = -z+1$ and $g \circ f(z) = -z-1$.
 
 
 
@@ -15856,7 +15864,7 @@ bijective, then it is called a
 \emph{\myindex{ring isomorphism}}\index{isomorphism}.
 \end{defn}
 
-That is a commutative ring is an abelian additive group (by
+Namely, a commutative ring is an abelian additive group (by
 additive group we just mean we use $+$ for the operation and
 $0$ for the respective identity), with multiplication thrown in.
 If the multiplication
@@ -15878,10 +15886,10 @@ Given a commutative ring $R$, let $R[x]$ be the set of polynomials
 \begin{equation*}
 P(x) = c_k x^k + c_{k-1} x^{k-1} + \cdots + c_1 x + c_0 ,
 \end{equation*}
-where $c_0,\ldots,c_k \in R$.  The integer $k$ is called the
-\emph{\myindex{degree}} of the polynomial and $c_k$ is called the
+where $c_0,\ldots,c_k \in R$.  The integer $k$ is the
+\emph{\myindex{degree}} of the polynomial and $c_k$ is the
 \emph{\myindex{leading coefficient}} of $P(x)$.  If the
-leading coefficient is 1, then $P$ is said to be \emph{\myindex{monic}}.
+leading coefficient is 1, then $P$ is \emph{\myindex{monic}}.
 If $R$ is a commutative ring, then so is $R[x]$.
 Similarly, we define the commutative ring $R[x_1,\ldots,x_n]$ of
 polynomials in $n$ indeterminates.
@@ -15901,12 +15909,14 @@ that $fg \in I$ and $g+h \in I$.
 In short, $I \subset R$ is an additive subgroup such that $RI = I$.
 
 Given a set of elements 
-$S \subset R$, the intersection $I$ of all ideals containing $S$
-is called the \emph{\myindex{ideal generated by $S$}}.
-\glsadd{not:ideal}%
+$S \subset R$,
+the \emph{\myindex{ideal generated by $S$}}
+is the intersection $I$ of all ideals containing $S$.
 If $S = \{ f_1,\ldots,f_k \}$ is a finite set, we say $I$ is
 \emph{finitely generated}\index{finitely generated ideal},
-and we write $I = (f_1,\ldots,f_k)$.
+and we write
+\glsadd{not:ideal}%
+$I = (f_1,\ldots,f_k)$.
 
 A \emph{\myindex{principal ideal}} is an ideal generated by a single
 element.
@@ -15918,7 +15928,7 @@ if every ideal in $R$ is finitely generated.
 \end{defn}
 
 It is not difficult to prove that ``an ideal generated by $S$'' really is
-an ideal, that is, intersection of ideals is an ideal.
+an ideal, that is, the intersection of ideals is an ideal.
 If an ideal $I$ is generated by $f_1,\ldots,f_k$, then every
 $g \in I$ can be written as
 \begin{equation*}
@@ -15978,12 +15988,12 @@ $I = (f_1,\ldots,f_k)$.
 \end{proof}
 
 \begin{defn}
-An element $f \in R$ is said to be \emph{\myindex{irreducible}}
+An element $f \in R$ is \emph{\myindex{irreducible}}
 if whenever $f = gh$ for two elements $g,h \in R$, then either $g$ or
 $h$ is a unit.
 A commutative ring $R$ is a
 \emph{\myindex{unique factorization domain}}\index{UFD}
-(UFD)\@ if up to 
+(UFD) if up to 
 multiplication by a unit, every element has a unique factorization into
 irreducible elements of $R$.
 \end{defn}
@@ -15994,7 +16004,7 @@ when we take polynomials.
 
 \begin{thm}[Gauss lemma]\label{thm:gausslemma}
 \index{Gauss lemma}%
-If $R$ is a commutative ring that is a UFD, then $R[x]$ is a UFD.
+If $R$ is a commutative ring that is a UFD, then $R[x]$ is a UFD\@.
 \end{thm}
 
 The proof is not difficult, but it is perhaps beyond the scope of this book.
