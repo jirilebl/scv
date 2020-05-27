@@ -14960,7 +14960,7 @@ no holes, analytic continuation defines a function uniquely.
 \begin{thm}[Monodromy theorem]\index{Monodromy theorem}
 If $U \subset \C$ is a simply connected domain, $D \subset U$ a disc and
 $f \colon D \to \C$ a holomorphic function that can be analytically
-continued from $p \in D$ to every $q \in U$, then there exists
+continued from $p \in D$ to every $q \in U$ along any path from $p$ to $q$, then there exists
 a unique holomorphic function $F \colon U \to \C$ such that $F|_D = f$.
 \end{thm}
 
@@ -15014,14 +15014,14 @@ E_m(z) = (1-z) \exp\left( z +\frac{z^2}{2} + \cdots + \frac{z^m}{m} \right)
 The function $E_m\bigl(\nicefrac{z}{a}\bigr)$ has a zero of order 1 at $a$.
 
 \begin{thm}[Weierstrass factorization theorem]\index{Weierstrass factorization theorem}
-Let $f$ be an entire function with zeros (with multiplicity) at points of
+Let $f$ be an entire function with zeros (repeated according to multiplicity) at points of
 the sequence $\{ a_k \}$ except the zero at
 the origin, whose order is $m$ (possibly $m=0$).  Then there exists an
-entire function $g$ and a sequence $p_k$ such that
+entire function $g$ and a sequence $\{ p_k \}$ such that
 \begin{equation*}
 f(z) = z^m e^{g(z)} \prod_{k=1}^\infty E_{p_k}\left(\frac{z}{a_k}\right) ,
 \end{equation*}
-converges absolutely and uniformly on all compact subsets.
+converges uniformly absolutely on compact subsets.
 \end{thm}
 
 The $p_k$ are chosen such that
