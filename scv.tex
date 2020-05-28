@@ -361,7 +361,7 @@
 Ji{\v r}\'i Lebl\\[3ex]} 
 \today
 \\
-(version 3.2)
+(version 3.3)
 \end{minipage}}
 
 %\addtolength{\textwidth}{\centeroffset}
@@ -379,7 +379,7 @@ Typeset in \LaTeX.
 \bigskip
 
 \noindent
-Copyright \copyright 2014--2019 Ji{\v r}\'i Lebl
+Copyright \copyright 2014--2020 Ji{\v r}\'i Lebl
 
 %PRINT
 % not for the coil version
@@ -2675,8 +2675,9 @@ antiholomorphic.  This is a subtle philosophical as much as a mathematical point
 \end{remark}
 
 \begin{defn}
-Let $U \subset \C^n$ be an open set.  A mapping $f \colon U \to \C^m$
-is said to be holomorphic if each component is holomorphic.  That
+Let $U \subset \C^n$ be open.  A mapping $f \colon U \to \C^m$
+is said to be \emph{holomorphic}\index{holomorphic mapping}
+if each component is holomorphic.  That
 is, if $f = (f_1,\ldots,f_m)$, then each $f_j$ is a holomorphic function.
 \end{defn}
 
@@ -2713,9 +2714,9 @@ For any $j = 1,\ldots,n$ and any $p=1,\ldots,k$, we compute
 For holomorphic functions the chain rule simplifies, and it formally looks
 like the familiar vector calculus rule.
 Suppose again
-$U \subset \C^n$ and $V \subset \C^m$ are open sets and 
-$f \colon U \to V$, and $g \colon V \to \C$ are holomorphic.
-Again name the variables
+$U \subset \C^n$ and $V \subset \C^m$ are open, and 
+$f \colon U \to V$ and $g \colon V \to \C$ are holomorphic.
+Name the variables
 $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
 \subset \C^m$.  In formula \eqref{eq:chainrule} for the $z_j$ derivative,
 the $\bar{w}_j$ derivative of $g$ is zero and the $z_j$ derivative of
@@ -3357,10 +3358,10 @@ as a power series at the origin, written in homogeneous parts:
 \begin{equation*}
 f(z) = z + f_k(z) + \sum_{j=k+1}^\infty f_j(z) ,
 \end{equation*}
-where $k \geq 2$ is an integer such that $f_j(z)$ is zero for all
-$2 \leq j < k$.  The degree-one homogeneous part is simply the vector $z$,
+where $k \geq 2$ is an integer such that $f_2(z),f_3(z),\ldots,f_{k-1}(z)$ is zero.
+The degree-one homogeneous part is simply the vector $z$,
 because
-the derivative of the mapping at the origin is the identity.
+the derivative of $f$ at the origin is the identity.
 Compose $f$ with itself $\ell$ times:
 \begin{equation*}
 f^\ell(z) = \underbrace{f \circ f \circ \cdots \circ f}_{\ell\text{ times}}
@@ -4304,9 +4305,9 @@ holomorphy, then $U \times V$ is a domain of holomorphy.
 \end{exbox}
 
 In particular, the exercise says that
-given any domain $U \subset \C$ and any domain $V \subset \C$, the domain
+for any domains $U \subset \C$ and $V \subset \C$, the set
 $U \times V$ is a domain of holomorphy in $\C^2$.  The domains
-$U$ and $V$, and therefore $U \times V$ can be spectacularly nonconvex.
+$U$ and $V$, and hence $U \times V$, can be spectacularly nonconvex.
 But we should not discard convexity completely, there is a notion of
 \emph{pseudoconvexity}, which vaguely means ``convexity in the 
 complex directions'' and is the correct notion to distinguish 
@@ -4314,23 +4315,23 @@ domains of holomorphy.
 Let us figure out what classical convexity means locally for a smooth boundary.
 
 \begin{defn} \label{def:hypersurface}
-A set $M \subset \R^n$ is a real
+A set $M \subset \R^n$ is a
 \glsadd{not:Ck}%
 $C^k$-smooth \emph{\myindex{hypersurface}}%
 \index{Ck-smooth hypersurface@$C^k$-smooth hypersurface}
 if at each point
 $p \in M$, there exists a $k$-times continuously
-differentiable function $r \colon V \to
-\R$, defined in a neighborhood $V$ of $p$ with nonvanishing derivative
+differentiable function $r \colon V \to \R$
+with nonvanishing derivative, defined in a neighborhood $V$ of $p$ 
 such that $M \cap V = \bigl\{ x \in V : r(x) = 0 \bigr\}$.  The function $r$ is
-called the \emph{\myindex{defining function}} (at $p$).
+called the \emph{\myindex{defining function}} of $M$ (at $p$).
 
-An open set (or domain) $U$ with
+An open set (or domain) $U \subset \R^n$ with
 \emph{$C^k$-smooth boundary}%
 \index{Ck-smooth boundary@$C^k$-smooth boundary}
 is a set where
 $\partial U$ is a $C^k$-smooth hypersurface,
-and for every $p \in \partial U$ there is a defining
+and at every $p \in \partial U$ there is a defining
 function $r$ such that
 $r < 0$ for points in $U$ and $r > 0$
 for points not in $U$.
@@ -4350,9 +4351,7 @@ that is, the $r$ above is infinitely differentiable.
 
 What we really defined is an \emph{\myindex{embedded hypersurface}}.  In
 particular, in this book the topology on the set $M$ will be the subset
-topology.
-
-For simplicity, in this book we generally deal with smooth
+topology.  Furthermore, in this book we generally deal with smooth
 (that is, $C^\infty$) functions and hypersurfaces.  Dealing with
 $C^k$-smooth functions for finite $k$ introduces technicalities that make
 certain theorems and arguments unnecessarily difficult.
@@ -4380,7 +4379,8 @@ but we have no need of this.
 In $\C^n$
 a hypersurface defined as above is a \emph{\myindex{real hypersurface}},
 to distinguish it from a complex hypersurface that would be the zero set of
-a holomorphic function.
+a holomorphic function, although we may at times leave out the word ``real''
+if it is clear from context.
 
 \begin{defn}
 For a point $p \in \R^n$, the set of \emph{tangent vectors}\index{vector} $T_p \R^n$ is given by
@@ -4403,10 +4403,12 @@ by an $n$-vector $a = (a_1,\ldots,a_n)$.  However, if $p \not= q$, then
 $T_p \R^n$ and
 $T_q \R^n$ are distinct spaces.
 \glsadd{not:evalpartial}%
-An object $\frac{\partial}{\partial x_j}\Big|_p$ is a linear functional
+An object
+$\frac{\partial}{\partial x_j}\big|_p$
+is a linear functional
 on the space of smooth functions:
 When applied to a smooth function $g$, it gives
-$\frac{\partial g}{\partial x_j} \Big|_p$.  Therefore, $X_p$ is also such a
+$\frac{\partial g}{\partial x_j} \big|_p$.  Therefore, $X_p$ is also such a
 functional.  It is the directional derivative from calculus;
 it is computed as $X_p f = \nabla f|_p \cdot (a_1,\ldots,a_n)$.
 
@@ -4467,9 +4469,9 @@ and $\int_0^1 f'(ts) \,dt$ is a smooth function of $s$.
 Show that $T_pM$ is independent of which defining function we take.  That
 is,
 prove that if $r$ and $\tilde{r}$ are defining functions for $M$ at $p$, then
-$\sum_j a_j \frac{\partial r}{\partial x_j} \Big|_p = 0$
+$\sum_j a_j \frac{\partial r}{\partial x_j} \big|_p = 0$
 if and only if
-$\sum_j a_j \frac{\partial \tilde{r}}{\partial x_j} \Big|_p = 0$.
+$\sum_j a_j \frac{\partial \tilde{r}}{\partial x_j} \big|_p = 0$.
 \end{exercise}
 \end{exbox}
 
@@ -4590,9 +4592,8 @@ $Df(0) X_0 = (a+2b)\frac{\partial}{\partial y_1}\big|_0
 (3a+4b)\frac{\partial}{\partial y_2}\big|_0$, where we let $(y_1,y_2)$ be the
 coordinates on the target.  You should check on some test
 function, such as
-$\varphi(y_1,y_2) = \alpha y_1 + \beta y_2$, that this satisfies the
-definition.
-
+$\varphi(y_1,y_2) = \alpha y_1 + \beta y_2$, that the definition above is
+satisfied.
 
 \medskip
 
@@ -5034,7 +5035,7 @@ by taking the disjoint unions.
 One can also define vector fields in these bundles.
 
 Let us describe $\C \otimes T_pM$
-for a real smooth hypersurface $M \subset \C^n$.
+for a smooth real hypersurface $M \subset \C^n$.
 Let $r$ be a real-valued defining function of
 $M$ at $p$.  A vector
 $X_p \in \C \otimes T_p\C^n$ is in
@@ -5672,12 +5673,12 @@ says that the number of positive, negative, and zero
 eigenvalues of $D^*HD$ is the same as that for $H$.  The
 eigenvalues might have changed, but their sign did not.
 We are only considering $H$ and $D^*HD$ on a subspace.  In linear algebra
-language, suppose $D$ is invertible and consider a subspace $T$ and its
-image $DT$.  Then the inertia of $H$ restricted to $DT$ is the same
+language, consider an invertible $D$, a subspace $T$, and its image $DT$.
+Then the inertia of $H$ restricted to $DT$ is the same
 as the inertia of $D^*HD$ restricted to $T$.
 
-Let $M$ be a smooth hypersurface given by $r=0$, then $f^{-1}(M)$ is
-a smooth hypersurface given by $r \circ f = 0$.
+Let $M$ be a smooth real hypersurface given by $r=0$, then $f^{-1}(M)$ is
+a smooth real hypersurface given by $r \circ f = 0$.
 The holomorphic derivative $D = Df(p)$ 
 takes
 $T_{p}^{(1,0)}f^{-1}(M)$ isomorphically to $T_{f(p)}^{(1,0)}M$.
@@ -6137,7 +6138,7 @@ much harder to prove without that hypothesis.
 \end{exbox}
 
 A hyperplane is the ``degenerate'' case of normal convexity.
-There is also a flat case of pseudoconvexity.  A smooth hypersurface
+There is also a flat case of pseudoconvexity.  A smooth real hypersurface
 $M \subset \C^n$ is \emph{\myindex{Levi-flat}} if the Levi form
 vanishes at every point of $M$.  The zero matrix is positive semidefinite
 and negative semidefinite, so both sides of $M$ are pseudoconvex.
@@ -6155,7 +6156,7 @@ Prove that a real hyperplane is Levi-flat.
 \end{exercise}
 
 \begin{exercise}
-Let $f \in \sO(U)$ for some domain $U \subset \C^n$, $f \not\equiv 0$.
+Consider $f \in \sO(U)$ for an open $U \subset \C^n$.
 Let $M = \bigl\{ z \in U : \Im f(z) = 0 \bigr\}$.  Show that
 if $df(p) \not=0$ for some $p \in M$, then near $p$,
 $M$ is a Levi-flat hypersurface.
@@ -8760,7 +8761,7 @@ $g$ on $M$.
 
 \begin{exbox}
 \begin{exercise}
-Suppose $M \subset \C^n$ is a smooth hypersurface
+Suppose $M \subset \C^n$ is a smooth real hypersurface
 and $f \colon M \to \C$ is a CR function that is a restriction
 of a holomorphic function $F \colon U \to \C$ defined in
 some neighborhood $U \subset \C^n$ of $M$.  Show that $F$ is unique,
@@ -8770,7 +8771,7 @@ $G|_M = f = F|_M$, then $G=F$.
 
 \begin{exercise}
 Show that there is no maximum principle of CR functions.  In fact, find a
-smooth hypersurface $M \subset \C^n$, $n \geq 2$, and a smooth CR function
+smooth real hypersurface $M \subset \C^n$, $n \geq 2$, and a smooth CR function
 $f$ on $M$ such that $\sabs{f}$ attains a strict maximum at a point.
 \end{exercise}
 
@@ -9514,7 +9515,7 @@ cylinder.  Here is a rough diagram:
 \subimport*{figures/}{cylinder-bt.pdf_t}
 \end{myfig}
 
-We orient $D$ in
+Orient $D$ in
 the standard way as if it sat in the $(x,t)$ variables in $\R^n \times \R$.
 Stokes' theorem says
 \begin{equation*}
@@ -10106,7 +10107,7 @@ Write down an explicit formula for the extension $F$.
 \end{exercise}
 
 \begin{exercise}
-A smooth hypersurface $M \subset \C^3$ is defined by $\Im w = \sabs{z_1}^2-\sabs{z_2}^2 + O(3)$
+A smooth real hypersurface $M \subset \C^3$ is defined by $\Im w = \sabs{z_1}^2-\sabs{z_2}^2 + O(3)$
 and $f$ is a real-valued smooth CR function on $M$.  Show
 that $\sabs{f}$ does not attain a maximum at the origin.
 \end{exercise}
@@ -10153,7 +10154,7 @@ Prove that $f$ is a CR function if and only if
 \begin{exercise}
 Prove the third item in the Lewy extension theorem without the use
 of the tomato can principle.  That is, prove in a more elementary
-way that if $M \subset U \subset \C^n$ is a smooth hypersurface
+way that if $M \subset U \subset \C^n$ is a smooth real hypersurface
 in an open set $U$ and $f \colon U \to \C$ is continuous
 and holomorphic in $U \setminus M$, then $f$ is holomorphic.
 \end{exercise}
@@ -13133,7 +13134,7 @@ $W$ of $p$, $\exists \, q \in W \cap X_{\mathit{reg}}$ with $\dim_q X = k$}
 \bigr\} .
 \end{equation*}
 If $(X,p)$ is a germ and $X$ a representative,
-we say the dimension of $(X,p)$ is the dimension of
+the \emph{dimension} of $(X,p)$ is the dimension of
 $X$ at $p$.
 
 The dimension of the entire subvariety $X$ is defined to be
@@ -13219,8 +13220,8 @@ subset of $Z_f$.
 
 \begin{thm} \label{thm:codim1var}
 If $(X,p)$ is a germ of a pure codimension 1 subvariety, then
-there is a germ holomorphic function $f$ at $p$
-such that $(Z_f,p) = (X,p)$.  Furthermore, $I_p(X)$ is generated by $(f,p)$.
+there is a germ of a holomorphic function $f$ at $p$
+such that $(Z_f,p) = (X,p)$.  Further, $I_p(X)$ is generated by $(f,p)$.
 \end{thm}
 
 \begin{proof}
@@ -13650,9 +13651,10 @@ then given in the right-hand diagram.
 
 \begin{exbox}
 \begin{exercise}
-Suppose $(X,0) \subset (\C^2,0)$ is an irreducible germ defined
+Consider an irreducible germ
+$(X,0) \subset (\C^2,0)$ defined
 by an irreducible Weierstrass polynomial $f(z,w) = 0$ (polynomial in $w$)
-of degree $k$.  Prove that there exists a holomorphic $g$ such that
+of degree $k$.  Prove there exists a holomorphic $g$ such that
 $f\bigl(z^k,g(z)\bigr) = 0$ and $z \mapsto \bigl(z^k,g(z)\bigr)$
 is one-to-one and onto a neighborhood of 0 in $X$.
 \end{exercise}
@@ -13726,13 +13728,13 @@ in boundaries of domains says a lot about the geometry of the boundary.
 \begin{example}
 Let $M \subset \C^n$ be a smooth real hypersurface containing
 a complex hypersurface $X$ (zero set of a holomorphic function
-with nonzero derivative), at some $p \in X \subset M$.
+with nonzero derivative), at $p \in X \subset M$.
 Apply a local biholomorphic change of coordinates at $p$, so
 that in the new coordinates
 $(z,w) \in \C^{n-1} \times \C$,
 $X$ is given by $w=0$, and $p$ is the origin.
 The tangent hyperplane to $M$ at 0 contains $\{ w=0 \}$.
-After rotating the $w$ coordinate (multiplying it by $e^{i\theta}$),
+By rotating the $w$ coordinate (multiplying it by $e^{i\theta}$),
 we assume $M$ is tangent to the set $\bigl\{ (z,w) : \Im w = 0
 \bigr\}$.
 In other words,
@@ -14044,7 +14046,7 @@ Define $M$ in $(z,w) \in \C^{n-1} \times \C$ by
 \begin{equation*}
 \Im w = g\bigl(\snorm{z}^2\bigr) .
 \end{equation*}
-$M$ is a smooth hypersurface.
+$M$ is a smooth real hypersurface.
 Consider $p = (1,0,\ldots,0) \in M$.  For every $0 < s < 1$, let
 $q_s = (s,0,\ldots,0) \in M$ and $X_s = \bigl\{ (z,w) \in M :
 w = s \bigr\}$.  Each $X_s$ is a local complex subvariety of dimension $n-1$
@@ -14056,7 +14058,7 @@ $p$ (as in the theorem) exists.
 
 \begin{exbox}
 \begin{exercise}
-Find a smooth compact hypersurface $M \subset \C^n$ that contains a germ
+Find a compact smooth real hypersurface $M \subset \C^n$ that contains a germ
 of a positive dimensional complex subvariety.
 \end{exercise}
 \end{exbox}

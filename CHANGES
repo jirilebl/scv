@@ -1,9 +1,13 @@
 Since 3.2
 
 * An extra example of the density of regular points after 1.6.2
+* In 2.2, add sentence about possibly leaving out "real" before
+  hypersurface, but try to use "real" everywhere if needed.
 * State Exercise 2.3.13 in a simpler way asking for the function to just 
   be holomorphic in $W$.  It is asking for something slightly stronger, but      
   that is the way to really solve it anyway, and it should be easier this way
+* In exercise 2.3.17, there is no need to assume f is not identically zero
+  and $U$ is a domain.
 * Add hint to Exercise 2.4.7, it was probably a tiny bit too hard if we do
   not have all the harmonic function machinery.
 * Improve wording of Exercise 6.8.3 to be more precise.
