@@ -5576,7 +5576,7 @@ Therefore, $r \circ f$ is a function of $z$ and $\bar{z}$.
 \biggr)
 \\
 & =
-\sum_{\ell,m=1}^n 
+\smashoperator{\sum_{\ell,m=1}^n}
 \biggl(
 \frac{\partial^2 r}{\partial \zeta_m \partial \zeta_\ell}
 \bigl(f(z),\bar{f}(\bar{z})\bigr)
@@ -5594,7 +5594,7 @@ Therefore, $r \circ f$ is a function of $z$ and $\bar{z}$.
 \frac{\partial^2 f_\ell}{\partial z_j \partial z_k} (z)
 \\
 &=
-\sum_{\ell,m=1}^n 
+\smashoperator{\sum_{\ell,m=1}^n}
 \frac{\partial^2 r}{\partial \zeta_m \partial \zeta_\ell}
 \frac{\partial f_m}{\partial z_j}
 \frac{\partial f_\ell}{\partial z_k}
@@ -9199,8 +9199,9 @@ sense of distributions.
 \pagebreak[2]
 \index{Baouendi--Tr{\`e}ves approximation theorem}
 Suppose $M \subset \C^n$ is a smooth real hypersurface,
-$z=(z_1,\ldots,z_n)$ are the holomorphic coordinates of $\C^n$,
-and $p \in M$ is a point.
+$p \in M$ is a point,
+and
+$z=(z_1,\dots,z_n)$ are the holomorphic coordinates of $\C^n$.
 Then there exists a compact
 neighborhood $K \subset M$ of $p$, such that for every smooth CR function $f \colon M \to \C$,
 there exists a sequence $\{ p_j \}$ of polynomials in $z$ such that
@@ -9539,7 +9540,8 @@ where $g$ is identically zero:
 =
 &
 {\left(\frac{\ell}{\pi}\right)}^{n/2}
-\int_{x\in\R^n}
+\int_{x \in \R^n}
+\!\!\!
 e^{-\ell [w - x-i\varphi(x,y')]^2 } g(x) f(x,y')
 \,
 dx_1  \wedge
@@ -9552,6 +9554,7 @@ dx_{n-1}
 -
 {\left(\frac{\ell}{\pi}\right)}^{n/2}
 \int_{x \in \R^n}
+\!\!\!
 e^{  -\ell [w - x-i\varphi(x,0)]^2 } g(x) f(x,0)
 \,
 dx_1  \wedge
@@ -11063,6 +11066,7 @@ d\bar{\zeta}_n \wedge d\zeta_n
 &=
 \frac{(n-1)!}{{(2\pi i)}^n}\frac{1}{r^{2n}}
 \int_{B_r(z)}
+\!
 d\left(
 \sum_{j=1}^n(\bar{\zeta}_j-\bar{z}_j)
 d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
