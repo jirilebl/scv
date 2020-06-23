@@ -14257,11 +14257,13 @@ if $\gamma|_{(a,b]}$ is one-to-one
 with the possible exception of $\gamma(a) = \gamma(b)$.
 
 As in the introduction, we have the following version of Cauchy integral
-formula.  An open set has piecewise-$C^1$ boundary if $\partial U$
-is composed of piecewise-$C^1$ paths, and at point $p \in \partial U$,
-every disc $\Delta_\rho(p)$ contains points from $U$ and points from the
-complement of $\overline{U}$.  If 
-at each point where the parametrization of $\partial U$ is differentiable
+formula.  An open set has piecewise-$C^1$ boundary if
+for each $p \in \partial U$ there is a disc $\Delta_\rho(p)$
+such that for all small enough $\rho > 0$, $\partial U \cap \Delta_\rho(p)$
+is an injective piecewise-$C^1$ path
+and $\Delta_\rho(p) \setminus \partial U$ has two connected components,
+exactly one of which is a subset of $U$.
+If at each point where the parametrization of $\partial U$ is differentiable
 the domain is on the left ($\gamma'(t)$ rotated by $\frac{\pi}{2}$ points into the
 domain), then the boundary is \emph{\myindex{positively oriented}}.
 
