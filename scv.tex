@@ -10206,7 +10206,8 @@ only piecewise smooth, and again that is all we need for Stokes.
 \begin{thm}[Cauchy--Pompeiu] \label{thm:generalizedcauchy}
 Let $U \subset \C$ be a bounded open set with piecewise $C^1$-smooth boundary
 $\partial U$ oriented positively, and let
-$f \colon \overline{U} \to \C$ be a continuous function
+$f \colon \overline{U} \to \C$ be a continuous function,
+$C^1$ on $U$,
 with bounded continuous partial derivatives in $U$.
 Then for $z \in U$:
 \begin{equation*}
@@ -14258,9 +14259,9 @@ with the possible exception of $\gamma(a) = \gamma(b)$.
 
 As in the introduction, we have the following version of Cauchy integral
 formula.  An open set has piecewise-$C^1$ boundary if
-for each $p \in \partial U$ there is a disc $\Delta_\rho(p)$
-such that for all small enough $\rho > 0$, $\partial U \cap \Delta_\rho(p)$
-is an injective piecewise-$C^1$ path
+for each $p \in \partial U$ there is a disc $\Delta_\rho(p)$ such that
+$\partial U \cap \Delta_\rho(p) = \gamma\bigl((a,b)\bigr)$
+where $\gamma \colon [a,b] \to \C$ is an injective piecewise-$C^1$ path,
 and $\Delta_\rho(p) \setminus \partial U$ has two connected components,
 exactly one of which is a subset of $U$.
 If at each point where the parametrization of $\partial U$ is differentiable
@@ -14294,7 +14295,8 @@ for an overview of differential forms.
 \begin{thm}[Green's theorem]\index{Green's theorem} \label{thm:greens}
 Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
 $\partial U$ oriented positively, and let
-$f \colon \overline{U} \to \C$ be a continuous function
+$f \colon \overline{U} \to \C$ be a continuous function,
+$C^1$ in $U$,
 with bounded continuous partial derivatives in $U$.
 Then
 \begin{multline*}
