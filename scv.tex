@@ -436,7 +436,7 @@ use at least one of the licenses.
 I would like to thank Debraj Chakrabarti, Anirban Dawn, Alekzander Malcom,
 John Treuer, Jianou Zhang, Liz Vivas, Trevor Fancher,
 Nicholas Lawson McLean, Alan Sola, Achinta Nandi,
-Sivaguru Ravisankar, Richard L\"ark\"ang,
+Sivaguru Ravisankar, Richard L\"ark\"ang, Elizabeth Wulcan,
 and students in my classes for pointing out typos/errors
 and helpful suggestions. 
 
@@ -2419,11 +2419,12 @@ is the field of fractions of $\sO(U)$.
 This problem is the so-called
 \emph{\myindex{Poincar\'e problem}}, and its solution is no longer positive
 once we generalize $U$ to complex manifolds.
-
-The points where
-$g=0$ are called the \emph{\myindex{poles}} of $F$.
-Unlike in one variable, we do not require poles to be isolated.
-In fact, poles are never isolated in more than one variable.
+The points of $U$ through which $F$ does not extend holomorphically are called the
+\emph{\myindex{poles}} of $F$.
+Namely, poles are the points where
+$g=0$ for every possible representation $\nicefrac{f}{g}$.
+Unlike in one variable, in several variables poles are never isolated
+points.
 There is also a new type of singular
 point for meromorphic functions in more than one
 variable:
@@ -2437,7 +2438,8 @@ a \emph{\myindex{point of indeterminacy}}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:noisolatedzeros}
-Prove that zeros (and so poles) are never isolated in $\C^n$ for $n \geq 2$.
+Prove that zeros (and so poles as we will see later, though this is a bit harder to see)
+are never isolated in $\C^n$ for $n \geq 2$.
 Hint: Consider $z_1 \mapsto f(z_1,z_2,\ldots,z_n)$ as you move
 $z_2,\ldots,z_n$ around, and use perhaps
 \hyperref[thm:onevarhurwitz]{Hurwitz}.
@@ -2471,8 +2473,7 @@ For functions that are neither holomorphic or antiholomorphic, we
 pretend they depend on both $z$ and $\bar{z}$.
 Since we want to write functions in terms of $z$ and $\bar{z}$,
 let us figure out how the chain rule works for Wirtinger derivatives,
-rather than writing derivatives in terms of $x$ and $y$, which
-gets tedious rather quickly.
+rather than writing derivatives in terms of $x$ and $y$.
 
 \begin{prop}[Complex chain rule]\index{complex chain rule}
 Suppose 
@@ -6123,7 +6124,7 @@ $p$ is a so-called \emph{\myindex{peak point}}: There
 exists a neighborhood $W$ of $p$ and a holomorphic $f \colon
 W \to \C$ 
 such that $f(p)=1$ and $\sabs{f(z)} < 1$ for all
-$z \in \overline{W \cap U} \setminus \{ p \}$.
+$z \in W \cap \overline{U} \setminus \{ p \}$.
 \end{exercise}
 
 \begin{exercise}
@@ -6654,10 +6655,10 @@ Consider the line integral from $p$ to a nearby $q \in U$:
 \begin{equation*}
 F(q) =
 \int_{p}^q \sum_{k=1}^n
-\frac{\partial f}{\partial z_k}(z) \, dz_k .
+\frac{\partial f}{\partial z_k}(\zeta) \, d\zeta_k .
 \end{equation*}
 Prove that it is path independent, compute derivatives of $F$, and
-find out what is $f-F$.
+find out what is $F+\bar{F}-f$.
 \end{exercise}
 
 \begin{exercise}
@@ -7162,8 +7163,8 @@ polynomials.
 \end{exercise}
 \end{exbox}
 
-\begin{thm}[Kotinuit\"atssatz---Continuity
-principle\index{Kotinuit\"atssatz}\index{continuity principle}]
+\begin{thm}[Kontinuit\"atssatz---Continuity
+principle\index{Kontinuit\"atssatz}\index{continuity principle}]
 \label{thm:contprinciple}
 Suppose an open set $U \subset \C^n$ is convex with respect to plurisubharmonic
 functions,
@@ -7222,7 +7223,7 @@ respect to the plurisubharmonic functions.
 
 \begin{exercise}
 Prove the corresponding
-Kotinuit\"atssatz, and its converse, for geometric convexity:
+Kontinuit\"atssatz, and its converse, for geometric convexity:
 Prove that a domain $U \subset \R^n$ is geometrically convex if and only if
 whenever $[x_\alpha,y_\alpha] \subset U$
 is a collection of straight line segments such that
@@ -7447,7 +7448,7 @@ Compare with \exerciseref{exercise:affinedisctouchingsmooth}.
 
 \begin{exercise}
 Let $U \subset \C^n$ be a domain, and $f \colon \overline{U} \to \R$ be a
-continuous function, plurisubharmonic and negative on $U$, and $f=0 \in \partial
+continuous function, plurisubharmonic and negative on $U$, and $f=0$ on $\partial
 U$.  Prove that $U$ is Hartogs pseudoconvex.
 \end{exercise}
 \end{exbox}
