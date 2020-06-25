@@ -10204,10 +10204,9 @@ theorem, let us state it more generally.  In applications, the boundary is often
 only piecewise smooth, and again that is all we need for Stokes.
 
 \begin{thm}[Cauchy--Pompeiu] \label{thm:generalizedcauchy}
-Let $U \subset \C$ be a bounded open set with piecewise $C^1$-smooth boundary
-$\partial U$ oriented positively, and let
-$f \colon \overline{U} \to \C$ be a continuous function,
-$C^1$ on $U$,
+Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
+$\partial U$ oriented positively (see \appendixref{ap:onevarresults}),
+and let $f \colon \overline{U} \to \C$ be continuous
 with bounded continuous partial derivatives in $U$.
 Then for $z \in U$:
 \begin{equation*}
@@ -10332,8 +10331,8 @@ The theorem follows.
 \begin{exercise}
 \begin{exparts}
 \item
-Let $U \subset \C$ be a bounded open set with piecewise $C^1$-smooth boundary and
-suppose $f \colon \overline{U} \to \C$ is a $C^1$-smooth function such
+Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary and
+suppose $f \colon \overline{U} \to \C$ is a $C^1$ function such
 that 
 $\int_{U} \frac{\frac{\partial f}{\partial \bar{z}}(\zeta)}{\zeta-z} \,
 dA(\zeta) =
@@ -14257,16 +14256,18 @@ and a path is \emph{simple}\index{simple path}
 if $\gamma|_{(a,b]}$ is one-to-one
 with the possible exception of $\gamma(a) = \gamma(b)$.
 
-As in the introduction, we have the following version of Cauchy integral
-formula.  An open set has \emph{\myindex{piecewise-$C^1$ boundary}} if
-for each $p \in \partial U$ there is a disc $\Delta_\rho(p)$ such that
-$\partial U \cap \Delta_\rho(p) = \gamma\bigl((a,b)\bigr)$
+An open $U \subset \C$ has \emph{\myindex{piecewise-$C^1$ boundary}} if
+for each $p \in \partial U$ there is an open neighborhood $W$ of $p$
+such that
+$\partial U \cap W = \gamma\bigl((a,b)\bigr)$
 where $\gamma \colon [a,b] \to \C$ is an injective piecewise-$C^1$ path,
-and $\Delta_\rho(p) \setminus \partial U$ has two connected components,
-exactly one of which is a subset of $U$.
+and such that each $p \in \partial U$ is in the closure of $\C \setminus
+\overline{U}$.  Intuitively the boundary is a piecewise-$C^1$ curve that
+locally cuts the plane into two open pieces.
 If at each point where the parametrization of $\partial U$ is differentiable
 the domain is on the left ($\gamma'(t)$ rotated by $\frac{\pi}{2}$ points into the
 domain), then the boundary is \emph{\myindex{positively oriented}}.
+As in the introduction, we have the following version of Cauchy integral formula.
 
 \begin{thm}[Cauchy integral formula]
 Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
@@ -14295,8 +14296,7 @@ for an overview of differential forms.
 \begin{thm}[Green's theorem]\index{Green's theorem} \label{thm:greens}
 Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
 $\partial U$ oriented positively, and let
-$f \colon \overline{U} \to \C$ be a continuous function,
-$C^1$ in $U$,
+$f \colon \overline{U} \to \C$ be continuous
 with bounded continuous partial derivatives in $U$.
 Then
 \begin{multline*}
