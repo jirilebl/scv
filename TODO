@@ -1,15 +1,13 @@
-* A good exercise early on could be hartogs for a single missing point and a
-  bounded function.  Or perhaps a more general set that hits direction only in
-  isolated points.  That's an immediate application of one-var Riemann
-  extension and our definition of holomorphic.
-
 * Perhaps another short appendix on the real analysis stuff that is needed.
   Differentiation under the integral, taking limits under the integral, taking
-  limits past sums, perhaps a quick definition for lebesgue integral and the
+  limits past sums, perhaps a quick definition for Lebesgue integral and the
   convergence theorems.  No more than a couple of pages should be needed.
 
-* Perhaps shorten "line length" by making margins larger and using a font
-  like newpx (Palatino) for better readability.  Right now it is at around
-  100cpl, which is too long, want to shoot for 80 or so.  Palatino will get
-  it down a bit, but not all the way.  But it might be more acceptable, plus
-  it might look better than Times.
+From Richard Lärkäng / Elizabeth Wulcan:
+
+Maybe I could also mention something about what we used from other sources, which are topics you might consider adding something about (although I suppose you try to keep the text rather short and have already made choices of your favourite topics):
+* When discussing holomorphic convexity, we looked at a sketch of a proof that holo convexity is equivalent to being able to interpolate on any discrete sequence of distinct points, based on the proof in for example Demailly, see the end of https://canvas.gu.se/courses/35064/files/2891526/download?wrap=1.
+* The last week we also discussed solvability of the dbar-equation on polydiscs, based on the proof in for example Griffiths-Harris, see https://canvas.gu.se/courses/35064/files/2944759/download?wrap=1
+* We ended the course by discussing how solvability of dbar implies the possibility of extending holomorphic functions from affine complex subspaces, which in turn implies being a domain of holomorphy, mainly based on the proof in Hörmander, see https://canvas.gu.se/courses/35064/files/2956527/download?wrap=1).
+* Elizabeth also discussed something about Cousin I problems and its relation solvability of dbar for (0,1)-forms, based on the lecture notes of Korevaar and Wiegerinck, see https://canvas.gu.se/courses/35064/files/2977941/download?wrap=1.
+* The treatment of (sub)harmonic functions in C was a bit too brief for our students, since most had hardly seen anything of that theory before, so we included many of the proofs that you left as exercises. 
