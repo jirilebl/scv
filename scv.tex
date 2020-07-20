@@ -334,11 +334,16 @@
     \end{enumerate*}\endgroup\par
 }
 
+%\newenvironment{myfig}{%
+%    \begin{center}
+%}{%
+%    \end{center}
+%}
 \newenvironment{myfig}{%
-    \begin{center}
-}{%
-    \end{center}
-}
+\begin{figure}[h!t]
+\noindent\rule{\textwidth}{0.5pt}\vspace{12pt}\par\centering}%
+{\par\noindent\rule{\textwidth}{0.5pt}
+\end{figure}}
 
 \theoremstyle{exercise}
 \newtheorem{exercise}{Exercise}[section]
@@ -1257,11 +1262,12 @@ the \emph{\myindex{unit polydisc}} in several variables:
 
 In more than one complex dimension, it is difficult to draw exact pictures
 for lack of real dimensions on our paper.
-We visualize the unit polydisc in two variables
-by drawing the following
-picture by plotting just against the modulus of the variables:
+We visualize the unit polydisc in two variables (bidisc)
+by drawing the in \figureref{fig:polydisc}
+picture by plotting just against the modulus of the variables.
 \begin{myfig}
 \subimport*{figures/}{polydisc.pdf_t}
+\caption{The bidisc.\label{fig:polydisc}}
 \end{myfig}
 
 Recall the
@@ -1303,9 +1309,10 @@ variables since the inequality defining the ball only
 depends on the moduli of the variables.
 Not every domain can be drawn like this, but if it can,
 it is called a \emph{Reinhardt domain}, more on this later.
-Here is a picture of $\bB_2$:
+A picture of $\bB_2$ is in \figureref{fig:ball}.
 \begin{myfig}
 \subimport*{figures/}{ball.pdf_t}
+\caption{The ball $\bB_2$ as a Reinhardt domain.\label{fig:ball}}
 \end{myfig}
 
 \begin{defn}
@@ -1592,10 +1599,11 @@ the boundary of the polydisc has real dimension $2n-1$.
 The set $\Gamma = \partial \Delta_1 \times \cdots \times \partial \Delta_n$
 is called
 the \emph{\myindex{distinguished boundary}}.
-Let us draw the 
-unit bidisc:
+See \figureref{fig:polydisc-dist} for the distinguished boundary of the
+bidisc.
 \begin{myfig}
 \subimport*{figures/}{polydisc-dist.pdf_t}
+\caption{The distinguished boundary of of $\D^2$.\label{fig:polydisc-dist}}
 \end{myfig}
 
 The set $\Gamma$ is a 2-dimensional torus, like the surface of a
@@ -1808,26 +1816,26 @@ $z \in \D^n$ (unit polydisc),
 \frac{1}{1-z} & =
 \frac{1}{(1-z_1)(1-z_2)\cdots(1-z_n)} =
 \left(
-\sum_{j=0}^\infty {z_1}^j
+\sum_{k=0}^\infty {z_1}^k
 \right)
 \left(
-\sum_{j=0}^\infty {z_2}^j
+\sum_{k=0}^\infty {z_2}^k
 \right)
 \cdots
 \left(
-\sum_{j=0}^\infty {z_n}^j
+\sum_{k=0}^\infty {z_n}^k
 \right)
 \\
 & = 
-\sum_{j_1=0}^\infty
-\sum_{j_2=0}^\infty
+\sum_{k_1=0}^\infty
+\sum_{k_2=0}^\infty
 \cdots
-\sum_{j_n=0}^\infty
+\sum_{k_n=0}^\infty
 \left(
-{z_1}^{j_1}
-{z_n}^{j_2}
+{z_1}^{k_1}
+{z_n}^{k_2}
 \cdots
-{z_n}^{j_n}
+{z_n}^{k_n}
 \right)
 =
 \sum_{\alpha} z^\alpha .
@@ -2007,7 +2015,7 @@ for $z \in \overline{\Delta''}$.
 \end{exercise}
 \end{exbox}
 
-We organize some immediate consequences of the theorem
+We organize some consequences of the theorem
 and the calculation in the proof.
 
 \begin{prop}
@@ -2026,7 +2034,7 @@ Then, for $z \in \Delta$,
 \,
 d \zeta .
 \end{equation*}
-In particular, if $f$ is given by \eqref{holfunc:ps}, 
+In particular, if $f$ is given by \eqref{holfunc:ps}, then
 \begin{equation*}
 c_\alpha = \frac{1}{\alpha!} \frac{\partial^{\sabs{\alpha}}f}{\partial
 z^\alpha} (a),
@@ -2038,22 +2046,22 @@ and we have the \emph{\myindex{Cauchy estimates}}:
 \end{equation*}
 \end{prop}
 
-In particular, the coefficients of the power series depend only on
+Namely, the coefficients of the power series depend only on
 the derivatives of $f$ at $a$
 (and so on the values of $f$ in an arbitrarily small
 neighborhood of $a$) and not the specific polydisc used in the theorem.
 
 \begin{proof}
-Using the Leibniz rule (taking derivatives under the integral),
-as long as $z \in \Delta$ (not on the boundary),
+By the Leibniz rule (taking derivatives under the integral),
+if $z \in \Delta$ (not on the boundary),
 we can differentiate under the integral.  We are talking regular real
 partial differentiation, and we use it to apply the Wirtinger operator.
 The point is that
 \begin{equation*}
-\frac{\partial}{\partial z_j} \left[
-\frac{1}{{(\zeta_j-z_j)}^k} \right]
+\frac{\partial}{\partial z_\ell} \left[
+\frac{1}{{(\zeta_\ell-z_\ell)}^k} \right]
 =
-\frac{k}{{(\zeta_j-z_j)}^{k+1}} .
+\frac{k}{{(\zeta_\ell-z_\ell)}^{k+1}} .
 \end{equation*}
 Let us do a single derivative to
 get the idea:
@@ -2209,14 +2217,11 @@ converges absolutely exactly on the set
 \begin{equation*}
 \bigl\{ z \in \C^2 : \sabs{z_1 z_2} < 1 \bigr\} .
 \end{equation*}
-
-\pagebreak[2]
-The picture is definitely more complicated than a polydisc:
-
-\medskip
-
+The picture is definitely more complicated than a polydisc.
+See \figureref{fig:convergence-example-2}.
 \begin{myfig}
 \subimport*{figures/}{convergence-example-2.pdf_t}
+\caption{Domain of convergence of $\sum_k z_1^kz_2^k$.\label{fig:convergence-example-2}}
 \end{myfig}
 \end{example}
 
@@ -2241,7 +2246,7 @@ Show that the domain of convergence is a polydisc.
 
 Suppose $U \subset \C^n$ is a domain such that if $z \in U$
 and
-$\sabs{z_j} = \sabs{w_j}$ for all $j$, then $w \in U$.
+$\sabs{z_k} = \sabs{w_k}$ for all $k$, then $w \in U$.
 Such a $U$ is called a
 \emph{\myindex{Reinhardt domain}}.  The domains we were drawing so far are
 Reinhardt domains.
@@ -2249,8 +2254,8 @@ They are exactly the domains that you can
 draw by plotting what happens for the moduli of the variables.
 A domain is called a
 \emph{\myindex{complete Reinhardt domain}}\index{Reinhardt domain!complete} if whenever
-$z \in U$, then for $r = (r_1,\ldots,r_n)$ where $r_j = \sabs{z_j}$
-for all $j$, we have that the whole polydisc $\overline{\Delta_r(0)} \subset U$.
+$z \in U$, then for $r = (r_1,\ldots,r_n)$ where $r_k = \sabs{z_k}$
+for all $k$, we have that the whole polydisc $\overline{\Delta_r(0)} \subset U$.
 So a complete Reinhardt domain is a union (possibly infinite) of polydiscs
 centered at the origin.
 
@@ -2700,8 +2705,8 @@ The $\bar{z}$ derivative works similarly.
 \end{proof}
 
 Because of the proposition,
-when we deal with an arbitrary, possibly
-nonholomorphic, function $f$, we often write $f(z,\bar{z})$ and treat $f$ as
+when we deal with a possibly
+nonholomorphic function $f$, we often write $f(z,\bar{z})$ and treat $f$ as
 a function of $z$ and $\bar{z}$.
 
 \begin{remark}
@@ -2828,7 +2833,7 @@ with real entries.
 \end{exercise}
 \end{exbox}
 
-Using the holomorphic chain rule above, as in the theory of real functions,
+By the holomorphic chain rule above, as in the theory of real functions,
 the derivative of the composition is the composition of derivatives
 (multiplied as matrices).
 
@@ -2907,18 +2912,19 @@ A & 0 \\
 \end{bmatrix} .
 \end{equation*}
 Thus
-\begin{equation*}
+\begin{multline*}
 \det (B) =
 \det(M^{-1}M B)
 =
 \det(M^{-1} B M)
+\\
 =
 \det(A) \det(\widebar{A})
 =
 \det(A) \, \overline{\det(A)}
 =
 \abs{\det(A)}^2 .  \qedhere
-\end{equation*}
+\end{multline*}
 \end{proof}
 
 The regular implicit function theorem and the chain rule
@@ -3248,13 +3254,7 @@ $\frac{\partial f}{\partial z_1} \equiv 0$.  By symmetry
 $\frac{\partial f}{\partial z_2} \equiv 0$.  Therefore, $f$ is constant,
 which is a contradiction as $f$ was proper.
 
-\pagebreak[2]
-The proof is illustrated in the following picture:
-
-\begin{myfig}
-\subimport*{figures/}{rothstein.pdf_t}
-\end{myfig}
-
+The proof is illustrated in \figureref{fig:rothstein}.
 In the picture, on the left-hand side is the bidisc, and we
 restrict $f$ to the horizontal gray lines (where the second component is
 fixed to be $w_k$) and take a limit to produce an analytic disc
@@ -3262,6 +3262,10 @@ in the boundary of $\bB_2$.  We then show that $\frac{\partial f}{\partial
 z_1} = 0$ on the vertical gray line (where the first component is fixed to
 be $\zeta$).  The right-hand side shows the disc where $z_1 = \zeta$ is
 fixed, which corresponds to the vertical gray line on the left.
+\begin{myfig}
+\subimport*{figures/}{rothstein.pdf_t}
+\caption{The proof of Rothstein's theorem.\label{fig:rothstein}}
+\end{myfig}
 \end{proof}
 
 The proof says that the reason why there is not even a proper mapping is the fact
@@ -3299,9 +3303,9 @@ The following is a fun exercise in one dimension about proper maps of discs:
 Let $f \colon \D \to \D$ be a proper holomorphic  map.  Then
 \begin{equation*}
 f(z) = 
-e^{i\theta} \prod_{j=1}^k \frac{z-a_j}{1-\bar{a_j} z} ,
+e^{i\theta} \prod_{k=1}^m \frac{z-a_k}{1-\bar{a}_k z} ,
 \end{equation*}
-for some real $\theta$ and some $a_j \in \D$ (that is, $f$ is a finite
+for some real $\theta$ and some $a_k \in \D$ (that is, $f$ is a finite
 Blaschke product).  Hint: Consider $f^{-1}(0)$.
 \end{exercise}
 \end{exbox}
@@ -3627,10 +3631,13 @@ $g$ is nonzero on the set given by
 $\sabs{z_n} = r$ and $\snorm{z'} <\epsilon$ for some $\epsilon >0$.
 In particular, for any fixed small $s \in \C^{n-1}$, with $\snorm{s} < \epsilon$,
 setting $z' = s$,
-the zeros of $\xi \mapsto g(s,\xi)$ are isolated.
+the zeros of $\xi \mapsto g(s,\xi)$ are isolated.  See
+\figureref{fig:riemann-ext-zeros}.
 
 \begin{myfig}
 \subimport*{figures/}{riemann-ext-zeros.pdf_t}
+\caption{Good neighborhood of the origin with respect to
+the zero set of $g$.\label{fig:riemann-ext-zeros}}
 \end{myfig}
 
 For $\snorm{z'} <
@@ -3996,11 +4003,13 @@ a \emph{\myindex{domain of holomorphy}} if there do not exist
 nonempty open sets
 $V$ and $W$, with $V \subset U \cap W$, $W \not\subset U$, and $W$
 connected, such that for every $f \in \sO(U)$ there exists an $F \in
-\sO(W)$ with $f(z) = F(z)$ for all $z \in V$.
+\sO(W)$ with $f(z) = F(z)$ for all $z \in V$.  See
+\figureref{fig:domain-of-hol-def}.
 \end{defn}
 
 \begin{myfig}
 \subimport*{figures/}{domain-of-hol-def.pdf_t}
+\caption{Definition of domain of holomorphy.\label{fig:domain-of-hol-def}}
 \end{myfig}
 
 The idea is that if a domain $U$
@@ -4125,17 +4134,16 @@ H = \bigl\{ (z,w) \in \D^{m+k} : \sabs{z_j} > a ~\text{for $j=1,\ldots,m$}
 If $f \in \sO(H)$, then $f$ extends holomorphically to $\D^{m+k}$.
 \end{thm}
 
-\begin{samepage}
-In $\C^2$ if $m=1$ and $k=1$, the figure looks like (the $c$ will come up in
-the proof):
-
-\newcommand{\hartogstext}{\parbox[t]{2.3in}{In diagrams, the Hartogs figure is
-often drawn as:}}
+In $\C^2$ if $m=1$ and $k=1$, see 
+\figureref{fig:hartogs-figure} (the $c$ will come up in
+the proof).
 
 \begin{myfig}
+\newcommand{\hartogstext}{\parbox[t]{2.3in}{In diagrams, the Hartogs figure is
+often drawn as:}}
 \subimport*{figures/}{hartogs-figure.pdf_t}
+\caption{Hartogs figure.\label{fig:hartogs-figure}}
 \end{myfig}
-\end{samepage}
 
 \begin{proof}
 Pick a $c \in (a,1)$.  Let
@@ -4406,6 +4414,7 @@ and at every $p \in \partial U$ there is a defining
 function $r$ such that
 $r < 0$ for points in $U$ and $r > 0$
 for points not in $U$.
+See \figureref{fig:deffun}.
 
 If we say simply
 \index{domain with smooth boundary}%
@@ -4418,6 +4427,7 @@ that is, the $r$ above is infinitely differentiable.
 
 \begin{myfig}
 \subimport*{figures/}{deffun.pdf_t}
+\caption{Local defining function for a domain.\label{fig:deffun}}
 \end{myfig}
 
 What we really defined is an \emph{\myindex{embedded hypersurface}}.  In
@@ -4732,11 +4742,12 @@ then there is a smooth function $g > 0$ such that $\tilde{r} = g r$.
 \end{exbox}
 
 \begin{example}
-Let us prove that the unit disc in $\R^2$ is
-convex (actually strongly convex).  Let $(x,y)$ be the coordinates and
+The unit disc in $\R^2$ is
+convex (actually strongly convex).
+Proof:
+Let $(x,y)$ be the coordinates and
 let $r(x,y) = x^2+y^2-1$ be the 
 defining function.
-
 The tangent space of the circle is one-dimensional, so we simply need to
 find a single nonzero tangent vector at each point.
 Consider the gradient
@@ -4749,9 +4760,10 @@ is tangent to the circle, that is,
 $Xr = X(x^2+y^2-1) = (2x,2y) \cdot (y,-x) = 0$ on the circle
 (by chance $Xr=0$ everywhere).
 The vector field $X$ is nonzero on the circle, so at each point it gives a
-basis of the tangent space.
+basis of the tangent space.  See \figureref{fig:circle-tangent}
 \begin{myfig}
 \subimport*{figures/}{circle-tangent.pdf_t}
+\caption{Tangent vector to a circle.\label{fig:circle-tangent}}
 \end{myfig}
 
 The Hessian matrix of $r$ is
@@ -4790,7 +4802,7 @@ In general, to construct a tangent vector field for
 a curve in $\R^2$,
 consider
 $r_y \frac{\partial}{\partial x} - r_x \frac{\partial}{\partial y}$.  In
-higher dimensions we can just run through enough pairs of variables to get
+higher dimensions, running through enough pairs of variables gets
 a basis of $TM$.
 
 \begin{exbox}
@@ -4817,7 +4829,7 @@ In the following, \glsadd{not:Ol}%
 we use the \emph{\myindex{big-oh notation}},
 although we use a perhaps less standard shorthand\footnote{%
 The standard notation for $O(\ell)$ is $O(\snorm{x}^{\ell})$ and
-is usually defined to mean that
+it means that
 $\abs{\frac{f(x)}{\snorm{x}^\ell}}$ is bounded as $x \to p$.}.
 A smooth function is $O(\ell)$ at a point $p$ (usually the origin),
 if all its derivatives of order $0, 1, \ldots,  \ell-1$ vanish at $p$.
@@ -4845,10 +4857,12 @@ then the rotation can be chosen
 such that 
 $y > \varphi(x)$
 for points in $U$.
+See \figureref{fig:deffun-graph}.
 \end{lemma}
 
 \begin{myfig}
 \subimport*{figures/}{deffun-graph.pdf_t}
+\caption{Defining a domain as a graph.\label{fig:deffun-graph}}
 \end{myfig}
 
 \begin{proof}
@@ -5594,10 +5608,11 @@ literature some even say it \emph{is} the sphere\footnote{That is not, in
 fact, completely incorrect.
 If we think of the sphere in the complex projective space,
 we are simply looking at the sphere in a different coordinate patch.}.
-Pretending $z$ is just one real direction, it looks like this:
+Pretending $z$ is just one real direction, see \figureref{fig:lewy-hyper}.
 
 \begin{myfig}
 \subimport*{figures/}{lewy-hyper.eepic}
+\caption{Lewy hypersurface.\label{fig:lewy-hyper}}
 \end{myfig}
 
 As an aside,
@@ -5770,6 +5785,7 @@ $p \in \partial U$, $V \subset \C^n$ a neighborhood of $p$,
 $q \in \partial U'$, $V' \subset \C^n$ a neighborhood of $q$,
 and $f \colon V \to V'$ a biholomorphic map with $f(p) = q$, such that
 $f(U \cap V) = U' \cap V'$.
+See \figureref{fig:bndry-bihol}.
 
 Then the inertia of the Levi form of $U$ at $p$ is the same as the inertia of
 the Levi form of $U'$ at $q$.
@@ -5780,6 +5796,7 @@ $U$ is strongly pseudoconvex at $p$ if and only if $U'$ is strongly pseudoconvex
 
 \begin{myfig}
 \subimport*{figures/}{bndry-bihol.pdf_t}
+\caption{Local boundary biholomorphism.\label{fig:bndry-bihol}}
 \end{myfig}
 
 To finish proving the theorem, the only thing left is to observe that if
@@ -5803,10 +5820,6 @@ under biholomorphic transformations.
 It is possible to do better than the following lemma, but it is not possible
 to always get rid of the dependence on $\Re w$ in the higher order terms.
 
-Recall that $O(k)$ at the origin means
-a function that together with its derivatives up to order $k-1$ vanish
-at the origin.
-
 \begin{lemma} \label{lemma:normformquad}
 Let $M$ be a smooth real hypersurface in $\C^n$ and $p \in M$.  Then there
 exists a local biholomorphic change of coordinates taking $p$ to the origin
@@ -5821,6 +5834,10 @@ Here $\alpha$ is the number of positive eigenvalues of the Levi form at $p$,
 $\beta$ is the number of negative eigenvalues, and $\alpha+\beta \leq
 n-1$.
 \end{lemma}
+
+Recall that $O(k)$ at the origin means
+a function that together with its derivatives up to order $k-1$ vanish
+at the origin.
 
 \begin{proof}
 Change coordinates so that $M$ is given by
@@ -6156,13 +6173,14 @@ so an $\epsilon$-neighborhood of that is in $U$.
 Thus, for small enough $\epsilon >0$, $H \subset U$.
 We are really just taking a Hartogs figure in the $z_1,w$ variables, and then
 ``fattening it up'' to the $z'$ variables.
-We picture the Hartogs figure in the $\sabs{z_1}$ and $\sabs{w-is}$
+In \figureref{fig:hartogs-figure-tomato}, we picture the Hartogs figure in the $\sabs{z_1}$ and $\sabs{w-is}$
 variables.  The boundary $\partial U$ and $U$ are only pictured diagrammatically.
 Also, we make a ``picture'' the analytic discs giving the ``tomato can.''
 In the picture, the $U$ is below its boundary $\partial U$, unlike usually.
 
 \begin{myfig}
 \subimport*{figures/}{hartogs-figure-tomato.pdf_t}
+\caption{Tomato can principle.\label{fig:hartogs-figure-tomato}}
 \end{myfig}
 
 The origin is in the hull of $H$, and so
@@ -6307,12 +6325,14 @@ In one real dimension it is also easier to picture.
 The function $f$ is convex if on
 every interval $[\alpha,\beta]$, $f \leq g$ for every affine linear $g$
 bigger than $f$ at the endpoints $\alpha$ and $\beta$.  In particular, we can
-take the $g$ that is equal to $f$ at the endpoints.
+take the $g$ that is equal to $f$ at the endpoints.  See
+\figureref{fig:convexfunc}.
 The picture is analogous for subharmonic functions for $n > 1$,
 but it is harder to draw.
 
 \begin{myfig}
 \subimport*{figures/}{convexfunc.pdf_t}
+\caption{Convex function.\label{fig:convexfunc}}
 \end{myfig}
 
 We will consider harmonic and subharmonic functions in $\C \cong
@@ -6379,14 +6399,14 @@ Pu(e^{i\theta}) = u(e^{i\theta}),
 is harmonic in $\D$ and continuous on $\overline{\D}$.
 \end{thm}
 
-\pagebreak[2]
 In the proof, it is useful to consider how
-the graph of $P_r$ as a function of $\theta$ looks for a fixed $r$.
-The following are the graphs of $P_r$ for $r=0.5$,
-$r=0.7$, and $r=0.85$ on $[-\pi,\pi]$:
+the graph of $P_r$ as a function of $\theta$ looks for a fixed $r$.  See
+\figureref{fig:poisson-kernel}.
 
 \begin{myfig}
 \includegraphics[width=0.5\textwidth]{figures/poisson-kernel.pdf}
+\caption{Graph of $P_r$ for $r=0.5$,
+$r=0.7$, and $r=0.85$ on $[-\pi,\pi]$.\label{fig:poisson-kernel}}
 \end{myfig}
 
 \begin{exbox}
@@ -6860,13 +6880,14 @@ $g_\epsilon$ is the $\epsilon$-ball.  Both are nonnegative.  Choose $C$ so that
 Here $dV$ is the volume measure.
 The function $g$ only depends on $\snorm{z}$.
 To get an idea of
-how these functions work, consider the graphs of
-$e^{-1/(1-x^2)}$,
-$\frac{1}{0.5}e^{-1/\bigl(1-{(x/0.5)}^2\bigr)}$, and
-$\frac{1}{0.25}e^{-1/\bigl(1-{(x/0.25)}^2\bigr)}$.
+how these functions work,
+see \figureref{fig:graph-of-mollifier}.
 
 \begin{myfig}
 \includegraphics[width=0.5\textwidth]{figures/graph-of-mollifier.pdf}
+\caption{Graphs of $e^{-1/(1-x^2)}$,
+$\frac{1}{0.5}e^{-1/\bigl(1-{(x/0.5)}^2\bigr)}$, and
+$\frac{1}{0.25}e^{-1/\bigl(1-{(x/0.25)}^2\bigr)}$.\label{fig:graph-of-mollifier}}
 \end{myfig}
 
 Compare the graphs to the graphs of the Poisson kernel as a function of
@@ -7118,7 +7139,9 @@ on $\partial \Delta$.  The function $z \mapsto -t \log \abs{f(z)}$ is
 superharmonic (minus a subharmonic function) on $\Delta'$,
 lower-semicontinuous on $\overline{\Delta'}$ and positive on $\partial
 \Delta$.  On the set $\Delta \setminus \Delta'$ where $f$ is zero, the two functions are $-\infty$ and
-$\infty$ respectively.  Therefore, for all $t > 0$ and 
+$\infty$ respectively.
+See \figureref{fig:radosthm}.
+Therefore, for all $t > 0$ and 
 $z \in \partial \Delta \cup (\Delta \setminus \Delta')$,
 we have
 \begin{equation} \label{eq:radobound}
@@ -7133,6 +7156,7 @@ shows that
 
 \begin{myfig}
 \subimport*{figures/}{radosthm.pdf_t}
+\caption{Proof of Rad\'o's theorem.\label{fig:radosthm}}
 \end{myfig}
 
 
@@ -7270,13 +7294,14 @@ $\bigcup_\alpha \Delta_\alpha \subset \subset U$ by convexity.
 Let us illustrate the failure of the continuity principle.  If a domain
 is not convex with respect to plurisubharmonic functions, then you could have
 discs (denoted by straight line segments) that approach the boundary as in
-the following picture.  In the diagram, the boundaries of the discs are
+\figureref{fig:contprinc}.  In the diagram, the boundaries of the discs are
 denoted by the dark dots at the end of the segments.
 In fact, if we replace discs with line segments, this is the standard
 convexity, see the exercises below.
 
 \begin{myfig}
 \subimport*{figures/}{contprinc.pdf_t}
+\caption{Failure of the continuity principle.\label{fig:contprinc}}
 \end{myfig}
 
 \begin{exbox}
@@ -7394,9 +7419,11 @@ As $\rho(z) = \inf_c \rho_c(z)$,
 If we prove that for any $a, b \in \C^n$ the function $\xi \mapsto -\log \rho_c(a+b\xi)$ is
 subharmonic, then $\xi \mapsto - \log \rho(a+b\xi)$ is subharmonic,
 and we are done.
-Here is the setup, the disc is drawn as a line:
+See \figureref{fig:distfun-hartogs} for the setup:
 \begin{myfig}
 \subimport*{figures/}{distfun-hartogs.pdf_t}
+\caption{Largest disc in the direction of $c$.
+The disc is drawn as a line.\label{fig:distfun-hartogs}}
 \end{myfig}
 
 Suppose $\Delta \subset \C$ is a disc such that
@@ -7480,8 +7507,8 @@ Show that every domain $U \subset \C$ is Hartogs pseudoconvex.
 \end{exercise}
 
 \begin{exercise} \label{exercise:nestedunions}
-Show that the union $\bigcup_j U_j$ of a nested sequence of Hartogs pseudoconvex
-domains $U_{j-1} \subset U_j \subset \C^n$ is Hartogs pseudoconvex.
+Consider the union $U = \bigcup_k U_k$ of a nested sequence of Hartogs pseudoconvex
+domains, $U_{k-1} \subset U_k \subset \C^n$.  Show that $U$ is Hartogs pseudoconvex.
 \end{exercise}
 
 \begin{exercise}
@@ -7554,11 +7581,12 @@ is Hartogs pseudoconvex.  Intersection of
 Hartogs pseudoconvex domains is Hartogs pseudoconvex, so
 assume $W = B_r(p)$.
 Let $B = B_{r/2}(p)$.  If $q \in B \cap U$, the distance from $q$ to the boundary of $W \cap U$ is the same as
-the distance to $\partial U$.  The setup is illustrated in the following
-figure.
+the distance to $\partial U$.  The setup is illustrated in
+\figureref{fig:hartogs-pseudoconvex-local}.
 
 \begin{myfig}
 \subimport*{figures/}{hartogs-pseudoconvex-local.pdf_t}
+\caption{Local Hartogs pseudoconvexity.\label{fig:hartogs-pseudoconvex-local}}
 \end{myfig}
 
 The part of the boundary $\partial U$ in $W$ is marked by a thick
@@ -7590,15 +7618,15 @@ The function
 \varphi(z) = \max \bigl\{
 - \log \, \operatorname{dist}(z, \partial U) , - \log \epsilon \bigr\} 
 \end{equation*}
-is a continuous plurisubharmonic exhaustion function.  The proof for
-unbounded $U$ requires some function of $\snorm{z}^2$ rather than a constant
-$\epsilon$,
-and is left as an exercise.
+is a continuous plurisubharmonic exhaustion function.
+The proof for
+unbounded $U$ is left as an exercise.
 \end{proof}
 
 \begin{exbox}
 \begin{exercise}
 Finish the proof of the lemma for unbounded domains.
+See~\exerciseref{exercise:nestedunions}.
 \pagebreak[2]
 \end{exercise}
 \end{exbox}
@@ -8035,9 +8063,12 @@ $p + \Delta = \Delta_r(p)$ contains a point of $\partial U$, but
 \begin{equation*}
 K + \Delta = \bigcup_{q \in K} \Delta_r(q) \subset \subset U.
 \end{equation*}
+See \figureref{fig:cart-thul-fig}.
 
 \begin{myfig}
 \subimport*{figures/}{cart-thul-fig.pdf_t}
+\caption{Point in the hull closer to the boundary than closest
+point of $K$.\label{fig:cart-thul-fig}}
 \end{myfig}
 
 If $f \in \sO(U)$, then there is an $M > 0$ such that $\sabs{f} \leq M$ on
@@ -9205,6 +9236,7 @@ Take $p \in \partial U$ such that $f=0$ on a neighborhood of $p$ in
 $\partial U$.  Consider a small neighborhood $\Delta$ of $p$ such
 that $f$ is zero on $\partial U \cap \Delta$.  Define $g \colon \Delta \to
 \C$ by setting $g(z) = f(z)$ if $z \in U$ and $g(z) = 0$ otherwise.
+See \figureref{fig:zero-onbound}.
 It is not hard to see that $g$ is continuous, and it is clearly holomorphic
 where it is not zero.  Rad{\'o}'s theorem
 (\thmref{thm:rado}) says that $g$ is holomorphic, and as it is zero on a
@@ -9214,6 +9246,7 @@ identity.
 
 \begin{myfig}
 \subimport*{figures/}{zero-onbound.pdf_t}
+\caption{Extending a function zero on the boundary.\label{fig:zero-onbound}}
 \end{myfig}
 \end{proof}
 
@@ -9463,7 +9496,7 @@ coordinates of $\C^n$.  Then at each point $p \in M$,
 the exterior derivative
 $df$ is a linear combination of $dz_1,\ldots,dz_n$,
 thinking of $z_1,\ldots,z_n$ as functions on $M$.\linebreak[1]
-In particular,
+Namely,
 \begin{equation*}
 d(f \, dz) = df \wedge dz = 0.
 \end{equation*}
@@ -9484,7 +9517,7 @@ $\frac{\partial}{\partial \xi_1}\big|_0,
 and such that $\frac{\partial}{\partial \Re \xi_n}\big|_0$ is tangent
 and $\frac{\partial}{\partial \Im \xi_n}\big|_0$ is normal.
 At the origin, the CR conditions are
-$\frac{\partial f}{\partial \bar{\xi}_j}(0) = 0$ for all $j$, so
+$\frac{\partial f}{\partial \bar{\xi}_k}(0) = 0$ for all $k$, so
 \begin{equation*}
 df(0) =
 \frac{\partial f}{\partial \xi_1}(0) \, d\xi_1(0) + \cdots +
@@ -9494,10 +9527,10 @@ df(0) =
 \end{equation*}
 Also, at the origin $d\xi_n(0) = d(\Re \xi_n)(0) + i d(\Im \xi_n)(0) = d(\Re \xi_n)(0)$.
 So $df(0)$ is a linear combination of $d\xi_1(0),\ldots,d\xi_n(0)$.
-As $\xi$ is a complex affine function of $z$, then each $d\xi_j$ is a linear
+As $\xi$ is a complex affine function of $z$, then each $d\xi_k$ is a linear
 combination of $dz_1$ through $dz_n$, and the claim follows.
 So if $f$ is a CR function, then
-$d(f\,dz) = df \wedge dz = 0$ since $dz_j \wedge dz_j = 0$.
+$d(f\,dz) = df \wedge dz = 0$ since $dz_k \wedge dz_k = 0$.
 \end{proof}
 
 \begin{proof}[Proof of the theorem of Baouendi--Tr{\`e}ves]
@@ -9527,7 +9560,9 @@ Assume they are small enough so
 that $f$ and $\varphi$ are defined and smooth on some neighborhood of the
 set where $\snorm{x} \leq r$ and $\snorm{y'} \leq d$.
 There exists a smooth $g \colon \R^n \to [0,1]$ such that $g \equiv 1$ on
-$B_{r/2}(0)$ and $g \equiv 0$ outside of $B_{r}(0)$.  Explicit formula
+$B_{r/2}(0)$ and $g \equiv 0$ outside of $B_{r}(0)$.
+See \figureref{fig:cutoff-bt}.
+Explicit formula
 can be given.  Alternatively we obtain such a $g$ by use of
 mollifiers on a function that is identically one on
 $B_{3r/4}(0)$ and zero elsewhere.  Such a $g$ is commonly called a
@@ -9535,6 +9570,7 @@ $B_{3r/4}(0)$ and zero elsewhere.  Such a $g$ is commonly called a
 
 \begin{myfig}
 \subimport*{figures/}{cutoff-bt.pdf_t}
+\caption{Cutoff function.\label{fig:cutoff-bt}}
 \end{myfig}
 
 \begin{exbox}
@@ -9550,7 +9586,7 @@ K' = \bigl\{ (x,y') : \snorm{x} \leq \nicefrac{r}{4} , \snorm{y'} \leq d
 \end{equation*}
 Let $K = z(K')$, that is the image of $K'$ under the mapping $z(x,y')$.
 
-Consider the CR function $f$ to be a function of $(x,y')$
+Consider the CR function $f$ a function of $(x,y')$
 and write $f(x,y')$.
 For $\ell \in \N$,
 let $\alpha_{\ell}$ be a differential $n$-form defined (thinking
@@ -9589,10 +9625,11 @@ $t \in (0,1)$} \bigr\} .
 \end{equation*}
 $D$ is an $(n+1)$-dimensional ``cylinder.''  We take a ball in the
 $x$ directions, then take a single fixed point $y'$ in the $s$ variables and make a
-cylinder.  Here is a rough diagram:
+cylinder.  See \figureref{fig:cylinder-bt}.
 
 \begin{myfig}
 \subimport*{figures/}{cylinder-bt.pdf_t}
+\caption{Cylinder $D$.\label{fig:cylinder-bt}}
 \end{myfig}
 
 Orient $D$ in
@@ -10112,9 +10149,11 @@ $r = 0$, that is $\partial \Delta \subset M$, and
 also
 $\partial \Delta \subset D \times W$.
 As $(D \times W) \cap M \subset K$, we have $\partial \Delta \subset K$.
+See \figureref{fig:lewy-extension-figure}.
 
 \begin{myfig}
 \subimport*{figures/}{lewy-extension-figure.pdf_t}
+\caption{Proof of Lewy extension.\label{fig:lewy-extension-figure}}
 \end{myfig}
 
 As $p_j \to f$ uniformly on $K$, then $p_j \to f$ uniformly on
@@ -10356,10 +10395,12 @@ Stokes' theorem in 2 dimensions, see \thmref{thm:greens}.},
 but the integrand is not smooth at $z$.
 Let $\Delta_r(z)$ be a small disc such that
 $\Delta_r(z) \subset
-\subset U$.  Stokes now applies on $U \setminus \Delta_r(z)$.
+\subset U$.  See \figureref{fig:cauchy-pompeiu}.
+Stokes now applies on $U \setminus \Delta_r(z)$.
 
 \begin{myfig}
 \subimport*{figures/}{cauchy-pompeiu.pdf_t}
+\caption{Proof of Cauchy--Pompeiu.\label{fig:cauchy-pompeiu}}
 \end{myfig}
 
 Via Stokes, we get
@@ -10641,10 +10682,11 @@ support together with the identity theorem.  In particular, $\psi$ is
 holomorphic for large $z$ since $\bar{\partial} \psi = g = 0$ when $z$
 is large.  When at least one of $z_2,\ldots,z_n$ is large,
 then $\psi$ is identically zero
-simply from its definition.  See the following diagram:
+simply from its definition.  See \figureref{fig:dbarcpt-fig}.
 
 \begin{myfig}
 \subimport*{figures/}{dbarcpt-fig.pdf_t}
+\caption{Far enough, $\partial \psi = 0$.\label{fig:dbarcpt-fig}}
 \end{myfig}
 
 As $\bar{\partial} \psi = 0$ on the light gray and white areas in the
@@ -10702,10 +10744,12 @@ Let $U \subset \C^n$ be a domain, $n \geq 2$, and let
 $K \subset \subset U$ be a compact set such that
 $U \setminus K$ is connected.  Every holomorphic $f \colon U \setminus K \to \C$
 extends uniquely to a holomorphic function on $U$.
+See \figureref{fig:hartogs-fig}.
 \end{thm}
 
 \begin{myfig}
 \subimport*{figures/}{hartogs-fig.pdf_t}
+\caption{Hartogs phenomenon.\label{fig:hartogs-fig}}
 \end{myfig}
 
 The idea of the proof is extending in any way whatsoever and then using the solution
@@ -12076,12 +12120,15 @@ There exists a small disc $D \subset \C$ centered at zero such that
 $\{0\} \times \widebar{D} \subset U$ and such that
 $f(0,z_n) \not= 0$ for $z_n \in \widebar{D} \setminus \{ 0 \}$.
 By continuity
-of $f$ we find a small polydisc $V = V' \times D$ such that
+of $f$,
+there is a small polydisc $V = V' \times D$ such that
 $\widebar{V} \subset U$ and $f$ is not zero on
-$V' \times \partial D$.
+$V' \times \partial D$.  We will consider the zeros of
+$z_n \mapsto f(z',z_n)$ for $z'$ near zero.  See \figureref{fig:wprepdiv}.
 
 \begin{myfig}
 \subimport*{figures/}{wprepdiv.pdf_t}
+\caption{The zeros of $z_n \mapsto f(z',z_n)$.\label{fig:wprepdiv}}
 \end{myfig}
 
 By the one-variable argument principle (\thmref{thm:onevarargprinc}) the number of zeros (with
@@ -12627,6 +12674,7 @@ Let $\lambda$ be a large closed path in $D$ going
 exactly once around all the zeros and such that the interior of $\lambda$ is
 in $D$.  Suppose $\gamma$ and $\lambda$
 intersect no zeros.
+See \figureref{fig:curve-around-each-zero}.
 By continuity,
 the curves $\gamma$
 and $\lambda$ do not intersect any zeros for $z'$ near $p'$.
@@ -12641,6 +12689,7 @@ the zeros exactly once for $z'$ near $p'$.
 
 \begin{myfig}
 \subimport*{figures/}{curve-around-each-zero.pdf_t}
+\caption{Curve around each zero.\label{fig:curve-around-each-zero}}
 \end{myfig}
 
 The argument principle applied to $z_n \mapsto f(z',z_n)$ using $\lambda$ for $z'$ near
@@ -13169,12 +13218,14 @@ At every other point we can write $z_2 = \pm z_1^{3/2}$,
 so $C_{\mathit{reg}} = C \setminus \{0\}$, and so $C_{\mathit{sing}} = \{ 0
 \}$.
 The dimension at every regular point is 1.
-Here is a plot of $C$ in two real dimensions:
+See \figureref{fig:cusp} for a 
+plot of $C$ in two real dimensions.
 
 \begin{myfig}
 \medskip
 \subimport*{figures/}{cusp.eepic}
 \bigskip
+\caption{The cusp.\label{fig:cusp}}
 \end{myfig}
 \end{example}
 
@@ -13537,12 +13588,13 @@ is irreducible in $\C^2$ (the regular points are connected), but locally
 at the point
 $(1,0)$ it is reducible.  There, the subvariety is
 a union of two graphs: $z_2 = \pm \sqrt{z_1}(z_1-1)$.
-Here is a plot in two real dimensions:
+See \figureref{fig:locallyredcurve} for a plot in two real dimensions.
 
 \begin{myfig}
 \medskip
 \subimport*{figures/}{locallyredcurve.eepic}
 \bigskip
+\caption{Locally reducible curve.\label{fig:locallyredcurve}}
 \end{myfig}
 \end{example}
 
@@ -13724,16 +13776,14 @@ because
 $\sigma^k$ is the identity.
 So $g(\xi)$ is a well-defined holomorphic function outside the origin.  Let
 $g(0) = 0$, and $g$ is holomorphic at 0 by the Riemann extension theorem.
-See the following figure for an example:
-
+See \figureref{fig:puiseux} for an example.
 \begin{myfig}
 \subimport*{figures/}{puiseux.pdf_t}
-\end{myfig}
-
-In the figure, $m = k = 4$, and the permutation $\sigma$ takes 1 to 2, 2 to 3, 3 to 4,
+\caption{Proving Puiseux with $m = k = 4$.  The permutation $\sigma$ takes 1 to 2, 2 to 3, 3 to 4,
 and 4 to 1.  As $\xi$ moves along the short circular arrow on the right, $\xi^4$
 moves along the long circular arrow on the left.  The definition of $g$ is
-then given in the right-hand diagram.
+then given in the right-hand diagram.\label{fig:puiseux}}
+\end{myfig}
 \end{proof}
 
 \begin{exbox}
@@ -14116,10 +14166,11 @@ strictly smaller than 1 on $\partial U \cap \widebar{S}$, for a small enough $\e
 we would obtain a pluriharmonic function with a strict
 maximum on $Y$, which is impossible by the maximum principle for
 varieties that you proved in \exerciseref{exercise:maxprincsubvar}.
-The picture would look as follows:
+The picture would look as in \figureref{fig:forndied}.
 \begin{myfig}
 \medskip
 \subimport*{figures/}{forndied.pdf_t}
+\caption{Contradicting the maximum principle at $p$.\label{fig:forndied}}
 \end{myfig}
 \end{proof}
 
@@ -15212,12 +15263,15 @@ of boundary points.  If $\partial M = \emptyset$, then we say
 $M$ is simply an \emph{\myindex{embedded submanifold}}\index{submanifold}.
 \end{defn}
 
-The situation for a boundary point and an interior point is depicted in the
-following diagram.  Note that $W$ is a bigger neighborhood in $\R^n$ than
+The situation for a boundary point and an interior point is depicted in
+\figureref{fig:maif-bound}.
+Note that $W$ is a bigger neighborhood in $\R^n$ than
 the image $\varphi(U)$.
 
 \begin{myfig}
 \subimport*{figures/}{manif-bound.pdf_t}
+\caption{Parametrization at
+an interior and a boundary point of a submanifold.\label{fig:maif-bound}}
 \end{myfig}
 
 Completely correctly, we should say \emph{submanifold of $\R^k$}.
