@@ -3,8 +3,12 @@ Since edition 3
 * New font, more readable (shorter lines)
 * New exercise 1.6.1, renumbers rest of the exercises in 1.6
 * New exercise 2.1.4, renumbers rest of the exercises in 2.1
+* Figures now have numbers, captions, float, and have explicit references
+  in text.
 * When computing the Hessian use the vertical bar to evaluate,
   it may be clearer
+* In exercise 2.5.15, it is much easier to use exercise 2.5.9
+  than the "hint" in text, so replace that hint.
 * Shorten a couple of section titles slightly
 
 See https://www.jirka.org/scv/changes.html for older changes.
