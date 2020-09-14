@@ -2021,8 +2021,8 @@ In particular, if $f$ is given by \eqref{holfunc:ps}, then
 \begin{equation*}
 c_\alpha = \frac{1}{\alpha!} \frac{\partial^{\sabs{\alpha}}f}{\partial
 z^\alpha} (a),
+\avoidbreak
 \end{equation*}
-\nopagebreak
 and we have the \emph{\myindex{Cauchy estimates}}:
 \begin{equation*}
 \abs{c_\alpha} \leq \frac{\snorm{f}_\Gamma}{\rho^\alpha} .
@@ -2347,6 +2347,7 @@ Prove $f$ is constant.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Improve Liouville's theorem slightly in $\C^2$.
 A complex line though the origin is
 the image of a linear map $L \colon \C \to \C^n$.
@@ -2365,11 +2366,11 @@ Find a nonconstant entire holomorphic function in $\C^3$ that is
 bounded on
 countably many distinct
 complex lines through the origin.
-\pagebreak[2]
 \end{exparts}
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Prove the several variables version of \emph{\myindex{Montel's theorem}}:
 Suppose $\{ f_k \}$ is a uniformly bounded sequence of holomorphic functions on an open set $U
 \subset \C^n$.
@@ -4030,7 +4031,6 @@ If $U_j \subset \C^n$ are domains of holomorphy (possibly an infinite set of
 domains), then the interior of
 $\bigcap_{j} U_j$
 is either empty or every connected component is a domain of holomorphy.
-\pagebreak[1]
 \end{exercise}
 
 \begin{exercise}[Easy]
@@ -4520,14 +4520,13 @@ necessarily a defining function).
 Again show that $\varphi = g r$, but now $g$ may possibly vanish.
 \end{exparts}
 \nopagebreak
-Hint: First suppose $r=x_n$, then %so that $M$ is the set $x_n = 0$,
+Hint: First suppose $r=x_n$ and
 find a $g$ such that $\varphi = x_n g$.  Then find
 a local change of variables to make $M$ into the set given by $x_n = 0$.
-A useful one variable calculus fact:
+A useful calculus fact:
 If $f(0) = 0$ and $f$ is smooth, then
 $s \int_0^1 f'(ts) \,dt = f(s)$,
 and $\int_0^1 f'(ts) \,dt$ is a smooth function of $s$.
-\pagebreak[2]
 \end{exercise}
 
 \begin{exercise}
@@ -5227,10 +5226,10 @@ In particular,
 $\dim_\C T_p^{(1,0)} M = \dim_\C T_p^{(0,1)} M = n-1$ and 
 $\dim_\C B_p = 1$.
 
+\nopagebreak
 If $M$ is the boundary of a open set $U$ with smooth boundary,
 the rotation can be chosen so that
 $\Im w > \varphi(z,\bar{z},\Re w)$ on $U$.
-\pagebreak[2]
 \end{prop}
 
 \begin{proof}
@@ -5420,7 +5419,6 @@ is, the matrix is equal to its conjugate transpose.
 \end{exercise}
 
 \begin{exercise}
-\pagebreak[2]
 Consider one dimension and $z = x+iy$.
 Consider
 \begin{equation*}
@@ -6073,7 +6071,6 @@ proposition.
 Prove the assertion in the proof, that is, if $q$ is a quadratic as in
 \eqref{eq:generalquadraticq} that is real-valued, then
  $a_{jk} = \overline{b_{jk}}$ and $c_{jk} = \overline{c_{kj}}$.
-\pagebreak[3]
 \end{exercise}
 \end{exbox}
 
@@ -6236,11 +6233,11 @@ $\Im w > \sabs{z}^4$
 $\Im w > \sabs{z}^2(\Re w)$
 \item
 $\Im w > (\Re z)(\Re w)$
-\pagebreak[2]
 \end{exparts}
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Let $U \subset \C^n$ be an open set with smooth boundary that is
 strongly pseudoconvex at $p \in \partial U$.  Show that
 $p$ is a so-called \emph{\myindex{peak point}}: There
@@ -6473,11 +6470,11 @@ and use the previous exercise).
 \item
 Prove that $Pu(z)$ tends to $u(z_0)$ as
 $z \in \D \to z_0 \in \partial \D$.
-\pagebreak[2]
 \end{exparts}
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]%
 State and prove a version of \thmref{thm:dirichsol} for an arbitrary disc
 $\Delta_r(a)$.
 \end{exercise}
@@ -6498,10 +6495,10 @@ Solving the Dirichlet problem using the Poisson kernel leads to
 the following result.
 
 \begin{prop}[Mean-value property and sub-mean-value property]
-\pagebreak[2]
-\label{prop:meansubmeanprop}
-\index{mean-value property}
-\index{sub-mean-value property}
+\pagebreak[2]%
+\label{prop:meansubmeanprop}%
+\index{mean-value property}%
+\index{sub-mean-value property}%
 Let $U \subset \C$ be an open set.
 \begin{enumerate}[(i)]
 \item
@@ -6655,11 +6652,12 @@ In analogy to convex functions, a $C^2$-smooth function $f$ of one
 real variable is convex if and only if $f''(x) \geq 0$ for all $x$.
 
 \begin{prop}
-\pagebreak[2]
+\pagebreak[2]%
 Suppose $U \subset \C$ is an open set and $f_\alpha \colon U \to \R \cup \{ -\infty \}$
 is a family of subharmonic functions.  Let
 \begin{equation*}
 \varphi(z) = \sup_\alpha\, f_\alpha(z) .
+\avoidbreak
 \end{equation*}
 If the family is finite, then $\varphi$ is subharmonic.
 If the family is infinite, $\varphi(z) \not= \infty$ for
@@ -6695,7 +6693,7 @@ the function is upper-semicontinuous.
 \end{exercise}
 
 \begin{exercise}
-\pagebreak[2]
+\pagebreak[2]%
 Suppose $U \subset \C$ is a bounded open set, and $\{ p_n \}$ a sequence of points in
 $U$. For $z \in U$, define
 $f(z) = \sum_{n=1}^\infty 2^{-n} \log \sabs{z-p_n}$, possibly taking on the
@@ -6711,11 +6709,11 @@ If $\{ p_n \}$ is dense in $U$, show that $f$
 is discontinuous on a dense set.
 Hint: Prove that $f^{-1}(-\infty)$ is a small (but dense) set.
 Another hint: Integrate the partial sums, and use polar coordinates.
-\pagebreak[2]
 \end{exparts}
 \end{exercise}
 \end{exbox}
 
+\pagebreak[2]
 There are too many harmonic functions in $\C^n \cong \R^{2n}$.
 To get the real and imaginary parts of holomorphic functions in $\C^n$,
 we require a smaller class of functions than all harmonic functions.
@@ -6864,7 +6862,7 @@ $a f + b g$ is plurisubharmonic.
 \end{exbox}
 
 \begin{thm} \label{thm:subharlim}
-\pagebreak[2]
+\pagebreak[2]%
 Suppose $U \subset \C^n$ is an open set and $f \colon U \to \R \cup \{
 -\infty \}$ is plurisubharmonic.  For every $\epsilon > 0$,
 let $U_\epsilon \subset U$
@@ -8059,8 +8057,8 @@ $\C^n \setminus U$ is disconnected.
 \end{exercise}
 \end{exbox}
 
-Using an exercise above we see that $\C^n$ is both holomorphically convex and
-a domain of holomorphy.  In fact, these two notions are equivalent for all
+The set $\C^n$ is both holomorphically convex and
+a domain of holomorphy.  These two notions are equivalent also for all
 other domains in $\C^n$.
 
 \begin{thm}[Cartan--Thullen\index{Cartan--Thullen theorem}]
@@ -12420,10 +12418,10 @@ of $U' \times D$, and $f$ is never zero on
 $U' \times \partial D$.
 Prove that
 $z_n \mapsto f(z',z_n)$ has at least one zero in $D$ for every $z' \in U'$.
-\pagebreak[2]
 \end{exercise}
 \end{exbox}
 
+\pagebreak[2]
 The order of vanishing of $f$ at the origin is a lower bound
 on the number $k$ in the theorem.  The order of vanishing for a certain
 variable may be larger than this lower bound.  If $f(z_1,z_2) =
@@ -12880,11 +12878,11 @@ Show that if $I \subsetneq \sO_p$ is a \emph{\myindex{proper ideal}}
 (ideal such that $I
 \not= \sO_0$), then
 $I \subset \mathfrak{m}_p$, that is $\mathfrak{m}_p$ is a \emph{\myindex{maximal ideal}}.
-\pagebreak[2]
 \end{exparts}
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Suppose $n=1$.  Show that ${}_1\sO_p$ is a
 \emph{\myindex{principal ideal domain}}\index{PID} (PID)\@,
 that is every ideal is a principal ideal.
@@ -13042,7 +13040,6 @@ subvariety}\index{complex-analytic subvariety} of $U$.
 Sometimes $X$ is called an \emph{\myindex{analytic set}}.
 We say $X \subset U$ is a proper subvariety if $\emptyset \not= X \subsetneq
 U$.
-\pagebreak[2]
 \end{defn}
 
 We generally leave out the ``complex'' from ``complex subvariety'' as it is
@@ -13708,10 +13705,10 @@ $k$-dimensional complex manifold that is dense in $X \cap U$.
 \item $\pi \colon X' \to \pi(U) \setminus E$ is an $m$-sheeted covering map
 for some integer $m$.
 \item $\pi \colon X \cap U \to \pi(U)$ is a proper mapping.
-\pagebreak[3]
 \end{enumerate}
 \end{thm}
 
+\pagebreak[2]
 The $m$-sheeted covering map in this case is a local biholomorphism
 that is an $m$-to-1 map.
 
@@ -13849,10 +13846,10 @@ than 1, then there exists a neighborhood $U$ of $p$ and a closed subvariety
 $X \subset U$ (whose germ at $p$ is $(X,p)$), such that for every
 $q \in X$ there exists an irreducible subvariety $Y \subset X$
 of dimension 1 such that $p \in Y$ and $q \in Y$.
-\pagebreak[2]
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Prove a stronger version of the exercise above.  Show that not only is there
 a $Y$, but an analytic disc $\varphi \colon \D \to U$ such that
 $\varphi(\D) \subset X$, $\varphi(0) = p$ and $\varphi(\nicefrac{1}{2}) =
@@ -14707,10 +14704,10 @@ If $f \colon U \to V$ is holomorphic, $f(p) = q$,
 and $f'(p) \not= 0$, then there exists a neighborhood $W$ of $q$
 and a holomorphic function $g \colon W \to U$ that is
 one-to-one and $f\bigl(g(z)\bigr) = z$ for all $z \in W$.
-\pagebreak[2]
 \end{enumerate}
 \end{thm}
 
+\pagebreak[2]
 The Riemann mapping theorem actually follows from the following
 theorem about existence of branches of the logarithm.
 
@@ -14894,10 +14891,10 @@ The singularity at $p$ is
 \not= 0$.
 \item \emph{essential} if for every exist infinitely negative $k$
 such that $c_k \not= 0$.
-\pagebreak[3]
 \end{enumerate}
 \end{prop}
 
+\pagebreak[3]
 If $p$ is an isolated singularity of $f$, then call the corresponding
 $c_{-1}$ the \emph{\myindex{residue}} of $f$ at $p$, and write it
 as $\operatorname{Res}(f,p)$.  
