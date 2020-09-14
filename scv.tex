@@ -48,35 +48,21 @@
 %symmetric for web
 \usepackage[inner=1.2in,outer=1.2in,top=1in,bottom=1in]{geometry}
 %PRINT asymetric for book
-%\usepackage[inner=1.3in,outer=1.1in,top=1in,bottom=1in]{geometry}
+%\usepackage[inner=1.4in,outer=1.0in,top=1in,bottom=1in]{geometry}
 
-%\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=colon,singlelinecheck=false]{caption}
-
-
-%FIXME: this is nonsense, this should be done above, except maybe the
-%cutting down
-
-% smaller margins top/bottom margins
-%\addtolength{\textheight}{0.8in}
-%\addtolength{\topmargin}{-0.3in}
+\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=colon,singlelinecheck=false]{caption}
 
 %PRINT
-% (not for the coil version)
-%First offset even/odd pages a bit
-% not for the coil bound full letter size one
-%\addtolength{\oddsidemargin}{0.2in}
-%\addtolength{\evensidemargin}{-0.2in}
-
-%PRINT
-% (not for the coil version)
+% (not for the coil version or any version other than crown quatro using the
+%  ghostscript conversion)
 %Now cut page size a bit.  I'll run it through ghostcript anyway
 %to convert to the right size, but this is good for crown quatro
 %conversion, don't use for the full letter size versions
-%\addtolength{\paperwidth}{-0.3in}
-%\addtolength{\paperheight}{-1in}
-%\addtolength{\topmargin}{-0.5in}
-%\addtolength{\oddsidemargin}{-0.15in}
-%\addtolength{\evensidemargin}{-0.15in}
+%\addtolength{\paperwidth}{-0.25in}
+%\addtolength{\paperheight}{-0.5in}
+%\addtolength{\topmargin}{-0.13in}
+%\addtolength{\oddsidemargin}{-0.125in}
+%\addtolength{\evensidemargin}{-0.125in}
 
 
 \usepackage{url}
@@ -91,12 +77,12 @@
 
 \usepackage[all]{hypcap}
 
-%\usepackage{draftwatermark}
-%\SetWatermarkText{Draft of v3.0 as of \today. May change substantially!}
-%\SetWatermarkAngle{90}
-%\SetWatermarkHorCenter{0.5in}
-%\SetWatermarkColor[gray]{0.7}
-%\SetWatermarkScale{0.18}
+\usepackage{draftwatermark}
+\SetWatermarkText{Draft of v4.0 as of \today. May change substantially!}
+\SetWatermarkAngle{90}
+\SetWatermarkHorCenter{0.5in}
+\SetWatermarkColor[gray]{0.7}
+\SetWatermarkScale{0.18}
 
 \definecolor{gray75}{gray}{0.75}
 
@@ -309,7 +295,7 @@
 
 \newenvironment{exbox}{%
     \def\FrameCommand{\vrule width 1pt \relax\hspace{10pt}}%
-    \MakeFramed {\advance \hsize -\width \FrameRestore}%
+    \MakeFramed{\advance\hsize-\width\FrameRestore}%
 }{%
     \endMakeFramed
 }
@@ -334,11 +320,6 @@
     \end{enumerate*}\endgroup\par
 }
 
-%\newenvironment{myfig}{%
-%    \begin{center}
-%}{%
-%    \end{center}
-%}
 \newenvironment{myfig}{%
 \begin{figure}[h!t]
 \noindent\rule{\textwidth}{0.5pt}\vspace{12pt}\par\centering}%
@@ -378,6 +359,7 @@
 \newcommand{\lemmaref}[1]{\hyperref[#1]{Lemma~\ref*{#1}}}
 \newcommand{\corref}[1]{\hyperref[#1]{Corollary~\ref*{#1}}}
 \newcommand{\defnref}[1]{\hyperref[#1]{Definition~\ref*{#1}}}
+\newcommand{\remarkref}[1]{\hyperref[#1]{Remark~\ref*{#1}}}
 
 % List of Symbols/Notation
 \newglossary[nlg]{notation}{not}{ntn}{List of Notation}
@@ -5328,7 +5310,11 @@ The matrix
 \right]_{j \ell}
 \end{equation*}
 is called the
-\emph{\myindex{complex Hessian}}\index{Hessian!complex} of $r$ at $p$.
+\emph{\myindex{complex Hessian}}\index{Hessian!complex} of $r$ at
+$p$.\footnote{%
+People sometimes call the complex Hessian the ``Levi form of $r$,''
+which is incorrect.  The Levi form is something defined for a boundary
+or a submanifold, not for $r$.}
 So, $U$ is pseudoconvex at $p \in \partial U$ if
 the complex Hessian
 of $r$ at $p$ as a sesquilinear form is positive (semi)definite
@@ -5386,8 +5372,11 @@ the symmetric matrix
 .
 \end{equation*}
 The complex Hessian is the lower left,
-or the transpose of the upper right, block.  In
-particular, it is a smaller matrix. And we also apply it only to a subspace 
+or the transpose of the upper right, block.  That is,
+if you write the full Hessian as
+$\left[ \begin{smallmatrix} X & L^t \\ L & \widebar{X} \end{smallmatrix}
+\right]$, then $L$ is the complex Hessian.
+In particular, $L$ is a smaller matrix. And we also apply it only to a subspace 
 of the complexified tangent space.
 
 Let us illustrate the change of basis on one dimension.  The change of
@@ -5420,6 +5409,53 @@ T
 \end{bmatrix}
 .
 \end{equation*}
+The relationship between the eigenvalues of the real Hessian and the complex
+Hessian is not perhaps as straightforward as may at first seem, but there is
+a relationship there nonetheless.
+
+\begin{exbox}
+\begin{exercise}[Easy]
+If $r$ is real-valued, then the complex Hessian of $r$ is Hermitian, that
+is, the matrix is equal to its conjugate transpose.
+\end{exercise}
+
+\begin{exercise}
+\pagebreak[2]
+Consider one dimension and $z = x+iy$.
+Consider
+\begin{equation*}
+H=\begin{bmatrix}
+\frac{\partial^2 r}{\partial x\partial x} &&
+\frac{\partial^2 r}{\partial x \partial y}
+\\
+\frac{\partial^2 r}{\partial y \partial x} &&
+\frac{\partial^2 r}{\partial y\partial y}
+\end{bmatrix} ,
+\end{equation*}
+the real Hessian in terms of $x$ and $y$.
+Prove that the complex Hessian $L$ (just a number now) is $\nicefrac{1}{4}$
+of the trace of $H$.
+Thus, if $H$ is positive definite, then $L > 0$, and if $H$ is negative
+definite, then $L < 0$.  However, show by example that
+if $H$ has mixed eigenvalues (positive
+and negative), then $L$ can be positive, negative, or zero.
+\end{exercise}
+
+\begin{exercise}
+For any dimension,
+find the change of variables $T^t H T$ to go from the real Hessian in terms
+of $x$ and $y$ to the Hessian in terms of $z$ and $\bar{z}$.
+Hint: If you figure it out for $n=2$, it
+will be easy to do in general.
+\end{exercise}
+
+\begin{exercise}
+Prove in any dimension that if the real Hessian (in terms of $x$ and $y$) is
+positive (semi)definite, then the complex Hessian is positive (semi)definite.
+Hint: A Hermitian matrix $L$ is positive definite if $v^*Lv > 0$ for all
+nonzero vectors $v$ and semidefinite if $v*Lv \geq 0$ for all $v$.
+\end{exercise}
+\end{exbox}
 
 Let us also see how a complex linear change of variables
 acts on the Hessian matrix.  A complex linear change of variables is not an
@@ -5429,7 +5465,7 @@ $\frac{\partial}{\partial \bar{z}}$s, an $n \times n$ complex linear matrix $A$
 acts on the Hessian as $A \oplus \widebar{A}$, that is
 $\left[ \begin{smallmatrix} A & 0 \\ 0 & \widebar{A} \end{smallmatrix}
 \right]$.
-Write the real Hessian as
+Write the full Hessian as
 $\left[ \begin{smallmatrix} X & L^t \\ L & \widebar{X} \end{smallmatrix}
 \right]$, where $L$ is the complex Hessian.  Then the complex linear change
 of variables $A$ transforms
@@ -5466,11 +5502,6 @@ independent of the defining function.
 \end{prop}
 
 \begin{exbox}
-\begin{exercise}
-If $r$ is real-valued, then the complex Hessian of $r$ is Hermitian, that
-is, the matrix is equal to its conjugate transpose.
-\end{exercise}
-
 \begin{exercise}
 Prove \propref{prop:inertiainvariant}.
 \end{exercise}
@@ -7630,7 +7661,6 @@ unbounded $U$ is left as an exercise.
 \begin{exercise}
 Finish the proof of the lemma for unbounded domains.
 See~\exerciseref{exercise:nestedunions}.
-\pagebreak[2]
 \end{exercise}
 \end{exbox}
 
@@ -8027,12 +8057,6 @@ Find an unbounded holomorphically convex domain $U \subset \C^n$ where
 $\C^n \setminus U$ is disconnected.
 \end{exparts}
 \end{exercise}
-
-\begin{exercise}[Behnke--Stein again]
-\index{Behnke--Stein theorem}
-Show that the union $\bigcup_j U_j$ of a nested sequence of holomorphically
-convex domains $U_{j-1} \subset U_j \subset \C^n$ is holomorphically convex.
-\end{exercise}
 \end{exbox}
 
 Using an exercise above we see that $\C^n$ is both holomorphically convex and
@@ -8158,6 +8182,12 @@ with multiplication by $i$ on the tangent space.''}, while
 the notion of a domain of holomorphy only makes sense for domains in $\C^n$.
 
 \begin{exbox}
+\begin{exercise}[Behnke--Stein again]
+\index{Behnke--Stein theorem}
+Show that the union $\bigcup_j U_j$ of a nested sequence of holomorphically
+convex domains $U_{j-1} \subset U_j \subset \C^n$ is holomorphically convex.
+\end{exercise}
+
 \begin{exercise}
 Prove the existence of the function $f_j \in \sO(U)$ as indicated in the proof above.
 \end{exercise}
