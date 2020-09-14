@@ -6279,8 +6279,8 @@ Prove that a real hyperplane is Levi-flat.
 \end{exercise}
 
 \begin{exercise}
-Consider $f \in \sO(U)$ for an open $U \subset \C^n$.
-Let $M = \bigl\{ z \in U : \Im f(z) = 0 \bigr\}$.  Show that
+Let $U \subset \C^n$ be open, $f \in \sO(U)$, and
+$M = \bigl\{ z \in U : \Im f(z) = 0 \bigr\}$.  Show that
 if $df(p) \not=0$ for some $p \in M$, then near $p$,
 $M$ is a Levi-flat hypersurface.
 \end{exercise}
@@ -6425,6 +6425,7 @@ Pu(re^{i\theta})
 \int_{-\pi}^\pi u(e^{it}) P_r(\theta-t) \, dt
 \quad \text{if $r < 1$} \qquad \text{and} \qquad
 Pu(e^{i\theta}) = u(e^{i\theta}),
+\avoidbreak
 \end{equation*}
 is harmonic in $\D$ and continuous on $\overline{\D}$.
 \end{thm}
@@ -6715,8 +6716,12 @@ Another hint: Integrate the partial sums, and use polar coordinates.
 
 \pagebreak[2]
 There are too many harmonic functions in $\C^n \cong \R^{2n}$.
-To get the real and imaginary parts of holomorphic functions in $\C^n$,
-we require a smaller class of functions than all harmonic functions.
+The real and imaginary parts of holomorphic functions in $\C^n$
+form a smaller set when $n > 1$.  Notice that when a holomorphic
+function is restricted to a complex line, we obtain a holomorphic
+function of one variable.  So the real and imaginary parts
+of a holomorphic function had better be harmonic on every complex line.
+It turns out, this is precisely the right class of functions.
 
 \begin{defn}
 Let $U \subset \C^n$ be open.
@@ -6753,7 +6758,8 @@ a function that is convex when restricted to any real line.
 \begin{exbox}
 \begin{exercise}
 Let $U \subset \C^n$ be open.
-A $C^2$-smooth $f \colon U \to \R$ is pluriharmonic if and
+Prove that
+a $C^2$-smooth $f \colon U \to \R$ is pluriharmonic if and
 only if
 \begin{equation*}
 \frac{\partial^2 f}{\partial \bar{z}_j \partial z_k} = 0
@@ -6779,14 +6785,16 @@ Consider the line integral from $p$ to a nearby $q \in U$:
 F(q) =
 \int_{p}^q \sum_{k=1}^n
 \frac{\partial f}{\partial z_k}(\zeta) \, d\zeta_k .
+\avoidbreak
 \end{equation*}
 Prove that it is path independent, compute derivatives of $F$, and
 find out what is $F+\bar{F}-f$.
 \end{exercise}
 
 \begin{exercise}
-Prove the maximum principle\index{maximum principle!plurisubharmonic functions}.
-That is, if $U \subset \C^n$ is a domain and $f \colon U \to \R \cup
+Prove the maximum
+principle\index{maximum principle!plurisubharmonic functions}:
+If $U \subset \C^n$ is a domain and $f \colon U \to \R \cup
 \{-\infty\}$ is
 plurisubharmonic and achieves a maximum at $p \in U$, then $f$ is constant.
 \end{exercise}
@@ -6808,7 +6816,7 @@ point.
 \end{samepage}
 
 \begin{proof}
-First let us suppose that the complex Hessian has a negative eigenvalue at
+First suppose that the complex Hessian has a negative eigenvalue at
 a point $p \in U$.
 After a translation assume $p=0$.
 As $f$ is real-valued, the complex Hessian
@@ -6835,7 +6843,7 @@ For the other direction, suppose the complex Hessian is positive
 semidefinite at all points.
 Let $p \in U$.  After an affine change of coordinates assume that the
 line $\xi \mapsto a+b\xi$ is simply setting all but the first variable to
-zero, that is $a=0$ and $b=(1,0,\ldots,0)$.
+zero, that is, $a=0$ and $b=(1,0,\ldots,0)$.
 As the complex Hessian is positive semidefinite,
 $\frac{\partial^2 f}{\partial \bar{z}_1 \partial z_1} \geq 0$ for all
 points $(z_1,0,\ldots,0)$.  We proved above that $\nabla^2 g \geq 0$
@@ -8187,11 +8195,12 @@ convex domains $U_{j-1} \subset U_j \subset \C^n$ is holomorphically convex.
 \end{exercise}
 
 \begin{exercise}
-Prove the existence of the function $f_j \in \sO(U)$ as indicated in the proof above.
+Prove the existence of the function $f_j \in \sO(U)$ as indicated in the proof
+of Cartan--Thullen above.
 \end{exercise}
 
 \begin{exercise}
-Extend the proof to show that if $U \subset \C^n$
+Show that if $U \subset \C^n$
 is holomorphically convex, then there
 exists a single function $f \in \sO(U)$ that does not extend through any
 point $p \in \partial U$.
@@ -8252,14 +8261,14 @@ z_1^{\ell_1^k}
 \cdots
 z_n^{\ell_n^k}
 \end{equation*}
-is precisely the set
+is precisely
 $\bigl\{ z \in \C^n :
 \sabs{z_1}^{\alpha_1} \cdots \sabs{z_n}^{\alpha_n}
 < e^\beta \bigr\}$.
 Hint: That it diverges outside is easy, what is hard is that it converges
 inside.  Perhaps useful is to notice
-$\frac{\ell_m^k}{k}-\alpha_m \leq \frac{1}{k}$, and furthermore
-notice that if $z$ is in the set, there is some $\epsilon > 0$ such that
+$\frac{\ell_m^k}{k}-\alpha_m \leq \frac{1}{k}$, and 
+that if $z$ is in the set, there is some $\epsilon > 0$ such that
 $(1+\epsilon)\sabs{z_1}^{\alpha_1} \cdots \sabs{z_n}^{\alpha_n} =
 e^{\beta}$.
 \end{exercise}
