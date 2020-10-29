@@ -393,7 +393,7 @@
 Ji{\v r}\'i Lebl\\[3ex]} 
 \today
 \\
-(version 3.3)
+(version 4.0)
 \end{minipage}}
 
 %\addtolength{\textwidth}{\centeroffset}
@@ -3811,10 +3811,10 @@ biholomorphic.
 
 The function $f$ is locally biholomorphic, in particular
 $f^{-1}$ is holomorphic,
-on the set where the Jacobian determinant $J_f$, that is the determinant
+on the set where the Jacobian determinant
 \begin{equation*}
 J_f(z) = \det Df(z) = \det \left[ \frac{\partial f_j}{\partial z_k}(z)
-\right]_{jk} ,
+\right]_{jk}
 \end{equation*}
 is not zero.  This follows from the inverse function theorem, which is just
 a special case of the implicit function theorem.
@@ -4496,7 +4496,7 @@ of an $n$-dimensional $T_p\R^n$ given by a single linear equation.
 Recall from calculus that the gradient $\nabla r|_p$ is
 ``normal'' to $M$ at $p$, and
 the tangent space is given by all the $n$-vectors $a$
-that are orthogonal to the normal, that is $\nabla r|_p \cdot a = 0$.
+that are orthogonal to the normal, that is, $\nabla r|_p \cdot a = 0$.
 
 \pagebreak[1]
 We cheated in the terminology, and assumed without justification that $T_pM$
@@ -4832,7 +4832,7 @@ y = \varphi(x) ,
 where $(x,y) \in \R^{n-1} \times \R$ are our coordinates and
 $\varphi$ is a smooth %$C^k$
 function that is $O(2)$ at the origin,
-that is $\varphi(0) = 0$ and $d\varphi(0) = 0$.
+namely, $\varphi(0) = 0$ and $d\varphi(0) = 0$.
 
 If $M$ is the boundary of an open set $U$ with smooth boundary and
 $r < 0$ on $U$,
@@ -4902,11 +4902,11 @@ Considering $x$ as a column vector, the Taylor expansion of a smooth function $\
 \begin{equation*}
 \varphi(x) = \varphi(0) + \nabla \varphi|_0 \cdot x + \frac{1}{2}\, x^t H x + E(x) ,
 \end{equation*}
-where $H$ is the Hessian matrix of $\varphi$ at the origin, that is $H = \left[
-\frac{\partial^2 \varphi}{\partial x_j \partial x_k} \big|_{0} \right]_{jk}$,
-and $E$ is $O(3)$.  That is, $E(0) = 0$, and
-all first and second derivatives of $E$ vanish at $0$.
-For the situation from the lemma above,
+where $H = \left[
+\frac{\partial^2 \varphi}{\partial x_j \partial x_k} \big|_{0} \right]_{jk}$ is the Hessian matrix of $\varphi$ at the origin,
+and $E$ is $O(3)$, namely, $E(0) = 0$, and
+all first and second order derivatives of $E$ vanish at $0$.
+For the situation of the lemma above,
 the $\varphi$ is $O(2)$ at the origin, i.e.\ $\varphi(0) = 0$
 and $\nabla \varphi|_0 = 0$.  So we write the hypersurface
 $M$ as
@@ -4982,7 +4982,7 @@ The space $\C \otimes T_p\C^n$ is a $2n$-dimensional complex vector space.
 Both
 $\frac{\partial}{\partial z_j}\big|_p$ and
 $\frac{\partial}{\partial \bar{z}_j}\big|_p$ are in $\C \otimes
-T_p\C^n$, and in fact:
+T_p\C^n$, and
 \begin{equation*}
 \C \otimes T_p\C^n
 = \operatorname{span}_{\C} \left\{
@@ -5021,7 +5021,7 @@ T_p^{(0,1)} \C^n .
 \end{equation*}
 A holomorphic function is one that vanishes on $T_p^{(0,1)} \C^n$.
 
-Let us note what holomorphic functions do to these spaces.  Given a smooth
+Let us see what holomorphic mappings do to these spaces.  Given a smooth
 mapping $f$ from $\C^n$ to $\C^m$, its derivative at $p \in \C^n$
 is a real-linear mapping $D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$.
 Given the basis above, this mapping is represented by
@@ -5065,7 +5065,7 @@ the basis.
 \end{exercise}
 \end{exbox}
 
-When talking about only holomorphic functions and holomorphic vectors,
+For holomorphic functions and holomorphic vectors,
 when we say derivative of $f$, we mean the holomorphic part of the
 derivative, which we write as
 \glsadd{not:Df}%
@@ -5146,7 +5146,8 @@ T_p^{(0,1)} M \overset{\text{def}}{=} \bigl( \C \otimes T_pM \bigr) \cap
 \bigl( T_p^{(0,1)} \C^n \bigr) .
 \end{equation*}
 The $B_p$ is just the ``leftover'' and must
-be included, otherwise the dimensions will not work out.
+be included, otherwise the dimensions will not work out.\footnote{%
+The $B_p$ is sometimes colloquially called the ``bad direction.''}
 
 Make sure that you understand what all the objects are.  The space
 $T_pM$ is a real vector space; $\C \otimes T_pM$, $T_p^{(1,0)}M$,
@@ -5179,8 +5180,8 @@ The proposition is local, if $U$ is only a neighborhood of $p$,
 replace $M$ with $M \cap U$.
 
 \begin{proof}
-The proof is an application of \propref{prop:holvectmap}.
-As the map is a biholomorphism at $p$,
+We apply \propref{prop:holvectmap}.
+As $f$ is a biholomorphism at $p$,
 \begin{multline*}
 D_\C f(p)\Bigl(T_p^{(1,0)}\C^n\Bigr) = T_{f(p)}^{(1,0)}\C^n, \quad 
 D_\C f(p)\Bigl(T_p^{(0,1)}\C^n\Bigr) = T_{f(p)}^{(0,1)}\C^n, \quad
@@ -5274,12 +5275,12 @@ X_p = \sum_{j=1}^n a_j
 \frac{\partial}{\partial z_j}\Big|_p  \quad \in \quad 
 T^{(1,0)}_p \partial U,
 \end{equation*}
-then $U$ is said to be \emph{\myindex{pseudoconvex}} at $p$
+then $U$ is \emph{\myindex{pseudoconvex}} at $p$
 (or \emph{\myindex{Levi pseudoconvex}}).  If the inequality
-above is strict for all nonzero $X_p \in T^{(1,0)}_p \partial U$, then $U$ is said to be
-\emph{\myindex{strongly pseudoconvex}}.
-If $U$ is pseudoconvex, but not strongly pseudoconvex at $p$, then we 
-say that $U$ is \emph{\myindex{weakly pseudoconvex}}.
+above is strict for all nonzero $X_p \in T^{(1,0)}_p \partial U$, then $U$ is
+\emph{\myindex{strongly pseudoconvex}} at $p$.
+If $U$ is pseudoconvex, but not strongly pseudoconvex, at $p$, then
+$U$ is \emph{\myindex{weakly pseudoconvex}}.
 
 A domain $U$ is \emph{pseudoconvex} if it is pseudoconvex at all $p \in \partial U$.
 For a bounded\footnote{The definition for unbounded domains is not
@@ -5378,9 +5379,9 @@ $\left[ \begin{smallmatrix} X & L^t \\ L & \widebar{X} \end{smallmatrix}
 In particular, $L$ is a smaller matrix. And we also apply it only to a subspace 
 of the complexified tangent space.
 
-Let us illustrate the change of basis on one dimension.  The change of
+We illustrate the change of basis on one dimension.  The change of
 variables is left to student for higher dimensions.  Let $z =
-x+iy$ be in $\C$, and we denote by $T$ the change of basis matrix:
+x+iy$ be in $\C$, and denote by $T$ the change of basis matrix:
 \begin{equation*}
 T = 
 \begin{bmatrix}
@@ -5460,14 +5461,14 @@ acts on the Hessian matrix.  A complex linear change of variables is not an
 arbitrary $2n \times 2n$ matrix.  If the Hessian is in the 
 basis of $\frac{\partial}{\partial z}$s and
 $\frac{\partial}{\partial \bar{z}}$s, an $n \times n$ complex linear matrix $A$
-acts on the Hessian as $A \oplus \widebar{A}$, that is
-$\left[ \begin{smallmatrix} A & 0 \\ 0 & \widebar{A} \end{smallmatrix}
+acts on the Hessian as $A \oplus \widebar{A} = 
+\left[ \begin{smallmatrix} A & 0 \\ 0 & \widebar{A} \end{smallmatrix}
 \right]$.
 Write the full Hessian as
 $\left[ \begin{smallmatrix} X & L^t \\ L & \widebar{X} \end{smallmatrix}
-\right]$, where $L$ is the complex Hessian.  Then the complex linear change
+\right]$, where $L$ is the complex Hessian.  The complex linear change
 of variables $A$ transforms
-the Hessian as
+the full Hessian as
 \begin{equation*}
 {\begin{bmatrix} A & 0 \\ 0 & \widebar{A} \end{bmatrix}}^t
 \begin{bmatrix} X & L^t \\ L & \widebar{X} \end{bmatrix}
@@ -7289,7 +7290,7 @@ has smooth boundary.
 Show that $U$ is 
 convex if and only if it is
 convex with respect to the smooth convex functions on $U$,
-that is smooth functions with positive semidefinite Hessian.
+that is, with respect to smooth functions with positive semidefinite Hessian.
 \end{exparts}
 \end{exercise}
 
@@ -8330,7 +8331,7 @@ A common notation for real-analytic is $C^\omega$.
 Before we discuss the connection to holomorphic functions, we prove a simple
 lemma.
 
-\begin{lemma}
+\begin{lemma} \label{lemma:sameonRn}
 Let $\R^n \subset \C^n$ be the natural inclusion and 
 $V \subset \C^n$ a domain such that $V \cap \R^n \not= \emptyset$.
 Suppose $f,g \colon V \to \C$ are holomorphic functions such that
@@ -8407,7 +8408,7 @@ real-analytic on $\R$, but the complexification is not holomorphic at $\pm
 \begin{proof}
 We proved the local version already.  But we must prove that if we
 extend our $f$ near every point, we always get the same function.
-That follows from the lemma above; any two such functions are
+That follows from \lemmaref{lemma:sameonRn}; any two such functions are
 equal on $\R^n$, and hence equal.  There is a subtle topological technical
 point in this, so let us elaborate.  A key topological fact is that we define
 $V$ as a union of the polydiscs where the series converges.  If
@@ -8544,7 +8545,7 @@ f(z,\bar{z}) =
 \end{equation*}
 converges in a polydisc $\Delta_r(a) \subset \C^n$.
 By convergence we mean absolute
-convergence as we discussed before.  That is,
+convergence,
 \begin{equation*}
 \sum_{\alpha,\beta} \sabs{c_{\alpha,\beta}} \, \sabs{z-a}^\alpha
 \sabs{\bar{z}-\bar{a}}^\beta
@@ -8558,7 +8559,7 @@ F(z,\zeta) =
 \sum_{\alpha,\beta} c_{\alpha,\beta} {(z-a)}^\alpha
 {(\zeta-\bar{a})}^\beta
 \end{equation*}
-converges for all $(z,\zeta) \in \Delta_r(a) \times \Delta_r(\bar{a})$.
+converges (absolutely) for all $(z,\zeta) \in \Delta_r(a) \times \Delta_r(\bar{a})$.
 
 Putting together the discussion above with the lemma we obtain:
 
@@ -8617,10 +8618,10 @@ understood well.
 \begin{remark}
 The domain $V$ in the proposition is not simply $U$ times the conjugate of $U$.
 In general, it is much smaller.  For example, a real-analytic $f \colon \C^n \to
-\C$ does not necessarily complexify to all of $\C^n \times \C^n$.  That is
+\C$ does not necessarily complexify to all of $\C^n \times \C^n$.
+That is
 because the domain of convergence for a real-analytic function on $\C^n$
 is not necessarily all of $\C^n$.  In one dimension,
-the function
 \begin{equation*}
 f(z,\bar{z})
 = \frac{1}{1+\sabs{z}^2}
@@ -8640,9 +8641,10 @@ never happens when $\zeta = \bar{z}$.
 This form of complexification is sometimes called
 \emph{\myindex{polarization}} due to its relation to the polarization
 identities\footnote{Such as $4 \linnprod{z}{w} =
-\snorm{z+w}^2-\snorm{z-w}^2 +i \bigl( \snorm{z+iw}^2 - \snorm{z-iw}^2 \bigr)$.}.  That is, suppose $A$ is a Hermitian matrix, we 
-recover $A$ and therefore the sesquilinear form $\linnprod{Az}{w}$ for
-$z,w\in \C^n$, by simply knowing the values of
+\snorm{z+w}^2-\snorm{z-w}^2 +i \bigl( \snorm{z+iw}^2 - \snorm{z-iw}^2
+\bigr)$.}:  We can recover a Hermitian matrix $A$,
+and therefore the sesquilinear form $\linnprod{Az}{w}$ for
+$z,w\in \C^n$, by simply knowing the value of
 \begin{equation*}
 \linnprod{Az}{z} = z^*Az = \sum_{j,k=1}^n a_{jk} \, \bar{z}_j z_k 
 \end{equation*}
@@ -8650,8 +8652,8 @@ for all $z \in \C^n$.  In fact, under the hood \propref{prop:complexificationpt2
 polarization in an infinite-dimensional Hilbert space, but we digress.
 \end{remark}
 
-The idea of treating $\bar{z}$ as a separate variable is very powerful, and
-as we have just seen it is completely natural when speaking about
+Treating $\bar{z}$ as a separate variable is a very powerful idea, and
+as we have just seen it is completely natural for
 real-analytic functions.  This is one of the reasons why real-analytic
 functions play a special role in several complex variables.
 
@@ -8708,6 +8710,7 @@ is near every point (locally), after perhaps relabeling coordinates $M$ can be w
 a graph
 \begin{equation*}
 y = \varphi(x) ,
+\avoidbreak
 \end{equation*}
 where $\varphi$ is real-analytic, $(x,y) \in \R^{n-1} \times \R = \R^n$.
 \end{defn}
@@ -8740,13 +8743,13 @@ Then $g \circ f$ is real-analytic.
 
 \begin{proof}
 Let $x \in \R^n$ be our coordinates in $U$ and $y \in \R^k$ be
-our coordinates in $V$.  We complexify $f(x)$ and $g(y)$ by
+our coordinates in $V$.  Complexify $f(x)$ and $g(y)$ by
 allowing $x$ to be a complex vector in a small neighborhood of $U$ in
 $\C^n$
-and  $y$ to be a complex vector in a small neighborhood of $V$ in $\C^k$.
-So we treat $f$ and $g$ as holomorphic functions.  On a certain
+and $y$ to be a complex vector in a small neighborhood of $V$ in $\C^k$.
+So treat $f$ and $g$ as holomorphic functions.  On a certain
 neighborhood of $U$ in $\C^n$, the composition $f \circ g$ makes sense
-and it is holomorphic as composition of holomorphic mappings is holomorphic.
+and it is holomorphic, as composition of holomorphic mappings is holomorphic.
 Restricting the complexified $f \circ g$ back to $\R^n$ we obtain a
 real-analytic function.
 \end{proof}
@@ -8805,6 +8808,7 @@ is smooth (resp.\ real-analytic) if and only if whenever near any point we write
 $M$ in coordinates $(x,y) \in \R^{n-1} \times \R$ as
 \begin{equation*}
 y = \varphi(x) ,
+\avoidbreak
 \end{equation*}
 for a smooth (resp.\ real-analytic) function $\varphi$, then
 the function $f\bigl(x,\varphi(x)\bigr)$ is a smooth (resp.\ real-analytic) function of $x$.
@@ -8841,8 +8845,8 @@ $\C \otimes T_p M$ to smooth functions on $M$, as
 $\C \otimes T_p M$ is simply the complex span of vectors in $T_p M$.
 
 \begin{defn}
-Let $M \subset \C^n$ be a smooth real hypersurface.  Then
-a smooth function $f \colon M \to \C$ is a
+Let $M \subset \C^n$ be a smooth real hypersurface.
+A smooth $f \colon M \to \C$ is a
 \emph{\myindex{smooth CR function}}\index{CR function} if
 \begin{equation*}
 X_p f = 0
@@ -10026,7 +10030,7 @@ e^{-\snorm{\xi}^2 + \ell
 e^{-(15/16)\snorm{\xi}^2} .
 \end{split}
 \end{equation*}
-And that is integrable.  Therefore, we take the pointwise limit under the integral to obtain 
+And that is integrable.  Thus, take the pointwise limit under the integral to obtain 
 \begin{equation*}
 {\left(\frac{1}{\pi}\right)}^{n/2}
 \int_{\xi \in \R^n}
@@ -10091,7 +10095,7 @@ by holomorphic polynomials on $K$.
 
 \section{Extension of CR functions}
 
-We will now apply the so-called ``technique of analytic discs'' together
+We will apply the so-called ``technique of analytic discs'' together
 with
 Baouendi--Tr{\`e}ves to prove the
 Lewy extension theorem.  Lewy's original proof was different
@@ -10443,7 +10447,7 @@ Stokes now applies on $U \setminus \Delta_r(z)$.
 \caption{Proof of Cauchy--Pompeiu.\label{fig:cauchy-pompeiu}}
 \end{myfig}
 
-Via Stokes, we get
+Via Stokes,
 \begin{equation*}
 \int_{\partial U} \frac{f(\zeta)}{\zeta-z}\,  d\zeta - 
 \int_{\partial \Delta_r(z)} \frac{f(\zeta)}{\zeta-z}\,  d\zeta
@@ -10471,7 +10475,7 @@ is integrable over all of $U$.  Therefore,
 \int_{U} \frac{\frac{\partial f}{\partial
 \bar{\zeta}}(\zeta)}{\zeta-z} \, d\zeta \wedge d\bar{\zeta} .
 \end{equation*}
-The second equality is simply swapping the order of the $d\zeta$ and
+The second equality is simply swapping the order of $d\zeta$ and
 $d\bar{\zeta}$.
 By continuity of $f$,
 \begin{equation*}
@@ -10576,7 +10580,7 @@ on $g$ for us to have any hope of getting a solution (see below).
 \begin{exbox}
 \begin{exercise}
 Find an explicit example of a $g$ in $\C^2$ such that no corresponding
-$\psi$ can exist.
+$\psi$ exists.
 \end{exercise}
 \end{exbox}
 
@@ -10617,9 +10621,9 @@ the only holomorphic compactly supported function is 0, then the compactly
 supported solution $\psi$ is unique.
 
 \begin{proof}
-We really have $n$ 
+Really there are $n$ 
 smooth functions, $g_1,\ldots,g_n$, so the equation $\bar{\partial} \psi = g$
-is the $n$ equations
+consists of the $n$ equations
 \begin{equation*}
 \frac{\partial \psi}{\partial \bar{z}_k} = g_k ,
 \end{equation*}
@@ -10650,7 +10654,7 @@ d\zeta \wedge d\bar{\zeta} .
 To show that the singularity does not matter for integrability is the same
 idea as for the generalized Cauchy formula.
 
-Let us check we have the solution.
+Let us check that $\psi$ is the solution.
 We use the generalized Cauchy formula on the $z_1$
 variable.
 Take $R$ large enough so that 
@@ -10831,8 +10835,8 @@ $U \setminus K$ by construction.
 Now apply the solution of the compactly supported $\bar{\partial}$-problem
 to find a
 compactly supported function $\psi$ such that $\bar{\partial}\psi = g$. 
-Set $F = f_0 - \psi$.  Let us check that $F$ is the desired
-extension.  It is holomorphic:
+Set $F = f_0 - \psi$.  We check that $F$ is the desired
+extension.  First, it is holomorphic:
 \begin{equation*}
 \frac{\partial F}{\partial \bar{z}_k}
 =
