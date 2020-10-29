@@ -4770,7 +4770,7 @@ y = \varphi(x) ,
 where $(x,y) \in \R^{n-1} \times \R$ are our coordinates and
 $\varphi$ is a smooth %$C^k$
 function that is $O(2)$ at the origin,
-that is $\varphi(0) = 0$ and $d\varphi(0) = 0$.
+namely, $\varphi(0) = 0$ and $d\varphi(0) = 0$.
 
 If $M$ is the boundary of an open set $U$ with smooth boundary and
 $r < 0$ on $U$,
@@ -5346,7 +5346,7 @@ $\frac{\partial}{\partial \bar{z}}$s, an $n \times n$ complex linear matrix $A$
 acts on the Hessian as $A \oplus \overline{A}$, that is
 $\left[ \begin{smallmatrix} A & 0 \\ 0 & \overline{A} \end{smallmatrix}
 \right]$.
-Write the real Hessian as
+Write the full Hessian as
 $\left[ \begin{smallmatrix} X & L^t \\ L & \overline{X} \end{smallmatrix}
 \right]$, where $L$ is the complex Hessian.  Then the complex linear change
 of variables $A$ transforms
@@ -6631,7 +6631,7 @@ a function that is convex when restricted to any real line.
 \begin{exbox}
 \begin{exercise}
 Let $U \subset \C^n$ be open.
-A $C^2$-smooth $f \colon U \to \R$ is pluriharmonic if and
+Prove that a $C^2$-smooth $f \colon U \to \R$ is pluriharmonic if and
 only if
 \begin{equation*}
 \frac{\partial^2 f}{\partial \bar{z}_j \partial z_k} = 0
@@ -6663,8 +6663,8 @@ find out what is $F+\bar{F}-f$.
 \end{exercise}
 
 \begin{exercise}
-Prove the maximum principle\index{maximum principle!plurisubharmonic functions}.
-That is, if $U \subset \C^n$ is a domain and $f \colon U \to \R \cup
+Prove the maximum principle\index{maximum principle!plurisubharmonic functions}:
+If $U \subset \C^n$ is a domain and $f \colon U \to \R \cup
 \{-\infty\}$ is
 plurisubharmonic and achieves a maximum at $p \in U$, then $f$ is constant.
 \end{exercise}
@@ -6713,7 +6713,7 @@ For the other direction, suppose the complex Hessian is positive
 semidefinite at all points.
 Let $p \in U$.  After an affine change of coordinates assume that the
 line $\xi \mapsto a+b\xi$ is simply setting all but the first variable to
-zero, that is $a=0$ and $b=(1,0,\ldots,0)$.
+zero, that is, $a=0$ and $b=(1,0,\ldots,0)$.
 As the complex Hessian is positive semidefinite,
 $\frac{\partial^2 f}{\partial \bar{z}_1 \partial z_1} \geq 0$ for all
 points $(z_1,0,\ldots,0)$.  We proved above that $\nabla^2 g \geq 0$
@@ -7154,7 +7154,7 @@ has smooth boundary.
 Show that $U$ is 
 convex if and only if it is
 convex with respect to the smooth convex functions on $U$,
-that is smooth functions with positive semidefinite Hessian.
+that is, with respect to smooth functions with positive semidefinite Hessian.
 \end{exparts}
 \end{exercise}
 
@@ -7195,10 +7195,12 @@ $\bigcup_\alpha \partial \Delta_\alpha$ and therefore
 $\bigcup_\alpha \Delta_\alpha \subset \subset U$ by convexity.
 \end{proof}
 
-Let us illustrate the failure of the continuity principle.  If a domain
-is not convex with respect to plurisubharmonic functions, then you could have
-discs (denoted by straight line segments) that approach the boundary as in
-the following picture.  In the diagram, the boundaries of the discs are
+Let us illustrate the failure of the continuity principle.
+If you have discs (denoted by straight line segments) that approach the boundary as in
+the figure below,
+then the domain is not
+not convex with respect to plurisubharmonic functions.
+In the diagram, the boundaries of the discs are
 denoted by the dark dots at the end of the segments.
 In fact, if we replace discs with line segments, this is the standard
 convexity, see the exercises below.
@@ -8052,11 +8054,12 @@ the notion of a domain of holomorphy only makes sense for domains in $\C^n$.
 
 \begin{exbox}
 \begin{exercise}
-Prove the existence of the function $f_j \in \sO(U)$ as indicated in the proof above.
+Prove the existence of the function $f_j \in \sO(U)$ as indicated in the
+proof of Cartan--Thullen above.
 \end{exercise}
 
 \begin{exercise}
-Extend the proof to show that if $U \subset \C^n$
+Show that if $U \subset \C^n$
 is holomorphically convex, then there
 exists a single function $f \in \sO(U)$ that does not extend through any
 point $p \in \partial U$.
@@ -10221,7 +10224,7 @@ d \zeta
 +
 \frac{1}{2\pi i}
 \int_{U}
-\frac{\frac{\partial f}{\partial \bar{z}}(\zeta)}{\zeta-z}
+\frac{\frac{\partial f}{\partial \bar{\zeta}}(\zeta)}{\zeta-z}
 \,
 d\zeta \wedge d\bar{\zeta} .
 \end{equation*}
@@ -10361,7 +10364,7 @@ d \zeta
 +
 \frac{1}{2\pi i}
 \int_{U}
-\frac{\frac{\partial f}{\partial \bar{z}}(\zeta)}{\zeta-z}
+\frac{\frac{\partial f}{\partial \bar{\zeta}}(\zeta)}{\zeta-z}
 \,
 d\zeta \wedge d\bar{\zeta} 
 = 0 .
