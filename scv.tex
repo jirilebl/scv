@@ -363,7 +363,7 @@
 Ji{\v r}\'i Lebl\\[3ex]} 
 \today
 \\
-(version 3.3)
+(version 3.4)
 \end{minipage}}
 
 %\addtolength{\textwidth}{\centeroffset}
@@ -3763,10 +3763,10 @@ biholomorphic.
 
 The function $f$ is locally biholomorphic, in particular
 $f^{-1}$ is holomorphic,
-on the set where the Jacobian determinant $J_f$, that is the determinant
+on the set where the Jacobian determinant
 \begin{equation*}
 J_f(z) = \det Df(z) = \det \left[ \frac{\partial f_j}{\partial z_k}(z)
-\right]_{jk} ,
+\right]_{jk}
 \end{equation*}
 is not zero.  This follows from the inverse function theorem, which is just
 a special case of the implicit function theorem.
@@ -3910,7 +3910,7 @@ onto, and therefore $f(z) = az + b$ for $a \not= 0$.
 \end{exercise}
 \end{exbox}
 
-Let us also remark that while every injective holomorphic
+We remark that while every injective holomorphic
 map of $f \colon \C \to \C$ is onto, the same is not true in higher
 dimensions.
 In $\C^n$, $n \geq 2$, there exist so-called
@@ -4838,11 +4838,11 @@ Considering $x$ as a column vector, the Taylor expansion of a smooth function $\
 \begin{equation*}
 \varphi(x) = \varphi(0) + \nabla \varphi|_0 \cdot x + \frac{1}{2}\, x^t H x + E(x) ,
 \end{equation*}
-where $H$ is the Hessian matrix of $\varphi$ at the origin, that is $H = \left[
-\frac{\partial^2 \varphi}{\partial x_j \partial x_k} \big|_{0} \right]_{jk}$,
-and $E$ is $O(3)$.  That is, $E(0) = 0$, and
-all first and second derivatives of $E$ vanish at $0$.
-For the situation from the lemma above,
+where $H = \left[
+\frac{\partial^2 \varphi}{\partial x_j \partial x_k} \big|_{0} \right]_{jk}$ is the Hessian matrix of $\varphi$ at the origin,
+and $E$ is $O(3)$, namely, $E(0) = 0$, and
+all first and second order derivatives of $E$ vanish at $0$.
+For the situation of the lemma above,
 the $\varphi$ is $O(2)$ at the origin, i.e.\ $\varphi(0) = 0$
 and $\nabla \varphi|_0 = 0$.  So we write the hypersurface
 $M$ as
@@ -5309,7 +5309,7 @@ of the complexified tangent space.
 
 Let us illustrate the change of basis on one dimension.  The change of
 variables is left to student for higher dimensions.  Let $z =
-x+iy$ be in $\C$, and we denote by $T$ the change of basis matrix:
+x+iy$ be in $\C$, and denote by $T$ the change of basis matrix:
 \begin{equation*}
 T = 
 \begin{bmatrix}
@@ -5348,9 +5348,9 @@ $\left[ \begin{smallmatrix} A & 0 \\ 0 & \overline{A} \end{smallmatrix}
 \right]$.
 Write the full Hessian as
 $\left[ \begin{smallmatrix} X & L^t \\ L & \overline{X} \end{smallmatrix}
-\right]$, where $L$ is the complex Hessian.  Then the complex linear change
+\right]$, where $L$ is the complex Hessian.  The complex linear change
 of variables $A$ transforms
-the Hessian as
+the full Hessian as
 \begin{equation*}
 {\begin{bmatrix} A & 0 \\ 0 & \overline{A} \end{bmatrix}}^t
 \begin{bmatrix} X & L^t \\ L & \overline{X} \end{bmatrix}
@@ -8604,7 +8604,7 @@ $\C^n$
 and  $y$ to be a complex vector in a small neighborhood of $V$ in $\C^k$.
 So we treat $f$ and $g$ as holomorphic functions.  On a certain
 neighborhood of $U$ in $\C^n$, the composition $f \circ g$ makes sense
-and it is holomorphic as composition of holomorphic mappings is holomorphic.
+and it is holomorphic, as composition of holomorphic mappings is holomorphic.
 Restricting the complexified $f \circ g$ back to $\R^n$ we obtain a
 real-analytic function.
 \end{proof}
@@ -8622,7 +8622,7 @@ complexified holomorphic functions.
 \begin{exbox}
 \begin{exercise}
 Demonstrate the point about complexification we made just above.
-Find a nonconstant bounded real-analytic $f \colon \R^n \to \R$,
+Find a nonconstant bounded real-analytic $f \colon \R^n \to \R$
 that happens to complexify to $\C^n$.
 \end{exercise}
 
