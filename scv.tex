@@ -14227,13 +14227,13 @@ Let $g \colon \R \to \R$ be a smooth function that is
 strictly positive for $\sabs{t} > 1$, and $g(t) = 0$ for all $\sabs{t} \leq 1$.
 Define $M$ in $(z,w) \in \C^{n-1} \times \C$ by
 \begin{equation*}
-\Im w = g\bigl(\snorm{z}^2\bigr) .
+\Im w = g\bigl(\snorm{z}^2 + (\Re w)^2\bigr) .
 \end{equation*}
-$M$ is a smooth real hypersurface.
-Consider $p = (1,0,\ldots,0) \in M$.  For every $0 < s < 1$, let
-$q_s = (s,0,\ldots,0) \in M$ and $X_s = \bigl\{ (z,w) \in M :
-w = s \bigr\}$.  Each $X_s$ is a local complex subvariety of dimension $n-1$
-and $(X_s,q_s) \subset (M,q_s)$.  The size of $X_s$ goes to
+The $M$ is a smooth real hypersurface.
+Consider $p = (0,\ldots,0,1) \in M$.  For every $0 < s < 1$, let
+$q_s = (0,\ldots,0,s) \in M$ and $X_s = \bigl\{ (z,w) \in M :
+w = s \bigr\}$.  Each $X_s$ is the closure of a local complex subvariety of dimension $n-1$
+and $(X_s,q_s) \subset (M,q_s)$.  The size (diameter) of $X_s$ goes to
 zero as $s \to 1$ and $X_s$ cannot extend to a
 larger complex subvariety inside $M$.  So, no neighborhood $U$ at
 $p$ (as in the theorem) exists.
@@ -14270,7 +14270,7 @@ earthquakes!
 
 % Is this overly too nitpicky to include?
 
-Let us quickly review some basic notation that we use in this
+We quickly review some basic notation used in this
 book that is perhaps not described elsewhere.
 We use $\C$, $\R$ for complex and real numbers, and $i$ for imaginary unit
 (a square root of $-1$).  We use
@@ -14282,30 +14282,29 @@ When we write $\C^n$ or $\R^n$ we implicitly mean that $n \geq 1$, unless
 otherwise stated.
 
 \glsadd{not:setminus}%
-We denote the set subtraction by $A \setminus B$, meaning all elements of
+We denote set subtraction by $A \setminus B$, meaning all elements of
 $A$ that are not in $B$.
-We denote the complement of a set by $X^c$.  The ambient set
+We denote complement of a set by $X^c$.  The ambient set
 should be clear.  So, for example, if $X \subset \C$ naturally,
 then $X^c = \C \setminus X$.
 \glsadd{not:closure}%
-The topological closure of a set $S$ is denoted by $\widebar{S}$, its
+Topological closure of a set $S$ is denoted by $\widebar{S}$, its
 boundary is denoted by
 \glsadd{not:boundary}%
-$\partial S$.  If $S$ is relatively compact subset of $X$
+$\partial S$.  If $S$ is a relatively compact subset of $X$
 (its closure in $X$ is compact) or compact, we write $S \subset \subset X$.
 
 \glsadd{not:function}%
-The notation $f \colon X \to Y$ means a function with domain $X$ and
-codomain $Y$.  By $f(S)$ we mean the direct image of $S$ by $f$.
-We use the notation $f^{-1}$ for the inverse image of sets and
+A function with domain $X$ and codomain $Y$ we denote by
+$f \colon X \to Y$.  The direct image of $S$ by if is $f(S)$.
+The notation $f^{-1}$ for the inverse image of sets and
 single points.  When $f$ is bijective (one-to-one and onto),
 we use $f^{-1}$ for the inverse mapping.  So $f^{-1}(T)$ for
-a set $T \subset Y$ denotes all the points of $X$ that $f$ maps to $T$.
-Similarly, $f^{-1}(q)$ could denote all the points that map to $q$,
-but if the mapping is bijective, then it means just the unique point
+a set $T \subset Y$ denotes the points of $X$ that $f$ maps to $T$.
+For a point $q$, $f^{-1}(q)$ denotes the points that map to $q$,
+but if the mapping is bijective, then it means the unique point
 mapping to $q$.
-If we wish to define a function without necessarily giving it a name, we use
-the notation
+To define a function without giving it a name, we use
 \glsadd{not:mapsto}%
 \begin{equation*}
 x \mapsto F(x),
@@ -14313,13 +14312,11 @@ x \mapsto F(x),
 where $F(x)$ would generally be some formula giving the output.
 The notation
 \glsadd{not:restriction}%
-\begin{equation*}
-f|_S
-\end{equation*}
-means the restriction of $f$ to $S$:
-it is a function
+$f|_S$
+is the restriction of $f$ to $S$:
+a function
 $f|_S \colon S \to Y$ such that $f|_S(x) = f(x)$ for all $x \in S$.
-A function $f \colon U \to \C$ is said to be
+A function $f \colon U \to \C$ is
 \emph{\myindex{compactly supported}} if
 the \emph{\myindex{support}}, that is the set
 $\overline{\{ p \in U : f(p) \not= 0 \}}$, is compact.
@@ -14338,14 +14335,13 @@ f \circ g
 denotes the composition defined by $x \mapsto
 f\bigl(g(x)\bigr)$.
 
-We write
+To define $X$ to be $Y$ rather than just show equality, we write
 \glsadd{not:definition}%
 \begin{equation*}
 X
 \overset{\text{def}}{=}
-Y
+Y .
 \end{equation*}
-to define $X$ to be $Y$ rather than just show equality.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
