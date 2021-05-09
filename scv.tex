@@ -3556,6 +3556,13 @@ for every eigenvalue $\lambda$ of
 $D f(a)$.  Prove that there exists a neighborhood $W$ of $a$, such that
 $\lim_{\ell \to \infty} f^{\ell}(z) = a$ for all $z \in W$.
 \end{exercise}
+
+\begin{exercise}
+Let $U \subset \C^n$ be a bounded open set and $a \in U$.
+Show that the mapping $\varphi \mapsto \bigl(\varphi(a),D\varphi(a)\bigr)$
+from the set $\Aut(U)$ of automorphisms of $U$ to $\C^n \times \C^{n^2}$
+is injective.
+\end{exercise}
 \end{exbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -4018,7 +4025,7 @@ so $F$ must blow up (in particular it cannot be holomorphic) at
 $p$.  The contradiction shows that no $V$ and $W$ exist.
 \end{example}
 
-In one dimension this notion has no real content: Every domain is a domain
+In one dimension this notion has no real content: Every domain in $\C$ is a domain
 of holomorphy.
 
 \begin{exbox}
@@ -10985,6 +10992,91 @@ topological component.  Prove that $U$ is not a domain of holomorphy.
 \end{exbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Solvability of \texorpdfstring{$\bar{\partial}$}{dbar}-problem in the polydisc} \label{sec:dbarpoly}
+
+Solvability
+
+FIXME:
+
+As usual, we split the derivatives into the holomorphic and
+antiholomorphic parts.  We work with multi-indices.  For $\alpha$ and $\beta$
+with $\abs{\alpha}=p$ and 
+$\abs{\beta}=q$, a differential form
+\begin{equation*}
+\eta = 
+\sum_{\substack{\abs{\alpha}=p \\ \abs{\beta}=q}}
+\eta_{\alpha \beta} \, dz^\alpha \wedge d\bar{z}^\beta 
+\end{equation*}
+is called a \emph{\myindex{$(p,q)$-form}} or a differential form of
+\emph{\myindex{bidegree}} $(p,q)$.
+Define
+\glsadd{not:d}%
+\glsadd{not:dbar}%
+\begin{equation*}
+\partial \eta \overset{\text{def}}{=}
+\sum_{\substack{\abs{\alpha}=p \\ \abs{\beta}=q}}
+\,
+\sum_{j=1}^n
+\frac{\partial \eta_{\alpha \beta}}{\partial z_j} dz_j \wedge dz^\alpha
+\wedge d\bar{z}^\beta ,
+\qquad \text{and} \qquad
+\bar{\partial} \eta \overset{\text{def}}{=}
+\sum_{\substack{\abs{\alpha}=p \\ \abs{\beta}=q}}
+\,
+\sum_{j=1}^n
+\frac{\partial \eta_{\alpha \beta}}{\partial \bar{z}_j} d\bar{z}_j \wedge dz^\alpha
+\wedge d\bar{z}^\beta .
+\end{equation*}
+It is not difficult to see that $d \eta = \partial \eta +
+\bar{\partial} \eta$ as before.
+
+
+FIXME:
+
+Solvability of the equation $\bar{\partial} \omega = \eta$ for every $(0,q)$-form
+$\eta$ such that $\bar{\partial} \eta = 0$ whenever $1 \leq q \leq n-1$
+is equivalent to pseudoconvexity, although
+the proof of this is beyond the scope of this book.  We will prove a this
+result in the simpler case of a polydisc.
+
+\begin{thm} \label{thm:dbaronpoly}
+Let $\Delta \subset \C^n$ be a polydisc, let $q \geq 1$ be an integer, and 
+let $\eta$ be a smooth $(0,q)$-form on $\Delta$ such that 
+$\bar{\partial} \eta = 0$, then there exists a $(0,q-1)$-form $\omega$
+such that $\bar{\partial} \omega = \eta$.
+\end{thm}
+
+The theorem follows from solving the problem on a compact subpolydisc,
+which is usually called the \emph{\myindex{Dolbeault Lemma}} or
+\emph{\myindex{Dolbeault--Grothendieck Lemma}}.
+
+\begin{lemma}[Dolbeault--Grothendieck]
+Let $\Delta_s(w) \subset \Delta_r(w) \subset \C^n$ be polydiscs 
+where $0 < s < r < \infty$.
+Let $q \geq 1$ be an integer, and 
+let $\eta$ be a smooth $(0,q)$-form on $\Delta_r(w)$ such that 
+$\bar{\partial} \eta = 0$, then there exists a smooth $(0,q-1)$-form $\omega$
+on $\Delta_s(w)$ such that $\bar{\partial} \omega = \eta$.
+\end{lemma}
+
+\begin{proof}
+FIXME
+\end{proof}
+
+\begin{proof}[Proof of \thmref{thm:dbaronpoly}]
+FIXME
+\end{proof}
+
+FIXME: some examples
+
+\begin{exbox}
+\begin{exercise}
+FIXME
+\end{exercise}
+\end{exbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -11078,6 +11170,8 @@ Check that for $n=1$, the Bochner--Martinelli formula
 reduces to the standard Cauchy--Pompeiu formula.
 \end{exercise}
 \end{exbox}
+
+FIXME: this needs to go earlier and we will refer to it here.
 
 As usual, we split the derivatives into the holomorphic and
 antiholomorphic parts.  We work with multi-indices.  For $\alpha$ and $\beta$
@@ -11491,10 +11585,17 @@ Hint: Think in one dimension for simplicity.
 \end{exparts}
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:bergmanpunctureddisc}
+\begin{exparts}
+\item
 Show that $A^2(\D)$ can be identified with $A^2(\D \setminus \{ 0 \})$,
 that is, every function in the latter can be extended to a function in the
 former.
+\item
+Let $U \subset \C^n$ be a domain, $f \in \sO(U)$, and $X = f^{-1}(0)$.
+Show that every function in $A^2(U \setminus X)$ is a restriction of a
+function in $A^2(U)$, that is, $A^2(U) \cong A^2(U \setminus X)$.
+\end{exparts}
 \end{exercise}
 \end{exbox}
 
@@ -14685,12 +14786,12 @@ that $f(z_0) = 0$.
 
 Schwarz's lemma can also be used to classify the automorphisms of the disc
 (and hence any simply connected domain).  Let
-$\operatorname{Aut(\D)}$ denote the group of biholomorphic (both $f$ and
+$\Aut(\D)$ denote the group of biholomorphic (both $f$ and
 $f^{-1}$ are holomorphic) self maps of the
 disc to itself.
 
 \begin{prop}
-If $f \in \operatorname{Aut}(\D)$, then there exists an $a \in \D$
+If $f \in \Aut(\D)$, then there exists an $a \in \D$
 and $\theta \in \R$ such that
 \begin{equation*}
 f(z) = e^{i\theta} \frac{z-a}{1-\bar{a}z} .
