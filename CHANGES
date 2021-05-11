@@ -1,5 +1,6 @@
 Since edition 3
 
+* New short appendix on the useful measure theory results.
 * New font, more readable (shorter lines)
 * New Exercise 1.5.10.
 * New Exercise 1.6.1, renumbers rest of the exercises in 1.6
@@ -16,6 +17,7 @@ Since edition 3
   in text.
 * When computing the Hessian use the vertical bar to evaluate,
   it may be clearer
+* Improve Figure C.1 a little.
 * Shorten a couple of section titles slightly
 
 See https://www.jirka.org/scv/changes.html for older changes.

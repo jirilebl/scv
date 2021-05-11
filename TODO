@@ -1,14 +1,16 @@
-* Perhaps another short appendix on the real analysis stuff that is needed.
-  Differentiation under the integral, taking limits under the integral, taking
-  limits past sums, perhaps a quick definition for Lebesgue integral and the
-  convergence theorems.  No more than a couple of pages should be needed.
-* Definitely more on d-bar, see the suggestions below.
+Perhaps:
+
+ * In the one-variable stuff, perhaps do winding numbers.
 
 So current plan for new SCV bits:
 
  * the d-bar in polydiscs theorem (already started)
  * Mention cousin problems, probably earlier.  Don't know how far to go in
    that direction.  Seems to make sense in the dbar chapter.
+
+
+
+Some more uncategorized bits:
 
 From Richard Lärkäng / Elizabeth Wulcan:
 

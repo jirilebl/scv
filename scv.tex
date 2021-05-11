@@ -207,6 +207,7 @@
 \newcommand{\sG}{{\mathscr{G}}}
 \newcommand{\sH}{{\mathscr{H}}}
 \newcommand{\sM}{{\mathscr{M}}}
+\newcommand{\sN}{{\mathscr{N}}}
 \newcommand{\sO}{{\mathscr{O}}}
 \newcommand{\sP}{{\mathscr{P}}}
 \newcommand{\sQ}{{\mathscr{Q}}}
@@ -549,10 +550,11 @@ be covered within a semester.  See the end of the book
 for a \hyperref[ch:furtherreading]{list of books} for
 reference and further reading.  There are also appendices for
 a list of one-variable results, an overview of differential forms,
-and some basic algebra.
+some basic algebra, and measure theory,
 See \appendixref{ap:onevarresults},
-\appendixref{ap:diffforms}, and
-\appendixref{ap:algebra}.
+\appendixref{ap:diffforms},
+\appendixref{ap:algebra}, and
+\appendixref{ap:measure}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -16312,6 +16314,244 @@ The proof is not difficult, but it is perhaps beyond the scope of this book.
 %\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Measure theory review} \label{ap:measure}
+
+The beginning of this course does not require the Lebesgue integral, however
+knowing it may make some of the earlier results easier to understand and the
+exercises easier to do.  In some of the later chapters, Lebesgue integral
+does become necessary in several places.  To make the first reading of the
+entire book easier for a student who has not had a course on measure theory
+yet, we present the basic ideas of the Lebesgue integral and list the
+results that make it so useful.
+We avoid getting into the details of the definition and simply state the
+useful results without proof.  A reader who is interested can consult
+for example \cite{Rudin:principles} or \cite{Rudin:analysis}.
+
+The integral on $X$ is defined by first setting apart a collection of
+sets $\sM$, called the \emph{\myindex{measurable sets}}, and on these sets defining a
+measure, that is a function $\mu \colon \sM \to \R$, which is
+nonnegative, the measure of the empty set is $0$, and $\sigma$-additive,
+that is, the measure of a union of countably many disjoint sets is the
+sum of the measures.  If $X$ is the euclidean space $\R^n$, there always
+exists a measure called the \emph{\myindex{Lebesgue measure}} that will agree with the
+standard $k$-dimensional volume on simple sets such as rectangles.  However,
+a complication is that not all subsets of $\R^n$ can then be measurable.
+We say that $(X,\sM,\mu)$ is a \emph{\myindex{measure space}}.
+
+A function $f \colon X \to \R$ is called measurable if its sublevel
+sets are measurable.
+Since one generally has to work hard to produce a nonmeasurable function
+in the usual measure spaces we will consider,
+the reader will be forgiven for just assuming every function that appears in
+this book is measurable.
+A function is simple if its support is of finite
+measure and it only has finitely many values, in which case the integral is
+defined as
+\begin{equation*}
+\int_X f\, d \mu
+\overset{\text{def}}{=}
+\sum_{y \in f(X)}
+y \, \mu\bigl(f^{-1}(y)\bigr) .
+\end{equation*}
+That is, on the set where $f(x)=y$ we define the integral as the value of
+the function times the measure of the set and then we add these up.
+If the function is actually a step function and the measure was the Lebesgue
+measure, this is the same as would be done for the Riemann integral.
+The integral of any nonnegative $f$ is defined by
+\begin{equation*}
+\int_X f\, d \mu
+\overset{\text{def}}{=}
+\sup_{\substack{\varphi \leq f \\ \varphi \text{ is simple}}}
+\int_X \varphi \, d\mu .
+\end{equation*}
+The integral of any real-valued measurable function is
+then defined by writing $f = f_+ - f_-$ for
+nonnegative functions $f_+$ and $f_-$, as long as
+the integrals of at least one of these is not infinite.
+Similarly the integral of
+complex-valued functions is defined by writing $f = u + i \, v$.
+The most common class of functions to deal with is then the
+\emph{$L^1$-integrable}\index{L1-integrable@$L^1$-integrable}
+functions, which are the functions such that
+\begin{equation*}
+\int_X \sabs{f} \, d\mu < \infty .
+\end{equation*}
+Note that for the purposes of integration we often allow nonnegative
+functions to take on the value $\infty$ at some points.
+In general, we allow our functions to be
+be undefined on a set of measure zero if we are integrating them since
+changing a function on a measure zero set does not change the integral.
+
+A couple of things to notice about the definition is the following.  First,
+because step functions are simple functions with respect to the Lebesgue measure,
+the integration is a generalization of the Riemann integral on the real line
+and on $\R^n$ in general in the sense that the two integrals agree when they
+are both defined.
+
+Second, many more functions (all measurable functions in fact)
+can be limits of simple functions, and the integral is defined as a limit of
+such integrals, one would, rightly, expect that limits can easily pass under
+the integral and we no longer need to worry about integrability of the
+limit.
+
+Besides integration, one often forgotten feature of this setup is that it
+also applies to series.  For a countable set $X$ such as $\N$ we can define
+the so-called \emph{\myindex{counting measure}}, where every set $S \subset
+X$ is measurable and $\mu(S)$ is simply the number of elements in $S$.
+If $z_n = f(n)$ is a function defined on $X$, then we write
+\begin{equation*}
+\sum_{n \in X} z_n = \int_X f \, d\mu .
+\end{equation*}
+So the following theorems also apply to series, where being $L^1$ simply
+means that the series is absolutely summable.
+
+We say that something happens \emph{\myindex{almost everywhere}} if the set
+where it does not happen is of measure zero.  Similarly we may say that this
+something happens for \emph{almost every} $x \in X$.  Note that if a
+sequence of measurable functions converges to a function $f$ almost
+everywhere, then this function can be assumed to be measurable (it is equal
+almost everywhere to a measurable function).  We have the following three
+theorems, which despite appearances are actually just equivalent to each
+other, but each statement is useful in different situations.
+
+\begin{thm}[Fatou's lemma]\index{Fatou's lemma}
+\pagebreak[2]
+Let $(X,\sM,\mu)$ be a measure space and
+$\{ f_n \}$ a sequence of nonnegative measurable functions that converges
+almost everywhere to a function $f$.  Then
+\begin{equation*}
+\int_X f \, d\mu \leq \liminf_{n\to \infty} \int_X f_n \, d\mu .
+\end{equation*}
+\end{thm}
+
+\begin{thm}[Monotone convergence theorem]\index{Monotone convergence theorem}
+\pagebreak[2]
+Let $(X,\sM,\mu)$ be a measure space and
+$\{ f_n \}$ a sequence of nonnegative measurable functions that converges
+pointwise to a function $f$.  Then
+\begin{equation*}
+\int_X f \, d\mu = \lim_{n\to \infty} \int_X f_n \, d\mu .
+\end{equation*}
+\end{thm}
+
+\begin{thm}[Dominated convergence theorem]\index{Dominated convergence theorem}
+\pagebreak[2]
+Let $(X,\sM,\mu)$ be a measure space and
+$\{ f_n \}$ a sequence of measurable complex-valued functions that converges
+almost everywhere to a function $f$.  Suppose $g$ is a nonnegative
+$L^1$-integrable function such that $\sabs{f(x)} \leq g(x)$ for almost every
+$x$.  Then
+\begin{equation*}
+\int_X f \, d\mu = \lim_{n\to \infty} \int_X f_n \, d\mu .
+\end{equation*}
+\end{thm}
+
+A common application of the dominated convergence theorem is differentiating
+under the integral.
+
+\begin{thm}[Differentiation under the integral]\index{Differentiation under the integral}
+Let $U \subset \R$ be open and $(X,\sM,\mu)$ be a measure space.
+Suppose $f \colon U \times X \to \C$ is a function such that
+for each $t \in U$, $x \mapsto f(t,x)$ is $L^1$-integrable,
+for almost every $x$, $\frac{\partial f}{\partial t}$ exists on all of $U$,
+and there exists an $L^1$-integrable $g \colon X \to [0,\infty]$ such that
+$\babs{\frac{\partial f}{\partial t}(t,x)} \leq g(x)$ for all $t \in U$
+and almost every $x \in X$.  Then for all $t \in U$,
+\begin{equation*}
+\frac{d}{dt}
+\int_X f(t,x) \, d\mu(x)
+=
+\int_X
+\frac{\partial f}{\partial t}(t,x) \, d\mu(x) .
+\end{equation*}
+\end{thm}
+
+A measure space is \emph{$\sigma$-finite}\index{sigma-finite@$\sigma$-finite}
+if it is a countable union of sets of
+finite measure.  For example, the euclidean space with Lebesgue measure
+is $\sigma$-finite because it is a union of balls, which are of finite
+measure.  We often want to write an integral over a product space as an
+iterated integral, such as writing an integral over a subset of $\R^n$ using
+$n$ one-dimensional integrals.  If
+$(X,\sM,\mu)$ and $(Y,\sN,\nu)$ are product spaces, we can define a product
+measure space by requiring that $\mu \times \nu (A \times B) = \mu(A)\nu(B)$
+(we again skip details).  First, for nonnegative functions we obtain the
+following simple theorem where no integrability needs to be checked, and we
+are allowing things to be infinite if needed.
+
+\begin{thm}[Tonelli]\index{Tonelli theorem}
+Suppose $(X,\sM,\mu)$ and $(Y,\sN,\nu)$ are $\sigma$-finite measure spaces
+and $f \colon X \times Y \to \R$ is a nonnegative measurable function.
+Then:
+\begin{enumerate}[(i)]
+\item For almost every $x \in X$, $y \mapsto f(x,y)$ is measurable, and
+for almost every $y \in Y$, $x \mapsto f(x,y)$ is measurable.
+\item The functions $y \mapsto \int_X f(x,y) \, d\mu(x)$ and $x \mapsto
+\int_Y f(x,y) \, d\nu(y)$ are measurable.
+\item
+\begin{equation*}
+\begin{split}
+\int_{X \times Y} f(x,y) d(\mu\times \nu)
+& =
+\int_Y \left( \int_X f(x,y) \, d\mu(x) \right) d\nu(y)
+\\
+& =
+\int_X \left( \int_Y f(x,y) \, d\nu(y) \right) d\mu(x) .
+\end{split}
+\end{equation*}
+\end{enumerate}
+\end{thm}
+
+In general we have the Fubini theorem.  A measure is
+\emph{complete}\index{complete measure}, if every subset of a measure zero
+set is also measurable.  Every measure can be completed by simply throwing
+those sets in, but it is a minor technicality that the product of two
+measure spaces is not in general complete and must be completed.  This is an
+issue for measurability of the functions involved, but the functions that
+one usually considers in applications are easily shown
+measurable in all of these measure spaces and their completions.
+
+\begin{thm}[Fubini]\index{Fubini theorem}
+Suppose $(X,\sM,\mu)$ and $(Y,\sN,\nu)$ are complete measure spaces
+and $f \colon X \times Y \to \R$ is $L^1$-integrable.
+Then:
+\begin{enumerate}[(i)]
+\item For almost every $x \in X$, $y \mapsto f(x,y)$ is $L^1$-integrable,
+and for almost every $y \in Y$, $x \mapsto f(x,y)$ is $L^1$-integrable.
+\item The functions $y \mapsto \int_X f(x,y) \, d\mu(x)$ and
+$x \mapsto \int_Y f(x,y) \, d\nu(y)$ is $L^1$-integrable.
+\item
+\begin{equation*}
+\begin{split}
+\int_{X \times Y} f(x,y) d(\mu\times \nu)
+& =
+\int_Y \left( \int_X f(x,y) \, d\mu(x) \right) d\nu(y)
+\\
+& =
+\int_X \left( \int_Y f(x,y) \, d\nu(y) \right) d\mu(x) .
+\end{split}
+\end{equation*}
+\end{enumerate}
+\end{thm}
+
+Tonelli theorem is often applied in tandem with the Fubini theorem.  Tonelli
+establishes integrability and Fubini is used to write the integral we need
+as iterated integral, or swap the order of integrations.
+
+Note that the Tonelli and Fubini theorems are very useful in simplifying the
+development of the power series by using the counting measure as we
+mentioned above.  They are also useful for swapping a series summation and
+integration such as
+\begin{equation*}
+\int_0^1 \sum_{n=1}^\infty a_n(x) \, dx
+=
+\sum_{n=1}^\infty \int_0^1 a_n(x) \, dx .
+\end{equation*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -16381,10 +16621,6 @@ The proof is not difficult, but it is perhaps beyond the scope of this book.
    %review={\MR{1111477 (92b:32016)}},
 }
 
-
-
-
-
 \bib{DAngelo}{book}{
    author={D'Angelo, John P.},
    title={Several complex variables and the geometry of real hypersurfaces},
@@ -16425,19 +16661,6 @@ The proof is not difficult, but it is perhaps beyond the scope of this book.
    %review={\MR{1045639 (91a:32001)}},
 }
 
-%\bib{HornJohnson}{book}{
-%   author={Horn, Roger A.},
-%   author={Johnson, Charles R.},
-%   title={Matrix analysis},
-%   publisher={Cambridge University Press},
-%   place={Cambridge},
-%   date={1985},
-%   pages={xiii+561},
-%   isbn={0-521-30586-1},
-%   review={\MR{832183}},
-%   %review={\MR{832183 (87e:15001)}},
-%}
-
 \bib{Krantz}{book}{
    author={Krantz, Steven G.},
    title={Function theory of several complex variables},
@@ -16452,20 +16675,16 @@ The proof is not difficult, but it is perhaps beyond the scope of this book.
    %review={\MR{1162310 (93c:32001)}},
 }
 
-
-%\bib{Rudin:fanal}{book}{
-%   author={Rudin, Walter},
-%   title={Functional analysis},
-%   series={International Series in Pure and Applied Mathematics},
-%   edition={2},
-%   publisher={McGraw-Hill Inc.},
-%   place={New York},
-%   date={1991},
-%   pages={xviii+424},
-%   isbn={0-07-054236-8},
-%   review={\MR{1157815}},
-%   %review={\MR{1157815 (92k:46001)}},
-%}
+\bib{Rudin:principles}{book}{
+   author={Rudin, Walter},
+   title={Principles of mathematical analysis},
+   edition={3},
+   note={International Series in Pure and Applied Mathematics},
+   publisher={McGraw-Hill Book Co., New York-Auckland-D\"usseldorf},
+   date={1976},
+   pages={x+342},
+   review={\MR{0385023}},
+}
 
 \bib{Rudin:ball}{book}{
    author={Rudin, Walter},
@@ -16482,18 +16701,16 @@ The proof is not difficult, but it is perhaps beyond the scope of this book.
    %review={\MR{601594 (82i:32002)}},
 }
 
-\bib{Rudin:principles}{book}{
+\bib{Rudin:analysis}{book}{
    author={Rudin, Walter},
-   title={Principles of mathematical analysis},
+   title={Real and complex analysis},
    edition={3},
-   note={International Series in Pure and Applied Mathematics},
-   publisher={McGraw-Hill Book Co., New York-Auckland-D\"usseldorf},
-   date={1976},
-   pages={x+342},
-   review={\MR{0385023}},
+   publisher={McGraw-Hill Book Co., New York},
+   date={1987},
+   pages={xiv+416},
+   isbn={0-07-054234-1},
+   review={\MR{924157}},
 }
-
-
 
 \bib{Whitney}{book}{
    author={Whitney, Hassler},
