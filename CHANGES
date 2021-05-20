@@ -18,6 +18,7 @@ Since edition 3
 * When computing the Hessian use the vertical bar to evaluate,
   it may be clearer
 * Improve Figure C.1 a little.
+* Replace some j's with k's or similar for aesthetic reasons.
 * Shorten a couple of section titles slightly
 
 See https://www.jirka.org/scv/changes.html for older changes.

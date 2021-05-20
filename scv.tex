@@ -518,13 +518,12 @@ at github: \url{https://github.com/jirilebl/scv}
 This book is a polished version of my course notes for Math 6283, Several
 Complex Variables, given in
 Spring 2014, Spring 2016, and Spring 2019 semesters
-at Oklahoma State University.
-It is meant for a semester-long course.
-Quite a few
-exercises of various difficulty are
+at the Oklahoma State University.
+It is a semester-long course.
+Quite a few exercises of various difficulty are
 sprinkled throughout the text, and I hope a reader is
 at least attempting all of them.  Many are required later in the
-text.  The reader should attempt exercises in sequence as earlier exercises
+text.  The reader should attempt exercises in sequence, earlier exercises
 can help or even be required to solve later ones.
 
 The prerequisites are a decent knowledge of vector calculus, basic
@@ -561,20 +560,20 @@ See \appendixref{ap:onevarresults},
 \section{Motivation, single variable, and Cauchy's formula} \label{sec:motivation}
 
 
-Let us start with some standard notation.
-We use \glsadd{not:C}$\C$ for the complex numbers, \glsadd{not:R}$\R$
+We start with some standard notation.
+We use \glsadd{not:C}$\C$ for complex numbers, \glsadd{not:R}$\R$
 for real numbers,
 \glsadd{not:Z}$\Z$ for integers,
 \glsadd{not:N}$\N = \{ 1,2,3,\ldots \}$ for natural
 numbers,
-\glsadd{not:i}$i = \sqrt{-1}$.  Throughout this book, we use
-the standard terminology of \emph{\myindex{domain}} to mean connected open
-set.  We will try to avoid using it if connectedness is not needed, but
+\glsadd{not:i}$i = \sqrt{-1}$.  Throughout this book,
+the standard terminology of \emph{\myindex{domain}} means a connected open
+set.  We try to avoid using it if connectedness is not needed, but
 sometimes we use it just for simplicity.
 
-As complex analysis deals with the complex numbers, perhaps we should begin
-with $\sqrt{-1}$.  We start with the real numbers, $\R$, and we add
-$\sqrt{-1}$ into our field.  We call this square root $i$, and we write the
+As complex analysis deals with complex numbers, perhaps we should begin
+with $\sqrt{-1}$.  Start with the real numbers, $\R$, and add
+$\sqrt{-1}$ into our field.  Call this square root $i$, and write the
 complex numbers, $\C$, by
 identifying 
 $\C$ with $\R^2$ using
@@ -648,29 +647,29 @@ just not enough.  For example, there is no nonzero polynomial function that solv
 the simplest of differential equations, $f' = f$.  We need the exponential
 function, which is holomorphic.  
 
-Let us start with polynomials.  In one variable, a polynomial in $z$ is
+We start with polynomials.  A polynomial in $z$ is
 an expression of the form
 \begin{equation*}
-P(z) = \sum_{j=0}^d c_j \, z^j ,
+P(z) = \sum_{k=0}^d c_k \, z^k ,
 \end{equation*}
-where $c_j \in \C$ and $c_d \not= 0$.  The number $d$ is called the
+where $c_k \in \C$ and $c_d \not= 0$.  The number $d$ is called the
 \emph{degree}\index{degree of a polynomial}
 of the
-polynomial $P$.  We can plug in some number $z$ and simply compute
-$P(z)$, so we have a function $P \colon \C \to \C$.
+polynomial $P$.  We can plug in some number $z$ and compute
+$P(z)$, to obtain a function $P \colon \C \to \C$.
 
 We try to write
 \begin{equation*}
-f(z) = \sum_{j=0}^\infty c_j \, z^j
+f(z) = \sum_{k=0}^\infty c_k \, z^k
 \end{equation*}
 and all is very fine until we wish to know what $f(z)$ is for some number
 $z \in \C$.
 We usually mean 
 \begin{equation*}
-\sum_{j=0}^\infty c_j \, z^j
+\sum_{k=0}^\infty c_k \, z^k
 =
 \lim_{d\to\infty}
-\sum_{j=0}^d c_j \, z^j .
+\sum_{k=0}^d c_k \, z^k .
 \end{equation*}
 As long as the limit exists, we have a function.  You know all
 this; it is your one-variable complex analysis.  We usually
@@ -739,12 +738,12 @@ The function $f$ is holomorphic if and only if
 \begin{equation*}
 \frac{\partial f}{\partial \bar{z}} = 0 .
 \end{equation*}
-That seems a far nicer statement of the Cauchy--Riemann equations, and it is
+That seems a far nicer statement of the Cauchy--Riemann equations; it is
 just one complex equation.  It says
 a function is holomorphic if and only if it depends on $z$ but not on
-$\bar{z}$ (perhaps that might not make a whole lot of sense at first
+$\bar{z}$ (perhaps that does not make a whole lot of sense at first
 glance).
-Let us check:
+We check:
 \begin{equation*}
 \frac{\partial f}{\partial \bar{z}} 
 =
@@ -838,12 +837,12 @@ That is because
 \end{split}
 \end{equation*}
 
-A function on $\C$ is really a function defined on
-$\R^2$ as identified above and hence it is a function of $x$ and $y$.
+A function on $\C$ is a function defined on
+$\R^2$ as identified above and so it is a function of $x$ and $y$.
 Writing
 $x = \frac{z+\bar{z}}{2}$ and
-$y = \frac{z-\bar{z}}{2i}$, we think of it as a function of two
-complex variables $z$ and $\bar{z}$.  Pretend for a moment as if $\bar{z}$ did not
+$y = \frac{z-\bar{z}}{2i}$, think of it as a function of two
+complex variables, $z$ and $\bar{z}$.  Pretend for a moment as if $\bar{z}$ did not
 depend on $z$.
 The Wirtinger operators
 work as if $z$ and $\bar{z}$ really were independent variables.  For
@@ -861,7 +860,7 @@ instance:
 =
 z^2 ( 3 \bar{z}^2 ) + 0 .
 \end{equation*}
-So a holomorphic function is a function not depending on $\bar{z}$.
+A holomorphic function is a function ``not depending on $\bar{z}$.''
 
 The most important theorem in one variable is
 the \emph{\myindex{Cauchy integral formula}}\index{Cauchy formula}.
@@ -998,7 +997,7 @@ in two or more variables.
 Holomorphic functions admit a power series representation in $z$
 at each point $a$:
 \begin{equation*}
-f(z) = \sum_{j=0}^\infty c_j {(z-a)}^j .
+f(z) = \sum_{k=0}^\infty c_k {(z-a)}^k .
 \end{equation*}
 No $\bar{z}$ is necessary,
 since $\frac{\partial f}{\partial \bar{z}} = 0$.
@@ -1025,8 +1024,8 @@ In fact, if $\sabs{z-a} \leq \rho' < \rho$, then
 $\abs{\frac{z-a}{\zeta-a}} \leq \frac{\rho'}{\rho} < 1$.  Therefore,
 the geometric series
 \begin{equation*}
-\sum_{j=0}^\infty
-{\left(\frac{z-a}{\zeta-a}\right)}^j
+\sum_{k=0}^\infty
+{\left(\frac{z-a}{\zeta-a}\right)}^k
 =
 \frac{1}{1-
 \frac{z-a}{\zeta-a}}
@@ -1034,8 +1033,8 @@ the geometric series
 \frac{\zeta-a}{\zeta-z}
 \end{equation*}
 converges uniformly absolutely for $(z,\zeta) \in \overline{\Delta_{\rho'}(a)}
-\times \partial \Delta_\rho(a)$ (that is, $\sum_j {\bigl\lvert
-\frac{z-a}{\zeta-a} \bigr\rvert}^j$
+\times \partial \Delta_\rho(a)$ (that is, $\sum_k {\bigl\lvert
+\frac{z-a}{\zeta-a} \bigr\rvert}^k$
 converges uniformly).
 %In particular, the
 %series converges uniformly absolutely in $z$ on compact subsets of $\Delta_{\rho}(a)$. 
@@ -1065,21 +1064,21 @@ d \zeta
 \frac{1}{2\pi i}
 \int_{\gamma}
 \frac{f(\zeta)}{\zeta-a}
-\sum_{j=0}^\infty
-{\left(\frac{z-a}{\zeta-a}\right)}^j
+\sum_{k=0}^\infty
+{\left(\frac{z-a}{\zeta-a}\right)}^k
 \,
 d \zeta 
 \\
 & =
-\sum_{j=0}^\infty
+\sum_{k=0}^\infty
 \left(
 \frac{1}{2\pi i}
 \int_{\gamma}
-\frac{f(\zeta)}{{(\zeta-a)}^{j+1}}
+\frac{f(\zeta)}{{(\zeta-a)}^{k+1}}
 \,
 d \zeta 
 \right)
-{(z-a)}^j .
+{(z-a)}^k .
 \end{split}
 \end{equation*}
 In the last equality, we may 
@@ -1091,11 +1090,11 @@ then
 \begin{equation*}
 \abs{
 \frac{f(\zeta)}{\zeta-a}
-{\left(\frac{z-a}{\zeta-a}\right)}^j
+{\left(\frac{z-a}{\zeta-a}\right)}^k
 }
 \leq
 M 
-{\left(\frac{\abs{z-a}}{\rho}\right)}^j,
+{\left(\frac{\abs{z-a}}{\rho}\right)}^k,
 \qquad \text{and} \qquad
 \frac{\abs{z-a}}{\rho} < 1 .
 \end{equation*}
@@ -1115,10 +1114,10 @@ that the radius of convergence is at least $R$, where $R$ is the maximum $R$
 such that $\Delta_R(a) \subset U$.  We also obtained a formula for the
 coefficients
 \begin{equation*}
-c_j = 
+c_k = 
 \frac{1}{2\pi i}
 \int_{\gamma}
-\frac{f(\zeta)}{{(\zeta-a)}^{j+1}}
+\frac{f(\zeta)}{{(\zeta-a)}^{k+1}}
 \,
 d \zeta  .
 \end{equation*}
@@ -1133,52 +1132,52 @@ For a set $K$, denote the \emph{\myindex{supremum norm}}:
 By a brute force estimation, we obtain the very useful
 \emph{\myindex{Cauchy estimates}}:
 \begin{equation*}
-\sabs{c_j} = 
+\sabs{c_k} = 
 \abs{
 \frac{1}{2\pi i}
 \int_{\gamma}
-\frac{f(\zeta)}{{(\zeta-a)}^{j+1}}
+\frac{f(\zeta)}{{(\zeta-a)}^{k+1}}
 \,
 d \zeta 
 }
 \leq
 \frac{1}{2\pi}
 \int_{\gamma}
-\frac{\snorm{f}_{\gamma}}{\rho^{j+1}}
+\frac{\snorm{f}_{\gamma}}{\rho^{k+1}}
 \,
 \sabs{d \zeta} 
 =
-\frac{\snorm{f}_{\gamma}}{\rho^{j}} .
+\frac{\snorm{f}_{\gamma}}{\rho^{k}} .
 \end{equation*}
 
-We differentiate Cauchy's formula $j$ times (using the Wirtinger
+We differentiate Cauchy's formula $k$ times (using the Wirtinger
 $\frac{\partial}{\partial z}$ operator),
 \begin{equation*}
-f^{(j)}(z)
+f^{(k)}(z)
 =
-\frac{\partial^j f}{\partial z^j} (z)
+\frac{\partial^k f}{\partial z^k} (z)
 =
 \frac{1}{2\pi i}
 \int_{\gamma}
-\frac{j! f(\zeta)}{{(\zeta-z)}^{j+1}}
+\frac{k! f(\zeta)}{{(\zeta-z)}^{k+1}}
 \,
 d \zeta  ,
 \end{equation*}
 and therefore
 \begin{equation*}
-j! \, c_j =
-f^{(j)}(a)
+k! \, c_k =
+f^{(k)}(a)
 =
-\frac{\partial^j f}{\partial z^j}(a) .
+\frac{\partial^k f}{\partial z^k}(a) .
 \end{equation*}
 Hence, we can control derivatives of $f$
 by the size of the function:
 \begin{equation*}
-\babs{f^{(j)}(a)}
+\babs{f^{(k)}(a)}
 =
-\abs{\frac{\partial^j f}{\partial z^j}(a)}
+\abs{\frac{\partial^k f}{\partial z^k}(a)}
 \leq
-\frac{j! \snorm{f}_{\gamma}}{\rho^{j}} .
+\frac{k! \snorm{f}_{\gamma}}{\rho^{k}} .
 \end{equation*}
 This estimate is one of the key properties of
 holomorphic functions, and the reason why the correct topology for
@@ -1224,7 +1223,7 @@ a \emph{\myindex{polydisc}}
 \Delta_\rho(a)  \overset{\text{def}}{=}
 \bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho_j ~\text{for $j=1,2,\ldots,n$} \bigr\} .
 \end{equation*}
-We call $a$ the
+Call $a$ the
 \emph{center}\index{center of a polydisc}
 and $\rho$ the
 \emph{polyradius}\index{polyradius of a polydisc}
@@ -1248,8 +1247,9 @@ the \emph{\myindex{unit polydisc}} in several variables:
 In more than one complex dimension, it is difficult to draw exact pictures
 for lack of real dimensions on our paper.
 We visualize the unit polydisc in two variables (bidisc)
-by drawing the in \figureref{fig:polydisc}
-picture by plotting just against the modulus of the variables.
+as in
+\figureref{fig:polydisc}
+by plotting against the modulus of the variables.
 \begin{myfig}
 \subimport*{figures/}{polydisc.pdf_t}
 \caption{The bidisc.\label{fig:polydisc}}
@@ -1281,7 +1281,7 @@ Define \emph{balls}\index{ball} as in $\R^{2n}$:
 B_\rho(a)  \overset{\text{def}}{=}
 \bigl\{ z \in \C^n : \snorm{z - a} < \rho \bigr\} ,
 \end{equation*}
-And define the \emph{\myindex{unit ball}} as
+And the \emph{\myindex{unit ball}},
 \glsadd{not:unitball}%
 \begin{equation*}
 \bB_n \overset{\text{def}}{=} B_1(0) =
@@ -1302,7 +1302,7 @@ A picture of $\bB_2$ is in \figureref{fig:ball}.
 
 \begin{defn}
 Let $U \subset
-\C^n$ be an open set.  A
+\C^n$ be open.  A
 function
 $f \colon U \to \C$ is \emph{\myindex{holomorphic}} if
 it is \emph{locally bounded}%
@@ -1314,7 +1314,7 @@ set of functions.}
 %A deep result of Hartogs, which we skip, says that
 %we do not need to assume $f$ to be locally bounded.}
 and holomorphic in each variable separately.
-In other words, $f$ is holomorphic if it is locally bounded
+That is, $f$ is holomorphic if it is locally bounded
 and complex-differentiable in each variable separately:
 \begin{equation*}
 \lim_{\xi \in \C \to 0} \frac{f(z_1,\ldots,z_k+\xi,\ldots,z_n) - f(z)}{\xi}
@@ -1328,14 +1328,14 @@ to plain vanilla real differentiability.
 As in one variable, we define the \emph{\myindex{Wirtinger operators}}
 \glsadd{not:wirt}%
 \begin{equation*}
-\frac{\partial}{\partial z_j}  \overset{\text{def}}{=}
+\frac{\partial}{\partial z_k}  \overset{\text{def}}{=}
 \frac{1}{2} \left(
-\frac{\partial}{\partial x_j} - i \frac{\partial}{\partial y_j}
+\frac{\partial}{\partial x_k} - i \frac{\partial}{\partial y_k}
 \right) ,
 \qquad
-\frac{\partial}{\partial \bar{z}_j}  \overset{\text{def}}{=}
+\frac{\partial}{\partial \bar{z}_k}  \overset{\text{def}}{=}
 \frac{1}{2} \left(
-\frac{\partial}{\partial x_j} + i \frac{\partial}{\partial y_j}
+\frac{\partial}{\partial x_k} + i \frac{\partial}{\partial y_k}
 \right) .
 \end{equation*}
 An alternative definition is to say that a continuously
@@ -1344,13 +1344,12 @@ differentiable function $f \colon U \to \C$ is
 it satisfies the
 \emph{\myindex{Cauchy--Riemann equations}}
 \begin{equation*}
-\frac{\partial f}{\partial \bar{z}_j}  = 0 \qquad \text{for $j=1,2,\ldots,n$}.
+\frac{\partial f}{\partial \bar{z}_k}  = 0 \qquad \text{for $k=1,2,\ldots,n$}.
 \end{equation*}
-As in one variable, if you defined partial derivatives
-of holomorphic functions
-as the limits of the definition above,
-then you would get the Wirtinger $\frac{\partial}{\partial z_k}$
-for holomorphic functions.  That is, if $f$ is holomorphic, then
+For holomorphic functions, using the natural definition for partial
+derivatives obtains the
+the Wirtinger $\frac{\partial}{\partial z_k}$.
+Namely, if $f$ is holomorphic, then
 \begin{equation*}
 \frac{\partial f}{\partial z_k}(z)
 =
@@ -1360,6 +1359,9 @@ for holomorphic functions.  That is, if $f$ is holomorphic, then
 
 Due to the following proposition, the alternative definition using the
 Cauchy--Riemann equations is just as good as the definition we gave.
+In the proof, if you wish to stay with just the Riemann integral instead of
+the Lebesgue integral, feel free to assume that $f$ is continuously
+differentiable.
 
 \begin{prop}
 Let $U \subset \C^n$ be an open set and
@@ -1447,58 +1449,46 @@ See \appendixref{ap:diffforms} for an overview of differential forms,
 or
 Rudin~\cite{Rudin:principles} for an introduction with all the details.
 
-Given real coordinates $x = (x_1,\ldots,x_n)$, a one-form $d x_j$ is a linear functional on tangent vectors
-such that $d x_j \bigl( \frac{\partial}{\partial x_j} \bigr) = 1$ and
-$d x_j \bigl( \frac{\partial}{\partial x_k} \bigr) = 0$ if $j \not= k$.
+Given real coordinates $x = (x_1,\ldots,x_n)$, a one-form $d x_k$ is a linear functional on tangent vectors
+such that $d x_k \bigl( \frac{\partial}{\partial x_k} \bigr) = 1$ and
+$d x_k \bigl( \frac{\partial}{\partial x_{\ell}} \bigr) = 0$ if $k \not=
+{\ell}$.
 Because
-$z_j = x_j + i y_j$ and
-$\bar{z}_j = x_j - i y_j$,
+$z_k = x_k + i y_k$ and
+$\bar{z}_k = x_k - i y_k$,
 \glsadd{not:dz}\glsadd{not:dzbar}%
 \begin{equation*}
-d z_j = d x_j + i \, d y_j , 
+d z_k = d x_k + i \, d y_k , 
 \qquad
-d \bar{z}_j = d x_j - i \, d y_j . 
+d \bar{z}_k = d x_k - i \, d y_k . 
 \end{equation*}
 Let
 \glsadd{not:kronecker}%
-$\delta_{j}^k$ be the Kronecker delta, that is, $\delta_j^j = 1$,
-and $\delta_j^k = 0$ if $j \not= k$.  Then as expected,
+$\delta_{k}^{\ell}$ be the Kronecker delta, that is, $\delta_k^k = 1$,
+and $\delta_k^{\ell} = 0$ if $k \not= {\ell}$.  Then as expected,
 \begin{equation*}
-d z_j \left( \frac{\partial}{\partial z_k} \right) = \delta_j^k ,
+d z_k \left( \frac{\partial}{\partial z_{\ell}} \right) = \delta_k^{\ell} ,
 \qquad
-d z_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = 0 ,
+d z_k \left( \frac{\partial}{\partial \bar{z}_{\ell}} \right) = 0 ,
 \qquad
-d \bar{z}_j \left( \frac{\partial}{\partial z_k} \right) = 0 ,
+d \bar{z}_k \left( \frac{\partial}{\partial z_{\ell}} \right) = 0 ,
 \qquad
-d \bar{z}_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = \delta_j^k
+d \bar{z}_k \left( \frac{\partial}{\partial \bar{z}_{\ell}} \right) =
+\delta_k^{\ell}
 .
 \end{equation*}
-%\begin{equation*}
-%\begin{array}{lll}
-%d z_j \left( \frac{\partial}{\partial z_k} \right) = \delta_j^k ,
-%& \quad &
-%d z_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = 0 , \\
-%d \bar{z}_j \left( \frac{\partial}{\partial z_k} \right) = 0 ,
-%& \quad &
-%d \bar{z}_j \left( \frac{\partial}{\partial \bar{z}_k} \right) = \delta_j^k
-%,
-%\end{array}
-%\end{equation*}
-%\glsadd{not:kronecker}%
-%where $\delta_{j}^k$ is the Kronecker delta, that is, $\delta_j^j = 1$,
-%and $\delta_j^k = 0$ if $j \not= k$.
 One-forms are objects of the form
 \begin{equation*}
-\sum_{j=1}^n \alpha_j \, d z_j + 
-\beta_j \, d \bar{z}_j ,
+\sum_{k=1}^n \alpha_k \, d z_k + 
+\beta_k \, d \bar{z}_k ,
 \end{equation*}
-where $\alpha_j$ and $\beta_j$ are functions (of $z$).
+where $\alpha_k$ and $\beta_k$ are functions (of $z$).
 Two-forms are combinations of wedge products,
 $\omega \wedge \eta$, of one-forms.  A wedge of a two-form and
 a one-form is a three-form, etc.
-A $k$-form is an object that 
-can be integrated on a so-called $k$-chain, for example, a
-$k$-dimensional surface.  The wedge product takes care of the orientation
+An $m$-form is an object that 
+can be integrated on a so-called $m$-chain, for example, a
+$m$-dimensional surface.  The wedge product takes care of the orientation
 as it is anticommutative on one-forms:
 For one-forms $\omega$ and $\eta$, we have
 $\omega \wedge \eta = - \eta \wedge \omega$.
@@ -1611,9 +1601,9 @@ $\sabs{f(z)}$ achieves its maximum on $\Gamma$.
 \end{exercise}
 
 \begin{exercise}
-A ball is different from a polydisc.  Prove that for every $p \in \partial \bB_n$
+A ball and is different from a polydisc.  Prove that for every $p \in \partial \bB_n$
 there exists a continuous $f \colon \overline{\bB_n} \to \C$, holomorphic
-on $\bB_n$ such that $\sabs{f(z)}$ achieves a strict maximum at $p$.
+on $\bB_n$, such that $\sabs{f(z)}$ achieves a strict maximum at $p$.
 \end{exercise}
 
 \begin{exercise}
@@ -1747,7 +1737,7 @@ such a series as
 \sum_{\alpha \in \N_0^n} c_\alpha {z}^\alpha .
 \end{equation*}
 You must admit that the
-above is far nicer to write than, for example, for 3 variables writing
+above is far nicer to write than writing, for example, in $\C^3$,
 \begin{equation} \label{eq:iteratedsum}
 \sum_{j=0}^\infty
 \sum_{k=0}^\infty
@@ -1759,7 +1749,7 @@ below).
 When it is clear
 from context that we are talking about a power series
 and all the powers are nonnegative,
-we often write just
+we write simply
 \glsadd{not:zalphasum}%
 \begin{equation*}
 \sum_{\alpha} c_\alpha {z}^\alpha .
@@ -1784,14 +1774,14 @@ c_\alpha {z}^\alpha
 \sum_{k=1}^m 
 c_{\alpha(k)} {z}^{\alpha(k)} .
 \end{equation*}
-By the Fubini theorem (for sums) this limit is also equal to the iterated
+By the Fubini theorem (for sums) this limit is equal to the iterated
 sum such as \eqref{eq:iteratedsum}.
+
 A power series $\sum_\alpha c_\alpha z^\alpha$
 \emph{\myindex{converges uniformly absolutely}}
 \index{uniform absolute convergence}
 for $z \in X$ when $\sum_\alpha \sabs{c_\alpha z^\alpha}$
 converges uniformly for $z \in X$.
-
 The \emph{\myindex{geometric series in several variables}} is the
 series $\sum_{\alpha} z^\alpha$.
 For
@@ -1987,8 +1977,8 @@ differentiating under the integral obtains the result.
 \begin{exbox}
 \begin{exercise}
 Follow the logic above to prove the converse of the
-theorem.
-Do the proof without using the analogous result for single variable series.
+theorem,
+without using the analogous result for single variable series.
 Hint:
 Let
 $\Delta'' \subset \Delta' \subset \Delta$
@@ -2177,7 +2167,7 @@ the domain of convergence is the unit polydisc, but more
 complicated examples are easy to find.
 
 \begin{example}
-In $\C^2$, the power series
+In $\C^2$, the series
 \begin{equation*}
 \sum_{k=0}^\infty z_1 z_2^k
 \end{equation*}
@@ -2409,11 +2399,12 @@ a unique holomorphic function $F \colon U \to \C$ such that $F|_D = f$.
 \end{exercise}
 \end{exbox}
 
-Let us define notation for the set of holomorphic functions.
-At the same time, we notice that the set of holomorphic functions is
-a commutative ring under pointwise addition and multiplication.
+The set of holomorphic functions on a domain is a 
+commutative ring under pointwise addition and multiplication (exercise
+below).  We give this set a name.
 
 \begin{defn}
+\pagebreak[2]
 Let $U \subset \C^n$ be an open set.
 \glsadd{not:O}%
 Define $\sO(U)$ to be the \emph{\myindex{ring of holomorphic functions}}.
@@ -2446,7 +2437,7 @@ A function $F$ defined on a dense open subset of $U$ is
 \emph{\myindex{meromorphic}} if locally near every $p \in U$,
 $F = \nicefrac{f}{g}$ for $f$ and $g$ holomorphic in some neighborhood of
 $p$.
-We remark that it follows from a deep result
+It is from a deep result
 of Oka that
 for domains $U \subset \C^n$, every meromorphic function can be represented
 as $\nicefrac{f}{g}$ globally.  That is, the ring of meromorphic functions
@@ -2466,9 +2457,9 @@ variable:
 
 \begin{exbox}
 \begin{exercise}
-In two variables one can no longer think of a meromorphic function $F$ simply
-taking on the value of $\infty$, when the denominator vanishes.  Show that $F(z,w) = \nicefrac{z}{w}$ achieves all values of $\C$
-in every neighborhood of the origin.  The origin is called
+In two variables one can no longer think of a meromorphic function $F$
+having the value $\infty$ when the denominator vanishes.  Show that $F(z,w) = \nicefrac{z}{w}$ achieves all values of $\C$
+in every neighborhood of the origin.  We call the origin
 a \emph{\myindex{point of indeterminacy}}.
 \end{exercise}
 
@@ -3679,6 +3670,7 @@ such that near each $p \in N_{\mathit{reg}}$, after possibly reordering variable
 $N$ can be locally written as
 \begin{equation*}
 z_n = g(z_1,\ldots,z_{n-1})
+\avoidbreak
 \end{equation*}
 for a holomorphic function $g$.
 \end{thm}
