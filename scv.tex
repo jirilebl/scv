@@ -10989,50 +10989,61 @@ topological component.  Prove that $U$ is not a domain of holomorphy.
 
 \section{Solvability of \texorpdfstring{$\bar{\partial}$}{dbar}-problem in the polydisc} \label{sec:dbarpoly}
 
-Solvability
+Let us tackle solvability of the $\bar{\partial}$-problem for differential forms.
+In general, the problem is equivalent to holomorphic convexity, although
+it is rather involved, and thus we content ourselves with polydiscs.
+To work with differential forms, we, as before, split the derivatives
+into the holomorphic and antiholomorphic parts.  For higher order forms
+we work with multi-indices.
 
-FIXME:
-
-As usual, we split the derivatives into the holomorphic and
-antiholomorphic parts.  We work with multi-indices.  For $\alpha$ and $\beta$
-with $\abs{\alpha}=p$ and 
-$\abs{\beta}=q$, a differential form
+\begin{defn} \label{defn:danddbarform}
+Let $\alpha$ and $\beta$ range over a finite set of multi-indices.
+We write a differential form as
 \begin{equation*}
 \eta = 
-\sum_{\substack{\abs{\alpha}=p \\ \abs{\beta}=q}}
-\eta_{\alpha \beta} \, dz^\alpha \wedge d\bar{z}^\beta 
+\sum_{\alpha,\beta}
+\eta_{\alpha \beta} \, dz^\alpha \wedge d\bar{z}^\beta  .
 \end{equation*}
-is called a \emph{\myindex{$(p,q)$-form}} or a differential form of
+If the $\alpha$ and $\beta$ only range over those multi-indices such that
+$\abs{\alpha}=p$ and $\abs{\beta}=q$, then we call $\eta$
+a \emph{\myindex{$(p,q)$-form}} or a differential form of
 \emph{\myindex{bidegree}} $(p,q)$.
 Define
 \glsadd{not:d}%
 \glsadd{not:dbar}%
 \begin{equation*}
 \partial \eta \overset{\text{def}}{=}
-\sum_{\substack{\abs{\alpha}=p \\ \abs{\beta}=q}}
+\sum_{\alpha,\beta}
 \,
 \sum_{j=1}^n
 \frac{\partial \eta_{\alpha \beta}}{\partial z_j} dz_j \wedge dz^\alpha
 \wedge d\bar{z}^\beta ,
 \qquad \text{and} \qquad
 \bar{\partial} \eta \overset{\text{def}}{=}
-\sum_{\substack{\abs{\alpha}=p \\ \abs{\beta}=q}}
+\sum_{\alpha,\beta}
 \,
 \sum_{j=1}^n
 \frac{\partial \eta_{\alpha \beta}}{\partial \bar{z}_j} d\bar{z}_j \wedge dz^\alpha
 \wedge d\bar{z}^\beta .
 \end{equation*}
-It is not difficult to see that $d \eta = \partial \eta +
-\bar{\partial} \eta$ as before.
+\end{defn}
 
+If $\eta$ is of bidegree $(p,q)$, then
+$\partial \eta$ if of bidegree $(p+1,q)$ and
+$\bar{\partial} \eta$ is of bidegree $(p,q+1)$.
+The total exterior derivative $d \eta = \partial \eta + \bar{\partial} \eta$ as before.
 
-FIXME:
+\begin{exbox}
+\begin{exercise}
+Prove that $d \eta = \partial \eta + \bar{\partial} \eta$.
+\end{exercise}
+\end{exbox}
 
 Solvability of the equation $\bar{\partial} \omega = \eta$ for every $(0,q)$-form
 $\eta$ such that $\bar{\partial} \eta = 0$ whenever $1 \leq q \leq n-1$
-is equivalent to pseudoconvexity, although
-the proof of this is beyond the scope of this book.  We will prove a this
-result in the simpler case of a polydisc.
+is equivalent to holomorphic convexity, although
+the proof of this is beyond the scope of this book, and we prove
+this result only in the case of a polydisc.
 
 \begin{thm} \label{thm:dbaronpoly}
 Let $\Delta \subset \C^n$ be a polydisc, let $q \geq 1$ be an integer, and 
@@ -11083,11 +11094,10 @@ FIXME
 A generalization of
 Cauchy's formula to several variables
 is called the Bochner--Martinelli integral formula,
-which in fact reduces 
+which reduces 
 to Cauchy's (Cauchy--Pompeiu) formula when $n=1$.
 As for Cauchy's formula, we will prove the formula for all
 smooth functions via Stokes' theorem.
-
 First, let us define the \emph{\myindex{Bochner--Martinelli kernel}}:
 \begin{equation*}
 \omega(\zeta,z)
@@ -11165,39 +11175,9 @@ reduces to the standard Cauchy--Pompeiu formula.
 \end{exercise}
 \end{exbox}
 
-FIXME: this needs to go earlier and we will refer to it here.
-
-As usual, we split the derivatives into the holomorphic and
-antiholomorphic parts.  We work with multi-indices.  For $\alpha$ and $\beta$
-with $\abs{\alpha}=p$ and 
-$\abs{\beta}=q$, a differential form
-\begin{equation*}
-\eta = 
-\sum_{\substack{\abs{\alpha}=p \\ \abs{\beta}=q}}
-\eta_{\alpha \beta} \, dz^\alpha \wedge d\bar{z}^\beta 
-\end{equation*}
-is called a \emph{\myindex{$(p,q)$-form}} or a differential form of
-\emph{\myindex{bidegree}} $(p,q)$.
-Define
-\glsadd{not:d}%
-\glsadd{not:dbar}%
-\begin{equation*}
-\partial \eta \overset{\text{def}}{=}
-\sum_{\substack{\abs{\alpha}=p \\ \abs{\beta}=q}}
-\,
-\sum_{j=1}^n
-\frac{\partial \eta_{\alpha \beta}}{\partial z_j} dz_j \wedge dz^\alpha
-\wedge d\bar{z}^\beta ,
-\qquad \text{and} \qquad
-\bar{\partial} \eta \overset{\text{def}}{=}
-\sum_{\substack{\abs{\alpha}=p \\ \abs{\beta}=q}}
-\,
-\sum_{j=1}^n
-\frac{\partial \eta_{\alpha \beta}}{\partial \bar{z}_j} d\bar{z}_j \wedge dz^\alpha
-\wedge d\bar{z}^\beta .
-\end{equation*}
-It is not difficult to see that $d \eta = \partial \eta +
-\bar{\partial} \eta$ as before.
+Recall the definition of $\partial$ and $\bar{\partial}$ from
+\defnref{defn:danddbarform}, and recall that $d \eta = \partial \eta +
+\bar{\partial} \eta$.
 
 \begin{proof}[Proof of Bochner--Martinelli]
 The structure of the proof is essentially the same as that of
@@ -11207,9 +11187,8 @@ more involved.
 Let $z \in U$ be fixed.  Suppose $r > 0$ is small enough so that
 $\overline{B_r(z)} \subset U$.  Orient both
 $\partial U$ and $\partial B_r(z)$
-positively.  Notice that 
-$f(\zeta) \omega(\zeta,z)$ contains all the holomorphic $d\zeta_j$.
-Therefore,
+positively.  As
+$f(\zeta) \omega(\zeta,z)$ contains all the holomorphic $d\zeta_j$,
 \begin{equation*}
 \begin{split}
 d \bigl( f(\zeta) \omega(\zeta,z) \bigr)
@@ -16311,7 +16290,8 @@ The proof is not difficult, but it is perhaps beyond the scope of this book.
 
 \chapter{Measure theory review} \label{ap:measure}
 
-The beginning of this course does not require the Lebesgue integral, however
+The beginning of this course does not require the Lebesgue integral,
+however,
 knowing it may make some of the earlier results easier to understand and the
 exercises easier to do.  In some of the later chapters, Lebesgue integral
 does become necessary in several places.  To make the first reading of the
@@ -16319,25 +16299,28 @@ entire book easier for a student who has not had a course on measure theory
 yet, we present the basic ideas of the Lebesgue integral and list the
 results that make it so useful.
 We avoid getting into the details of the definition and simply state the
-useful results without proof.  A reader who is interested can consult
-for example \cite{Rudin:principles} or \cite{Rudin:analysis}.
+useful results without proof.  A reader who is interested can consult,
+for example, \cite{Rudin:principles} or \cite{Rudin:analysis}.
 
-The integral on $X$ is defined by first setting apart a collection of
-sets $\sM$, called the \emph{\myindex{measurable sets}}, and on these sets defining a
-measure, that is a function $\mu \colon \sM \to \R$, which is
-nonnegative, the measure of the empty set is $0$, and $\sigma$-additive,
+Given a set $X$,
+we designate a collection $\sM$ of
+subsets of $X$, called the \emph{\myindex{measurable sets}}.
+On these sets
+we define a measure, that is, a function $\mu \colon \sM \to \R$,
+such that $\mu \geq 0$,
+$\mu(\emptyset) = 0$, and $\mu$ is $\sigma$-additive,
 that is, the measure of a union of countably many disjoint sets is the
 sum of the measures.  If $X$ is the euclidean space $\R^n$, there always
 exists a measure called the \emph{\myindex{Lebesgue measure}} that will agree with the
-standard $k$-dimensional volume on simple sets such as rectangles.  However,
-a complication is that not all subsets of $\R^n$ can then be measurable.
+standard $n$-dimensional volume on simple sets such as rectangles.
+A complication is that not all subsets of $\R^n$ can then be measurable.
 We say that $(X,\sM,\mu)$ is a \emph{\myindex{measure space}}.
 
 A function $f \colon X \to \R$ is called measurable if its sublevel
 sets are measurable.
 Since one generally has to work hard to produce a nonmeasurable function
-in the usual measure spaces we will consider,
-the reader will be forgiven for just assuming every function that appears in
+in the usual measure spaces we consider,
+the reader may be forgiven for assuming every function that appears in
 this book is measurable.
 A function is simple if its support is of finite
 measure and it only has finitely many values, in which case the integral is
@@ -16497,9 +16480,9 @@ for almost every $y \in Y$, $x \mapsto f(x,y)$ is measurable.
 \end{enumerate}
 \end{thm}
 
-In general we have the Fubini theorem.  A measure is
+In general there is the Fubini theorem.  A measure is
 \emph{complete}\index{complete measure}, if every subset of a measure zero
-set is also measurable.  Every measure can be completed by simply throwing
+set is also measurable.  A measure can be completed by simply throwing
 those sets in, but it is a minor technicality that the product of two
 measure spaces is not in general complete and must be completed.  This is an
 issue for measurability of the functions involved, but the functions that
