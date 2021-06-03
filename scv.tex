@@ -4088,7 +4088,7 @@ $U \subset V$, we mean that there
 exists a function $F \in \sO(V)$ such that $f = F$ on
 $U$.
 
-\begin{remark}
+\begin{remark} \label{remark:notsimpledefofdoh}
 The subtlety of the definition of a domain of holomorphy is that it does not
 necessarily talk about functions extending to a larger set, since we must
 take into account single-valuedness.  For instance, let $f$ be the principal branch
@@ -4098,6 +4098,8 @@ We can locally define an extension from one side through the boundary
 of the domain, but we cannot define an extension on a open set that
 contains $U$.  This example should be motivation for why we let $V$ 
 be a proper subset of $U \cap W$, and why $W$ need not include all of $U$.
+This one dimensional intuition can be extended to an actual example in
+$\C^n$, see \exerciseref{exercise:notsimpledefofdoh}.
 \end{remark}
 
 In dimension two or more, not every domain is a domain of holomorphy.  We have
@@ -4324,6 +4326,16 @@ Compare to \exerciseref{exercise:fatcylinder1}.
 Suppose $U = \C^n \setminus \{ z \in \C^n : z_1 = z_2 = 0 \}$, $n
 \geq 2$.  Show that every $f \in \sO(U)$ extends holomorphically to
 $\C^n$.
+\end{exercise}
+
+
+\begin{exercise} \label{exercise:notsimpledefofdoh}
+Construct an example domain $U \subset \C^2$ that is not a domain of
+holomorphy, but such that there is no domain $W \subset \C^2$ with $U
+\subset W$ such that every $f \in \sO(U)$ extends to $W$.
+Hint: Extending the example from \remarkref{exercise:notsimpledefofdoh} will
+almost give you a $U$, but it will be a domain of holomorphy, you need to modify it
+a little bit.
 \end{exercise}
 \end{exbox}
 
