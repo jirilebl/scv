@@ -14055,11 +14055,11 @@ Let $g \colon \R \to \R$ be a smooth function that is
 strictly positive for $\sabs{t} > 1$, and $g(t) = 0$ for all $\sabs{t} \leq 1$.
 Define $M$ in $(z,w) \in \C^{n-1} \times \C$ by
 \begin{equation*}
-\Im w = g\bigl(\snorm{z}^2\bigr) .
+\Im w = g\bigl(\snorm{z}^2 + (\Re w)^2\bigr) .
 \end{equation*}
 $M$ is a smooth real hypersurface.
-Consider $p = (1,0,\ldots,0) \in M$.  For every $0 < s < 1$, let
-$q_s = (s,0,\ldots,0) \in M$ and $X_s = \bigl\{ (z,w) \in M :
+Consider $p = (0,\ldots,0,1) \in M$.  For every $0 < s < 1$, let
+$q_s = (0,\ldots,0,s) \in M$ and $X_s = \bigl\{ (z,w) \in M :
 w = s \bigr\}$.  Each $X_s$ is a local complex subvariety of dimension $n-1$
 and $(X_s,q_s) \subset (M,q_s)$.  The size of $X_s$ goes to
 zero as $s \to 1$ and $X_s$ cannot extend to a
