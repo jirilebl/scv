@@ -1209,19 +1209,19 @@ $\R^n$.
 We 
 identify $\C^n$ with
 $\R^{2n}$ by letting
-$z = x+iy$, that is, $z_j = x_j + i y_j$ for every $j$.
+$z = x+iy$, that is, $z_k = x_k + i y_k$ for every $k$.
 As in one complex variable, we write $\bar{z} = x-iy$.
 We call $z$ the \emph{\myindex{holomorphic coordinates}}
 and $\bar{z}$ the \emph{\myindex{antiholomorphic coordinates}}.
 
 \begin{defn}
-For $\rho = (\rho_1,\rho_2,\ldots,\rho_n)$ where $\rho_j > 0$ and $a \in \C^n$,
+For $\rho = (\rho_1,\rho_2,\ldots,\rho_n)$ where $\rho_k > 0$ and $a \in \C^n$,
 define
 a \emph{\myindex{polydisc}}
 \glsadd{not:disc}%
 \begin{equation*}
 \Delta_\rho(a)  \overset{\text{def}}{=}
-\bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho_j ~\text{for $j=1,2,\ldots,n$} \bigr\} .
+\bigl\{ z \in \C^n : \sabs{z_k - a_k} < \rho_k ~\text{for $k=1,2,\ldots,n$} \bigr\} .
 \end{equation*}
 Call $a$ the
 \emph{center}\index{center of a polydisc}
@@ -1233,14 +1233,14 @@ of the polydisc $\Delta_\rho(a)$.
 If $\rho > 0$ is a number, then
 \begin{equation*}
 \Delta_\rho(a)  \overset{\text{def}}{=}
-\bigl\{ z \in \C^n : \sabs{z_j - a_j} < \rho ~\text{for $j=1,2,\ldots,n$} \bigr\} .
+\bigl\{ z \in \C^n : \sabs{z_k - a_k} < \rho ~\text{for $k=1,2,\ldots,n$} \bigr\} .
 \end{equation*}
 In two variables, a polydisc is sometimes called a \emph{\myindex{bidisc}}.
 As there is the unit disc $\D$ in one variable, so is there
 the \emph{\myindex{unit polydisc}} in several variables:
 \begin{equation*}
 \D^n = \D \times \D \times \cdots \times \D = \Delta_1(0) = 
-\bigl\{ z \in \C^n : \sabs{z_j} < 1 ~\text{for $j=1,2,\ldots,n$} \bigr\} .
+\bigl\{ z \in \C^n : \sabs{z_k} < 1 ~\text{for $k=1,2,\ldots,n$} \bigr\} .
 \end{equation*}
 \end{defn}
 
@@ -1371,7 +1371,7 @@ differentiable.
 
 \begin{proof}
 Suppose $\Delta = \Delta_{\rho}(a) = \Delta_1 \times \cdots \times \Delta_n$
-is a polydisc centered at $a$, where each $\Delta_j$ is a disc
+is a polydisc centered at $a$, where each $\Delta_k$ is a disc
 and suppose $\overline{\Delta} \subset U$, that is, $f$ is holomorphic
 on a neighborhood of the closure of $\Delta$.
 Let $z$ be in $\Delta$.
@@ -1422,12 +1422,12 @@ We may differentiate underneath the
 integral, because $f$ is bounded on 
 $\partial \Delta_1 \times \cdots \times \partial \Delta_n$
 and so are the derivatives of the integrand
-with respect to $x_j$ and $y_j$, where $z_j=x_j+i y_j$, as long as
+with respect to $x_k$ and $y_k$, where $z_k=x_k+i y_k$, as long as
 $z$ is a positive distance away from
 $\partial \Delta_1 \times \cdots \times \partial \Delta_n$.
 We may differentiate as many times as we wish.
 %We are really differentiating only in the real and imaginary
-%parts of the $z_j$ variables, and the integrand is
+%parts of the $z_k$ variables, and the integrand is
 %infinitely differentiable in those variables.
 \end{proof}
 
@@ -1521,7 +1521,7 @@ Suppose
 $f \colon \overline{\Delta} \to \C$ is a continuous function
 holomorphic in $\Delta$.
 Write $\Gamma = \partial \Delta_1 \times \cdots \times \partial \Delta_n$
-oriented appropriately (each $\partial \Delta_j$ has positive orientation).
+oriented appropriately (each $\partial \Delta_k$ has positive orientation).
 Then for $z \in \Delta$
 \begin{equation*}
 f(z) =
@@ -1739,10 +1739,10 @@ such a series as
 You must admit that the
 above is far nicer to write than writing, for example, in $\C^3$,
 \begin{equation} \label{eq:iteratedsum}
-\sum_{j=0}^\infty
 \sum_{k=0}^\infty
 \sum_{\ell=0}^\infty
-c_{jk\ell} z_1^jz_2^kz_3^\ell ,
+\sum_{m=0}^\infty
+c_{k\ell m} z_1^kz_2^\ell z_3^m ,
 \end{equation}
 which is not even exactly the definition of the series sum (see
 below).
@@ -1945,7 +1945,7 @@ is continuous as it is a uniform-on-compact-sets limit of continuous
 functions, and hence it is locally bounded in $\Delta$.  Next,
 we restrict to each variable in turn, 
 \begin{equation*}
-z_j \mapsto \sum_{\alpha} c_\alpha {(z-a)}^\alpha .
+z_k \mapsto \sum_{\alpha} c_\alpha {(z-a)}^\alpha .
 \end{equation*}
 This function is holomorphic via the corresponding one-variable argument.
 \end{proof}
@@ -2087,8 +2087,8 @@ d \zeta_2
 \wedge
 d \zeta_n .
 \end{equation*}
-Notice the 2 before the $f$.  Next derivative, a 3 is coming out.  After $j$
-derivatives in $z_1$ you get the constant $j!$.
+Notice the 2 before the $f$.  Next derivative, a 3 is coming out.  After $m$
+derivatives in $z_1$ you get the constant $m!$.
 It is exactly the same thing that happens in one variable.  A moment's
 thought will convince you that the following formula is correct for
 $\alpha \in \N_0^n$:
@@ -2138,11 +2138,11 @@ proposition.
 
 \begin{prop}
 Let $U \subset \C^n$ be an open set.
-Suppose the sequence $f_j \colon U \to \C$ converges uniformly on compact subsets
-to $f \colon U \to \C$.  If every $f_j$ is holomorphic, then $f$ is
+Suppose the sequence $f_\ell \colon U \to \C$ converges uniformly on compact subsets
+to $f \colon U \to \C$.  If every $f_\ell$ is holomorphic, then $f$ is
 holomorphic and 
 the sequence
-$\left\{ \frac{\partial^{\sabs{\alpha}} f_j}{\partial z^\alpha}\right\}$
+$\left\{ \frac{\partial^{\sabs{\alpha}} f_\ell}{\partial z^\alpha}\right\}$
 converges to
 $\frac{\partial^{\sabs{\alpha}} f}{\partial z^\alpha}$ uniformly on compact
 subsets.
@@ -2202,14 +2202,14 @@ See \figureref{fig:convergence-example-2}.
 
 \begin{exbox}
 \begin{exercise}
-Find the domain of convergence of $\sum_{j,k} \frac{1}{k!} z_1^jz_2^k$
+Find the domain of convergence of $\sum_{k,\ell} \frac{1}{\ell !} z_1^k z_2^\ell$
 and draw the corresponding picture.
 \end{exercise}
 
 \begin{exercise}
-Find the domain of convergence of $\sum_{j,k} c_{j,k} z_1^jz_2^k$
-and draw the corresponding picture if $c_{k,k} = 2^k$, $c_{0,k} = c_{j,0} =
-1$ and $c_{j,k} = 0$ otherwise.
+Find the domain of convergence of $\sum_{k,\ell} c_{k \ell} z_1^k z_2^\ell$
+and draw the corresponding picture if $c_{\ell \ell} = 2^k$, $c_{0 \ell} = c_{k 0} =
+1$ and $c_{k \ell} = 0$ otherwise.
 \end{exercise}
 
 \begin{exercise}
@@ -2475,7 +2475,7 @@ $z_2,\ldots,z_n$ around, and use perhaps
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Derivatives}
+\section{Derivatives} \label{sec:derivatives}
 
 Given a function $f = u+iv$, the complex conjugate is $\bar{f} = u-iv$,
 defined simply by $z \mapsto \overline{f(z)}$.
@@ -2486,13 +2486,13 @@ So if we write the variable, we write $\bar{f}$ as
 $\bar{f}(\bar{z})$.  Let us see why this makes sense.  Using the definitions
 of the Wirtinger operators,
 \begin{equation*}
-\frac{\partial \bar{f}}{\partial z_j} = 
-\overline{\frac{\partial f}{\partial \bar{z}_j}} = 0,
+\frac{\partial \bar{f}}{\partial z_k} = 
+\overline{\frac{\partial f}{\partial \bar{z}_k}} = 0,
 \qquad
-\frac{\partial \bar{f}}{\partial \bar{z}_j} = \overline{
-\left(\frac{\partial f}{\partial z_j} \right) } ,
+\frac{\partial \bar{f}}{\partial \bar{z}_k} = \overline{
+\left(\frac{\partial f}{\partial z_k} \right) } ,
 \qquad
-\text{for all $j=1,\ldots,n$.}
+\text{for all $k=1,\ldots,n$.}
 \end{equation*}
 
 For functions that are neither holomorphic or antiholomorphic, we
@@ -2502,34 +2502,35 @@ let us figure out how the chain rule works for Wirtinger derivatives,
 rather than writing derivatives in terms of $x$ and $y$.
 
 \begin{prop}[Complex chain rule]\index{complex chain rule}
+\pagebreak[2]
 Suppose 
-$U \subset \C^n$ and $V \subset \C^m$ are open sets and suppose
+$U \subset \C^n$ and $V \subset \C^m$ are open and suppose
 $f \colon U \to V$, and $g \colon V \to \C$ are (real) differentiable
-functions (mappings).  Write the variables as
+mappings.  Write the variables as
 $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
-\subset \C^m$.  Then for $j=1,\ldots,n$,
+\subset \C^m$.  Then for $k=1,\ldots,n$,
 \begin{equation} \label{eq:chainrule}
 \begin{aligned}
 &
-\frac{\partial}{\partial z_j} \left[ g \circ f \right]
+\frac{\partial}{\partial z_k} \left[ g \circ f \right]
 =
 \sum_{\ell=1}^m \left(
 \frac{\partial g}{\partial w_\ell}
-\frac{\partial f_\ell}{\partial z_j}
+\frac{\partial f_\ell}{\partial z_k}
 +
 \frac{\partial g}{\partial \bar{w}_\ell}
-\frac{\partial \bar{f}_\ell}{\partial z_j}
+\frac{\partial \bar{f}_\ell}{\partial z_k}
 \right),
 \\
 &
-\frac{\partial}{\partial \bar{z}_j} \left[ g \circ f \right]
+\frac{\partial}{\partial \bar{z}_k} \left[ g \circ f \right]
 =
 \sum_{\ell=1}^m \left(
 \frac{\partial g}{\partial w_\ell}
-\frac{\partial f_\ell}{\partial \bar{z}_j}
+\frac{\partial f_\ell}{\partial \bar{z}_k}
 +
 \frac{\partial g}{\partial \bar{w}_\ell}
-\frac{\partial \bar{f}_\ell}{\partial \bar{z}_j}
+\frac{\partial \bar{f}_\ell}{\partial \bar{z}_k}
 \right) .
 \end{aligned}
 \end{equation}
@@ -2543,27 +2544,27 @@ $v$ for $t$.
 Using the standard chain rule,
 \begin{equation*}
 \begin{split}
-\frac{\partial}{\partial z_j} \left[ g \circ f \right]
+\frac{\partial}{\partial z_k} \left[ g \circ f \right]
 & =
 \frac{1}{2}
 \left(
-\frac{\partial}{\partial x_j} - i
-\frac{\partial}{\partial y_j}
+\frac{\partial}{\partial x_k} - i
+\frac{\partial}{\partial y_k}
 \right)
  \left[ g \circ f \right]
 \\
 & = 
 \frac{1}{2}
 \sum_{\ell=1}^m \left(
-\frac{\partial g}{\partial s_\ell} \frac{\partial u_\ell}{\partial x_j}
+\frac{\partial g}{\partial s_\ell} \frac{\partial u_\ell}{\partial x_k}
 +
-\frac{\partial g}{\partial t_\ell} \frac{\partial v_\ell}{\partial x_j}
+\frac{\partial g}{\partial t_\ell} \frac{\partial v_\ell}{\partial x_k}
 -
 i
 \left(
-\frac{\partial g}{\partial s_\ell} \frac{\partial u_\ell}{\partial y_j}
+\frac{\partial g}{\partial s_\ell} \frac{\partial u_\ell}{\partial y_k}
 +
-\frac{\partial g}{\partial t_\ell} \frac{\partial v_\ell}{\partial y_j}
+\frac{\partial g}{\partial t_\ell} \frac{\partial v_\ell}{\partial y_k}
 \right)
 \right)
 \\
@@ -2573,30 +2574,30 @@ i
 \,
 \frac{1}{2}
 \left(
-\frac{\partial u_\ell}{\partial x_j}
+\frac{\partial u_\ell}{\partial x_k}
 -
 i
-\frac{\partial u_\ell}{\partial y_j}
+\frac{\partial u_\ell}{\partial y_k}
 \right)
 +
 \frac{\partial g}{\partial t_\ell}
 \,
 \frac{1}{2}
 \left(
-\frac{\partial v_\ell}{\partial x_j}
+\frac{\partial v_\ell}{\partial x_k}
 -
 i
-\frac{\partial v_\ell}{\partial y_j}
+\frac{\partial v_\ell}{\partial y_k}
 \right)
 \right)
 \\
 & = 
 \sum_{\ell=1}^m \left(
 \frac{\partial g}{\partial s_\ell}
-\frac{\partial u_\ell}{\partial z_j}
+\frac{\partial u_\ell}{\partial z_k}
 +
 \frac{\partial g}{\partial t_\ell}
-\frac{\partial v_\ell}{\partial z_j}
+\frac{\partial v_\ell}{\partial z_k}
 \right) .
 \end{split}
 \end{equation*}
@@ -2619,33 +2620,33 @@ i \left(
 Continuing:
 \begin{equation*}
 \begin{split}
-\frac{\partial}{\partial z_j} \left[ g \circ f \right]
+\frac{\partial}{\partial z_k} \left[ g \circ f \right]
 & = 
 \sum_{\ell=1}^m \left(
 \frac{\partial g}{\partial s_\ell}
-\frac{\partial u_\ell}{\partial z_j}
+\frac{\partial u_\ell}{\partial z_k}
 +
 \frac{\partial g}{\partial t_\ell}
-\frac{\partial v_\ell}{\partial z_j}
+\frac{\partial v_\ell}{\partial z_k}
 \right)
 \\
 & = 
 \sum_{\ell=1}^m \left(
 \left(
 \frac{\partial g}{\partial w_\ell}
-\frac{\partial u_\ell}{\partial z_j}
+\frac{\partial u_\ell}{\partial z_k}
 +
 \frac{\partial g}{\partial \bar{w}_\ell}
-\frac{\partial u_\ell}{\partial z_j}
+\frac{\partial u_\ell}{\partial z_k}
 \right)
 +
 i
 \left(
 \frac{\partial g}{\partial w_\ell}
-\frac{\partial v_\ell}{\partial z_j}
+\frac{\partial v_\ell}{\partial z_k}
 -
 \frac{\partial g}{\partial \bar{w}_\ell}
-\frac{\partial v_\ell}{\partial z_j}
+\frac{\partial v_\ell}{\partial z_k}
 \right)
 \right)
 \\
@@ -2653,27 +2654,27 @@ i
 \sum_{\ell=1}^m \left(
 \frac{\partial g}{\partial w_\ell}
 \left(
-\frac{\partial u_\ell}{\partial z_j}
+\frac{\partial u_\ell}{\partial z_k}
 +
 i
-\frac{\partial v_\ell}{\partial z_j}
+\frac{\partial v_\ell}{\partial z_k}
 \right)
 +
 \frac{\partial g}{\partial \bar{w}_\ell}
 \left(
-\frac{\partial u_\ell}{\partial z_j}
+\frac{\partial u_\ell}{\partial z_k}
 -i
-\frac{\partial v_\ell}{\partial z_j}
+\frac{\partial v_\ell}{\partial z_k}
 \right)
 \right)
 \\
 & = 
 \sum_{\ell=1}^m \left(
 \frac{\partial g}{\partial w_\ell}
-\frac{\partial f_\ell}{\partial z_j}
+\frac{\partial f_\ell}{\partial z_k}
 +
 \frac{\partial g}{\partial \bar{w}_\ell}
-\frac{\partial \bar{f}_\ell}{\partial z_j}
+\frac{\partial \bar{f}_\ell}{\partial z_k}
 \right) .
 \end{split}
 \end{equation*}
@@ -2720,7 +2721,7 @@ holomorphic.
 
 \begin{thm}
 Let $U \subset \C^n$ and $V \subset \C^m$ be open sets and suppose
-$f \colon U \to V$ and $g \colon V \to \C^k$ are both holomorphic.
+$f \colon U \to V$ and $g \colon V \to \C^\nu$ are both holomorphic.
 \glsadd{not:composition}%
 Then the composition $g \circ f$ is holomorphic.
 \end{thm}
@@ -2728,17 +2729,17 @@ Then the composition $g \circ f$ is holomorphic.
 \begin{proof}
 The proof is almost trivial by chain rule.
 Again let $g$ be a function of $w \in V$ and $f$ be a function of $z \in U$.
-For any $j = 1,\ldots,n$ and any $p=1,\ldots,k$, we compute
+For any $k = 1,\ldots,n$ and any $p=1,\ldots,\nu$, we compute
 \begin{equation*}
-\frac{\partial}{\partial \bar{z}_j} \left[ g_p \circ f \right]
+\frac{\partial}{\partial \bar{z}_k} \left[ g_p \circ f \right]
 =
 \sum_{\ell=1}^m 
 \left(
 \frac{\partial g_p}{\partial w_\ell} 
-\cancelto{0}{\frac{\partial f_\ell}{\partial \bar{z}_j}}
+\cancelto{0}{\frac{\partial f_\ell}{\partial \bar{z}_k}}
 +
 \cancelto{0}{\frac{\partial g_p}{\partial \bar{w}_\ell}}
-\frac{\partial \bar{f}_\ell}{\partial \bar{z}_j} 
+\frac{\partial \bar{f}_\ell}{\partial \bar{z}_k} 
 \right)
 =
 0 . \qedhere
@@ -2752,16 +2753,16 @@ $U \subset \C^n$ and $V \subset \C^m$ are open, and
 $f \colon U \to V$ and $g \colon V \to \C$ are holomorphic.
 Name the variables
 $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
-\subset \C^m$.  In formula \eqref{eq:chainrule} for the $z_j$ derivative,
-the $\bar{w}_j$ derivative of $g$ is zero and the $z_j$ derivative of
+\subset \C^m$.  In formula \eqref{eq:chainrule} for the $z_k$ derivative,
+the $\bar{w}_k$ derivative of $g$ is zero and the $z_k$ derivative of
 $\bar{f}_\ell$ is also zero because $f$ and $g$ are holomorphic.
-Therefore, for any $j=1,\ldots,n$,
+Therefore, for any $k=1,\ldots,n$,
 \begin{equation*}
-\frac{\partial}{\partial z_j} \left[ g \circ f \right]
+\frac{\partial}{\partial z_k} \left[ g \circ f \right]
 =
 \sum_{\ell=1}^m 
 \frac{\partial g}{\partial w_\ell}
-\frac{\partial f_\ell}{\partial z_j} .
+\frac{\partial f_\ell}{\partial z_k} .
 \end{equation*}
 
 \begin{exbox}
@@ -2792,8 +2793,8 @@ define the holomorphic derivative, sometimes called the
 Df(p)
 \overset{\text{def}}{=}
 \left[
-\frac{\partial f_j}{\partial z_k} (p)
-\right]_{jk} .
+\frac{\partial f_k}{\partial z_\ell} (p)
+\right]_{k \ell} .
 \end{equation*}
 The notation $f'(p) = Df(p)$ is also used.
 
@@ -3358,12 +3359,12 @@ if each component is.
 If $f$ is holomorphic near $a \in \C^n$, then
 write the power series of $f$ at $a$ as
 \begin{equation*}
-\sum_{j=0}^{\infty} f_j(z-a) ,
+\sum_{m=0}^{\infty} f_m(z-a) ,
 \end{equation*}
-where $f_j$ is a homogeneous polynomial of degree $j$.  The $f_j$ is 
+where $f_m$ is a homogeneous polynomial of degree $m$.  The $f_m$ is 
 called the
-\emph{\myindex{degree $j$ homogeneous part}}\index{homogeneous part} of $f$
-at $a$.  The $f_j$ would be vector-valued if $f$ is vector-valued, such as in the statement of the theorem.
+\emph{\myindex{degree $m$ homogeneous part}}\index{homogeneous part} of $f$
+at $a$.  The $f_m$ would be vector-valued if $f$ is vector-valued, such as in the statement of the theorem.
 In the proof, we will require the vector-valued
 Cauchy estimates (exercise below)\footnote{The normal Cauchy estimates 
 could also be used in the proof of Cartan by applying them
@@ -3389,7 +3390,7 @@ boundary of $\Delta$.  Show that for any multi-index $\alpha$ we get
 Without loss of generality, assume $a=0$.  Write $f$ 
 as a power series at the origin, written in homogeneous parts:
 \begin{equation*}
-f(z) = z + f_k(z) + \sum_{j=k+1}^\infty f_j(z) ,
+f(z) = z + f_k(z) + \sum_{m=k+1}^\infty f_m(z) ,
 \end{equation*}
 where $k \geq 2$ is an integer such that $f_2(z),f_3(z),\ldots,f_{k-1}(z)$ is zero.
 The degree-one homogeneous part is simply the vector $z$,
@@ -3410,9 +3411,9 @@ into $f_k$, we get $f_k(z) + {}$some other higher order terms.
 Therefore, $f^2(z) = z + 2 f_k(z) + {}$higher order terms.
 Continuing this procedure,
 \begin{equation*}
-f^\ell(z) = z + \ell f_k(z) + \sum_{j=k+1}^\infty \tilde{f}_j(z) ,
+f^\ell(z) = z + \ell f_k(z) + \sum_{m=k+1}^\infty \tilde{f}_m(z) ,
 \end{equation*}
-for some other degree $j$ homogeneous polynomials $\tilde{f}_j$.  Suppose $\Delta_r(0)$ is a polydisc whose
+for some other degree $m$ homogeneous polynomials $\tilde{f}_m$.  Suppose $\Delta_r(0)$ is a polydisc whose
 closure is in $U$.
 Via Cauchy estimates,
 for any multinomial $\alpha$ with $\sabs{\alpha}=k$,
@@ -3457,22 +3458,22 @@ $f^{-1}\bigl(e^{-i\theta}f(e^{i\theta} z)\bigr) = z$, or in other words,
 \begin{equation*}
 f(e^{i\theta} z) = e^{i\theta}f(z) .
 \end{equation*}
-Write $f$ near zero as $f(z) = \sum_{j=1}^\infty f_j(z)$ where $f_j$ are
-homogeneous polynomials of degree $j$ (notice $f_0 = 0$).  Then
+Write $f$ near zero as $f(z) = \sum_{m=1}^\infty f_m(z)$ where $f_m$ are
+homogeneous polynomials of degree $m$ (notice $f_0 = 0$).  Then
 \begin{equation*}
-\sum_{j=1}^\infty e^{i\theta} f_j(z) 
+\sum_{m=1}^\infty e^{i\theta} f_m(z) 
 =
-e^{i\theta} \sum_{j=1}^\infty f_j(z) 
+e^{i\theta} \sum_{m=1}^\infty f_m(z) 
 =
-\sum_{j=1}^\infty f_j(e^{i\theta} z)
+\sum_{m=1}^\infty f_m(e^{i\theta} z)
 =
-\sum_{j=1}^\infty e^{ij\theta}f_j(z) .
+\sum_{m=1}^\infty e^{im\theta}f_m(z) .
 \end{equation*}
 By the uniqueness of the Taylor expansion, 
-$e^{i\theta} f_j(z)  = e^{ij\theta} f_j(z)$, or
-$f_j(z)  = e^{i(j-1)\theta} f_j(z)$,
-for all $j$, all $z$, and all $\theta$.
-If $j\not=1$, we obtain that $f_j \equiv
+$e^{i\theta} f_m(z)  = e^{im\theta} f_m(z)$, or
+$f_m(z)  = e^{i(m-1)\theta} f_m(z)$,
+for all $m$, all $z$, and all $\theta$.
+If $m\not=1$, we obtain that $f_m \equiv
 0$, which proves the claim.
 \end{proof}
 
@@ -3736,7 +3737,8 @@ $N_{\mathit{reg}}$ as above.  In particular,
 since $N$ is a graph of a single holomorphic function, they are called
 regular points of (complex) dimension $n-1$, or (complex) codimension 1.
 The set of regular points is what is called an
-$(n-1)$-dimensional \emph{\myindex{complex submanifold}}.  It is also a real
+$(n-1)$-dimensional \emph{\myindex{complex submanifold}}\index{submanifold!complex}.
+It is also a real
 submanifold of real dimension $2n-2$.
 The points on a subvariety that are not regular are called
 \emph{singular points}\index{singular point}.
@@ -4005,17 +4007,16 @@ definition, then $f$ ``extends across the boundary'' somewhere.
 \begin{example}
 The unit ball $\bB_n \subset \C^n$ is a domain of holomorphy.  Proof: 
 Consider $U=\bB_n$, and suppose $V$, $W$ as in the definition exist.
-As $W$ is
-connected and open, it is path connected.  There exist
+As $W$ is connected and open, it is path connected.  There are
 points in $W$ that are not in $\bB_n$, so there
-is a path $\gamma$ in $W$ that goes
+is a path $\gamma$ in $W$ going
 from a point $q \in V$ to some $p \in \partial \bB_n \cap W$.
 Without loss of generality (after composing with
 rotations, that is, unitary matrices), assume $p =
 (1,0,0,\ldots,0)$.  Take the function $f(z) = \frac{1}{1-z_1}$.  
 The function $F$ must agree with $f$ on the component of
 $\bB_n \cap W$ that contains $q$.  But that component also contains $p$ and
-so $F$ must blow up (in particular it cannot be holomorphic) at
+so $F$ must blow up (so it cannot be holomorphic) at
 $p$.  The contradiction shows that no $V$ and $W$ exist.
 \end{example}
 
@@ -4028,9 +4029,9 @@ In $\C$, every domain is a domain of holomorphy.
 \end{exercise}
 
 \begin{exercise}
-If $U_j \subset \C^n$ are domains of holomorphy (possibly an infinite set of
+If $U_k \subset \C^n$ are domains of holomorphy (possibly an infinite set of
 domains), then the interior of
-$\bigcap_{j} U_j$
+$\bigcap_{k} U_k$
 is either empty or every connected component is a domain of holomorphy.
 \end{exercise}
 
@@ -4111,11 +4112,11 @@ Let $(z,w) = (z_1,\ldots,z_m,w_{1},\ldots,w_{k}) \in \C^m \times \C^k$ be the co
 $0 < a,b < 1$, define the set $H \subset \D^{m+k}$
 by
 \begin{multline*}
-H = \bigl\{ (z,w) \in \D^{m+k} : \sabs{z_j} > a ~\text{for $j=1,\ldots,m$}
+H = \bigl\{ (z,w) \in \D^{m+k} : \sabs{z_\ell} > a ~\text{for $\ell=1,\ldots,m$}
 \bigr\}
 \\
 \cup
-\bigl\{ (z,w) \in \D^{m+k} : \sabs{w_j} < b ~\text{for $j=1,\ldots,k$}
+\bigl\{ (z,w) \in \D^{m+k} : \sabs{w_\ell} < b ~\text{for $\ell=1,\ldots,k$}
 \bigr\} .
 \end{multline*}
 If $f \in \sO(H)$, then $f$ extends holomorphically to $\D^{m+k}$.
@@ -4136,11 +4137,11 @@ often drawn as:}}
 Pick a $c \in (a,1)$.  Let
 \begin{equation*}
 \Gamma =
-\bigl\{ z \in \D^{m} : \sabs{z_j} = c ~\text{for $j=1,\ldots,m$ } \bigr\}.
+\bigl\{ z \in \D^{m} : \sabs{z_\ell} = c ~\text{for $\ell=1,\ldots,m$ } \bigr\}.
 \end{equation*}
-That is, $\Gamma$ is the distinguished boundary of $c \D^m$,
-a polydisc centered at 0 of radius $c$ in $\C^m$.
-Define the function
+The set $\Gamma$ is the distinguished boundary of $c \D^m$,
+a polydisc centered at $0$ of radius $c$ in $\C^m$.
+Define
 \begin{equation*}
 F(z,w)
 =
@@ -4159,7 +4160,7 @@ underneath the integral and $f$ is holomorphic in $w$ on $H$.  Furthermore,
 $F$ is holomorphic in $z$ as the kernel $\frac{1}{\xi-z}$ is holomorphic in
 $z$ as long as $z \in c\D^m$.
 
-For any fixed $w$ with $\sabs{w_j} < b$ for all $j$,
+For any fixed $w$ with $\sabs{w_\ell} < b$ for all $\ell$,
 the Cauchy integral formula says
 $F(z,w) = f(z,w)$ for all $z \in c \D^m$.
 Hence, $F=f$ on the open set
@@ -4394,7 +4395,8 @@ Let us figure out what classical convexity means locally for a smooth boundary.
 A set $M \subset \R^n$ is a
 \glsadd{not:Ck}%
 $C^k$-smooth \emph{\myindex{hypersurface}}%
-\index{Ck-smooth hypersurface@$C^k$-smooth hypersurface}
+\index{Ck-smooth hypersurface@$C^k$-smooth hypersurface}%
+\index{hypersurface!Ck-smooth@$C^k$-smooth}
 if at each point
 $p \in M$, there exists a $k$-times continuously
 differentiable function $r \colon V \to \R$
@@ -4413,13 +4415,13 @@ $r < 0$ for points in $U$ and $r > 0$
 for points not in $U$.
 See \figureref{fig:deffun}.
 
-If we say simply
+By simply
 \index{domain with smooth boundary}%
 \index{open set with smooth boundary}%
 \emph{smooth}\index{smooth boundary},
 \glsadd{not:Cinfty}%
 we mean $C^\infty$-smooth,\index{Cinfinity-smooth@$C^\infty$-smooth}
-that is, the $r$ above is infinitely differentiable.
+that is, the $r$ is infinitely differentiable.
 \end{defn}
 
 \begin{myfig}
@@ -4427,7 +4429,8 @@ that is, the $r$ above is infinitely differentiable.
 \caption{Local defining function for a domain.\label{fig:deffun}}
 \end{myfig}
 
-What we really defined is an \emph{\myindex{embedded hypersurface}}.  In
+What we really defined is an \emph{\myindex{embedded hypersurface}}%
+\index{hypersurface!embedded}.  In
 particular, in this book the topology on the set $M$ will be the subset
 topology.  Furthermore, in this book we generally deal with smooth
 (that is, $C^\infty$) functions and hypersurfaces.  Dealing with
@@ -4438,24 +4441,26 @@ As the derivative of $r$ is nonvanishing, a
 hypersurface $M$ is locally the graph of one variable over the rest
 using the implicit function theorem.  That is, $M$ is a smooth 
 hypersurface if it is locally a set defined by
-$x_j = \varphi(x_1,\ldots,x_{j-1},x_{j+1},\ldots,x_n)$ for some $j$ and some
+$x_k = \varphi(x_1,\ldots,x_{k-1},x_{k+1},\ldots,x_n)$ for some $k$ and some
 smooth function $\varphi$.
 
-The definition of an open set with smooth boundary is not just that the
-boundary is a smooth hypersurface, that is not enough.  It also says that 
-one side of that hypersurface is in $U$ and one side is not in $U$.  That is
-because if the derivative of $r$ never vanishes, then $r$ must have
+The definition of an open set with smooth boundary is not simply that the
+boundary is a smooth hypersurface, that is not enough.  It says that 
+one side of that hypersurface is in $U$ and one side is not in $U$:
+As the derivative of $r$ never vanishes, $r$ has
 different signs on different sides of $\bigl\{ x \in V : r(x) = 0 \bigr\}$.  The
 verification of this fact is left to the reader.
 (Hint: Look at where the gradient points to.)
+We can, in fact, find a
+single global defining function for every open set with smooth boundary,
+but we have no need of this.
 
 Same definition works for $\C^n$, where we treat $\C^n$ as $\R^{2n}$.
 For example, the ball $\bB_n$ is a domain with smooth boundary with defining
-function $r(z,\bar{z}) = \snorm{z}^2-1$.  We can, in fact, find a
-single global defining function for every open set with smooth boundary,
-but we have no need of this.
+function $r(z,\bar{z}) = \snorm{z}^2-1$.
 In $\C^n$
-a hypersurface defined as above is a \emph{\myindex{real hypersurface}},
+a hypersurface defined as above is a \emph{\myindex{real hypersurface}}%
+\index{hypersurface!real},
 to distinguish it from a complex hypersurface that would be the zero set of
 a holomorphic function, although we may at times leave out the word ``real''
 if it is clear from context.
@@ -4473,20 +4478,20 @@ T_p \R^n = \operatorname{span}_{\R} \left\{
 
 That is, a vector $X_p \in T_p \R^n$ is an object of the form
 \begin{equation*}
-X_p = \sum_{j=1}^n a_j 
-\frac{\partial}{\partial x_j}\Big|_p ,
+X_p = \sum_{k=1}^n a_k 
+\frac{\partial}{\partial x_k}\Big|_p ,
 \end{equation*}
-for real numbers $a_j$.  For computations, $X_p$ could be represented
+for real numbers $a_k$.  For computations, $X_p$ could be represented
 by an $n$-vector $a = (a_1,\ldots,a_n)$.  However, if $p \not= q$, then
 $T_p \R^n$ and
 $T_q \R^n$ are distinct spaces.
 \glsadd{not:evalpartial}%
 An object
-$\frac{\partial}{\partial x_j}\big|_p$
+$\frac{\partial}{\partial x_k}\big|_p$
 is a linear functional
 on the space of smooth functions:
 When applied to a smooth function $g$, it gives
-$\frac{\partial g}{\partial x_j} \big|_p$.  Therefore, $X_p$ is also such a
+$\frac{\partial g}{\partial x_k} \big|_p$.  Therefore, $X_p$ is also such a
 functional.  It is the directional derivative from calculus;
 it is computed as $X_p f = \nabla f|_p \cdot (a_1,\ldots,a_n)$.
 
@@ -4497,7 +4502,7 @@ then a vector $X_p \in T_p \R^n$ is \emph{tangent}\index{tangent vector}
 to $M$ at $p$ if
 \begin{equation*}
 X_p r = 0, \qquad \text{or in other words} \qquad
-\sum_{j=1}^n a_j \frac{\partial r}{\partial x_j} \Big|_p = 0 .
+\sum_{k=1}^n a_k \frac{\partial r}{\partial x_k} \Big|_p = 0 .
 \end{equation*}
 \glsadd{not:realtangentspace}%
 The space of tangent vectors to $M$ is denoted by $T_p M$, and
@@ -4543,12 +4548,11 @@ and $\int_0^1 f'(ts) \,dt$ is a smooth function of $s$.
 \end{exercise}
 
 \begin{exercise}
-Show that $T_pM$ is independent of which defining function we take.  That
-is,
-prove that if $r$ and $\tilde{r}$ are defining functions for $M$ at $p$, then
-$\sum_j a_j \frac{\partial r}{\partial x_j} \big|_p = 0$
+Show that $T_pM$ is independent of the defining function:
+Prove that if $r$ and $\tilde{r}$ are defining functions for $M$ at $p$, then
+$\sum_k a_k \frac{\partial r}{\partial x_k} \big|_p = 0$
 if and only if
-$\sum_j a_j \frac{\partial \tilde{r}}{\partial x_j} \big|_p = 0$.
+$\sum_k a_k \frac{\partial \tilde{r}}{\partial x_k} \big|_p = 0$.
 \end{exercise}
 \end{exbox}
 
@@ -4575,7 +4579,7 @@ depends on the values of $f$ on $M$.
 If $M \subset \R^n$ is given by $x_n = 0$, then $T_p M$ is given by
 derivatives of the form
 \begin{equation*}
-X_p =  \sum_{j=1}^{n-1} a_j \frac{\partial}{\partial x_j} \Big|_p .
+X_p =  \sum_{k=1}^{n-1} a_k \frac{\partial}{\partial x_k} \Big|_p .
 \end{equation*}
 That is, derivatives along the first $n-1$ variables only.
 \end{example}
@@ -4593,7 +4597,7 @@ natural identification $\R^n \times \R^n \cong T\R^n$:
 \quad
 \mapsto
 \quad
-\sum_{j=1}^n a_j \frac{\partial}{\partial x_j} \Big|_p \in T\R^n .
+\sum_{k=1}^n a_k \frac{\partial}{\partial x_k} \Big|_p \in T\R^n .
 \end{equation*}
 The topology and smooth structure on $T\R^n$ comes from this identification.
 The wording ``bundle'' (a bundle of fibers)
@@ -4603,10 +4607,10 @@ comes from the natural projection $\pi \colon T\R^n
 A smooth
 \emph{\myindex{vector field}} in $T\R^n$ is an object of the form 
 \begin{equation*}
-X = \sum_{j=1}^n a_j
-\frac{\partial}{\partial x_j} ,
+X = \sum_{k=1}^n a_k
+\frac{\partial}{\partial x_k} ,
 \end{equation*}
-where $a_j$ are smooth
+where $a_k$ are smooth
 functions.
 That is, $X$ is a smooth function
 $X \colon V \subset \R^n \to T\R^n$ such that $X(p) \in T_p \R^n$.
@@ -4656,7 +4660,7 @@ To verify this claim, it is enough to see where the basis element
 $\frac{\partial}{\partial x_j}\big|_p$ goes, and the form of $Df(p)$
 as a matrix
 follows by the chain rule.
-For example, the derivative of the mapping $f(x_1,x_2) =
+For instance, the derivative of the mapping $f(x_1,x_2) =
 (x_1+2x_2+x_1^2,3x_1+4x_2+x_1x_2)$ at the origin is given by the matrix
 $\left[ \begin{smallmatrix} 1 & 2 \\ 3 & 4 \end{smallmatrix} \right]$,
 and so the vector
@@ -4666,7 +4670,7 @@ b\frac{\partial}{\partial x_2}\big|_0$
 gets taken to
 $Df(0) X_0 = (a+2b)\frac{\partial}{\partial y_1}\big|_0
 +
-(3a+4b)\frac{\partial}{\partial y_2}\big|_0$, where we let $(y_1,y_2)$ be the
+(3a+4b)\frac{\partial}{\partial y_2}\big|_0$, where $(y_1,y_2)$ are the
 coordinates on the target.  You should check on some test
 function, such as
 $\varphi(y_1,y_2) = \alpha y_1 + \beta y_2$, that the definition above is
@@ -4686,11 +4690,11 @@ $r$ is a defining function for $\partial U$ at $p \in \partial
 U$ such that $r < 0$ on $U$.
 If
 \begin{equation*}
-\sum_{j=1,\ell=1}^n
-a_j a_\ell \frac{\partial^2 r}{\partial x_j \partial x_\ell} \Big|_p \geq 0 ,
+\sum_{k=1,\ell=1}^n
+a_k a_\ell \frac{\partial^2 r}{\partial x_k \partial x_\ell} \Big|_p \geq 0 ,
 \qquad \text{for all} \qquad
-X_p = \sum_{j=1}^n a_j 
-\frac{\partial}{\partial x_j}\Big|_p \quad \in \quad T_p \partial U,
+X_p = \sum_{k=1}^n a_k 
+\frac{\partial}{\partial x_k}\Big|_p \quad \in \quad T_p \partial U,
 \end{equation*}
 then $U$ is said to be \emph{\myindex{convex}} at $p$.  If the inequality
 above is strict for all nonzero $X_p \in T_p \partial U$, then $U$ is said to be
@@ -4705,8 +4709,8 @@ $U$ is \emph{strongly convex} if it is strongly convex at all $p \in
 
 The matrix
 \begin{equation*}
-\left[ \frac{\partial^2 r}{\partial x_j \partial x_\ell} \Big|_p
-\right]_{j\ell}
+\left[ \frac{\partial^2 r}{\partial x_k \partial x_\ell} \Big|_p
+\right]_{k\ell}
 \end{equation*}
 is the
 \emph{\myindex{Hessian}} of $r$ at $p$.
@@ -4738,8 +4742,7 @@ then there is a smooth function $g > 0$ such that $\tilde{r} = g r$.
 \end{exbox}
 
 \begin{example}
-The unit disc in $\R^2$ is
-convex (actually strongly convex).
+The unit disc in $\R^2$ is strongly convex.
 Proof:
 Let $(x,y)$ be the coordinates and
 let $r(x,y) = x^2+y^2-1$ be the 
@@ -4753,8 +4756,7 @@ $\nabla r = (2x,2y)$ to check that
 X = y \frac{\partial}{\partial x} - x \frac{\partial}{\partial y}
 \end{equation*}
 is tangent to the circle, that is,
-$Xr = X(x^2+y^2-1) = (2x,2y) \cdot (y,-x) = 0$ on the circle
-(by chance $Xr=0$ everywhere).
+$Xr = X(x^2+y^2-1) = (2x,2y) \cdot (y,-x) = 0$ on the circle---by chance, $Xr=0$ everywhere.
 The vector field $X$ is nonzero on the circle, so at each point it gives a
 basis of the tangent space.  See \figureref{fig:circle-tangent}
 \begin{myfig}
@@ -4843,7 +4845,7 @@ $p$ is the origin, and near the origin $M$ is given by
 y = \varphi(x) ,
 \end{equation*}
 where $(x,y) \in \R^{n-1} \times \R$ are our coordinates and
-$\varphi$ is a smooth %$C^k$
+$\varphi$ is a smooth
 function that is $O(2)$ at the origin,
 namely, $\varphi(0) = 0$ and $d\varphi(0) = 0$.
 
@@ -4877,31 +4879,32 @@ What is left is to show that the derivative at 0 of $\varphi$ vanishes.
 As
 $r\bigl(x,\varphi(x)\bigr) = 0$ for all $x$ in a neighborhood of the
 origin, we differentiate.
-For every $j=1,\ldots,n-1$,
+For every $k=1,\ldots,n-1$,
 \begin{equation*}
 0 = 
-\frac{\partial}{\partial x_j} \Bigl[
+\frac{\partial}{\partial x_k} \Bigl[
 r\bigl(x,\varphi(x)\bigr) 
 \Bigr]
 =
 \left(
 \sum_{\ell=1}^{n-1}
 \frac{\partial r}{\partial x_\ell}
-\frac{\partial x_\ell}{\partial x_j}
+\frac{\partial x_\ell}{\partial x_k}
 \right)
 +
 \frac{\partial r}{\partial y}
-\frac{\partial \varphi}{\partial x_j}
+\frac{\partial \varphi}{\partial x_k}
 =
-\frac{\partial r}{\partial x_j}
+\frac{\partial r}{\partial x_k}
 +
 \frac{\partial r}{\partial y}
-\frac{\partial \varphi}{\partial x_j} .
+\frac{\partial \varphi}{\partial x_k} .
+\avoidbreak
 \end{equation*}
 At the origin,
-$\frac{\partial r}{\partial x_j}(0,0) = 0$ and
+$\frac{\partial r}{\partial x_k}(0,0) = 0$ and
 $\frac{\partial r}{\partial y}(0,0) = v_n \not= 0$, and therefore
-$\frac{\partial \varphi}{\partial x_j}(0) = 0$.
+$\frac{\partial \varphi}{\partial x_k}(0) = 0$.
 
 To prove the final statement, note that
 $r < 0$ on $U$.  It is enough to check that $r$ is
@@ -4916,7 +4919,8 @@ Considering $x$ as a column vector, the Taylor expansion of a smooth function $\
 \varphi(x) = \varphi(0) + \nabla \varphi|_0 \cdot x + \frac{1}{2}\, x^t H x + E(x) ,
 \end{equation*}
 where $H = \left[
-\frac{\partial^2 \varphi}{\partial x_j \partial x_k} \big|_{0} \right]_{jk}$ is the Hessian matrix of $\varphi$ at the origin,
+\frac{\partial^2 \varphi}{\partial x_k \partial x_\ell} \big|_{0} \right]_{k\ell}$
+is the Hessian matrix of $\varphi$ at the origin,
 and $E$ is $O(3)$, namely, $E(0) = 0$, and
 all first and second order derivatives of $E$ vanish at $0$.
 For the situation of the lemma above,
@@ -4993,8 +4997,8 @@ span we get the \emph{\myindex{complexified tangent space}}
 We simply replace all the real coefficients with complex ones.  
 The space $\C \otimes T_p\C^n$ is a $2n$-dimensional complex vector space.
 Both
-$\frac{\partial}{\partial z_j}\big|_p$ and
-$\frac{\partial}{\partial \bar{z}_j}\big|_p$ are in $\C \otimes
+$\frac{\partial}{\partial z_k}\big|_p$ and
+$\frac{\partial}{\partial \bar{z}_k}\big|_p$ are in $\C \otimes
 T_p\C^n$, and
 \begin{equation*}
 \C \otimes T_p\C^n
@@ -5085,23 +5089,23 @@ derivative, which we write as
 \begin{equation*}
 D f(p) \colon T_p^{(1,0)} \C^n \to T_{f(p)}^{(1,0)} \C^m .
 \end{equation*}
-That is, $Df(p)$ is the restriction of $D_\C f(p)$ to $T_p^{(1,0)} \C^n$.
-In other words, let $z$ be the coordinates on $\C^n$ and
-$w$ be coordinates on $\C^m$.
-Using the bases
+So $Df(p)$ is the restriction of $D_\C f(p)$ to $T_p^{(1,0)} \C^n$.
+Let $z$ be the coordinates on $\C^n$ and
+$w$ be the coordinates on $\C^m$.
+In the bases
 $\left\{ \frac{\partial}{\partial z_1} \big|_p,\ldots,
 \frac{\partial}{\partial z_n} \big|_p \right\}$
-on $\C^n$ and 
+and 
 $\left\{ \frac{\partial}{\partial w_1} \big|_{f(p)},\ldots,
-\frac{\partial}{\partial w_m} \big|_{f(p)} \right\}$ on $\C^m$,
-the holomorphic derivative of $f \colon \C^{n} \to \C^m$ is represented
+\frac{\partial}{\partial w_m} \big|_{f(p)} \right\}$,
+the holomorphic derivative $Df(p)$ of $f \colon \C^{n} \to \C^m$ is represented
 as the $m \times n$ Jacobian matrix
 \begin{equation*}
 \left[
-\frac{\partial f_j}{\partial z_k} \Big|_p
-\right]_{jk} ,
+\frac{\partial f_k}{\partial z_\ell} \Big|_p
+\right]_{k\ell} ,
 \end{equation*}
-which we have seen before and for which we also used the notation 
+which we have seen in \sectionref{sec:derivatives} and for which we also used the notation 
 $Df(p)$.
 
 As before, define the tangent bundles
@@ -5122,24 +5126,24 @@ $M$ at $p$.  A vector
 $X_p \in \C \otimes T_p\C^n$ is in
 $\C \otimes T_pM$ whenever $X_p r = 0$.  That is,
 \begin{equation*}
-X_p = \sum_{j=1}^n
+X_p = \sum_{k=1}^n
 \left(
-a_j 
-\frac{\partial}{\partial z_j} \Big|_p
+a_k 
+\frac{\partial}{\partial z_k} \Big|_p
 +
-b_j
-\frac{\partial}{\partial \bar{z}_j} \Big|_p
+b_k
+\frac{\partial}{\partial \bar{z}_k} \Big|_p
 \right) \in \C \otimes T_p M
 \quad
 \text{whenever}
 \quad
- \sum_{j=1}^n
+ \sum_{k=1}^n
 \left(
-a_j 
-\frac{\partial r}{\partial z_j} \Big|_p
+a_k 
+\frac{\partial r}{\partial z_k} \Big|_p
 +
-b_j
-\frac{\partial r}{\partial \bar{z}_j} \Big|_p
+b_k
+\frac{\partial r}{\partial \bar{z}_k} \Big|_p
 \right)
 = 0 .
 \end{equation*}
@@ -5153,8 +5157,8 @@ T_p^{(1,0)} M \oplus T_p^{(0,1)} M \oplus B_p ,
 where
 \begin{equation*}
 T_p^{(1,0)} M \overset{\text{def}}{=} \bigl( \C \otimes T_pM \bigr) \cap
-\bigl( T_p^{(1,0)} \C^n \bigr),  \qquad \text{and}
-\qquad
+\bigl( T_p^{(1,0)} \C^n \bigr),  \quad \text{and}
+\quad
 T_p^{(0,1)} M \overset{\text{def}}{=} \bigl( \C \otimes T_pM \bigr) \cap
 \bigl( T_p^{(0,1)} \C^n \bigr) .
 \end{equation*}
@@ -5219,7 +5223,7 @@ $M$ is written in variables $(z,w) \in \C^{n-1}
 \begin{equation*}
 \Im w = \varphi(z,\bar{z},\Re w) ,
 \end{equation*}
-with the $\varphi(0)$  and $d\varphi(0) = 0$.  Consequently
+with the $\varphi(0)$  and $d\varphi(0) = 0$.  Consequently,
 \begin{gather*}
 T_0^{(1,0)} M
 = \operatorname{span}_{\C} \left\{
@@ -5235,6 +5239,7 @@ T_0^{(0,1)} M
 \\
 B_0 = \operatorname{span}_{\C} \left\{
 \frac{\partial}{\partial (\Re w)}\Big|_0 \right\} .
+\avoidbreak
 \end{gather*}
 In particular,
 $\dim_\C T_p^{(1,0)} M = \dim_\C T_p^{(0,1)} M = n-1$ and 
@@ -5247,15 +5252,15 @@ $\Im w > \varphi(z,\bar{z},\Re w)$ on $U$.
 \end{prop}
 
 \begin{proof}
-We apply a translation to put $p=0$ and in the
+Apply a translation to put $p=0$ and in the
 same manner as in \lemmaref{lemma:realgraphcoords}
 apply a unitary matrix to make sure that $\nabla r$ is
 in the direction
 $-\frac{\partial}{\partial (\Im w)}\big|_0$.  That $\varphi(0) = 0$
 and $d\varphi(0) = 0$ follows as before.
-As a translation and a unitary matrix are holomorphic
-and in fact biholomorphic, then
-via \propref{prop:holvectmap} we obtain that the tangent spaces are all
+A translation and a unitary matrix are holomorphic
+and, in fact, biholomorphic, so
+via \propref{prop:holvectmap} the tangent spaces are all
 transformed correctly.
 
 The rest of the proposition follows at once as
@@ -5264,8 +5269,8 @@ at the origin.
 \end{proof}
 
 \begin{remark}
-When $M$ is of smaller dimension than $2n-1$ (no longer a hypersurface, but
-a submanifold of higher codimension), then the proposition above does not hold.
+When $M$ is of dimension less than $2n-1$ (no longer a hypersurface, but
+a submanifold of higher codimension), the proposition above does not hold.
 That is, we would still have $\dim_\C T_p^{(1,0)} M = \dim_\C T_p^{(0,1)}
 M$, but this number need not be constant from point to point.  Fortunately,
 when talking about domains with smooth boundaries, the boundaries are
@@ -5274,18 +5279,18 @@ hypersurfaces, and this complication does not arise.
 
 \begin{defn}
 Suppose $U \subset \C^n$ is an open set with
-smooth boundary, %$C^k$-smooth boundary, $k \geq 2$,
+smooth boundary,
 and $r$ is a defining function for $\partial U$ at $p \in \partial
 U$ such that $r < 0$ on $U$.
 If
 \begin{equation*}
-\sum_{j=1,\ell=1}^n
-\bar{a}_j a_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_p \geq 0 
+\sum_{k=1,\ell=1}^n
+\bar{a}_k a_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_p \geq 0 
 \qquad
 \text{for all}
 \qquad
-X_p = \sum_{j=1}^n a_j 
-\frac{\partial}{\partial z_j}\Big|_p  \quad \in \quad 
+X_p = \sum_{k=1}^n a_k 
+\frac{\partial}{\partial z_k}\Big|_p  \quad \in \quad 
 T^{(1,0)}_p \partial U,
 \end{equation*}
 then $U$ is \emph{\myindex{pseudoconvex}} at $p$
@@ -5306,8 +5311,8 @@ For $X_p \in T^{(1,0)}_p\partial U$, the sesquilinear form
 \begin{equation*}
 \sL(X_p,X_p)
 =
-\sum_{j=1,\ell=1}^n
-\bar{a}_j a_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_p 
+\sum_{k=1,\ell=1}^n
+\bar{a}_k a_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_p 
 \end{equation*}
 is called the \emph{\myindex{Levi form}} at $p$.  So $U$ is pseudoconvex
 (resp.\ strongly pseudoconvex) at
@@ -5319,8 +5324,8 @@ although one has to decide which side of $M$ is ``the inside.''
 
 The matrix
 \begin{equation*}
-\left[ \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_p
-\right]_{j \ell}
+\left[ \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_p
+\right]_{k \ell}
 \end{equation*}
 is called the
 \emph{\myindex{complex Hessian}}\index{Hessian!complex} of $r$ at
@@ -5385,15 +5390,14 @@ the symmetric matrix
 .
 \end{equation*}
 The complex Hessian is the lower left,
-or the transpose of the upper right, block.  That is,
-if you write the full Hessian as
-$\left[ \begin{smallmatrix} X & L^t \\ L & \widebar{X} \end{smallmatrix}
-\right]$, then $L$ is the complex Hessian.
-In particular, $L$ is a smaller matrix. And we also apply it only to a subspace 
+or the transpose of the upper right, block---if you write the full Hessian as
+$\Bigl[ \begin{smallmatrix} X & L^t \\ L & \widebar{X} \end{smallmatrix}
+\Bigr]$, then $L$ is the complex Hessian.
+Note that $L$ is a smaller matrix And we apply it only to a subspace 
 of the complexified tangent space.
 
-We illustrate the change of basis on one dimension.  The change of
-variables is left to student for higher dimensions.  Let $z =
+We illustrate the change of basis in one dimension, and leave higher
+dimensions to the student.  Let $z =
 x+iy$ be in $\C$, and denote by $T$ the change of basis matrix:
 \begin{equation*}
 T = 
@@ -5422,8 +5426,8 @@ T
 \end{bmatrix}
 .
 \end{equation*}
-The relationship between the eigenvalues of the real Hessian and the complex
-Hessian is not perhaps as straightforward as may at first seem, but there is
+The relationship between the eigenvalues of the real and the complex
+Hessian is not as straightforward as may at first seem, but there is
 a relationship there nonetheless.
 
 \begin{exbox}
@@ -5506,10 +5510,10 @@ even though that is not completely correct.
 The proof of the following proposition is left as an exercise.
 
 \begin{prop} \label{prop:inertiainvariant}
-Let $U \subset \C^n$ be an open set with smooth boundary and $p \in \partial
-U$.  The inertia  of the Levi form at $p$
-does not depend on the defining function at $p$.
-In particular, the definition of pseudoconvexity and strong pseudoconvexity is
+If $U \subset \C^n$ is an open set with smooth boundary and $p \in \partial
+U$, then the inertia of the Levi form at $p$
+does not depend on the defining function.
+Consequently, the notion of pseudoconvexity and strong pseudoconvexity is
 independent of the defining function.
 \end{prop}
 
@@ -5551,8 +5555,8 @@ L & 0 \\
 \end{bmatrix}
 \qquad \text{where} \quad
 L = \left[
-\frac{\partial^2 \varphi}{\partial \bar{z}_j \partial z_{\ell}}\Big|_0
-\right]_{j \ell} .
+\frac{\partial^2 \varphi}{\partial \bar{z}_k \partial z_{\ell}}\Big|_0
+\right]_{k \ell} .
 \end{equation*}
 Note that $L$ is an $(n-1) \times (n-1)$ matrix.
 The vectors in $T_0^{(1,0)} \partial U$ are the span
@@ -5574,18 +5578,18 @@ local holomorphic coordinates where the Levi form is displayed nicely.
 The sphere $\partial \bB_n$ is defined in the variables $Z = (Z_1,\ldots,Z_n) \in \C^n$
 by $\snorm{Z} = 1$.
 
-Let us change variables 
+We change variables 
 to $(z_1,\ldots,z_{n-1},w)$ where
 \begin{equation*}
-z_j = \frac{Z_j}{1-Z_n} \quad \text{ for all $j=1,\ldots,n-1$}, \qquad
+z_k = \frac{Z_k}{1-Z_n} \quad \text{ for all $k=1,\ldots,n-1$}, \qquad
 w = i\frac{1+Z_n}{1-Z_n} .
 \end{equation*}
-This change of variables is a biholomorphic mapping from the set where $Z_n \not= 1$
-to the set where $w\not= -i$ (exercise).  For us it is 
-sufficient to notice that the map is invertible near
-$(0,\ldots,0,-1)$, which follows by simply computing the derivative.
+This change of variables is a biholomorphic map from the set where $Z_n \not= 1$
+to the set where $w\not= -i$ (exercise).  For us, it suffices 
+that the map is invertible near
+$(0,\ldots,0,-1)$, which follows by computing the derivative.
 Notice
-that the last component is the inverse of the Cayley transform (that takes
+that the last component is the inverse of the Cayley transform (which takes
 the disc to the upper half-plane).
 
 We claim that the mapping takes the unit sphere given by $\snorm{Z} = 1$
@@ -5677,84 +5681,85 @@ on the sets described above.
 \end{exbox}
 
 Let us see how the Hessian of $r$ changes under a biholomorphic change
-of coordinates.  That is, let $f \colon V \to V'$ be a biholomorphic map
+of coordinates.  Let $f \colon V \to V'$ be a biholomorphic map
 between two domains in $\C^n$, and let $r \colon V' \to \R$ be a smooth
 function with nonvanishing derivative.  Let us compute the Hessian of
 $r \circ f \colon V \to \R$.
 We first compute what happens to the nonmixed derivatives.
-As we have to apply chain rule twice, to keep track better track of things,
+As we have to apply chain rule twice, to keep better track of things,
 we write where the derivatives are being evaluated, as they are, after all,
 functions.
 For clarity, let $z$ be the coordinates in $V$
 and $\zeta$ the coordinates in $V'$.
 That is, $r$ is a function of $\zeta$ and $\bar{\zeta}$,
 $f$ is a function of $z$, and $\bar{f}$ is a function of $\bar{z}$.
-Therefore, $r \circ f$ is a function of $z$ and $\bar{z}$.
+So $r \circ f$ is a function of $z$ and $\bar{z}$.
 
 \begin{equation*} %\label{eq:nonmixedderschangeofcoords}
 \begin{split}
-\frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k}
+\frac{\partial^2 (r \circ f)}{\partial z_k \partial z_\ell}
 %\bigg|_{(z,\bar{z})}
 & =
-\frac{\partial}{\partial z_j }
-\sum_{\ell=1}^n 
+\frac{\partial}{\partial z_k }
+\sum_{m=1}^n 
 \biggl(
-\frac{\partial r}{\partial \zeta_\ell}
+\frac{\partial r}{\partial \zeta_m}
 \bigg|_{(f(z),\bar{f}(\bar{z}))}
-\frac{\partial f_\ell}{\partial z_k} \bigg|_{z}
+\frac{\partial f_m}{\partial z_\ell} \bigg|_{z}
 +
-\frac{\partial r}{\partial \bar{\zeta}_\ell}
+\frac{\partial r}{\partial \bar{\zeta}_m}
 \bigg|_{(f(z),\bar{f}(\bar{z}))}
-\cancelto{0}{\frac{\partial \bar{f}_\ell}{\partial z_k} \bigg|_{\bar{z}}}
+\cancelto{0}{\frac{\partial \bar{f}_m}{\partial z_\ell} \bigg|_{\bar{z}}}
 \biggr)
 \\
 & =
-\sum_{\ell,m=1}^n
+\sum_{m,\nu=1}^n
 \biggl(
-\frac{\partial^2 r}{\partial \zeta_m \partial \zeta_\ell}
+\frac{\partial^2 r}{\partial \zeta_\nu \partial \zeta_m}
 \bigg|_{(f(z),\bar{f}(\bar{z}))}
-\frac{\partial f_m}{\partial z_j} \bigg|_z 
-\frac{\partial f_\ell}{\partial z_k} \bigg|_z 
+\frac{\partial f_\nu}{\partial z_k} \bigg|_z 
+\frac{\partial f_m}{\partial z_\ell} \bigg|_z 
 +
-\frac{\partial^2 r}{\partial \bar{\zeta}_m \partial \zeta_\ell}
+\frac{\partial^2 r}{\partial \bar{\zeta}_\nu \partial \zeta_m}
 \bigg|_{(f(z),\bar{f}(\bar{z}))}
-\smash{\cancelto{0}{\frac{\partial \bar{f}_m}{\partial z_j} \bigg|_{\bar{z}} }}
-\frac{\partial f_\ell}{\partial z_k} \bigg|_z 
+\smash{\cancelto{0}{\frac{\partial \bar{f}_\nu}{\partial z_k} \bigg|_{\bar{z}} }}
+\frac{\partial f_m}{\partial z_\ell} \bigg|_z 
 \biggr)
 \\
 & \qquad +
-\sum_{\ell=1}^n 
-\frac{\partial r}{\partial \zeta_\ell} \bigg|_{(f(z),\bar{f}(\bar{z}))}
-\frac{\partial^2 f_\ell}{\partial z_j \partial z_k} \bigg|_z
+\sum_{m=1}^n 
+\frac{\partial r}{\partial \zeta_m} \bigg|_{(f(z),\bar{f}(\bar{z}))}
+\frac{\partial^2 f_m}{\partial z_k \partial z_\ell} \bigg|_z
 \\
 &=
-\sum_{\ell,m=1}^n
-\frac{\partial^2 r}{\partial \zeta_m \partial \zeta_\ell}
-\frac{\partial f_m}{\partial z_j}
-\frac{\partial f_\ell}{\partial z_k}
+\sum_{m,\nu=1}^n
+\frac{\partial^2 r}{\partial \zeta_\nu \partial \zeta_m}
+\frac{\partial f_\nu}{\partial z_k}
+\frac{\partial f_m}{\partial z_\ell}
 +
-\sum_{\ell=1}^n 
-\frac{\partial r}{\partial \zeta_\ell}
-\frac{\partial^2 f_\ell}{\partial z_j \partial z_k} .
+\sum_{m=1}^n 
+\frac{\partial r}{\partial \zeta_m}
+\frac{\partial^2 f_m}{\partial z_k \partial z_\ell} .
 \end{split}
 \end{equation*}
 The matrix 
-$\left[ \frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k} \right]$
+$\left[ \frac{\partial^2 (r \circ f)}{\partial z_k \partial z_\ell} \right]$
 can have different eigenvalues than the matrix
-$\left[ \frac{\partial^2 r}{\partial \zeta_j \partial \zeta_k} \right]$.
+$\left[ \frac{\partial^2 r}{\partial \zeta_k \partial \zeta_\ell} \right]$.
 If $r$ has nonvanishing gradient, then
 using the second term, we can (locally) choose $f$ in such a way as to make
 the matrix
-$\left[ \frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k} \right]$
+$\left[ \frac{\partial^2 (r \circ f)}{\partial z_k \partial z_\ell} \right]$
 be the zero matrix (or anything else) at a certain point by choosing the second
 derivatives of $f$ arbitrarily at that point.  See the exercise below.  Nothing about the matrix
-$\left[ \frac{\partial^2 r}{\partial \zeta_j \partial \zeta_k} \right]$ is
+$\left[ \frac{\partial^2 r}{\partial \zeta_k \partial \zeta_\ell} \right]$ is
 preserved under a biholomorphic map.  And that is precisely why it does not
 appear in the definition of pseudoconvexity.
 The story for
-$\left[ \frac{\partial^2 (r \circ f)}{\partial \bar{z}_j \partial \bar{z}_k} \right]$
+$\left[ \frac{\partial^2 (r \circ f)}{\partial \bar{z}_k \partial
+\bar{z}_\ell} \right]$
 and
-$\left[ \frac{\partial^2 r}{\partial \bar{\zeta}_j \partial \bar{\zeta}_k} \right]$ is
+$\left[ \frac{\partial^2 r}{\partial \bar{\zeta}_k \partial \bar{\zeta}_\ell} \right]$ is
 exactly the same.
 
 \begin{exbox}
@@ -5762,10 +5767,11 @@ exactly the same.
 Given a real function $r$ with nonvanishing gradient at $p \in \C^n$.  Find
 a local change of coordinates $f$ at $p$ (so $f$ ought to be a holomorphic
 mapping with an invertible derivative at $p$) such that 
-$\left[ \frac{\partial^2 (r \circ f)}{\partial z_j \partial z_k} \Big|_p \right]$
+$\Bigl[ \frac{\partial^2 (r \circ f)}{\partial z_k \partial z_\ell} \Big|_p
+\Bigr]$
 and
-$\left[ \frac{\partial^2 (r \circ f)}{\partial \bar{z}_j \partial \bar{z}_k}
-\Big|_p \right]$
+$\Bigl[ \frac{\partial^2 (r \circ f)}{\partial \bar{z}_k \partial \bar{z}_\ell}
+\Big|_p \Bigr]$
 are just the zero matrices.
 \end{exercise}
 \end{exbox}
@@ -5773,32 +5779,33 @@ are just the zero matrices.
 Let us look at the mixed derivatives:
 \begin{equation*}
 \begin{split}
-\frac{\partial^2 (r \circ f)}{\partial \bar{z}_j \partial z_k}
+\frac{\partial^2 (r \circ f)}{\partial \bar{z}_k \partial z_\ell}
 %\bigg|_{(z,\bar{z})}
 & =
-\frac{\partial}{\partial \bar{z}_j }
-\sum_{\ell=1}^n 
+\frac{\partial}{\partial \bar{z}_k }
+\sum_{m=1}^n 
 \left(
-\frac{\partial r}{\partial \zeta_\ell} \bigg|_{(f(z),\bar{f}(\bar{z}))}
-\frac{\partial f_\ell}{\partial z_k} \bigg|_z 
+\frac{\partial r}{\partial \zeta_m} \bigg|_{(f(z),\bar{f}(\bar{z}))}
+\frac{\partial f_m}{\partial z_\ell} \bigg|_z 
 \right)
 \\
 & =
-\sum_{\ell,m=1}^n 
-\frac{\partial^2 r}{\partial \bar{\zeta}_m \partial \zeta_\ell }
+\sum_{m,\nu=1}^n 
+\frac{\partial^2 r}{\partial \bar{\zeta}_\nu \partial \zeta_m }
 \bigg|_{(f(z),\bar{f}(\bar{z}))}
-\frac{\partial \bar{f}_m}{\partial \bar{z}_j} \bigg|_{\bar{z}} 
-\frac{\partial f_\ell}{\partial z_k} \bigg|_z 
+\frac{\partial \bar{f}_\nu}{\partial \bar{z}_k} \bigg|_{\bar{z}} 
+\frac{\partial f_m}{\partial z_\ell} \bigg|_z 
 +
-\sum_{\ell=1}^n 
-\frac{\partial r}{\partial \zeta_\ell} \bigg|_{(f(z),\bar{f}(\bar{z}))}
-\smash{\cancelto{0}{\frac{\partial^2 f_\ell}{\partial \bar{z}_j \partial z_k} \bigg|_z}}
+\sum_{m=1}^n 
+\frac{\partial r}{\partial \zeta_m} \bigg|_{(f(z),\bar{f}(\bar{z}))}
+\smash{\cancelto{0}{\frac{\partial^2 f_m}{\partial \bar{z}_k \partial
+z_\ell} \bigg|_z}}
 \\
 &=
-\sum_{\ell,m=1}^n 
-\frac{\partial^2 r}{\partial \bar{\zeta}_m \partial \zeta_\ell}
-\frac{\partial \bar{f}_m}{\partial \bar{z}_j} 
-\frac{\partial f_\ell}{\partial z_k} .
+\sum_{m,\nu=1}^n 
+\frac{\partial^2 r}{\partial \bar{\zeta}_\nu \partial \zeta_m}
+\frac{\partial \bar{f}_\nu}{\partial \bar{z}_k} 
+\frac{\partial f_m}{\partial z_\ell} .
 \end{split}
 \end{equation*}
 The complex Hessian of $r \circ f$ is the complex Hessian $H$ of $r$
@@ -5858,30 +5865,30 @@ but that is pseudoconvex.
 
 While the Levi form is not invariant under holomorphic changes of coordinates,
 its inertia is.
-Putting this together with the other observations we made above,
-we will find the normal form for the
+Putting this together with the other observations we made,
+we find the normal form for the
 quadratic part of the defining equation for a smooth real hypersurface
 under biholomorphic transformations.
-It is possible to do better than the following lemma, but it is not possible
-to always get rid of the dependence on $\Re w$ in the higher order terms.
+It is possible to do better than the following lemma, but it is not always possible
+to get rid of the dependence on $\Re w$ in the higher order terms.
 
 \begin{lemma} \label{lemma:normformquad}
-Let $M$ be a smooth real hypersurface in $\C^n$ and $p \in M$.  Then there
-exists a local biholomorphic change of coordinates taking $p$ to the origin
+Let $M \subset \C^n$ be a smooth real hypersurface and $p \in M$.  Then there
+exists a local biholomorphic change of coordinates taking $p$ to $0$
 and $M$ to the hypersurface given by
 \begin{equation*}
-\Im w = \sum_{j=1}^\alpha \sabs{z_j}^2 - \sum_{j=\alpha+1}^{\alpha+\beta}
-\sabs{z_j}^2 +
+\Im w = \sum_{k=1}^\alpha \sabs{z_k}^2 - \sum_{k=\alpha+1}^{\alpha+\beta}
+\sabs{z_k}^2 +
 E(z,\bar{z},\Re w) ,
+\avoidbreak
 \end{equation*}
 where $E$ is $O(3)$ at the origin.
 Here $\alpha$ is the number of positive eigenvalues of the Levi form at $p$,
-$\beta$ is the number of negative eigenvalues, and $\alpha+\beta \leq
-n-1$.
+$\beta$ is the number of negative eigenvalues, and $\alpha+\beta \leq n-1$.
 \end{lemma}
 
-Recall that $O(k)$ at the origin means
-a function that together with its derivatives up to order $k-1$ vanish
+Recall that $O(\ell)$ at the origin means
+a function that together with its derivatives up to order $\ell-1$ vanish
 at the origin.
 
 \begin{proof}
@@ -5996,40 +6003,40 @@ a {(\Im w')}^2
 +O(3) .
 \end{split}
 \end{equation*}
-The right-hand side is the defining equation in the $(z,w')$ coordinates.
-However, it is no longer written as a graph of $\Im w'$ over the
-rest, so we apply the implicit
+The right-hand side is the defining function in the $(z,w')$ coordinates.
+As it is no longer written as a graph of $\Im w'$ over the
+rest, apply the implicit
 function theorem to solve for $\Im w'$
 and write the hypersurface as a graph again.
 The expression for $\Im w'$
-is $O(2)$, and therefore $-i\epsilon (\Im w')(z_1-\bar{z}_1)+a{(\Im w')}^2$
+is $O(2)$, and so $-i\epsilon (\Im w')(z_1-\bar{z}_1)+a{(\Im w')}^2$
 is $O(3)$.
-So if we write $M$ as a graph,
+If we write $M$ as a graph,
 \begin{equation*}
 \Im w' = q(z,\bar{z}) + E(z,\bar{z},\Re w'),
 \end{equation*}
 then $E$ is $O(3)$.
 
-We write the quadratic polynomial $q$ as
+Write the quadratic polynomial $q$ as
 \begin{equation} \label{eq:generalquadraticq}
 q(z,\bar{z}) =
-\sum_{j,k=1}^{n-1}
-a_{jk} z_jz_k
+\sum_{k,\ell=1}^{n-1}
+a_{k\ell} z_kz_\ell
 +
-b_{jk} \bar{z}_j\bar{z}_k
+b_{k\ell} \bar{z}_k\bar{z}_\ell
 +
-c_{jk} \bar{z}_jz_k .
+c_{k\ell} \bar{z}_kz_\ell .
 \end{equation}
-As $q$ is real-valued, it is left as an exercise to show that $a_{jk} =
-\overline{b_{jk}}$ and $c_{jk} = \overline{c_{kj}}$.  That is, the
-matrix $[b_{jk}]$ is the complex conjugate of $[a_{jk}]$ and
-$[c_{jk}]$ is Hermitian.
+As $q$ is real-valued, it is left as an exercise to show that $a_{k\ell} =
+\overline{b_{k\ell}}$ and $c_{k\ell} = \overline{c_{\ell k}}$.  That is, the
+matrix $[b_{k\ell}]$ is the complex conjugate of $[a_{k\ell}]$ and
+$[c_{k\ell}]$ is Hermitian.
 
-We make another change of coordinates.  We fix the $z$s again, and we set
+We make another change of coordinates.  Fix the $z$s again, and set
 \begin{equation} \label{eq:wprimeexpression}
 w' = w'' + i
-\sum_{j,k=1}^{n-1}
-a_{jk} z_jz_k .
+\sum_{k,\ell=1}^{n-1}
+a_{k\ell} z_kz_\ell .
 \end{equation}
 In particular,
 \begin{equation*}
@@ -6037,41 +6044,41 @@ In particular,
 = \Im w''
 + \Im \biggl(
 i
-\sum_{j,k=1}^{n-1}
-a_{jk} z_jz_k 
+\sum_{k,\ell=1}^{n-1}
+a_{k\ell} z_kz_\ell 
 \biggr)
 %=
 %\Im w''
 %-
-%\sum_{j,k=1}^{n-1}
+%\sum_{k,\ell=1}^{n-1}
 %\bigl(
-%a_{jk} z_jz_k 
+%a_{k\ell} z_kz_\ell 
 %+
-%\overline{a_{jk}} \bar{z}_j\bar{z}_k 
+%\overline{a_{k\ell}} \bar{z}_k\bar{z}_\ell 
 %\bigr)
 =
 \Im w''
 +
-\sum_{j,k=1}^{n-1}
+\sum_{k,\ell=1}^{n-1}
 \bigl(
-a_{jk} z_jz_k 
+a_{k\ell} z_kz_\ell 
 +
-b_{jk} \bar{z}_j\bar{z}_k 
+b_{k\ell} \bar{z}_k\bar{z}_\ell 
 \bigr) ,
 \end{equation*}
-as $\overline{a_{jk}} = b_{jk}$.  Plugging
+as $\overline{a_{k\ell}} = b_{k\ell}$.  Plugging
 \eqref{eq:wprimeexpression} into $\Im w' = q(z,\bar{z}) + E(z,\bar{z},\Re w')$
 and solving for $\Im w''$ cancels the
 holomorphic and antiholomorphic terms in $q$, and leaves $E$ as $O(3)$.
 After this change of coordinates we may assume
+that $q$ is a sesquilinear form,
 \begin{equation*}
-q(z,\bar{z}) = \sum_{j,k=1}^{n-1} c_{jk} z_j \bar{z}_k .
+q(z,\bar{z}) = \sum_{k,\ell=1}^{n-1} c_{k\ell} z_k \bar{z}_\ell .
 \end{equation*}
-That is, $q$ is a sesquilinear form.  Since $q$ is real-valued, the matrix
-$C = [ c_{jk} ]$ is Hermitian.  In linear algebra notation,
+As $q$ is real-valued, the matrix
+$C = [ c_{k\ell} ]$ is Hermitian.  In linear algebra notation,
 $q(z,\bar{z}) = z^*Cz$,
-where %the $*$ denotes the conjugate transpose, and
-we think of $z$ as a column vector.
+where we think of $z$ as a column vector.
 If $T$ is a linear transformation on the $z$ variables, say $z'=Tz$, we
 obtain ${z'}^*Cz' = {(Tz)}^*CTz = z^* ( T^*CT) z$.  Thus, we normalize $C$
 up to $*$-congruence.  A Hermitian matrix
@@ -6084,7 +6091,7 @@ proposition.
 \begin{exercise}
 Prove the assertion in the proof, that is, if $q$ is a quadratic as in
 \eqref{eq:generalquadraticq} that is real-valued, then
- $a_{jk} = \overline{b_{jk}}$ and $c_{jk} = \overline{c_{kj}}$.
+ $a_{k\ell} = \overline{b_{k\ell}}$ and $c_{k\ell} = \overline{c_{\ell k}}$.
 \end{exercise}
 \end{exbox}
 
@@ -6135,8 +6142,9 @@ of the hard direction.
 
 \begin{thm}[Tomato can principle\index{tomato can principle}] \label{thm:tomatocan}
 Suppose
-$U \subset \C^n$ is an open set with smooth boundary and at some point $p \in
-\partial U$ the Levi form has a negative eigenvalue.
+$U \subset \C^n$ is an open set with smooth boundary and
+the Levi form has a negative eigenvalue at some $p \in
+\partial U$.
 Then every holomorphic function on $U$
 extends to a neighborhood of $p$.
 In particular, $U$ is not
@@ -6159,16 +6167,16 @@ eigenvalue, we can fit a tomato can from inside the domain over $p$.''
 We change variables so that $p = 0$, and
 near $p$, $U$ is given by
 \begin{equation*}
-\Im w > -\sabs{z_1}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{z_j}^2 +
+\Im w > -\sabs{z_1}^2 + \sum_{k=2}^{n-1} \epsilon_k \sabs{z_k}^2 +
 E(z_1,z',\bar{z}_1,\bar{z}',\Re w) ,
 \end{equation*}
-where $z' = (z_2,\ldots,z_{n-1})$, $\epsilon_j = -1,0,1$, and $E$ is $O(3)$.
+where $z' = (z_2,\ldots,z_{n-1})$, $\epsilon_k = -1,0,1$, and $E$ is $O(3)$.
 We embed an analytic disc via the map
 $\xi \overset{\varphi}{\mapsto} (\lambda \xi, 0, 0, \ldots, 0)$
 for some small $\lambda > 0$.
 Clearly $\varphi(0) = 0 \in \partial U$.  For $\xi \not= 0$ near the origin
 \begin{equation*}
--\lambda^2 \sabs{\xi}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{0}^2 + E(\lambda
+-\lambda^2 \sabs{\xi}^2 + \sum_{k=2}^{n-1} \epsilon_k \sabs{0}^2 + E(\lambda
 \xi,0,\lambda \bar{\xi},0,0)
 =
 -\lambda^2 \sabs{\xi}^2 + E(\lambda
@@ -6198,13 +6206,13 @@ Define the Hartogs figure
 \begin{split}
 H =
 & \bigl\{ (z,w) : \lambda - \epsilon < \sabs{z_1} < \lambda + \epsilon,
-\sabs{z_j} < \epsilon \text{ for } j=2,\ldots,n-1, \text{ and }
+\sabs{z_k} < \epsilon \text{ for } k=2,\ldots,n-1, \text{ and }
 \sabs{w-is} < s+\epsilon \bigr\} 
 \\
 &
 \cup 
 \bigl\{ (z,w) : \sabs{z_1} < \lambda + \epsilon, 
-\sabs{z_j} < \epsilon \text{ for } j=2,\ldots,n-1, \text{ and }
+\sabs{z_k} < \epsilon \text{ for } k=2,\ldots,n-1, \text{ and }
 \sabs{w-is} < \epsilon \bigr\} .
 \end{split}
 \end{equation*}
@@ -6322,9 +6330,9 @@ the origin.
 \label{sec:harmonic}
 
 \begin{defn}
-Let $U \subset \R^n$ be an open set.
+Let $U \subset \R^n$ be open.
 A $C^2$-smooth
-function $f \colon U \to \R$ is
+$f \colon U \to \R$ is
 \emph{\myindex{harmonic}} if\footnote{The operator $\nabla^2$,
 sometimes also written $\Delta$,
 is the \emph{\myindex{Laplacian}}.
@@ -6402,7 +6410,7 @@ Show that for a $C^2$ function $f \colon U \to \R$,
 Use this to show that $f$ is harmonic if and only if it is
 (locally) the real or imaginary part
 of a holomorphic function.
-Hint: The key is finding an antiderivative of a holomorphic function.
+Hint: The key is to find an antiderivative of a holomorphic function.
 \end{exercise}
 
 \begin{exercise}
@@ -6431,17 +6439,17 @@ P_r(\theta)
 
 \begin{thm} \label{thm:dirichsol}
 Let $u \colon \partial \D \to \R$ be a continuous function.
-The function
-$Pu \colon \overline{\D} \to \R$, defined by
+Define
+$Pu \colon \overline{\D} \to \R$ by
 \begin{equation*}
 Pu(re^{i\theta})
 =
 \int_{-\pi}^\pi u(e^{it}) P_r(\theta-t) \, dt
 \quad \text{if $r < 1$} \qquad \text{and} \qquad
-Pu(e^{i\theta}) = u(e^{i\theta}),
+Pu(e^{i\theta}) = u(e^{i\theta}).
 \avoidbreak
 \end{equation*}
-is harmonic in $\D$ and continuous on $\overline{\D}$.
+Then $Pu$ is harmonic in $\D$ and continuous on $\overline{\D}$.
 \end{thm}
 
 In the proof, it is useful to consider how
@@ -6549,9 +6557,8 @@ Fill in the details of the proof of \propref{prop:meansubmeanprop}.
 \end{exercise}
 
 \begin{exercise}
-Let $U \subset \C$ be open.
-Show that if $f \colon U \to \R \cup\{- \infty \}$ is subharmonic,
-then 
+Suppose $U \subset \C$ is open and
+$f \colon U \to \R \cup\{- \infty \}$ is subharmonic.  Prove
 \begin{equation*}
 \limsup_{w \to z} f(w) = f(z) 
 \qquad \text{for all $z \in U$.}
@@ -6599,8 +6606,8 @@ the maximum principle and \exerciseref{exercise:fminusgsubharmonic}.
 
 \begin{exercise}
 Suppose $U \subset \C$ is a bounded open set, $f \colon \widebar{U} \to \R
-\cup \{-\infty\}$ is an upper-semicontinuous function, such that $f|_U$
-is subharmonic, $g \colon \widebar{U} \to \R$ is a continuous function
+\cup \{-\infty\}$ is upper-semicontinuous such that $f|_U$
+is subharmonic, $g \colon \widebar{U} \to \R$ is continuous
 such that $g|_U$ is harmonic and
 $f(z) \leq g(z)$ for all $z \in \partial U$.  Prove that
 $f(z) \leq g(z)$ for all $z \in U$.
@@ -6776,8 +6783,8 @@ Prove that
 a $C^2$-smooth $f \colon U \to \R$ is pluriharmonic if and
 only if
 \begin{equation*}
-\frac{\partial^2 f}{\partial \bar{z}_j \partial z_k} = 0
-\quad \text{ on $U$ for all $j,k=1,\ldots,n$.}
+\frac{\partial^2 f}{\partial \bar{z}_k \partial z_\ell} = 0
+\quad \text{ on $U$ for all $k,\ell=1,\ldots,n$.}
 \end{equation*}
 \end{exercise}
 
@@ -6791,14 +6798,14 @@ Let $U \subset \C^n$ be open.
 Show that $f \colon U \to \R$ is pluriharmonic if and
 only if it is locally the real or imaginary part of a holomorphic function.
 Hint:  Using a previous exercise
-$\frac{\partial f}{\partial z_k}$ is holomorphic for all $k$.
+$\frac{\partial f}{\partial z_\ell}$ is holomorphic for all $\ell$.
 Assume that $U$ is simply connected, $p \in U$, and
 $f(p) = 0$.
 Consider the line integral from $p$ to a nearby $q \in U$:
 \begin{equation*}
 F(q) =
-\int_{p}^q \sum_{k=1}^n
-\frac{\partial f}{\partial z_k}(\zeta) \, d\zeta_k .
+\int_{p}^q \sum_{\ell=1}^n
+\frac{\partial f}{\partial z_\ell}(\zeta) \, d\zeta_\ell .
 \avoidbreak
 \end{equation*}
 Prove that it is path independent, compute derivatives of $F$, and
@@ -6821,8 +6828,8 @@ A $C^2$-smooth $f \colon U \to \R$ is plurisubharmonic
 if and only if the complex Hessian matrix
 \begin{equation*}
 \left[
-\frac{\partial^2 f}{\partial \bar{z}_j \partial z_k}
-\right]_{jk}
+\frac{\partial^2 f}{\partial \bar{z}_k \partial z_\ell}
+\right]_{k\ell}
 \end{equation*}
 is positive semidefinite at every
 point.
@@ -6830,22 +6837,21 @@ point.
 \end{samepage}
 
 \begin{proof}
-First suppose that the complex Hessian has a negative eigenvalue at
-a point $p \in U$.
+First suppose the complex Hessian has a negative eigenvalue at some $p \in U$.
 After a translation assume $p=0$.
 As $f$ is real-valued, the complex Hessian
 $\left[
-\frac{\partial^2 f}{\partial \bar{z}_j \partial z_k}
+\frac{\partial^2 f}{\partial \bar{z}_k \partial z_\ell}
 \Big|_0
-\right]_{jk}$ is Hermitian.  A complex linear change of coordinates
+\right]_{k\ell}$ is Hermitian.  A complex linear change of coordinates
 acts on the complex Hessian by $*$-congruence, and therefore we can
 diagonalize,
 using Sylvester's Law of Inertia again.
 So assume that 
 $\left[
-\frac{\partial^2 f}{\partial \bar{z}_j \partial z_k}
+\frac{\partial^2 f}{\partial \bar{z}_k \partial z_\ell}
 \Big|_0
-\right]_{jk}$ is diagonal.  If the complex Hessian has a negative eigenvalue, then
+\right]_{k\ell}$ is diagonal.  If the complex Hessian has a negative eigenvalue, then
 one of the diagonal entries is negative.
 Without loss of generality suppose
 $\frac{\partial^2 f}{\partial \bar{z}_1 \partial z_1}\Big|_0 < 0$.
@@ -6856,7 +6862,7 @@ is not plurisubharmonic.
 For the other direction, suppose the complex Hessian is positive
 semidefinite at all points.
 Let $p \in U$.  After an affine change of coordinates assume that the
-line $\xi \mapsto a+b\xi$ is simply setting all but the first variable to
+line $\xi \mapsto a+b\xi$ is setting all but the first variable to
 zero, that is, $a=0$ and $b=(1,0,\ldots,0)$.
 As the complex Hessian is positive semidefinite,
 $\frac{\partial^2 f}{\partial \bar{z}_1 \partial z_1} \geq 0$ for all
@@ -6869,7 +6875,8 @@ implies $g$ is subharmonic, and we are done.
 Suppose $U \subset \C^n$ is open and $f \colon U \to \C$ is holomorphic.
 \begin{exparts}
 \item
-Show $\log \sabs{f(z)}$ is plurisubharmonic.  In fact, it is pluriharmonic away from the zeros of $f$.
+Show $\log \sabs{f(z)}$ is pluriharmonic on $U \setminus f^{-1}(0)$ and
+plurisubharmonic on $U$.
 \item
 Show $\sabs{f(z)}^{\eta}$ is plurisubharmonic for all $\eta > 0$.
 \end{exparts}
@@ -6906,7 +6913,7 @@ We smooth $f$ out by convolving with so-called
 \emph{mollifiers}\index{mollifier}, or
 \emph{approximate delta functions}\index{approximate delta function}.
 Many different mollifiers 
-work, but let us use a specific one for concreteness.
+work, but we use a specific one for concreteness.
 For $\epsilon > 0$, define 
 \begin{equation*}
 g(z) = 
@@ -6939,23 +6946,21 @@ see \figureref{fig:graph-of-mollifier}.
 \begin{myfig}
 \includegraphics[width=0.5\textwidth]{figures/graph-of-mollifier.pdf}
 \caption{Graphs of $e^{-1/(1-x^2)}$,
-$\frac{1}{0.5}e^{-1/\bigl(1-{(x/0.5)}^2\bigr)}$, and
-$\frac{1}{0.25}e^{-1/\bigl(1-{(x/0.25)}^2\bigr)}$.\label{fig:graph-of-mollifier}}
+$\frac{1}{0.5}e^{-1/(1-{(x/0.5)}^2)}$, and
+$\frac{1}{0.25}e^{-1/(1-{(x/0.25)}^2)}$.\label{fig:graph-of-mollifier}}
 \end{myfig}
 
 Compare the graphs to the graphs of the Poisson kernel as a function of
-$\theta$, which is also a type of mollifier.  In fact, the idea of
+$\theta$, which is also a type of mollifier.  The idea of
 integrating against the right approximate delta function with the desired properties
-is similar to the solution of the Dirichlet
-problem using the Poisson kernel.
+is similar to the solution of the Dirichlet problem using the Poisson kernel.
 
 The function $f$ is bounded above on compact sets as it is upper semicontinuous.
-If $f$ is not bounded below, we replace $f$ with $\max \bigl\{ f ,
+If $f$ is not bounded below, replace $f$ with $\max \bigl\{ f ,
 \frac{-1}{\epsilon}
-\bigr\}$, which is still plurisubharmonic.  Therefore, without loss of generality
+\bigr\}$, which is still plurisubharmonic.  Thus, without loss of generality
 we assume that $f$ is locally bounded.
-
-For $z \in U_\epsilon$, we define $f_\epsilon$ as
+For $z \in U_\epsilon$, define $f_\epsilon$ as
 the convolution with $g_\epsilon$:
 \glsadd{not:convolution}%
 \begin{equation*}
@@ -6970,9 +6975,10 @@ U_\epsilon$, because $g_\epsilon$ is then zero when $f$ is undefined.
 By differentiating the first form under the integral, we find that
 $f_\epsilon$ is smooth.
 
-Let us show that $f_\epsilon$ is plurisubharmonic.  We restrict to a
-line $\xi \mapsto a+b\xi$.
-We wish to test subharmonicity by the sub-mean-value property using a circle
+\pagebreak[1]
+Let us show that $f_\epsilon$ is plurisubharmonic.
+Restrict to a line $\xi \mapsto a+b\xi$.
+We wish to prove the sub-mean-value property using a circle
 of radius $r$ around $\xi = 0$:
 \begin{equation*}
 \begin{split}
@@ -6993,7 +6999,7 @@ f\bigl(a-w+bre^{i\theta}\bigr) \, d\theta \right) g_\epsilon (w) \, dV(w)
 f(a-w) g_\epsilon (w) \, dV(w)  = f_\epsilon(a).
 \end{split}
 \end{equation*}
-For the inequality we used $g_\epsilon \geq 0$.
+For the inequality, we used $g_\epsilon \geq 0$.
 So $f_\epsilon$ is plurisubharmonic.
 
 Let us show that $f_\epsilon(z) \geq f(z)$ for all $z \in U_\epsilon$.
@@ -7089,6 +7095,7 @@ f_\epsilon(z) - f(z)
 \int_{B_\epsilon(0)} g_\epsilon (w)
 \, dV(w)
 = \delta .
+\avoidbreak
 \end{split}
 \end{equation*}
 Again we used that $g_\epsilon \geq 0$.
@@ -7135,7 +7142,7 @@ some neighborhood of each point.
 Using the computation from
 \thmref{thm:subharlim} show that if $f$ is pluriharmonic, then
 $f_\epsilon = f$ (where it makes sense), obtaining another proof that 
-a pluriharmonic function is $C^\infty$.
+a pluriharmonic $f$ is $C^\infty$.
 \end{exercise}
 
 \begin{exercise}
@@ -7175,8 +7182,8 @@ Then $f \in \sO(U)$.
 First assume $n=1$.  As the theorem is local, it is
 enough to prove it for a small disc $\Delta$ such that $f$ is continuous
 on the closure $\overline{\Delta}$, let $\Delta'$ be the part of the disc
-where $f$ is nonzero.  If $\Delta'$ is empty, then we are done as
-$f$ is just identically zero and hence holomorphic.
+where $f$ is nonzero.  If $\Delta'$ is empty, we are done as
+$f$ is identically zero and hence holomorphic.
 
 Let $u$ be the real part of $f$.  On $\Delta'$, $u$ is a harmonic function.
 Let $Pu$ be the Poisson integral of $u$ on $\Delta$.  Hence $Pu$
@@ -7706,7 +7713,7 @@ As in
 \thmref{thm:tomatocan}, change coordinates so that $p=0$ and $U$ is defined
 by
 \begin{equation*}
-\Im z_n > - \sabs{z_1}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{z_j}^2 + O(3) .
+\Im z_n > - \sabs{z_1}^2 + \sum_{k=2}^{n-1} \epsilon_k \sabs{z_k}^2 + O(3) .
 \end{equation*}
 For a small fixed $\lambda > 0$, the
 closed analytic discs defined by $\xi \in \overline{\D} \mapsto (\lambda \xi, 0, \cdots, 0, is)$
@@ -7725,11 +7732,11 @@ r(z,\bar{z}) = \varphi(z',\bar{z}',\Re z_n) - \Im z_n ,
 where $z' = (z_1,\ldots,z_{n-1})$.
 Levi pseudoconvexity says 
 \begin{equation} \label{eq:psconvcond}
-\sum_{j=1,\ell=1}^n
-\bar{a}_j a_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q \geq 0 
+\sum_{k=1,\ell=1}^n
+\bar{a}_k a_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q \geq 0 
 \quad \text{whenever} \quad
-\sum_{j=1}^n
-a_j \frac{\partial r}{\partial z_j} \Big|_q = 0 ,
+\sum_{k=1}^n
+a_k \frac{\partial r}{\partial z_k} \Big|_q = 0 ,
 \end{equation}
 for all $q \in \partial U$ near $0$.
 Let $s$ be a small real constant,
@@ -7737,9 +7744,9 @@ and let $\widetilde{q} = (q_1,\ldots,q_{n-1},q_n + is)$.
 None of the derivatives of $r$ depends on $\Im z_n$, and therefore
 $\frac{\partial r}{\partial z_\ell} \big|_{\widetilde{q}} =
 \frac{\partial r}{\partial z_\ell} \big|_{q}$ and
-$\frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \big|_{\widetilde{q}} =
-\frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \big|_{q}$
-for all $j$ and $\ell$.
+$\frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \big|_{\widetilde{q}} =
+\frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \big|_{q}$
+for all $k$ and $\ell$.
 So condition \eqref{eq:psconvcond} holds for all $q \in U$ near $0$.
 We will use $r$ to manufacture a plurisubharmonic exhaustion function, that
 is one with a semidefinite Hessian.  Starting with $r$, we already
@@ -7754,8 +7761,8 @@ Given $q \in U$ near $0$,
 decompose an arbitrary $c \in \C^n$ as $c = a+b$, where $a = (a_1,\ldots,a_n)$
 satisfies
 \begin{equation*}
-\sum_{j=1}^n
-a_j \frac{\partial r}{\partial z_j} \Big|_q = 
+\sum_{k=1}^n
+a_k \frac{\partial r}{\partial z_k} \Big|_q = 
 \blinnprod{a}{\overline{\nabla_z r|_q}}
 =
 0 .
@@ -7764,9 +7771,9 @@ Taking the orthogonal decomposition, $b$ is a scalar multiple of
 $\overline{\nabla_z r|_q}$.
 By Cauchy--Schwarz,
 \begin{equation*}
-\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
+\BBabs{\sum_{k=1}^n c_k \frac{\partial r}{\partial z_k} \Big|_q}
 =
-\BBabs{\sum_{j=1}^n b_j \frac{\partial r}{\partial z_j} \Big|_q}
+\BBabs{\sum_{k=1}^n b_k \frac{\partial r}{\partial z_k} \Big|_q}
 =
 \Babs{\blinnprod{b}{\overline{\nabla_z r|_q}}}
 =
@@ -7778,45 +7785,46 @@ $\snorm{\nabla_z r|_q} \geq \nicefrac{1}{3}$, and
 \snorm{b} =
 \frac{1}{\snorm
 {\nabla_z r|_q}}
-\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
-%\frac{\abs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}}{\snorm
+\BBabs{\sum_{k=1}^n c_k \frac{\partial r}{\partial z_k} \Big|_q}
+%\frac{\abs{\sum_{k=1}^n c_k \frac{\partial r}{\partial z_k} \Big|_q}}{\snorm
 %{\nabla_z r|_q}}
 \leq
-3 \BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
+3 \BBabs{\sum_{k=1}^n c_k \frac{\partial r}{\partial z_k} \Big|_q}
 .
+\avoidbreak
 \end{equation*}
 As $c = a+b$ is the orthogonal decomposition, $\snorm{c} \geq \snorm{b}$.
 
-\pagebreak[1]
+\pagebreak[2]
 The complex Hessian matrix of $r$ is continuous, and so let
 $M \geq 0$ be an upper bound on its operator norm for $q$ near the origin.
 Again using Cauchy--Schwarz
 \begin{equation*}
 \begin{split}
-\sum_{j=1,\ell=1}^n
-\bar{c}_j c_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
+\sum_{k=1,\ell=1}^n
+\bar{c}_k c_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q 
 & =
-\sum_{j=1,\ell=1}^n
-( \bar{a}_j + \bar{b}_j )  (a_\ell + b_\ell) \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
+\sum_{k=1,\ell=1}^n
+( \bar{a}_k + \bar{b}_k )  (a_\ell + b_\ell) \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q 
 \\
 & =
-\smashoperator{\sum_{j=1,\ell=1}^n}
-\bar{a}_j a_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
+\smashoperator{\sum_{k=1,\ell=1}^n}
+\bar{a}_k a_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q 
 \\
 & \phantom{=} \quad
 +
-\smashoperator{\sum_{j=1,\ell=1}^n}
-\bar{b}_j c_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
+\smashoperator{\sum_{k=1,\ell=1}^n}
+\bar{b}_k c_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q 
 +
-\smashoperator{\sum_{j=1,\ell=1}^n}
-\bar{c}_j  b_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
+\smashoperator{\sum_{k=1,\ell=1}^n}
+\bar{c}_k  b_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q 
 +
-\smashoperator{\sum_{j=1,\ell=1}^n}
-\bar{b}_j  b_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
+\smashoperator{\sum_{k=1,\ell=1}^n}
+\bar{b}_k  b_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q 
 \\
 & \geq
-\smashoperator{\sum_{j=1,\ell=1}^n}
-\bar{a}_j a_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
+\smashoperator{\sum_{k=1,\ell=1}^n}
+\bar{a}_k a_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q 
 -
 M\snorm{b}\snorm{c}
 -
@@ -7832,13 +7840,13 @@ M\snorm{b}^2
 Together with what we know about
 $\snorm{b}$, for $q \in U$ near the origin
 \begin{equation*}
-\sum_{j=1,\ell=1}^n
-\bar{c}_j c_\ell \frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
+\sum_{k=1,\ell=1}^n
+\bar{c}_k c_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q 
 \geq -3M \snorm{c} \snorm{b} %=
-%-M \frac{\snorm{c}\Babs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j}
+%-M \frac{\snorm{c}\Babs{\sum_{k=1}^n c_k \frac{\partial r}{\partial z_k}
 %\big|_q}}{\snorm{\nabla_z r |_q}}
 \geq
--3^2 M \snorm{c}\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j}
+-3^2 M \snorm{c}\BBabs{\sum_{k=1}^n c_k \frac{\partial r}{\partial z_k}
 \Big|_q} .
 \end{equation*}
 For $z \in U$ sufficiently close to $0$ define
@@ -7852,26 +7860,26 @@ Hessian of $f$, which we hope is enough to make it positive semidefinite at
 all $z$ near $0$.
 Compute:
 \begin{equation*}
-\frac{\partial^2 f}{\partial \bar{z}_j \partial z_\ell}
+\frac{\partial^2 f}{\partial \bar{z}_k \partial z_\ell}
 =
 \frac{1}{r^2}
-\frac{\partial r}{\partial \bar{z}_j}
+\frac{\partial r}{\partial \bar{z}_k}
 \frac{\partial r}{\partial z_\ell}
 -
 \frac{1}{r}
-\frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} 
+\frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} 
 +
-A\delta_{j}^{\ell} ,
+A\delta_{k}^{\ell} ,
 \end{equation*}
-where $\delta_j^\ell$ is the Kronecker delta\footnote{%
-Recall $\delta_j^\ell = 0$ if $j\not= \ell$ and $\delta_j^\ell = 1$ if $j =
+where $\delta_k^\ell$ is the Kronecker delta\footnote{%
+Recall $\delta_k^\ell = 0$ if $k\not= \ell$ and $\delta_k^\ell = 1$ if $k =
 \ell$.}.
 Apply the complex Hessian of $f$ to $c$ at $q \in U$ near the origin
 (recall that $r$ is negative on $U$ and so for $q \in U$, $-r = \sabs{r}$):
 \begin{equation*}
 \begin{split}
-\sum_{j=1,\ell=1}^n
-\bar{c}_j c_\ell \frac{\partial^2 f}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
+\sum_{k=1,\ell=1}^n
+\bar{c}_k c_\ell \frac{\partial^2 f}{\partial \bar{z}_k \partial z_\ell} \Big|_q 
 & =
 \frac{1}{r^2}
 \BBabs{
@@ -7881,10 +7889,10 @@ c_\ell
 }^2
 +
 \frac{1}{\sabs{r}}
-\sum_{j=1,\ell=1}^n
-\bar{c}_j
+\sum_{k=1,\ell=1}^n
+\bar{c}_k
 c_\ell
-\frac{\partial^2 r}{\partial \bar{z}_j \partial z_\ell} \Big|_q
+\frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q
 +
 A \snorm{c}^2
 \\
@@ -7897,7 +7905,7 @@ c_\ell
 }^2
 -
 \frac{3^2 M}{\sabs{r}}
-\snorm{c}\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q} 
+\snorm{c}\BBabs{\sum_{k=1}^n c_k \frac{\partial r}{\partial z_k} \Big|_q} 
 +
 A \snorm{c}^2 .
 \end{split}
@@ -7911,7 +7919,7 @@ Let us set the discriminant to zero:
 0 = 
 {\Biggl(
 \frac{3^2 M}{\sabs{r}}
-\BBabs{\sum_{j=1}^n c_j \frac{\partial r}{\partial z_j} \Big|_q}
+\BBabs{\sum_{k=1}^n c_k \frac{\partial r}{\partial z_k} \Big|_q}
 \Biggr)}^2
 - 4A 
 \frac{1}{r^2}
@@ -7924,8 +7932,8 @@ c_\ell
 All the nonconstant terms go away and 
 $A=\frac{3^4 M^2}{4}$ makes the discriminant zero.  Thus for that $A$,
 \begin{equation*}
-\sum_{j=1,\ell=1}^n
-\bar{c}_j c_\ell \frac{\partial^2 f}{\partial \bar{z}_j \partial z_\ell} \Big|_q 
+\sum_{k=1,\ell=1}^n
+\bar{c}_k c_\ell \frac{\partial^2 f}{\partial \bar{z}_k \partial z_\ell} \Big|_q 
 \geq 0.
 \end{equation*}
 In other words, the complex Hessian
@@ -7947,7 +7955,7 @@ $p \in \partial U$, so $U$ is Hartogs pseudoconvex.
 \section{Holomorphic convexity}
 
 \begin{defn}
-Let $U \subset \C^n$ be a domain.  For a set $K \subset U$,
+Let $U \subset \C^n$ be a domain.  For $K \subset U$,
 define the
 \emph{\myindex{holomorphic hull}}
 \glsadd{not:KhatU}%
@@ -8009,8 +8017,8 @@ that $U$ is a holomorphically convex domain.
 
 \begin{exercise}
 Compute the hull
-$\widehat{K}_{\D^n}$ of the set $K = \bigl\{ z \in \D^n : \sabs{z_j} =
-\lambda_j \text{ for } j=1,\ldots,n \bigr\}$, where $0 \leq \lambda_j < 1$.
+$\widehat{K}_{\D^n}$ of the set $K = \bigl\{ z \in \D^n : \sabs{z_\ell} =
+\lambda_\ell \text{ for } \ell=1,\ldots,n \bigr\}$, where $0 \leq \lambda_\ell < 1$.
 Prove that the unit polydisc is holomorphically convex.
 \end{exercise}
 
@@ -8020,7 +8028,7 @@ is holomorphically convex.
 \end{exercise}
 
 \begin{exercise}
-Prove that the Hartogs figure (see \thmref{thm:extensionhartogsfigure})
+Prove the Hartogs figure (see \thmref{thm:extensionhartogsfigure})
 is not holomorphically convex.
 \end{exercise}
 
@@ -8079,6 +8087,7 @@ $\C^n \setminus U$ is disconnected.
 \end{exercise}
 \end{exbox}
 
+\pagebreak[2]
 The set $\C^n$ is both holomorphically convex and
 a domain of holomorphy.  These two notions are equivalent also for all
 other domains in $\C^n$.
@@ -8120,7 +8129,7 @@ point of $K$.\label{fig:cart-thul-fig}}
 
 If $f \in \sO(U)$, then there is an $M > 0$ such that $\sabs{f} \leq M$ on
 $K + \Delta$ as that is a relatively compact set.  By the Cauchy estimates
-for each $q \in K$ we get
+for each $q \in K$, we get
 \begin{equation*}
 \abs{\frac{\partial^\alpha f}{\partial z^\alpha}(q)} \leq \frac{M
 \alpha!}{r^\alpha} .
@@ -8131,9 +8140,9 @@ The series
 \sum_{\alpha}
 \frac{1}{\alpha !}\frac{\partial^\alpha f}{\partial z^\alpha}(p) {(z-p)}^\alpha 
 \end{equation*}
-converges in $\Delta_r(p)$.  Hence $f$ extends to all of $\Delta_r(p)$ and
-$\Delta_r(p)$ contains points outside of $U$, in other words,
-$U$ is not a domain of holomorphy.
+converges in $\Delta_r(p)$.  The function $f$ extends to all of $\Delta_r(p)$ and
+$\Delta_r(p)$ contains points outside of $U$.
+In other words, $U$ is not a domain of holomorphy.
 
 The implication \ref{thm:cartthul:disthull} $\Rightarrow$
 \ref{thm:cartthul:holconv} is immediate.
@@ -8142,42 +8151,44 @@ Finally, we prove
 \ref{thm:cartthul:holconv} $\Rightarrow$
 \ref{thm:cartthul:domhol}.
 Suppose $U$ is holomorphically convex.  Let $p \in \partial U$.
-By convexity choose nested compact sets $K_{j-1} \subsetneq K_j \subset
-\subset U$ such that $\bigcup_j K_j = U$, and $\widehat{(K_j)}_U = K_j$.
+By convexity choose nested compact sets $K_{\ell-1} \subsetneq K_\ell \subset
+\subset U$ such that $\bigcup_\ell K_\ell = U$, and $\widehat{(K_\ell)}_U =
+K_\ell$.
 As the sets exhaust $U$, we can perhaps pass to a subsequence
 to ensure that
 there exists a 
-sequence of points $p_j \in K_j \setminus K_{j-1}$ such that
-$\lim_{j\to\infty} p_j = p$.
+sequence of points $p_\ell \in K_\ell \setminus K_{\ell-1}$ such that
+$\lim_{\ell\to\infty} p_\ell = p$.
 
-As $p_j$ is not in the hull of $K_{j-1}$, there is a function $f_j \in
-\sO(U)$ such that $\sabs{f_j} < 2^{-j}$ on $K_{j-1}$, but
+As $p_\ell$ is not in the hull of $K_{\ell-1}$, there is a function $f_\ell \in
+\sO(U)$ such that $\sabs{f_\ell} < 2^{-\ell}$ on $K_{\ell-1}$, but
 \begin{equation*}
-\sabs{f_j(p_j)} > j + \abs{\sum_{k=1}^{j-1} f_k(p_j)} .
+\sabs{f_\ell(p_\ell)} > \ell + \abs{\sum_{k=1}^{\ell-1} f_k(p_\ell)} .
 \end{equation*}
 Finding such a function is left as an exercise below.
-For any $j$, the series $\sum_{k=1}^\infty f_k(z)$ converges uniformly on $K_j$
-as for all $k > j$, $\sabs{f_k} < 2^{-k}$ on $K_j$.
-As the $K_j$ exhaust $U$, the series converges uniformly on compact
+For any $\ell$, the series $\sum_{k=1}^\infty f_k(z)$ converges uniformly on
+$K_\ell$
+as for all $k > \ell$, $\sabs{f_k} < 2^{-k}$ on $K_\ell$.
+As the $K_\ell$ exhaust $U$, the series converges uniformly on compact
 subsets of $U$.  Consequently,
 \begin{equation*}
 f(z) = \sum_{k=1}^\infty f_k(z)
 \end{equation*}
 is a holomorphic function on $U$.  We bound
 \begin{equation*}
-\sabs{f(p_j)} \geq
-\sabs{f_j(p_j)}
+\sabs{f(p_\ell)} \geq
+\sabs{f_\ell(p_\ell)}
 -
-\abs{\sum_{k=1}^{j-1} f_k(p_j)}
+\abs{\sum_{k=1}^{\ell-1} f_k(p_\ell)}
 -
-\abs{\sum_{k=j+1}^\infty f_k(p_j)}
+\abs{\sum_{k=\ell+1}^\infty f_k(p_\ell)}
 \geq
-j
+\ell
 -
-\sum_{k=j+1}^\infty 2^{-k}
-\geq j-1 .
+\sum_{k=\ell+1}^\infty 2^{-k}
+\geq \ell-1 .
 \end{equation*}
-So $\lim_{j\to\infty} f(p_j) = \infty$.
+So $\lim_{\ell\to\infty} f(p_\ell) = \infty$.
 Clearly there cannot be any open $W \subset \C^n$
 containing $p$ to which $f$ extends (see
 \hyperref[defn:domainofhol]{definition of domain of holomorphy}).  As any
@@ -8204,12 +8215,12 @@ the notion of a domain of holomorphy only makes sense for domains in $\C^n$.
 \begin{exbox}
 \begin{exercise}[Behnke--Stein again]
 \index{Behnke--Stein theorem}
-Show that the union $\bigcup_j U_j$ of a nested sequence of holomorphically
-convex domains $U_{j-1} \subset U_j \subset \C^n$ is holomorphically convex.
+Show that the union $\bigcup_\ell U_\ell$ of a nested sequence of holomorphically
+convex domains $U_{\ell-1} \subset U_\ell \subset \C^n$ is holomorphically convex.
 \end{exercise}
 
 \begin{exercise}
-Prove the existence of the function $f_j \in \sO(U)$ as indicated in the proof
+Prove the existence of the function $f_\ell \in \sO(U)$ as indicated in the proof
 of Cartan--Thullen above.
 \end{exercise}
 
@@ -8237,7 +8248,7 @@ Levi problem\index{Levi problem!for complete Reinhardt domains}
 (and more) for complete Reinhardt domains.
 Recall that a domain $U$ is a
 \myindex{complete Reinhardt domain}\index{Reinhardt domain!complete}
-if whenever $(z_1,\ldots,z_n)$ is in $U$ and $r_j = \sabs{z_j}$, then the
+if whenever $(z_1,\ldots,z_n)$ is in $U$ and $r_k = \sabs{z_k}$, then the
 entire closed polydisc $\overline{\Delta_r(0)} \subset U$.
 We say a complete Reinhardt domain $U$ is \emph{\myindex{logarithmically convex}}%
 \index{Reinhardt domain!logarithmically convex}
@@ -8355,23 +8366,24 @@ $f=g$ on $V \cap \R^n$.  Then $f=g$ on $V$.
 Considering $f-g$ we may assume that $g=0$.
 Let $z = x+iy$ as usual so that $\R^n$ is given by $y=0$.
 Our assumption is that $f = 0$ when $y=0$,
-so the derivative of $f$ with respect to $x_j$ is zero.
+so the derivative of $f$ with respect to $x_k$ is zero.
 When $y=0$,
 the Cauchy--Riemann equations say
 \begin{equation*}
-0 = \frac{\partial f}{\partial x_j} =
--i \frac{\partial f}{\partial y_j} .
+0 = \frac{\partial f}{\partial x_k} =
+-i \frac{\partial f}{\partial y_k} .
 \end{equation*}
 Therefore, on $y=0$,
 \begin{equation*}
-\frac{\partial f }{\partial z_j} = 0 .
+\frac{\partial f }{\partial z_k} = 0 .
 \end{equation*}
-The derivative $\frac{\partial f }{\partial z_j}$ is holomorphic
-and $\frac{\partial f }{\partial z_j} = 0$ on $y=0$.
+The derivative $\frac{\partial f }{\partial z_k}$ is holomorphic
+and $\frac{\partial f }{\partial z_k} = 0$ on $y=0$.
 By induction all holomorphic derivatives of $f$ at $p \in \R^n \cap V$ vanish,
 and $f$ has a zero 
 power series.  Hence $f$ is identically zero in a neighborhood of
-$p$ in $\C^n$ and by the identity theorem it is zero on all of $V$.
+$p$ in $\C^n$.
+By the identity theorem, $f$ is zero on all of $V$.
 \end{proof}
 
 
@@ -8385,14 +8397,14 @@ the series
 \begin{equation*}
 \sum_{\alpha} c_{\alpha} {(x-a)}^\alpha
 \end{equation*}
-converges whenever $\sabs{x_j-a_j} \leq r_j$ for all $j$.
+converges whenever $\sabs{x_k-a_k} \leq r_k$ for all $k$.
 Here convergence is absolute convergence.  That is,
 \begin{equation*}
 \sum_{\alpha} \sabs{c_{\alpha}}\, \sabs{x-a}^\alpha
 \end{equation*}
 converges.
-If we replace $x_j \in \R$ with $z_j \in \C$ such that
-$\sabs{z_j-a_j} \leq \sabs{x_j-a_j}$, then the series still converges.
+If we replace $x_k \in \R$ with $z_k \in \C$ such that
+$\sabs{z_k-a_k} \leq \sabs{x_k-a_k}$, then the series still converges.
 Hence the series
 \begin{equation*}
 \sum_{\alpha} c_{\alpha} {(z-a)}^\alpha
@@ -8426,9 +8438,9 @@ equal on $\R^n$, and hence equal.  There is a subtle topological technical
 point in this, so let us elaborate.  A key topological fact is that we define
 $V$ as a union of the polydiscs where the series converges.  If
 a point $p$ is in two different such polydiscs, we need to show that
-the two definitions of $F$ are the same at $p$.  But the intersection
-of two polydiscs is always connected, and in this case contains a piece
-of $\R^n$ as well, and we may apply the lemma above.
+the two definitions of $F$ are the same at $p$.  The intersection
+of two polydiscs is connected, and in this case it also contains a piece
+of $\R^n$, and we may apply the lemma.
 \end{proof}
 
 \begin{exbox}
@@ -8460,11 +8472,11 @@ is of total degree $d$.
 If $f$ is real-analytic near $a \in \R^n$, then
 write the power series of $f$ at $a$ as
 \begin{equation*}
-\sum_{j=0}^{\infty} f_j(x-a) ,
+\sum_{m=0}^{\infty} f_m(x-a) ,
 \end{equation*}
-where $f_j$ is a homogeneous polynomial of degree $j$.  The $f_j$ is 
+where $f_m$ is a homogeneous polynomial of degree $m$.  The $f_m$ is 
 called the
-\emph{\myindex{degree $j$ homogeneous part}}\index{homogeneous part} of $f$
+\emph{\myindex{degree $m$ homogeneous part}}\index{homogeneous part} of $f$
 at $a$.
 
 There is usually a better way to complexify 
@@ -8475,18 +8487,18 @@ Writing $z = x+iy$, near $0$,
 \begin{equation*}
 f(x,y)
 = 
-\sum_{j=0}^\infty
-f_j(x,y)
+\sum_{m=0}^\infty
+f_m(x,y)
 = 
-\sum_{j=0}^\infty
-f_j\left(
+\sum_{m=0}^\infty
+f_m\left(
 \frac{z+\bar{z}}{2},
 \frac{z-\bar{z}}{2i}\right) .
 \end{equation*}
-The polynomial $f_j$ becomes a homogeneous polynomial of degree $j$
+The polynomial $f_m$ becomes a homogeneous polynomial of degree $m$
 in the variables $z$ and $\bar{z}$.  The 
-series becomes a power series in $z$ and $\bar{z}$.  As mentioned before,
-we simply write the function as $f(z,\bar{z})$, and we consider the
+series becomes a power series in $z$ and $\bar{z}$.
+We simply write the function as $f(z,\bar{z})$, and we consider the
 power series representation in $z$ and $\bar{z}$ rather than
 in $x$ and $y$.
 In multinomial notation, we write a power series at $a \in \C^n$ as
@@ -8500,7 +8512,7 @@ is real-analytic, but not vice versa.  A holomorphic function
 is a real-analytic function that does not depend on $\bar{z}$.
 
 Before we discuss complexification in terms of $z$ and $\bar{z}$, we need
-the following lemma.
+a lemma.
 
 \begin{lemma}
 Let $V \subset \C^n \times \C^n$ be a domain, let the coordinates be $(z,\zeta) \in \C^n \times
@@ -8516,23 +8528,23 @@ $f=g$ on $D \cap V$.  Then $f=g$ on all of $V$.
 The set $D$ is sometimes called the \emph{\myindex{diagonal}}.
 
 \begin{proof}
-Again assume without loss of generality that $g=0$.
-Whenever $(z,\bar{z}) \in V$, we have $f(z,\bar{z}) = 0$, which is really
-$f$ composed with the map that takes $z$ to $(z,\bar{z})$.  As this
-composition is identically zero, applying the Wirtinger operators yields zero.
+Without loss of generality assume that $g=0$.
+For $(z,\bar{z}) \in V$, we have $f(z,\bar{z}) = 0$, which is really
+$f$ composed with the map taking $z$ to $(z,\bar{z})$.  This
+composition is identically zero, so applying Wirtinger operators yields zero.
 Using the chain rule,
 \begin{equation*}
 0 =
-\frac{\partial}{\partial \bar{z}_j} \Bigl[f(z,\bar{z})\Bigr]
+\frac{\partial}{\partial \bar{z}_k} \Bigl[f(z,\bar{z})\Bigr]
 =
-\frac{\partial f}{\partial \zeta_j}(z,\bar{z}) .
+\frac{\partial f}{\partial \zeta_k}(z,\bar{z}) .
 \end{equation*}
-Let us do this again with the $z_j$,
+Let us do this again with the $z_k$,
 \begin{equation*}
 0 =
-\frac{\partial}{\partial z_j} \Bigl[f(z,\bar{z})\Bigr]
+\frac{\partial}{\partial z_k} \Bigl[f(z,\bar{z})\Bigr]
 =
-\frac{\partial f}{\partial z_j}(z,\bar{z}) .
+\frac{\partial f}{\partial z_k}(z,\bar{z}) .
 \end{equation*}
 Either way, we get another holomorphic function in $z$ and $\zeta$
 that is zero on $D$.
@@ -8566,8 +8578,8 @@ convergence,
 \sabs{\bar{z}-\bar{a}}^\beta
 \end{equation*}
 converges.
-The series still converges if we replace $\bar{z}_j$  with
-$\zeta_j$ where $\sabs{\zeta_j-\bar{a}} \leq \sabs{\bar{z}_j-\bar{a}}$.
+The series still converges if we replace $\bar{z}_k$  with
+$\zeta_k$ where $\sabs{\zeta_k-\bar{a}} \leq \sabs{\bar{z}_k-\bar{a}}$.
 So the series
 \begin{equation*}
 F(z,\zeta) =
@@ -8612,15 +8624,15 @@ V \subset \C^n \times \C^n \ar[dl, "f ~~ {(=F)}"]
 All three ways of going from one place to another in the diagram
 we are calling $f$.  The arrow from $V$ was called $F$ in the proposition.
 The notation plays well with differentiation and the Wirtinger operators.
-Differentiating $f$ (really the $F$ in the proposition) in $\zeta_j$ and
+Differentiating $f$ (really the $F$ in the proposition) in $\zeta_k$ and
 evaluating at $(z,\bar{z})$ is the same thing as evaluating at
-$(z,\bar{z})$ and then differentiating in $\bar{z}_j$ using the Wirtinger
+$(z,\bar{z})$ and then differentiating in $\bar{z}_k$ using the Wirtinger
 operator:
 \begin{equation*}
-\frac{\partial F}{\partial \zeta_j}(z,\bar{z}) = 
-\frac{\partial f}{\partial \zeta_j}(z,\bar{z}) = 
-\frac{\partial}{\partial \bar{z}_j}\Bigl[ f(z,\bar{z}) \Bigr] = 
-\frac{\partial f}{\partial \bar{z}_j}(z,\bar{z}) .
+\frac{\partial F}{\partial \zeta_k}(z,\bar{z}) = 
+\frac{\partial f}{\partial \zeta_k}(z,\bar{z}) = 
+\frac{\partial}{\partial \bar{z}_k}\Bigl[ f(z,\bar{z}) \Bigr] = 
+\frac{\partial f}{\partial \bar{z}_k}(z,\bar{z}) .
 \end{equation*}
 If we squint our mind's eye,
 we can't quite see the difference between $\bar{z}$ and $\zeta$.
@@ -8642,7 +8654,7 @@ f(z,\bar{z})
 = \frac{1}{1+\sabs{z}^2}
 \end{equation*}
 is real-analytic on $\C$, but it is not a restriction to the diagonal
-of a holomorphic function on all of $\C^2$.  The problem is that the complexified
+of a holomorphic function defined on all of $\C^2$.  The problem is that the complexified
 function
 \begin{equation*}
 f(z,\zeta)
@@ -8661,7 +8673,7 @@ identities\footnote{Such as $4 \linnprod{z}{w} =
 and therefore the sesquilinear form $\linnprod{Az}{w}$ for
 $z,w\in \C^n$, by simply knowing the value of
 \begin{equation*}
-\linnprod{Az}{z} = z^*Az = \sum_{j,k=1}^n a_{jk} \, \bar{z}_j z_k 
+\linnprod{Az}{z} = z^*Az = \sum_{k,\ell=1}^n a_{k\ell} \, \bar{z}_k z_\ell 
 \end{equation*}
 for all $z \in \C^n$.  In fact, under the hood \propref{prop:complexificationpt2} is
 polarization in an infinite-dimensional Hilbert space, but we digress.
@@ -8719,7 +8731,8 @@ Prove the statements of the example above.
 \end{exbox}
 
 \begin{defn}
-A real hypersurface $M \subset \R^n$ is said to be real-analytic
+A real hypersurface $M \subset \R^n$ is said to be
+\emph{real-analytic}\index{real-analytic hypersurface}\index{hypersurface!real-analytic}
 if locally at every point it is the graph of a real-analytic function.  That
 is near every point (locally), after perhaps relabeling coordinates $M$ can be written as
 a graph
@@ -8733,9 +8746,10 @@ where $\varphi$ is real-analytic, $(x,y) \in \R^{n-1} \times \R = \R^n$.
 Compare this definition to \defnref{def:hypersurface}.  We could
 define a real-analytic hypersurface as in 
 \defnref{def:hypersurface} and then prove an analogue of
-\lemmaref{lemma:realgraphcoords} to show that this would be identical to the
-definition above.  The definition we gave is sufficient, and so we avoid
-the complication and leave it to the interested reader.
+\lemmaref{lemma:realgraphcoords} to show that this new definition
+would be identical to the definition above.
+However, the definition we gave is sufficient, and so we avoid
+the complication, leaving it to the interested reader.
 
 \begin{exbox}
 \begin{exercise}
@@ -8826,7 +8840,7 @@ y = \varphi(x) ,
 \avoidbreak
 \end{equation*}
 for a smooth (resp.\ real-analytic) function $\varphi$, then
-the function $f\bigl(x,\varphi(x)\bigr)$ is a smooth (resp.\ real-analytic) function of $x$.
+$f\bigl(x,\varphi(x)\bigr)$ is a smooth (resp.\ real-analytic) function of $x$.
 \end{prop}
 
 \begin{exbox}
@@ -8977,24 +8991,24 @@ where $\Phi(z,\zeta,w)$ is a holomorphic function defined on a neighborhood of t
 in $\C^{n-1} \times \C^{n-1} \times \C$,
 such that
 $\Phi$,
-$\frac{\partial \Phi}{\partial z_j}$,
-$\frac{\partial \Phi}{\partial \zeta_j}$
-vanish at the origin for all $j$,
+$\frac{\partial \Phi}{\partial z_k}$,
+$\frac{\partial \Phi}{\partial \zeta_k}$
+vanish at the origin for all $k$,
 and $w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$
 for all $z$, $\zeta$, and $w$.
 
 A local basis for $T^{(0,1)} M$ vector fields is given by
 \begin{equation*}
-\frac{\partial}{\partial \bar{z}_j}
-+\frac{\partial \Phi}{\partial \bar{z}_j} \frac{\partial}{\partial \bar{w}} 
+\frac{\partial}{\partial \bar{z}_k}
++\frac{\partial \Phi}{\partial \bar{z}_k} \frac{\partial}{\partial \bar{w}} 
 \quad
 \left(
 =
-\frac{\partial}{\partial \bar{z}_j}
-+\frac{\partial \Phi}{\partial \zeta_j} \frac{\partial}{\partial \bar{w}} 
+\frac{\partial}{\partial \bar{z}_k}
++\frac{\partial \Phi}{\partial \zeta_k} \frac{\partial}{\partial \bar{w}} 
 \right)
 ,
-\qquad j=1,\ldots,n-1.
+\qquad k=1,\ldots,n-1.
 \end{equation*}
 
 Finally, let $\sM$ be the set in
@@ -9002,7 +9016,8 @@ $(z,\zeta,w,\omega) \in \C^{n-1} \times \C^{n-1} \times \C \times \C$
 coordinates given near the origin 
 by $\omega = \Phi(z,\zeta,w)$.
 Then $\sM$ is the unique \emph{complexification}
-of $M$\index{complexification of a real hypersurface}
+of $M$\index{complexification of a real hypersurface}%
+\index{hypersurface!complexification}
 near the origin in the sense that if $f(z,\bar{z},w,\bar{w})$
 is a real-analytic function vanishing on $M$ near the origin, then 
 $f(z,\zeta,w,\omega)$ vanishes on $\sM$ near the origin.
@@ -9070,23 +9085,23 @@ w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr).
 \end{equation*}
 
 The vector field
-$X_j = \frac{\partial}{\partial \bar{z}_j}
-+\frac{\partial \Phi}{\partial \bar{z}_j} \frac{\partial}{\partial \omega}$
+$X_k = \frac{\partial}{\partial \bar{z}_k}
++\frac{\partial \Phi}{\partial \bar{z}_k} \frac{\partial}{\partial \omega}$
 annihilates
 the function $\Phi(z,\bar{z},w)-\bar{w}$, but that is not enough.
 The vector field must annihilate a real defining function such as the
-real part of $\Phi(z,\bar{z},w)-\bar{w}$.  So $X_j$ must also
+real part of $\Phi(z,\bar{z},w)-\bar{w}$.  So $X_k$ must also
 annihilate the conjugate
 $\bar{\Phi}(\bar{z},z,\bar{w})-w$, at least on $M$.  Compute, for $(z,w) \in M$,
 \begin{equation*}
 \begin{split}
-X_j \bigl[\bar{\Phi}(\bar{z},z,\bar{w})-w\bigr]
+X_k \bigl[\bar{\Phi}(\bar{z},z,\bar{w})-w\bigr]
 &=
-\frac{\partial \bar{\Phi}}{\partial \bar{z}_j}
+\frac{\partial \bar{\Phi}}{\partial \bar{z}_k}
 %\Big|_
 {(\bar{z},z,\bar{w})}
 +
-\frac{\partial \Phi}{\partial \bar{z}_j}
+\frac{\partial \Phi}{\partial \bar{z}_k}
 %\Big|_
 {(z,\bar{z},w)}
 \frac{\partial \bar{\Phi}}{\partial \bar{w}}
@@ -9094,11 +9109,11 @@ X_j \bigl[\bar{\Phi}(\bar{z},z,\bar{w})-w\bigr]
 {(\bar{z},z,\bar{w})}
 \\
 & =
-\frac{\partial \bar{\Phi}}{\partial \bar{z}_j}
+\frac{\partial \bar{\Phi}}{\partial \bar{z}_k}
 %\Big|_
 {\bigl(\bar{z},z,\Phi(z,\bar{z},\bar{w})\bigr)}
 +
-\frac{\partial \Phi}{\partial \bar{z}_j}
+\frac{\partial \Phi}{\partial \bar{z}_k}
 %\Big|_
 {(z,\bar{z},w)}
 \frac{\partial \bar{\Phi}}{\partial \bar{w}}
@@ -9106,12 +9121,12 @@ X_j \bigl[\bar{\Phi}(\bar{z},z,\bar{w})-w\bigr]
 {\bigl(\bar{z},z,\Phi(z,\bar{z},\bar{w})\bigr)}
 \\
 & = 
-\frac{\partial}{\partial \bar{z}_j}
+\frac{\partial}{\partial \bar{z}_k}
 \Bigl[
 \bar{\Phi}\bigl(\bar{z},z,\Phi(z,\bar{z},w)\bigr)
 \Bigr]
 =
-\frac{\partial}{\partial \bar{z}_j}
+\frac{\partial}{\partial \bar{z}_k}
 \Bigl[
 w
 \Bigr]
@@ -9228,25 +9243,25 @@ F(z,w,\zeta) = f\bigl(z,w,\zeta,\Phi(z,\zeta,w)\bigr).
 \end{equation*}
 Clearly $F(z,w,\bar{z})$ equals $f$ on $M$.  
 As $f$ is a CR function, it is annihilated by
-$\frac{\partial}{\partial \bar{z}_j}
-+\frac{\partial \Phi}{\partial \bar{z}_j} \frac{\partial}{\partial
+$\frac{\partial}{\partial \bar{z}_k}
++\frac{\partial \Phi}{\partial \bar{z}_k} \frac{\partial}{\partial
 \bar{w}}$ on $M$.  So
 \begin{equation*}
-\frac{\partial F}{\partial \zeta_j}
-+\frac{\partial \Phi}{\partial \zeta_j} \frac{\partial F}{\partial
+\frac{\partial F}{\partial \zeta_k}
++\frac{\partial \Phi}{\partial \zeta_k} \frac{\partial F}{\partial
 \omega}
 =
-\frac{\partial F}{\partial \zeta_j} = 0
+\frac{\partial F}{\partial \zeta_k} = 0
 \end{equation*}
 on $M \subset \sM$.  We have a real analytic function
-$\frac{\partial F}{\partial \zeta_j}(z,w,\bar{z})$
+$\frac{\partial F}{\partial \zeta_k}(z,w,\bar{z})$
 that is zero on $M$, so 
-$\frac{\partial F}{\partial \zeta_j}(z,w,\zeta) = 0$
+$\frac{\partial F}{\partial \zeta_k}(z,w,\zeta) = 0$
 on $\sM$
 (\propref{prop:complexificationofrasurface} again).
-As $\frac{\partial F}{\partial \zeta_j}$ is a function only of
+As $\frac{\partial F}{\partial \zeta_k}$ is a function only of
 $z$, $w$, and $\zeta$ (and not of $\omega$),
-$\frac{\partial F}{\partial \zeta_j} = 0$
+$\frac{\partial F}{\partial \zeta_k} = 0$
 for all
 $(z,w,\zeta)$ in a neighborhood of the origin.  Consequently,
 $F$ does not depend on $\zeta$, and 
@@ -9269,13 +9284,14 @@ The function $f|_{\partial U}$ is clearly smooth.
 Suppose $p \in \partial U$.
 If $X_p \in T_p^{(0,1)} \partial U$ is such that
 \begin{equation*}
-X_p = \sum_{j=1}^n a_j \frac{\partial}{\partial \bar{z}_j} \Big|_p ,
+X_p = \sum_{k=1}^n a_k \frac{\partial}{\partial \bar{z}_k} \Big|_p ,
 \end{equation*}
-take $\{ q_k \}$ in $U$ that approaches $p$, then take
+then take a sequence $\{ q_\ell \}$ in $U$ that approaches $p$.  Consider
 \begin{equation*}
-X_{q_k} = \sum_{j=1}^n a_j \frac{\partial}{\partial \bar{z}_j} \Big|_{q_k} .
+X_{q_\ell} = \sum_{k=1}^n a_k \frac{\partial}{\partial \bar{z}_k}
+\Big|_{q_\ell} .
 \end{equation*}
-Then $X_{q_k} f = 0$ for all $k$ and by continuity $X_p f = 0$.
+Then $X_{q_\ell} f = 0$ for all $\ell$ and by continuity $X_p f = 0$.
 \end{proof}
 
 \pagebreak[2]
@@ -9374,9 +9390,9 @@ and
 $z=(z_1,\dots,z_n)$ are the holomorphic coordinates of $\C^n$.
 Then there exists a compact
 neighborhood $K \subset M$ of $p$, such that for every smooth CR function $f \colon M \to \C$,
-there exists a sequence $\{ p_j \}$ of polynomials in $z$ such that
+there exists a sequence $\{ p_\ell \}$ of polynomials in $z$ such that
 \begin{equation*}
-p_j(z) \to f(z)
+p_\ell(z) \to f(z)
 \qquad \text{uniformly in $K$.}
 \end{equation*}
 \end{thm}
@@ -9604,7 +9620,7 @@ y_n = \psi(x,y') ,
 where $\psi$ is $O(2)$.
 The variables $(x,y')$ parametrize $M$ near 0:
 \begin{equation*}
-z_j = x_j+iy_j , \quad \text{ for $j = 1,\ldots,n-1$,} \quad \text{and} \quad
+z_k = x_k+iy_k , \quad \text{ for $k = 1,\ldots,n-1$,} \quad \text{and} \quad
 z_n = x_n + i \psi(x,y') .
 \end{equation*}
 Define
@@ -10025,7 +10041,7 @@ zero otherwise), then
 \frac{\snorm{\xi}}{4 \sqrt{\ell}} .
 \end{equation*}
 
-So under the same conditions we have
+So under the same conditions,
 \begin{equation*}
 \begin{split}
 \bbabs{e^{-{\left[\xi +
@@ -10132,11 +10148,11 @@ Then:
 \item
 If the Levi form with respect to $r$ has a positive eigenvalue at $p$, then
 $f$ extends to a holomorphic function on $U_-$ continuous up to $M$
-(that is, continuous on $\{ z \in U : r(z) \leq 0 \}$).
+(continuous on $\{ z \in U : r(z) \leq 0 \}$).
 \item
 If the Levi form with respect to $r$ has a negative eigenvalue at $p$, then
 $f$ extends to a holomorphic function on $U_+$ continuous up to $M$
-(that is, continuous on $\{ z \in U : r(z) \geq 0 \}$).
+(continuous on $\{ z \in U : r(z) \geq 0 \}$).
 \item
 If the Levi form with respect to $r$ has eigenvalues of both signs at $p$, then
 $f$ extends to a function holomorphic on $U$.
@@ -10159,14 +10175,14 @@ We prove the first item, and the second item follows by considering $-r$.
 Suppose $p = 0$ and $M$ is given in some neighborhood
 $\Omega$ of the origin as
 \begin{equation*}
-\Im w = \sabs{z_1}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{z_j}^2 +
+\Im w = \sabs{z_1}^2 + \sum_{k=2}^{n-1} \epsilon_k \sabs{z_k}^2 +
 E(z_1,z',\bar{z}_1,\bar{z}',\Re w) ,
 \end{equation*}
-where $z' = (z_2,\ldots,z_{n-1})$, $\epsilon_j = -1,0,1$,
+where $z' = (z_2,\ldots,z_{n-1})$, $\epsilon_k = -1,0,1$,
 and $E$ is $O(3)$.
 Let $\Omega_-$ be given by
 \begin{equation*}
-0 > r = \sabs{z_1}^2 + \sum_{j=2}^{n-1} \epsilon_j \sabs{z_j}^2 +
+0 > r = \sabs{z_1}^2 + \sum_{k=2}^{n-1} \epsilon_k \sabs{z_k}^2 +
 E(z_1,z',\bar{z}_1,\bar{z}',\Re w) - \Im w .
 \end{equation*}
 The (real) Hessian of the function
@@ -10183,7 +10199,7 @@ Therefore,
 for $(z',w) \in W$ in some small neighborhood $W \subset \C^{n-1}$ of the origin, the 
 function
 \begin{equation*}
-z_1 \mapsto \sabs{z_1}^2 + \sum_{j=2}^n \epsilon_j \sabs{z_j}^2 +
+z_1 \mapsto \sabs{z_1}^2 + \sum_{k=2}^n \epsilon_k \sabs{z_k}^2 +
 E(z_1,z',\bar{z}_1,\bar{z}',\Re w) - \Im w
 \end{equation*}
 is still strictly positive on $\partial D$.
@@ -10192,7 +10208,7 @@ We wish to apply
 Baouendi--Tr{\`e}ves and so let $K$ be the compact neighborhood of the
 origin from the theorem.  Take $D$ and $W$ small enough such
 that $(D \times W) \cap M \subset K$.
-Find the polynomials $p_j$ that approximate $f$ uniformly on $K$.
+Find the polynomials $p_\ell$ that approximate $f$ uniformly on $K$.
 Consider $z_1 \in D$ and $(z',w) \in W$ such that
 $(z_1,z',w) \in \Omega_-$.
 Let
@@ -10215,15 +10231,15 @@ See \figureref{fig:lewy-extension-figure}.
 \caption{Proof of Lewy extension.\label{fig:lewy-extension-figure}}
 \end{myfig}
 
-As $p_j \to f$ uniformly on $K$, then $p_j \to f$ uniformly on
-$\partial \Delta$.  As  $p_j$ are holomorphic, then by the maximum
-principle, $p_j$ converge uniformly on all of $\Delta$.  In fact, as $(z_1,z',w)$ was
+As $p_\ell \to f$ uniformly on $K$, then $p_\ell \to f$ uniformly on
+$\partial \Delta$.  As  $p_\ell$ are holomorphic, then by the maximum
+principle, $p_\ell$ converge uniformly on all of $\Delta$.  In fact, as $(z_1,z',w)$ was
 an arbitrary point in $(D \times W) \cap \Omega_-$,
-the polynomials $p_j$ converge uniformly on
+the polynomials $p_\ell$ converge uniformly on
 $(D \times W) \cap \overline{\Omega_-}$.
 Let $U = D \times W$, then $U_- = (D \times W) \cap \Omega_-$.  Notice 
 $U$ depends on $K$, but not on $f$.
-So $p_j$ converge to a continuous function $F$ on $\overline{U_-} \cap
+So $p_\ell$ converge to a continuous function $F$ on $\overline{U_-} \cap
 U$ and $F$
 is holomorphic on
 $U_-$.  Clearly $F$ equals $f$ on $M \cap U$.
@@ -10673,25 +10689,25 @@ Let us check that $\psi$ is the solution.
 We use the generalized Cauchy formula on the $z_1$
 variable.
 Take $R$ large enough so that 
-$g_j(\zeta,z_2,\ldots,z_n)$ is zero when $\sabs{\zeta}\geq R$ for all $j$.
-For every $j$,
+$g_k(\zeta,z_2,\ldots,z_n)$ is zero when $\sabs{\zeta}\geq R$ for all $k$.
+For every $k$,
 \begin{equation*}
 \begin{split}
-g_j(z_1,\ldots,z_n) & =
+g_k(z_1,\ldots,z_n) & =
 \frac{1}{2\pi i}
 \int_{\abs{\zeta}=R}
-\frac{g_j(\zeta,z_2,\ldots,z_n)}{\zeta-z_1}
+\frac{g_k(\zeta,z_2,\ldots,z_n)}{\zeta-z_1}
 d \zeta
 +
 \frac{1}{2\pi i}
 \int_{\abs{\zeta} \leq R}
-\frac{\frac{\partial g_j}{\partial \bar{z}_1}(\zeta,z_2,\ldots,z_n)}{\zeta-z_1}
+\frac{\frac{\partial g_k}{\partial \bar{z}_1}(\zeta,z_2,\ldots,z_n)}{\zeta-z_1}
 d\zeta \wedge d\bar{\zeta} 
 \\
 & =
 \frac{1}{2\pi i}
 \int_{\C}
-\frac{\frac{\partial g_j}{\partial \bar{z}_1}(\zeta,z_2,\ldots,z_n)}{\zeta-z_1}
+\frac{\frac{\partial g_k}{\partial \bar{z}_1}(\zeta,z_2,\ldots,z_n)}{\zeta-z_1}
 d\zeta \wedge d\bar{\zeta}  .
 \end{split}
 \end{equation*}
@@ -10700,12 +10716,12 @@ Using the second form of the definition of $\psi$, the
 compatibility conditions \eqref{eq:compatconds}, and the computation above we get
 \begin{equation*} 
 \begin{split}
-\frac{\partial\psi}{\partial \bar{z}_j}(z)
+\frac{\partial\psi}{\partial \bar{z}_k}(z)
 & =
 \frac{1}{2\pi i}
 \int_\C
 \frac{
- \frac{\partial g_1}{\partial \bar{z}_j}(\zeta+z_1,z_2,\ldots,z_n)
+ \frac{\partial g_1}{\partial \bar{z}_k}(\zeta+z_1,z_2,\ldots,z_n)
 }{\zeta}
 d\zeta \wedge d\bar{\zeta} 
 \\
@@ -10713,7 +10729,7 @@ d\zeta \wedge d\bar{\zeta}
 \frac{1}{2\pi i}
 \int_\C
 \frac{
- \frac{\partial g_j}{\partial \bar{z}_1}(\zeta+z_1,z_2,\ldots,z_n)
+ \frac{\partial g_k}{\partial \bar{z}_1}(\zeta+z_1,z_2,\ldots,z_n)
 }{\zeta}
 d\zeta \wedge d\bar{\zeta} 
 \\
@@ -10721,11 +10737,11 @@ d\zeta \wedge d\bar{\zeta}
 \frac{1}{2\pi i}
 \int_\C
 \frac{
- \frac{\partial g_j}{\partial \bar{z}_1}(z_1,z_2,\ldots,z_n)
+ \frac{\partial g_k}{\partial \bar{z}_1}(z_1,z_2,\ldots,z_n)
 }{\zeta-z_1}
 d\zeta \wedge d\bar{\zeta} 
 =
-g_j(z) .
+g_k(z) .
 \end{split}
 \end{equation*}
 
@@ -11027,15 +11043,15 @@ Define
 \partial \eta \overset{\text{def}}{=}
 \sum_{\alpha,\beta}
 \,
-\sum_{j=1}^n
-\frac{\partial \eta_{\alpha \beta}}{\partial z_j} dz_j \wedge dz^\alpha
+\sum_{k=1}^n
+\frac{\partial \eta_{\alpha \beta}}{\partial z_k} dz_k \wedge dz^\alpha
 \wedge d\bar{z}^\beta ,
 \qquad \text{and} \qquad
 \bar{\partial} \eta \overset{\text{def}}{=}
 \sum_{\alpha,\beta}
 \,
-\sum_{j=1}^n
-\frac{\partial \eta_{\alpha \beta}}{\partial \bar{z}_j} d\bar{z}_j \wedge dz^\alpha
+\sum_{k=1}^n
+\frac{\partial \eta_{\alpha \beta}}{\partial \bar{z}_k} d\bar{z}_k \wedge dz^\alpha
 \wedge d\bar{z}^\beta .
 \end{equation*}
 \end{defn}
@@ -11115,17 +11131,17 @@ First, let us define the \emph{\myindex{Bochner--Martinelli kernel}}:
 \omega(\zeta,z)
 \overset{\text{def}}{=}
 \frac{(n-1)!}{{(2\pi i)}^n}
-\sum_{j=1}^n
-\frac{\bar{\zeta}_j-\bar{z}_j}{\norm{\zeta-z}^{2n}}
+\sum_{k=1}^n
+\frac{\bar{\zeta}_k-\bar{z}_k}{\norm{\zeta-z}^{2n}}
 \,
 d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
-\widehat{ d\bar{\zeta}_j } \wedge d\zeta_j \wedge
+\widehat{ d\bar{\zeta}_k } \wedge d\zeta_k \wedge
 \cdots \wedge
 d\bar{\zeta}_n \wedge d\zeta_n .
 \end{equation*}
 \glsadd{not:hatremove}%
-The notation $\widehat{ d\bar{\zeta}_j }$ means that this term is
+The notation $\widehat{ d\bar{\zeta}_k }$ means that this term is
 simply left out.
 
 \begin{thm}[Bochner--Martinelli] \label{thm:bochnermartinelli}
@@ -11176,8 +11192,8 @@ d\bar{\zeta}_n \wedge d\zeta_n = {(2i)}^n dV .
 \begin{exbox}
 \begin{exercise}
 Similarly to the Cauchy--Pompeiu formula,
-note the singularity in the second term of the Bochner--Martinelli formula,
-and prove that the integral still makes
+note the singularity in the second term of the Bochner--Martinelli formula.
+Prove that the integral still makes
 sense (the function is integrable).
 \end{exercise}
 
@@ -11200,7 +11216,7 @@ Let $z \in U$ be fixed.  Suppose $r > 0$ is small enough so that
 $\overline{B_r(z)} \subset U$.  Orient both
 $\partial U$ and $\partial B_r(z)$
 positively.  As
-$f(\zeta) \omega(\zeta,z)$ contains all the holomorphic $d\zeta_j$,
+$f(\zeta) \omega(\zeta,z)$ contains all the holomorphic $d\zeta_k$,
 \begin{equation*}
 \begin{split}
 d \bigl( f(\zeta) \omega(\zeta,z) \bigr)
@@ -11213,9 +11229,9 @@ d \bigl( f(\zeta) \omega(\zeta,z) \bigr)
 & \phantom{=} +
 f(\zeta)
 \frac{(n-1)!}{{(2\pi i)}^n}
-\sum_{j=1}^n
-\frac{\partial}{\partial \bar{\zeta}_j} \left[
-\frac{\bar{\zeta}_j-\bar{z}_j}{\norm{\zeta-z}^{2n}}
+\sum_{k=1}^n
+\frac{\partial}{\partial \bar{\zeta}_k} \left[
+\frac{\bar{\zeta}_k-\bar{z}_k}{\norm{\zeta-z}^{2n}}
 \right]
 d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
@@ -11224,17 +11240,17 @@ d\bar{\zeta}_n \wedge d\zeta_n .
 \end{equation*}
 We compute
 \begin{equation*}
-\sum_{j=1}^n
-\frac{\partial}{\partial \bar{\zeta}_j}
+\sum_{k=1}^n
+\frac{\partial}{\partial \bar{\zeta}_k}
 \left[
-\frac{\bar{\zeta}_j-\bar{z}_j}{\norm{\zeta-z}^{2n}}
+\frac{\bar{\zeta}_k-\bar{z}_k}{\norm{\zeta-z}^{2n}}
 \right]
 =
-\sum_{j=1}^n
+\sum_{k=1}^n
 \left(
 \frac{1}{\norm{\zeta-z}^{2n}}
 -n
-\frac{\abs{\zeta_j-z_j}^2}{\norm{\zeta-z}^{2n+2}}
+\frac{\abs{\zeta_k-z_k}^2}{\norm{\zeta-z}^{2n+2}}
 \right)
 = 0 .
 \end{equation*}
@@ -11294,21 +11310,21 @@ $\frac{\pi^n}{n!}r^{2n}$.
 &=
 \int_{\partial B_r(z)}
 \frac{(n-1)!}{{(2\pi i)}^n}
-\sum_{j=1}^n
-\frac{\bar{\zeta}_j-\bar{z}_j}{\norm{\zeta-z}^{2n}} \,
+\sum_{k=1}^n
+\frac{\bar{\zeta}_k-\bar{z}_k}{\norm{\zeta-z}^{2n}} \,
 d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
-\widehat{ d\bar{\zeta}_j } \wedge d\zeta_j \wedge
+\widehat{ d\bar{\zeta}_k } \wedge d\zeta_k \wedge
 \cdots \wedge
 d\bar{\zeta}_n \wedge d\zeta_n
 \\
 &=
 \frac{(n-1)!}{{(2\pi i)}^n}\frac{1}{r^{2n}}
 \int_{\partial B_r(z)}
-\sum_{j=1}^n(\bar{\zeta}_j-\bar{z}_j)
+\sum_{k=1}^n(\bar{\zeta}_k-\bar{z}_k)
 d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
-\widehat{ d\bar{\zeta}_j } \wedge d\zeta_j \wedge
+\widehat{ d\bar{\zeta}_k } \wedge d\zeta_k \wedge
 \cdots \wedge
 d\bar{\zeta}_n \wedge d\zeta_n
 \\
@@ -11317,10 +11333,10 @@ d\bar{\zeta}_n \wedge d\zeta_n
 \int_{B_r(z)}
 \!
 d\left(
-\sum_{j=1}^n(\bar{\zeta}_j-\bar{z}_j)
+\sum_{k=1}^n(\bar{\zeta}_k-\bar{z}_k)
 d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
-\widehat{ d\bar{\zeta}_j } \wedge d\zeta_j \wedge
+\widehat{ d\bar{\zeta}_k } \wedge d\zeta_k \wedge
 \cdots \wedge
 d\bar{\zeta}_n \wedge d\zeta_n
 \right)
@@ -11373,9 +11389,9 @@ d\bar{\zeta}_n \wedge d\zeta_n
 +
 %\frac{(n-1)!}{{(2\pi i)}^n}\frac{1}{r^{2n}}
 \int_{B_r(z)}
-\sum_{j=1}^n
-\frac{\partial f}{\partial \bar{\zeta}_j}(\zeta)
-(\bar{\zeta}_j-\bar{z}_j)
+\sum_{k=1}^n
+\frac{\partial f}{\partial \bar{\zeta}_k}(\zeta)
+(\bar{\zeta}_k-\bar{z}_k)
 ~
 d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
@@ -11385,14 +11401,14 @@ d\bar{\zeta}_n \wedge d\zeta_n \Biggr).
 As $U$ is bounded, $\abs{f(\zeta)-f(z)} \leq M
 \snorm{\zeta-z}$
 and
-$\abs{\frac{\partial f}{\partial \bar{\zeta}_j}(\zeta)
-(\bar{\zeta}_j-\bar{z}_j)} \leq M \snorm{\zeta-z}$ for some $M$.
+$\abs{\frac{\partial f}{\partial \bar{\zeta}_k}(\zeta)
+(\bar{\zeta}_k-\bar{z}_k)} \leq M \snorm{\zeta-z}$ for some $M$.
 So 
 for all $\zeta \in \partial B_r(z)$,
 we have
 $\abs{f(\zeta)-f(z)} \leq Mr$
-and $\abs{\frac{\partial f}{\partial \bar{\zeta}_j}(\zeta)
-(\bar{\zeta}_j-\bar{z}_j)} \leq Mr$.
+and $\abs{\frac{\partial f}{\partial \bar{\zeta}_k}(\zeta)
+(\bar{\zeta}_k-\bar{z}_k)} \leq Mr$.
 Hence
 \begin{multline*}
 \abs{
@@ -11609,7 +11625,7 @@ U^* = \{ \zeta \in \C^n : \bar{\zeta} \in U \}.
 \end{equation*}
 
 
-Then for all $f \in A^2(U)$ we have
+Then for all $f \in A^2(U)$, we have
 \begin{equation} \label{eq:repropropBergman}
 f(z)
 =
@@ -11733,12 +11749,12 @@ to compute explicitly.  We do have the following formula however.
 
 \begin{prop}
 Suppose $U \subset \C^n$ is a domain, and
-$\{ \varphi_j (z) \}_{j\in I}$ is a complete orthonormal system
+$\{ \varphi_\ell (z) \}_{\ell\in I}$ is a complete orthonormal system
 for $A^2(U)$.  Then
 \begin{equation*}
 K_U(z,\bar{\zeta})
 =
-\sum_{j \in I} \varphi_j(z) \overline{\varphi_j(\zeta)} ,
+\sum_{\ell \in I} \varphi_\ell(z) \overline{\varphi_\ell(\zeta)} ,
 \end{equation*}
 with uniform convergence on compact subsets of $U \times U^*$.
 \end{prop}
@@ -11749,13 +11765,13 @@ in $A^2(U)$ and so expand this function
 in terms of the basis and use the reproducing property of $K_U$
 \begin{equation*}
 K_U(z,\bar{\zeta}) = 
-\sum_{j \in I}
-\left(\int_U K_U(w,\bar{\zeta}) \overline{\varphi_j(w)} \, dV(w) \right)
-\varphi_j(z)
+\sum_{\ell \in I}
+\left(\int_U K_U(w,\bar{\zeta}) \overline{\varphi_\ell(w)} \, dV(w) \right)
+\varphi_\ell(z)
 =
-\sum_{j \in I}
-\overline{\varphi_j(\zeta)}
-\varphi_j(z) .
+\sum_{\ell \in I}
+\overline{\varphi_\ell(\zeta)}
+\varphi_\ell(z) .
 \end{equation*}
 The convergence is in $L^2$ as a function of $z$, for a fixed $\zeta$.
 Let $K \subset \subset U$ be a compact set.
@@ -11763,14 +11779,14 @@ Via \lemmaref{lemma:bergmanKbound}, $L^2$ convergence in $A^2(U)$ is uniform con
 compact sets.  Therefore, for a fixed $\zeta$ the convergence is uniform in
 $z \in K$.  In particular, we get pointwise convergence.  So,
 \begin{equation*}
-\sum_{j \in I}
+\sum_{\ell \in I}
 \abs{
-\varphi_j(z) 
+\varphi_\ell(z) 
 }^2
 =
-\sum_{j \in I}
-\varphi_j(z) 
-\overline{\varphi_j(z)}
+\sum_{\ell \in I}
+\varphi_\ell(z) 
+\overline{\varphi_\ell(z)}
 =
 K_U(z,\bar{z})
 \leq C_K < \infty ,
@@ -11778,22 +11794,22 @@ K_U(z,\bar{z})
 where $C_K$ is the supremum of $K_U(z,\bar{\zeta})$ on $K \times K^*$.
 Hence for $(z,\bar{\zeta}) \in K \times K^*$,
 \begin{equation*}
-\sum_{j \in I}
+\sum_{\ell \in I}
 \abs{
-\varphi_j(z)
-\overline{\varphi_j(\zeta)}
+\varphi_\ell(z)
+\overline{\varphi_\ell(\zeta)}
 }
 \leq
 \sqrt{
-\sum_{j \in I}
+\sum_{\ell \in I}
 \abs{
-\varphi_j(z)
+\varphi_\ell(z)
 }^2
 }
 \sqrt{
-\sum_{j \in I}
+\sum_{\ell \in I}
 \abs{
-\varphi_j(\zeta)
+\varphi_\ell(\zeta)
 }^2
 }
 \leq
@@ -11852,7 +11868,7 @@ K_V\bigl(f(z),\overline{f(\zeta)}\bigr) .
 Show that the Bergman kernel for the polydisc is
 \begin{equation*}
 K_{\D^n}(z,\bar{\zeta}) =
-\frac{1}{\pi^n} \prod_{j=1}^n \frac{1}{{(1-z_j\bar{\zeta}_j)}^2}.
+\frac{1}{\pi^n} \prod_{\ell=1}^n \frac{1}{{(1-z_\ell\bar{\zeta}_\ell)}^2}.
 \end{equation*}
 \end{exercise}
 
@@ -11862,8 +11878,8 @@ some constants $c_\alpha$,
 the set of all monomials $\frac{z^\alpha}{c_\alpha}$ gives a complete orthonormal
 system of $A^2(\bB_n)$.  Hint: To show orthonormality
 compute the integral using polar coordinates in each variable
-separately, that is, let $z_j = r_j e^{i\theta_j}$ where $\theta \in
-[0,2\pi]^n$ and $\sum_j r_j^2 < 1$.  Then show completeness by showing that
+separately, that is, let $z_\ell = r_\ell e^{i\theta_\ell}$ where $\theta \in
+[0,2\pi]^n$ and $\sum_\ell r_\ell^2 < 1$.  Then show completeness by showing that
 if $f \in A^2(\bB_n)$ is orthogonal to all $z^\alpha$, then $f = 0$.
 Finding $c_\alpha = \sqrt{\frac{\pi^n \alpha!}{(n+\abs{\alpha})!}}$ requires
 the classical $\beta$ function of special function theory.
@@ -11960,10 +11976,10 @@ $f \in H^2(\partial U)$ may be considered a function on
 $\widebar{U}$, where values in $U$ are given by $Pf$.  Similarly, we 
 extend $S(z,\bar{\zeta})$ to a function on $U \times \widebar{U}^*$ (where
 the values on the boundary are defined only almost everywhere).
-We state without proof that if $\{ \varphi_j \}_{j\in I}$ is a complete
+We state without proof that if $\{ \varphi_\ell \}_{\ell\in I}$ is a complete
 orthonormal system for $H^2(\partial U)$, then 
 \begin{equation} \label{eq:formulaszego}
-S_U(z,\bar{\zeta}) = \sum_{j \in I} \varphi_j(z)\overline{\varphi_j(\zeta)}
+S_U(z,\bar{\zeta}) = \sum_{\ell \in I} \varphi_\ell(z)\overline{\varphi_\ell(\zeta)}
 \end{equation}
 for $(z,\bar{\zeta}) \in U \times U^*$, converging uniformly on compact subsets.
 As before, this formula shows that $S$ is conjugate symmetric,
@@ -12183,8 +12199,8 @@ define
 \begin{equation*}
 \ord_p f \overset{\text{def}}{=} \min \bigl\{ k \in \N_0 : f_k \not\equiv 0 \bigr\} .
 \end{equation*}
-If $f \equiv 0$, then define $\ord_p f = \infty$.
-The number $\ord_p f$ is called the \emph{\myindex{order of vanishing}} of $f$ at $p$.
+If $f \equiv 0$, define $\ord_p f = \infty$.
+We call the number $\ord_p f$ the \emph{\myindex{order of vanishing}} of $f$ at $p$.
 \end{defn}
 
 In other words, the order of vanishing of $f$ at $p$ is $k$, whenever all
@@ -12204,13 +12220,13 @@ coordinates.
 \glsadd{not:polyinOU}%
 Suppose a polynomial $P \in \sO(U)[z_n]$ is monic of degree $k \geq 0$, that is,
 \begin{equation*}
-P(z',z_n) = z_n^k + \sum_{j=0}^{k-1} c_j(z') \, z_n^j ,
+P(z',z_n) = z_n^k + \sum_{\ell=0}^{k-1} c_\ell(z') \, z_n^\ell ,
 \end{equation*}
-where $c_j$ are holomorphic functions defined on $U$, such that
-$c_j(0) = 0$ for all $j$.  Then $P$ is
+where $c_\ell$ are holomorphic functions defined on $U$, such that
+$c_\ell(0) = 0$ for all $\ell$.  Then $P$ is
 called a \emph{\myindex{Weierstrass polynomial}} of degree $k$.
 \glsadd{not:polyinO0}%
-If the $c_j$ are germs in $\sO_0 = {}_{n-1}\sO_0$, then $P \in \sO_0[z_n]$ and
+If the $c_\ell$ are germs in $\sO_0 = {}_{n-1}\sO_0$, then $P \in \sO_0[z_n]$ and
 $P$ is a \emph{\myindex{germ of a Weierstrass polynomial}}.
 \end{defn}
 
@@ -12286,7 +12302,7 @@ Write
 \begin{equation*}
 P(z',z_n)
 =
-\prod_{j=1}^k \bigl(z_n-\alpha_j(z')\bigr)
+\prod_{\ell=1}^k \bigl(z_n-\alpha_\ell(z')\bigr)
 =
 z_n^k + c_{k-1}(z') \, z_n^{k-1} + \cdots + c_0 (z') .
 \end{equation*}
@@ -12295,21 +12311,21 @@ matter in its definition (see exercise below).  It is
 clear that
 $u$ and $P$ are unique if they exist (that is, if they exist as holomorphic functions).
 
-The functions $\alpha_j$ are not even continuous in general (see
+The functions $\alpha_\ell$ are not even continuous in general (see
 \exampleref{sqrt:example}).  However,
-we will prove that the functions $c_j$ are holomorphic.  The functions
-$c_j$ are
+we will prove that the functions $c_\ell$ are holomorphic.  The functions
+$c_\ell$ are
 (up to sign)
 the \emph{elementary symmetric functions}
 of $\alpha_1,\ldots,\alpha_k$ (see below).  It is a standard
 theorem in algebra
 (see \exerciseref{exercise:powersums})
 that the elementary symmetric functions are
-polynomials in the so-called power sum functions in the $\alpha_j$s:
+polynomials in the so-called power sum functions in the $\alpha_\ell$s:
 \begin{equation*}
-s_m(z') = \sum_{j=1}^k \alpha_j{(z')}^m , \qquad m = 1,\ldots,k.
+s_m(z') = \sum_{\ell=1}^k \alpha_\ell{(z')}^m , \qquad m = 1,\ldots,k.
 \end{equation*}
-Therefore, if we show that the power sums $s_m$ are holomorphic, then
+If we show that the power sums $s_m$ are holomorphic, then
 $c_\ell$ are 
 holomorphic.
 
@@ -12321,13 +12337,13 @@ are the zeros of $g$ in $D$, then
 \begin{equation*}
 \frac{1}{2 \pi i}
 \int_{\partial D} h(\zeta) \frac{g'(\zeta)}{g(\zeta)} ~d\zeta
-= \sum_{j=1}^k h(\alpha_j) .
+= \sum_{\ell=1}^k h(\alpha_\ell) .
 \end{equation*}
 
 The formula above with $h(\zeta) = \zeta^m$ and $g(\zeta)=f(z',\zeta)$ says that
 \begin{equation*}
 s_m(z') = 
-\sum_{j=1}^k \alpha_j{(z')}^m
+\sum_{\ell=1}^k \alpha_\ell{(z')}^m
 =
 \frac{1}{2\pi i}
 \int_{\partial D}
@@ -12336,8 +12352,7 @@ s_m(z') =
 \end{equation*}
 The function $s_m$ is clearly continuous, and if we
 differentiate under the integral
-with $\frac{\partial}{\partial\bar{z}_\ell}$
-for $\ell=1,\ldots,{n-1}$,
+with $\frac{\partial}{\partial\bar{z}_1}, \ldots, \frac{\partial}{\partial\bar{z}_n}$
 we find that $s_m$
 is holomorphic.
 
@@ -12356,8 +12371,8 @@ d\zeta
 \end{equation*}
 is equal to $\frac{f(z',z_n)}{P(z',z_n)}$.
 The function $u$ is clearly continuous and holomorphic in $z_n$
-for each fixed $z'$.  By differentiating under the integral, we
-find that it is also holomorphic in $z'$.
+for each fixed $z'$.
+Differentiating under the integral shows it is also holomorphic in $z'$.
 \end{proof}
 
 \begin{example} \label{sqrt:example}
@@ -12386,9 +12401,9 @@ $\alpha_1(z_1) = z_1^2$, and so $c_0(z_1) =
 A function $f(z_1,\ldots,z_n)$ is \emph{symmetric}\index{symmetric function}
 if $f = f \circ p$ for all permutations of the variables $p$.
 The \emph{\myindex{elementary symmetric functions}} of
-$\alpha_1,\ldots,\alpha_k$ are the coefficients $\sigma_j$ of the polynomial
+$\alpha_1,\ldots,\alpha_k$ are the coefficients $\sigma_1,\ldots,\sigma_k$ of the polynomial
 \begin{equation*}
-\prod_{j=1}^k \bigl(t+\alpha_j\bigr)
+\prod_{\ell=1}^k \bigl(t+\alpha_\ell\bigr)
 =
 t^k
 + \sigma_{1} \, t^{k-1} +
@@ -12397,7 +12412,7 @@ t^k
 + \sigma_{k-1} \, t
 + \sigma_k .
 \end{equation*}
-In other words:
+So,
 \begin{align*}
 \sigma_{1} & = \alpha_1 + \alpha_2 + \cdots + \alpha_k, \\
 \sigma_{2} & = \alpha_1 \alpha_2 \, + \, \alpha_1 \alpha_3 \, + \,
@@ -12409,7 +12424,7 @@ In other words:
   \,+\, \alpha_1 \alpha_2 \cdots \alpha_{k-1}, \\
 \sigma_k & = \alpha_1 \alpha_2 \cdots \alpha_k.
 \end{align*}
-So for example when $k=2$, then $\sigma_2 = \alpha_1\alpha_2$ and
+For example, when $k=2$, then $\sigma_2 = \alpha_1\alpha_2$ and
 $\sigma_1 = \alpha_1 + \alpha_2$.  The function $\sigma_1$ happens to
 already be a power sum.  We can write $\sigma_2$
 as a polynomial in the power sums:
@@ -12598,7 +12613,7 @@ r(z',z_n) = f(z',z_n) - q(z',z_n)P(z',z_n)
 \end{multline*}
 We need to show $r$ is a polynomial in $z_n$ of degree less than
 $k$.  In the expression inside the integral, the numerator is
-of the form $\sum_j h_j(z',\zeta)(\zeta^j-z_n^j)$ and is therefore
+of the form $\sum_\ell h_\ell(z',\zeta)(\zeta^\ell-z_n^\ell)$ and is therefore
 divisible by $(\zeta-z_n)$.
 The numerator is a polynomial of degree $k$ in
 $z_n$.  After dividing by $(\zeta-z_n)$,
@@ -12682,7 +12697,7 @@ The proposition shows that the regularity conclusion of the implicit
 function theorem holds under the hypothesis that there exists some local
 solution for $z_n$.  This result holds only for holomorphic
 functions and not for real-analytic functions.  For example, $x^2-y^3 = 0$ has a
-unique real solution $y = x^{2/3}$, but that function is not even
+unique real solution $y = x^{2/3}$, but $x^{2/3}$ is not even
 differentiable.
 
 \begin{proof}
@@ -12717,7 +12732,8 @@ $k_1,\ldots,k_m$,
 and a nonvanishing holomorphic function $u$
 such that
 \begin{equation*}
-f(z',z_n) = u(z',z_n) \prod_{j=1}^m {\bigl( z_n - \alpha_j(z') \bigr)}^{k_j}
+f(z',z_n) = u(z',z_n) \prod_{\ell=1}^m {\bigl( z_n - \alpha_\ell(z')
+\bigr)}^{k_\ell}
 .
 \end{equation*}
 \end{prop}
@@ -13106,12 +13122,12 @@ ${}_{n-1}\sO_0[z_n]$ is a UFD\@.
 \begin{exbox}
 \begin{exercise}
 Finish the proof of the theorem by proving 
-${}_1\sO_p$ is a unique factorization domain.
+${}_1\sO_p$ is a UFD.
 \end{exercise}
 
 \begin{exercise}
-Show that if an element is irreducible in 
-${}_{n-1}\sO_0[z_n]$, then it is irreducible in
+Show that an irreducible element of
+${}_{n-1}\sO_0[z_n]$, is irreducible in
 ${}_{n}\sO_0$.
 \end{exercise}
 \end{exbox}
@@ -13303,11 +13319,12 @@ X \cap (U' \times U'') = \Gamma_f
 for a holomorphic mapping $f \colon U' \to \C^{n-k}$.
 Then $p$ is a \emph{\myindex{regular point}} (or
 \emph{\myindex{simple point}}) of $X$ and
-the \emph{dimension}\index{dimension at a regular point}
+the (complex) \emph{dimension}\index{dimension at a regular point}
 of $X$ at $p$ is $k$.  We write $\dim_p X = k$.
 If all points of $X$ are regular points of dimension $k$, then $X$ is called
 a \emph{\myindex{complex manifold}}, or
-\emph{\myindex{complex submanifold}}, of (complex) dimension $k$.
+\emph{\myindex{complex submanifold}}\index{submanifold!complex}\index{manifold!complex},
+of (complex) dimension $k$.
 
 As the ambient\footnote{The word \emph{\myindex{ambient}}
 is used often to mean the set
@@ -13395,8 +13412,8 @@ the convention that $\max \emptyset = -\infty$.
 
 \begin{defn}
 Let $X \subset U \subset \C^n$ be a (complex) subvariety of $U$.  Let $p \in
-X$ be a point.  We define the \emph{\myindex{dimension}} of $X$ at $p$
-to be
+X$ be a point.  We define the (complex)
+\emph{\myindex{dimension}} of $X$ at $p$ to be
 \glsadd{not:dimpX}%
 \begin{equation*}
 \dim_p X \overset{\text{def}}{=}
@@ -13517,10 +13534,10 @@ distinct zeros of $z_n \mapsto P(z',z_n)$.
 Let $X'$ be a topological component of $X \setminus ( E \times D )$.
 Above each point $z' \in U' \setminus E$, let 
 $\alpha_1(z'),\ldots,\alpha_k(z')$ denote the distinct zeros that are in $X'$,
-that is $\bigl(z',\alpha_j(z')\bigr) \in X'$.
-If $\alpha_j$ is a holomorphic function in some small neighborhood and
-$\bigl(z',\alpha_j(z')\bigr) \in X'$ at one point, then 
-$\bigl(z',\alpha_j(z')\bigr) \in X'$ for all nearby points too.
+that is $\bigl(z',\alpha_\ell(z')\bigr) \in X'$.
+If $\alpha_\ell$ is a holomorphic function in some small neighborhood and
+$\bigl(z',\alpha_\ell(z')\bigr) \in X'$ at one point, then 
+$\bigl(z',\alpha_\ell(z')\bigr) \in X'$ for all nearby points too.
 Furthermore, this means that the set $X'$ contains only regular points of $X$ of
 dimension $n-1$.
 
@@ -13529,16 +13546,16 @@ such geometrically distinct zeros above each point in
 $U' \setminus E$ is locally constant, and as $U' \setminus E$ is connected
 there exists a unique $k$.  Take
 \begin{equation*}
-F(z',z_n) = \prod_{j=1}^k \bigl( z_n-\alpha_j(z')\bigr)
+F(z',z_n) = \prod_{\ell=1}^k \bigl( z_n-\alpha_\ell(z')\bigr)
 = 
-z_n^k + \sum_{j=0}^{k-1} g_j(z') z_n^j .
+z_n^k + \sum_{\ell=0}^{k-1} g_\ell(z') z_n^\ell .
 \end{equation*}
-The coefficients $g_j$ are well-defined for $z \in U' \setminus E$
+The coefficients $g_\ell$ are well-defined for $z \in U' \setminus E$
 as they are independent of how $\alpha_1,\ldots,\alpha_k$ are ordered.
-The $g_j$ are holomorphic for $z \in U' \setminus E$
-as locally we can choose the order so that each $\alpha_j$ is 
+The $g_\ell$ are holomorphic for $z \in U' \setminus E$
+as locally we can choose the order so that each $\alpha_\ell$ is 
 holomorphic.
-The coefficients $g_j$ are bounded
+The coefficients $g_\ell$ are bounded
 on $U'$ and therefore extend to holomorphic functions of $U'$.
 Hence, the polynomial $F$ is a polynomial
 in $\sO(U')[z_n]$.
@@ -13551,7 +13568,7 @@ above points in $U' \setminus E$.
 Consequently,
 the zero set of $F$ is the closure of $X'$ in $U' \times D$ by continuity.
 It is left to the reader to check that %(using the argument principle)
-all the functions $g_j$ vanish at the origin and $F$ is a Weierstrass
+all the functions $g_\ell$ vanish at the origin and $F$ is a Weierstrass
 polynomial, a fact that will be useful in the exercises below.
 
 If the polynomial $P(z',z_n)$ is of degree $m$,
@@ -13613,17 +13630,17 @@ for higher codimension, but it is harder to prove.
 Let $(X,p)$ is a germ of a subvariety of pure codimension 1.  Then there exists
 a neighborhood $U$ of $p$, a representative $X \subset U$ of $(X,p)$
 and subvarieties $X_1,\ldots,X_k \subset U$
-of pure codimension 1 such that $(X_j)_{\mathit{reg}}$ is connected for
-every $j$, and
+of pure codimension 1 such that $(X_\ell)_{\mathit{reg}}$ is connected for
+every $\ell$, and
 $X = X_1 \cup \cdots \cup X_k$.
 \end{cor}
 
 \begin{proof}
-A particular $X_j$ is defined by considering a topological component of $X \setminus
+A particular $X_\ell$ is defined by considering a topological component of $X \setminus
 (E \times D)$ as in the proof of \thmref{thm:codim1var}, getting the $F$,
-and setting $X_j = Z_F$.
-The topological component is of course a connected set and it is dense in
-$(X_j)_{\mathit{reg}}$, which proves the corollary.
+and setting $X_\ell = Z_F$.
+The topological component is a connected set and it is dense in
+$(X_\ell)_{\mathit{reg}}$, which proves the corollary.
 \end{proof}
 
 \begin{exbox}
@@ -13929,14 +13946,14 @@ is one-to-one and onto a neighborhood of 0 in $X$.
 
 \begin{exercise}
 Suppose $(X,0) \subset (\C^2,0)$ is a germ of a dimension 1 subvariety.
-Show that after perhaps a linear change of coordinates,
+Show that after a possible linear change of coordinates,
 there are natural numbers
 $d_1,\ldots,d_k$
 and
 holomorphic functions $c_1(z),\ldots,c_k(z)$ vanishing at $0$,
-such that $X$ can be defined near 0 by
+such that $X$ is given near $0$ by
 \begin{equation*}
-\prod_{j=1}^k {\bigl( w^{d_j} - c_j(z) \bigr)} = 0.
+\prod_{\ell=1}^k {\bigl( w^{d_\ell} - c_\ell(z) \bigr)} = 0.
 \end{equation*}
 \end{exercise}
 
@@ -15387,7 +15404,8 @@ $p = \varphi(q)$ is a \emph{boundary point}\index{boundary of a submanifold}.
 \glsadd{not:boundary}%
 Let $\partial M$ denote the set
 of boundary points.  If $\partial M = \emptyset$, then we say
-$M$ is simply an \emph{\myindex{embedded submanifold}}\index{submanifold}.
+$M$ is simply an
+\emph{\myindex{embedded submanifold}}\index{submanifold}\index{submanifold!embedded}.
 \end{defn}
 
 The situation for a boundary point and an interior point is depicted in

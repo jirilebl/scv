@@ -25,7 +25,9 @@ FIXME: Some are WORK IN PROGRESS
 * When computing the Hessian use the vertical bar to evaluate,
   it may be clearer
 * Improve Figure C.1 a little.
-* Replace some j's with k's or similar for aesthetic reasons.
-* Shorten a couple of section titles slightly
+* Replace many j's with k's or similar for aesthetic reasons.  Some other
+  letters are changed to be more consistent too.
+* Some figures have been mildly cleaned up.
+* Shorten a couple of section titles slightly.
 
 See https://www.jirka.org/scv/changes.html for older changes.
