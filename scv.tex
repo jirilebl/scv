@@ -2486,13 +2486,13 @@ So if we write the variable, we write $\bar{f}$ as
 $\bar{f}(\bar{z})$.  Let us see why this makes sense.  Using the definitions
 of the Wirtinger operators,
 \begin{equation*}
-\frac{\partial \bar{f}}{\partial z_k} = 
-\overline{\frac{\partial f}{\partial \bar{z}_k}} = 0,
+\frac{\partial \bar{f}}{\partial z_\ell} = 
+\overline{\frac{\partial f}{\partial \bar{z}_\ell}} = 0,
 \qquad
-\frac{\partial \bar{f}}{\partial \bar{z}_k} = \overline{
-\left(\frac{\partial f}{\partial z_k} \right) } ,
+\frac{\partial \bar{f}}{\partial \bar{z}_\ell} = \overline{
+\left(\frac{\partial f}{\partial z_\ell} \right) } ,
 \qquad
-\text{for all $k=1,\ldots,n$.}
+\text{for all $\ell=1,\ldots,n$.}
 \end{equation*}
 
 For functions that are neither holomorphic or antiholomorphic, we
@@ -2508,29 +2508,29 @@ $U \subset \C^n$ and $V \subset \C^m$ are open and suppose
 $f \colon U \to V$, and $g \colon V \to \C$ are (real) differentiable
 mappings.  Write the variables as
 $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
-\subset \C^m$.  Then for $k=1,\ldots,n$,
+\subset \C^m$.  Then for $\ell=1,\ldots,n$,
 \begin{equation} \label{eq:chainrule}
 \begin{aligned}
 &
-\frac{\partial}{\partial z_k} \left[ g \circ f \right]
+\frac{\partial}{\partial z_\ell} \left[ g \circ f \right]
 =
-\sum_{\ell=1}^m \left(
-\frac{\partial g}{\partial w_\ell}
-\frac{\partial f_\ell}{\partial z_k}
+\sum_{k=1}^m \left(
+\frac{\partial g}{\partial w_k}
+\frac{\partial f_k}{\partial z_\ell}
 +
-\frac{\partial g}{\partial \bar{w}_\ell}
-\frac{\partial \bar{f}_\ell}{\partial z_k}
+\frac{\partial g}{\partial \bar{w}_k}
+\frac{\partial \bar{f}_k}{\partial z_\ell}
 \right),
 \\
 &
-\frac{\partial}{\partial \bar{z}_k} \left[ g \circ f \right]
+\frac{\partial}{\partial \bar{z}_\ell} \left[ g \circ f \right]
 =
-\sum_{\ell=1}^m \left(
-\frac{\partial g}{\partial w_\ell}
-\frac{\partial f_\ell}{\partial \bar{z}_k}
+\sum_{k=1}^m \left(
+\frac{\partial g}{\partial w_k}
+\frac{\partial f_k}{\partial \bar{z}_\ell}
 +
-\frac{\partial g}{\partial \bar{w}_\ell}
-\frac{\partial \bar{f}_\ell}{\partial \bar{z}_k}
+\frac{\partial g}{\partial \bar{w}_k}
+\frac{\partial \bar{f}_k}{\partial \bar{z}_\ell}
 \right) .
 \end{aligned}
 \end{equation}
@@ -2544,137 +2544,137 @@ $v$ for $t$.
 Using the standard chain rule,
 \begin{equation*}
 \begin{split}
-\frac{\partial}{\partial z_k} \left[ g \circ f \right]
+\frac{\partial}{\partial z_\ell} \left[ g \circ f \right]
 & =
 \frac{1}{2}
 \left(
-\frac{\partial}{\partial x_k} - i
-\frac{\partial}{\partial y_k}
+\frac{\partial}{\partial x_\ell} - i
+\frac{\partial}{\partial y_\ell}
 \right)
  \left[ g \circ f \right]
 \\
 & = 
 \frac{1}{2}
-\sum_{\ell=1}^m \left(
-\frac{\partial g}{\partial s_\ell} \frac{\partial u_\ell}{\partial x_k}
+\sum_{k=1}^m \left(
+\frac{\partial g}{\partial s_k} \frac{\partial u_k}{\partial x_\ell}
 +
-\frac{\partial g}{\partial t_\ell} \frac{\partial v_\ell}{\partial x_k}
+\frac{\partial g}{\partial t_k} \frac{\partial v_k}{\partial x_\ell}
 -
 i
 \left(
-\frac{\partial g}{\partial s_\ell} \frac{\partial u_\ell}{\partial y_k}
+\frac{\partial g}{\partial s_k} \frac{\partial u_k}{\partial y_\ell}
 +
-\frac{\partial g}{\partial t_\ell} \frac{\partial v_\ell}{\partial y_k}
+\frac{\partial g}{\partial t_k} \frac{\partial v_k}{\partial y_\ell}
 \right)
 \right)
 \\
 & = 
-\sum_{\ell=1}^m \left(
-\frac{\partial g}{\partial s_\ell}
+\sum_{k=1}^m \left(
+\frac{\partial g}{\partial s_k}
 \,
 \frac{1}{2}
 \left(
-\frac{\partial u_\ell}{\partial x_k}
+\frac{\partial u_k}{\partial x_\ell}
 -
 i
-\frac{\partial u_\ell}{\partial y_k}
+\frac{\partial u_k}{\partial y_\ell}
 \right)
 +
-\frac{\partial g}{\partial t_\ell}
+\frac{\partial g}{\partial t_k}
 \,
 \frac{1}{2}
 \left(
-\frac{\partial v_\ell}{\partial x_k}
+\frac{\partial v_k}{\partial x_\ell}
 -
 i
-\frac{\partial v_\ell}{\partial y_k}
+\frac{\partial v_k}{\partial y_\ell}
 \right)
 \right)
 \\
 & = 
-\sum_{\ell=1}^m \left(
-\frac{\partial g}{\partial s_\ell}
-\frac{\partial u_\ell}{\partial z_k}
+\sum_{k=1}^m \left(
+\frac{\partial g}{\partial s_k}
+\frac{\partial u_k}{\partial z_\ell}
 +
-\frac{\partial g}{\partial t_\ell}
-\frac{\partial v_\ell}{\partial z_k}
+\frac{\partial g}{\partial t_k}
+\frac{\partial v_k}{\partial z_\ell}
 \right) .
 \end{split}
 \end{equation*}
-For $\ell = 1, \ldots, m$,
+For $k = 1, \ldots, m$,
 \begin{equation*}
-\frac{\partial}{\partial s_\ell}
+\frac{\partial}{\partial s_k}
 =
-\frac{\partial}{\partial w_\ell}
+\frac{\partial}{\partial w_k}
 +
-\frac{\partial}{\partial \bar{w}_\ell} ,
+\frac{\partial}{\partial \bar{w}_k} ,
 \qquad
-\frac{\partial}{\partial t_\ell}
+\frac{\partial}{\partial t_k}
 =
 i \left(
-\frac{\partial}{\partial w_\ell}
+\frac{\partial}{\partial w_k}
 -
-\frac{\partial}{\partial \bar{w}_\ell}
+\frac{\partial}{\partial \bar{w}_k}
 \right) .
 \end{equation*}
 Continuing:
 \begin{equation*}
 \begin{split}
-\frac{\partial}{\partial z_k} \left[ g \circ f \right]
+\frac{\partial}{\partial z_\ell} \left[ g \circ f \right]
 & = 
-\sum_{\ell=1}^m \left(
-\frac{\partial g}{\partial s_\ell}
-\frac{\partial u_\ell}{\partial z_k}
+\sum_{k=1}^m \left(
+\frac{\partial g}{\partial s_k}
+\frac{\partial u_k}{\partial z_\ell}
 +
-\frac{\partial g}{\partial t_\ell}
-\frac{\partial v_\ell}{\partial z_k}
+\frac{\partial g}{\partial t_k}
+\frac{\partial v_k}{\partial z_\ell}
 \right)
 \\
 & = 
-\sum_{\ell=1}^m \left(
+\sum_{k=1}^m \left(
 \left(
-\frac{\partial g}{\partial w_\ell}
-\frac{\partial u_\ell}{\partial z_k}
+\frac{\partial g}{\partial w_k}
+\frac{\partial u_k}{\partial z_\ell}
 +
-\frac{\partial g}{\partial \bar{w}_\ell}
-\frac{\partial u_\ell}{\partial z_k}
+\frac{\partial g}{\partial \bar{w}_k}
+\frac{\partial u_k}{\partial z_\ell}
 \right)
 +
 i
 \left(
-\frac{\partial g}{\partial w_\ell}
-\frac{\partial v_\ell}{\partial z_k}
+\frac{\partial g}{\partial w_k}
+\frac{\partial v_k}{\partial z_\ell}
 -
-\frac{\partial g}{\partial \bar{w}_\ell}
-\frac{\partial v_\ell}{\partial z_k}
+\frac{\partial g}{\partial \bar{w}_k}
+\frac{\partial v_k}{\partial z_\ell}
 \right)
 \right)
 \\
 & = 
-\sum_{\ell=1}^m \left(
-\frac{\partial g}{\partial w_\ell}
+\sum_{k=1}^m \left(
+\frac{\partial g}{\partial w_k}
 \left(
-\frac{\partial u_\ell}{\partial z_k}
+\frac{\partial u_k}{\partial z_\ell}
 +
 i
-\frac{\partial v_\ell}{\partial z_k}
+\frac{\partial v_k}{\partial z_\ell}
 \right)
 +
-\frac{\partial g}{\partial \bar{w}_\ell}
+\frac{\partial g}{\partial \bar{w}_k}
 \left(
-\frac{\partial u_\ell}{\partial z_k}
+\frac{\partial u_k}{\partial z_\ell}
 -i
-\frac{\partial v_\ell}{\partial z_k}
+\frac{\partial v_k}{\partial z_\ell}
 \right)
 \right)
 \\
 & = 
-\sum_{\ell=1}^m \left(
-\frac{\partial g}{\partial w_\ell}
-\frac{\partial f_\ell}{\partial z_k}
+\sum_{k=1}^m \left(
+\frac{\partial g}{\partial w_k}
+\frac{\partial f_k}{\partial z_\ell}
 +
-\frac{\partial g}{\partial \bar{w}_\ell}
-\frac{\partial \bar{f}_\ell}{\partial z_k}
+\frac{\partial g}{\partial \bar{w}_k}
+\frac{\partial \bar{f}_k}{\partial z_\ell}
 \right) .
 \end{split}
 \end{equation*}
@@ -2713,7 +2713,7 @@ antiholomorphic.  This is a subtle philosophical as much as a mathematical point
 Let $U \subset \C^n$ be open.  A mapping $f \colon U \to \C^m$
 is said to be \emph{holomorphic}\index{holomorphic mapping}
 if each component is holomorphic.  That
-is, if $f = (f_1,\ldots,f_m)$, then each $f_j$ is a holomorphic function.
+is, if $f = (f_1,\ldots,f_m)$, then each $f_k$ is a holomorphic function.
 \end{defn}
 
 As in one variable, the composition of holomorphic functions (mappings) is
@@ -2721,7 +2721,7 @@ holomorphic.
 
 \begin{thm}
 Let $U \subset \C^n$ and $V \subset \C^m$ be open sets and suppose
-$f \colon U \to V$ and $g \colon V \to \C^\nu$ are both holomorphic.
+$f \colon U \to V$ and $g \colon V \to \C^q$ are both holomorphic.
 \glsadd{not:composition}%
 Then the composition $g \circ f$ is holomorphic.
 \end{thm}
@@ -2729,17 +2729,17 @@ Then the composition $g \circ f$ is holomorphic.
 \begin{proof}
 The proof is almost trivial by chain rule.
 Again let $g$ be a function of $w \in V$ and $f$ be a function of $z \in U$.
-For any $k = 1,\ldots,n$ and any $p=1,\ldots,\nu$, we compute
+For any $\ell = 1,\ldots,n$ and any $p=1,\ldots,q$, we compute
 \begin{equation*}
-\frac{\partial}{\partial \bar{z}_k} \left[ g_p \circ f \right]
+\frac{\partial}{\partial \bar{z}_\ell} \left[ g_p \circ f \right]
 =
-\sum_{\ell=1}^m 
+\sum_{k=1}^m 
 \left(
-\frac{\partial g_p}{\partial w_\ell} 
-\cancelto{0}{\frac{\partial f_\ell}{\partial \bar{z}_k}}
+\frac{\partial g_p}{\partial w_k} 
+\cancelto{0}{\frac{\partial f_k}{\partial \bar{z}_\ell}}
 +
-\cancelto{0}{\frac{\partial g_p}{\partial \bar{w}_\ell}}
-\frac{\partial \bar{f}_\ell}{\partial \bar{z}_k} 
+\cancelto{0}{\frac{\partial g_p}{\partial \bar{w}_k}}
+\frac{\partial \bar{f}_k}{\partial \bar{z}_\ell} 
 \right)
 =
 0 . \qedhere
@@ -2753,16 +2753,16 @@ $U \subset \C^n$ and $V \subset \C^m$ are open, and
 $f \colon U \to V$ and $g \colon V \to \C$ are holomorphic.
 Name the variables
 $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
-\subset \C^m$.  In formula \eqref{eq:chainrule} for the $z_k$ derivative,
-the $\bar{w}_k$ derivative of $g$ is zero and the $z_k$ derivative of
-$\bar{f}_\ell$ is also zero because $f$ and $g$ are holomorphic.
-Therefore, for any $k=1,\ldots,n$,
+\subset \C^m$.  In formula \eqref{eq:chainrule} for the $z_\ell$ derivative,
+the $\bar{w}_\ell$ derivative of $g$ is zero and the $z_\ell$ derivative of
+$\bar{f}_k$ is also zero because $f$ and $g$ are holomorphic.
+Therefore, for any $\ell=1,\ldots,n$,
 \begin{equation*}
-\frac{\partial}{\partial z_k} \left[ g \circ f \right]
+\frac{\partial}{\partial z_\ell} \left[ g \circ f \right]
 =
-\sum_{\ell=1}^m 
-\frac{\partial g}{\partial w_\ell}
-\frac{\partial f_\ell}{\partial z_k} .
+\sum_{k=1}^m 
+\frac{\partial g}{\partial w_k}
+\frac{\partial f_k}{\partial z_\ell} .
 \end{equation*}
 
 \begin{exbox}
@@ -2913,14 +2913,14 @@ chain rule.
 
 \begin{thm}[Implicit function theorem\index{implicit function
 theorem}\index{holomorphic implicit function theorem}] \label{thm:ift}
-Let $U \subset \C^{n} \times \C^{m}$ be an open set, let  $(z,w) \in \C^n \times
+Let $U \subset \C^{n} \times \C^{m}$ be an open set, let $(z,w) \in \C^n \times
 \C^m$ be our coordinates, and let $f \colon U \to \C^m$
 be a holomorphic mapping.  Let $(z^0,w^0) \in U$ be a point such that
 $f(z^0,w^0) = 0$ and such that the $m \times m$ matrix
 \begin{equation*}
 \left[
-\frac{\partial f_j}{\partial w_k} (z^0,w^0)
-\right]_{jk}
+\frac{\partial f_k}{\partial w_\ell} (z^0,w^0)
+\right]_{k\ell}
 \end{equation*}
 is invertible.
 Then there exists an
@@ -2983,12 +2983,12 @@ In one variable, a topological property on $U$ is enough to classify a whole
 class of domains.  It is one of the reasons why studying the disc is so
 important in one variable, and why many theorems are stated for
 the disc only.
-There is simply no such theorem in several variables.
+There is no such theorem in several variables.
 We will show momentarily that the unit ball and the polydisc,
 \begin{equation*}
 \bB_n = \bigl\{ z \in \C^n : \snorm{z} < 1 \bigr\}
 \qquad \text{and} \qquad
-\D^n = \bigl\{ z \in \C^n : \sabs{z_j} < 1 ~\text{for $j=1,\ldots,n$} \bigr\} ,
+\D^n = \bigl\{ z \in \C^n : \sabs{z_k} < 1 ~\text{for $k=1,\ldots,n$} \bigr\} ,
 \end{equation*}
 are \emph{not} biholomorphically equivalent.  Both are simply
 connected (have no holes), and they are the two most obvious generalizations
@@ -3108,8 +3108,8 @@ and notice that $g_1(0) = 1$.  If a sum of
 positive numbers is less than or equal to 1,
 then they all are, and hence $\sabs{g_1(z)} \leq 1$.  Maximum principle
 says
-that $g_1(z) = 1$ for all $z \in \D$.  But then $g_j(z) = 0$
-for all $j=2,\ldots,n$ and all $z \in \D$.  Therefore, $g$ is constant and
+that $g_1(z) = 1$ for all $z \in \D$.  But then $g_k(z) = 0$
+for all $k=2,\ldots,n$ and all $z \in \D$.  Therefore, $g$ is constant and
 thus not an analytic disc.
 \end{proof}
 
@@ -3155,10 +3155,10 @@ the set of limit points of $\bigl\{ f(p_k) \bigr\}$ lies in $\partial V$.
 \begin{proof}
 Suppose $f$ is proper.  Take a 
 sequence $\{ p_k \}$ in $U$ such that $p_k \to p \in \partial U$.
-Then take any convergent subsequence $\bigl\{ f(p_{k_j}) \bigr\}$ of
+Then take any convergent subsequence $\bigl\{ f(p_{k_\ell}) \bigr\}$ of
 $\bigl\{ f(p_k) \bigr\}$
 converging to some $q \in \widebar{V}$.  Consider
-$E = \bigl\{ f(p_{k_j}) \bigr\}$ as a set.  Let $\widebar{E}$ be the closure of $E$
+$E = \bigl\{ f(p_{k_\ell}) \bigr\}$ as a set.  Let $\widebar{E}$ be the closure of $E$
 in $V$ (subspace topology).  If $q \in V$, then $\widebar{E} = E \cup \{ q
 \}$ and $\widebar{E}$ is compact.
 Otherwise, if $q \notin V$, then
@@ -3816,8 +3816,8 @@ The function $f$ is locally biholomorphic, in particular
 $f^{-1}$ is holomorphic,
 on the set where the Jacobian determinant
 \begin{equation*}
-J_f(z) = \det Df(z) = \det \left[ \frac{\partial f_j}{\partial z_k}(z)
-\right]_{jk}
+J_f(z) = \det Df(z) = \det \left[ \frac{\partial f_k}{\partial z_\ell}(z)
+\right]_{k\ell}
 \end{equation*}
 is not zero.  This follows from the inverse function theorem, which is just
 a special case of the implicit function theorem.
@@ -3914,7 +3914,7 @@ mapping are not equal.
 Take the subvariety
 $X = \bigl\{ z \in \C^2 : z_1^2 = z_2^3 \bigr\}$.
 Find a one-to-one holomorphic mapping $f \colon \C \to X$.
-Then note that the derivative of $f$ vanishes at a certain point.
+Note that the derivative of $f$ vanishes at a certain point.
 So \thmref{thm:injective} has no analogue when the domain and range have
 different dimension.
 \end{exercise}
@@ -4657,7 +4657,7 @@ as given above.
 This is why we use the same notation for the Jacobian
 matrix and the derivative acting on tangent spaces.
 To verify this claim, it is enough to see where the basis element
-$\frac{\partial}{\partial x_j}\big|_p$ goes, and the form of $Df(p)$
+$\frac{\partial}{\partial x_k}\big|_p$ goes, and the form of $Df(p)$
 as a matrix
 follows by the chain rule.
 For instance, the derivative of the mapping $f(x_1,x_2) =
@@ -8108,7 +8108,7 @@ $U$ is holomorphically convex.
 \end{thm}
 
 \begin{proof}
-Let us start with \ref{thm:cartthul:domhol} $\Rightarrow$
+We start with \ref{thm:cartthul:domhol} $\Rightarrow$
 \ref{thm:cartthul:disthull}.
 Suppose there is a $K \subset
 \subset U$ with $\operatorname{dist}(K,\partial U) > \operatorname{dist}(\widehat{K}_U,\partial U)$.
@@ -11556,7 +11556,7 @@ dV(\xi)}
 \end{split}
 \end{equation*}
 Taking supremum over $z \in K$ proves the estimate.
-Therefore, if $\{ f_j \}$ is a sequence of functions in $A^2(U)$
+Therefore, if $\{ f_\ell \}$ is a sequence of functions in $A^2(U)$
 converging in $L^2(U)$ to some $f \in
 L^2(U)$, then it converges uniformly on compact sets, and so $f \in \sO(U)$.
 Consequently, $A^2(U)$ is a closed subspace of $L^2(U)$, and hence complete.
@@ -12875,7 +12875,7 @@ The function
 \end{equation*}
 defined for $z' \in U_m'$ does not depend on the order.
 That means $\Delta$ is well-defined as a function on the open set $U_m'$,
-and since $\alpha_j$ are locally holomorphic, $\Delta$ is holomorphic.
+and since $\alpha_k$ are locally holomorphic, $\Delta$ is holomorphic.
 
 Let $p' \in E \cap \overline{U_m'}$,
 so there are fewer than $m$ zeros at $p'$.
@@ -13104,14 +13104,14 @@ As
 ${}_{n-1}\sO_0[z_n]$ is a UFD\@, $P$ has a unique
 factorization in 
 ${}_{n-1}\sO_0[z_n]$ into $P = P_1 P_2 \cdots P_k$.
-So $f = q P_1 P_2 \cdots P_k$.  That $P_j$ are irreducible
+So $f = q P_1 P_2 \cdots P_k$.  That $P_\ell$ are irreducible
 in ${}_n\sO_0$ is left as an exercise.
 
 Suppose 
 $f = \tilde{q} g_1 g_2 \cdots g_m$ is another factorization. 
-The preparation theorem applies to each $g_j$.  Therefore, write
-$g_j = u_j \widetilde{P}_j$ for a unit $u_j$ and a Weierstrass polynomial
-$\widetilde{P}_j$.  We obtain
+The preparation theorem applies to each $g_\ell$.  Therefore, write
+$g_\ell = u_\ell \widetilde{P}_\ell$ for a unit $u_\ell$ and a Weierstrass polynomial
+$\widetilde{P}_\ell$.  We obtain
 $f = u \widetilde{P}_1 \widetilde{P}_2 \cdots \widetilde{P}_m$ for a unit $u$.  By
 uniqueness part of the preparation theorem we obtain
 $P = \widetilde{P}_1 \widetilde{P}_2 \cdots \widetilde{P}_m$.  Conclusion is 
@@ -13672,9 +13672,9 @@ $z_n \mapsto f(0,z_n)$ being of finite order.  Show that
 \begin{equation*}
 f = u p_1^{d_1} p_2^{d_2} \cdots p_\ell^{d_\ell} ,
 \end{equation*}
-where $p_j$ are Weierstrass polynomials of degree $k_j$ that have
-generically (that is, on an open dense set) $k_j$ distinct zeros
-(no multiple zeros), the regular points of $Z_{p_j}$ are
+where $p_k$ are Weierstrass polynomials of degree $\mu_k$ that have
+generically (that is, on an open dense set) $\mu_k$ distinct zeros
+(no multiple zeros), the regular points of $Z_{p_k}$ are
 connected, and $u$ is a nonzero holomorphic function
 in a neighborhood of the origin.  See also the next section, these
 polynomials will be the irreducible factors in the factorization of $f$.
@@ -13778,18 +13778,19 @@ It then makes sense that we can split a subvariety into its irreducible parts.
 \begin{prop}
 Let $(X,p) \subset (\C^n,p)$ be a germ of a subvariety.  Then there exist
 finitely many irreducible subvarieties $(X_1,p),\ldots,(X_k,p)$ such that
-$(X_1,p) \cup \ldots \cup (X_k,p) = (X,p)$ and such that $(X_j,p)
-\not\subset (X_\ell,p)$ for all $j$ and $\ell$.
+$(X_1,p) \cup \ldots \cup (X_k,p) = (X,p)$ and such that $(X_m,p)
+\not\subset (X_\ell,p)$ for all $m$ and $\ell$.
 \end{prop}
 
 \begin{proof}
 Suppose $(X,p)$ is reducible:
-Find $(Y_1,p) \not\subset (Y_2,p)$ and $(Y_2,p) \not\subset (Y_1,p)$,
-such that $(Y_1,p) \cup (Y_2,p) = (X,p)$.
-As $(Y_j,p) \subsetneq (X,p)$, then
-$I_p(Y_j) \supsetneq I_p(X)$ for both $j$.  If both
+Find $(Y_1,p)$ and $(Y_1,p)$ such that $(Y_1,p) \not\subset (Y_2,p)$,
+$(Y_2,p) \not\subset (Y_1,p)$, and
+$(Y_1,p) \cup (Y_2,p) = (X,p)$.
+As $(Y_\ell,p) \subsetneq (X,p)$, then
+$I_p(Y_\ell) \supsetneq I_p(X)$ for both $\ell$.  If both
 $(Y_1,p)$ and $(Y_2,p)$ are irreducible, then stop, we are done.  Otherwise
-apply the same reasoning to whichever (or both) $(Y_j,p)$ that was
+apply the same reasoning to whichever (or both) $(Y_\ell,p)$ that was
 reducible.  After finitely many steps you must come to a stop as you cannot
 have an infinite ascending chain of ideals since $\sO_p$ is Noetherian.
 \end{proof}
@@ -13978,7 +13979,8 @@ q$.
 Suppose $X \subset U$ is a subvariety of a domain $U \subset \C^n$.
 Suppose that for any two points $p$ and $q$ on $X$ there exists a finite sequence
 of points $p_0 = p, p_1, \ldots, p_k = q$ in $X$, and a sequence of analytic discs
-$\Delta_j \subset X$ such that $p_{j}$ and $p_{j-1}$ are in $\Delta_j$.
+$\Delta_\ell \subset X$ such that $p_{\ell}$ and $p_{\ell-1}$ are in
+$\Delta_\ell$.
 \end{exercise}
 
 \begin{exercise}\label{exercise:maxprincsubvar}
@@ -15065,21 +15067,21 @@ Then
 \frac{1}{2\pi i}
 \int_\gamma h(z) \frac{f'(z)}{f(z)} \, dz
 =
-\sum_{j=1}^N h(z_j)
+\sum_{k=1}^N h(z_k)
 \quad
 -
 \quad
-\sum_{j=1}^P h(w_j) .
+\sum_{k=1}^P h(w_k) .
 \end{equation*}
 \end{thm}
 
 The proof is an immediate application of the residue theorem.  Simply
 compute the residues at the zeros and poles of $f$.  In particular,
-if $f$ has a zero at $p$ or multiplicity $k$, then $h(z) \frac{f'(z)}{f(z)}$
+if $f$ has a zero at $p$ or multiplicity $m$, then $h(z) \frac{f'(z)}{f(z)}$
 has a simple pole
-at $p$ with residue $k\, h(p)$.  Similarly, if $f$ has a pole at $p$ of
-order $k$,
-then $h(z) \frac{f'(z)}{f(z)}$ has a simple pole with residue $-k\, h(p)$ at $p$.
+at $p$ with residue $m\, h(p)$.  Similarly, if $f$ has a pole at $p$ of
+order $m$,
+then $h(z) \frac{f'(z)}{f(z)}$ has a simple pole with residue $-m\, h(p)$ at $p$.
 
 In the couple of theorems above,
 we avoided introducing winding numbers by making $\gamma$ a simple closed curve,
@@ -15287,12 +15289,12 @@ poles are exactly at $b_k$, with orders given by $m_k$.
 \end{thm}
 
 For a more explicit statement, we need infinite products.  The product
-$\prod_{j=1}^\infty (1+a_j)$
+$\prod_{k=1}^\infty (1+a_k)$
 \emph{converges} if the sequence of partial products
-$\prod_{j=1}^n (1+a_j)$ converges.  We say that the product
+$\prod_{k=1}^n (1+a_k)$ converges.  We say that the product
 \emph{converges absolutely} if
-$\prod_{j=1}^\infty (1+\sabs{a_j})$
-converges, which is equivalent to $\sum_{j=1}^\infty \sabs{a_j}$ converging.
+$\prod_{k=1}^\infty (1+\sabs{a_k})$
+converges, which is equivalent to $\sum_{k=1}^\infty \sabs{a_k}$ converging.
 
 Define
 \begin{equation*}
@@ -15315,7 +15317,7 @@ converges uniformly absolutely on compact subsets.
 
 The $p_k$ are chosen such that
 \begin{equation*}
-\sum_{j=1}^\infty {\abs{\frac{r}{a_k}}}^{1+p_k}
+\sum_{k=1}^\infty {\abs{\frac{r}{a_k}}}^{1+p_k}
 \end{equation*}
 converges for all $r > 0$.
 
@@ -15549,10 +15551,10 @@ dx_k\left(
 1,
 \qquad
 dx_k\left(
-\frac{\partial}{\partial x_j}
+\frac{\partial}{\partial x_\ell}
 \right)
 =
-0 \quad \text{if $j\not=k$}.
+0 \quad \text{if $\ell\not=k$}.
 \end{equation*}
 For our purposes here, just suppose that a $1$-form
 in $\R^n$ is an object of the form
@@ -15565,17 +15567,17 @@ varies smoothly from point to point.
 Suppose $M$ is a one-dimensional submanifold
 (possibly with boundary), $\varphi \colon U \to M$
 is a parametrization compatible with the orientation of $M$,
-and $g_j$ is supported in $\varphi(U)$.
+and $g_k$ is supported in $\varphi(U)$.
 Define
 \begin{equation*}
 \int_M \omega
 \overset{\text{def}}{=}
-\sum_{j=1}^n
-\int_U g_j\bigl( \varphi(t) \bigr) \varphi_j'(t) \, dt ,
+\sum_{k=1}^n
+\int_U g_k\bigl( \varphi(t) \bigr) \varphi_k'(t) \, dt ,
 \end{equation*}
 where the integral $\int_U \cdots \, dt$
 is evaluated with the usual positive orientation
-(left to right) as $U \subset \R$, and $\varphi_j$ is the $j$th component
+(left to right) as $U \subset \R$, and $\varphi_k$ is the $k$th component
 of $\varphi$.
 
 Generally, a $1$-form has support bigger than just $\varphi(U)$.  In this
@@ -15624,9 +15626,9 @@ then
 \omega \wedge \eta = - \eta \wedge \omega .
 \end{equation*}
 The negative keeps track of orientation.
-When $\omega$ is a $k$-form and $\eta$ is an $\ell$-form, 
+When $\omega$ is a $k$-form and $\eta$ is an $m$-form, 
 \begin{equation*}
-\omega \wedge \eta = {(-1)}^{k\ell} \eta \wedge \omega .
+\omega \wedge \eta = {(-1)}^{k m} \eta \wedge \omega .
 \end{equation*}
 
 We wedge together the basis $1$-forms to
@@ -15634,51 +15636,51 @@ get all $k$-forms.
 A $k$-form is then an expression
 \begin{equation*}
 \omega =
-\sum_{j_1=1}^n
-\sum_{j_2=1}^n
+\sum_{\ell_1=1}^n
+\sum_{\ell_2=1}^n
 \cdots
-\sum_{j_k=1}^n
-g_{j_1,\ldots,j_k}
+\sum_{\ell_k=1}^n
+g_{\ell_1,\ldots,\ell_k}
 \,
-dx_{j_1} \wedge
-dx_{j_2} \wedge
+dx_{\ell_1} \wedge
+dx_{\ell_2} \wedge
 \cdots \wedge
-dx_{j_k}  ,
+dx_{\ell_k}  ,
 \end{equation*}
-where $g_{j_1,\ldots,j_k}$ are smooth functions.
+where $g_{\ell_1,\ldots,\ell_k}$ are smooth functions.
 We can simplify even more.  Since the wedge
 is anticommutative on $1$-forms,
 \begin{equation*}
-dx_j \wedge dx_m = 
--dx_m \wedge dx_j
+dx_\ell \wedge dx_m = 
+-dx_m \wedge dx_\ell
 ,
 \qquad
 \text{and}
 \qquad
-dx_j \wedge dx_j = 0 .
+dx_\ell \wedge dx_\ell = 0 .
 \end{equation*}
 In other words,
 every form 
-$dx_{j_1} \wedge
-dx_{j_2} \wedge
+$dx_{\ell_1} \wedge
+dx_{\ell_2} \wedge
 \cdots \wedge
-dx_{j_k}$ 
-is either zero, if any two indices from $j_1,\ldots,j_k$ are equal, or
+dx_{\ell_k}$ 
+is either zero, if any two indices from $\ell_1,\ldots,\ell_k$ are equal, or
 can be put into the form
-$\pm dx_{j_1} \wedge
-dx_{j_2} \wedge
+$\pm dx_{\ell_1} \wedge
+dx_{\ell_2} \wedge
 \cdots \wedge
-dx_{j_k}$, where $j_1 < j_2 < \cdots < j_k$.
+dx_{\ell_k}$, where $\ell_1 < \ell_2 < \cdots < \ell_k$.
 Thus, a $k$-form can always be written as
 \begin{equation*}
 \omega =
-\sum_{1 \leq j_1 < j_2 < \cdots < j_k \leq n}
-g_{j_1,\ldots,j_k}
+\sum_{1 \leq \ell_1 < \ell_2 < \cdots < \ell_k \leq n}
+g_{\ell_1,\ldots,\ell_k}
 \,
-dx_{j_1} \wedge
-dx_{j_2} \wedge
+dx_{\ell_1} \wedge
+dx_{\ell_2} \wedge
 \cdots \wedge
-dx_{j_k}  .
+dx_{\ell_k}  .
 \end{equation*}
 
 Consider
@@ -15686,26 +15688,26 @@ an oriented $k$-dimensional submanifold $M$
 (possibly with boundary), a parametrization $\varphi \colon U \to M$
 from the orientation,
 and a $k$-form $\omega$
-supported in $\varphi(U)$ (that is each $g_{j_1,\ldots,j_k}$ is supported in
+supported in $\varphi(U)$ (that is each $g_{\ell_1,\ldots,\ell_k}$ is supported in
 $\varphi(U)$).
 Denote by $t \in U \subset \R^k$
 the coordinates on $U$.  Define
 \begin{equation*}
 \int_M \omega
 \overset{\text{def}}{=}
-\sum_{1 \leq j_1 < j_2 < \cdots < j_k \leq n}
+\sum_{1 \leq \ell_1 < \ell_2 < \cdots < \ell_k \leq n}
 \int_U
-g_{j_1,\ldots,j_k}(t)
-\det D (\varphi_{j_1},\varphi_{j_2},\ldots,\varphi_{j_k})
+g_{\ell_1,\ldots,\ell_k}(t)
+\det D (\varphi_{\ell_1},\varphi_{\ell_2},\ldots,\varphi_{\ell_k})
 \,
 dt
 \end{equation*}
 where the integral $\int_U \cdots\, dt$ is evaluated in the
 usual orientation on $\R^k$ with $dt$ the standard
 measure on $\R^k$ (think $dt = dt_1 dt_2 \cdots dt_n$), and
-$D (\varphi_{j_1},\varphi_{j_2},\ldots,\varphi_{j_k})$
-denotes the derivative of the mapping whose $\ell$th component
-is $\varphi_{j_\ell}$.
+$D (\varphi_{\ell_1},\varphi_{\ell_2},\ldots,\varphi_{\ell_k})$
+denotes the derivative of the mapping whose $m$th component
+is $\varphi_{\ell_m}$.
 
 Similarly as before, if $\omega$ is not supported in the
 image of a single parametrization, write
@@ -15885,31 +15887,31 @@ which is a linear operator that eats $k$-forms and spits out
 $(k+1)$-forms.  For a $k$-form
 \begin{equation*}
 \omega =
-g_{j_1,\ldots,j_k}
+g_{\ell_1,\ldots,\ell_k}
 \,
-dx_{j_1} \wedge
-dx_{j_2} \wedge
+dx_{\ell_1} \wedge
+dx_{\ell_2} \wedge
 \cdots \wedge
-dx_{j_k}  ,
+dx_{\ell_k}  ,
 \end{equation*}
 define the exterior derivative $d\omega$ as
 \glsadd{not:dpsi}%
 \begin{equation*}
 d\omega
 \overset{\text{def}}{=} 
-dg_{j_1,\ldots,j_k}
+dg_{\ell_1,\ldots,\ell_k}
 \wedge
-dx_{j_1} \wedge
-dx_{j_2} \wedge
+dx_{\ell_1} \wedge
+dx_{\ell_2} \wedge
 \cdots \wedge
-dx_{j_k}  =
-\sum_{\ell=1}^n
-\frac{\partial g_{j_1,\ldots,j_k}}{\partial x_\ell} \,
-dx_\ell \wedge
-dx_{j_1} \wedge
-dx_{j_2} \wedge
+dx_{\ell_k}  =
+\sum_{m=1}^n
+\frac{\partial g_{\ell_1,\ldots,\ell_k}}{\partial x_m} \,
+dx_m \wedge
+dx_{\ell_1} \wedge
+dx_{\ell_2} \wedge
 \cdots \wedge
-dx_{j_k} .
+dx_{\ell_k} .
 \end{equation*}
 Then define $d$ on every $k$-form by extending it linearly.
 
