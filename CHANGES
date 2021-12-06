@@ -20,6 +20,8 @@ FIXME: Some are WORK IN PROGRESS
   than the "hint" in text, so replace that hint.
 * Move Exercise 2.6.13 (Behnke--Stein) past Cartan--Thullen.  It is much
   easier then.
+* Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
+  an if and only if for irreducibility, which is really what was meant.
 * Figures now have numbers, captions, float, and have explicit references
   in text.
 * When computing the Hessian use the vertical bar to evaluate,
