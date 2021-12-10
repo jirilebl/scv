@@ -4367,6 +4367,99 @@ etc.)\ need not be a domain of holomorphy.  Therefore, when we want to
 so a unitary matrix.
 \end{example}
 
+In fact, one does not need a whole Hartogs figure to extend a holomorphic
+function, only sequence of discs suffices.  We will not need this precise
+statement later, so you can freely skip to the next section.  We will,
+however, see another version of this theorem later.
+
+\begin{thm}[Kontinuit\"atssatz---Continuity
+principle\index{Kontinuit\"atssatz!first version}\index{continuity
+principle!first version}, first version\footnote{%
+Sometimes this (or similar) theorem is called Behnke--Sommer, although the
+first version of it (where the discs are complex lines) were proved by Hartogs.}]
+\label{thm:contprinciple1}
+Suppose $U \subset \C^n$ is open and there exists a sequence of
+closed analytic discs $\varphi_n \colon \widebar{\D} \to \C^n$ converging
+(pointwise) to a closed analytic disc $\varphi$, such that
+$\varphi_n(\widebar{\D}) \subset U$ and $\varphi(\partial \D) \subset U$.
+Then for every $f \in \sO(U)$ there exists a neighborhood $W$ of
+$\varphi(\widebar{\D})$ and an $F \in \sO(W)$ such that $F=f$ on some
+neighborhood of $\varphi(\partial \D)$.
+\end{thm}
+
+In particular, a $U$ that possesses such discs is not a domain of holomorphy.
+The continuity principle is illustrated in \figureref{fig:contprinc}, where
+analytic discs are drawn as lines and the boundaries as black dots.
+
+\begin{myfig}
+\subimport*{figures/}{contprinc1.pdf_t}
+\caption{Continuity principle for extension of functions.\label{fig:contprinc}}
+\end{myfig}
+
+\begin{proof}
+By passing to a subsequence and perhaps considering slightly smaller discs
+(restrictions to discs of radii $1-\epsilon$), we can apply Montel and just
+assume that $\varphi_n$ converge uniformly to $\varphi$ on $\widebar{\D}$.
+For any $f \in \sO(U)$,
+$f \circ \varphi_n$ is holomorphic for all $n$, and as $\varphi_n$ converges
+uniformly, then $f \circ \varphi_n$ converges uniformly on $\partial \D$.
+Hence by the maximum principle this sequence
+converges uniformly in $\widebar{\D}$ to some holomorphic $g \colon
+\widebar{\D} \to \C$.
+
+Now fix some $f \in \sO(U)$.
+As $\varphi(\partial \D)$ is compact, there exists an $r > 0$ such that
+for each $z \in \varphi(\partial \D)$, $\Delta_r(z) \subset U$, meaning that
+the power series of $f$ converges in $\Delta_r(z)$.
+For any positive $s < r$, the set
+\begin{equation*}
+\bigcup_{q \in \varphi(\partial \D)} \overline{\Delta_s(q)}
+\end{equation*}
+is a compact subset of $U$ and hence $f$ is bounded by some $M$ on this set.
+Cauchy estimates give that
+\begin{equation} \label{eq:kontinuitatonecauchy}
+\abs{\frac{\partial^\alpha f}{\partial z^\alpha}(q)} \leq \frac{M
+\alpha!}{s^\alpha}
+\end{equation}
+for all $q \in \varphi(\partial \D)$.  Each one of these
+derivatives is a holomorphic function in $U$ and thus 
+$\frac{\partial^\alpha f}{\partial z^\alpha} \circ \varphi$ extends
+to a holomorphic function on $\widebar{\D}$ using the argument above.
+
+Thus, by maximum principle, we have \eqref{eq:kontinuitatonecauchy}
+for all $q \in \varphi(\widebar{\D}) \cap U$, and in fact for the
+extended functions it holds for all $q \in \varphi(\widebar{\D})$.
+So we have a power series at each point of
+$\varphi(\widebar{\D})$ that converges in a polydisc of radius $s$,
+and when those points are in $U$, this power series agrees with $f$.
+The resulting function is well-defined on the entire disc
+$\varphi(\widebar{\D})$.  The function continues analytically along
+any path in the disc since at each point of the disc the function has a
+power series that converges in an $s$-polydisc.  Taking $W$ to be a union of finitely
+many polydiscs centered at points of $\varphi(\widebar{\D})$
+and of radius less than or equal to $s$, where we take the polydiscs small
+enough to ensure the extension is well-defined in $W$.
+See exercise below.
+\end{proof}
+
+\begin{exbox}
+\begin{exercise}
+Prove the well-defininedness of the extension.  Hint: The key is to handle what
+happens when two of those polydiscs intersect: Is the extension in the
+intersection necessarily the same?
+\end{exercise}
+
+\begin{exercise}
+Suppose that given an open $U \subset \C^n$
+and there exists a collection of 
+ closed analytic discs $\Delta_\alpha \subset U$
+such that $\bigcup_\alpha \partial \Delta_\alpha \subset \subset U$.
+Show that for every $p$ in the closure of $\bigcup_\alpha \Delta_\alpha$
+(closure in $\C^n$) there exists an analytic disc through $p$ and a sequence
+of discs converging to it that satisfy the hypotheses of the theorem.
+\end{exercise}
+\end{exbox}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Tangent vectors, the Hessian, and convexity}
@@ -5182,8 +5275,8 @@ $r \circ f^{-1}$ near $f(p)$.
 
 \begin{prop}
 Suppose $M \subset \C^n$ is a smooth real hypersurface, $p \in M$,
-and $U \subset \C^n$ is an open set such that $M \subset U$.
-Let $f \colon U \to \C^n$ be a holomorphic mapping such
+and $U \subset \C^n$ is open with $M \subset U$.
+Let $f \colon U \to \C^n$ be holomorphic such
 that $D f(p)$ is invertible (a biholomorphism near $p$).  Let $D_\C f(p)$ be
 the complexified real derivative as before.  Then
 \begin{equation*}
@@ -5204,6 +5297,7 @@ D_\C f(p)\Bigl(T_p^{(1,0)}\C^n\Bigr) = T_{f(p)}^{(1,0)}\C^n, \quad
 D_\C f(p)\Bigl(T_p^{(0,1)}\C^n\Bigr) = T_{f(p)}^{(0,1)}\C^n, \quad
 \text{and} \\
 D_\C f(p)\bigl(\C \otimes T_pM\bigr) =\C \otimes  T_{f(p)}f(M) .
+\avoidbreak
 \end{multline*}
 Then $D_\C f(p)$ must take
 $T_p^{(1,0)}M$ to $T_{f(p)}^{(1,0)}f(M)$ and
@@ -6192,7 +6286,7 @@ Therefore, for $\xi \not= 0$ near the origin,
 $\varphi(\xi) \in U$.  By picking $\lambda$ small enough,
 $\varphi(\overline{\D}\setminus\{0\}) \subset U$.
 
-As $\varphi(\partial \D)$ is compact we can ``wiggle it a little'' and
+As $\varphi(\partial \D)$ is compact, we can ``wiggle it a little'' and
 find discs in $U$.  In particular, for all small enough $s > 0$,
 the closed disc given by
 \begin{equation*}
@@ -6272,13 +6366,13 @@ $z \in W \cap \widebar{U} \setminus \{ p \}$.
 \begin{exercise}
 Suppose $U \subset \C^n$ is an open set with smooth boundary.  Suppose
 for $p \in \partial U$, there is a neighborhood $W$ of $p$
-and a holomorphic function $f \colon W \to
+and a holomorphic $f \colon W \to
 \C$ such that $df(p) \not= 0$, $f(p) = 0$, but
 $f$ is never zero on $W \cap U$.  Show that $U$ is pseudoconvex
-at $p$.  Hint: You may need the holomorphic implicit function theorem, see
-\thmref{thm:ift}.
-Note: The result does not require the derivative of $f$ to not vanish, but is
-much harder to prove without that hypothesis.
+at $p$.  Hint: You may need the holomorphic implicit function theorem
+(\thmref{thm:ift}).
+Note: The result does not require the $df$ to not vanish, but it is
+harder to prove without that hypothesis.
 \end{exercise}
 \end{exbox}
 
@@ -7321,8 +7415,9 @@ polynomials.
 \end{exbox}
 
 \begin{thm}[Kontinuit\"atssatz---Continuity
-principle\index{Kontinuit\"atssatz}\index{continuity principle}]
-\label{thm:contprinciple}
+principle\index{Kontinuit\"atssatz!second version}\index{continuity
+principle!second version}, second version]
+\label{thm:contprinciple2}
 Suppose an open set $U \subset \C^n$ is convex with respect to plurisubharmonic
 functions,
 then given any collection of closed analytic discs $\Delta_\alpha \subset U$
@@ -7331,7 +7426,8 @@ we have
 $\bigcup_\alpha \Delta_\alpha \subset \subset U$.
 \end{thm}
 
-Various similar theorems are named the \emph{continuity principle}.
+Various similar theorems are named the \emph{continuity principle},
+we have seen two.
 Generally what they have in common is the family of analytic discs whose
 boundaries stay inside a domain, and whose conclusion has to do
 with extension of holomorphic functions, or with domains of holomorphy.
@@ -7480,7 +7576,7 @@ As $\rho(z) = \inf_c \rho_c(z)$,
 If we prove that for all $a, b \in \C^n$ the function $\xi \mapsto -\log \rho_c(a+b\xi)$ is
 subharmonic, then $\xi \mapsto - \log \rho(a+b\xi)$ is subharmonic,
 and we are done.
-See \figureref{fig:distfun-hartogs} for the setup:
+See \figureref{fig:distfun-hartogs} for the setup.
 \begin{myfig}
 \subimport*{figures/}{distfun-hartogs.pdf_t}
 \caption{Largest disc in the direction of $c$.
@@ -7530,7 +7626,7 @@ Then
 \subset \subset U ,
 \end{equation*}
 because continuous functions take compact sets to compact sets.
-\hyperref[thm:contprinciple]{Kontinuit\"atssatz}
+\hyperref[thm:contprinciple2]{Kontinuit\"atssatz} (second version)
 implies 
 \begin{equation*}
 \bigcup_{\sabs{t} < t_0} \varphi_t(\Delta)
@@ -7602,7 +7698,8 @@ and $\partial \Delta \subset U$.
 \item
 What do you think would happen if you tried to move $\Delta$ a
 little bit to avoid the intersection with the complement?
-Think about the \hyperref[thm:contprinciple]{continuity principle}.
+Think about the \hyperref[thm:contprinciple2]{continuity principle}
+(second version).
 Compare with \exerciseref{exercise:affinedisctouchingsmooth}.
 \end{exparts}
 \end{exercise}
@@ -7719,7 +7816,8 @@ For a small fixed $\lambda > 0$, the
 closed analytic discs defined by $\xi \in \overline{\D} \mapsto (\lambda \xi, 0, \cdots, 0, is)$
 are in $U$ for all small enough $s > 0$.  The origin
 is a limit point of the insides, but not a limit point of their boundaries.
-\hyperref[thm:contprinciple]{Kontinuit\"atssatz} is not satisfied, and $U$ is not 
+\hyperref[thm:contprinciple2]{Kontinuit\"atssatz} (second version) is not satisfied,
+and $U$ is not 
 convex with respect to the plurisubharmonic functions.  Therefore,
 $U$ is not Hartogs pseudoconvex.
 
