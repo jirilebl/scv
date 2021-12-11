@@ -4397,21 +4397,21 @@ analytic discs are drawn as lines and the boundaries as black dots.
 \end{myfig}
 
 \begin{proof}
-By passing to a subsequence and perhaps considering slightly smaller discs
-(restrictions to discs of radii $1-\epsilon$), we can apply Montel and just
+Passing to a subsequence via Montel and considering slightly smaller discs
+(restrictions to discs of radii $1-\epsilon$), we may
 assume that $\varphi_n$ converge uniformly to $\varphi$ on $\widebar{\D}$.
 For any $f \in \sO(U)$,
 $f \circ \varphi_n$ is holomorphic for all $n$, and as $\varphi_n$ converges
-uniformly, then $f \circ \varphi_n$ converges uniformly on $\partial \D$.
-Hence by the maximum principle this sequence
+uniformly, $f \circ \varphi_n$ converges uniformly on $\partial \D$.
+By the maximum principle this sequence
 converges uniformly in $\widebar{\D}$ to some holomorphic $g \colon
 \widebar{\D} \to \C$.
 
-Now fix some $f \in \sO(U)$.
+Fix some $f \in \sO(U)$.
 As $\varphi(\partial \D)$ is compact, there exists an $r > 0$ such that
 for each $z \in \varphi(\partial \D)$, $\Delta_r(z) \subset U$, meaning that
 the power series of $f$ converges in $\Delta_r(z)$.
-For any positive $s < r$, the set
+Pick a positive $s < r$.  The set
 \begin{equation*}
 \bigcup_{q \in \varphi(\partial \D)} \overline{\Delta_s(q)}
 \end{equation*}
@@ -4431,11 +4431,10 @@ for all $q \in \varphi(\widebar{\D}) \cap U$, and in fact for the
 extended functions it holds for all $q \in \varphi(\widebar{\D})$.
 So we have a power series at each point of
 $\varphi(\widebar{\D})$ that converges in a polydisc of radius $s$,
-and when those points are in $U$, this power series agrees with $f$.
+and when the polydisc lies in $U$, this power series agrees with $f$.
 The resulting function is well-defined on the entire disc
-$\varphi(\widebar{\D})$.  The function continues analytically along
-any path in the disc since at each point of the disc the function has a
-power series that converges in an $s$-polydisc.  Taking $W$ to be a union of finitely
+$\varphi(\widebar{\D})$.  Hence, the function continues analytically along
+any path $\varphi(\widebar{\D})$.  Take $W$ to be a union of finitely
 many polydiscs centered at points of $\varphi(\widebar{\D})$
 and of radius less than or equal to $s$, where we take the polydiscs small
 enough to ensure the extension is well-defined in $W$.
@@ -4443,6 +4442,13 @@ See exercise below.
 \end{proof}
 
 \begin{exbox}
+\begin{exercise}
+Prove that given an analytic disc $\varphi \colon \D \to \C^n$ and a point
+$p \in \varphi(\D)$, then for small enough $\epsilon > 0$, the set
+$\Delta_\epsilon(p) \cap \varphi(\D)$ is connected.  Hint: Pull back the
+coordinate functions from $\C^n$ to $\D$.
+\end{exercise}
+
 \begin{exercise}
 Prove the well-defininedness of the extension.  Hint: The key is to handle what
 happens when two of those polydiscs intersect: Is the extension in the
@@ -5788,7 +5794,6 @@ and $\zeta$ the coordinates in $V'$.
 That is, $r$ is a function of $\zeta$ and $\bar{\zeta}$,
 $f$ is a function of $z$, and $\bar{f}$ is a function of $\bar{z}$.
 So $r \circ f$ is a function of $z$ and $\bar{z}$.
-
 \begin{equation*} %\label{eq:nonmixedderschangeofcoords}
 \begin{split}
 \frac{\partial^2 (r \circ f)}{\partial z_k \partial z_\ell}
@@ -8450,8 +8455,8 @@ neighborhood of $p$.
 A common notation for real-analytic is $C^\omega$.
 \end{defn}
 
-Before we discuss the connection to holomorphic functions, we prove a simple
-lemma.
+Before we discuss the connection between real-analytic and holomorphic functions,
+we prove a simple lemma.
 
 \begin{lemma} \label{lemma:sameonRn}
 Let $\R^n \subset \C^n$ be the natural inclusion and 
@@ -9853,7 +9858,7 @@ dx_{n-1}
 \end{aligned}
 \end{multline}
 where $d_x$ means the derivative in the $x$ directions only.
-That is, $d_x \psi =
+I.e., $d_x \psi =
 \frac{\partial \psi}{\partial x_1} dx_1
 + \cdots +
 \frac{\partial \psi}{\partial x_n} dx_n$.
