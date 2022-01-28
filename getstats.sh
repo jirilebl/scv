@@ -8,5 +8,7 @@ echo
 echo "Figures:                      \t"`grep '^[\]begin{myfig' *.tex | wc -l`
 echo
 echo "Exercises:                    \t"`grep '^[\]begin{exercise' *.tex | wc -l`
+echo
+echo "Footnotes:                    \t"`grep '[\]footnote{' *.tex | wc -l`
 
 echo
