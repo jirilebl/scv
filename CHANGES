@@ -8,6 +8,7 @@ FIXME: Some are WORK IN PROGRESS
 * Move the definition of $(p,q)$-form and its derivative to section 4.4
   as that's where it's needed first.
 * New font, more readable (shorter lines)
+* Exercise 1.2.10 changed to use the unit ball instead of the polydisc.
 * New Exercise 1.5.10.
 * New Exercise 1.6.1, renumbers rest of the exercises in 1.6
 * New Exercise 2.1.4, renumbers rest of the exercises in 2.1
