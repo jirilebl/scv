@@ -35,7 +35,7 @@
 \usepackage{rotating}
 
 \usepackage{cellspace}
-\usepackage[toc,nopostdot,sort=use,nomain,automake]{glossaries}
+\usepackage[toc,nopostdot,sort=use,automake]{glossaries}
 
 %Palatino
 \usepackage[theoremfont]{newpxtext}
@@ -363,8 +363,7 @@
 \newcommand{\remarkref}[1]{\hyperref[#1]{Remark~\ref*{#1}}}
 
 % List of Symbols/Notation
-\newglossary[nlg]{notation}{not}{ntn}{List of Notation}
-
+% rubber: depend notations.tex
 \loadglsentries{notations}
 \makeglossaries
 
@@ -1193,7 +1192,7 @@ see \appendixref{ap:onevarresults}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Holomorphic functions in several variables} \label{ch:holfunc}
+\chapter{Holomorphic Functions in Several Variables} \label{ch:holfunc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3973,7 +3972,7 @@ that is, proper subsets of $\C^n$ that are biholomorphic to $\C^n$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Convexity and pseudoconvexity} \label{ch:convexity}
+\chapter{Convexity and Pseudoconvexity} \label{ch:convexity}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -8438,7 +8437,7 @@ $U$ is Hartogs pseudoconvex.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{CR functions} \label{ch:crfunctions}
+\chapter{CR Functions} \label{ch:crfunctions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -11261,7 +11260,7 @@ FIXME
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Integral kernels} \label{ch:integralkernels}
+\chapter{Integral Kernels} \label{ch:integralkernels}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -12157,7 +12156,7 @@ Using the formula \eqref{eq:formulaszego} compute $S_{\bB_n}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Complex analytic varieties} \label{ch:analyticvarieties}
+\chapter{Complex Analytic Varieties} \label{ch:analyticvarieties}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -14519,7 +14518,7 @@ earthquakes!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Basic notation and terminology} \label{ap:basicnotation}
+\chapter{Basic Notation and Terminology} \label{ap:basicnotation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -14603,7 +14602,7 @@ Y .
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Results from one complex variable} \label{ap:onevarresults}
+\chapter{Results from One Complex Variable} \label{ap:onevarresults}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -15487,7 +15486,7 @@ which are just too interesting not to mention.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Differential forms and Stokes' theorem} \label{ap:diffforms}
+\chapter{Differential Forms and Stokes' Theorem} \label{ap:diffforms}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -16222,7 +16221,7 @@ result.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Basic terminology and results from algebra} \label{ap:algebra}
+\chapter{Basic Terminology and Results from Algebra} \label{ap:algebra}
 
 Let us quickly review some basic definitions
 and a result or two
@@ -16470,12 +16469,12 @@ The proof is not difficult, but it is perhaps beyond the scope of this book.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Measure theory review} \label{ap:measure}
+\chapter{Measure Theory Review} \label{ap:measure}
 
 The beginning of this course does not require the Lebesgue integral,
 however,
 knowing it may make some of the earlier results easier to understand and the
-exercises easier to do.  In some of the later chapters, Lebesgue integral
+exercises easier to work.  In some of the later chapters, Lebesgue integral
 does become necessary in several places.  To make the first reading of the
 entire book easier for a student who has not had a course on measure theory
 yet, we present the basic ideas of the Lebesgue integral and list the
@@ -16487,10 +16486,15 @@ for example, \cite{Rudin:principles} or \cite{Rudin:analysis}.
 Given a set $X$,
 we designate a collection $\sM$ of
 subsets of $X$, called the \emph{\myindex{measurable sets}}.
-On these sets
+The collection $\sM$ should be a
+\emph{$\sigma$-algebra}\index{sigma-algebra@$\sigma$-algebra}, meaning that
+it is closed under taking complements, countable unions, and
+countable intersections.
+On these measurable sets
 we define a measure, that is, a function $\mu \colon \sM \to \R$,
 such that $\mu \geq 0$,
-$\mu(\emptyset) = 0$, and $\mu$ is $\sigma$-additive,
+$\mu(\emptyset) = 0$, and $\mu$ is
+\emph{$\sigma$-additive}\index{sigma-additive@$\sigma$-additive},
 that is, the measure of a union of countably many disjoint sets is the
 sum of the measures.  If $X$ is the euclidean space $\R^n$, there always
 exists a measure called the \emph{\myindex{Lebesgue measure}} that will agree with the
@@ -16498,13 +16502,17 @@ standard $n$-dimensional volume on simple sets such as rectangles.
 A complication is that not all subsets of $\R^n$ can then be measurable.
 We say that $(X,\sM,\mu)$ is a \emph{\myindex{measure space}}.
 
-A function $f \colon X \to \R$ is called measurable if its sublevel
+A function $f \colon X \to \R$ is
+\emph{measurable}\index{measurable function} if its sublevel
 sets are measurable.
-Since one generally has to work hard to produce a nonmeasurable function
-in the usual measure spaces we consider,
-the reader may be forgiven for assuming every function that appears in
+Since one generally has to work hard to produce a
+\myindex{nonmeasurable function}
+in the measure spaces we consider,
+the reader may be forgiven for assuming every function in
 this book is measurable.
-A function is simple if its support is of finite
+A function is
+\emph{simple}\index{simple function}
+if its support is of finite
 measure and it only has finitely many values, in which case the integral is
 defined as
 \begin{equation*}
@@ -16527,9 +16535,25 @@ The integral of a nonnegative measurable $f$ is defined by
 The integral of any real-valued measurable function is
 then defined by writing $f = f_+ - f_-$ for
 nonnegative functions $f_+$ and $f_-$, as long as
-the integrals of at least one of these is not infinite.
+the integrals of at least one of these is not infinite, and writing
+\begin{equation*}
+\int_X f\, d \mu
+\overset{\text{def}}{=}
+\int_X f_+\, d \mu
+-
+\int_X f_-\, d \mu .
+\end{equation*}
 Similarly the integral of
-complex-valued measurable functions is defined by writing $f = u + i \, v$.
+complex-valued measurable functions is defined by writing $f = u + i \, v$,
+that is,
+\begin{equation*}
+\int_X f\, d \mu
+\overset{\text{def}}{=}
+\int_X u\, d \mu
+-
+i
+\int_X v\, d \mu .
+\end{equation*}
 The most common class of functions to deal with is then the
 \emph{$L^1$-integrable}\index{L1-integrable@$L^1$-integrable}
 functions, which are the functions such that
@@ -16557,7 +16581,7 @@ limit.
 Besides integration, one often forgotten feature of this setup is that it
 applies to series.  For a countable set $X$ such as $\N$ we can define
 the so-called \emph{\myindex{counting measure}}, where every set $S \subset
-X$ is measurable and $\mu(S)$ is simply the number of elements in $S$.
+X$ is measurable and $\mu(S)$ is simply the number of elements in~$S$.
 If $z_n = f(n)$ is a function defined on $X$, then we write
 \begin{equation*}
 \sum_{n \in X} z_n = \int_X f \, d\mu .
@@ -16578,7 +16602,7 @@ other, but each statement is useful in different situations.
 \pagebreak[2]
 Let $(X,\sM,\mu)$ be a measure space and
 $\{ f_n \}$ a sequence of nonnegative measurable functions that converges
-almost everywhere to a function $f$.  Then
+almost everywhere to a function~$f$.  Then
 \begin{equation*}
 \int_X f \, d\mu \leq \liminf_{n\to \infty} \int_X f_n \, d\mu .
 \end{equation*}
@@ -16588,7 +16612,7 @@ almost everywhere to a function $f$.  Then
 \pagebreak[2]
 Let $(X,\sM,\mu)$ be a measure space and
 $\{ f_n \}$ a sequence of nonnegative measurable functions that converges
-pointwise to a function $f$.  Then
+pointwise to a function~$f$.  Then
 \begin{equation*}
 \int_X f \, d\mu = \lim_{n\to \infty} \int_X f_n \, d\mu .
 \end{equation*}
@@ -16725,7 +16749,7 @@ integration such as
 %\cleardoublepage  
 \clearpage
 \phantomsection
-\addcontentsline{toc}{chapter}{Further reading}
+\addcontentsline{toc}{chapter}{Further Reading}
 \markboth{FURTHER READING}{FURTHER READING}
 \begin{bibchapter}[Further Reading] \label{ch:furtherreading}
 
@@ -16932,7 +16956,7 @@ integration such as
   {\end{longtable}}%
 \cleardoublepage
 \microtypesetup{protrusion=false}
-\printglossary[type=notation] 
+\printglossary[title=List of Notation] 
 \microtypesetup{protrusion=true}
 \endgroup
 
