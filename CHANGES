@@ -5,11 +5,11 @@ FIXME: Some are WORK IN PROGRESS
 * New short appendix on the useful measure theory results.
 * New section 4.4 on the solvability of the d-bar problem in the polydisc.
   (WORK IN PROGRESS)
-* Move the definition of $(p,q)$-form and its derivative to section 4.4
+* Move the definition of \((p,q)\)-form and its derivative to section 4.4
   as that's where it's needed first.
 * New font, more readable (shorter lines)
-* In proof of Proposition 1.1.3, emphasize that (1.1) means $f$ is
-  continuous on $U$, not just $\Delta$, to avoid worrying about
+* In proof of Proposition 1.1.3, emphasize that (1.1) means \(f\) is
+  continuous on \(U,\) not just \(\Delta,\) to avoid worrying about
   measurability.
 * Exercise 1.2.10 changed to use the unit ball instead of the polydisc.
 * New Exercise 1.5.10.
@@ -25,15 +25,19 @@ FIXME: Some are WORK IN PROGRESS
   of the real and complex Hessians.  (mainly the exercises)
 * In Exercise 2.5.15, it is much easier to use exercise 2.5.9
   than the "hint" in text, so replace that hint.
-* Move Exercise 2.6.13 (Behnke--Stein) past Cartan--Thullen.  It is much
+* Move Exercise 2.6.13 (Behnke-Stein) past Cartan-Thullen.  It is much
   easier then.
 * Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
-* Figures now have numbers, captions, float, and have explicit references
-  in text.
+* In appendix B, introduce and use winding numbers and describe how things
+  are connected to our statements.  That makes things more compatible with
+  most one-variable books.
+* Improve Figure C.1 a little.
+
 * When computing the Hessian use the vertical bar to evaluate,
   it may be clearer
-* Improve Figure C.1 a little.
+* Figures now have numbers, captions, float, and have explicit references
+  in text.
 * Replace many j's with k's or similar for aesthetic reasons.  Some other
   letters are changed to be more consistent too.
 * Some figures have been mildly cleaned up.

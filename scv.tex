@@ -549,7 +549,7 @@ be covered within a semester.  See the end of the book
 for a \hyperref[ch:furtherreading]{list of books} for
 reference and further reading.  There are also appendices for
 a list of one-variable results, an overview of differential forms,
-some basic algebra, and measure theory,
+some basic algebra, and measure theory.
 See \appendixref{ap:onevarresults},
 \appendixref{ap:diffforms},
 \appendixref{ap:algebra}, and
@@ -14607,10 +14607,10 @@ Y .
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We review some results from one complex variable that may be useful for
+We review some results from one complex variable useful for
 reading this book.
 The reader should first look through \sectionref{sec:motivation}
-for basic notation and motivation, although we will review some of the
+for basic notation and motivation, although we review some of the
 results again here.
 Let $U \subset \C$ be open.
 A function
@@ -14621,30 +14621,30 @@ f'(z) = \lim_{h \in \C \to 0} \frac{f(z+h) - f(z)}{h}
 \end{equation*}
 exists for all $z \in U$.  For example, polynomials and rational
 functions in $z$ are holomorphic.  Perhaps the most important holomorphic
-function is the solution to the differential equation $f'(z) = f(z)$, $f(0) = 1$, that is
-the complex exponential, defined in the entire complex plane:
+function is the solution to the differential equation $f'(z) = f(z)$, $f(0) = 1$,
+the complex exponential,
 \begin{equation*}
 f(z) = e^z = e^{x+iy} = e^x \bigl( \cos y + i \sin(y) \bigr) .
 \end{equation*}
 
 
 A piecewise-$C^1$ \emph{path} (or curve)\index{path}\index{curve} in $\C$
-is a continuous function $\gamma \colon [a,b] \to \C$,
+is a continuous $\gamma \colon [a,b] \to \C$,
 continuously differentiable except at finitely many points,
-such that one-sided limits of $\gamma'$ exist at all points of $[a,b]$
-and such that $\gamma'$ (and its one sided limits) is never zero.
+such that one-sided limits of $\gamma'(t)$ exist at all $t \in [a,b]$
+and such that $\gamma'$ (or its one-sided limits) is never zero.
 By abuse of notation, when $\gamma$ is used as a set, we mean
 the image
 $\gamma\bigl([a,b]\bigr)$.
-For a continuous function $f \colon \gamma \to \C$, define
+For a continuous $f \colon \gamma \to \C$, define
 \glsadd{not:pathint}%
 \begin{equation*}
 \int_\gamma f(z) \, dz 
 \overset{\text{def}}{=}
 \int_a^b f\bigl(\gamma(t)\bigr) \gamma'(t) \, dt .
 \end{equation*}
-As $\gamma'$ is defined at all but finitely many points and is otherwise
-continuous, the integral is well-defined.  Similarly, one defines the more general
+As $\gamma'$ is continuous at all but finitely many points,
+the integral is well-defined.  Similarly, one defines the more general
 path integral in $dz = dx + i\,dy$ and $d\bar{z} = dx - i\, dy$.
 Let
 $z = \gamma(t) = \gamma_1(t) + i \, \gamma_2(t) = x + i\, y$
@@ -14691,7 +14691,7 @@ such that
 $\partial U \cap W = \gamma\bigl((a,b)\bigr)$
 where $\gamma \colon [a,b] \to \C$ is an injective piecewise-$C^1$ path,
 and such that each $p \in \partial U$ is in the closure of $\C \setminus
-\widebar{U}$.  Intuitively the boundary is a piecewise-$C^1$ curve that
+\widebar{U}$.  Intuitively, the boundary is locally a piecewise-$C^1$ curve that
 locally cuts the plane into two open pieces.
 If at each point where the parametrization of $\partial U$ is differentiable
 the domain is on the left ($\gamma'(t)$ rotated by $\frac{\pi}{2}$ points into the
@@ -14714,7 +14714,55 @@ d \zeta .
 \end{equation*}
 \end{thm}
 
-The theorem follows from Green's theorem, which is the Stokes' theorem
+Usually the theorem is stated with
+\emph{winding numbers}\index{winding number}.
+The winding number is the number of times a closed path $\gamma$ ``goes
+around'' a point $p \not\in \gamma$.
+More precisely it is defined by
+\begin{equation*}
+n(\gamma;p)
+\overset{\text{def}}{=}
+\frac{1}{2\pi i} \int_{\gamma} \frac{1}{z-p} \, dz .
+\end{equation*}
+It is easy to show that $n(\gamma;p)$ is always an integer and
+it is constant on the components of $\C \setminus \gamma$.
+It is also defined on \emph{cycles}\index{cycle}, which are just
+formal sums of closed paths
+$\Gamma = \gamma_1 + \gamma_2 + \cdots + \gamma_n$,
+by simply summing the corresponding integrals.
+
+A common statement of the Cauchy integral formula with 
+winding numbers is that if
+$U$ is open, $f \colon U \to \C$ holomorphic, and $\gamma$ is
+a closed piecewise $C^1$ path (or cycle) in $U$, such that
+$n(\gamma;p) = 0$ for all $p \not\in U$, then
+\begin{equation*}
+n(\gamma;z) f(z) =
+\frac{1}{2\pi i}
+\int_{\gamma}
+\frac{f(\zeta)}{\zeta-z}
+\,
+d \zeta .
+\end{equation*}
+
+By the \emph{\myindex{Jordan curve theorem}}, a simple closed path
+divides the plane into two components, one bounded and one unbounded.
+The bounded component is called the \emph{\myindex{interior}} of $\gamma$,
+and the unbounded component, called the \emph{\myindex{exterior}}.
+It can be shown that for a piecewise-$C^1$ path $\gamma$,
+$n(\gamma;p) = \pm 1$ for $p$ in the interior of
+$\gamma$ and $n(\gamma;p) = 0$ for $p$ in the exterior of $\gamma$.
+We say $\gamma$ is oriented positively if $n(\gamma;p) = 1$ on the interior.
+
+More generally if $U$ is a bounded open set with piecewise-$C^1$ boundary
+$\partial U$ oriented positively, then one can show that $\partial U$
+is composed of finitely
+many simple closed paths oriented in such a way that $n(\partial U;p) = 1$
+for $p \in U$ and $n(\partial U;p) = 0$ for $p \in \C \setminus \widebar{U}$.
+
+
+One way to get at the Cauchy integral formula is via Green's theorem,
+which is the Stokes' theorem
 in two dimensions.  In the versions we state, one needs to
 approximate the open set by smaller open sets from the inside to insure
 the partial derivatives are bounded.  See
@@ -14776,10 +14824,16 @@ f(z) \, dz = 0 .
 \end{equation*}
 \end{thm}
 
-There is a converse to Cauchy as well.  A triangle $T \subset \C$ is
+Again, the alternative statement with winding numbers
+ is that if $U$ is open, $f \colon U \to \C$ holomorphic, and $\gamma$ is
+a closed piecewise $C^1$ path (or cycle) in $U$, such that
+$n(\gamma;p) = 0$ for all $p \not\in U$, then
+the integral of $f$ over $\gamma$ vanishes.
+
+There is a converse to Cauchy.  A triangle $T \subset \C$ is
 the convex hull of the three vertices (we include the inside of the
 triangle), and $\partial T$ is the boundary of the triangle oriented
-counter-clockwise.  Let us state the following theorem as an
+counter-clockwise.  We state the following theorem as an
 ``if and only if,'' even though, usually it is only the reverse direction that
 is called Morera's theorem.
 
@@ -14789,8 +14843,9 @@ is continuous.  Then $f$ is holomorphic
 if and only if
 \begin{equation*}
 \int_{\partial T} f(z) \, dz = 0
+\qquad
+\text{for all triangles } T \subset U.
 \end{equation*}
-for all triangles $T \subset U$.
 \end{thm}
 
 As we saw in the introduction, a holomorphic function has a power series.
@@ -15078,7 +15133,7 @@ there exists a holomorphic function $F \colon U \to \C$
 such that $f(z) = F(z)$ for all $z \in U \setminus \{ p \}$.
 An isolated singularity is a \emph{\myindex{pole}} if 
 \begin{equation*}
-\lim_{z \to p} f(z) = \infty \qquad \text{(that is
+\lim_{z \to p} f(z) = \infty \qquad \text{(that is,
 $\sabs{f(z)} \to \infty$ as $\sabs{z-p} \to 0$)}.
 \end{equation*}
 An isolated singularity that is neither removable nor a pole is said to be
@@ -15180,14 +15235,21 @@ compute.  For example, if $p$ is a simple pole (of order 1), then
 
 \begin{thm}[Residue theorem]\index{residue theorem}\label{thm:residue}
 Suppose $U \subset \C$ is an open set, and $\gamma$ is a piecewise-$C^1$
-simple closed path in $U$ such that the interior of $\gamma$ is in $U$.
+closed path in $U$
+such that $n(\gamma;p)=0$ for all $p \not\in U$.
 Suppose that $f \colon U \setminus S \to \C$ is a holomorphic function with isolated
 singularities in a finite set $S$, and suppose $S$ lies in the interior of $\gamma$.
 Then
 \begin{equation*}
-\int_{\gamma} f(z) \, dz = 2\pi i \sum_{p \in S} \operatorname{Res}(f,p) .
+\int_{\gamma} f(z) \, dz = 2\pi i \sum_{p \in S} n(\gamma;p) \operatorname{Res}(f,p) .
 \end{equation*}
 \end{thm}
+
+If $\gamma$ is a simple closed curve positively oriented,
+then $n(\gamma;p)=1$ for all $p$ in
+its interior, and we can replace the hypothesis on $\gamma$
+by requiring that the interior of $\gamma$ lies in $U$ and hence avoid
+mentioning winding numbers.
 
 The identity theorem says that zeros of a nonconstant holomorphic $f$
 have no limit points, and so are isolated points.
@@ -15197,7 +15259,9 @@ isolated.  Zeros and poles of  can be counted fairly easily.
 
 \begin{thm}[Argument principle]\index{argument principle}\label{thm:onevarargprinc}
 Suppose $U \subset \C$ is an open set, and $\gamma$ is a piecewise-$C^1$
-simple closed path in $U$ such that the interior of $\gamma$ is in $U$.
+closed path in $U$ such that
+$n(\gamma;p)=0$ for all $p \not\in U$ and $n(\gamma;p) \in \{ 0,1 \}$ for
+all $p \not\in \gamma$.
 Suppose that $f \colon U \to \bP^1$ is a meromorphic function with no zeros
 or poles on $\gamma$.
 Then
@@ -15225,6 +15289,9 @@ Then
 \end{equation*}
 \end{thm}
 
+Again, if $\gamma$ is simple closed and positively oriented,
+the hypothesis on $\gamma$ could be replaced with the requirement that
+the interior of $\gamma$ lies in $U$.
 The proof is an immediate application of the residue theorem.  Simply
 compute the residues at the zeros and poles of $f$.  In particular,
 if $f$ has a zero at $p$ or multiplicity $m$, then $h(z) \frac{f'(z)}{f(z)}$
@@ -15233,16 +15300,13 @@ at $p$ with residue $m\, h(p)$.  Similarly, if $f$ has a pole at $p$ of
 order $m$,
 then $h(z) \frac{f'(z)}{f(z)}$ has a simple pole with residue $-m\, h(p)$ at $p$.
 
-In the couple of theorems above,
-we avoided introducing winding numbers by making $\gamma$ a simple closed curve,
-so the statements above may be slightly different from what you have seen in
-your one-variable course.
-
 Another useful way to count zeros is Rouch\'e's theorem.
 
 \begin{thm}[Rouch\'e]\index{Rouch\'e's theorem}\label{thm:onevarrouche}
 Suppose $U \subset \C$ is an open set, and $\gamma$ is a piecewise-$C^1$
-simple closed path in $U$ such that the interior of $\gamma$ is in $U$.
+closed path in $U$ such that
+$n(\gamma;p)=0$ for all $p \not\in U$ and $n(\gamma;p) \in \{ 0,1 \}$ for
+all $p \not\in \gamma$.
 Suppose that $f \colon U \to \C$ and $g \colon U \to \C$
 are holomorphic functions such that
 \begin{equation*}
@@ -15451,6 +15515,7 @@ Define
 E_0(z) = (1-z), \qquad
 E_m(z) = (1-z) \exp\left( z +\frac{z^2}{2} + \cdots + \frac{z^m}{m} \right)
 .
+\avoidbreak
 \end{equation*}
 The function $E_m\bigl(\nicefrac{z}{a}\bigr)$ has a zero of order 1 at $a$.
 
@@ -15513,13 +15578,13 @@ Fundamental Theorem of Calculus,
 \end{equation*}
 We interpret both sides as integration.  The left-hand side is an integral
 of the $1$-form $f'\, dx$ over the $1$-dimensional interval $[a,b]$
-and the right-hand side is an integral of the $0$-form, that is a  function,
+and the right-hand side is an integral of the $0$-form (a function)
 $f$ over the $0$-dimensional (two-point) set $\{ a, b \}$.  Both sides
 consider orientation, $[a,b]$ is integrated from $a$ to $b$,
 $\{a\}$ is oriented negatively and 
 $\{b\}$ is oriented positively.  The two-point set
 $\{a,b\}$ is the boundary of $[a,b]$, and the orientation of $\{ a,b \}$
-is induced by $[a,b]$.
+is induced by the orientation of $[a,b]$.
 
 Let us define the objects over which we integrate, that is,
 smooth submanifolds of $\R^n$.
