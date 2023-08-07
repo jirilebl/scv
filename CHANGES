@@ -19,10 +19,16 @@ FIXME: Some are WORK IN PROGRESS
 * New Theorem 2.1.7, the extension version of the continuity principle.
   Name the two version "first version" and "second version."
 * Adds Exercises 2.1.15, 2.1.16, and 2.1.17
+* In Exercise 2.3.2 ask to show that the new full Hessian matrix is also
+  Hermitian.
 * New Exercises 2.3.3-2.3.5, renumbers the rest in 2.3
 * New part b) to exercise 5.2.3.
 * In 2.3 add a bit more on the relationship of the positivity/eigenvalues of
   of the real and complex Hessians.  (mainly the exercises)
+* The real Hessian in terms of the zs and zbars has now the block rows
+  flipped, that is really the correct way to look at it so that it is
+  hermitian.
+* Rename 2.4 to "From harmonic to plurisubharmonic functions"
 * In Exercise 2.5.15, it is much easier to use exercise 2.5.9
   than the "hint" in text, so replace that hint.
 * Move Exercise 2.6.13 (Behnke-Stein) past Cartan-Thullen.  It is much

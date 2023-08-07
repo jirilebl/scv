@@ -4388,12 +4388,13 @@ neighborhood of $\varphi(\partial \D)$.
 \end{thm}
 
 In particular, a $U$ that possesses such discs is not a domain of holomorphy.
-The continuity principle is illustrated in \figureref{fig:contprinc}, where
+The continuity principle is illustrated in \figureref{fig:contprinc1}, where
 analytic discs are drawn as lines and the boundaries as black dots.
 
 \begin{myfig}
 \subimport*{figures/}{contprinc1.pdf_t}
-\caption{Continuity principle for extension of functions.\label{fig:contprinc}}
+\caption{Continuity principle for extension of
+functions.\label{fig:contprinc1}}
 \end{myfig}
 
 \begin{proof}
@@ -4741,7 +4742,7 @@ of $f(p)$ in $\R^m$:
 %$Df(p) X_p$ acts on $\varphi$ as
 \glsadd{not:Df}%
 \begin{equation*}
-Df(p) X_p \varphi = X_p (\varphi \circ f) .
+\bigl( Df(p) X_p \bigr) \varphi = X_p (\varphi \circ f) .
 \end{equation*}
 It is the only reasonable way to put those three objects together.
 When the spaces are $\C^n$ and $\C^m$, we denote this
@@ -4801,9 +4802,10 @@ above is strict for all nonzero $X_p \in T_p \partial U$, then $U$ is said to be
 
 A domain $U$ is \emph{convex} if it is convex at all $p \in \partial U$.
 If $U$ is bounded\footnote{Matters are a little more complicated
-with the ``strong'' terminology if $U$ is unbounded.}, we say
-$U$ is \emph{strongly convex} if it is strongly convex at all $p \in
-\partial U$.
+with the ``strong'' terminology if $U$ is unbounded, so sometimes
+\emph{\myindex{strictly convex}} is used instead.},
+we say $U$ is \emph{strongly convex} if it is strongly convex at all
+$p \in \partial U$.
 \end{defn}
 
 The matrix
@@ -5030,7 +5032,7 @@ $M$ as
 y = \frac{1}{2}\, x^t H x + E(x) .
 \end{equation*}
 If $M$ is the boundary
-$\partial U$ of an open set, then
+$\partial U$ of an open set $U$, then
 we pick the rotation so that $y > \frac{1}{2}\,x^t H x + E(x)$ on $U$.
 It is an easy exercise to show that $U$ is convex at $p$ if
 $H$ positive semidefinite, and $U$ is strongly convex at $p$ if $H$ is positive definite.
@@ -5051,7 +5053,9 @@ function).
 \end{exercise}
 \end{exbox}
 
-Recall that $U$ is \emph{\myindex{geometrically convex}} if for every $p,q \in U$ the
+Recall that $U$ is
+\emph{\myindex{geometrically convex}}\index{convex!geometrically}
+if for every $p,q \in U$ the
 line between $p$ and $q$ is in $U$, or in other words
 $tp +(1-t)q \in U$ for all $t \in [0,1]$.
 In particular, geometric convexity is a \emph{global} condition.  You need 
@@ -5394,7 +5398,8 @@ X_p = \sum_{k=1}^n a_k
 T^{(1,0)}_p \partial U,
 \end{equation*}
 then $U$ is \emph{\myindex{pseudoconvex}} at $p$
-(or \emph{\myindex{Levi pseudoconvex}}).  If the inequality
+(or \emph{\myindex{Levi pseudoconvex}}).
+If the inequality
 above is strict for all nonzero $X_p \in T^{(1,0)}_p \partial U$, then $U$ is
 \emph{\myindex{strongly pseudoconvex}} at $p$.
 If $U$ is pseudoconvex, but not strongly pseudoconvex, at $p$, then
@@ -5404,7 +5409,8 @@ A domain $U$ is \emph{pseudoconvex} if it is pseudoconvex at all $p \in \partial
 For a bounded\footnote{The definition for unbounded domains is not
 consistent in the literature.
 Sometimes \emph{\myindex{strictly pseudoconvex}} is used.} $U$, we say $U$
-is \emph{strongly pseudoconvex} if it is strongly pseudoconvex at all $p \in \partial U$.
+is \emph{strongly pseudoconvex} if it is strongly pseudoconvex
+at all $p \in \partial U$.
 
 For $X_p \in T^{(1,0)}_p\partial U$, the sesquilinear form
 \glsadd{not:Leviform}%
@@ -5443,32 +5449,13 @@ computing the
 Levi form directly from $r(z,\bar{z}) = \snorm{z}^2-1$, that is,
 the complex Hessian of $r$ is the identity matrix.
 
-We remark that the complex Hessian is not the full Hessian.
+We remark that the complex Hessian is not the full (real) Hessian.
 Let us write down the full Hessian, using the
 basis of $\frac{\partial}{\partial z}$s and
 $\frac{\partial}{\partial \bar{z}}$s.  It is
-the symmetric matrix
+the Hermitian matrix
 \begin{equation*}
 \begin{bmatrix}
-\frac{\partial^2 r}{\partial z_1 \partial z_1}
-& \cdots &
-\frac{\partial^2 r}{\partial z_1 \partial z_n}
-&
-\frac{\partial^2 r}{\partial z_1 \partial \bar{z}_1} 
-& \cdots &
-\frac{\partial^2 r}{\partial z_1 \partial \bar{z}_n} 
-\\
-\vdots & \ddots & \vdots & \vdots & \ddots & \vdots
-\\
-\frac{\partial^2 r}{\partial z_n \partial z_1}
-& \cdots &
-\frac{\partial^2 r}{\partial z_n \partial z_n}
-&
-\frac{\partial^2 r}{\partial z_n \partial \bar{z}_1} 
-& \cdots &
-\frac{\partial^2 r}{\partial z_n \partial \bar{z}_n} 
-\\
-%%%%%
 \frac{\partial^2 r}{\partial \bar{z}_1 \partial z_1}
 & \cdots &
 \frac{\partial^2 r}{\partial \bar{z}_1 \partial z_n}
@@ -5486,12 +5473,36 @@ the symmetric matrix
 \frac{\partial^2 r}{\partial \bar{z}_n \partial \bar{z}_1} 
 & \cdots &
 \frac{\partial^2 r}{\partial \bar{z}_n \partial \bar{z}_n} 
+\\
+%%%%%
+\frac{\partial^2 r}{\partial z_1 \partial z_1}
+& \cdots &
+\frac{\partial^2 r}{\partial z_1 \partial z_n}
+&
+\frac{\partial^2 r}{\partial z_1 \partial \bar{z}_1} 
+& \cdots &
+\frac{\partial^2 r}{\partial z_1 \partial \bar{z}_n} 
+\\
+\vdots & \ddots & \vdots & \vdots & \ddots & \vdots
+\\
+\frac{\partial^2 r}{\partial z_n \partial z_1}
+& \cdots &
+\frac{\partial^2 r}{\partial z_n \partial z_n}
+&
+\frac{\partial^2 r}{\partial z_n \partial \bar{z}_1} 
+& \cdots &
+\frac{\partial^2 r}{\partial z_n \partial \bar{z}_n} 
 \end{bmatrix}
 .
 \end{equation*}
-The complex Hessian is the lower left,
-or the transpose of the upper right, block---if you write the full Hessian as
-$\Bigl[ \begin{smallmatrix} X & L^t \\ L & \widebar{X} \end{smallmatrix}
+To make it a Hermitian form, note that when multiplying on the left by $X_p$
+we are also taking the conjugate so the rows for the $z$s and the $\bar{z}$s
+are flipped.\footnote{It is common to also write it not flipped, in which case it
+will be a symmetric martrix.}
+Note that it is Hermitian only for a real-valued $r$ (see an exercise below).
+The complex Hessian is the upper left,
+or the transpose of the lower right, block---if you write the full Hessian as
+$\Bigl[ \begin{smallmatrix} L & \widebar{Z} \\ Z & L^t \end{smallmatrix}
 \Bigr]$, then $L$ is the complex Hessian.
 Note that $L$ is a smaller matrix and we apply it only to a subspace 
 of the complexified tangent space.
@@ -5507,7 +5518,7 @@ T =
 \end{bmatrix}
 ,
 \qquad
-T^t
+T^*
 \begin{bmatrix}
 \frac{\partial^2 r}{\partial x \partial x} &&
 \frac{\partial^2 r}{\partial x \partial y}
@@ -5518,27 +5529,36 @@ T^t
 T
 =
 \begin{bmatrix}
-\frac{\partial^2 r}{\partial z \partial z} &&
-\frac{\partial^2 r}{\partial z \partial \bar{z}}
-\\
 \frac{\partial^2 r}{\partial \bar{z} \partial z} &&
 \frac{\partial^2 r}{\partial \bar{z} \partial \bar{z}}
+\\
+\frac{\partial^2 r}{\partial z \partial z} &&
+\frac{\partial^2 r}{\partial z \partial \bar{z}}
 \end{bmatrix}
-.
+,
 \end{equation*}
-The relationship between the eigenvalues of the real and the complex
+where
+\glsadd{not:star}%
+$T^* = \widebar{T}^t$ is the conjugate transpose.
+By Sylvester's law of inertia from linear algebra, star-congruence
+preserves the inertia (the number of positive, negative, and zero
+eigenvalues).  So the
+inertial of the full Hessian in terms of $x$s and $y$s is the same
+as for the full Hessian in terms of $z$s and $\bar{z}$s.
+The relationship between the eigenvalues of the full Hessian and the complex
 Hessian is not as straightforward as may at first seem, but there is
 a relationship there nonetheless.
 
 \begin{exbox}
 \begin{exercise}[Easy]
 If $r$ is real-valued, then the complex Hessian of $r$ is Hermitian, that
-is, the matrix is equal to its conjugate transpose.
+is, the matrix is equal to its conjugate transpose.  Also,
+the full Hessian in terms of $z$s and $\bar{z}$s is also Hermitian.
 \end{exercise}
 
 \begin{exercise}
-Consider one dimension and $z = x+iy$.
-Consider
+Consider one dimension, $z = x+iy$, and the real Hessian
+in terms of $x$ and $y$:
 \begin{equation*}
 H=\begin{bmatrix}
 \frac{\partial^2 r}{\partial x\partial x} &&
@@ -5546,9 +5566,8 @@ H=\begin{bmatrix}
 \\
 \frac{\partial^2 r}{\partial y \partial x} &&
 \frac{\partial^2 r}{\partial y\partial y}
-\end{bmatrix} ,
+\end{bmatrix} .
 \end{equation*}
-the real Hessian in terms of $x$ and $y$.
 Prove that the complex Hessian $L$ (just a number now) is $\nicefrac{1}{4}$
 of the trace of $H$.
 Thus, if $H$ is positive definite, then $L > 0$, and if $H$ is negative
@@ -5559,7 +5578,7 @@ and negative), then $L$ can be positive, negative, or zero.
 
 \begin{exercise}
 For every dimension,
-find the change of variables $T^t H T$ to go from the real Hessian in terms
+find the change of variables $T^* H T$ to go from the real Hessian in terms
 of $x$ and $y$ to the Hessian in terms of $z$ and $\bar{z}$.
 Hint: If you figure it out for $n=2$, it
 will be easy to do in general.
@@ -5574,34 +5593,29 @@ nonzero vectors $v$ and semidefinite if $v^*Lv \geq 0$ for all $v$.
 \end{exbox}
 
 Let us also see how a complex linear change of variables
-acts on the Hessian matrix.  A complex linear change of variables is not an
+acts on the Hessian.  A complex linear change of variables is not an
 arbitrary $2n \times 2n$ matrix.  If the Hessian is in the 
 basis of $\frac{\partial}{\partial z}$s and
-$\frac{\partial}{\partial \bar{z}}$s, an $n \times n$ complex linear matrix $A$
+$\frac{\partial}{\partial \bar{z}}$s as above,
+an $n \times n$ complex linear matrix $A$
 acts on the Hessian as $A \oplus \widebar{A} = 
 \left[ \begin{smallmatrix} A & 0 \\ 0 & \widebar{A} \end{smallmatrix}
 \right]$.
 Write the full Hessian as
-$\left[ \begin{smallmatrix} X & L^t \\ L & \widebar{X} \end{smallmatrix}
+$\left[ \begin{smallmatrix} L & \widebar{Z} \\ Z & L^t \end{smallmatrix}
 \right]$, where $L$ is the complex Hessian.  The complex linear change
 of variables $A$ transforms
 the full Hessian as
 \begin{equation*}
-{\begin{bmatrix} A & 0 \\ 0 & \widebar{A} \end{bmatrix}}^t
-\begin{bmatrix} X & L^t \\ L & \widebar{X} \end{bmatrix}
+{\begin{bmatrix} A & 0 \\ 0 & \widebar{A} \end{bmatrix}}^*
+\begin{bmatrix} L & \widebar{Z} \\ Z & L^t \end{bmatrix}
 \begin{bmatrix} A & 0 \\ 0 & \widebar{A} \end{bmatrix}
 =
-\begin{bmatrix} A^tXA & {(A^*LA)}^t \\ A^*LA & \overline{A^tXA} \end{bmatrix} ,
+\begin{bmatrix} A^*LA & \overline{A^tZA} \\ A^tZA & {(A^*LA)}^t \end{bmatrix} ,
 \end{equation*}
-\glsadd{not:star}%
-where $A^* = \widebar{A}^t$ is the conjugate
-transpose of $A$.
-So $A$
-transforms the complex Hessian $L$ as $A^* L A$, that is, by $*$-congruence.
-Star-congruence preserves the \emph{\myindex{inertia}}
-(the number of positive, negative, and zero eigenvalues)
-of a Hermitian matrix
-by the Sylvester's law of inertia from linear algebra.
+Again by Sylvester's law of inertia,
+$L$ and $A^*LA$ have the same innertia, that is,
+the number of positive, negative, and zero eigenvalues.
 
 The Levi form itself does depend on the defining function, but the signs of
 the eigenvalues do not.  It is common to say ``the
@@ -5677,7 +5691,6 @@ Let us change variables to write the ball $\bB_n$ in different
 local holomorphic coordinates where the Levi form is displayed nicely.
 The sphere $\partial \bB_n$ is defined in the variables $Z = (Z_1,\ldots,Z_n) \in \C^n$
 by $\snorm{Z} = 1$.
-
 We change variables 
 to $(z_1,\ldots,z_{n-1},w)$ where
 \begin{equation*}
@@ -5743,11 +5756,10 @@ In the coordinates $(z,w)$, the ball (the inside of the sphere) is the set given
 \begin{equation*}
 \Im w > \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2 .
 \end{equation*}
-
-In these new coordinates, the Levi form is just the identity matrix at the
-origin.  In particular, the domain is strongly pseudoconvex.
-We have not yet proved that pseudoconvexity is a biholomorphic invariant,
-but when we do, it will also mean that the ball is strongly pseudoconvex.
+In these coordinates, the Levi form is just the identity matrix at the
+origin, and so the domain is strongly pseudoconvex at the origin.
+We will prove that (strong) pseudoconvexity is a biholomorphic invariant,
+and so the ball is strongly pseudoconvex.
 
 Not the entire sphere gets transformed, the points where $Z_n=1$
 get ``sent to infinity.''
@@ -5758,12 +5770,6 @@ fact, completely incorrect.
 If we think of the sphere in the complex projective space,
 we are simply looking at the sphere in a different coordinate patch.}.
 Pretending $z$ is just one real direction, see \figureref{fig:lewy-hyper}.
-
-\begin{myfig}
-\subimport*{figures/}{lewy-hyper.eepic}
-\caption{Lewy hypersurface.\label{fig:lewy-hyper}}
-\end{myfig}
-
 As an aside,
 the hypersurface 
 $\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$ is also called the
@@ -5771,6 +5777,10 @@ $\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$ is also called the
 is the group defined on the parameters $(z,\Re w)$ of this hypersurface with the
 group law defined by $(z,\Re w)(z',\Re w') =
 (z+z',\Re w + \Re w' + 2 \Im z \cdot z')$.
+\begin{myfig}
+\subimport*{figures/}{lewy-hyper.eepic}
+\caption{Lewy hypersurface.\label{fig:lewy-hyper}}
+\end{myfig}
 \end{example}
 
 \begin{exbox}
@@ -5787,15 +5797,14 @@ function with nonvanishing derivative.  Let us compute the Hessian of
 $r \circ f \colon V \to \R$.
 We first compute what happens to the nonmixed derivatives.
 As we have to apply chain rule twice, to keep better track of things,
-we write where the derivatives are being evaluated, as they are, after all,
-functions.
+we write where the derivatives are being evaluated inside the computation,
+as they are, after all, functions.
 For clarity, let $z$ be the coordinates in $V$
 and $\zeta$ the coordinates in $V'$.
 That is, $r$ is a function of $\zeta$ and $\bar{\zeta}$,
 $f$ is a function of $z$, and $\bar{f}$ is a function of $\bar{z}$.
 So $r \circ f$ is a function of $z$ and $\bar{z}$.
-\begin{equation*} %\label{eq:nonmixedderschangeofcoords}
-\begin{split}
+\begin{align*}
 \frac{\partial^2 (r \circ f)}{\partial z_k \partial z_\ell}
 %\bigg|_{(z,\bar{z})}
 & =
@@ -5810,7 +5819,7 @@ So $r \circ f$ is a function of $z$ and $\bar{z}$.
 \bigg|_{(f(z),\bar{f}(\bar{z}))}
 \cancelto{0}{\frac{\partial \bar{f}_m}{\partial z_\ell} \bigg|_{\bar{z}}}
 \biggr)
-\\
+\displaybreak[0]\\
 & =
 \sum_{m,\nu=1}^n
 \biggl(
@@ -5829,7 +5838,7 @@ So $r \circ f$ is a function of $z$ and $\bar{z}$.
 \sum_{m=1}^n 
 \frac{\partial r}{\partial \zeta_m} \bigg|_{(f(z),\bar{f}(\bar{z}))}
 \frac{\partial^2 f_m}{\partial z_k \partial z_\ell} \bigg|_z
-\\
+\displaybreak[0]\\
 &=
 \sum_{m,\nu=1}^n
 \frac{\partial^2 r}{\partial \zeta_\nu \partial \zeta_m}
@@ -5839,8 +5848,7 @@ So $r \circ f$ is a function of $z$ and $\bar{z}$.
 \sum_{m=1}^n 
 \frac{\partial r}{\partial \zeta_m}
 \frac{\partial^2 f_m}{\partial z_k \partial z_\ell} .
-\end{split}
-\end{equation*}
+\end{align*}
 The matrix 
 $\left[ \frac{\partial^2 (r \circ f)}{\partial z_k \partial z_\ell} \right]$
 can have different eigenvalues than the matrix
@@ -5931,6 +5939,7 @@ We have almost proved the following theorem.  In short, pseudoconvexity is a
 biholomorphic invariant.
 
 \begin{thm}
+\pagebreak[2]
 Suppose $U, U' \subset \C^n$ are open sets with smooth boundary,
 $p \in \partial U$, $V \subset \C^n$ a neighborhood of $p$,
 $q \in \partial U'$, $V' \subset \C^n$ a neighborhood of $q$,
@@ -6217,8 +6226,9 @@ $U$ is convex at $p$.
 
 Narasimhan's lemma only works at points of strong
 pseudoconvexity.  For weakly pseudoconvex points the situation is far more
-complicated.  The difficulty is that we cannot make a $U$ that is
-weakly pseudoconvex at all points near $p$ to be convex at all points near $p$.
+complicated.  The difficulty lies in the fact that if
+$U$ is weakly (pseudo)convex at $p$ it need not be so
+at nearby points.
 
 \medskip
 
@@ -6425,7 +6435,8 @@ the origin.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Harmonic, subharmonic, and plurisubharmonic functions}
+\pagebreak[2]
+\section{From harmonic to plurisubharmonic functions}
 \label{sec:harmonic}
 
 \begin{defn}
