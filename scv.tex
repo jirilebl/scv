@@ -1315,7 +1315,7 @@ and complex-differentiable in each variable separately:
 \end{equation*}
 In this book, however, the words ``differentiable'' and ``derivative''
 (without the ``complex-'') refer
-to plain vanilla real differentiability.
+to plain-vanilla real differentiability.
 \end{defn}
 
 As in one variable, we define the \emph{\myindex{Wirtinger operators}}
@@ -1391,7 +1391,7 @@ d \zeta_2
 d \zeta_1 .
 \end{equation*}
 
-Applying the formula $n$ times we obtain
+Applying the formula $n$ times, we obtain
 \begin{equation} \label{iteratedcauchy:eq}
 f(z) =
 \frac{1}{{(2\pi i)}^n}
@@ -1457,7 +1457,7 @@ d \bar{z}_k = d x_k - i \, d y_k .
 Let
 \glsadd{not:kronecker}%
 $\delta_{k}^{\ell}$ be the Kronecker delta, that is, $\delta_k^k = 1$,
-and $\delta_k^{\ell} = 0$ if $k \not= {\ell}$.  Then as expected,
+and $\delta_k^{\ell} = 0$ if $k \not= {\ell}$.  Then, as expected,
 \begin{equation*}
 d z_k \left( \frac{\partial}{\partial z_{\ell}} \right) = \delta_k^{\ell} ,
 \qquad
@@ -1697,7 +1697,7 @@ dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n ,
 We can also make sense of this notation, especially the notation $z^\alpha$,
 if $\alpha \in \Z^n$, that is, if it includes negative integers.
 Although usually, $\alpha$ is assumed to be in $\N_0^n$.
-Furthermore, when we use $1$ as a vector it means $(1,1,\ldots,1)$.
+Furthermore, when we use $1$ as a vector, it means $(1,1,\ldots,1)$.
 If $z \in \C^n$, then
 \begin{equation*}
 1-z = (1-z_1,1-z_2,\ldots,1-z_n) ,
@@ -1707,9 +1707,9 @@ z^{\alpha+1} = z_1^{\alpha_1+1}z_2^{\alpha_2+1} \cdots z_n^{\alpha_n+1} .
 It goes without saying that when using this notation it is
 important to be careful to always realize which symbol lives where,
 and most of all, to not get carried away.  For
-instance, one could interpret $\frac{1}{z}$ in two different ways depending
-on if we interpret $1$ as a vector or not, and if we are
-expecting a vector or a number.  Best to just keep to the limited set of
+instance, we could interpret $\frac{1}{z}$ in two different ways depending
+on whether we interpret $1$ as a vector or not, and whether we
+expect a vector or a number.  Best to just keep to the limited set of
 cases as given above.
 
 In this notation, the Cauchy formula becomes the perhaps deceptively simple
@@ -1722,7 +1722,7 @@ f(z) =
 d \zeta .
 \end{equation*}
 
-Let us move to power series.  For simplicity, we start with
+Let us move on to power series.  For simplicity, we start with
 power series at the origin.  Using the multinomial notation, we write
 such a series as
 \begin{equation*}
@@ -1755,7 +1755,7 @@ talk about conditional convergence.  When we say the series
 \index{power series convergence}%
 \index{convergence of power series}, we mean absolutely.
 Fortunately, power series converge
-absolutely, and so the ordering does not matter.  If you want to write
+absolutely, so the ordering does not matter.  If you want to write
 the limit in terms of partial sums, you pick some ordering of the
 multi-indices, $\alpha(1), \alpha(2), \ldots$, and then
 \begin{equation*}
@@ -1817,7 +1817,7 @@ for some $\epsilon > 0$.  The convergence is uniformly absolute on
 $\overline{\Delta}$.  This claim follows by simply noting the
 same fact for each factor is true in one dimension.
 
-Holomorphic functions are precisely those having
+Holomorphic functions are precisely those that allow
 a power series expansion:
 
 \begin{thm}
@@ -1933,7 +1933,7 @@ Notice how strikingly similar the computation is to one variable.
 
 Let us prove the converse statement.
 The limit of the series
-is continuous as it is a uniform-on-compact-sets limit of continuous
+is continuous, as it is a uniform-on-compact-sets limit of continuous
 functions, and hence it is locally bounded in $\Delta$.  Next,
 we restrict to each variable in turn,
 \begin{equation*}
@@ -1956,7 +1956,7 @@ uniformly, then the derivatives converge to the derivative of the limit.
 Prove the claim above that if a power series converges uniformly absolutely
 on compact subsets of a polydisc $\Delta$, then the term-by-term derivative
 converges.
-Do the proof without using the analogous result for single variable series.
+Do the proof without using the analogous result for single-variable series.
 \end{exercise}
 \end{exbox}
 
@@ -1970,7 +1970,7 @@ differentiating under the integral obtains the result.
 \begin{exercise}
 Follow the logic above to prove the converse of the
 theorem,
-without using the analogous result for single variable series.
+without using the analogous result for single-variable series.
 Hint:
 Let
 $\Delta'' \subset \Delta' \subset \Delta$
@@ -2079,8 +2079,8 @@ d \zeta_2
 \wedge
 d \zeta_n .
 \end{equation*}
-Notice the 2 before the $f$.  Next derivative, a 3 is coming out.  After $m$
-derivatives in $z_1$ you get the constant $m!$.
+Notice the 2 before the $f$.  Next derivative, a 3 is coming out.
+After $m$ derivatives in $z_1$, you get the constant $m!$.
 It is exactly the same thing that happens in one variable.  A moment's
 thought will convince you that the following formula is correct for
 $\alpha \in \N_0^n$:
@@ -2149,13 +2149,14 @@ Let $W \subset \C^n$ be the set where a power series converges
 such that it diverges on the complement.  The interior of $W$
 is called the
 \emph{\myindex{domain of convergence}}.
-In one variable, every domain of convergence is a disc, and hence it is
+In one variable, every domain of convergence is a disc and hence is
 described with a single number (the radius).
 In several variables, the domain of convergence
 is not as easy to describe.
-For the multivariable geometric series
-the domain of convergence is the unit polydisc, but more
-complicated examples are easy to find.
+For the multivariable geometric series,
+the domain of convergence is the unit polydisc,
+but example series with more complicated domains of convergence
+are easy to find.
 
 \begin{example}
 In $\C^2$, the series
@@ -2275,7 +2276,7 @@ z_1 \mapsto f(z_1,a_2,\ldots,a_n)
 \end{equation*}
 is holomorphic
 on the disc $\Delta_1$ and its modulus attains the maximum
-at the center.  Therefore, it is constant by maximum principle in one variable,
+at the center.  Therefore, it is constant by the maximum principle in one variable,
 that is, $f(z_1,a_2,\ldots,a_n)  = f(a)$ for all $z_1 \in \Delta_1$.  For
 any fixed $z_1
 \in \Delta_1$, consider the function
@@ -2283,7 +2284,7 @@ any fixed $z_1
 z_2 \mapsto f(z_1,z_2,a_3,\ldots,a_n)  .
 \end{equation*}
 This function, holomorphic on the disc $\Delta_2$, again attains its maximum modulus at the center of $\Delta_2$
-and hence is constant on $\Delta_2$.  Iterating this procedure we obtain
+and hence is constant on $\Delta_2$.  Iterating this procedure, we obtain
 that $f(z) = f(a)$ for all $z \in \Delta$.  The identity theorem says
 that $f(z) = f(a)$ for all $z \in U$.
 \end{proof}
@@ -2366,7 +2367,7 @@ Prove a several variables version of \emph{\myindex{Hurwitz's theorem}}:
 Suppose $\{ f_k \}$ is a sequence of nowhere zero
 holomorphic functions on a domain $U
 \subset \C^n$ converging uniformly on compact subsets to a function $f$.
-Show that either $f$ is identically zero, or that $f$ is nowhere zero.
+Show that either $f$ is identically zero or that $f$ is nowhere zero.
 Hint: Feel free to use the \hyperref[thm:onevarhurwitz]{one-variable result}.
 \end{exercise}
 
@@ -2382,7 +2383,7 @@ $f_t \colon D_t \to \C$, where $f_0 = f$, and for each $t_0 \in [0,1]$ there is 
 $\epsilon > 0$ such that if $\sabs{t-t_0} < \epsilon$, then $f_t = f_{t_0}$
 in $D_t \cap D_{t_0}$.
 Prove a several variables version of the \emph{\myindex{Monodromy theorem}}:
-If $U \subset \C^n$ is a simply connected domain, $D \subset U$ a ball and
+If $U \subset \C^n$ is a simply connected domain, $D \subset U$ a ball, and
 $f \colon D \to \C$ a holomorphic function that can be analytically
 continued from $p \in D$ to every $q \in U$, then there exists
 a unique holomorphic function $F \colon U \to \C$ such that $F|_D = f$.
@@ -2428,7 +2429,7 @@ A function $F$ defined on a dense open subset of $U$ is
 $F = \nicefrac{f}{g}$ for $f$ and $g$ holomorphic in some neighborhood of
 $p$.
 It is from a deep result
-of Oka that
+of Oka that,
 for domains $U \subset \C^n$, every meromorphic function can be represented
 as $\nicefrac{f}{g}$ globally.  That is, the ring of meromorphic functions
 is the field of fractions of $\sO(U)$.
@@ -2439,7 +2440,7 @@ The points of $U$ through which $F$ does not extend holomorphically are called t
 \emph{\myindex{poles}} of $F$.
 Namely, poles are the points where
 $g=0$ for every possible representation $\nicefrac{f}{g}$.
-Unlike in one variable, in several variables poles are never isolated
+Unlike in one variable, in several variables, poles are never isolated
 points.
 There is also a new type of singular
 point for meromorphic functions in more than one
@@ -2447,8 +2448,9 @@ variable:
 
 \begin{exbox}
 \begin{exercise}
-In two variables one can no longer think of a meromorphic function $F$
-having the value $\infty$ when the denominator vanishes.  Show that $F(z,w) = \nicefrac{z}{w}$ achieves all values of $\C$
+In two variables, one can no longer think of a meromorphic function $F$
+having the value $\infty$ when the denominator vanishes.
+Show that $F(z,w) = \nicefrac{z}{w}$ achieves all values of $\C$
 in every neighborhood of the origin.  We call the origin
 a \emph{\myindex{point of indeterminacy}}.
 \end{exercise}
@@ -2457,7 +2459,7 @@ a \emph{\myindex{point of indeterminacy}}.
 Prove that zeros (and so poles as we will see later, though this is a bit harder to see)
 are never isolated in $\C^n$ for $n \geq 2$.
 Hint: Consider $z_1 \mapsto f(z_1,z_2,\ldots,z_n)$ as you move
-$z_2,\ldots,z_n$ around, and use perhaps
+$z_2,\ldots,z_n$ around, and use, perhaps,
 \hyperref[thm:onevarhurwitz]{Hurwitz}.
 \end{exercise}
 \end{exbox}
@@ -5531,7 +5533,7 @@ a relationship there nonetheless.
 \begin{exercise}[Easy]
 If $r$ is real-valued, then the complex Hessian of $r$ is Hermitian, that
 is, the matrix is equal to its conjugate transpose.  Also,
-the full Hessian in terms of $z$s and $\bar{z}$s is also Hermitian.
+the full Hessian in terms of $z$s and $\bar{z}$s is Hermitian.
 \end{exercise}
 
 \begin{exercise}
