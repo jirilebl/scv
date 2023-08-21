@@ -2,52 +2,52 @@ Since edition 3
 
 FIXME: Some are WORK IN PROGRESS
 
-* New short appendix on the useful measure theory results.
-* New section 4.4 on the solvability of the d-bar problem in the polydisc.
+<li> New short appendix on the useful measure theory results.
+<li> New section 4.4 on the solvability of the d-bar problem in the polydisc.
   (WORK IN PROGRESS)
-* Move the definition of \((p,q)\)-form and its derivative to section 4.4
+<li> Move the definition of \((p,q)\)-form and its derivative to section 4.4
   as that's where it's needed first.
-* New font, more readable (shorter lines)
-* In proof of Proposition 1.1.3, emphasize that (1.1) means \(f\) is
+<li> New font, more readable (shorter lines)
+<li> Add a note about \(\log \lvert f \rvert\) being harmonic after Theorem 0.1.3
+<li> In proof of Proposition 1.1.3, emphasize that (1.1) means \(f\) is
   continuous on \(U,\) not just \(\Delta,\) to avoid worrying about
   measurability.
-* Exercise 1.2.10 changed to use the unit ball instead of the polydisc.
-* New Exercise 1.5.10.
-* New Exercise 1.6.1, renumbers rest of the exercises in 1.6
-* New Exercise 2.1.4, renumbers rest of the exercises in 2.1
-* New Exercise 2.1.14
-* New Theorem 2.1.7, the extension version of the continuity principle.
+<li> Exercise 1.2.10 changed to use the unit ball instead of the polydisc.
+<li> New Exercise 1.5.10.
+<li> New Exercise 1.6.1, renumbers rest of the exercises in 1.6
+<li> New Exercise 2.1.4, renumbers rest of the exercises in 2.1
+<li> New Exercise 2.1.14
+<li> New Theorem 2.1.7, the extension version of the continuity principle.
   Name the two version "first version" and "second version."
-* Adds Exercises 2.1.15, 2.1.16, and 2.1.17
-* In Exercise 2.3.2 ask to show that the new full Hessian matrix is also
+<li> Adds Exercises 2.1.15, 2.1.16, and 2.1.17
+<li> In Exercise 2.3.2 ask to show that the new full Hessian matrix is also
   Hermitian.
-* New Exercises 2.3.3-2.3.5, renumbers the rest in 2.3
-* New part b) to exercise 5.2.3.
-* In 2.3 add a bit more on the relationship of the positivity/eigenvalues of
+<li> New Exercises 2.3.3-2.3.5, renumbers the rest in 2.3
+<li> New part b) to exercise 5.2.3.
+<li> In 2.3 add a bit more on the relationship of the positivity/eigenvalues of
   of the real and complex Hessians.  (mainly the exercises)
-* The real Hessian in terms of the zs and zbars has now the block rows
+<li> The real Hessian in terms of the zs and zbars has now the block rows
   flipped, that is really the correct way to look at it so that it is
   hermitian.
-* Rename 2.4 to "From harmonic to plurisubharmonic functions"
-* In Exercise 2.5.15, it is much easier to use exercise 2.5.9
+<li> Rename 2.4 to "From harmonic to plurisubharmonic functions"
+<li> In Exercise 2.5.15, it is much easier to use exercise 2.5.9
   than the "hint" in text, so replace that hint.
-* Move Exercise 2.6.13 (Behnke-Stein) past Cartan-Thullen.  It is much
+<li> Move Exercise 2.6.13 (Behnke-Stein) past Cartan-Thullen.  It is much
   easier then.
-* Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
+<li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
-* In appendix B, introduce and use winding numbers and describe how things
+<li> In appendix B, introduce and use winding numbers and describe how things
   are connected to our statements.  That makes things more compatible with
   most one-variable books.
-* Improve Figure C.1 a little.
-
-* When computing the Hessian use the vertical bar to evaluate,
+<li> Improve Figure C.1 a little.
+<li> When computing the Hessian use the vertical bar to evaluate,
   it may be clearer
-* Figures now have numbers, captions, float, and have explicit references
+<li> Figures now have numbers, captions, float, and have explicit references
   in text.
-* Replace many j's with k's or similar for aesthetic reasons.  Some other
+<li> Replace many j's with k's or similar for aesthetic reasons.  Some other
   letters are changed to be more consistent too.
-* Some figures have been mildly cleaned up.
-* Shorten a couple of section titles slightly.
-* Tighten the language in places.
+<li> Some figures have been mildly cleaned up.
+<li> Shorten a couple of section titles slightly.
+<li> Tighten the language in places.
 
 See https://www.jirka.org/scv/changes.html for older changes.

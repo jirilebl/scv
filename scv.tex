@@ -579,7 +579,7 @@ complex numbers, $\C$, by identifying $\C$ with $\R^2$ using
 \begin{equation*}
 z = x+iy,
 \end{equation*}
-where $z \in \C$, and $(x,y) \in \R^2$.
+where $z \in \C$ and $(x,y) \in \R^2$.
 A subtle philosophical issue is that there are two square roots of $-1$.
 Two chickens\index{chicken!imaginary} are running around in our yard, and because we like to
 know which is which, we catch one and write ``$i$'' on it.  If we happened
@@ -627,7 +627,7 @@ if the first $k$ partial derivatives all exist and are differentiable.
 \glsadd{not:Cinfty}%
 Finally, a function is said to be $C^\infty$ or simply
 \emph{smooth}\index{smooth function}\footnote{%
-While $C^\infty$ is the common definition of \emph{smooth}, not everyone
+While $C^\infty$ is a common definition of \emph{smooth}, not everyone
 always means
 the same thing by the word \emph{smooth}.  I have seen it mean
 differentiable, $C^1$, piecewise-$C^1$, $C^\infty$, holomorphic, \ldots}
@@ -671,7 +671,7 @@ We usually mean
 \sum_{k=0}^d c_k \, z^k .
 \end{equation*}
 As long as the limit exists, we have a function.  You know all
-this; it is your one-variable complex analysis.  We usually
+this; it is your one-variable complex analysis.  We typically
 start with the functions and prove that we can expand into series.
 
 Let $U \subset \C$ be open.  A function $f \colon U \to \C$
@@ -720,7 +720,7 @@ The so-called \emph{\myindex{Wirtinger operators}},
 \end{equation*}
 provide an easier way to understand the
 Cauchy--Riemann equations.
-These operators are determined by insisting
+These operators are determined by insisting on
 \glsadd{not:wirt}%
 \begin{equation*}
 \frac{\partial}{\partial z} z = 1, \quad
@@ -897,7 +897,7 @@ dimensions).  You can look forward to
 the Cauchy--Pompeiu integral formula.
 
 As a differential form, \glsadd{not:dz}$dz = dx + i \, dy$.  If you are uneasy
-about differential forms, you probably defined the path integral above
+about differential forms, you possibly defined the path integral above
 directly using
 the Riemann--Stieltjes integral in your one-complex-variable class.
 Let us write down the formula in terms of the standard Riemann integral
@@ -980,7 +980,9 @@ then $h$ is constant, that is, $h \equiv h(z_0)$.
 \end{thm}
 
 In one variable, if $f = u+iv$ is holomorphic for real-valued $u$ and $v$,
-then $u$ and $v$ are harmonic.  Locally, a harmonic function is
+then $u$ and $v$ are harmonic.
+Similarly, $\log \sabs{f}$ is harmonic.
+Locally, a harmonic function is
 the real (or imaginary) part of a holomorphic function, so in
 one complex variable, studying
 harmonic functions is almost equivalent to studying holomorphic
@@ -1313,7 +1315,7 @@ and complex-differentiable in each variable separately:
 \lim_{\xi \in \C \to 0} \frac{f(z_1,\ldots,z_k+\xi,\ldots,z_n) - f(z)}{\xi}
 \qquad \text{exists for all $z \in U$ and all $k=1,2,\ldots,n$}.
 \end{equation*}
-In this book, however, the words ``differentiable'' and ``derivative''
+In this book, the words ``differentiable'' and ``derivative''
 (without the ``complex-'') refer
 to plain vanilla real differentiability.
 \end{defn}
