@@ -1203,9 +1203,9 @@ by $z = (z_1,z_2,\ldots,z_n)$ the coordinates of $\C^n$.
 Let $x =
 (x_1,x_2,\ldots,x_n)$ and $y = (y_1,y_2,\ldots,y_n)$ denote the coordinates in
 $\R^n$.
-We identify $\C^n$ with $\R^{2n}$ by letting
+Identify $\C^n$ with $\R^{2n}$ by letting
 $z = x+iy$, that is, $z_k = x_k + i y_k$ for every $k$.
-As in one complex variable, we write $\bar{z} = x-iy$.
+As in one complex variable, write $\bar{z} = x-iy$.
 We call $z$ the \emph{\myindex{holomorphic coordinates}}
 and $\bar{z}$ the \emph{\myindex{antiholomorphic coordinates}}.
 
@@ -1303,7 +1303,8 @@ $f \colon U \to \C$ is \emph{\myindex{holomorphic}} if
 it is \emph{locally bounded}%
 \index{locally bounded function}\footnote{For
 every $p \in U$, there is a neighborhood $N$ of $p$
-such that $f|_N$ is bounded.  It is a deep result of Hartogs that we might
+such that $f|_N$ is bounded.  Equivalently, $f$ is bounded on compact
+subsets of $U$.  It is a deep result of Hartogs that we might
 in fact just drop ``locally bounded'' from the definition and obtain the same
 set of functions.}
 %A deep result of Hartogs, which we skip, says that
@@ -1353,9 +1354,9 @@ Namely, if $f$ is holomorphic, then
 
 Due to the following proposition, the alternative definition using the
 Cauchy--Riemann equations is just as good as the definition we gave.
-In the proof, if you wish to stay with just the Riemann integral instead of
-the Lebesgue integral, feel free to assume that $f$ is continuously
-differentiable.
+%In the proof, if you wish to stay with just the Riemann integral instead of
+%the Lebesgue integral, feel free to assume that $f$ is continuously
+%differentiable.
 
 \begin{prop}
 Let $U \subset \C^n$ be an open set and
@@ -1413,22 +1414,14 @@ As $f$ is bounded on the compact set
 $\partial \Delta_1 \times \cdots \times \partial \Delta_n$,
 we find that $f$ is continuous in $\Delta$, and hence on $U$.
 We may differentiate underneath the
-integral, because $f$ is bounded on
-$\partial \Delta_1 \times \cdots \times \partial \Delta_n$
-and so are the derivatives of the integrand
-with respect to $x_k$ and $y_k$, where $z_k=x_k+i y_k$, as long as
-$z$ is a positive distance away from
+integral via the standard Leibniz rule,
+because the integrand and its partial derivatives
+with respect to $x_k$ and $y_k$, where $z_k=x_k+i y_k$, are
+all continuous, as long as $z$
+is a positive distance away from
 $\partial \Delta_1 \times \cdots \times \partial \Delta_n$.
 We may differentiate as many times as we wish.
-%We are really differentiating only in the real and imaginary
-%parts of the $z_k$ variables, and the integrand is
-%infinitely differentiable in those variables.
 \end{proof}
-
-%In the definition of holomorphicity,
-%we may have assumed $f$ is smooth and satisfies
-%the Cauchy--Riemann equations.  However, the way we stated the
-%definition makes it easier to apply.
 
 In \eqref{iteratedcauchy:eq} above,
 we derived the Cauchy integral formula in several variables.  To
