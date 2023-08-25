@@ -1861,7 +1861,7 @@ So the series
 above converges uniformly absolutely for $(z,\zeta) \in K \times \Gamma$
 for every compact subset $K$ of $\Delta$.
 
-Compute,
+For $z \in \Delta$,
 \begin{equation*}
 \begin{split}
 f(z)
@@ -1944,7 +1944,7 @@ We leave that as an exercise.
 First, one must show that the term-by-term derivative
 series also converges uniformly absolutely on compact subsets.
 Then one applies the theorem from real analysis about derivatives
-of limits: If a sequence of functions and its derivatives converges
+of limits: If a sequence of functions and the sequences of its derivatives converge
 uniformly, then the derivatives converge to the derivative of the limit.
 
 \begin{exbox}
@@ -2222,11 +2222,15 @@ for all $k$, we have that the whole polydisc $\overline{\Delta_r(0)} \subset U$.
 So a complete Reinhardt domain is a union (possibly infinite) of polydiscs
 centered at the origin.
 
+\begin{prop} \label{prop:domainofconvergence}
+Suppose $\sum_{\alpha} c_{\alpha} z^\alpha$ converges absolutely on
+$W \subset \C^n$ and diverges on the complement.  Then the interior of
+$W$ is a complete Reinhardt domain.
+\end{prop}
+
 \begin{exbox}
 \begin{exercise}
-Let $W \subset \C^n$ be the set where a certain
-power series at the origin converges.
-Show that the interior of $W$ is a complete Reinhardt domain.
+Prove \propref{prop:domainofconvergence}.
 \end{exercise}
 \end{exbox}
 
