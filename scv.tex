@@ -1440,8 +1440,7 @@ Given real coordinates $x = (x_1,\ldots,x_n)$, a one-form $d x_k$ is a linear fu
 such that $d x_k \bigl( \frac{\partial}{\partial x_k} \bigr) = 1$ and
 $d x_k \bigl( \frac{\partial}{\partial x_{\ell}} \bigr) = 0$ if $k \not=
 {\ell}$.
-Because
-$z_k = x_k + i y_k$ and
+As $z_k = x_k + i y_k$ and
 $\bar{z}_k = x_k - i y_k$,
 \glsadd{not:dz}\glsadd{not:dzbar}%
 \begin{equation*}
@@ -1464,7 +1463,7 @@ d \bar{z}_k \left( \frac{\partial}{\partial \bar{z}_{\ell}} \right) =
 \delta_k^{\ell}
 .
 \end{equation*}
-One-forms are objects of the form
+One-forms are the objects
 \begin{equation*}
 \sum_{k=1}^n \alpha_k \, d z_k +
 \beta_k \, d \bar{z}_k ,
@@ -1702,10 +1701,10 @@ z^{\alpha+1} = z_1^{\alpha_1+1}z_2^{\alpha_2+1} \cdots z_n^{\alpha_n+1} .
 It goes without saying that when using this notation it is
 important to be careful to always realize which symbol lives where,
 and most of all, to not get carried away.  For
-instance, we could interpret $\frac{1}{z}$ in two different ways depending
+instance, we can interpret $\frac{1}{z}$ in different ways depending
 on whether we interpret $1$ as a vector or not, and whether we
 expect a vector or a number.  Best to just keep to the limited set of
-cases as given above.
+cases as given above, and only use it when it is clear what is meant.
 
 In this notation, the Cauchy formula becomes the perhaps deceptively simple
 \begin{equation*}
@@ -1718,7 +1717,7 @@ d \zeta .
 \end{equation*}
 
 Let us move on to power series.  For simplicity, we start with
-power series at the origin.  Using the multinomial notation, we write
+power series at the origin.  Using the multi-index notation, we write
 such a series as
 \begin{equation*}
 \sum_{\alpha \in \N_0^n} c_\alpha {z}^\alpha .
@@ -1831,6 +1830,11 @@ uniformly absolutely on compact subsets of $\Delta$, then $f$ is holomorphic on
 $\Delta$.
 \end{thm}
 
+The hypothesis that $f$ is continuous on $\overline{\Delta}$ is not
+necessary.  We will prove in a moment that the power series is unique
+and hence we could have used an arbitrary smaller polydisc centered at $a$
+for the development.
+
 \begin{proof}
 Suppose a continuous $f \colon \overline{\Delta} \to \C$ is holomorphic on $\Delta$.
 Let
@@ -1840,7 +1844,11 @@ Take $z \in \Delta$ and $\zeta \in \Gamma$.
 As in one variable, write the Cauchy kernel as
 \begin{equation*}
 \frac{1}{\zeta-z} =
-\frac{1}{\zeta-a}\frac{1}{\left(1-\frac{z-a}{\zeta-a}\right)} =
+\frac{1}{\zeta-a}
+\left(
+\frac{1}{1-\frac{z-a}{\zeta-a}}
+\right)
+=
 \frac{1}{\zeta-a}
 \sum_{\alpha}
 {\left(\frac{z-a}{\zeta-a}\right)}^\alpha .
@@ -1854,9 +1862,9 @@ $\frac{z-a}{\zeta-a} =
 \frac{z_1-a_1}{\zeta_1-a_1}, \ldots,
 \frac{z_n-a_n}{\zeta_n-a_n}
 \right)$.
-The multivariable geometric series is a product of geometric series
-in one variable, and geometric series in one variable
-are uniformly absolutely convergent on compact subsets of the unit disc.
+The multivariable geometric series is a product of the geometric series
+in one variable, and the geometric series in one variable
+is uniformly absolutely convergent on compact subsets of the unit disc.
 So the series
 above converges uniformly absolutely for $(z,\zeta) \in K \times \Gamma$
 for every compact subset $K$ of $\Delta$.
@@ -1906,7 +1914,6 @@ Uniform absolute convergence (as $z$ moves) on compact subsets of the final
 series follows from the
 uniform absolute convergence of the geometric series.  It is also a direct
 consequence of the Cauchy estimates below.
-
 We have shown that
 \begin{equation*}
 f(z) =
@@ -1956,6 +1963,7 @@ Do the proof without using the analogous result for single-variable series.
 \end{exercise}
 \end{exbox}
 
+\pagebreak[1]
 A third way to prove the converse statement of the theorem
 is to note that partial sums are
 holomorphic and write them using the Cauchy formula.  Uniform
@@ -1970,16 +1978,13 @@ without using the analogous result for single-variable series.
 Hint:
 Let
 $\Delta'' \subset \Delta' \subset \Delta$
-be two polydiscs with the same center $a$
+be polydiscs with the same center $a$
 such that $\overline{\Delta''} \subset \Delta'$
 and $\overline{\Delta'} \subset \Delta$.
 Apply Cauchy formula on $\Delta'$
 for $z \in \overline{\Delta''}$.
 \end{exercise}
 \end{exbox}
-
-We organize some consequences of the theorem
-and the calculation in the proof.
 
 \begin{prop}
 \pagebreak[2]
@@ -2009,15 +2014,16 @@ and we have the \emph{\myindex{Cauchy estimates}}:
 \end{equation*}
 \end{prop}
 
-Namely, the coefficients of the power series depend only on
+Consequently, the coefficients of the power series depend only on
 the derivatives of $f$ at $a$
 (and so on the values of $f$ in an arbitrarily small
 neighborhood of $a$) and not the specific polydisc used in the theorem.
 
 \begin{proof}
-By the Leibniz rule (taking derivatives under the integral),
+By the Leibniz rule,
 if $z \in \Delta$ (not on the boundary),
-we can differentiate under the integral.  We are talking regular real
+we can differentiate under the integral in the Cauchy formula.
+We are talking regular real
 partial differentiation, and we use it to apply the Wirtinger operator.
 The point is that
 \begin{equation*}
@@ -2084,7 +2090,7 @@ $\alpha \in \N_0^n$:
 \frac{\partial^{\sabs{\alpha}}f}{\partial z^\alpha} (z) =
 \frac{1}{{(2\pi i)}^n}
 \int_{\Gamma}
-\frac{\alpha! f(\zeta)}{{(\zeta-z)}^{\alpha+1}}
+\frac{\alpha! \, f(\zeta)}{{(\zeta-z)}^{\alpha+1}}
 \,
 d \zeta .
 \end{equation*}
@@ -2101,13 +2107,13 @@ We obtain the Cauchy estimates as before:
 \abs{
 \frac{1}{{(2\pi i)}^n}
 \int_{\Gamma}
-\frac{\alpha! f(\zeta)}{{(\zeta-a)}^{\alpha+1}}
+\frac{\alpha! \, f(\zeta)}{{(\zeta-a)}^{\alpha+1}}
 \,
 d \zeta }
 \leq
 \frac{1}{{(2\pi)}^n}
 \int_{\Gamma}
-\frac{\alpha! \sabs{f(\zeta)}}{\rho^{\alpha+1}}
+\frac{\alpha! \, \sabs{f(\zeta)}}{\rho^{\alpha+1}}
 \,
 \sabs{d \zeta}
 \leq
@@ -2141,31 +2147,30 @@ Prove the proposition above.
 \end{exercise}
 \end{exbox}
 
-Let $W \subset \C^n$ be the set where a power series converges
-such that it diverges on the complement.  The interior of $W$
-is called the
-\emph{\myindex{domain of convergence}}.
+Given a power series,
+let $W \subset \C^n$ be the set of all points where the series
+converges absolutely.
+The interior of $W$ is called the
+\emph{\myindex{domain of convergence}} of the series.
 In one variable, every domain of convergence is a disc and hence is
 described with a single number (the radius).
 In several variables, the domain of convergence
 is not as easy to describe.
 For the multivariable geometric series,
 the domain of convergence is the unit polydisc,
-but example series with more complicated domains of convergence
-are easy to find.
+but in general, the domain of convergence is more complicated.
 
 \begin{example}
 In $\C^2$, the series
 \begin{equation*}
 \sum_{k=0}^\infty z_1 z_2^k
 \end{equation*}
-converges absolutely on the set
+converges absolutely exactly on the set
 \begin{equation*}
 \bigl\{ z \in \C^2 : \sabs{z_2} < 1 \bigr\}
 \cup
-\bigl\{ z \in \C^2 : z_1 = 0 \bigr\} ,
+\bigl\{ z \in \C^2 : z_1 = 0 \bigr\} .
 \end{equation*}
-and nowhere else.
 This set is not quite a polydisc.  It is neither an open set nor a closed set,
 and its closure is not the closure of the domain of convergence,
 which is the set $\bigl\{ z \in \C^2 : \sabs{z_2} < 1 \bigr\}$.
@@ -2207,25 +2212,24 @@ Show that the domain of convergence is a polydisc.
 \end{exercise}
 \end{exbox}
 
-Suppose $U \subset \C^n$ is a domain such that if $z \in U$
-and
-$\sabs{z_k} = \sabs{w_k}$ for all $k$, then $w \in U$.
-Such a $U$ is called a
-\emph{\myindex{Reinhardt domain}}.  The domains we were drawing so far are
+A domain
+$U \subset \C^n$ is a
+\emph{\myindex{Reinhardt domain}} if whenever
+$z \in U$ and $\sabs{z_k} = \sabs{w_k}$ for all $k$, then $w \in U$.
+The domains we were drawing so far are
 Reinhardt domains.
 They are exactly the domains that you can
 draw by plotting what happens for the moduli of the variables.
-A domain is called a
-\emph{\myindex{complete Reinhardt domain}}\index{Reinhardt domain!complete} if whenever
-$z \in U$, then for $r = (r_1,\ldots,r_n)$ where $r_k = \sabs{z_k}$
-for all $k$, we have that the whole polydisc $\overline{\Delta_r(0)} \subset U$.
+A domain is a
+\emph{\myindex{complete Reinhardt domain}}\index{Reinhardt domain!complete}
+if $z \in U$, then $\overline{\Delta_r(0)} \subset U$ where
+$r = (r_1,\ldots,r_n)$ and $r_k = \sabs{z_k}$ for all $k$.
 So a complete Reinhardt domain is a union (possibly infinite) of polydiscs
 centered at the origin.
 
 \begin{prop} \label{prop:domainofconvergence}
-Suppose $\sum_{\alpha} c_{\alpha} z^\alpha$ converges absolutely on
-$W \subset \C^n$ and diverges on the complement.  Then the interior of
-$W$ is a complete Reinhardt domain.
+Let $\sum_{\alpha} c_{\alpha} z^\alpha$ be a convergent power series.
+Prove that its domain of convergence is a complete Reinhardt domain.
 \end{prop}
 
 \begin{exbox}
@@ -2235,6 +2239,7 @@ Prove \propref{prop:domainofconvergence}.
 \end{exbox}
 
 \begin{thm}[Identity theorem\index{identity theorem}]
+\pagebreak[2]
 Let $U \subset \C^n$ be a domain (connected open set) and let
 $f \colon U \to \C$ be holomorphic.
 If $f|_N \equiv 0$ for a nonempty open subset $N \subset U$,
@@ -2259,7 +2264,13 @@ we have $Z = U$.
 The theorem is often used to show that
 if two holomorphic functions $f$ and $g$
 are equal on a small open set,
-then $f \equiv g$.
+then $f \equiv g$.  In one variable (see \thmref{thm:onevaridentity}),
+the hypothesis that $N$ has a limit point in $U$ (rather than being open)
+is sufficient.  In several
+variables, things are not so simple: $f(z_1,z_2) = z_1$ is zero on the set
+$\{ z \in \C^2 : z_1=0 \}$, all of whose points are its limit points.
+We will see later that if $n \geq 2$, then zeros are never isolated.
+For now, let us move on.
 
 \begin{thm}[Maximum principle\index{maximum principle}]
 Let $U \subset \C^n$ be a domain.
@@ -2390,6 +2401,7 @@ a unique holomorphic function $F \colon U \to \C$ such that $F|_D = f$.
 \end{exercise}
 \end{exbox}
 
+\pagebreak[2]
 The set of holomorphic functions on a domain is a
 commutative ring under pointwise addition and multiplication (exercise
 below).  We give this set a name.
@@ -2534,8 +2546,7 @@ $f$ is a function of $z$, and $g$ is a function of $w$.
 The composition plugs in $f$ for $w$, and so it plugs in $u$ for $s$, and
 $v$ for $t$.
 Using the standard chain rule,
-\begin{equation*}
-\begin{split}
+\begin{align*}
 \frac{\partial}{\partial z_\ell} \left[ g \circ f \right]
 & =
 \frac{1}{2}
@@ -2544,7 +2555,7 @@ Using the standard chain rule,
 \frac{\partial}{\partial y_\ell}
 \right)
  \left[ g \circ f \right]
-\\
+\displaybreak[0]\\
 & =
 \frac{1}{2}
 \sum_{k=1}^m \left(
@@ -2559,7 +2570,7 @@ i
 \frac{\partial g}{\partial t_k} \frac{\partial v_k}{\partial y_\ell}
 \right)
 \right)
-\\
+\displaybreak[0]\\
 & =
 \sum_{k=1}^m \left(
 \frac{\partial g}{\partial s_k}
@@ -2582,7 +2593,7 @@ i
 \frac{\partial v_k}{\partial y_\ell}
 \right)
 \right)
-\\
+\displaybreak[0]\\
 & =
 \sum_{k=1}^m \left(
 \frac{\partial g}{\partial s_k}
@@ -2591,8 +2602,7 @@ i
 \frac{\partial g}{\partial t_k}
 \frac{\partial v_k}{\partial z_\ell}
 \right) .
-\end{split}
-\end{equation*}
+\end{align*}
 For $k = 1, \ldots, m$,
 \begin{equation*}
 \frac{\partial}{\partial s_k}
@@ -2610,8 +2620,7 @@ i \left(
 \right) .
 \end{equation*}
 Continuing:
-\begin{equation*}
-\begin{split}
+\begin{align*}
 \frac{\partial}{\partial z_\ell} \left[ g \circ f \right]
 & =
 \sum_{k=1}^m \left(
@@ -2621,7 +2630,7 @@ Continuing:
 \frac{\partial g}{\partial t_k}
 \frac{\partial v_k}{\partial z_\ell}
 \right)
-\\
+\displaybreak[0]\\
 & =
 \sum_{k=1}^m \left(
 \left(
@@ -2641,7 +2650,7 @@ i
 \frac{\partial v_k}{\partial z_\ell}
 \right)
 \right)
-\\
+\displaybreak[0]\\
 & =
 \sum_{k=1}^m \left(
 \frac{\partial g}{\partial w_k}
@@ -2659,7 +2668,7 @@ i
 \frac{\partial v_k}{\partial z_\ell}
 \right)
 \right)
-\\
+\displaybreak[0]\\
 & =
 \sum_{k=1}^m \left(
 \frac{\partial g}{\partial w_k}
@@ -2668,8 +2677,7 @@ i
 \frac{\partial g}{\partial \bar{w}_k}
 \frac{\partial \bar{f}_k}{\partial z_\ell}
 \right) .
-\end{split}
-\end{equation*}
+\end{align*}
 
 The $\bar{z}$ derivative works similarly.
 \end{proof}
@@ -2834,7 +2842,7 @@ of this mapping (a $2m \times 2n$ real matrix) is called the
 $D_\R f (p)$.
 
 \begin{prop}
-Let $U \subset \C^n$ be an open set, $p \in U$, and
+Let $U \subset \C^n$ be open, $p \in U$, and
 $f \colon U \to \C^n$ be holomorphic.  Then
 \begin{equation*}
 \abs{\det D f(p) }^2 =
@@ -2896,14 +2904,15 @@ Thus
 \end{multline*}
 \end{proof}
 
-The regular implicit function theorem and the chain rule
+The regular (real) implicit function theorem and the chain rule
 give that the implicit function theorem holds in the holomorphic setting.
-The main thing to check is to check that the solution given by the
+The main thing to check is to verify that the solution given by the
 standard implicit function theorem is holomorphic, which follows by the
 chain rule.
 
 \begin{thm}[Implicit function theorem\index{implicit function
-theorem}\index{holomorphic implicit function theorem}] \label{thm:ift}
+theorem}\index{holomorphic implicit function theorem}]\label{thm:ift}%
+\pagebreak[2]
 Let $U \subset \C^{n} \times \C^{m}$ be an open set, let $(z,w) \in \C^n \times
 \C^m$ be our coordinates, and let $f \colon U \to \C^m$
 be a holomorphic mapping.  Let $(z^0,w^0) \in U$ be a point such that
@@ -3406,7 +3415,7 @@ f^\ell(z) = z + \ell f_k(z) + \sum_{m=k+1}^\infty \tilde{f}_m(z) ,
 for some other degree $m$ homogeneous polynomials $\tilde{f}_m$.  Suppose $\Delta_r(0)$ is a polydisc whose
 closure is in $U$.
 Via Cauchy estimates,
-for every multinomial $\alpha$ with $\sabs{\alpha}=k$,
+for every multi-index $\alpha$ with $\sabs{\alpha}=k$,
 \begin{equation*}
 \frac{\alpha!}{r^\alpha} M
 \geq
@@ -8475,7 +8484,7 @@ By the identity theorem, $f$ is zero on all of $V$.
 
 
 We return to $\R^n$ for a moment.
-We write a power series in $\R^n$ in multinomial notation as usual.
+We write a power series in $\R^n$ in multi-index notation as usual.
 Suppose that for some
 $a \in \R^n$
 and some polyradius
@@ -8588,7 +8597,7 @@ series becomes a power series in $z$ and $\bar{z}$.
 We simply write the function as $f(z,\bar{z})$, and we consider the
 power series representation in $z$ and $\bar{z}$ rather than
 in $x$ and $y$.
-In multinomial notation, we write a power series at $a \in \C^n$ as
+In multi-index notation, we write a power series at $a \in \C^n$ as
 \begin{equation*}
 \sum_{\alpha,\beta} c_{\alpha,\beta} {(z-a)}^\alpha
 {(\bar{z}-\bar{a})}^\beta .
@@ -8651,7 +8660,7 @@ theorem.
 \end{proof}
 
 Let $f$ be a real-analytic function.  Suppose
-the series (in multinomial notation)
+the series (in multi-index notation)
 \begin{equation*}
 f(z,\bar{z}) =
 \sum_{\alpha,\beta} c_{\alpha,\beta} {(z-a)}^\alpha
@@ -14859,7 +14868,7 @@ If $f$ is entire and bounded, then $f$ is constant.
 And as a holomorphic function has a power series it satisfies the
 identity theorem:
 
-\begin{thm}[Identity]\index{identity theorem}
+\begin{thm}[Identity]\index{identity theorem} \label{thm:onevaridentity}
 Suppose $U \subset \C$ is a domain and $f \colon U \to \C$ is holomorphic.
 If the zero set $f^{-1}(0)$ has a limit point in $U$, then
 $f \equiv 0$.
