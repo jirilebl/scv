@@ -2787,7 +2787,7 @@ real-valued on $\R^n$ (when $y=0$) if and only if $f(z) =
 For a $U \subset \C^n$, a holomorphic mapping $f \colon U \to \C^m$,
 and a point $p \in U$,
 define the holomorphic derivative, sometimes called the
-\emph{\myindex{Jacobian matrix}},
+\emph{(holomorphic) \myindex{Jacobian matrix}}\index{holomorphic Jacobian matrix},
 \glsadd{not:Df}%
 \begin{equation*}
 Df(p)
@@ -2797,6 +2797,8 @@ Df(p)
 \right]_{k \ell} .
 \end{equation*}
 The notation $f'(p) = Df(p)$ is also used.
+Unless otherwise stated, if the mapping is holomorphic,
+\emph{Jacobian} will refer to the holomorphic Jacobian.
 
 \begin{exbox}
 \begin{exercise}
@@ -2835,7 +2837,7 @@ Prove the proposition.
 Suppose $U \subset \C^n$, $p \in U$, and $f \colon U \to \C^m$
 is a differentiable function at $p$.
 Since $\C^n$ is identified with $\R^{2n}$, the mapping $f$
-takes $U \subset \R^{2n}$ to $\R^{2m}$.  The normal vector calculus Jacobian at $p$
+takes $U \subset \R^{2n}$ to $\R^{2m}$.  The normal vector-calculus Jacobian at $p$
 of this mapping (a $2m \times 2n$ real matrix) is called the
 \emph{\myindex{real Jacobian}}, and we write it as
 \glsadd{not:DRf}%
@@ -2850,8 +2852,10 @@ $f \colon U \to \C^n$ be holomorphic.  Then
 \end{equation*}
 \end{prop}
 
-The expression $\det D f(p)$ is called the \emph{\myindex{Jacobian
-determinant}} and clearly it is important to know if we are talking about
+The expression $\det D f(p)$ is called the
+\emph{(holomorphic)
+\myindex{Jacobian determinant}}\index{holomorphic Jacobian determinant}
+and clearly it is important to know if we are talking about
 the holomorphic Jacobian determinant or the standard real Jacobian
 determinant $\det D_\R f(p)$.  Recall from vector calculus that
 if the real Jacobian determinant $\det D_\R
@@ -3047,9 +3051,9 @@ the unit bidisc is not biholomorphically
 equivalent to the unit ball in $\C^2$.  This fact was first proved by
 Poincar\'e by computing the automorphism groups of $\D^2$ and $\bB_2$,
 although his proof
-assumed the maps extended past the boundary.  The first
-complete proof was by Henri Cartan in 1931, though popularly the theorem is
-attributed to Poincar\'e.  It seems standard practice that any general audience talk
+assumed the maps extended past the boundary.
+The first complete proof was by Henri Cartan in 1931, though the theorem is
+popularly attributed to Poincar\'e.  It seems standard practice that any general audience talk
 about several complex variables contains a mention of Poincar\'e,
 and often the reference is to this exact theorem.
 
@@ -3079,12 +3083,13 @@ is important to always have in mind that there is a mapping defining the
 disc, even if we are more interested in the set.  Obviously for a given
 image, the mapping $\varphi$ is not unique.
 
-Let us consider the boundaries of
+Consider the boundaries of
 the unit bidisc $\D \times \D \subset \C^2$
-and the unit ball $\bB_2 \subset \C^2$.  We notice the boundary
-of the unit bidisc contains analytic discs $\{p\} \times \D$
-and $\D \times \{p\}$ for $p \in \partial \D$.  That is, through
-every point in the boundary, except for the distinguished
+and the unit ball $\bB_2 \subset \C^2$.
+Notice the boundary of the unit bidisc contains analytic discs
+$\{p\} \times \D$
+and $\D \times \{p\}$ for $p \in \partial \D$.
+That is, through every point in the boundary, except for the distinguished
 boundary $\partial \D \times \partial \D$, there exists an analytic disc
 lying entirely inside the boundary.  On the other hand, the ball
 contains no analytic discs in its boundary.
@@ -3563,16 +3568,17 @@ is injective.
 \section{Riemann extension, zero sets, and injective maps}
 \label{sec:riemannextzerosetsinjmaps}
 
-In one dimension if a function is holomorphic in $U
-\setminus \{ p \}$ and
+In one dimension, if a function is holomorphic in
+$U \setminus \{ p \}$ and
 locally bounded\index{locally bounded in $U$}\footnote{%
 $f \colon U \setminus X \to \C$ is locally bounded in $U$
 if for every $p \in U$, there is a neighborhood $W$ of
 $p$ such that $f$ is bounded on $W \cap (U \setminus X)$.}
 in $U$, in particular bounded near
 $p$, then the function extends holomorphically to $U$ (see
-\propref{prop:onevarclassifysing} \ref{prop:onevarclassifysing:i}).  In several
-variables the same theorem holds, and the analogue of a single point
+\propref{prop:onevarclassifysing} \ref{prop:onevarclassifysing:i}).
+In several variables,
+the same theorem holds, and the analogue of a single point
 is the zero set of a holomorphic function.
 
 \begin{thm}[\myindex{Riemann extension theorem}]
