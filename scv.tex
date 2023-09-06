@@ -2836,7 +2836,7 @@ Prove the proposition.
 \end{exbox}
 
 Suppose $U \subset \C^n$, $p \in U$, and $f \colon U \to \C^m$
-is a differentiable function at $p$.
+is differentiable at $p$.
 Since $\C^n$ is identified with $\R^{2n}$, the mapping $f$
 takes $U \subset \R^{2n}$ to $\R^{2m}$.  The normal vector-calculus Jacobian at $p$
 of this mapping (a $2m \times 2n$ real matrix) is called the
@@ -2865,9 +2865,10 @@ orientation.  In particular, the proposition
 says that holomorphic mappings preserve orientation.
 
 \begin{proof}
-The real mapping using our identification is
+Write $f$ as
 $(\Re f_1,\Im f_1, \ldots, \Re f_n, \Im f_n)$
-as a function of $(x_1,y_1,\ldots,x_n,y_n)$.
+as a function of $(x_1,y_1,\ldots,x_n,y_n)$,
+using our identification of $\C^n$ and $\R^{2n}$.
 The statement is about the two Jacobians at $p$, that is, the derivatives
 at $p$.  Hence, we can assume that
 $p=0$ and $f$ is complex linear, $f(z) = Az$ for some $n \times n$
@@ -2880,12 +2881,12 @@ using $z = x+iy$ and $\bar{z}=x-iy$
 on both the target and the source.
 The change of basis is some invertible
 complex matrix $M$ such that
-$M^{-1} B M$ (the real Jacobian matrix $B$ in these new coordinates)
+$M^{-1} B M$ (the real Jacobian matrix $B$ in this new basis)
 is a matrix of the derivatives of
 $(f_1,\ldots,f_n,\bar{f}_1,\ldots,\bar{f}_n)$
 in terms of
 $(z_1,\ldots,z_n,\bar{z}_1,\ldots,\bar{z}_n)$.
-In other words,
+That is,
 \begin{equation*}
 M^{-1} B M =
 \begin{bmatrix}
@@ -3023,7 +3024,7 @@ spaces.  Then $f$ is a \emph{\myindex{proper map}}\index{map!proper} if for ever
 $K \subset \subset Y$, the set $f^{-1}(K)$ is compact.
 \end{defn}
 
-The notation ``$\subset \subset$'' is a common notation for relatively
+The notation ``$\subset \subset$'' is a common notation for a relatively
 compact subset, that is, the closure is compact in the relative (subspace)
 topology.  Often the distinction between compact and relatively
 compact is not important.  For instance, in the definition above we can replace
@@ -3049,7 +3050,8 @@ There exists no proper holomorphic mapping of the unit bidisc $\D^2 = \D \times 
 
 As a biholomorphic mapping is proper,
 the unit bidisc is not biholomorphically
-equivalent to the unit ball in $\C^2$.  This fact was first proved by
+equivalent to the unit ball in $\C^2$.
+The inequivalence of the ball and the polydisc was first proved by
 Poincar\'e by computing the automorphism groups of $\D^2$ and $\bB_2$,
 although his proof
 assumed the maps extended past the boundary.
@@ -3080,7 +3082,7 @@ of the analytic disc.
 \end{defn}
 
 In some sense, analytic discs play the role of line segments in $\C^n$.  It
-is important to always have in mind that there is a mapping defining the
+is important to always keep in mind that there is a mapping defining the
 disc, even if we are more interested in the set.  Obviously for a given
 image, the mapping $\varphi$ is not unique.
 
@@ -3095,7 +3097,7 @@ boundary $\partial \D \times \partial \D$, there exists an analytic disc
 lying entirely inside the boundary.  On the other hand, the ball
 contains no analytic discs in its boundary.
 
-\begin{prop}
+\begin{prop}\label{prop:noanaldiscinsphere}
 \glsadd{not:unitsphere}%
 The unit sphere $S^{2n-1} = \partial \bB_n \subset \C^n$
 contains no analytic discs.
@@ -3173,16 +3175,18 @@ The inverse image $f^{-1}(\widebar{E})$
 is not compact (it contains a sequence going to $p \in \partial U$)
 and hence $\widebar{E}$ is not
 compact either as $f$ is proper.  Thus $q \notin V$, and hence $q \in
-\partial V$.  As we took an arbitrary subsequence of $\bigl\{ f(p_k) \bigr\}$, $q$ was
-an arbitrary limit point.  Therefore, all limit points are in $\partial V$.
+\partial V$.
+As we took an arbitrary convergent subsequence of $\bigl\{ f(p_k) \bigr\}$,
+$q$ was an arbitrary limit point.
+Therefore, all limit points are in $\partial V$.
 
 Let us prove the converse.
 Suppose that for every sequence
 $\{ p_k \}$ in $U$ such that $p_k \to p \in \partial U$,
 the set of limit points of $\bigl\{ f(p_k) \bigr\}$ lies in $\partial V$.
-Take a closed set $E \subset V$ (subspace topology) and look at $f^{-1}(E)$.  If $f^{-1}(E)$
-is not compact, then there exists a sequence $\{ p_k \}$ in $f^{-1}(E)$
-such that $p_k \to p \in \partial U$.  That is because $f^{-1}(E)$ is closed
+Take a closed set $E \subset V$ (subspace topology) and suppose $f^{-1}(E)$
+is not compact.  Then there exists a sequence $\{ p_k \}$ in $f^{-1}(E)$
+such that $p_k \to p \in \partial U$, because $f^{-1}(E)$ is closed
 (in $U$) but not compact.  The hypothesis then says that the limit points of
 $\bigl\{ f(p_k) \bigr\}$ are in $\partial V$.  Hence $E$ has limit points in
 $\partial V$ and is not compact.
@@ -3222,7 +3226,7 @@ the sequence of functions converges (uniformly on compact subsets) to
 a limit $g \colon \D \to \overline{\bB}_2$.  As $(\zeta,w_k) \to
 (\zeta,e^{i\theta}) \in \partial \D^2$, then by
 \lemmaref{lemma:bndrytobndry}, $g(\D) \subset \partial \bB_2$,
-and hence $g$ must be constant.
+and hence $g$ is constant by \propref{prop:noanaldiscinsphere}.
 
 Let $g_k'$ denote the derivative (we differentiate each component).
 The functions $g_k'$ converge to $g' = 0$.
@@ -3359,7 +3363,7 @@ A homogeneous polynomial of degree $d$ is a polynomial whose
 every monomial
 is of total degree $d$.  For instance, $z^2w-iz^3+9zw^2$ is homogeneous of
 degree 3 in the variables $(z,w) \in \C^2$.
-A polynomial vector-valued mapping is homogeneous of degree $d$,
+A polynomial vector-valued mapping is homogeneous of degree $d$
 if each component is.
 If $f$ is holomorphic near $a \in \C^n$, then
 write the power series of $f$ at $a$ as
