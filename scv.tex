@@ -3170,7 +3170,7 @@ $E = \bigl\{ f(p_{k_\ell}) \bigr\}$ as a set.  Let $\widebar{E}$ be the closure 
 in $V$ (subspace topology).  If $q \in V$, then $\widebar{E} = E \cup \{ q
 \}$ and $\widebar{E}$ is compact.
 Otherwise, if $q \notin V$, then
-$\widebar{E} = E$.
+$\widebar{E} = E$ and $\widebar{E}$ is not compact.
 The inverse image $f^{-1}(\widebar{E})$
 is not compact (it contains a sequence going to $p \in \partial U$)
 and hence $\widebar{E}$ is not
@@ -3187,7 +3187,8 @@ the set of limit points of $\bigl\{ f(p_k) \bigr\}$ lies in $\partial V$.
 Take a closed set $E \subset V$ (subspace topology) and suppose $f^{-1}(E)$
 is not compact.  Then there exists a sequence $\{ p_k \}$ in $f^{-1}(E)$
 such that $p_k \to p \in \partial U$, because $f^{-1}(E)$ is closed
-(in $U$) but not compact.  The hypothesis then says that the limit points of
+(in $U$), bounded, but not compact.
+The hypothesis then says that the limit points of
 $\bigl\{ f(p_k) \bigr\}$ are in $\partial V$.  Hence $E$ has limit points in
 $\partial V$ and is not compact.
 \end{proof}
@@ -3400,7 +3401,8 @@ boundary of $\Delta$.  Show that for every multi-index $\alpha$,
 Without loss of generality, assume $a=0$.
 Write $f$ as a power series at the origin, written in homogeneous parts:
 \begin{equation*}
-f(z) = z + f_k(z) + \sum_{m=k+1}^\infty f_m(z) ,
+f(z) = z + f_k(z) + \sum_{m=k+1}^\infty f_m(z) = z + f_k(z) + \text{higher
+order terms},
 \end{equation*}
 where $k \geq 2$ is an integer such that $f_2(z),f_3(z),\ldots,f_{k-1}(z)$ is zero.
 The degree-one homogeneous part is simply the vector $z$,
@@ -3416,14 +3418,28 @@ of $U$ to $U$.  As $U$ is bounded, there is an $M$ such that $\snorm{z} \leq
 M$ for all $z \in U$.  Therefore, $\snorm{f(z)} \leq M$ for all $z \in U$, and
 $\snorm{f^\ell(z)} \leq M$ for all $z \in U$.
 
-If we plug in $z + f_k(z) + {}$higher order terms
-into $f_k$, we get $f_k(z) + {}$some other higher order terms.
-Therefore, $f^2(z) = z + 2 f_k(z) + {}$higher order terms.
+Note that
+\begin{equation*}
+f_k\bigl(f(z)\bigr)
+=
+f_k\bigl(z + \text{higher order terms}\bigr)
+=
+f_k(z) + \text{higher order terms}.
+\end{equation*}
+Therefore,
+\begin{multline*}
+f^2(z) =
+f\bigl(f(z)\bigr) =
+f(z) + f_k\bigl(f(z)\bigr) + \text{higher order terms}
+\\
+=
+z + 2 f_k(z) + \text{higher order terms}.
+\end{multline*}
 Continuing this procedure,
 \begin{equation*}
-f^\ell(z) = z + \ell f_k(z) + \sum_{m=k+1}^\infty \tilde{f}_m(z) ,
+f^\ell(z) = z + \ell f_k(z) + \text{higher order terms}.
 \end{equation*}
-for some other degree $m$ homogeneous polynomials $\tilde{f}_m$.  Suppose $\Delta_r(0)$ is a polydisc whose
+Suppose $\Delta_r(0)$ is a polydisc whose
 closure is in $U$.
 Via Cauchy estimates,
 for every multi-index $\alpha$ with $\sabs{\alpha}=k$,
@@ -3458,12 +3474,13 @@ a biholomorphic map such that $f(0) = 0$.  Then $f$ is linear.
 For example, $\bB_n$ is circular and bounded.  So a biholomorphism of $\bB_n$
 (an automorphism)
 that fixes the origin is linear.  Similarly, a polydisc centered at zero is
-also circular and bounded.
+also circular and bounded.  In fact, every Reinhardt domain is circular.
 
 \begin{proof}
 The map $g(z) = f^{-1}\bigl(e^{-i\theta}f(e^{i\theta} z)\bigr)$ is an
 automorphism of $U$ and via the
 chain rule, $g'(0) = I$.  Therefore,
+Cartan says that
 $f^{-1}\bigl(e^{-i\theta}f(e^{i\theta} z)\bigr) = z$, or in other words,
 \begin{equation*}
 f(e^{i\theta} z) = e^{i\theta}f(z) .

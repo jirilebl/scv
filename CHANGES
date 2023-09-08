@@ -26,6 +26,12 @@ Theorems/Propositions/Lemmas in 1.2.
 <li> Exercise 1.2.10 changed to use the unit ball instead of the polydisc.
 <li> When introducing the Jacobian put "holomorphic" in parentheses and
   mention that we will not say so explicitly if the mapping is holomorphic.
+<li>In the proof of Lemma 1.4.7, emphasize where bounded is being used.
+<li> In the proof of Theorem 1.5.1, make the plugging into \(f_k\) a bit more
+  specific with displayed equations.  Also introduce "higher order terms"
+  earlier, and use it in the end instead of making up new names for them.
+<li> Note that all Reinhardt domains are circular after
+Corollary 1.5.2.
 <li> New Exercise 1.5.10.
 <li> New Exercise 1.6.1, renumbers rest of the exercises in 1.6
 <li> New Exercise 2.1.4, renumbers rest of the exercises in 2.1
