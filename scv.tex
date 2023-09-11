@@ -2238,7 +2238,7 @@ Prove \propref{prop:domainofconvergence}.
 \end{exercise}
 \end{exbox}
 
-\begin{thm}[Identity theorem\index{identity theorem}]
+\begin{thm}[Identity theorem\index{identity theorem}]\label{thm:identity}
 \pagebreak[2]
 Let $U \subset \C^n$ be a domain (connected open set) and let
 $f \colon U \to \C$ be holomorphic.
@@ -3624,7 +3624,8 @@ The composition $g \circ \varphi$
 is a holomorphic function of one variable, and it
 is either identically zero, or
 the zero at $\xi=0$ is isolated.
-The function $g$ is not identically zero in any neighborhood of $p$.
+The function $g$ is not identically zero in any neighborhood of $p$
+by \hyperref[thm:identity]{the identity theorem}.
 So there is some line $L$ such that $g \circ \varphi$
 is not identically zero, or in other words, $p$
 is an isolated point of $L \cap N$.
@@ -3658,7 +3659,7 @@ F(z',z_n) =
 \frac{1}{2\pi i}
 \int_{\sabs{\xi}=r} \frac{f(z',\xi)}{\xi-z_n} \,d\xi .
 \end{equation*}
-The function $\xi \to f(z',\xi)$ extends holomorphically to the entire
+The function $\xi \to f(z',\xi)$ is bounded and thus extends holomorphically to the entire
 disc of radius $r$ by the Riemann extension from one dimension.  By Cauchy
 integral formula,
 $F$ is equal to $f$ at the points where they are both defined.
@@ -3846,9 +3847,8 @@ J_f(z) = \det Df(z) = \det \left[ \frac{\partial f_k}{\partial z_\ell}(z)
 \right]_{k\ell}
 \end{equation*}
 is not zero.  This follows from the inverse function theorem, which is just
-a special case of the implicit function theorem.
-The trick is to show that $J_f$ happens to be nonzero
-everywhere.
+a special case of \hyperref[thm:ift]{the implicit function theorem}.
+The trick in the theorem above is that it implies that $J_f$ is nowhere zero.
 
 In one complex dimension, every holomorphic function $f$ can, in
 the proper local holomorphic coordinates (and up to adding a constant),
@@ -3857,6 +3857,7 @@ Near a $z_0 \in \C$,
 there exists a constant $c$ and a local biholomorphic $g$
 with $g(z_0) = 0$ such that
 $f(z) = c + {\bigl( g(z) \bigr)}^d$.
+So $f$ is one-to-one precisely if $d=1$.
 Such a simple result
 does not hold in several variables in general, but if the mapping is
 locally one-to-one, then the present theorem says that such a mapping can be
@@ -3888,6 +3889,8 @@ If $J_f$ vanishes identically, then there is no need to do anything other
 than a translation.  In either case,
 we may assume that $0 \in U$, $f(0)=0$, and
 $J_f = 0$ when $z_n=0$.
+Really, all we need is for the set where $J_f=0$ to be a sufficiently
+large set.
 
 We wish to show that all the derivatives of $f$ in the $z_1,\ldots,z_{n-1}$
 variables vanish whenever $z_n = 0$.  This
