@@ -3874,7 +3874,7 @@ J_f(z) = \det Df(z) = \det \left[ \frac{\partial f_k}{\partial z_\ell}(z)
 \end{equation*}
 is not zero.  This follows from the inverse function theorem, which is just
 a special case of \hyperref[thm:ift]{the implicit function theorem}.
-The trick in the theorem above is that it implies that $J_f$ is nowhere zero.
+The trick to prove the theorem above is to prove that $J_f$ is nowhere zero.
 
 In one complex dimension, every holomorphic function $f$ can, in
 the proper local holomorphic coordinates (and up to adding a constant),
@@ -4299,15 +4299,17 @@ the shell
 \bigl\{ z \in \C^n : 1-\epsilon < \snorm{z} < 1 \bigr\}
 \end{equation*}
 for any $\epsilon > 0$ automatically
-extends to a holomorphic function of $\bB_n$.  We need $n > 1$.
-The extension result decisively does not work in one dimension; for
-example take $\nicefrac{1}{z}$.
-There is a related fact about zero sets.
-If $n \geq 2$ and $f \in \sO(\bB_n)$
-the set of its zeros must
-``touch the boundary'' (in other words $f^{-1}(0)$ is not compact)
-or be empty:  If the set of zeros were
-compact in $\bB_n$, then we could try to
+extends to a holomorphic function of $\bB_n$.
+In fact, we will show later that one can take this to the limit:
+A function only defined on a sphere that satisfies the Cauchy--Riemann
+equations on the sphere will also extend holomorphically to the interior.
+We need $n > 1$.
+The extension result decisively does not work in one dimension; consider $\nicefrac{1}{z}$.
+You have already shown in an exercise that when $n \geq 2$, the zero
+sets of holomorphic functions is never compact, here is another reason why.
+If $n \geq 2$ and $f \in \sO(\bB_n)$ has a nonempty zero set,
+then the zero set must contain points arbitrarily close to the boundary.
+If the set of zeros were compact in $\bB_n$, then we could try to
 extend the function $\nicefrac{1}{f}$.
 
 \begin{exbox}
@@ -5197,29 +5199,38 @@ T_p^{(0,1)} \C^n .
 \end{equation*}
 A holomorphic function is one that vanishes on $T_p^{(0,1)} \C^n$.
 
-Let us see what holomorphic mappings do to these spaces.  Given a smooth
+Let us see what holomorphic mappings do to these spaces when we treat
+holomorphic mappings as smooth mappings.
+Given a smooth
 mapping $f$ from $\C^n$ to $\C^m$, its derivative at $p \in \C^n$
 is a real-linear mapping $D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$.
 Given the basis above, this mapping is represented by
 the standard real Jacobian matrix, that is, a real $2m \times 2n$ matrix
 that we wrote before as $D_\R f(p)$.
+As a basis for $T_p\C^n$ is a basis for $\C \otimes T_p \C^n$, the mapping
+$D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$ naturally uniquely
+extends to
+\glsadd{not:DCf}%
+\begin{equation*}
+D_\C f(p) \colon \C \otimes T_p\C^n \to \C \otimes T_{f(p)} \C^m .
+\end{equation*}
 
 \begin{prop} \label{prop:holvectmap}
 Let $f \colon U \subset \C^n \to \C^m$ be a holomorphic mapping with
 $p \in U$.
-Suppose
-$D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$
-is the real derivative of $f$ at $p$.
-\glsadd{not:DCf}%
-We naturally
-extend the derivative to $D_\C f(p) \colon \C \otimes T_p\C^n \to \C \otimes  T_{f(p)}
-\C^m$.  Then
+%Suppose
+%$D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$
+%is the real derivative of $f$ at $p$.
+%\glsadd{not:DCf}%
+%We naturally
+%extend the derivative to $D_\C f(p) \colon \C \otimes T_p\C^n \to \C \otimes  T_{f(p)}
+%\C^m$.
+Then
 \begin{equation*}
 D_\C f(p)\Bigl(T_p^{(1,0)} \C^n\Bigr) \subset T_{f(p)}^{(1,0)} \C^m
 \qquad \text{and} \qquad
 D_\C f(p)\Bigl(T_p^{(0,1)} \C^n\Bigr) \subset T_{f(p)}^{(0,1)} \C^m .
 \end{equation*}
-
 If $f$ is a biholomorphism, then $D_\C f(p)$ restricted to $T_p^{(1,0)} \C^n$
 is a vector space isomorphism.  Similarly for $T_p^{(0,1)} \C^n$.
 \end{prop}
@@ -5246,9 +5257,11 @@ when we say derivative of $f$, we mean the holomorphic part of the
 derivative, which we write as
 \glsadd{not:Df}%
 \begin{equation*}
-D f(p) \colon T_p^{(1,0)} \C^n \to T_{f(p)}^{(1,0)} \C^m .
+D f(p) \colon T_p^{(1,0)} \C^n \to T_{f(p)}^{(1,0)} \C^m ,
+\qquad
+D f(p) = D_{\C} f(p) \big|_{T_p^{(1,0)} \C^n} .
 \end{equation*}
-So $Df(p)$ is the restriction of $D_\C f(p)$ to $T_p^{(1,0)} \C^n$.
+That is, we restrict $D_\C f(p)$ to $T_p^{(1,0)} \C^n$.
 Let $z$ be the coordinates on $\C^n$ and
 $w$ be the coordinates on $\C^m$.
 In the bases
@@ -5828,8 +5841,8 @@ As an aside,
 the hypersurface
 $\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$ is also called the
 \emph{\myindex{Heisenberg group}}.  The group in this case
-is the group defined on the parameters $(z,\Re w)$ of this hypersurface with the
-group law defined by $(z,\Re w)(z',\Re w') =
+is defined on the parameters $(z,\Re w)$ of this hypersurface with the
+group law $(z,\Re w)(z',\Re w') =
 (z+z',\Re w + \Re w' + 2 \Im z \cdot z')$.
 \begin{myfig}
 \subimport*{figures/}{lewy-hyper.eepic}
@@ -6320,7 +6333,7 @@ similar proof of a ``tomato can'' of analytic discs are called
 tomato can principles.
 The general statement of proof of the principle is that ``an
 analytic function holomorphic in a neighborhood of the sides and the bottom
-of a tomato can extends to the inside.''  And the theorem we named after
+of a tomato can extends to the inside.''  And the theorem we gave as
 the principle states that ``if the Levi form at $p$ has a negative
 eigenvalue, we can fit a tomato can from inside the domain over $p$.''
 
