@@ -3666,11 +3666,13 @@ By differentiating under the integral, the function $F$ is holomorphic
 in all variables.
 
 In a neighborhood of each point of $N$,
-$f$ extends to a continuous (holomorphic in fact) function.
+$F$ is continuous
+(holomorphic in fact).
 A continuous extension of $f$ must be unique
 on the closure of
 $U \setminus N$ in the subspace topology,
-$\overline{(U \setminus N)} \cap U$.  The set $N$ has empty interior,
+$\overline{(U \setminus N)} \cap U$.
+Due to the identity theorem, the set $N$ has empty interior,
 so $\overline{(U \setminus N)} \cap U = U$.  Hence, $F$ is the unique
 continuous extension of $f$ to $U$.
 \end{proof}
@@ -3691,7 +3693,9 @@ points.
 \begin{thm} \label{thm:regptsdense}
 Let $U \subset \C^n$ be a domain and
 $f \in \sO(U)$ and $f$ is not identically zero.
-Let $N = f^{-1}(0)$.  Then there exists a open and dense (subspace topology) subset
+Let $N = f^{-1}(0)$.
+Then there exists an open and dense
+(subspace topology) subset
 $N_{\mathit{reg}} \subset N$
 such that near each $p \in N_{\mathit{reg}}$, after possibly reordering variables,
 $N$ can be locally written as
@@ -3744,7 +3748,7 @@ has an isolated zero in a small disc $\Delta$ around $p_n$ and is
 nonzero on the circle $\partial \Delta$.  By
 \hyperref[thm:onevarrouche]{Rouch\'e's theorem},
 $\xi \mapsto f(z',\xi)$ must have a zero for all $z'$ sufficiently close to $p'$
-(close enough to make $\sabs{f(q',\xi)-f(z',\xi)} < \sabs{f(q',\xi)}$ for all $\xi \in
+(close enough to make $\sabs{f(p',\xi)-f(z',\xi)} < \sabs{f(p',\xi)}$ for all $\xi \in
 \partial \Delta$).
 Since $g(z')$ is the unique solution $z_n$ to $h(z',z_n) = 0$
 near $p$ and the
@@ -3772,18 +3776,20 @@ The points on a subvariety that are not regular are called
 \begin{example}
 For $U = \C^2$,
 let $f(z) = z_1^2-z_2^2$ and consider $X = f^{-1}(0)$. As $\nabla f =
-(2z_1,2z_2)$,
+(2z_1,2z_2) \not= 0$
 outside of the origin, we can solve for $z_1$ or $z_2$ and so
-all points of $X \setminus 0$ are regular.  In fact,
+all points of $X \setminus \{ 0 \}$ are regular.  In fact,
 $z_1 = z_2$ and $z_1 = -z_2$ are the two possibilities.
-In no neighborhood of the origin, however, is there a way to solve for either
+In no neighborhood of the origin, however, is there a way to uniquely solve for either
 $z_1$ or $z_2$, since you always get two possible solutions:  If you could
 solve $z_1 = g(z_2)$, then both $z_2 = g(z_2)$ and $-z_2 = g(z_2)$ must be
 true, a contradiction for any nonzero $z_2$.  Similarly,
 we cannot solve for $z_1$.
 So the origin is a singular point.
 
-To see that you may have need to use derivatives of the function, notice
+To see that you may have needed to use derivatives of the function in the
+proof of the theorem,
+notice
 that the function $\varphi(z) = {(z_1^2-z_2^2)}^2$ has the same zero set $X$,
 but both
 $\frac{\partial \varphi}{\partial z_1}$ and
@@ -3791,15 +3797,13 @@ $\frac{\partial \varphi}{\partial z_2}$ vanish on $X$.  Using
 $h= \frac{\partial \varphi}{\partial z_1}$ or
 $h= \frac{\partial \varphi}{\partial z_2}$ in the proof will work.
 
-It may be also good to consider a function such as $f(z) = z_1^2z_2$ to see
-that we do not always get the entire set of regular functions with one
-neighborhood $W$.  The
-zero set is where $z_1=0$ or where $z_2=0$, and all points except the origin
-are regular.  We use $h=f$ to show that points outside the origin
+It may be also good to consider a function such as $f(z) = z_1^2z_2$.  The
+zero set of $f$ is where $z_1=0$ or where $z_2=0$, and all points except the origin
+are regular.
+We use $h=f$ to show that points outside the origin
 where $z_2=0$ are regular.
 To show that points outside the origin
-where $z_1=0$ are regular, we must restrict to some neighborhood $W$
-of those points and use $h = \frac{\partial f}{\partial z_1}$.
+where $z_1=0$ are regular we use $h = \frac{\partial f}{\partial z_1}$.
 \end{example}
 
 \begin{example}
@@ -3893,7 +3897,8 @@ We wish to show that all the derivatives of $f$ in the $z_1,\ldots,z_{n-1}$
 variables vanish whenever $z_n = 0$.  This
 would clearly contradict $f$ being one-to-one,
 as $f(z_1,\ldots,z_{n-1},0)$ would be constant.
-So for any point on $z_n=0$ we consider one of the components
+So for any point on $z_n=0$,
+consider one of the components
 of $f$ and one of the derivatives of that component.
 Without loss of generality, suppose the point is 0, and
 for contradiction suppose
