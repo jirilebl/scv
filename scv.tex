@@ -2448,7 +2448,7 @@ as $\nicefrac{f}{g}$ globally.  That is, the ring of meromorphic functions
 is the field of fractions of $\sO(U)$.
 This problem is the so-called
 \emph{\myindex{Poincar\'e problem}}, and its solution is no longer positive
-once we generalize $U$ to complex manifolds.
+once one generalizes $U$ to complex manifolds.
 The points of $U$ through which $F$ does not extend holomorphically are called the
 \emph{\myindex{poles}} of $F$.
 Namely, poles are the points where
@@ -3505,7 +3505,7 @@ If $m\not=1$, we obtain that $f_m \equiv
 \end{proof}
 
 \begin{exbox}
-\begin{exercise}
+\begin{exercise} \label{exercise:autofpolydisc}
 Show that every automorphism $f$ of $\D^n$ (that is, a biholomorphism $f \colon \D^n \to \D^n$)
 is given as
 \begin{equation*}
@@ -3544,7 +3544,7 @@ $\lambda$ of the matrix $Df(a)$ satisfies $\sabs{\lambda} \leq 1$.
 \end{exercise}
 
 \begin{exercise}[Tricky]
-Find a domain $U \subset \C^n$ such that the only biholomorphism $f \colon U
+For any $n$, find a domain $U \subset \C^n$ such that the only biholomorphism $f \colon U
 \to U$ is the identity $f(z) = z$.  Hint: Take the polydisc (or the ball)
 and remove some number of points (be careful in how you choose them).  Then
 show that $f$ extends to a biholomorphism of the polydisc.  Then see what
@@ -3613,6 +3613,9 @@ then there exists a unique $F \in \sO(U)$ such that $F|_{U \setminus N} = f$.
 \end{thm}
 
 The proof is an application of the Riemann extension theorem from one dimension.
+And just as in one dimension, if the function is not bounded, we do not
+expect an extension.  For instance, $\frac{1}{g(z)}$ is not bounded near $N$
+and indeed does not extend through $N$.
 
 \begin{proof}
 Take any $p \in N$, and let $L$ be a complex line through $p$.
@@ -3685,6 +3688,21 @@ that if $p \in U$ is a pole (near $p$, $F=\nicefrac{f}{g}$, and $F$ does not
 extend through $p$), then there exists a sequence $\{ p_k \}$
 converging to $p$ such that $F(p_k) \to \infty$.  Namely, $F$ is
 unbounded near $p$.
+\end{exercise}
+
+\begin{exercise}
+Suppose that $U \subset \C^n$ is open and $N \subset U$ is a closed set
+such that for every $\zeta \in \C$, the set
+$\{ z \in U : z_n = \zeta \} \cap N$ is countable.
+Suppose that $f \colon U \setminus N \to \C$ is holomorphic and
+locally bounded in $U$.  Then $f$ uniquely extends to a holomorphic function
+of $U$.  Hint: Every countable closed subset of $\C$ has isolated points.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U = \{ z \in \D^2 : z_1 \not=0 \text{ and } z_2 \not= 0 \}$.
+Compute the group of automorphisms $\Aut(U)$.
+Hint: See \exerciseref{exercise:autofpolydisc}.
 \end{exercise}
 \end{exbox}
 
@@ -3798,16 +3816,14 @@ $\frac{\partial \varphi}{\partial z_2}$ vanish on $X$.  Using
 $h= \frac{\partial \varphi}{\partial z_1}$ or
 $h= \frac{\partial \varphi}{\partial z_2}$ in the proof will work.
 
-It may be also good to consider a function such as $f(z) = z_1^2z_2$.  The
-zero set of $f$ is where $z_1=0$ or where $z_2=0$, and all points except the origin
-are regular.
-We use $h=f$ to show that points outside the origin
-where $z_2=0$ are regular.
-To show that points outside the origin
-where $z_1=0$ are regular we use $h = \frac{\partial f}{\partial z_1}$.
+Similarly, $\psi(z) = {(z_1-z_2)}^2 (z_1+z_2)$ has the same
+zero set $X$, and $h=\psi$ will work at regular points where $z_1 = -z_2$,
+but $h = \frac{\partial \psi}{\partial z_1}$ or
+$h = \frac{\partial \psi}{\partial z_2}$ must be used where $z_1 = z_2$.
 \end{example}
 
 \begin{example}
+\pagebreak[2]
 The theorem is not true in the nonholomorphic setting.  The set
 where $x_1^2 +  x_2^2 = 0$ in $\R^2$ is only the origin, clearly not a graph
 of any function of one variable.  The first part of the theorem works, but
@@ -3825,6 +3841,12 @@ Hint: The trick is showing that you've found all of them.
 Suppose $U \subset \C^n$ is a domain and $f \in \sO(U)$.
 Show that the complement of the zero set, $U \setminus f^{-1}(0)$, is
 connected.
+\end{exercise}
+
+\begin{exercise} \label{exercise:zerosetnotcompact}
+Suppose $U \subset \C^n$ is a domain and $f \in \sO(U)$.
+Show that the zero set $f^{-1}(0)$ is not compact if it is nonempty.
+Hint: A compact set has a point farthest from the origin.
 \end{exercise}
 \end{exbox}
 
@@ -3873,7 +3895,7 @@ Suppose $n > 1$ and suppose we know the theorem is true for dimension $n-1$.
 
 Suppose for contradiction that $J_f = 0$ somewhere.
 First suppose that $J_f$ is not identically zero.
-Find a regular point $q$ on the zero set of $J_f$.
+Find a regular point $q$ of the zero set of $J_f$.
 Write the zero set of $J_f$ near $q$ as
 \begin{equation*}
 z_n = g(z_1,\ldots,z_{n-1})
@@ -4054,7 +4076,7 @@ $p$.  The contradiction shows that no $V$ and $W$ exist.
 \end{example}
 
 In one dimension this notion has no real content: Every domain in $\C$ is a domain
-of holomorphy.
+of holomorphy (exercise below).
 
 \begin{exbox}
 \begin{exercise}[Easy]
@@ -4072,12 +4094,17 @@ is either empty or every connected component is a domain of holomorphy.
 Show that a polydisc in $\C^n$ is a domain of holomorphy.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:cartesianproddomofhol}
 Suppose $U_k \subset \C^{n_k}$, $k=1,\ldots,\ell$ are domains of holomorphy,
 show that
 $U_1 \times \cdots \times U_\ell$ is a domain of holomorphy.
 In particular every cartesian product of domains in $\C$ is a domain of
 holomorphy.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \C^n$ is a domain of holomorphy and $f \in \sO(U)$
+is a function.  Show that $U \setminus f^{-1}(U)$ is a domain of holomorphy.
 \end{exercise}
 
 \begin{exercise}
@@ -4365,7 +4392,7 @@ $\C^n$.
 Construct an example domain $U \subset \C^2$ that is not a domain of
 holomorphy, but such that there is no domain $W \subset \C^2$ with $U
 \subset W$ such that every $f \in \sO(U)$ extends to $W$.
-Hint: Extending the example from \remarkref{exercise:notsimpledefofdoh} will
+Hint: Extending the example from \remarkref{remark:notsimpledefofdoh} will
 almost give you a $U$, but it will be a domain of holomorphy, you need to modify it
 a little bit.
 \end{exercise}
@@ -4503,15 +4530,7 @@ of discs converging to it that satisfy the hypotheses of the theorem.
 
 An exercise in the previous section showed that every convex domain is a
 domain of holomorphy.  However, classical convexity is too strong.
-
-\begin{exbox}
-\begin{exercise}
-Show that if $U \subset \C^m$ and $V \subset \C^k$ are both domains of
-holomorphy, then $U \times V$ is a domain of holomorphy.
-\end{exercise}
-\end{exbox}
-
-In particular, the exercise says that
+By \exerciseref{exercise:cartesianproddomofhol},
 for any domains $U \subset \C$ and $V \subset \C$, the set
 $U \times V$ is a domain of holomorphy in $\C^2$.  The domains
 $U$ and $V$, and hence $U \times V$, can be spectacularly nonconvex.
@@ -4618,12 +4637,22 @@ $T_q \R^n$ are distinct spaces.
 \glsadd{not:evalpartial}%
 An object
 $\frac{\partial}{\partial x_k}\big|_p$
-is a linear functional
+is a real linear functional\footnote{Linear real-valued function.}
 on the space of smooth functions:
 When applied to a smooth function $g$, it gives
 $\frac{\partial g}{\partial x_k} \big|_p$.  Therefore, $X_p$ is also such a
 functional.  It is the directional derivative from calculus;
 it is computed as $X_p f = \nabla f|_p \cdot (a_1,\ldots,a_n)$.
+
+\begin{exbox}
+\begin{exercise}
+Suppose that $X$ is a real linear functional on the set of real
+polynomials in $n$ variables
+such that $X (fg) = (Xf) g + f (Xg)$.  Show that we can compute $X$
+by identifying it with an element of $X \in T_0 \R^n$.
+\end{exercise}
+\end{exbox}
+
 
 \begin{defn}
 Let $M \subset \R^n$ be a smooth hypersurface,
@@ -11046,7 +11075,8 @@ Find a counterexample to the conclusion to Hartogs.
 One of many consequences of the Hartogs phenomenon is
 that
 the zero set of a holomorphic function $f$ is never compact in
-dimension 2 or higher.  If it
+dimension 2 or higher, although there exist
+easier proofs of that fact, see \exerciseref{exercise:zerosetnotcompact}.  If it
 were compact, $\frac{1}{f}$ would provide a contradiction, see also
 \exerciseref{exercise:connectedcomplement}.
 
@@ -11151,7 +11181,7 @@ poles, and another one on the Weierstrass theorem for finding a holomorphic
 function with a prescribed zero set.  The analogues of these results in
 several complex variables are the so-called Cousin I and Cousin II
 problems\footnote{Named for Pierre Cousin, the French mathematician, and not
-for some familial relation.}
+for some family scuffle.}
 respectively.  We will study the Cousin I problem, which is an additive
 version of the problem and obtains an analogue to the Mittag-Leffler
 theorem.  We will skip the multiplicative Cousin II problem, which is

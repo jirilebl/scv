@@ -33,12 +33,17 @@ Theorems/Propositions/Lemmas in 1.2.
 <li> Note that all Reinhardt domains are circular after
 Corollary 1.5.2.
 <li> New Exercise 1.5.10.
-<li> New Exercise 1.6.1, renumbers rest of the exercises in 1.6
-<li> New Exercise 2.1.4, renumbers rest of the exercises in 2.1
-<li> New Exercise 2.1.14
+<li> New Exercises 1.6.1, 1.6.2, 1.6.3, and 1.6.6. 
+  Renumbers rest of the exercises in 1.6.
+<li> At the end of Example 1.6.3, make the zero set be the same as that for
+the first two functions in the example.
+<li> New Exercises 2.1.4 and 2.1.5, renumbers rest of the exercises in 2.1
+<li> New Exercise 2.1.15
 <li> New Theorem 2.1.7, the extension version of the continuity principle.
   Name the two version "first version" and "second version."
-<li> Adds Exercises 2.1.15, 2.1.16, and 2.1.17
+<li> Adds Exercises 2.1.16, 2.1.17, and 2.1.18
+<li> Remove Exercise 2.2.1 as it's now covered by 2.1.4, and add a
+different Exercise 2.2.1 after definition 2.2.2.
 <li> In Exercise 2.3.2 ask to show that the new full Hessian matrix is also
   Hermitian.
 <li> New Exercises 2.3.3-2.3.5, renumbers the rest in 2.3
