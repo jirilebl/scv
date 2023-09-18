@@ -4454,9 +4454,8 @@ so a unitary matrix.
 \end{example}
 
 In fact, one does not need a whole Hartogs figure to extend a holomorphic
-function, only sequence of discs suffices.  We will not need this precise
-statement later, so you can freely skip to the next section.  We will,
-however, see another version of this theorem later.
+function, a sequence of discs suffices.  We will see another version of
+this theorem later, \thmref{thm:contprinciple2}.
 
 \begin{thm}[Kontinuit\"atssatz---Continuity
 principle\index{Kontinuit\"atssatz!first version}\index{continuity
@@ -4468,8 +4467,11 @@ Suppose $U \subset \C^n$ is open and there exists a sequence of
 closed analytic discs $\varphi_n \colon \widebar{\D} \to \C^n$ converging
 (pointwise) to a closed analytic disc $\varphi$, such that
 $\varphi_n(\widebar{\D}) \subset U$ and $\varphi(\partial \D) \subset U$.
-Then for every $f \in \sO(U)$ there exists a neighborhood $W$ of
-$\varphi(\widebar{\D})$ and an $F \in \sO(W)$ such that $F=f$ on some
+Then there exists a neighborhood $W$ of $\varphi(\widebar{\D})$
+such that
+for every $f \in \sO(U)$
+there is
+an $F \in \sO(W)$ where $F=f$ on some
 neighborhood of $\varphi(\partial \D)$.
 \end{thm}
 
@@ -4484,7 +4486,7 @@ functions.\label{fig:contprinc1}}
 \end{myfig}
 
 \begin{proof}
-Passing to a subsequence via Montel and considering slightly smaller discs
+Via Montel and considering slightly smaller discs
 (restrictions to discs of radii $1-\epsilon$), we may
 assume that $\varphi_n$ converge uniformly to $\varphi$ on $\widebar{\D}$.
 Fix some $f \in \sO(U)$.
@@ -4492,8 +4494,8 @@ The functions
 $f \circ \varphi_n$ are holomorphic for all $n$, and as $\varphi_n$ converges
 uniformly, $f \circ \varphi_n$ converges uniformly on $\partial \D$.
 By the maximum principle this sequence
-converges uniformly in $\widebar{\D}$ to some holomorphic $g \colon
-\widebar{\D} \to \C$.
+converges uniformly in $\widebar{\D}$ to some continuous $g \colon
+\widebar{\D} \to \C$ holomorphic on $\D$.
 
 As $\varphi(\partial \D)$ is compact, there exists an $r > 0$ such that
 for each $z \in \varphi(\partial \D)$, $\Delta_r(z) \subset U$, meaning that
@@ -4505,27 +4507,33 @@ Pick a positive $s < r$.  The set
 is a compact subset of $U$ and hence $f$ is bounded by some $M$ on this set.
 Cauchy estimates give that
 \begin{equation} \label{eq:kontinuitatonecauchy}
-\abs{\frac{\partial^\alpha f}{\partial z^\alpha}(q)} \leq \frac{M
-\alpha!}{s^\alpha}
+\abs{\frac{\partial^\alpha f}{\partial z^\alpha}(q)}
+\leq
+\frac{M \alpha!}{s^\alpha}
 \end{equation}
 for all $q \in \varphi(\partial \D)$.  Each one of these
 derivatives is a holomorphic function in $U$ and thus
 $\frac{\partial^\alpha f}{\partial z^\alpha} \circ \varphi$ extends
-to a holomorphic function on $\widebar{\D}$ using the argument above.
+to a continuous function on $\widebar{\D}$ holomorphic on $\D$ as above.
 
-Thus, by maximum principle, we have \eqref{eq:kontinuitatonecauchy}
+By maximum principle, we have \eqref{eq:kontinuitatonecauchy}
 for all $q \in \varphi(\widebar{\D}) \cap U$, and in fact for the
 extended functions it holds for all $q \in \varphi(\widebar{\D})$.
 So we have a power series at each point of
 $\varphi(\widebar{\D})$ that converges in a polydisc of radius $s$,
 and when the polydisc lies in $U$, this power series agrees with $f$.
-The resulting function is well-defined on the entire disc
+As $g$ is well-defined, the resulting function is well-defined on the disc
 $\varphi(\widebar{\D})$.  Hence, the function continues analytically along
 any path in $\varphi(\widebar{\D})$.  Take $W$ to be a union of finitely
 many polydiscs centered at points of $\varphi(\widebar{\D})$
 and of radius less than or equal to $s$, where we take the polydiscs small
 enough to ensure the extension is well-defined in $W$.
 See exercise below.
+
+As the $s$ only depends on the distance between the boundary of $U$
+and $\varphi(\partial \D)$, the $W$ does not depend on $f$ and moreover,
+the assumption to restrict to smaller discs in the beginning of the proof
+is valid.
 \end{proof}
 
 \begin{exbox}
