@@ -4057,7 +4057,7 @@ that is, proper subsets of $\C^n$ that are biholomorphic to $\C^n$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Domains of holomorphy and holomorphic extensions}
+\section{Domains of holomorphy \& holomorphic extension}
 
 It turns out that not every domain in $\C^n$ is a natural domain for
 holomorphic functions.
@@ -4185,12 +4185,12 @@ $U = \C \setminus \{ z \in \C : \Im z = 0, \Re z \leq 0 \}$.
 We can locally define an extension from one side through the boundary
 of the domain, but we cannot define an extension on a open set that
 contains $U$.  This one-dimensional example should be motivation for why we let $V$
-be a proper subset of $U \cap W$, and why $W$ need not include all of $U$.
+be a proper subset of $U \cap W$, and why $W$ need not contain all of $U$.
 This one dimensional intuition can be extended to an actual example in
 $\C^n$, see \exerciseref{exercise:notsimpledefofdoh}.
 \end{remark}
 
-In dimension two or more, not every domain is a domain of holomorphy.  We have
+In dimension two or higher, not every domain is a domain of holomorphy.  We have
 the following theorem.  The domain $H$ in the theorem is called the
 \emph{\myindex{Hartogs figure}}.
 
@@ -4315,12 +4315,12 @@ Then make sure your extension is single-valued.
 \end{exbox}
 
 Convexity of $K$ is not needed; we only need that $U\setminus K$
-is connected, however, the proof is much harder.
+is connected, but the proof is much harder.
 The single-valuedness of the extension is the key point that makes the
 general proof harder.
 
-Notice the surprising fact that every holomorphic function on
-the shell
+Notice the surprising consequence of the exercise:
+Every holomorphic function on the shell
 \begin{equation*}
 \bB_n \setminus \overline{B_{1-\epsilon}(0)} =
 \bigl\{ z \in \C^n : 1-\epsilon < \snorm{z} < 1 \bigr\}
@@ -4433,11 +4433,10 @@ By
 $U_1 = \C^2 \setminus \R^2$
 is not a domain of holomorphy.  On the other hand,
 $U_2 = \C^2 \setminus \{ z \in \C^2 : z_2 = 0 \}$ is a domain of holomorphy;
-simply
-use $f(z) = \frac{1}{z_2}$ as the function that cannot extend.
+the function $f(z) = \frac{1}{z_2}$ cannot extend.
 Therefore, $U_1$ and $U_2$ are rather different as far as complex variables are
 concerned, yet they are the same set if we ignore the complex structure.
-They are both simply a 4-dimensional real vector space minus a 2-dimensional
+They are both a 4-dimensional real vector space minus a 2-dimensional
 real vector subspace.  That is, $U_1$ is the set
 where either $\Im z_1 \not= 0$ or $\Im z_2 \not= 0$,
 while $U_2$ is the set
@@ -4448,9 +4447,9 @@ requires something more than just some real geometric condition on the
 set.  Namely, we have shown that the image of a domain of holomorphy
 via an orthonormal real-linear mapping
 (so preserving distances, angles, straight lines,
-etc.)\ need not be a domain of holomorphy.  Therefore, when we want to
-``rotate'' in complex analysis we need to use a complex linear mapping,
-so a unitary matrix.
+etc.)\ need not be a domain of holomorphy.  In particular, when we want to
+``rotate'' in complex analysis we use a complex linear mapping,
+a unitary matrix.
 \end{example}
 
 In fact, one does not need a whole Hartogs figure to extend a holomorphic
@@ -4464,9 +4463,9 @@ Sometimes this (or similar) theorem is called Behnke--Sommer, although the
 first version of it (where the discs are complex lines) were proved by Hartogs.}]
 \label{thm:contprinciple1}
 Suppose $U \subset \C^n$ is open and there exists a sequence of
-closed analytic discs $\varphi_n \colon \widebar{\D} \to \C^n$ converging
+closed analytic discs $\varphi_k \colon \widebar{\D} \to \C^n$ converging
 (pointwise) to a closed analytic disc $\varphi$, such that
-$\varphi_n(\widebar{\D}) \subset U$ and $\varphi(\partial \D) \subset U$.
+$\varphi_k(\widebar{\D}) \subset U$ and $\varphi(\partial \D) \subset U$.
 Then there exists a neighborhood $W$ of $\varphi(\widebar{\D})$
 such that
 for every $f \in \sO(U)$
@@ -4488,21 +4487,22 @@ functions.\label{fig:contprinc1}}
 \begin{proof}
 Via Montel and considering slightly smaller discs
 (restrictions to discs of radii $1-\epsilon$), we may
-assume that $\varphi_n$ converge uniformly to $\varphi$ on $\widebar{\D}$.
+assume that $\varphi_k$ converge uniformly to $\varphi$ on $\widebar{\D}$.
 Fix some $f \in \sO(U)$.
-The functions
-$f \circ \varphi_n$ are holomorphic for all $n$, and as $\varphi_n$ converges
-uniformly, $f \circ \varphi_n$ converges uniformly on $\partial \D$.
-By the maximum principle this sequence
-converges uniformly in $\widebar{\D}$ to some continuous $g \colon
-\widebar{\D} \to \C$ holomorphic on $\D$.
+%The functions
+%$f \circ \varphi_k$ are holomorphic for all $n$, and as $\varphi_k$ converges
+%uniformly, $f \circ \varphi_k$ converges uniformly on $\partial \D$.
+%By the maximum principle this sequence
+%converges uniformly in $\widebar{\D}$ to some continuous $g \colon
+%\widebar{\D} \to \C$ holomorphic on $\D$.
 
 As $\varphi(\partial \D)$ is compact, there exists an $r > 0$ such that
 for each $z \in \varphi(\partial \D)$, $\Delta_r(z) \subset U$, meaning that
 the power series of $f$ converges in $\Delta_r(z)$.
-Pick a positive $s < r$.  The set
+Pick a positive $s < r$.
+As $\varphi_k$ converge uniformly, for sufficiently high $k$,
 \begin{equation*}
-\bigcup_{q \in \varphi(\partial \D)} \overline{\Delta_s(q)}
+\bigcup_{q \in \varphi_k(\partial \D)} \overline{\Delta_s(q)}
 \end{equation*}
 is a compact subset of $U$ and hence $f$ is bounded by some $M$ on this set.
 Cauchy estimates give that
@@ -4511,7 +4511,40 @@ Cauchy estimates give that
 \leq
 \frac{M \alpha!}{s^\alpha}
 \end{equation}
-for all $q \in \varphi(\partial \D)$.  Each one of these
+for all $q \in \varphi_k(\partial \D)$.  By the maximum principle,
+\eqref{eq:kontinuitatonecauchy} holds for all $q \in \varphi_k(\widebar{\D})$,
+and hence the power series for $f$ at all $q \in \varphi_k(\widebar{\D})$
+converges in $\Delta_s(q)$.
+We can take finitely many such $\Delta_s(q_1),\ldots,\Delta_s(q_\ell)$
+that cover $\varphi_k(\widebar{\D})$, $f$ extends holomorphically to each
+of these polydiscs.  If $k$ is large enough, these discs can be chosen
+to also cover $\varphi(\widebar{\D})$.
+The extensions of $f$ to each $\Delta_s(q_j)$ may not give a single
+extension 
+
+FIXME: well-defined not simple!  Only simple if $\varphi$ is one-to-one, but
+that ought not be necessary I don't think.  Not necessary in the references
+I found...  But I don't understand how say Shabat gets this.
+
+Perhaps wiggling the disc and noting we have single valuedness at the
+circle will do it.  Perhaps not!  Perhaps yes.
+
+
+
+We leave as an exercise that there exist subsets
+$W_1 \subset \Delta_s(q_1)$ through
+$W_\ell \subset \Delta_s(q_\ell)$, such that
+$\varphi(\widebar{\D}) \subset W_1 \cup \cdots \cup W_\ell$,
+
+
+We may not
+
+
+
+
+
+
+  Each one of these
 derivatives is a holomorphic function in $U$ and thus
 $\frac{\partial^\alpha f}{\partial z^\alpha} \circ \varphi$ extends
 to a continuous function on $\widebar{\D}$ holomorphic on $\D$ as above.
@@ -4524,8 +4557,10 @@ $\varphi(\widebar{\D})$ that converges in a polydisc of radius $s$,
 and when the polydisc lies in $U$, this power series agrees with $f$.
 As $g$ is well-defined, the resulting function is well-defined on the disc
 $\varphi(\widebar{\D})$.  Hence, the function continues analytically along
-any path in $\varphi(\widebar{\D})$.  Take $W$ to be a union of finitely
+any path in $\varphi(\widebar{\D})$.
+Take $W$ to be a union of finitely
 many polydiscs centered at points of $\varphi(\widebar{\D})$
+such that $\varphi(\widebar{\D}) \subset W$,
 and of radius less than or equal to $s$, where we take the polydiscs small
 enough to ensure the extension is well-defined in $W$.
 See exercise below.
@@ -4545,7 +4580,7 @@ coordinate functions from $\C^n$ to $\D$.
 \end{exercise}
 
 \begin{exercise}
-Prove the well-defininedness of the extension.  Hint: The key is to handle what
+Prove the well-defininedness of the extension.  Hint:
 happens when two of those polydiscs intersect: Is the extension in the
 intersection necessarily the same?
 \end{exercise}
