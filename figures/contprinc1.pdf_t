@@ -12,6 +12,6 @@
 \begin{picture}(2587,1128)(957,-719)
 \put(2949,149){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$U$}%
 }}}}
-\put(2899,-177){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$W$}%
+\put(1981,-511){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Delta_s(p)$}%
 }}}}
 \end{picture}%

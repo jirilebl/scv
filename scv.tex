@@ -4466,17 +4466,24 @@ Suppose $U \subset \C^n$ is open and there exists a sequence of
 closed analytic discs $\varphi_k \colon \widebar{\D} \to \C^n$ converging
 (pointwise) to a closed analytic disc $\varphi$, such that
 $\varphi_k(\widebar{\D}) \subset U$ and $\varphi(\partial \D) \subset U$.
-Then there exists a neighborhood $W$ of $\varphi(\widebar{\D})$
-such that
-for every $f \in \sO(U)$
-there is
-an $F \in \sO(W)$ where $F=f$ on some
-neighborhood of $\varphi(\partial \D)$.
+Then there exists an $s$ such that for every $f \in \sO(U)$
+and for every $p \in \varphi(\D)$,
+there is an $F \in \sO\bigl(\Delta_s(p)\bigr)$ where $F=f$ on some
+open subset of $U \cap \Delta_s(p)$.
 \end{thm}
 
-In particular, a $U$ that possesses such discs is not a domain of holomorphy.
+In particular, a $U$ that possesses such discs where $\varphi(\D)$ does not
+lie entirely in $U$ is not a domain of holomorphy.
 The continuity principle is illustrated in \figureref{fig:contprinc1}, where
 analytic discs are drawn as lines and the boundaries as black dots.
+Note that the conclusion is that $F$ continues analytically past any point
+in $\varphi(\D)$.
+However, we do not necessarily get single-valued extension to a whole
+neighborhood of $\varphi(\D)$ without a further hypothesis,
+see exercises below.%
+\footnote{A counterexample can be found in S.\ Ivashkovich, \emph{Discrete
+and Continuous Versions of the Continuity Principle}, The Journal of
+Gemetric Analysis, \textbf{32} (2022), Paper No. 226.}
 
 \begin{myfig}
 \subimport*{figures/}{contprinc1.pdf_t}
@@ -4515,58 +4522,18 @@ for all $q \in \varphi_k(\partial \D)$.  By the maximum principle,
 \eqref{eq:kontinuitatonecauchy} holds for all $q \in \varphi_k(\widebar{\D})$,
 and hence the power series for $f$ at all $q \in \varphi_k(\widebar{\D})$
 converges in $\Delta_s(q)$.
-We can take finitely many such $\Delta_s(q_1),\ldots,\Delta_s(q_\ell)$
-that cover $\varphi_k(\widebar{\D})$, $f$ extends holomorphically to each
-of these polydiscs.  If $k$ is large enough, these discs can be chosen
-to also cover $\varphi(\widebar{\D})$.
-The extensions of $f$ to each $\Delta_s(q_j)$ may not give a single
-extension 
+Thus we get an $F$ defined by this power series on $\Delta_s(q)$ which
+agrees with $f$ in a neighborhood of $q$.
+By considering a large enough $k$, and a slightly smaller $s'$,
+then for every $p \in \varphi(\widebar{\D})$ we can fit a $\Delta_{s'}(p)
+\subset \Delta_s(q)$ for some $q \in \varphi_k(\widebar{\D})$ and where
+$q \in \Delta_{s'}(p)$.
+Since $p$ must be in the closure of $U$ by necessity, then $\Delta_{s'}(p)$
+intersects $U$, and as it contains $q$, $F$ agrees with $f$ on some open
+subset of $\Delta_{s'}(p)$.
 
-FIXME: well-defined not simple!  Only simple if $\varphi$ is one-to-one, but
-that ought not be necessary I don't think.  Not necessary in the references
-I found...  But I don't understand how say Shabat gets this.
-
-Perhaps wiggling the disc and noting we have single valuedness at the
-circle will do it.  Perhaps not!  Perhaps yes.
-
-
-
-We leave as an exercise that there exist subsets
-$W_1 \subset \Delta_s(q_1)$ through
-$W_\ell \subset \Delta_s(q_\ell)$, such that
-$\varphi(\widebar{\D}) \subset W_1 \cup \cdots \cup W_\ell$,
-
-
-We may not
-
-
-
-
-
-
-  Each one of these
-derivatives is a holomorphic function in $U$ and thus
-$\frac{\partial^\alpha f}{\partial z^\alpha} \circ \varphi$ extends
-to a continuous function on $\widebar{\D}$ holomorphic on $\D$ as above.
-
-By maximum principle, we have \eqref{eq:kontinuitatonecauchy}
-for all $q \in \varphi(\widebar{\D}) \cap U$, and in fact for the
-extended functions it holds for all $q \in \varphi(\widebar{\D})$.
-So we have a power series at each point of
-$\varphi(\widebar{\D})$ that converges in a polydisc of radius $s$,
-and when the polydisc lies in $U$, this power series agrees with $f$.
-As $g$ is well-defined, the resulting function is well-defined on the disc
-$\varphi(\widebar{\D})$.  Hence, the function continues analytically along
-any path in $\varphi(\widebar{\D})$.
-Take $W$ to be a union of finitely
-many polydiscs centered at points of $\varphi(\widebar{\D})$
-such that $\varphi(\widebar{\D}) \subset W$,
-and of radius less than or equal to $s$, where we take the polydiscs small
-enough to ensure the extension is well-defined in $W$.
-See exercise below.
-
-As the $s$ only depends on the distance between the boundary of $U$
-and $\varphi(\partial \D)$, the $W$ does not depend on $f$ and moreover,
+The $s$ (and $s'$) only depends on the distance between the boundary of $U$
+and $\varphi(\partial \D)$, so it does not depend on $f$ and moreover,
 the assumption to restrict to smaller discs in the beginning of the proof
 is valid.
 \end{proof}
@@ -4580,9 +4547,10 @@ coordinate functions from $\C^n$ to $\D$.
 \end{exercise}
 
 \begin{exercise}
-Prove the well-defininedness of the extension.  Hint:
-happens when two of those polydiscs intersect: Is the extension in the
-intersection necessarily the same?
+Prove that if furthermore $\varphi$ is injective in the proof,
+then there exists an entire neighborhood $W$ of $\varphi(\widebar{\D})$
+and for every $f \in \sO(U)$, there is an $F \in \sO(W)$ such that 
+$f=F$ on some open neighborhood of $\varphi(\partial \D)$.
 \end{exercise}
 
 \begin{exercise}
