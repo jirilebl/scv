@@ -4775,6 +4775,14 @@ X_p h + (X_p g)r.
 So $X_p f = X_p h$ on $M$ (where $r=0$).  In other words, $X_p f$ only
 depends on the values of $f$ on $M$.
 
+This brings up a natural question about what is a smooth function on $M$.
+By definition, a function $f$ defined on $M$ (or any other subset of $\R^n$
+that is not open) is \emph{smooth} if it is
+the restriction of a smooth function in an open neighborhood of $M$.
+This extension of $f$ is not unique, so
+the above calculation shows that differentiating $f$
+via $T_p M$ is indepdendent on how $f$ is extended to a neighborhood.
+
 \begin{example}
 If $M \subset \R^n$ is given by $x_n = 0$, then $T_p M$ is given by
 derivatives of the form
@@ -4814,7 +4822,7 @@ where $a_k$ are smooth
 functions.
 That is, $X$ is a smooth function
 $X \colon V \subset \R^n \to T\R^n$ such that $X(p) \in T_p \R^n$.
-Usually we write $X_p$ rather than $X(p)$.
+Usually, we write $X_p$ rather than $X(p)$.
 To be more fancy,
 say $X$ is a \emph{\myindex{section}} of $T \R^n$.
 
@@ -4827,7 +4835,7 @@ A vector field $X$ in $TM$ is a vector field
 such that $X_p \in T_p M$ for all $p \in M$.
 \end{defn}
 
-Before we move on, let us note how smooth maps transform tangent spaces.
+Before we move on, we note how smooth maps transform tangent spaces.
 Given a smooth mapping
 $f \colon U \subset \R^n \to \R^m$,
 the derivative at $p$ is a linear mapping of
@@ -4918,7 +4926,7 @@ So, $U$ is convex at $p \in \partial U$ if
 the Hessian
 of $r$ at $p$ as a bilinear form is positive semidefinite
 when restricted to $T_p \partial U$.
-In the language of vector calculus, let $H$ be the Hessian of $r$ at $p$, and treat
+More concretely, let $H$ be the Hessian of $r$ at $p$, and treat
 $a \in \R^n$ as a column vector.
 Then
 $\partial U$ is convex at $p$ whenever
@@ -4958,7 +4966,7 @@ X = y \frac{\partial}{\partial x} - x \frac{\partial}{\partial y}
 is tangent to the circle, that is,
 $Xr = X(x^2+y^2-1) = (2x,2y) \cdot (y,-x) = 0$ on the circle---by chance, $Xr=0$ everywhere.
 The vector field $X$ is nonzero on the circle, so at each point it gives a
-basis of the tangent space.  See \figureref{fig:circle-tangent}
+basis of the tangent space.  See \figureref{fig:circle-tangent}.
 \begin{myfig}
 \subimport*{figures/}{circle-tangent.pdf_t}
 \caption{Tangent vector to a circle.\label{fig:circle-tangent}}
@@ -5005,10 +5013,11 @@ a basis of $TM$.
 
 \begin{exbox}
 \begin{exercise}
-Show that if an open set with smooth boundary is strongly convex at a point, then it is
-strongly convex at all nearby points.  On the other hand find an example of
-an open set with smooth boundary that is convex at one point $p$, but not convex at points
-arbitrarily near $p$.
+Show that if an open set with smooth boundary is strongly convex at a point $p$,
+then it is strongly convex for all points in some neighborhood of $p$.
+Then find an example of
+an open set with smooth boundary that is convex at one point $p$,
+but not convex at points arbitrarily near $p$.
 \end{exercise}
 
 \begin{exercise}
@@ -5040,7 +5049,7 @@ defining function, that is, it is convenient to write $M$ as a graph.
 \begin{lemma} \label{lemma:realgraphcoords}
 Suppose $M \subset \R^n$ is a smooth hypersurface,
 and $p \in M$.  Then after a rotation and translation,
-$p$ is the origin, and near the origin $M$ is given by
+$p$ is the origin, and near the origin, $M$ is given by
 \begin{equation*}
 y = \varphi(x) ,
 \end{equation*}
@@ -5048,6 +5057,13 @@ where $(x,y) \in \R^{n-1} \times \R$ are our coordinates and
 $\varphi$ is a smooth
 function that is $O(2)$ at the origin,
 namely, $\varphi(0) = 0$ and $d\varphi(0) = 0$.
+Consequently,
+\begin{equation*}
+T_0M = \operatorname{span}_{\R} \left\{
+\frac{\partial}{\partial x_1}\Big|_p,
+\ldots,
+\frac{\partial}{\partial x_{n-1}}\Big|_p \right\} .
+\end{equation*}
 
 \nopagebreak
 If $M$ is the boundary of an open set $U$ with smooth boundary and
@@ -5064,17 +5080,17 @@ See \figureref{fig:deffun-graph}.
 
 \begin{proof}
 Let $r$ be a defining function at $p$.  Take $v = \nabla r|_p$.
-By translating $p$ to zero, and applying a rotation (an orthogonal matrix),
+By translating $p$ to the origin, and applying a rotation (an orthogonal matrix),
 we assume $v = (0,0,\ldots,0,v_n)$, where $v_n < 0$.  Denote our
 coordinates by $(x,y) \in \R^{n-1} \times \R$.  As $\nabla r|_0 =
-v$, then $\frac{\partial r}{\partial y}(0) \not= 0$.  We apply
-the implicit function theorem to find a
+v$, then $\frac{\partial r}{\partial y}(0) \not= 0$.
+The implicit function theorem gives a
 smooth function $\varphi$ such that
 $r\bigl(x,\varphi(x)\bigr) = 0$ for all $x$ in a neighborhood of the
 origin, and $\bigl\{ (x,y) : y=\varphi(x) \bigr\}$ are all the
 solutions to $r = 0$ near the origin.
 
-What is left is to show that the derivative at 0 of $\varphi$ vanishes.
+We need to show that the derivative at 0 of $\varphi$ vanishes.
 As
 $r\bigl(x,\varphi(x)\bigr) = 0$ for all $x$ in a neighborhood of the
 origin, we differentiate.
@@ -5104,6 +5120,8 @@ At the origin,
 $\frac{\partial r}{\partial x_k}(0,0) = 0$ and
 $\frac{\partial r}{\partial y}(0,0) = v_n \not= 0$, and therefore
 $\frac{\partial \varphi}{\partial x_k}(0) = 0$.
+That $T_0 M$ is the span of the $x_k$ derivatives
+follows at once from the fact that $\nabla r|_0 = (0,\ldots,0,v_n)$.
 
 To prove the final statement, note that
 $r < 0$ on $U$.  It is enough to check that $r$ is
@@ -5122,7 +5140,7 @@ where $H = \left[
 is the Hessian matrix of $\varphi$ at the origin,
 and $E$ is $O(3)$, namely, $E(0) = 0$, and
 all first and second order derivatives of $E$ vanish at $0$.
-For the situation of the lemma above,
+In the context of the lemma above,
 the $\varphi$ is $O(2)$ at the origin, i.e.\ $\varphi(0) = 0$
 and $\nabla \varphi|_0 = 0$.  So we write the hypersurface
 $M$ as
@@ -5292,8 +5310,8 @@ the basis.
 \end{exercise}
 \end{exbox}
 
-For holomorphic functions and holomorphic vectors,
-when we say derivative of $f$, we mean the holomorphic part of the
+For holomorphic mappings and holomorphic vectors,
+when we say ``derivative of $f$,'' we mean the holomorphic part of the
 derivative, which we write as
 \glsadd{not:Df}%
 \begin{equation*}
@@ -5303,7 +5321,7 @@ D f(p) = D_{\C} f(p) \big|_{T_p^{(1,0)} \C^n} .
 \end{equation*}
 That is, we restrict $D_\C f(p)$ to $T_p^{(1,0)} \C^n$.
 Let $z$ be the coordinates on $\C^n$ and
-$w$ be the coordinates on $\C^m$.
+$w$ the coordinates on $\C^m$.
 In the bases
 $\left\{ \frac{\partial}{\partial z_1} \big|_p,\ldots,
 \frac{\partial}{\partial z_n} \big|_p \right\}$
@@ -5311,7 +5329,7 @@ and
 $\left\{ \frac{\partial}{\partial w_1} \big|_{f(p)},\ldots,
 \frac{\partial}{\partial w_m} \big|_{f(p)} \right\}$,
 the holomorphic derivative $Df(p)$ of $f \colon \C^{n} \to \C^m$
-is represented as the $m \times n$ Jacobian matrix
+is represented by the $m \times n$ Jacobian matrix
 \begin{equation*}
 \left[
 \frac{\partial f_k}{\partial z_\ell} \Big|_p
@@ -5373,21 +5391,22 @@ T_p^{(1,0)} M \overset{\text{def}}{=} \bigl( \C \otimes T_pM \bigr) \cap
 T_p^{(0,1)} M \overset{\text{def}}{=} \bigl( \C \otimes T_pM \bigr) \cap
 \bigl( T_p^{(0,1)} \C^n \bigr) .
 \end{equation*}
-The $B_p$ is just the ``leftover'' and must
-be included, otherwise the dimensions will not work out.\footnote{%
+The $B_p$ is the ``leftover'' and must
+be included for the dimensions to work out.\footnote{%
 The $B_p$ is sometimes colloquially called the ``bad direction.''}
 
-Make sure that you understand what all the objects are.  The space
-$T_pM$ is a real vector space; $\C \otimes T_pM$, $T_p^{(1,0)}M$,
-$T_p^{(0,1)} M$, and $B_p$ are complex vector spaces.  To see that
-these give vector bundles,
+Make sure to notice what sort of vector spaces these are.
+The space $T_pM$ is a real vector space;
+$\C \otimes T_pM$, $T_p^{(1,0)}M$, $T_p^{(0,1)} M$, and $B_p$
+are complex vector spaces.
+To see that these give vector bundles,
 we must first show that their dimensions do not vary
 from point to point.  The easiest way to see this fact is to write down
 convenient local coordinates.  First, let us see what a biholomorphic map
 does to the holomorphic and antiholomorphic vectors.  A biholomorphic map
 $f$ is a diffeomorphism.  And if a real hypersurface $M$ is defined
 by a function $r$ near $p$, then the image $f(M)$ is also
-a real hypersurface is given by the defining function
+a real hypersurface given by the defining function
 $r \circ f^{-1}$ near $f(p)$.
 
 
@@ -5400,6 +5419,7 @@ the complexified real derivative as before.  Then
 \begin{equation*}
 D_\C f(p)\Bigl(T_p^{(1,0)}M\Bigr) = T_{f(p)}^{(1,0)}f(M), \qquad
 D_\C f(p)\Bigl(T_p^{(0,1)}M\Bigr) = T_{f(p)}^{(0,1)}f(M).
+\avoidbreak
 \end{equation*}
 That is, the spaces are isomorphic as complex vector spaces.
 \end{prop}
@@ -5474,7 +5494,6 @@ A translation and a unitary matrix are holomorphic
 and, in fact, biholomorphic, so
 via \propref{prop:holvectmap} the tangent spaces are all
 transformed correctly.
-
 The rest of the proposition follows at once as
 $\frac{\partial}{\partial (\Im w)}\big|_0$ is the normal vector to $M$
 at the origin.
@@ -5665,6 +5684,7 @@ the full Hessian in terms of $z$s and $\bar{z}$s is Hermitian.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Consider one dimension, $z = x+iy$, and the real Hessian
 in terms of $x$ and $y$:
 \begin{equation*}
@@ -7546,7 +7566,7 @@ $\bigcup_\alpha \Delta_\alpha \subset \subset U$.
 \end{thm}
 
 Various similar theorems are named the \emph{continuity principle},
-we have seen two.
+we have now seen two.
 Generally what they have in common is the family of analytic discs whose
 boundaries stay inside a domain, and whose conclusion has to do
 with extension of holomorphic functions, or with domains of holomorphy.
@@ -7572,8 +7592,10 @@ that approach the boundary as in \figureref{fig:contprinc},
 then the domain is not convex with respect to plurisubharmonic functions.
 In the diagram, the boundaries of the discs are
 denoted by the dark dots at the end of the segments.
-In fact, if we replace discs with line segments, this is the standard
-convexity, see the exercises below.
+In fact, for standard geometric convexity,
+we can prove a continuity principle where
+we do replace discs with line segments,
+see the exercises below.
 
 \begin{myfig}
 \subimport*{figures/}{contprinc.pdf_t}
