@@ -14,6 +14,8 @@ FIXME: Some are WORK IN PROGRESS
   continuous on \(U,\) not just \(\Delta,\) to avoid worrying about
   measurability.  Improve the proof to only use the standard Leibniz rule
   for Riemann integrals.
+<li> Add Exercise 1.1.8 on boundedness and extension through a point,
+and add relevant note to the corollary of Hartogs figure.
 <li> Add a note after Theorem 1.2.1 to note that continuity up to the
   boundary is not really necessary.
 <li> Improve the wording of the definition of Reinhardt domain.

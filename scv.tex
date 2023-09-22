@@ -1633,12 +1633,20 @@ and every $k=1,2,\ldots,n$.
 Hint: The previous exercise may be useful.
 \end{exercise}
 
-\begin{exercise}
-For $0 < \epsilon < 1$,
-suppose a continuous
-$f \colon \overline{\D^2} \setminus \overline{\Delta_\epsilon(0)} \to \C$ is holomorphic
-on $\D^2 \setminus \overline{\Delta_\epsilon(0)}$.
-Prove that $f$ is bounded.
+\begin{exercise} \label{exercise:isolatedhartogs}
+Let $f \colon \overline{\D^2} \setminus \{ 0 \} \to \C$ be continuous
+and holomorphic on $\D^2 \setminus \{ 0 \}$.
+\begin{exparts}
+\item
+Prove that $f$ is bounded.  Hint: Consider the functions
+$\xi \mapsto f(\xi,a)$ and $\xi \mapsto f(a,\xi)$ for 
+different $a$.
+\item
+Using the Riemann extension in one variable, prove that
+there exists a continuous $F \colon \overline{\D^2} \to \C$,
+holomorphic on $\D^2$, such that $f=F$ on 
+$\overline{\D^2} \setminus \{ 0 \}$.
+\end{exparts}
 \end{exercise}
 \end{exbox}
 
@@ -1920,9 +1928,7 @@ f(z) =
 \sum_{\alpha}
 c_{\alpha}
 {(z-a)}^{\alpha} ,
-\end{equation*}
-where
-\begin{equation*}
+\quad \text{where} \quad
 c_\alpha
 =
 \frac{1}{{(2\pi i)}^n}
@@ -2402,21 +2408,23 @@ a unique holomorphic function $F \colon U \to \C$ such that $F|_D = f$.
 \end{exercise}
 \end{exbox}
 
-\pagebreak[2]
-The set of holomorphic functions on a domain is a
-commutative ring under pointwise addition and multiplication (exercise
-below).  We give this set a name.
-
 \begin{defn}
-\pagebreak[2]
 Let $U \subset \C^n$ be an open set.
 \glsadd{not:O}%
-Define $\sO(U)$ to be the \emph{\myindex{ring of holomorphic functions}}.
+Define $\sO(U)$ to be the \emph{\myindex{ring of holomorphic functions}}
+$f \colon U \to \C$.
 The letter $\sO$ is used to recognize the fundamental contribution to
 several complex variables by
 Kiyoshi Oka\footnote{%
-See \url{https://en.wikipedia.org/wiki/Kiyoshi_Oka}}.
+See \url{https://en.wikipedia.org/wiki/Kiyoshi_Oka}.}.
 \end{defn}
+
+\pagebreak[1]
+The set $\sO(U)$ really is a commutative ring
+under pointwise addition and multiplication (exercise below).
+For us, $\sO(U)$ will always mean the set of $\C$-valued functions,
+however, in the literature the notation is sometimes used
+to simply denote holomorphicity no matter the codomain.
 
 
 \begin{exbox}
@@ -2469,7 +2477,7 @@ a \emph{\myindex{point of indeterminacy}}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:noisolatedzeros}
-Prove that zeros (and so poles as we will see later, though this is a bit harder to see)
+Prove that zeros
 are never isolated in $\C^n$ for $n \geq 2$.
 Hint: Consider $z_1 \mapsto f(z_1,z_2,\ldots,z_n)$ as you move
 $z_2,\ldots,z_n$ around, and use, perhaps,
@@ -4269,7 +4277,9 @@ by $\widehat{H}$ and is called the \emph{hull} of $H$.%
 \index{hull of a Hartogs figure}
 
 Let us state a simple but useful case of the so-called
-\emph{\myindex{Hartogs phenomenon}}.
+\emph{\myindex{Hartogs phenomenon}}.  You have already proved a version of
+this result in \exerciseref{exercise:isolatedhartogs}, but let us prove it
+with the Hartogs figure.
 
 \begin{cor}
 Let $U \subset \C^n$, $n \geq 2$, be an open set and $p \in U$.
@@ -4291,16 +4301,11 @@ $f$ extends to be holomorphic through $p$.
 \end{proof}
 
 This result provides (yet) another reason why holomorphic functions in several
-variables have no isolated zeros (or poles).  Suppose $U \subset \C^n$,
-$n \geq 2$, and $f \in \sO(U)$ with $f$ being zero only at $p$, that
-is $f^{-1}(0) = \{ p \}$.  Then $\frac{1}{f}$ would be holomorphic in
-$U \setminus \{ p \}$.  It would not be possible to extend $f$
-through $p$ (not even continuously let alone holomorphically),
-and we obtain a contradiction.
-
-The extension works in an even more surprising fashion.  We could
+variables have no isolated zeros (or poles).  If a zero of $f$ was isolated, then
+consider $\nicefrac{1}{f}$ to obtain a contradiction.
+But the extension works in an even more surprising fashion.  We could
 take out a very large set, for example, any geometrically
-convex subset:
+convex compact subset:
 
 \begin{exbox}
 \begin{exercise} \label{exercise:convexhartogs}
@@ -4315,7 +4320,8 @@ Then make sure your extension is single-valued.
 \end{exbox}
 
 Convexity of $K$ is not needed; we only need that $U\setminus K$
-is connected, but the proof is much harder.
+is connected, but the proof is harder and we will get to it in
+\sectionref{sec:hartogsphenom}.
 The single-valuedness of the extension is the key point that makes the
 general proof harder.
 
@@ -11033,7 +11039,7 @@ of compact support.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The general Hartogs phenomenon}
+\section{The general Hartogs phenomenon} \label{sec:hartogsphenom}
 
 We can now prove the general Hartogs phenomenon as an application of the
 solution of the compactly supported
