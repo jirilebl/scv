@@ -4784,7 +4784,7 @@ depends on the values of $f$ on $M$.
 This brings up a natural question about what is a smooth function on $M$.
 By definition, a function $f$ defined on $M$ (or any other subset of $\R^n$
 that is not open) is \emph{smooth} if it is
-the restriction of a smooth function in an open neighborhood of $M$.
+locally the restriction to $M$ of a smooth function in an open neighborhood.
 This extension of $f$ is not unique, so
 the above calculation shows that differentiating $f$
 via $T_p M$ is indepdendent on how $f$ is extended to a neighborhood.
@@ -4842,7 +4842,7 @@ such that $X_p \in T_p M$ for all $p \in M$.
 \end{defn}
 
 Before we move on, we note how smooth maps transform tangent spaces.
-Given a smooth mapping
+Given a smooth
 $f \colon U \subset \R^n \to \R^m$,
 the derivative at $p$ is a linear mapping of
 the tangent spaces: $Df(p) \colon T_p \R^n \to T_{f(p)} \R^m$.
@@ -5038,6 +5038,19 @@ strongly convex at all points except the origin, where it is just convex
 \end{exercise}
 \end{exbox}
 
+The right sort of changes of coordinates of convexity are rotations
+(applying an orthogonal matrix) and translations.  These changes of
+coordinates preserve convexity.  It is rather clear for geometric convexity,
+but it takes a small computation for convexity at a point of
+a smooth boundary.
+
+\begin{exbox}
+\begin{exercise}
+Prove that translations and rotations (orthogonal matrices) preserve
+convexity and strong convexity at a point for a domain with smooth boundary.
+\end{exercise}
+\end{exbox}
+
 In the following, \glsadd{not:Ol}%
 we use the \emph{\myindex{big-oh notation}},
 although we use a perhaps less standard shorthand\footnote{%
@@ -5096,7 +5109,7 @@ $r\bigl(x,\varphi(x)\bigr) = 0$ for all $x$ in a neighborhood of the
 origin, and $\bigl\{ (x,y) : y=\varphi(x) \bigr\}$ are all the
 solutions to $r = 0$ near the origin.
 
-We need to show that the derivative at 0 of $\varphi$ vanishes.
+We need to show that the derivative of $\varphi$ at 0 vanishes.
 As
 $r\bigl(x,\varphi(x)\bigr) = 0$ for all $x$ in a neighborhood of the
 origin, we differentiate.
@@ -5448,8 +5461,10 @@ $T_p^{(1,0)}M$ to $T_{f(p)}^{(1,0)}f(M)$ and
 $T_p^{(0,1)}M$ to $T_{f(p)}^{(0,1)}f(M)$.
 \end{proof}
 
-In the next proposition it is important to note that a translation and
-applying a unitary matrix are biholomorphic changes of coordinates.
+We again wish to write a hypersurface as a graph.  In this context, the
+right sort of transformations are biholomorphic transformations.
+Translations are biholomorphic, and 
+the rotation we will want to use is applying a unitary matrix to $\C^n$.
 
 \begin{prop} \label{prop:graphcoordinatesCn}
 \pagebreak[2]
@@ -5490,6 +5505,7 @@ $\Im w > \varphi(z,\bar{z},\Re w)$ on $U$.
 \end{prop}
 
 \begin{proof}
+\pagebreak[2]
 Apply a translation to put $p=0$ and in the
 same manner as in \lemmaref{lemma:realgraphcoords}
 apply a unitary matrix to make sure that $\nabla r$ is
@@ -5507,7 +5523,9 @@ at the origin.
 
 \begin{remark}
 When $M$ is of dimension less than $2n-1$ (no longer a hypersurface, but
-a submanifold of higher codimension), the proposition above does not hold.
+a submanifold of higher codimension),
+the conclusion of the
+proposition about the dimensions does not hold.
 That is, we would still have $\dim_\C T_p^{(1,0)} M = \dim_\C T_p^{(0,1)}
 M$, but this number need not be constant from point to point.  Fortunately,
 when talking about domains with smooth boundaries, the boundaries are

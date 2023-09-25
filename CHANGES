@@ -50,6 +50,9 @@ different Exercise 2.2.1 after definition 2.2.2.
 <li> After exercise 2.2.2, after the computation showing that \(X_p f\)
 depends only on values on \(M,\) explicitly note what a smooth function
 on a nonopen set is. 
+<li> Add blurb about translations and orthogonal matrices preserving
+convexity and add Exercise 2.2.8 to prove it, renumbers the rest
+of the exercises in 2.2.
 <li> Add the explicit form of \(T_0 M\) into the statement of Lemma 2.2.8.
 <li> Pull out the definition of the complexified real derivative to the
 before the statement of Proposition 2.3.1.
