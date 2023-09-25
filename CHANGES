@@ -50,16 +50,17 @@ different Exercise 2.2.1 after definition 2.2.2.
 <li> After exercise 2.2.2, after the computation showing that \(X_p f\)
 depends only on values on \(M,\) explicitly note what a smooth function
 on a nonopen set is. 
-<li> Add blurb about translations and orthogonal matrices preserving
+<li> Add blurb about translations and matrices preserving
 convexity and add Exercise 2.2.8 to prove it, renumbers the rest
 of the exercises in 2.2.
 <li> Add the explicit form of \(T_0 M\) into the statement of Lemma 2.2.8.
+<li> Add Exercise 2.2.11
 <li> Pull out the definition of the complexified real derivative to the
 before the statement of Proposition 2.3.1.
-<li> In Exercise 2.3.2 ask to show that the new full Hessian matrix is also
+<li> Add Exercise 2.3.2, renumbers the rest in 2.3.
+<li> In Exercise 2.3.3 ask to show that the new full Hessian matrix is also
   Hermitian.
-<li> New Exercises 2.3.3-2.3.5, renumbers the rest in 2.3
-<li> New part b) to exercise 5.2.3.
+<li> New Exercises 2.3.4-2.3.6
 <li> In 2.3 add a bit more on the relationship of the positivity/eigenvalues of
   of the real and complex Hessians.  (mainly the exercises)
 <li> The real Hessian in terms of the zs and zbars has now the block rows
@@ -70,6 +71,7 @@ before the statement of Proposition 2.3.1.
   than the "hint" in text, so replace that hint.
 <li> Move Exercise 2.6.13 (Behnke-Stein) past Cartan-Thullen.  It is much
   easier then.
+<li> New part b) to exercise 5.2.3.
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
 <li> In appendix B, introduce and use winding numbers and describe how things

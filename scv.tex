@@ -5038,15 +5038,20 @@ strongly convex at all points except the origin, where it is just convex
 \end{exercise}
 \end{exbox}
 
-The right sort of changes of coordinates of convexity are rotations
-(applying an orthogonal matrix) and translations.  These changes of
-coordinates preserve convexity.  It is rather clear for geometric convexity,
-but it takes a small computation for convexity at a point of
-a smooth boundary.
+The right sort of changes of coordinates that preserve convexity are
+invertible real affine linear mappings.
+It is rather clear for geometric convexity, as these are precisely the maps
+that take lines to lines,
+but it takes a little bit of computation for convexity at a point of
+a smooth boundary (exercise below).
+A useful analogy to keep in mind (but not to go overboard with) is that 
+holomorphic functions are sort of like affine functions.  And so it will be
+with convexity being replaced with pseudoconvexity in just a little bit, and
+affine linear maps with holomorphic maps.
 
 \begin{exbox}
 \begin{exercise}
-Prove that translations and rotations (orthogonal matrices) preserve
+Prove that translations and invertible linear maps (matrices) preserve
 convexity and strong convexity at a point for a domain with smooth boundary.
 \end{exercise}
 \end{exbox}
@@ -5067,7 +5072,7 @@ defining function, that is, it is convenient to write $M$ as a graph.
 
 \begin{lemma} \label{lemma:realgraphcoords}
 Suppose $M \subset \R^n$ is a smooth hypersurface,
-and $p \in M$.  Then after a rotation and translation,
+and $p \in M$.  Then after a rotation (orthogonal matrix) and translation,
 $p$ is the origin, and near the origin, $M$ is given by
 \begin{equation*}
 y = \varphi(x) ,
@@ -5185,6 +5190,15 @@ $r > 0$ and the set given by $r < 0$ are convex at $p$.
 Prove that if a hypersurface $M \subset \R^n$ is convex from both sides at all
 points, then it is locally just a hyperplane (the zero set of a real affine
 function).
+\end{exercise}
+
+\begin{exercise}
+Suppose $U$ is a domain with smooth boundary that is strongly convex
+at $p \in \partial U$.
+Then there exists a real affine change of variables (translation and an
+invertible linear map), such that after the change of variables, $p=0$ and near $0$, $\partial U$ is given by
+$y = x^t x + E(x)$ where $E(x)$ is $O(3)$ and
+$y > x^tx + E(x)$ on $U$.
 \end{exercise}
 \end{exbox}
 
@@ -5326,6 +5340,13 @@ $\bar{z}$s and think of $f$ as a mapping
 Write the derivative as a matrix in terms of the $z$s and the $\bar{z}$s
 and $f$s and $\bar{f}$s and the result will follow.  That is just changing
 the basis.
+\end{exercise}
+
+\begin{exercise}
+Prove a converse to the proposition.  If $f \colon U \subset \C^n \to \C^m$
+is a smooth mapping such that 
+$D_\C f(p)\Bigl(T_p^{(1,0)} \C^n\Bigr) \subset T_{f(p)}^{(1,0)} \C^m$
+at every $p \in U$, then $f$ is holomorphic.
 \end{exercise}
 \end{exbox}
 
