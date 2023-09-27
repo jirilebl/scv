@@ -47,23 +47,30 @@ the first two functions in the example.
 <li> Adds Exercises 2.1.16, 2.1.17, and 2.1.18
 <li> Remove Exercise 2.2.1 as it's now covered by 2.1.4, and add a
 different Exercise 2.2.1 after definition 2.2.2.
-<li> After exercise 2.2.2, after the computation showing that \(X_p f\)
+<li> After Exercise 2.2.2, after the computation showing that \(X_p f\)
 depends only on values on \(M,\) explicitly note what a smooth function
 on a nonopen set is. 
+<li> Add Proposition 2.2.6 about where tangent spaces are taken.  Renumbers
+following propositions, definitions, and examples in 2.2.
+<li> Change Lemma 2.2.9 to Proposition to be consistent with 2.3 where the
+analogous result is a Proposition.
+<li> Add the explicit form of \(T_0 M\) into the statement of Proposition 2.2.9.
 <li> Add blurb about translations and matrices preserving
 convexity and add Exercise 2.2.8 to prove it, renumbers the rest
 of the exercises in 2.2.
-<li> Add the explicit form of \(T_0 M\) into the statement of Lemma 2.2.8.
 <li> Add Exercise 2.2.11
 <li> Pull out the definition of the complexified real derivative to the
 before the statement of Proposition 2.3.1.
 <li> Add Exercise 2.3.2, renumbers the rest in 2.3.
+<li> Make Proposition 2.3.2 be more general, not just for biholomorphisms.
+<li> Add a quick remark after Proposition 2.3.3 to notice how the z and w
+variables are handled in \(\varphi .\)
 <li> In Exercise 2.3.3 ask to show that the new full Hessian matrix is also
   Hermitian.
 <li> New Exercises 2.3.4-2.3.6
 <li> In 2.3 add a bit more on the relationship of the positivity/eigenvalues of
   of the real and complex Hessians.  (mainly the exercises)
-<li> The real Hessian in terms of the zs and zbars has now the block rows
+<li> The real Hessian in terms of the \(z\)s and \(\bar{z}\)s has now the block rows
   flipped, that is really the correct way to look at it so that it is
   hermitian.
 <li> Rename 2.4 to "From harmonic to plurisubharmonic functions"

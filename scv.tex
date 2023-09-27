@@ -4890,6 +4890,33 @@ function, such as
 $\varphi(y_1,y_2) = \alpha y_1 + \beta y_2$, that the definition above is
 satisfied.
 
+Suppose that for a smooth map $f$ and a smooth hypersurfaces $M$ and $M'$
+you have $f(M) \subset M'$.  Then you get the same containment for the
+tangent spaces.  Indeed, suppose that $r$ is a defining function for $M$
+near $p$ and $r'$ is a defining function for $M'$ near $f(p)$, and
+suppose that $X_p \in T_p M$.  Then $r' \circ f$ is zero on $M$,
+and hence
+\begin{equation*}
+\bigl( Df(p) X_p \bigr) r' = X_p (r' \circ f) = X_p (0) = 0 .
+\end{equation*}
+If the map is a diffeomorphism (has an inverse), then $f(M)$ is a smooth
+hypersurface with defining function $f^{-1} \circ r$, the derivative is
+an invertible linear map, and we get that $Df(p)$ restricts to an
+isomorphism of $T_pM$ and $T_{f(p)} f(M)$.  That is, we proved the following
+proposition.
+
+\begin{prop} \label{prop:DMtoM}
+Suppose $U \subset \R^n$ is open, $M \subset U$ is a smooth hypersurface,
+$f \colon U \to \R^m$ is a smooth function, $M' \subset \R^m$ is a smooth
+hypersurface such that $f(M) \subset M'$, and $p \in M$.  Then
+\begin{equation*}
+Df(p)(T_pM) \subset T_{f(p)} M' .
+\end{equation*}
+Moreover, if $m=n$ and $f$ is a diffeomorphism (bijective onto some open set
+$U'$ such that $f^{-1}$ is smooth), then $f(M)$ is a smooth hypersurface and
+$Df(p)(T_pM) = T_{f(p)} f(M)$.
+\end{prop}
+
 \medskip
 
 Now that we know what tangent vectors are and how they transform,
@@ -5070,7 +5097,7 @@ then $f(0)=0$, and its first and second derivatives vanish at the origin.
 For computations it is often useful to use a more convenient
 defining function, that is, it is convenient to write $M$ as a graph.
 
-\begin{lemma} \label{lemma:realgraphcoords}
+\begin{prop} \label{prop:realgraphcoords}
 Suppose $M \subset \R^n$ is a smooth hypersurface,
 and $p \in M$.  Then after a rotation (orthogonal matrix) and translation,
 $p$ is the origin, and near the origin, $M$ is given by
@@ -5095,7 +5122,7 @@ $r < 0$ on $U$,
 then the rotation can be chosen
 such that $y > \varphi(x)$ for points in $U$.
 See \figureref{fig:deffun-graph}.
-\end{lemma}
+\end{prop}
 
 \begin{myfig}
 \subimport*{figures/}{deffun-graph.pdf_t}
@@ -5442,25 +5469,30 @@ are complex vector spaces.
 To see that these give vector bundles,
 we must first show that their dimensions do not vary
 from point to point.  The easiest way to see this fact is to write down
-convenient local coordinates.  First, let us see what a biholomorphic map
-does to the holomorphic and antiholomorphic vectors.  A biholomorphic map
-$f$ is a diffeomorphism.  And if a real hypersurface $M$ is defined
-by a function $r$ near $p$, then the image $f(M)$ is also
-a real hypersurface given by the defining function
-$r \circ f^{-1}$ near $f(p)$.
+convenient local coordinates.  First, let us note that
+a biholomorphic map preserves the tangent holomorphic and antiholomorphic
+vectors.  That is, we get the following
+analogue of \propref{prop:DMtoM}.
+Note that a biholomorphic map is a diffeomorphism.
 
-
-\begin{prop}
+\begin{prop} \label{prop:whereTgoeshol}
 Suppose $M \subset \C^n$ is a smooth real hypersurface, $p \in M$,
-and $U \subset \C^n$ is open with $M \subset U$.
-Let $f \colon U \to \C^n$ be holomorphic such
-that $D f(p)$ is invertible (a biholomorphism near $p$).  Let $D_\C f(p)$ be
+and $U \subset \C^n$ is open with $M \subset U$, and supose $M' \subset
+\C^m$ a smooth real hypersurface.
+Let $f \colon U \to \C^m$ be holomorphic such $f(M) \subset M'$.
+Let $D_\C f(p)$ be
 the complexified real derivative as before.  Then
 \begin{equation*}
-D_\C f(p)\Bigl(T_p^{(1,0)}M\Bigr) = T_{f(p)}^{(1,0)}f(M), \qquad
-D_\C f(p)\Bigl(T_p^{(0,1)}M\Bigr) = T_{f(p)}^{(0,1)}f(M).
+D_\C f(p)\Bigl(T_p^{(1,0)}M\Bigr) \subset T_{f(p)}^{(1,0)}M', \qquad
+D_\C f(p)\Bigl(T_p^{(0,1)}M\Bigr) \subset T_{f(p)}^{(0,1)}M'.
 \avoidbreak
 \end{equation*}
+Moreover, if $m=n$ and $f$ is a biholomorphism,
+then $f(M)$ is a smooth real hypersurface,
+$D_\C f(p)$ is invertible,
+$D_\C f(p)\Bigl(T_p^{(1,0)}M\Bigr) = T_{f(p)}^{(1,0)} f(M)$
+and
+$D_\C f(p)\Bigl(T_p^{(0,1)}M\Bigr) = T_{f(p)}^{(0,1)} f(M)$.
 That is, the spaces are isomorphic as complex vector spaces.
 \end{prop}
 
@@ -5468,18 +5500,21 @@ The proposition is local, if $U$ is only a neighborhood of $p$,
 replace $M$ with $M \cap U$.
 
 \begin{proof}
-We apply \propref{prop:holvectmap}.
-As $f$ is a biholomorphism at $p$,
+Apply \propref{prop:holvectmap} and
+\propref{prop:DMtoM}.
+That is,
 \begin{multline*}
-D_\C f(p)\Bigl(T_p^{(1,0)}\C^n\Bigr) = T_{f(p)}^{(1,0)}\C^n, \quad
-D_\C f(p)\Bigl(T_p^{(0,1)}\C^n\Bigr) = T_{f(p)}^{(0,1)}\C^n, \quad
+D_\C f(p)\Bigl(T_p^{(1,0)}\C^n\Bigr) \subset T_{f(p)}^{(1,0)}\C^m, \quad
+D_\C f(p)\Bigl(T_p^{(0,1)}\C^n\Bigr) \subset T_{f(p)}^{(0,1)}\C^m, \quad
 \text{and} \\
-D_\C f(p)\bigl(\C \otimes T_pM\bigr) =\C \otimes  T_{f(p)}f(M) .
+D_\C f(p)\bigl(\C \otimes T_pM\bigr) \subset \C \otimes  T_{f(p)}M' .
 \avoidbreak
 \end{multline*}
 Then $D_\C f(p)$ must take
-$T_p^{(1,0)}M$ to $T_{f(p)}^{(1,0)}f(M)$ and
-$T_p^{(0,1)}M$ to $T_{f(p)}^{(0,1)}f(M)$.
+$T_p^{(1,0)}M$ to $T_{f(p)}^{(1,0)}M'$ and
+$T_p^{(0,1)}M$ to $T_{f(p)}^{(0,1)}M'$.
+The ``Moreover'' follows
+from the ``Moreover'' of \propref{prop:DMtoM}.
 \end{proof}
 
 We again wish to write a hypersurface as a graph.  In this context, the
@@ -5525,17 +5560,21 @@ the rotation can be chosen so that
 $\Im w > \varphi(z,\bar{z},\Re w)$ on $U$.
 \end{prop}
 
+Remark the notation $\varphi(z,\bar{z},\Re w)$, where we are using the
+$z,\bar{z}$ notation for the $z$ directions, but since $\varphi$ does not
+depend on $\Im w$, we cannot do the same with the $w$.
+
 \begin{proof}
 \pagebreak[2]
 Apply a translation to put $p=0$ and in the
-same manner as in \lemmaref{lemma:realgraphcoords}
+same manner as in \propref{prop:realgraphcoords}
 apply a unitary matrix to make sure that $\nabla r$ is
 in the direction
 $-\frac{\partial}{\partial (\Im w)}\big|_0$.  That $\varphi(0) = 0$
 and $d\varphi(0) = 0$ follows as before.
 A translation and a unitary matrix are holomorphic
 and, in fact, biholomorphic, so
-via \propref{prop:holvectmap} the tangent spaces are all
+via \propref{prop:whereTgoeshol} the tangent spaces are all
 transformed correctly.
 The rest of the proposition follows at once as
 $\frac{\partial}{\partial (\Im w)}\big|_0$ is the normal vector to $M$
@@ -9028,7 +9067,7 @@ where $\varphi$ is real-analytic, $(x,y) \in \R^{n-1} \times \R = \R^n$.
 Compare this definition to \defnref{def:hypersurface}.  We could
 define a real-analytic hypersurface as in
 \defnref{def:hypersurface} and then prove an analogue of
-\lemmaref{lemma:realgraphcoords} to show that this new definition
+\propref{prop:realgraphcoords} to show that this new definition
 would be identical to the definition above.
 However, the definition we gave is sufficient, and so we avoid
 the complication, leaving it to the interested reader.
@@ -9038,7 +9077,7 @@ the complication, leaving it to the interested reader.
 Show that the definition above is equivalent to an analogue of
 \defnref{def:hypersurface}.  That is, state the alternative definition of
 real-analytic hypersurface and then prove the analogue of
-\lemmaref{lemma:realgraphcoords}.
+\propref{prop:realgraphcoords}.
 \end{exercise}
 \end{exbox}
 
