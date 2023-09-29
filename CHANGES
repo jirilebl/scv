@@ -91,6 +91,8 @@ variables are handled in \(\varphi .\)
   in text.
 <li> Replace many j's with k's or similar for aesthetic reasons.  Some other
   letters are changed to be more consistent too.
+<li> Use Hermitian form or Hermitian quadratic form where appropriate rather
+than sesquilinear which should only be called that if both arguments can vary independently.
 <li> Some figures have been mildly cleaned up.
 <li> Shorten a couple of section titles slightly.
 <li> Tighten the language and improve clarity in many places.
