@@ -73,6 +73,10 @@ variables are handled in \(\varphi .\)
 <li> The real Hessian in terms of the \(z\)s and \(\bar{z}\)s has now the block rows
   flipped, that is really the correct way to look at it so that it is
   hermitian.
+<li> When saying how does a complex linear change of variables acts on the Hessian,
+mention that we mean by the derivative \(D_{\mathbb{C}} A .\)
+<li> In the discussion before Theorem 2.3.8, use L instead of H for the
+complex Hessian for consistency.
 <li> Rename 2.4 to "From harmonic to plurisubharmonic functions"
 <li> In Exercise 2.5.15, it is much easier to use exercise 2.5.9
   than the "hint" in text, so replace that hint.

@@ -5805,12 +5805,13 @@ nonzero vectors $v$ and semidefinite if $v^*Lv \geq 0$ for all $v$.
 \end{exbox}
 
 Let us also see how a complex linear change of variables
-acts on the Hessian.  A complex linear change of variables is not an
-arbitrary $2n \times 2n$ matrix.  If the Hessian is in the
-basis of $\frac{\partial}{\partial z}$s and
-$\frac{\partial}{\partial \bar{z}}$s as above,
-an $n \times n$ complex linear matrix $A$
-acts on the Hessian as $A \oplus \widebar{A} =
+acts on the Hessian.  A complex linear mapping $A$ as
+an $n \times n$ complex matrix
+transforms the the tangent space
+in the basis of $\frac{\partial}{\partial z}$s and
+$\frac{\partial}{\partial \bar{z}}$s
+via the derivative $D_{\C} A$ written as a $2n \times 2n$ matrix.
+A direct computation shows $D_{\C} A = A \oplus \widebar{A} =
 \left[ \begin{smallmatrix} A & 0 \\ 0 & \widebar{A} \end{smallmatrix}
 \right]$.
 Write the full Hessian as
@@ -5826,7 +5827,7 @@ the full Hessian as
 \begin{bmatrix} A^*LA & \overline{A^tZA} \\ A^tZA & {(A^*LA)}^t \end{bmatrix} ,
 \end{equation*}
 Again by Sylvester's law of inertia,
-$L$ and $A^*LA$ have the same innertia, that is,
+$L$ and $A^*LA$ have the same inertia, that is,
 the number of positive, negative, and zero eigenvalues.
 
 The Levi form itself does depend on the defining function, but the signs of
@@ -5873,11 +5874,11 @@ hypersurface) is given near the origin by
 \end{equation*}
 where $\varphi$ is $O(2)$.
 Let $r(z,\bar{z},w,\bar{w}) = \varphi(z,\bar{z},\Re w) - \Im w$ be our
-defining function.  The complex Hessian of $r$ has the form
+defining function.  The complex Hessian of $r$ (an $n \times n$ matrix) has the form
 \begin{equation*}
 \begin{bmatrix}
-L & 0 \\
-0 & 0
+L & * \\
+* & *
 \end{bmatrix}
 \qquad \text{where} \quad
 L = \left[
@@ -6126,25 +6127,25 @@ z_\ell} \bigg|_z}}
 \frac{\partial f_m}{\partial z_\ell} .
 \end{split}
 \end{equation*}
-The complex Hessian of $r \circ f$ is the complex Hessian $H$ of $r$
-conjugated as $D^*HD$, where $D$ is the holomorphic
+The complex Hessian of $r \circ f$ is the complex Hessian $L$ of $r$
+conjugated as $D^*LD$, where $D$ is the holomorphic
 derivative matrix of $f$ at $z$ and
 $D^*$ is its conjugate transpose.  Sylvester's law of inertia
 says that the number of positive, negative, and zero
-eigenvalues of $D^*HD$ is the same as that for $H$.  The
-eigenvalues may change, but their sign do not.
-We are only considering $H$ and $D^*HD$ on a subspace.  In linear algebra
+eigenvalues of $D^*LD$ is the same as that for $L$.  The
+eigenvalues may change, but their signs do not.
+We are only considering $L$ and $D^*LD$ on a subspace.  In linear algebra
 language, consider an invertible $D$, a subspace $T$, and its image $DT$.
-Then the inertia of $H$ restricted to $DT$ is the same
-as the inertia of $D^*HD$ restricted to $T$.
+Then the inertia of $L$ restricted to $DT$ is the same
+as the inertia of $D^*LD$ restricted to $T$.
 
 Let $M$ be a smooth real hypersurface given by $r=0$, then $f^{-1}(M)$ is
 a smooth real hypersurface given by $r \circ f = 0$.
 The holomorphic derivative $D = Df(p)$
 takes
 $T_{p}^{(1,0)}f^{-1}(M)$ isomorphically to $T_{f(p)}^{(1,0)}M$.
-So $H$ is positive (semi)definite
-on $T_{f(p)}^{(1,0)}M$ if and only if $D^*HD$ is positive (semi)definite
+So $L$ is positive (semi)definite
+on $T_{f(p)}^{(1,0)}M$ if and only if $D^*LD$ is positive (semi)definite
 on $T_{p}^{(1,0)} f^{-1}(M)$.
 We have almost proved the following theorem.  In short, pseudoconvexity is a
 biholomorphic invariant.
