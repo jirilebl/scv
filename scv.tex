@@ -4917,8 +4917,6 @@ $U'$ such that $f^{-1}$ is smooth), then $f(M)$ is a smooth hypersurface and
 $Df(p)(T_pM) = T_{f(p)} f(M)$.
 \end{prop}
 
-\medskip
-
 Now that we know what tangent vectors are and how they transform,
 let us define convexity
 for domains with smooth boundary.
@@ -5582,14 +5580,13 @@ at the origin.
 \end{proof}
 
 \begin{remark}
-When $M$ is of dimension less than $2n-1$ (no longer a hypersurface, but
-a submanifold of higher codimension),
+When $M$ is of dimension less than $2n-1$ (not a hypersurface anymore),
 the conclusion of the
-proposition about the dimensions does not hold.
-That is, we would still have $\dim_\C T_p^{(1,0)} M = \dim_\C T_p^{(0,1)}
+proposition on the dimensions does not hold.
+That is, we still have $\dim_\C T_p^{(1,0)} M = \dim_\C T_p^{(0,1)}
 M$, but this number need not be constant from point to point.  Fortunately,
-when talking about domains with smooth boundaries, the boundaries are
-hypersurfaces, and this complication does not arise.
+the boundaries of domains with smooth boundaries are by definition
+hypersurfaces and this complication does not arise.
 \end{remark}
 
 \begin{defn}
@@ -5623,7 +5620,7 @@ Sometimes \emph{\myindex{strictly pseudoconvex}} is used.} $U$, we say $U$
 is \emph{strongly pseudoconvex} if it is strongly pseudoconvex
 at all $p \in \partial U$.
 
-For $X_p \in T^{(1,0)}_p\partial U$, the sesquilinear form
+For $X_p \in T^{(1,0)}_p\partial U$, the Hermitian quadratic form
 \glsadd{not:Leviform}%
 \begin{equation*}
 \sL(X_p,X_p)
@@ -5652,7 +5649,7 @@ which is incorrect.  The Levi form is something defined for a boundary
 or a submanifold, not for $r$.}
 So, $U$ is pseudoconvex at $p \in \partial U$ if
 the complex Hessian
-of $r$ at $p$ as a sesquilinear form is positive (semi)definite
+of $r$ at $p$ as a Hermitian form is positive (semi)definite
 when restricted to tangent vectors in $T^{(1,0)}_p \partial U$.
 For example, the unit ball $\bB_n$ is
 strongly pseudoconvex as can be seen by
@@ -5754,7 +5751,7 @@ $T^* = \widebar{T}^t$ is the conjugate transpose.
 By Sylvester's law of inertia from linear algebra, star-congruence
 preserves the inertia (the number of positive, negative, and zero
 eigenvalues).  So the
-inertial of the full Hessian in terms of $x$s and $y$s is the same
+inertia of the full Hessian in terms of $x$s and $y$s is the same
 as for the full Hessian in terms of $z$s and $\bar{z}$s.
 The relationship between the eigenvalues of the full Hessian and the complex
 Hessian is not as straightforward as may at first seem, but there is
@@ -5762,9 +5759,9 @@ a relationship there nonetheless.
 
 \begin{exbox}
 \begin{exercise}[Easy]
-If $r$ is real-valued, then the complex Hessian of $r$ is Hermitian, that
-is, the matrix is equal to its conjugate transpose.  Also,
-the full Hessian in terms of $z$s and $\bar{z}$s is Hermitian.
+If $r$ is real-valued, then both the complex Hessian of $r$
+and the full Hessian in terms of $z$s and $\bar{z}$
+are Hermitian matrices.
 \end{exercise}
 
 \begin{exercise}
@@ -5780,15 +5777,16 @@ H=\begin{bmatrix}
 \frac{\partial^2 r}{\partial y\partial y}
 \end{bmatrix} .
 \end{equation*}
-Prove that the complex Hessian $L$ (just a number now) is $\nicefrac{1}{4}$
+Prove that the complex Hessian $L$ (a number now) is $\nicefrac{1}{4}$
 of the trace of $H$.
 Thus, if $H$ is positive definite, then $L > 0$, and if $H$ is negative
-definite, then $L < 0$.  However, show by example that
+definite, then $L < 0$.  Then show by example that
 if $H$ has mixed eigenvalues (positive
 and negative), then $L$ can be positive, negative, or zero.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 For every dimension,
 find the change of variables $T^* H T$ to go from the real Hessian in terms
 of $x$ and $y$ to the Hessian in terms of $z$ and $\bar{z}$.
@@ -6389,7 +6387,7 @@ as $\overline{a_{k\ell}} = b_{k\ell}$.  Plugging
 and solving for $\Im w''$ cancels the
 holomorphic and antiholomorphic terms in $q$, and leaves $E$ as $O(3)$.
 After this change of coordinates we may assume
-that $q$ is a sesquilinear form,
+that $q$ is a Hermitian form,
 \begin{equation*}
 q(z,\bar{z}) = \sum_{k,\ell=1}^{n-1} c_{k\ell} z_k \bar{z}_\ell .
 \end{equation*}
