@@ -6359,8 +6359,12 @@ b_{k\ell} \bar{z}_k\bar{z}_\ell
 +
 c_{k\ell} \bar{z}_kz_\ell .
 \end{equation}
-As $q$ is real-valued, it is left as an exercise to show that $a_{k\ell} =
-\overline{b_{k\ell}}$ and $c_{k\ell} = \overline{c_{\ell k}}$.  That is, the
+The $a_{k\ell}$ and $b_{k\ell}$ are not uniquely determined, but
+we can pick the matrices $[a_{k\ell}]$ and $[b_{k\ell}]$ to be symmetric
+to make them uniquely determined.
+As $q$ is real-valued, it is left as an exercise to show that 
+$a_{k\ell} = \overline{b_{k\ell}}$ and
+$c_{k\ell} = \overline{c_{\ell k}}$.  That is, the
 matrix $[b_{k\ell}]$ is the complex conjugate of $[a_{k\ell}]$ and
 $[c_{k\ell}]$ is Hermitian.
 
@@ -6421,9 +6425,14 @@ proposition.
 
 \begin{exbox}
 \begin{exercise}
-Prove the assertion in the proof, that is, if $q$ is a quadratic as in
-\eqref{eq:generalquadraticq} that is real-valued, then
- $a_{k\ell} = \overline{b_{k\ell}}$ and $c_{k\ell} = \overline{c_{\ell k}}$.
+Prove the assertions in the proof.  First, that if $q$ is a quadratic as in
+\eqref{eq:generalquadraticq}, then the matrices
+$[a_{k\ell}]$ and 
+$[b_{k\ell}]$ can be chosen to be symmetric, in which case
+all the coefficients are uniquely determined.
+Second, that if $q$ is real valued, then
+ $a_{k\ell} = \overline{b_{k\ell}}$ and $c_{k\ell} = \overline{c_{\ell k}}$
+for all $k$ and $\ell$.
 \end{exercise}
 \end{exbox}
 
@@ -6448,10 +6457,18 @@ $U$ is convex at $p$.
 \end{exercise}
 \end{exbox}
 
+To make use of convexity, the domain needs to be convex at all points
+(all points near $p$), so
 Narasimhan's lemma only works at points of strong
-pseudoconvexity.  For weakly pseudoconvex points the situation is far more
-complicated.  The difficulty lies in the fact that if
-$U$ is weakly (pseudo)convex at $p$ it need not be so
+pseudoconvexity.
+For weakly pseudoconvex points the situation is far more complicated.
+While it is possible to use
+weak pseudoconvexity at $p$ to make the domain convex at $p$, the same
+change of variables does not necessarily make the domain convex at nearby
+points.  In particular, it is not always possible for a domain that is
+weakly pseudoconvex at all points to be made convex in a neighborhood.
+What makes the lemma work is that if 
+$U$ is strongly (pseudo)convex at $p$, it will also be so
 at nearby points.
 
 \medskip

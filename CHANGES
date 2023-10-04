@@ -77,6 +77,9 @@ variables are handled in \(\varphi .\)
 mention that we mean by the derivative \(D_{\mathbb{C}} A .\)
 <li> In the discussion before Theorem 2.3.8, use L instead of H for the
 complex Hessian for consistency.
+<li> Improve the discussion after Narasimhan's lemma (2.3.10)
+<li> Change exercise 2.3.14 to address an erratum: First show that the \(a\)
+and \(b\) matrices can be made symmetric.
 <li> In the proof of Theorem 2.3.11, when writing out the analytic discs,
 mention that \(\xi\) is in the disc.
 <li> Rename 2.4 to "From harmonic to plurisubharmonic functions"
