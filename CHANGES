@@ -77,6 +77,8 @@ variables are handled in \(\varphi .\)
 mention that we mean by the derivative \(D_{\mathbb{C}} A .\)
 <li> In the discussion before Theorem 2.3.8, use L instead of H for the
 complex Hessian for consistency.
+<li> In the proof of Theorem 2.3.11, when writing out the analytic discs,
+mention that \(\xi\) is in the disc.
 <li> Rename 2.4 to "From harmonic to plurisubharmonic functions"
 <li> In Exercise 2.5.15, it is much easier to use exercise 2.5.9
   than the "hint" in text, so replace that hint.
