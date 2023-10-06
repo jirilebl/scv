@@ -6872,7 +6872,7 @@ less than $- \epsilon \log \sabs{z}$ for every $\epsilon > 0$.
 \end{exbox}
 
 The Poisson kernel is a reproducing kernel for
-holomorphic functions, as (the real and imaginary parts of) holomorphic functions are harmonic.
+holomorphic (and antiholomorphic) functions, as (the real and imaginary parts of) holomorphic functions are harmonic.
 Poisson kernel exists for higher dimensions as well.
 Solving the Dirichlet problem using the Poisson kernel leads to
 the following result.
@@ -8140,9 +8140,10 @@ By Cauchy--Schwarz,
 =
 \Babs{\blinnprod{b}{\overline{\nabla_z r|_q}}}
 =
-\snorm{b} \snorm {\nabla_z r|_q} .
+\snorm{b} \, \snorm{\nabla_z r|_q} .
 \end{equation*}
-As $\nabla_z r|_0 = (0,\ldots,0,-\nicefrac{1}{2i})$, then for $q$ sufficiently near $0$ we have that
+As $\nabla_z r|_0 = (0,\ldots,0,-\nicefrac{1}{2i})$, then for $q$
+sufficiently near $0$, we have
 $\snorm{\nabla_z r|_q} \geq \nicefrac{1}{3}$, and
 \begin{equation*}
 \snorm{b} =
