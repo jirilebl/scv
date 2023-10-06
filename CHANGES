@@ -82,6 +82,9 @@ complex Hessian for consistency.
 and \(b\) matrices can be made symmetric.
 <li> In the proof of Theorem 2.3.11, when writing out the analytic discs,
 mention that \(\xi\) is in the disc.
+<li> After the proof also mention that the proof could be done with those
+discs using the first version of the continuity principle (new in this
+edition).
 <li> Rename 2.4 to "From harmonic to plurisubharmonic functions"
 <li> In Exercise 2.5.15, it is much easier to use exercise 2.5.9
   than the "hint" in text, so replace that hint.

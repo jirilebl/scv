@@ -6566,11 +6566,11 @@ H =
 \sabs{w-is} < \epsilon \bigr\} .
 \end{split}
 \end{equation*}
-The set where $\sabs{z_1} = \lambda$, $z' = 0$
-and $\sabs{w} \leq s$, is inside $U$ for all small enough $s$, so
+The set where $\sabs{z_1} = \lambda$, $z' = 0$,
+and $\sabs{w-is} \leq s$ is inside $U$, so
 an $\epsilon$-neighborhood of that is in $U$.
 For
-$w = is$ the whole disc where $\sabs{z_1} \leq \lambda$ is in $U$,
+$w = is$ the whole disc where $\sabs{z_1} \leq \lambda$ and $z'=0$ is in $U$,
 so an $\epsilon$-neighborhood of that is in $U$.
 Thus, for small enough $\epsilon >0$, $H \subset U$.
 We are really just taking a Hartogs figure in the $z_1,w$ variables, and then
@@ -6589,6 +6589,10 @@ The origin is in the hull of $H$, and so
 every function holomorphic in $U$, and so in $H$, extends through the origin.
 Hence $U$ is not a domain of holomorphy.
 \end{proof}
+
+Another, perhaps a little less concrete, way to finish the proof that does not use a Hartogs figure
+is to apply the first version of Kontinuit\"atssatz
+(\thmref{thm:contprinciple1}) with the sequence of discs $\{ \varphi_{1/k} \}$.
 
 \begin{exbox}
 \begin{exercise}
