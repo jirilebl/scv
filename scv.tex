@@ -6533,22 +6533,23 @@ Clearly $\varphi(0) = 0 \in \partial U$.  For $\xi \not= 0$ near the origin
 \xi,0,\lambda \bar{\xi},0,0)
 %=
 %-\sabs{\xi}^2 + E(\xi,0,\bar{\xi},0,0)
-< 0 .
+< 0 ,
 \end{equation*}
-That is because
+because
 the function above has a strict maximum at $\xi = 0$
 by the second derivative test.
 Therefore, for $\xi \not= 0$ near the origin,
 $\varphi(\xi) \in U$.  By picking $\lambda$ small enough,
 $\varphi(\overline{\D}\setminus\{0\}) \subset U$.
 
-As $\varphi(\partial \D)$ is compact, we can ``wiggle it a little'' and
-find discs in $U$.  In particular, for all small enough $s > 0$,
+We can ``wiggle the disc a little'' and
+find discs entirely in $U$.  In particular, for all small enough $s > 0$,
 the closed disc given by
 \begin{equation*}
 \xi \in \widebar{\D} \overset{\varphi_s}{\mapsto} (\lambda \xi, 0, 0, \ldots, 0, i s)
 \end{equation*}
-is entirely inside $U$ (that is, for slightly positive $\Im w$).
+(that is, for slightly positive $\Im w$)
+is entirely inside $U$.
 Fix such a small $s > 0$.
 Suppose $\epsilon > 0$ is small and $\epsilon < s$.
 Define the Hartogs figure
@@ -6635,7 +6636,8 @@ harder to prove without that hypothesis.
 \end{exercise}
 \end{exbox}
 
-A hyperplane is the ``degenerate'' case of normal convexity.
+A hyperplane is the ``degenerate'' case of normal convexity,
+that is, a hyperplane is convex from both sides.
 There is also a flat case of pseudoconvexity.  A smooth real hypersurface
 $M \subset \C^n$ is \emph{\myindex{Levi-flat}} if the Levi form
 vanishes at every point of $M$.  The zero matrix is positive semidefinite
@@ -6807,8 +6809,12 @@ Then $Pu$ is harmonic in $\D$ and continuous on $\overline{\D}$.
 \end{thm}
 
 In the proof, it is useful to consider how
-the graph of $P_r$ as a function of $\theta$ looks for a fixed $r$.  See
-\figureref{fig:poisson-kernel}.
+the graph of $P_r$ as a function of $\theta$ looks for a fixed $r$.
+That is, $P_r$ acts like an approximate identity;
+integrating against $P_r(\theta-t)$ gives
+a weighted average of $u$ with the values near $e^{i\theta}$ getting
+weighted more and more as $r \to 1$.
+See \figureref{fig:poisson-kernel}.
 
 \begin{myfig}
 \includegraphics[width=0.5\textwidth]{figures/poisson-kernel.pdf}
