@@ -6916,7 +6916,7 @@ functions and not too much will be lost.
 Fill in the details of the proof of \propref{prop:meansubmeanprop}.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:limsupsubharmonic}
 Suppose $U \subset \C$ is open and
 $f \colon U \to \R \cup\{- \infty \}$ is subharmonic.  Prove
 \begin{equation*}
@@ -6991,6 +6991,9 @@ The function $f$ is subharmonic if and only if
 $\nabla^2 f \geq 0$.
 \end{prop}
 
+In analogy to convex functions, a $C^2$-smooth function $f$ of one
+real variable is convex if and only if $f''(x) \geq 0$ for all $x$.
+
 \begin{proof}
 Suppose $f$ is a $C^2$-smooth function on a subset of $\C \cong \R^2$
 with $\nabla^2 f \geq 0$.  We wish to show that $f$ is subharmonic.
@@ -7001,18 +7004,16 @@ harmonic on $\Delta$, and such that
 $f \leq g$ on the boundary $\partial \Delta$.  Because
 $\nabla^2 (f-g) = \nabla^2 f \geq 0$, we assume $g = 0$ and $f \leq 0$
 on the boundary $\partial \Delta$.
+We need to show that $f \leq 0$ on $\Delta$.
 
 Suppose $\nabla^2 f > 0$ at all points on $\Delta$.
-Suppose $f$ attains a maximum in $\Delta$,
-call this point $p$.
-The Laplacian $\nabla^2 f$ is the trace of the Hessian matrix, but for $f$ to have a
-maximum, the Hessian must have only nonpositive eigenvalues at the critical
-points, which is a
-contradiction as the trace is the sum of the eigenvalues.  So $f$ has no
-maximum inside, and therefore $f \leq 0$ on all of
-$\overline{\Delta}$.
+The Laplacian $\nabla^2 f$ is the trace of the Hessian matrix,
+that is, the sum of the eigenvalues.  Thus $f$ has no maximum 
+in $\Delta$, since at a maximum both eigenvalues of the Hessian matrix
+would be nonpositive.
+Therefore, $f \leq 0$ on all of $\overline{\Delta}$.
 
-Next suppose $\nabla^2 f \geq 0$.
+Next suppose only that $\nabla^2 f \geq 0$.
 Let $M$ be the maximum of $x^2+y^2$ on $\overline{\Delta}$.
 Take $f_n(x,y) = f(x,y) + \frac{1}{n}
 ( x^2+y^2 ) - \frac{1}{n}M$.  Clearly $\nabla^2 f_n > 0$ everywhere on
@@ -7029,9 +7030,6 @@ The other direction is left as an exercise.
 Finish the proof of the proposition above.
 \end{exercise}
 \end{exbox}
-
-In analogy to convex functions, a $C^2$-smooth function $f$ of one
-real variable is convex if and only if $f''(x) \geq 0$ for all $x$.
 
 \begin{prop}
 \pagebreak[2]%
@@ -7221,8 +7219,8 @@ is not plurisubharmonic.
 
 For the other direction, suppose the complex Hessian is positive
 semidefinite at all points.
-Let $p \in U$.  After an affine change of coordinates assume that the
-line $\xi \mapsto a+b\xi$ is setting all but the first variable to
+After an affine change of coordinates assume that an arbitrary
+complex line $\xi \mapsto a+b\xi$ is setting all but the first variable to
 zero, that is, $a=0$ and $b=(1,0,\ldots,0)$.
 As the complex Hessian is positive semidefinite,
 $\frac{\partial^2 f}{\partial \bar{z}_1 \partial z_1} \geq 0$ for all
@@ -7363,11 +7361,11 @@ For the inequality, we used $g_\epsilon \geq 0$.
 So $f_\epsilon$ is plurisubharmonic.
 
 Let us show that $f_\epsilon(z) \geq f(z)$ for all $z \in U_\epsilon$.
-As $g_\epsilon(w)$ only depends on $\sabs{w_1},\ldots,\sabs{w_n}$, we notice
-that
+The function $g_\epsilon(w)$ only depends on $\sabs{w_1},\ldots,\sabs{w_n}$,
+in fact,
 $g_\epsilon(w_1,\ldots,w_n) =
 g_\epsilon(\sabs{w_1},\ldots,\sabs{w_n})$.
-Without loss of generality we consider $z=0$, and we use polar coordinates
+Without loss of generality, we consider $z=0$ and we use polar coordinates
 for the integral.
 \pagebreak[1]
 \begin{equation*}
@@ -7433,8 +7431,9 @@ $2\pi = \int_0^{2\pi}d \theta$.
 
 Finally, we show $\lim_{\epsilon \to 0} f_\epsilon (z) = f(z)$.
 For subharmonic, and so for plurisubharmonic,
-functions, $\limsup_{\zeta\to z} f(\zeta) = f(z)$.
-So given $\delta >0$ find an $\epsilon >0$ such that
+functions, $\limsup_{\zeta\to z} f(\zeta) = f(z)$,
+see \exerciseref{exercise:limsupsubharmonic}.
+So given $\delta >0$, find an $\epsilon >0$ such that
 $f(\zeta)-f(z) \leq \delta$ for all $\zeta \in B_\epsilon(z)$.
 \begin{equation*}
 \begin{split}
@@ -7459,7 +7458,7 @@ f_\epsilon(z) - f(z)
 \end{split}
 \end{equation*}
 Again we used that $g_\epsilon \geq 0$.
-We find $0 \leq f_\epsilon - f(z) \leq \delta$, and so $f_\epsilon(z) \to
+We find $0 \leq f_\epsilon(z) - f(z) \leq \delta$, and so $f_\epsilon(z) \to
 f(z)$.
 \end{proof}
 
