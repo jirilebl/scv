@@ -7082,7 +7082,7 @@ value $-\infty$.
 \item
 Show that $f$ is a subharmonic function in $U$.
 \item
-If $U = \D$ and $p_n = \frac{1}{n}$, show that $f$ is discontinuous at 0
+If $U = \D$ and $p_n = \nicefrac{1}{n}$, show that $f$ is discontinuous at 0
 (the natural topology on $\R \cup \{ -\infty \}$).
 \item
 If $\{ p_n \}$ is dense in $U$, show that $f$
@@ -7110,7 +7110,7 @@ of one variable
 \begin{equation*}
 \xi \mapsto f(a+b\xi)
 \end{equation*}
-is harmonic (on the set of $\xi \in \C$ where $a+b\xi \in U$).
+is harmonic where defined (on $\{ \xi \in \C : a+b\xi \in U \}$).
 That is, $f$ is harmonic on every complex line.
 
 A function $f \colon U \to \R \cup \{ -\infty \}$ is
@@ -7121,7 +7121,7 @@ $a,b \in \C^n$, the function of one variable
 \begin{equation*}
 \xi \mapsto f(a+b\xi)
 \end{equation*}
-is subharmonic (whenever $a+b\xi \in U$).
+is subharmonic where defined.
 \end{defn}
 
 A harmonic function of one complex variable is in some sense a
@@ -7129,7 +7129,8 @@ generalization of an affine linear function of one real variable.
 Similarly, as far as several complex variables are concerned, a
 pluriharmonic function is the right generalization to $\C^n$
 of an affine linear function on $\R^n$.
-In the same way plurisubharmonic functions are the correct complex variable generalizations
+In the same way,
+plurisubharmonic functions are the correct complex variable generalizations
 of convex functions.  A convex function of one real variable is like a
 subharmonic function, and a convex function of several real variables is
 a function that is convex when restricted to any real line.
@@ -7251,10 +7252,11 @@ $a f + b g$ is plurisubharmonic.
 \begin{thm} \label{thm:subharlim}
 \pagebreak[2]%
 Suppose $U \subset \C^n$ is an open set and $f \colon U \to \R \cup \{
--\infty \}$ is plurisubharmonic.  For every $\epsilon > 0$,
-let $U_\epsilon \subset U$
-be the set of points further than $\epsilon$ away from $\partial U$.
-Then there exists a smooth plurisubharmonic function
+-\infty \}$ is plurisubharmonic.
+Let $U_\epsilon \subset U$
+be the set of points further than $\epsilon > 0$ away from $\partial U$.
+For every $\epsilon > 0$,
+there exists a smooth plurisubharmonic function
 $f_\epsilon \colon U_\epsilon \to \R$ such that $f_\epsilon(z) \geq
 f(z)$, and
 \begin{equation*}
@@ -7262,7 +7264,7 @@ f(z) = \lim_{\epsilon \to 0} f_\epsilon(z) \qquad \text{for all $z \in U$}.
 \end{equation*}
 \end{thm}
 
-That is, $f$ is a limit of smooth plurisubharmonic functions.
+That is, $f$ is a (pointwise) limit of smooth plurisubharmonic functions.
 The idea of the proof is important and useful in many other
 contexts.
 
@@ -7316,8 +7318,9 @@ is similar to the solution of the Dirichlet problem using the Poisson kernel.
 The function $f$ is bounded above on compact sets as it is upper semicontinuous.
 If $f$ is not bounded below, replace $f$ with $\max \bigl\{ f ,
 \frac{-1}{\epsilon}
-\bigr\}$, which is still plurisubharmonic.  Thus, without loss of generality
-we assume that $f$ is locally bounded.
+\bigr\}$, which is still plurisubharmonic.  Thus, without loss of
+generality,
+assume that $f$ is locally bounded.
 For $z \in U_\epsilon$, define $f_\epsilon$ as
 the convolution with $g_\epsilon$:
 \glsadd{not:convolution}%
@@ -7429,7 +7432,7 @@ For the inequalities, we again needed that $g_\epsilon \geq 0$.
 The penultimate equality follows from the fact that
 $2\pi = \int_0^{2\pi}d \theta$.
 
-Finally, we show $\lim_{\epsilon \to 0} f_\epsilon (z) = f(z)$.
+Finally, for a fixed $z$, we show $\lim_{\epsilon \to 0} f_\epsilon (z) = f(z)$.
 For subharmonic, and so for plurisubharmonic,
 functions, $\limsup_{\zeta\to z} f(\zeta) = f(z)$,
 see \exerciseref{exercise:limsupsubharmonic}.
@@ -7538,9 +7541,9 @@ Then $f \in \sO(U)$.
 \end{thm}
 
 \begin{proof}
-First assume $n=1$.  As the theorem is local, it is
+First assume $n=1$.  The conclusion is local, so it is
 enough to prove it for a small disc $\Delta$ such that $f$ is continuous
-on the closure $\overline{\Delta}$, let $\Delta'$ be the part of the disc
+on the closure $\overline{\Delta}$.  Let $\Delta' \subset \Delta$ be the set
 where $f$ is nonzero.  If $\Delta'$ is empty, we are done as
 $f$ is identically zero and hence holomorphic.
 
@@ -7549,35 +7552,44 @@ Let $Pu$ be the Poisson integral of $u$ on $\Delta$.  Hence $Pu$
 equals $u$ on $\partial \Delta$, and $Pu$ is harmonic in all of $\Delta$.
 Consider the function
 $Pu(z) - u(z)$ on $\overline{\Delta}$.  The function is zero
-on $\partial \Delta$ and it is harmonic on $\Delta'$.  By rescaling $f$
-we can without loss of generality assume that $\abs{f(z)} < 1$ for all $z
-\in \overline{\Delta}$.  For every $t >0$, the function
-$z \mapsto t \log \abs{f(z)}$ is subharmonic on $\Delta'$ and
-upper-semicontinuous on $\overline{\Delta'}$.  Further, it is negative
-on $\partial \Delta$.  The function $z \mapsto -t \log \abs{f(z)}$ is
-superharmonic (minus a subharmonic function) on $\Delta'$,
-lower-semicontinuous on $\overline{\Delta'}$ and positive on $\partial
-\Delta$.  On the set $\Delta \setminus \Delta'$ where $f$ is zero, the two functions are $-\infty$ and
-$\infty$ respectively.
+on $\partial \Delta$ and it is harmonic on $\Delta'$.  By rescaling $f$,
+we, without loss of generality, assume $\abs{f(z)} < 1$ for all $z
+\in \overline{\Delta}$.
+The function $z \mapsto \log \sabs{f(z)}$ is harmonic on $\Delta'$, it is
+$-\infty$ when $f(z) = 0$, and hence it is upper-semicontinuous on
+$\overline{\Delta}$.
+Applying
+the sub-mean-value property near points where $f$ vanishes
+and the fact that subharmonicity is local, we find that
+$\log \sabs{f(z)}$ is subharmonic on $\overline{\Delta}$.
+As $\sabs{f(z)} < 1$, we find that
+$\log \sabs{f(z)}$ is negative on $\overline{\Delta}$.
+So for every $t > 0$,
+the function
+$z \mapsto t \log \abs{f(z)}$ is subharmonic and negative
+and the function
+$z \mapsto -t \log \abs{f(z)}$ is superharmonic
+(minus a subharmonic function) and positive.
 See \figureref{fig:radosthm}.
-Therefore, for all $t > 0$ and
+It is immediate that for all $t > 0$ and
 $z \in \partial \Delta \cup (\Delta \setminus \Delta')$,
 we have
 \begin{equation} \label{eq:radobound}
 t \log \abs{f(z)} \leq Pu(z)-u(z) \leq -t \log \abs{f(z)}  .
 \end{equation}
-Applying the maximum principle to the subharmonic functions
+The functions
 $z \mapsto t \log \abs{f(z)} - \bigl(Pu(z)-u(z)\bigr)$
 and
 $z \mapsto t \log \abs{f(z)} - \bigl(u(z)-Pu(z)\bigr)$
+are subharmonic on $\Delta'$, and so
+applying the maximum principle
 shows that
-\eqref{eq:radobound} holds for all $z \in \Delta'$ and all $t > 0$.
+\eqref{eq:radobound} holds also for all $z \in \Delta'$ and all $t > 0$.
 
 \begin{myfig}
 \subimport*{figures/}{radosthm.pdf_t}
 \caption{Proof of Rad\'o's theorem.\label{fig:radosthm}}
 \end{myfig}
-
 
 Taking the limit
 $t \to 0$ shows that $Pu = u$ on $\Delta'$.
@@ -7594,7 +7606,7 @@ As $\Delta$ is simply connected,
 let $\tilde{v}$ be the harmonic conjugate of $u$ that equals $v$ at
 some point of $\Delta'$.  As $f$ is holomorphic on $\Delta'$,
 the harmonic functions $\tilde{v}$ and $v$
-are equal the nonempty open subset $\Delta'$ of $\Delta$ and so
+are equal on a nonempty open subset $\Delta'$ of $\Delta$ and so
 they are equal everywhere.  Consequently, $f = u +iv$ is holomorphic on
 $\Delta$.
 

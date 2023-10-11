@@ -86,6 +86,7 @@ mention that \(\xi\) is in the disc.
 discs using the first version of the continuity principle (new in this
 edition).
 <li> Rename 2.4 to "From harmonic to plurisubharmonic functions"
+<li> Clarify the proof of Radó's theorem a bit.
 <li> In Exercise 2.5.15, it is much easier to use exercise 2.5.9
   than the "hint" in text, so replace that hint.
 <li> Move Exercise 2.6.13 (Behnke-Stein) past Cartan-Thullen.  It is much
