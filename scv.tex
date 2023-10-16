@@ -7605,7 +7605,7 @@ As $\Delta$ is simply connected,
 let $\tilde{v}$ be the harmonic conjugate of $u$ that equals $v$ at
 some point of $\Delta'$.  As $f$ is holomorphic on $\Delta'$,
 the harmonic functions $\tilde{v}$ and $v$
-are equal on a nonempty open subset $\Delta'$ of $\Delta$ and so
+are equal on the nonempty open subset $\Delta'$ of $\Delta$ and so
 they are equal everywhere.  Consequently, $f = u +iv$ is holomorphic on
 $\Delta$.
 
@@ -7662,7 +7662,10 @@ $f \colon \R \to \R$ with $f''(x) \geq 0$, then
 $\widehat{\{ a, b \}} = [a,b]$ for any $a,b \in \R$.
 In general, if $\sF$ is the set of convex functions, then
 a domain $U \subset \R^n$ is geometrically convex if and only if it is
-convex with respect to convex functions, although let us not define
+convex with respect to convex functions~\footnote{%
+The technicality is, of course, that we must define convex functions on
+not-necessarily-convex sets, and that is not completely straightforward.},
+although let us not define
 what that means except for smooth functions in exercises below.
 
 \begin{exbox}
@@ -7703,9 +7706,10 @@ $\bigcup_\alpha \Delta_\alpha \subset \subset U$.
 
 Various similar theorems are named the \emph{continuity principle},
 we have now seen two.
-Generally what they have in common is the family of analytic discs whose
+Generally what they have in common is a family of analytic discs whose
 boundaries stay inside a domain, and whose conclusion has to do
-with extension of holomorphic functions, or with domains of holomorphy.
+with extension of holomorphic functions, with domains of holomorphy, or
+with the failure of some sort of convexity as above.
 
 \begin{proof}
 Let $f$ be a plurisubharmonic function on $U$.  If $\varphi_\alpha \colon
