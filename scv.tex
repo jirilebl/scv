@@ -7571,7 +7571,7 @@ $z \mapsto -t \log \abs{f(z)}$ is superharmonic
 (minus a subharmonic function) and positive.
 See \figureref{fig:radosthm}.
 It is immediate that for all $t > 0$ and
-$z \in \partial \Delta \cup (\Delta \setminus \Delta')$,
+$z \in \partial \Delta$,
 we have
 \begin{equation} \label{eq:radobound}
 t \log \abs{f(z)} \leq Pu(z)-u(z) \leq -t \log \abs{f(z)}  .
@@ -7580,10 +7580,12 @@ The functions
 $z \mapsto t \log \abs{f(z)} - \bigl(Pu(z)-u(z)\bigr)$
 and
 $z \mapsto t \log \abs{f(z)} - \bigl(u(z)-Pu(z)\bigr)$
-are subharmonic on $\Delta'$, and so
-applying the maximum principle
-shows that
-\eqref{eq:radobound} holds also for all $z \in \Delta'$ and all $t > 0$.
+are harmonic on $\Delta'$ and $-\infty$ whenever $f(z)=0$.
+Thus both are upper-semicontinuous on $\overline{\Delta}$
+and subharmonic on $\Delta$.
+The maximum principle shows that
+\eqref{eq:radobound} holds
+for all $z \in \overline{\Delta}$ and all $t > 0$.
 
 \begin{myfig}
 \subimport*{figures/}{radosthm.pdf_t}

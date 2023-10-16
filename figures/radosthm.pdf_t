@@ -18,12 +18,10 @@
 }}}}
 \put(2707,-3608){\makebox(0,0)[b]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$Pu-u = 0$}%
 }}}}
-\put(1656,-3912){\makebox(0,0)[b]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$W$}%
-}}}}
 \put(1051,-4506){\makebox(0,0)[b]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$t \log \sabs{f}=-\infty$}%
 }}}}
-\put(973,-4019){\makebox(0,0)[b]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Delta \setminus \Delta'$}%
-}}}}
 \put(1523,-4220){\makebox(0,0)[b]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$f=0$}%
+}}}}
+\put(1396,-3931){\makebox(0,0)[b]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$W=\Delta \setminus \Delta'$}%
 }}}}
 \end{picture}%
