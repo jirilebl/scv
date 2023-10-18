@@ -100,9 +100,11 @@ it is important in the exposition.  Still leave the proof as an exercise.
   on arbitrary domains.
 <li> In Exercise 2.5.15, it is much easier to use exercise 2.5.9
   than the "hint" in text, so replace that hint.
+<li> In Exercise 2.5.13, require that the disc only goes out of \(U\) at
+  the origin, which is really the only reasonable way todo this.
 <li> Move Exercise 2.6.13 (Behnke-Stein) past Cartan-Thullen.  It is much
   easier then.
-<li> New part b) to exercise 5.2.3.
+<li> New part b) to Exercise 5.2.3.
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
 <li> In appendix B, introduce and use winding numbers and describe how things

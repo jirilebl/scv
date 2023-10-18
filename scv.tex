@@ -6745,7 +6745,7 @@ but it is harder to draw.
 We will consider harmonic and subharmonic functions in $\C \cong
 \R^2$.
 Let us go through some basic results on harmonic and subharmonic
-functions in $\C$ that you have possibly seen in detail in your one-variable class.
+functions in $\C$ that you have probably seen in detail in your one-variable class.
 Consequently, we leave some of these results as exercises.
 In this section (and not just here)
 we often write $f(z)$ for a function
@@ -6775,8 +6775,13 @@ of $U$.  Then $f\equiv 0$.
 \end{exercise}
 \end{exbox}
 
-It follows from \exerciseref{exercise:harmonicrealimag}
-that a harmonic function is infinitely differentiable.
+As harmonic functions are locally real parts of holomorphic functions,
+\exerciseref{exercise:harmonicrealimag},
+harmonic functions are infinitely differentiable.
+It also follows that we can do this on simply connected domains, that is,
+if $U \subset \C$ is a simply connected domain and $u$ is harmonic on $U$,
+then it is the real part of a holomorphic function on $U$.
+
 It is useful to find a harmonic function given boundary values.
 This problem is called the \emph{\myindex{Dirichlet problem}}, and it is
 solvable for many (though not all) domains.
@@ -7148,8 +7153,10 @@ Many properties of harmonic and subharmonic
 functions in $\C$
 have immediate
 generalizations to pluriharmonic and plurisubharmonic functions functions in
-$\C^n$.  We emphasize two such immediate generalizations, the maximum
-principle and the fact that the property of plurisubharmonicity is a local.
+$\C^n$.  We emphasize three such immediate generalizations, the maximum
+principle, the fact that the property of plurisubharmonicity is local,
+and the fact that functions are pluriharmonic if and only if they are
+(locally) the real and imaginary parts of holomorphic functions.
 We will leave these as exercises.
 
 \begin{exbox}
@@ -7741,7 +7748,7 @@ we have now seen two.
 What they have in common is a family of analytic discs whose
 boundaries stay inside a domain, and where the conclusion has to do
 with extension of holomorphic functions, with domains of holomorphy, or
-with the failure of some sort of convexity as above.
+with some sort of convexity as above.
 
 \begin{proof}
 Let $f$ be a plurisubharmonic function on $U$.  If $\varphi_\alpha \colon
@@ -8009,9 +8016,10 @@ Let $U = \bigl\{ z \in \C^2 : \sabs{z_1} > \sabs{z_2} \bigr\}$.
 \item
 Prove that $U$ is a Hartogs pseudoconvex domain.
 \item
-Find a closed analytic disc $\Delta$ in $\C^2$ such that $0 \in \Delta$ ($0
-\notin U$)
-and $\partial \Delta \subset U$.
+Find a closed analytic disc $\Delta$ in $\C^2$ such that $0 \in \Delta$
+($0 \notin U$)
+and $\Delta \setminus \{ 0 \} \subset U$ (in particular $\partial \Delta
+\subset U$).
 \item
 What do you think would happen if you tried to move $\Delta$ a
 little bit to avoid the intersection with the complement?
