@@ -86,7 +86,16 @@ mention that \(\xi\) is in the disc.
 discs using the first version of the continuity principle (new in this
 edition).
 <li> Rename 2.4 to "From harmonic to plurisubharmonic functions"
+<li> Make Exercise 2.4.11 into a proposition as we
+use it without mentioning it much often.  Leave the proof still as an
+exercise.  Renumbers rest of the propositions in 2.4.
+<li> Move Exercise 2.4.27 up and make it Exercise 2.4.22 as it makes a lot
+more sense at that point.  Renumbers the following exercises.
+<li> Make the composition of holomorphic and
+psh function being psh an explicit corollary as
+it is important in the exposition.  Still leave the proof as an exercise.
 <li> Clarify the proof of Radó's theorem.
+<li> Start 2.5 with a better introduction to why we consider hulls.
 <li> In 2.5, add a footnote about why we won't define convex functions
   on arbitrary domains.
 <li> In Exercise 2.5.15, it is much easier to use exercise 2.5.9

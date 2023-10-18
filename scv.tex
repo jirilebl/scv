@@ -6955,12 +6955,21 @@ function attains a maximum is closed.  So $f=f(a)$ on $U$ as $U$ is
 connected.
 \end{proof}
 
-\begin{exbox}
-\begin{exercise}
-Prove that subharmonicity is a local property.  That is, given an open set
+A very useful fact we will use over and over without mentioning much is that subharmonicity
+is a local property,
+even if it does not seems so from the
+definition.  The proof is left as an exercise.
+
+\begin{prop} \label{prop:shlocal}
+Given an open
 $U \subset \C$, a function $f \colon U \to \R \cup \{ -\infty \}$ is subharmonic if
 and only if for every $p \in U$ there exists a neighborhood $W$ of $p$,
-$W \subset U$, such that $f|_{W}$ is subharmonic.  Hint: Perhaps try to use
+$W \subset U$, such that $f|_{W}$ is subharmonic.  \end{prop}
+
+\begin{exbox}
+\begin{exercise}
+Prove \propref{prop:shlocal}.
+Hint: Perhaps try to use
 the maximum principle and \exerciseref{exercise:fminusgsubharmonic}.
 \end{exercise}
 
@@ -7135,6 +7144,14 @@ of convex functions.  A convex function of one real variable is like a
 subharmonic function, and a convex function of several real variables is
 a function that is convex when restricted to any real line.
 
+Many properties of harmonic and subharmonic
+functions in $\C$
+have immediate
+generalizations to pluriharmonic and plurisubharmonic functions functions in
+$\C^n$.  We emphasize two such immediate generalizations, the maximum
+principle and the fact that the property of plurisubharmonicity is a local.
+We will leave these as exercises.
+
 \begin{exbox}
 \begin{exercise}
 Let $U \subset \C^n$ be open.
@@ -7177,6 +7194,12 @@ principle\index{maximum principle!plurisubharmonic functions}:
 If $U \subset \C^n$ is a domain and $f \colon U \to \R \cup
 \{-\infty\}$ is
 plurisubharmonic and achieves a maximum at $p \in U$, then $f$ is constant.
+\end{exercise}
+
+\begin{exercise}
+Show that plurisubharmonicity is a local property, that is,
+$f$ is plurisubharmonic if and only if $f$ is plurisubharmonic in
+some neighborhood of each point.
 \end{exercise}
 \end{exbox}
 
@@ -7482,22 +7505,28 @@ fact to show that the $f_\epsilon(z)$ from \thmref{thm:subharlim} is monotone
 decreasing in $\epsilon$.
 \end{exparts}
 \end{exercise}
+\end{exbox}
 
-\begin{exercise}
+As smooth plurisubharmonic functions have a
+local characterization in terms of derivatives,
+we obtain the following useful corollary,
+whose proof is an exercise.
+
+\begin{cor} \label{cor:pshcompose}
 Let $U \subset \C^n$
 and $V \subset \C^m$ be open.
 Prove that
-if $g \colon U \to V$ is holomorphic and $f
-\colon V \to \R$ is a $C^2$ plurisubharmonic function, then
-$f \circ g$ is plurisubharmonic.
-Then use it to prove the same fact
-for all plurisubharmonic functions (Hint: monotone convergence).
-\end{exercise}
+if $g \colon U \to V$ is holomorphic and
+$f \colon V \to \R \cup \{ - \infty \}$ is plurisubharmonic,
+then $f \circ g$ is plurisubharmonic.
+\end{cor}
 
+\begin{exbox}
 \begin{exercise}
-Show that plurisubharmonicity is a local property, that is,
-$f$ is plurisubharmonic if and only if $f$ is plurisubharmonic in
-some neighborhood of each point.
+Prove \corref{cor:pshcompose}.
+Hint: Prove it first for $C^2$ functions,
+then use the approximation.
+Monotone convergence is useful.
 \end{exercise}
 
 \begin{exercise}
@@ -7624,14 +7653,15 @@ Use the one-variable result to extend the theorem to several variables.
 
 \section{Hartogs pseudoconvexity}
 
-It is worth mentioning explicitly that by the
-exercises of the previous section,
+By \corref{cor:pshcompose},
 plurisubharmonicity is preserved under holomorphic mappings.
-That is, if $g$ is holomorphic and $f$ is plurisubharmonic, then
-$f \circ g$ is plurisubharmonic.  In particular, if $\varphi \colon \D \to
+In particular, if $\varphi \colon \widebar{\D} \to
 \C^n$ is an analytic disc and $f$ is plurisubharmonic in a neighborhood of
-$\varphi(\D)$,
-then $f \circ \varphi$ is subharmonic.
+$\varphi(\widebar{\D})$, then $f \circ \varphi$ is subharmonic on $\D$.
+As subharmonic functions satisfy the maximum principle, we find
+that $f(z) \leq \sup_{w \in \varphi(\partial \D)} f(w)$ for
+all $z \in \varphi(\D)$.  Let us give a general definition
+for this type of situation.
 
 \begin{defn}
 Let $\sF$ be a class of (extended\footnote{%
@@ -7708,8 +7738,8 @@ $\bigcup_\alpha \Delta_\alpha \subset \subset U$.
 
 Various similar theorems are named the \emph{continuity principle},
 we have now seen two.
-Generally what they have in common is a family of analytic discs whose
-boundaries stay inside a domain, and whose conclusion has to do
+What they have in common is a family of analytic discs whose
+boundaries stay inside a domain, and where the conclusion has to do
 with extension of holomorphic functions, with domains of holomorphy, or
 with the failure of some sort of convexity as above.
 
@@ -7771,7 +7801,12 @@ $\bigcup_{\alpha} [ x_\alpha,y_\alpha ] \subset \subset U$.
 \end{exercise}
 \end{exbox}
 
+We can now define another version of pseudoconvexity,
+this time only in terms of the interior
+of the domain.
+
 \begin{defn}
+\pagebreak[2]
 Let $U \subset \C^n$ be open.  An $f \colon U \to \R$ is an \emph{\myindex{exhaustion function}} for $U$ if
 \begin{equation*}
 \bigl\{ z \in U : f(z) < r \bigr\} \subset \subset U
@@ -7873,10 +7908,11 @@ If $u$ is a harmonic function on $\Delta$ continuous on $\overline{\Delta}$
 such that
 $- \log \rho_c(a+b\xi) \leq u(\xi)$ on $\partial \Delta$, we must
 show that the inequality holds on $\Delta$.
-By \exerciseref{exercise:onlyniceuneededforsubharmonic}
+By \exerciseref{exercise:onlyniceuneededforsubharmonic},
 we may assume $u$ is harmonic on a neighborhood of $\overline{\Delta}$
 and so let $u = \Re f$ for a holomorphic function $f$.
-Fix a $\xi \in \partial \Delta$.  We have  $- \log \rho_c(a+b\xi) \leq \Re
+Suppose $\xi \in \partial \Delta$ for a moment.
+We have  $- \log \rho_c(a+b\xi) \leq \Re
 f(\xi)$,
 or in other words
 \begin{equation*}
