@@ -11438,51 +11438,6 @@ topological component.  Prove that $U$ is not a domain of holomorphy.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The Cousin I problem} \label{sec:cousinI}
-
-A chapter in many a book on one complex variable is devoted to the
-Mittag-Leffler theorem on finding a meromorphic function with prescribed
-poles, and another one on the Weierstrass theorem for finding a holomorphic
-function with a prescribed zero set.  The analogues of these results in
-several complex variables are the so-called Cousin I and Cousin II
-problems\footnote{Named for Pierre Cousin, the French mathematician, and not
-for some family scuffle.}
-respectively.  We will study the Cousin I problem, which is an additive
-version of the problem and obtains an analogue to the Mittag-Leffler
-theorem.  We will skip the multiplicative Cousin II problem, which is
-somewhat more involved.
-
-Recall that a meromorphic function is one that can locally be
-written as $\nicefrac{f}{g}$ for two holomorphic functions $f$ and $g$.
-Write $\sM(U)$ for the set of meromorphic functions defined on $U$.
-
-\begin{defn}[\myindex{Cousin I}]\index{First Cousin problem}
-Suppose $U \subset \C^n$ is open.
-Let $\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
-and let $f_{\iota} \in \sM(U_{\iota})$ be such that $f_{\iota}-f_{\kappa}
-\in \sO(U_{\iota} \cap U_{\kappa})$ for all $\iota,\kappa \in I$
-for which $U_{\iota} \cap U_{\kappa} \not= \emptyset$.
-This covering and family of functions is called the
-\emph{\myindex{Cousin I data}}.
-
-The first Cousin problem is to find an $f \in \sM(U)$
-such that $f-f_{\iota} \in \sO(U_\iota)$ for all $\iota \in I$.
-We say $f$ is the \emph{solution}\index{solution of the Cousin I problem}
-of the problem and we say that the problem is \emph{solvable} if a
-solution exists.
-\end{defn}
-
-FIXME
-
-
-\begin{exbox}
-\begin{exercise}
-FIXME
-\end{exercise}
-\end{exbox}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Solvability of \texorpdfstring{$\bar{\partial}$}{dbar}-problem in the polydisc} \label{sec:dbarpoly}
 
 Let us tackle solvability of the $\bar{\partial}$-problem for differential forms.
@@ -11540,9 +11495,16 @@ $\eta$ such that $\bar{\partial} \eta = 0$ whenever $1 \leq q \leq n-1$
 is equivalent to holomorphic convexity, although
 the proof of this is beyond the scope of this book, and we prove
 this result only in the case of a polydisc.
+We will allow some of the factors in the polydisc to be $\C$,
+and so for the moment we define \emph{\myindex{possibly unbounded polydisc}}
+$\Delta \subset \C^n$
+to mean $\Delta = \Delta_1 \times \cdots \times \Delta_n$ where
+each $\Delta_j$ is either a disc or $\C$.  This way we also achieve a
+solution on $\C^n$ itself.
 
 \begin{thm} \label{thm:dbaronpoly}
-Let $\Delta \subset \C^n$ be a polydisc, let $q \geq 1$ be an integer, and
+Let $\Delta \subset \C^n$ be a possibly unbounded polydisc,
+let $q \geq 1$ be an integer, and
 let $\eta$ be a smooth $(0,q)$-form on $\Delta$ such that
 $\bar{\partial} \eta = 0$, then there exists a $(0,q-1)$-form $\omega$
 such that $\bar{\partial} \omega = \eta$.
@@ -11570,6 +11532,171 @@ FIXME
 \end{proof}
 
 FIXME: some examples
+
+\begin{exbox}
+\begin{exercise}
+FIXME
+\end{exercise}
+\end{exbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The Cousin problems} \label{sec:cousinI}
+
+A chapter in many a book on one complex variable is devoted to the
+Mittag-Leffler theorem on finding a meromorphic function with prescribed
+poles, and another one on the Weierstrass theorem for finding a holomorphic
+function with a prescribed zero set.  The analogues of these results in
+several complex variables are the so-called Cousin I and Cousin II
+problems\footnote{Named for Pierre Cousin, the French mathematician, and not
+for some family scuffle.}
+respectively.  The Cousin I problem is an additive
+version of the problem and obtains an analogue to the Mittag-Leffler
+theorem.  The Cousin II problem is the multiplicative version to obtain an
+analogue of Weierstrass.
+
+\begin{defn}[\myindex{Cousin I}]\index{First Cousin problem}
+Suppose $U \subset \C^n$ is open.
+Let $\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
+and let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be such that
+\begin{align*}
+& h_{\iota\kappa}+h_{\kappa\iota} = 0 & &\text{in } U_\iota \cap U_\kappa
+\\
+& h_{\iota\kappa}+h_{\kappa\lambda}+h_{\lambda\iota} = 0 & & \text{in }
+U_\iota \cap U_\kappa \cap U_{\lambda} .
+\end{align*}
+The covering and the functions $h_{\iota\kappa}$ are called the
+\emph{\myindex{Cousin I data}}.
+
+The \emph{\myindex{solution of the Cousin I problem}}
+is a set of
+holomorphic functions $f_\iota \in \sO(U_\iota)$ such that
+\begin{equation*}
+h_{\iota\kappa} = f_\iota-f_\kappa.
+\end{equation*}
+\end{defn}
+
+To see how Cousin I relates to Mittag-Leffler, note that Mittag-Leffler
+could be stated by giving meromorphic functions locally and then trying
+to piece them together.
+Recall that meromorphic functions are locally
+a ratio of holomorphic functions.
+So suppose that we have a covering $\{ U_\iota \}$ and
+in each $U_\iota$ we have a meromorphic function $g_\iota$ such that
+$g_{\iota}-g_{\kappa}$
+is holomorphic in $U_{\iota} \cap U_{\kappa}$ (or more precisely, extends to
+be holomorphic in that set).  That is, if we were in one
+dimension the two functions would have the same principal part.
+The solution is to find a global meromorphic function with the same
+singular behavior (principal part).
+
+On $U_\iota \cap U_\kappa$, let 
+\begin{equation*}
+h_{\iota\kappa} = g_\iota-g_\kappa .
+\end{equation*}
+It is easy to see that we obtain Cousin I data this way.  Suppose 
+the Cousin I problem is solvable in $U$.  Then we would find
+holomorphic $f_{\iota}$ as above.  We define a meromorphic function $f$
+on $U$
+by defining it in each $U_\iota$ as
+\begin{equation*}
+f = g_\iota - f_\iota .
+\end{equation*}
+The function is well-defined.  Indeed, on $U_\iota$ and $U_\kappa$ the
+possible definitions are 
+$g_\iota - f_\iota$
+and
+$g_\kappa - f_\kappa$, and their difference is zero:
+\begin{equation*}
+(g_\iota - f_\iota)-
+(g_\kappa - f_\kappa)
+=
+(g_\iota - g_\kappa)
++
+(f_\kappa - f_\iota)
+=
+h_{\iota\kappa}+h_{\kappa\iota} = 0.
+\end{equation*}
+The function $f$ has the same singularity as $g_\iota$ in $U_\iota$ since
+$f-g_\iota$ is holomorphic.
+
+So you can see that the data gives some local solution to some problem
+and the solution of the Cousin problem gives
+a way of gluing the local data together into a global solution.
+
+In one dimension, Cousin I (that is, Mittag-Leffler) is solvable for
+any domain in $\C$ (though not always on Riemann surfaces).
+In several variables, Cousin I is solvable on domains of holomorphy in
+$\C^n$, though we will only prove a special case, as we only proved a
+special case 
+
+FIXME: solution?
+
+\begin{defn}[\myindex{Cousin II}]\index{Second Cousin problem}
+Suppose $U \subset \C^n$ is open.
+Let $\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
+and let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be nonvanishing
+functions such that
+\begin{align*}
+& h_{\iota\kappa}h_{\kappa\iota} = 1 & &\text{in } U_\iota \cap U_\kappa
+\\
+& h_{\iota\kappa}h_{\kappa\lambda}h_{\lambda\iota} = 1 & & \text{in }
+U_\iota \cap U_\kappa \cap U_{\lambda} .
+\end{align*}
+The covering and the functions $h_{\iota\kappa}$ are called the
+\emph{\myindex{Cousin II data}}.
+
+The \emph{\myindex{solution of the Cousin II problem}}
+is a set of
+nonvanishing holomorphic functions $f_\iota \in \sO(U_\iota)$ such that
+\begin{equation}
+h_{\iota\kappa} = \frac{f_\iota}{f_\kappa}.
+\end{equation}
+\end{defn}
+
+Cousin II is the analogue of the Weierstrass theorem, that is,
+finding of a function with a prescribed zero set.
+Suppose that $M \subset U$ is locally given by the vanishing of
+a single holomorphic function with a nonvanishing derivative (a complex
+submanifold of codimension 1), that is for every $p \in U$ there is a
+neighborhood $U_\iota$ and a holomorphic $g_\iota$ with $dg_{\iota} \not= 0$
+such that $g_\iota^{-1}(0) = M \cap U_\iota$.
+On $U_\iota \cap U_\kappa$, let 
+\begin{equation*}
+h_{\iota\kappa} = \frac{g_\iota}{g_\kappa}.
+\end{equation*}
+
+\begin{exbox}
+\begin{exercise}
+Prove that $h_{\iota\kappa}$ is holomorphic and nonvanishing.
+\end{exercise}
+\end{exbox}
+
+Thus we have Cousin II data.  If the Cousin II problem is solvable, then
+we have $f_\iota$ as above.  So define a holomorphic function $f$ on $U$
+by defining it on each $U_\iota$ via
+\begin{equation*}
+f = \frac{g_{\iota}}{f_\iota} .
+\end{equation*}
+Similarly as before, this gives a well-defined function, and clearly it
+vanishes precisely on $M$.  Moreover, the derivative is nonzero on $M$.
+Let us state this result as a theorem.
+
+\begin{thm}
+Suppose $U \subset \C^n$ is a domain on which the Cousin II problem is
+solvable, and $M \subset U$ is a complex hypersurface (locally the zero set
+of a holomorphic function with nonvanishing derivative).
+Then there exists $f \in \sO(U)$ such that $f^{-1}(0) = M$ and
+$df \not=0$ on~$M$.
+\end{thm}
+
+The second Cousin problem is not always solvable on every domain of
+holomorphy like the Cousin I problem.  An extra condition on the topology of
+the domain is necessary, however, topology is all that is needed.  If the
+Cousin II problem is solvable just continuously, then it is solvable.
+
+FIXME
+
 
 \begin{exbox}
 \begin{exercise}
