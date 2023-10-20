@@ -7885,9 +7885,11 @@ $\widehat{K} \subset \{ z \in U : f(z) < r \} \subset \subset U$.
 \ref{thm:pscvx:itemiii}
 $\Rightarrow$
 \ref{thm:pscvx:itemi}:
+As long as $U \not= \C^n$,
+the function $-\log \rho(z)$ is real-valued and continuous.
 For $c \in \C^n$ with $\snorm{c}=1$, let
-$\rho_c(z)$ be the radius of the largest affine disc centered at $z$
-in the direction $c$ that still lies in $U$.  That is,
+$\rho_c(z)$ be the supremum of the radii of the affine discs centered at $z$
+in the direction $c$ that lie in $U$.  That is,
 \begin{equation*}
 \rho_c(z) =
 \sup \bigl\{ \lambda > 0 :
@@ -7973,7 +7975,7 @@ Therefore, $-\log \rho_c(a+b\xi)$ is subharmonic.
 \end{proof}
 
 \begin{exbox}
-\begin{exercise}
+\begin{exercise} \label{exercise:intersectionhpseudo}
 Show that if $U_1 \subset \C^n$ and $U_2 \subset \C^n$ are Hartogs
 pseudoconvex domains, then so are all the topological components of $U_1 \cap U_2$.
 \end{exercise}
@@ -8042,15 +8044,16 @@ the \emph{\myindex{Behnke--Stein theorem}}, which follows using this exercise an
 of the Levi problem.
 Behnke--Stein is easier to prove without the solution to the Levi problem,
 see \exerciseref{exercise:behnkestein}, and is, in fact, generally used in
-the solution of the Levi-problem.
+the solution of the Levi problem.
 
 \exerciseref{exercise:biholHartogs} says that (Hartogs) pseudoconvexity is a
 biholomorphic invariant.  That is a good indication that we are looking at a
 correct notion.  It also allows us to change variables to more convenient
 ones when proving a specific domain is (Hartogs) pseudoconvex.
 
-It is not immediately clear from the definition, but Hartogs pseudoconvexity
-is a local property.
+It is not immediately clear from the definition,
+but Hartogs pseudoconvexity
+is also a local property of the boundary.
 
 \begin{lemma}
 \pagebreak[2]
@@ -8064,7 +8067,8 @@ One direction is trivial, so consider the other.
 Suppose $p \in \partial U$, and let
 $W$ be such that $U \cap W$
 is Hartogs pseudoconvex.  Intersection of
-Hartogs pseudoconvex domains is Hartogs pseudoconvex, so
+Hartogs pseudoconvex domains is Hartogs pseudoconvex,
+see \exerciseref{exercise:intersectionhpseudo}, so
 assume $W = B_r(p)$.
 Let $B = B_{r/2}(p)$.  If $q \in B \cap U$, the distance from $q$ to the boundary of $W \cap U$ is the same as
 the distance to $\partial U$.  The setup is illustrated in
@@ -8143,7 +8147,7 @@ by
 For a small fixed $\lambda > 0$, the
 closed analytic discs defined by $\xi \in \overline{\D} \mapsto (\lambda \xi, 0, \cdots, 0, is)$
 are in $U$ for all small enough $s > 0$.  The origin
-is a limit point of the insides, but not a limit point of their boundaries.
+is a limit point of the insides of the discs, but not a limit point of their boundaries.
 \hyperref[thm:contprinciple2]{Kontinuit\"atssatz} (second version) is not satisfied,
 and $U$ is not
 convex with respect to the plurisubharmonic functions.  Therefore,
@@ -8167,7 +8171,7 @@ a_k \frac{\partial r}{\partial z_k} \Big|_q = 0 ,
 for all $q \in \partial U$ near $0$.
 Let $s$ be a small real constant,
 and let $\widetilde{q} = (q_1,\ldots,q_{n-1},q_n + is)$.
-None of the derivatives of $r$ depends on $\Im z_n$, and therefore
+None of the derivatives of $r$ depend on $\Im z_n$, and therefore
 $\frac{\partial r}{\partial z_\ell} \big|_{\widetilde{q}} =
 \frac{\partial r}{\partial z_\ell} \big|_{q}$ and
 $\frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \big|_{\widetilde{q}} =
@@ -8184,8 +8188,9 @@ Let $\nabla_z r|_q =
 \frac{\partial r}{\partial z_n}\big|_q \bigr)$ denote the gradient of $r$ in
 the holomorphic directions only.
 Given $q \in U$ near $0$,
-decompose an arbitrary $c \in \C^n$ as $c = a+b$, where $a = (a_1,\ldots,a_n)$
-satisfies
+decompose an arbitrary $c \in \C^n$ as $c = a+b$,
+where $a$ and $b$ are
+orthogonal and $a = (a_1,\ldots,a_n)$ satisfies
 \begin{equation*}
 \sum_{k=1}^n
 a_k \frac{\partial r}{\partial z_k} \Big|_q =
@@ -8193,7 +8198,7 @@ a_k \frac{\partial r}{\partial z_k} \Big|_q =
 =
 0 .
 \end{equation*}
-Taking the orthogonal decomposition, $b$ is a scalar multiple of
+As $a$ and $b$ are orthogonal, $b$ is a scalar multiple of
 $\overline{\nabla_z r|_q}$.
 By Cauchy--Schwarz,
 \begin{equation*}
@@ -8225,7 +8230,7 @@ As $c = a+b$ is the orthogonal decomposition, $\snorm{c} \geq \snorm{b}$.
 \pagebreak[2]
 The complex Hessian matrix of $r$ is continuous, and so let
 $M \geq 0$ be an upper bound on its operator norm for $q$ near the origin.
-Again using Cauchy--Schwarz
+Again using Cauchy--Schwarz,
 \begin{equation*}
 \begin{split}
 \sum_{k=1,\ell=1}^n
@@ -9138,7 +9143,7 @@ define
 \begin{equation*}
 f(x) =
 \begin{cases}
-e^{-1/x^2} & \text{if $x > 0$,} \\
+e^{-1/x} & \text{if $x > 0$,} \\
 0 & \text{if $x \leq 0$.}
 \end{cases}
 \end{equation*}
