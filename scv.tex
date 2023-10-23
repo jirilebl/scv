@@ -8157,7 +8157,7 @@ Next suppose $U$ is Levi pseudoconvex.  Take any $p \in \partial U$.
 After translation and rotation by a unitary, assume $p=0$ and
 write a defining function $r$ as
 \begin{equation*}
-r(z,\bar{z}) = \varphi(z',\bar{z}',\Re z_n) - \Im z_n ,
+r(z) = \varphi(z',\bar{z}',\Re z_n) - \Im z_n ,
 \end{equation*}
 where $z' = (z_1,\ldots,z_{n-1})$.
 Levi pseudoconvexity says
@@ -8191,7 +8191,9 @@ the holomorphic directions only.
 Given $q \in U$ near $0$,
 decompose an arbitrary $c \in \C^n$ as $c = a+b$,
 where $a$ and $b$ are
-orthogonal and $a = (a_1,\ldots,a_n)$ satisfies
+orthogonal and $b$ is a scalar multiple of
+$\overline{\nabla_z r|_q}$.  That is,
+$a = (a_1,\ldots,a_n)$ satisfies
 \begin{equation*}
 \sum_{k=1}^n
 a_k \frac{\partial r}{\partial z_k} \Big|_q =
@@ -8199,9 +8201,7 @@ a_k \frac{\partial r}{\partial z_k} \Big|_q =
 =
 0 .
 \end{equation*}
-As $a$ and $b$ are orthogonal, $b$ is a scalar multiple of
-$\overline{\nabla_z r|_q}$.
-By Cauchy--Schwarz,
+By the equality part of Cauchy--Schwarz,
 \begin{equation*}
 \BBabs{\sum_{k=1}^n c_k \frac{\partial r}{\partial z_k} \Big|_q}
 =
@@ -8214,7 +8214,7 @@ By Cauchy--Schwarz,
 As $\nabla_z r|_0 = (0,\ldots,0,-\nicefrac{1}{2i})$, then for $q$
 sufficiently near $0$, we have
 $\snorm{\nabla_z r|_q} \geq \nicefrac{1}{3}$, and
-\begin{equation*}
+\begin{equation} \label{eq:25boundingb}
 \snorm{b} =
 \frac{1}{\snorm
 {\nabla_z r|_q}}
@@ -8224,30 +8224,42 @@ $\snorm{\nabla_z r|_q} \geq \nicefrac{1}{3}$, and
 \leq
 3 \BBabs{\sum_{k=1}^n c_k \frac{\partial r}{\partial z_k} \Big|_q}
 .
-\avoidbreak
-\end{equation*}
-As $c = a+b$ is the orthogonal decomposition, $\snorm{c} \geq \snorm{b}$.
+\end{equation}
 
-\pagebreak[2]
+
+As $c = a+b$ is the orthogonal decomposition, $\snorm{c} \geq \snorm{b}$.
 The complex Hessian matrix of $r$ is continuous, and so let
 $M \geq 0$ be an upper bound on its operator norm for $q$ near the origin.
-Again using Cauchy--Schwarz,
-\begin{equation*}
+Note that
+$\bar{c}_k c_\ell = 
+( \bar{a}_k + \bar{b}_k )  (a_\ell + b_\ell)
+=
+\bar{a}_k a_\ell
++ \bar{b}_k (a_\ell + b_\ell)
++ ( \bar{a}_k + \bar{b}_k ) b_\ell
+- \bar{b}_k b_\ell
+=
+\bar{a}_k a_\ell
++ \bar{b}_k c_\ell
++ \bar{c}_k b_\ell
+- \bar{b}_k b_\ell$.
+Using Cauchy--Schwarz,
+\begin{equation} \label{eq:25boundingchr}
 \begin{split}
 \sum_{k=1,\ell=1}^n
 \bar{c}_k c_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q
-& =
-\sum_{k=1,\ell=1}^n
-( \bar{a}_k + \bar{b}_k )  (a_\ell + b_\ell) \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q
-\\
+%& =
+%\sum_{k=1,\ell=1}^n
+%( \bar{a}_k + \bar{b}_k )  (a_\ell + b_\ell) \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q
+%\\
 & =
 \smashoperator{\sum_{k=1,\ell=1}^n}
 \bar{a}_k a_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q
-\\
-& \phantom{=} \quad
 +
 \smashoperator{\sum_{k=1,\ell=1}^n}
 \bar{b}_k c_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q
+\\
+& \phantom{=} \quad
 +
 \smashoperator{\sum_{k=1,\ell=1}^n}
 \bar{c}_k  b_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q
@@ -8269,9 +8281,10 @@ M\snorm{b}^2
 -
 3 M\snorm{c}\snorm{b} .
 \end{split}
-\end{equation*}
-Together with what we know about
-$\snorm{b}$, for $q \in U$ near the origin
+\end{equation}
+
+Putting \eqref{eq:25boundingchr} and \eqref{eq:25boundingb} together,
+for $q \in U$ near the origin,
 \begin{equation*}
 \sum_{k=1,\ell=1}^n
 \bar{c}_k c_\ell \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \Big|_q
