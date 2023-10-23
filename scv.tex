@@ -5256,7 +5256,7 @@ holomorphy.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Holomorphic vectors, Levi form, and pseudoconvexity}
+\section{Holomorphic vectors, Levi form, pseudoconvexity}
 
 As $\C^n$ is identified with $\R^{2n}$ using $z=x+iy$, we have
 $T_p\C^n = T_p\R^{2n}$.  If we take the complex span instead of the real
@@ -5318,7 +5318,7 @@ A holomorphic function is one that vanishes on $T_p^{(0,1)} \C^n$.
 Let us see what holomorphic mappings do to these spaces when we treat
 holomorphic mappings as smooth mappings.
 Given a smooth
-mapping $f$ from $\C^n$ to $\C^m$, its derivative at $p \in \C^n$
+mapping $f$ from (an open subset of) $\C^n$ to $\C^m$, its derivative at $p \in \C^n$
 is a real-linear mapping $D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$.
 Given the basis above, this mapping is represented by
 the standard real Jacobian matrix, that is, a real $2m \times 2n$ matrix
@@ -5393,7 +5393,7 @@ $\left\{ \frac{\partial}{\partial z_1} \big|_p,\ldots,
 and
 $\left\{ \frac{\partial}{\partial w_1} \big|_{f(p)},\ldots,
 \frac{\partial}{\partial w_m} \big|_{f(p)} \right\}$,
-the holomorphic derivative $Df(p)$ of $f \colon \C^{n} \to \C^m$
+the holomorphic derivative $Df(p)$
 is represented by the $m \times n$ Jacobian matrix
 \begin{equation*}
 \left[
@@ -6192,7 +6192,7 @@ then $f \circ r$ is a defining function for $U$ at $p$.
 
 \begin{exbox}
 \begin{exercise}
-Find an example of a bounded domain with smooth boundary that is not convex,
+Find an example of a bounded domain in $\C^n$, $n \geq 2$, with smooth boundary that is not convex,
 but that is pseudoconvex.
 \end{exercise}
 \end{exbox}
@@ -8179,7 +8179,8 @@ $\frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \big|_{\widetilde{q}} =
 for all $k$ and $\ell$.
 So condition \eqref{eq:psconvcond} holds for all $q \in U$ near $0$.
 We will use $r$ to manufacture a plurisubharmonic exhaustion function, that
-is one with a semidefinite Hessian.  Starting with $r$, we already
+is one with a positive semidefinite Hessian.
+Starting with $r$, we already
 have what we need in all but one direction.
 
 Let $\nabla_z r|_q =
@@ -8346,7 +8347,7 @@ Now comes a somewhat funky trick.
 As a quadratic polynomial in $\snorm{c}$, the right-hand side of the
 inequality
 is always nonnegative if $A > 0$ and if the discriminant is negative or zero.
-Let us set the discriminant to zero:
+Let us see if we can make the discriminant zero:
 \begin{equation*}
 0 =
 {\Biggl(
@@ -8583,7 +8584,7 @@ Finally, we prove
 \ref{thm:cartthul:holconv} $\Rightarrow$
 \ref{thm:cartthul:domhol}.
 Suppose $U$ is holomorphically convex.  Let $p \in \partial U$.
-By convexity choose nested compact sets $K_{\ell-1} \subsetneq K_\ell \subset
+By convexity, choose nested compact sets $K_{\ell-1} \subsetneq K_\ell \subset
 \subset U$ such that $\bigcup_\ell K_\ell = U$, and $\widehat{(K_\ell)}_U =
 K_\ell$.
 As the sets exhaust $U$, we can perhaps pass to a subsequence
@@ -8592,6 +8593,8 @@ there exists a
 sequence of points $p_\ell \in K_\ell \setminus K_{\ell-1}$ such that
 $\lim_{\ell\to\infty} p_\ell = p$.
 
+Choose $f_1 \in \sO(U)$ so that $f_1(p_1) > 1$.
+Proceed inductively.
 As $p_\ell$ is not in the hull of $K_{\ell-1}$, there is a function $f_\ell \in
 \sO(U)$ such that $\sabs{f_\ell} < 2^{-\ell}$ on $K_{\ell-1}$, but
 \begin{equation*}

@@ -40,6 +40,7 @@ Corollary 1.5.2.
   Renumbers rest of the exercises in 1.6.
 <li> At the end of Example 1.6.3, make the zero set be the same as that for
 the first two functions in the example.
+<li> Rename 2.1 to "Domains of holoomorphic &amp; holomorphic extension"
 <li> New Exercises 2.1.4 and 2.1.5, renumbers rest of the exercises in 2.1
 <li> New Exercise 2.1.15
 <li> New Theorem 2.1.7, the extension version of the continuity principle.
@@ -61,6 +62,7 @@ of the exercises in 2.2.
 <li> Add Exercise 2.2.11
 <li> Pull out the definition of the complexified real derivative to the
 before the statement of Proposition 2.3.1.
+<li> Rename 2.3 to "Holomorphic vectors, Levi form, pseudoconvexity"
 <li> Add Exercises 2.3.2 and 2.3.3, renumbers the rest in 2.3.
 <li> Make Proposition 2.3.2 be more general, not just for biholomorphisms.
 <li> Add a quick remark after Proposition 2.3.3 to notice how the z and w
@@ -77,8 +79,10 @@ variables are handled in \(\varphi .\)
 mention that we mean by the derivative \(D_{\mathbb{C}} A .\)
 <li> In the discussion before Theorem 2.3.8, use L instead of H for the
 complex Hessian for consistency.
+<li> In Exercise 2.3.13, require that the dimension is at least
+two, otherwise it is too trivial.
 <li> Improve the discussion after Narasimhan's lemma (2.3.10)
-<li> Change exercise 2.3.14 to address an erratum: First show that the \(a\)
+<li> Change Exercise 2.3.14 to address an erratum: First show that the \(a\)
 and \(b\) matrices can be made symmetric.
 <li> In the proof of Theorem 2.3.11, when writing out the analytic discs,
 mention that \(\xi\) is in the disc.
