@@ -8352,7 +8352,8 @@ c_\ell
 }^2
 -
 \frac{3^2 M}{\sabs{r}}
-\snorm{c}\BBabs{\sum_{k=1}^n c_k \frac{\partial r}{\partial z_k} \Big|_q}
+\snorm{c}
+\BBabs{\sum_{k=1}^n c_k \frac{\partial r}{\partial z_k} \Big|_q}
 +
 A \snorm{c}^2 .
 \end{split}
@@ -8607,17 +8608,17 @@ there exists a
 sequence of points $p_\ell \in K_\ell \setminus K_{\ell-1}$ such that
 $\lim_{\ell\to\infty} p_\ell = p$.
 
-Choose $f_1 \in \sO(U)$ so that $f_1(p_1) > 1$.
+Choose $f_1 \in \sO(U)$ so that $f_1(p_1) \geq 1$.
 Proceed inductively.
 As $p_\ell$ is not in the hull of $K_{\ell-1}$, there is a function $f_\ell \in
-\sO(U)$ such that $\sabs{f_\ell} < 2^{-\ell}$ on $K_{\ell-1}$, but
+\sO(U)$ such that $\sabs{f_\ell} \leq 2^{-\ell}$ on $K_{\ell-1}$, but
 \begin{equation*}
-\sabs{f_\ell(p_\ell)} > \ell + \abs{\sum_{k=1}^{\ell-1} f_k(p_\ell)} .
+\sabs{f_\ell(p_\ell)} \geq \ell + \abs{\sum_{k=1}^{\ell-1} f_k(p_\ell)} .
 \end{equation*}
 Finding such a function is left as an exercise below.
 For every $\ell$, the series $\sum_{k=1}^\infty f_k(z)$ converges uniformly on
 $K_\ell$
-as for all $k > \ell$, $\sabs{f_k} < 2^{-k}$ on $K_\ell$.
+as for all $k > \ell$, $\sabs{f_k} \leq 2^{-k}$ on $K_\ell$.
 As the $K_\ell$ exhaust $U$, the series converges uniformly on compact
 subsets of $U$.  Consequently,
 \begin{equation*}
@@ -8641,7 +8642,11 @@ So $\lim_{\ell\to\infty} f(p_\ell) = \infty$.
 Clearly there cannot be any open $W \subset \C^n$
 containing $p$ to which $f$ extends (see
 \hyperref[defn:domainofhol]{definition of domain of holomorphy}).  As every
-connected open $W$ such that $W \setminus U \not= \emptyset$ must contain a
+connected open $W$ such that
+$W \setminus U \not= \emptyset$
+and
+$W \setminus U^c \not= \emptyset$
+must contain a
 point of $\partial U$, we are done.
 \end{proof}
 
@@ -8702,7 +8707,7 @@ We say a complete Reinhardt domain $U$ is \emph{\myindex{logarithmically convex}
 \index{Reinhardt domain!logarithmically convex}
 if there exists a
 (geometrically) convex $C \subset \R^n$ such that $z \in U$ if and only if
-$(\log \sabs{z_1},\ldots,\log\sabs{z_n}) \in C$.
+$\bigl(\log \sabs{z_1},\ldots,\log\sabs{z_n}\bigr) \in C$.
 
 \begin{exbox}
 \begin{exercise}
@@ -10934,8 +10939,8 @@ Via Stokes,
 \int_{U \setminus \Delta_r(z)} \frac{\frac{\partial f}{\partial
 \bar{\zeta}}(\zeta)}{\zeta-z} \, d\bar{\zeta} \wedge d\zeta .
 \end{equation*}
-The second equality follows because holomorphic derivatives in $\zeta$
-have a $d\zeta$ and when we wedge them with $d\zeta$ we just get zero.
+The second equality follows because the holomorphic derivative in $\zeta$
+has a $d\zeta$ and when we wedge it with $d\zeta$ we get zero.
 We now wish to let the radius $r$ go to zero.
 Via the exercise above,
 $\frac{\frac{\partial f}{\partial \bar{\zeta}}(\zeta)}{\zeta-z} \, d\bar{\zeta} \wedge d\zeta$
@@ -11086,7 +11091,7 @@ Then there exists a unique compactly supported smooth function $\psi \colon
 \end{thm}
 
 The compatibility conditions on $g$ are necessary, but the compactness is not.
-Without compactness, the boundary of the set where the equation lives
+Without compactness, the domain where the equation lives
 would come into play.  Let us not worry about this, and prove that this simple
 compactly supported version always has a solution.
 The compactly supported solution
@@ -11581,12 +11586,14 @@ analogue of Weierstrass.
 Suppose $U \subset \C^n$ is open.
 Let $\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
 and let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be such that
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 & h_{\iota\kappa}+h_{\kappa\iota} = 0 & &\text{in } U_\iota \cap U_\kappa
 \\
 & h_{\iota\kappa}+h_{\kappa\lambda}+h_{\lambda\iota} = 0 & & \text{in }
 U_\iota \cap U_\kappa \cap U_{\lambda} .
-\end{align*}
+\end{aligned}
+\end{equation*}
 The covering and the functions $h_{\iota\kappa}$ are called the
 \emph{\myindex{Cousin I data}}.
 
@@ -11659,12 +11666,14 @@ Suppose $U \subset \C^n$ is open.
 Let $\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
 and let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be nonvanishing
 functions such that
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 & h_{\iota\kappa}h_{\kappa\iota} = 1 & &\text{in } U_\iota \cap U_\kappa
 \\
 & h_{\iota\kappa}h_{\kappa\lambda}h_{\lambda\iota} = 1 & & \text{in }
 U_\iota \cap U_\kappa \cap U_{\lambda} .
-\end{align*}
+\end{aligned}
+\end{equation*}
 The covering and the functions $h_{\iota\kappa}$ are called the
 \emph{\myindex{Cousin II data}}.
 
@@ -13028,7 +13037,8 @@ t^k
 + \sigma_k .
 \end{equation*}
 So,
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 \sigma_{1} & = \alpha_1 + \alpha_2 + \cdots + \alpha_k, \\
 \sigma_{2} & = \alpha_1 \alpha_2 \, + \, \alpha_1 \alpha_3 \, + \,
   \cdots \, + \, \alpha_{k-1} \alpha_k , \\
@@ -13038,7 +13048,8 @@ So,
   \alpha_1 \alpha_3 \alpha_4 \cdots \alpha_{k} \, + \, \cdots
   \,+\, \alpha_1 \alpha_2 \cdots \alpha_{k-1}, \\
 \sigma_k & = \alpha_1 \alpha_2 \cdots \alpha_k.
-\end{align*}
+\end{aligned}
+\end{equation*}
 For example, when $k=2$, then $\sigma_2 = \alpha_1\alpha_2$ and
 $\sigma_1 = \alpha_1 + \alpha_2$.  The function $\sigma_1$ happens to
 already be a power sum.  We can write $\sigma_2$
@@ -16686,13 +16697,15 @@ in the proof.
 Suppose $U \subset \R^n$ is a domain such that for each $k=1,\ldots,n$
 there exist two smooth functions $\alpha_k$ and $\beta_k$ and $U$
 as a set is given by
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 & (x_1,\ldots,x_{k-1},x_{k+1},\ldots,x_n) \in \pi_k(U) ,
 \\
 & \alpha_k(x_1,\ldots,x_{k-1},x_{k+1},\ldots,x_n)
 \leq x_k \leq
 \beta_k(x_1,\ldots,x_{k-1},x_{k+1},\ldots,x_n) ,
-\end{align*}
+\end{aligned}
+\end{equation*}
 where $\pi_k(U)$ is the projection of $U$ onto the
 $(x_1,\ldots,x_{k-1},x_{k+1},\ldots,x_n)$ components.
 Orient $\partial U$ as usual.

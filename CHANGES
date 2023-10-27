@@ -110,6 +110,8 @@ it is important in the exposition.  Still leave the proof as an exercise.
 proof little bit to make it clearer.
 <li> Move Exercise 2.6.13 (Behnke-Stein) past Cartan-Thullen.  It is much
   easier then.
+<li> In the proof of Cartan-Thullen, don't use strict inequalities
+which aren't needed
 <li>Example 3.1.8, remove the square, it's not necessary
 <li> New part b) to Exercise 5.2.3.
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
