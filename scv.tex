@@ -10929,7 +10929,8 @@ Stokes now applies on $U \setminus \Delta_r(z)$.
 \caption{Proof of Cauchy--Pompeiu.\label{fig:cauchy-pompeiu}}
 \end{myfig}
 
-Via Stokes,
+Via Stokes, where the exterior derivative inside is with respect to $\zeta$ of
+course,
 \begin{equation*}
 \int_{\partial U} \frac{f(\zeta)}{\zeta-z}\,  d\zeta -
 \int_{\partial \Delta_r(z)} \frac{f(\zeta)}{\zeta-z}\,  d\zeta
@@ -11016,7 +11017,8 @@ d\zeta \wedge d\bar{\zeta}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Simple case of the \texorpdfstring{$\bar{\partial}$}{dbar}-problem}
+\section{Compactly supported \texorpdfstring{$\bar{\partial}$}{dbar} and the Hartogs phenomenon}
+\label{sec:hartogsphenom}
 
 For a smooth function $\psi$, consider the exterior
 derivative in terms of $z$ and $\bar{z}$,
@@ -11249,8 +11251,9 @@ of compact support.
 \end{exbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{The general Hartogs phenomenon} \label{sec:hartogsphenom}
+%
+%\section{The general Hartogs phenomenon}
+%\label{sec:hartogsphenom}
 
 We can now prove the general Hartogs phenomenon as an application of the
 solution of the compactly supported
@@ -11465,7 +11468,7 @@ topological component.  Prove that $U$ is not a domain of holomorphy.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Solvability of \texorpdfstring{$\bar{\partial}$}{dbar}-problem in the polydisc} \label{sec:dbarpoly}
+\section{Solvability of the \texorpdfstring{$\bar{\partial}$}{dbar}-problem in the polydisc} \label{sec:dbarpoly}
 
 Let us tackle solvability of the $\bar{\partial}$-problem for differential forms.
 In general, the problem is equivalent to holomorphic convexity, although
@@ -11509,19 +11512,76 @@ Define
 If $\eta$ is of bidegree $(p,q)$, then
 $\partial \eta$ if of bidegree $(p+1,q)$ and
 $\bar{\partial} \eta$ is of bidegree $(p,q+1)$.
-The total exterior derivative $d \eta = \partial \eta + \bar{\partial} \eta$ as before.
+We get the total exterior derivative $d \eta = \partial \eta + \bar{\partial} \eta$ as before.
 
 \begin{exbox}
 \begin{exercise}
 Prove that $d \eta = \partial \eta + \bar{\partial} \eta$.
 \end{exercise}
+
+\begin{exercise}
+Prove that $\bar{\partial}^2 \eta =
+\bar{\partial} \bar{\partial} \eta = 0$.
+\end{exercise}
 \end{exbox}
+
+A form $\eta$ is a
+\emph{\myindex{$\bar{\partial}$-exact form}}\index{exact form}
+if there exists a form $\omega$ such that
+$\bar{\partial} \omega = \eta$.  A form $\eta$ is a
+\emph{\myindex{$\bar{\partial}$-closed form}}\index{exact form}
+if $\bar{\partial} \eta = 0$.
+One can then define the
+\emph{\myindex{Dolbeault cohomology groups}}\index{cohomology}
+\begin{equation*}
+H^{(p,q)}(U)
+=
+\frac{
+\bigl\{
+\bar{\partial}\text{-closed forms of bidegree } (p,q) \text{ on } U
+\bigr\}
+}{
+\bigl\{
+\bar{\partial}\text{-exact forms of bidegree } (p,q) \text{ on } U
+\bigr\}
+} .
+\end{equation*}
+The $\bar{\partial}$-problem is then the solvability
+of the equation $\bar{\partial} \omega = \eta$ for every $(p,q)$ for
+$\eta$ given the necessary
+compatibility conditions $\bar{\partial} \eta = 0$ is can then
+be stated as the cohomology condition $H^{(p,q)}(U) = 0$.
+The Dolbeault cohomology is in a sense a refinement
+of the so-called de Rahm cohomology,
+which is the usual smooth cohomology measuring the normal topology of $U$,
+whereas the Dolbeault cohomology also takes into account the complex structure.
+Note that $H^{(0,0)}(U)$ is just the set of $\bar{\partial}$-closed
+$(0,0)$-forms, that is, it is the set $\sO(U)$ of holomorphic functions on $U$.
+More generally, $H^{(p,0)}(U)$ is the set of $\bar{\partial}$-closed $(p,0)$
+forms, that is, forms
+\begin{equation*}
+\eta =
+\sum_{\alpha}
+\eta_{\alpha} \, dz^\alpha
+\quad \text{such that}
+\quad
+\bar{\partial} \eta
+=
+\sum_{\alpha}
+\,
+\sum_{k=1}^n
+\frac{\partial \eta_{\alpha}}{\partial \bar{z}_k} d\bar{z}_k \wedge
+dz^\alpha = 0.
+\end{equation*}
+That is, all the functions $\eta_{\alpha}$ are holomorphic.
 
 Solvability of the equation $\bar{\partial} \omega = \eta$ for every $(0,q)$-form
 $\eta$ such that $\bar{\partial} \eta = 0$ whenever $1 \leq q \leq n-1$
 is equivalent to holomorphic convexity, although
-the proof of this is beyond the scope of this book, and we prove
-this result only in the case of a polydisc.
+the proof of this is beyond the scope of this book.
+We will prove the solvability of the $\bar{\partial}$-problem for the
+polydisc, in which case we get that all the cohomology groups $H^{(p,q)}$
+are going to be zero for all $q \geq 1$.
 We will allow some of the factors in the polydisc to be $\C$,
 and so for the moment we define \emph{\myindex{possibly unbounded polydisc}}
 $\Delta \subset \C^n$
@@ -11531,28 +11591,153 @@ solution on $\C^n$ itself.
 
 \begin{thm} \label{thm:dbaronpoly}
 Let $\Delta \subset \C^n$ be a possibly unbounded polydisc,
-let $q \geq 1$ be an integer, and
-let $\eta$ be a smooth $(0,q)$-form on $\Delta$ such that
-$\bar{\partial} \eta = 0$, then there exists a $(0,q-1)$-form $\omega$
+let $p$ and $q \geq 1$ be integers, and
+let $\eta$ be a smooth $(p,q)$-form on $\Delta$ such that
+$\bar{\partial} \eta = 0$, then there exists a $(p,q-1)$-form $\omega$
 such that $\bar{\partial} \omega = \eta$.
+In other words, $H^{(p,q)}(\Delta) = 0$ for $q \geq 1$.
 \end{thm}
 
-The theorem follows from solving the problem on a compact subpolydisc,
+Before tackling the theorem, let us
+solve a simple $\bar{\partial}$-problem in one dimension
+using the Cauchy--Pompeiu formula, though
+for simplicity we do this only for smooth functions only as usual.
+
+\begin{lemma}
+Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
+and let $g \colon \widebar{U} \to \C$ be a smooth function.
+Then $\psi \colon U \to \C$ defined by
+\begin{equation*}
+\psi(z) =
+\frac{1}{2\pi i} \int_U \frac{g(\zeta)}{\zeta-z} d\zeta \wedge d\bar{\zeta}
+\end{equation*}
+is a smooth function such that $\frac{\partial \psi}{\partial \bar{z}} = g$.
+\end{lemma}
+
+By taking conjugates we can also similarly solve the
+$\frac{\partial \psi}{\partial z} = g$ problem.  Moreover, since the
+solution is given as an integral, we can also solve the problem with
+parameters.  That is, if $g$ depends on some other variables in a smooth or
+holomorphic way, then the solution $\psi$ also depends on those variables
+smoothly or holomorphically.
+
+\begin{proof}
+Fix $z \in U$ for a moment and take a small disc $\Delta_r(z)$ such that
+$\overline{\Delta_r(z)} \subset U$.  Then via Stokes,
+\begin{multline*}
+\int_{\partial U}
+g(\zeta) \log \sabs{\zeta-z}^2 d \bar{\zeta}
+-
+\int_{\partial \Delta_r(z)}
+g(\zeta) \log \sabs{\zeta-z}^2 d \bar{\zeta}
+=
+\int_{U \setminus \Delta_r(z)}
+d\bigl( g(\zeta) \log \sabs{\zeta-z}^2 d \bar{\zeta} \bigr)
+\\
+=
+\int_{U \setminus \Delta_r(z)}
+\frac{\partial g}{\partial \zeta}(\zeta)
+\log \sabs{\zeta-z}^2
+d \zeta \wedge d \bar{\zeta}
++
+\int_{U \setminus \Delta_r(z)}
+\frac{g(\zeta)}{\zeta-z}
+d \zeta \wedge d \bar{\zeta} .
+\end{multline*}
+As $r \to 0$, the last term above goes to $\int_U \frac{g(\zeta)}{\zeta-z}
+d\zeta \wedge d\bar{\zeta}$, which is $2\pi i \psi(z)$.
+Next, the function $g$ is bounded on $\overline{U}$, by say $M$, so
+\begin{equation*}
+\abs{
+\int_{\partial \Delta_r(z)}
+g(\zeta) \log \sabs{\zeta-z}^2 d \bar{\zeta}
+}
+\leq
+\int_{\partial \Delta_r(z)}
+M
+\log (r^2) \sabs{d \bar{\zeta}}
+=
+2\pi r M \log(r^2)
+\underset{\text{as } r \to 0}{\to} 0 .
+%\to 0 \quad \text{as } r \to 0.
+\end{equation*}
+Thus, taking the limit we get
+\begin{equation*}
+\psi(z)
+= 
+\frac{1}{2\pi i}
+\int_{\partial U}
+g(\zeta) \log \sabs{\zeta-z}^2 d \bar{\zeta}
+-
+\frac{1}{2\pi i}
+\int_{U}
+\frac{\partial g}{\partial \zeta}(\zeta)
+\log \sabs{\zeta-z}^2
+d \zeta \wedge d \bar{\zeta} .
+\end{equation*}
+Taking partial derivatives (in $\Re z$ and $\Im z$) still leave the
+integrands integrable, and hence we can pass them under the integral sign.
+In particular the function $\psi$ is $C^1$ and we can
+take the $\bar{z}$ derivative.
+We then apply
+the Cauchy--Pompeiu formula (actually the conjugate of it applied to $\bar{g}$)
+\begin{equation*}
+\frac{\partial \psi}{\partial \bar{z}}(z)
+= 
+\frac{-1}{2\pi i}
+\int_{\partial U}
+\frac{g(\zeta)}{\bar{\zeta}-\bar{z}} d \bar{\zeta}
++
+\frac{1}{2\pi i}
+\int_{U}
+\frac{\frac{\partial g}{\partial \zeta}(\zeta)}{\bar{\zeta}-\bar{z}}
+d \zeta \wedge d \bar{\zeta} 
+= g(z) .
+\end{equation*}
+So we are done with the existence of this solution, we need to show that it
+is also smooth.
+As $g$ is smooth, then $\frac{\partial \psi}{\partial \bar{z}}$ is also
+smooth.  If we prove that
+$\frac{\partial \psi}{\partial z}$ is also smooth, then $\psi$ must be
+smooth.  To see this we take the $z$ derivative instead of the $\bar{z}$
+derivative to see
+\begin{equation*}
+\frac{\partial \psi}{\partial z}(z)
+= 
+\frac{-1}{2\pi i}
+\int_{\partial U}
+\frac{g(\zeta)}{\zeta-z} d \bar{\zeta}
++
+\frac{1}{2\pi i}
+\int_{U}
+\frac{\frac{\partial g}{\partial \zeta}(\zeta)}{\zeta-z}
+d \zeta \wedge d \bar{\zeta} .
+\end{equation*}
+The first integral is clearly smooth.  The second integral is precisely the
+sort of integral we have just shown is $C^1$ (with $g$ replaced by
+$\frac{\partial g}{\partial \zeta}$), so $\psi$ is $C^2$.  By induction then, 
+$\frac{\partial \psi}{\partial z}$ is smooth, and hence $\psi$ is smooth.
+\end{proof}
+
+First we will prove that we can solve the problem on a subpolydisc of
+any (bounded) polydisc,
 which is usually called the \emph{\myindex{Dolbeault Lemma}} or
 \emph{\myindex{Dolbeault--Grothendieck Lemma}}.
 
 \begin{lemma}[Dolbeault--Grothendieck]
 Let $\Delta_s(w) \subset \Delta_r(w) \subset \C^n$ be polydiscs
 where $0 < s < r < \infty$.
-Let $q \geq 1$ be an integer, and
-let $\eta$ be a smooth $(0,q)$-form on $\Delta_r(w)$ such that
-$\bar{\partial} \eta = 0$, then there exists a smooth $(0,q-1)$-form $\omega$
+Let $p$ and $q \geq 1$ be integers, and
+let $\eta$ be a smooth $(p,q)$-form on $\Delta_r(w)$ such that
+$\bar{\partial} \eta = 0$, then there exists a smooth $(p,q-1)$-form $\omega$
 on $\Delta_s(w)$ such that $\bar{\partial} \omega = \eta$.
 \end{lemma}
 
 \begin{proof}
 FIXME
 \end{proof}
+
+We can now prove the theorem itself.
 
 \begin{proof}[Proof of \thmref{thm:dbaronpoly}]
 FIXME

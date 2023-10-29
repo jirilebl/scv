@@ -113,6 +113,8 @@ proof little bit to make it clearer.
 <li> In the proof of Cartan-Thullen, don't use strict inequalities
 which aren't needed
 <li>Example 3.1.8, remove the square, it's not necessary
+<li> Merge sections 4.2 and 4.3 and name it
+"Compactly supported d-bar and the Hartogs phenomenon".
 <li> New part b) to Exercise 5.2.3.
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
