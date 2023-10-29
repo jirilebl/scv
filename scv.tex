@@ -11478,17 +11478,37 @@ into the holomorphic and antiholomorphic parts.  For higher order forms
 we work with multi-indices.
 
 \begin{defn} \label{defn:danddbarform}
-Let $\alpha$ and $\beta$ range over a finite set of multi-indices.
-We write a differential form as
+Let $p$ and $q$ be integers between $0$ and $n$.
+Let $\alpha$ and $\beta$ be ordered $p$- and $q$-tuples of
+distinct integers between $1$ and $n$.  Write
+\begin{equation*}
+dz_{\alpha} =
+dz_{\alpha_1}
+\wedge
+\cdots
+\wedge
+dz_{\alpha_p}
+\quad
+\text{and}
+\quad
+d\bar{z}_{\beta} =
+d\bar{z}_{\beta_1}
+\wedge
+\cdots
+\wedge
+d\bar{z}_{\beta_q} .
+\end{equation*}
+Then a differential form
 \begin{equation*}
 \eta =
 \sum_{\alpha,\beta}
-\eta_{\alpha \beta} \, dz^\alpha \wedge d\bar{z}^\beta  .
+\eta_{\alpha \beta} \, dz_\alpha \wedge d\bar{z}_\beta
 \end{equation*}
-If the $\alpha$ and $\beta$ only range over those multi-indices such that
-$\abs{\alpha}=p$ and $\abs{\beta}=q$, then we call $\eta$
-a \emph{\myindex{$(p,q)$-form}} or a differential form of
+is called a
+\emph{\myindex{$(p,q)$-form}} or a differential form of
 \emph{\myindex{bidegree}} $(p,q)$.
+A general $k$-form can be written as a sum of $(p,q)$-forms
+for different $p$ and $q$ where $p+q = k$.
 Define
 \glsadd{not:d}%
 \glsadd{not:dbar}%
@@ -11497,15 +11517,15 @@ Define
 \sum_{\alpha,\beta}
 \,
 \sum_{k=1}^n
-\frac{\partial \eta_{\alpha \beta}}{\partial z_k} dz_k \wedge dz^\alpha
-\wedge d\bar{z}^\beta ,
-\qquad \text{and} \qquad
+\frac{\partial \eta_{\alpha \beta}}{\partial z_k} dz_k \wedge dz_\alpha
+\wedge d\bar{z}_\beta ,
+\quad \text{and} \quad
 \bar{\partial} \eta \overset{\text{def}}{=}
 \sum_{\alpha,\beta}
 \,
 \sum_{k=1}^n
-\frac{\partial \eta_{\alpha \beta}}{\partial \bar{z}_k} d\bar{z}_k \wedge dz^\alpha
-\wedge d\bar{z}^\beta .
+\frac{\partial \eta_{\alpha \beta}}{\partial \bar{z}_k} d\bar{z}_k \wedge dz_\alpha
+\wedge d\bar{z}_\beta .
 \end{equation*}
 \end{defn}
 
@@ -11562,7 +11582,7 @@ forms, that is, forms
 \begin{equation*}
 \eta =
 \sum_{\alpha}
-\eta_{\alpha} \, dz^\alpha
+\eta_{\alpha} \, dz_\alpha
 \quad \text{such that}
 \quad
 \bar{\partial} \eta
@@ -11571,7 +11591,7 @@ forms, that is, forms
 \,
 \sum_{k=1}^n
 \frac{\partial \eta_{\alpha}}{\partial \bar{z}_k} d\bar{z}_k \wedge
-dz^\alpha = 0.
+dz_\alpha = 0.
 \end{equation*}
 That is, all the functions $\eta_{\alpha}$ are holomorphic.
 
@@ -11603,7 +11623,7 @@ solve a simple $\bar{\partial}$-problem in one dimension
 using the Cauchy--Pompeiu formula, though
 for simplicity we do this only for smooth functions only as usual.
 
-\begin{lemma}
+\begin{lemma} \label{lemma:dbaronevar}
 Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
 and let $g \colon \widebar{U} \to \C$ be a smooth function.
 Then $\psi \colon U \to \C$ defined by
@@ -11726,7 +11746,7 @@ which is usually called the \emph{\myindex{Dolbeault Lemma}} or
 
 \begin{lemma}[Dolbeault--Grothendieck]
 Let $\Delta_s(w) \subset \Delta_r(w) \subset \C^n$ be polydiscs
-where $0 < s < r < \infty$.
+where $0 < s_\ell < r_\ell < \infty$ for each $\ell$.
 Let $p$ and $q \geq 1$ be integers, and
 let $\eta$ be a smooth $(p,q)$-form on $\Delta_r(w)$ such that
 $\bar{\partial} \eta = 0$, then there exists a smooth $(p,q-1)$-form $\omega$
@@ -11734,8 +11754,119 @@ on $\Delta_s(w)$ such that $\bar{\partial} \omega = \eta$.
 \end{lemma}
 
 \begin{proof}
-FIXME
+Take $k$ be an integer such that $\eta$ only involves
+$d\bar{z}_1,\ldots,d\bar{z}_k$ from the barred differentials.
+If $k=0$, then the lemma is true trivially as $q \geq 1$ so $\eta$ would
+just have to be zero.
+We will proceed by induction.
+
+Write
+\begin{equation*}
+\eta = d\bar{z}_k \wedge \tau + \theta,
+\end{equation*}
+where $\tau$ and $\theta$ only involve the barred differentials
+$d\bar{z}_1,\ldots,d\bar{z}_{k-1}$.
+Now
+\begin{equation*}
+0 = \bar{\partial} \eta
+= \bar{\partial} (d\bar{z}_k \wedge \tau + \theta)
+= d\bar{z}_k \wedge \bar{\partial} \tau + \bar{\partial} \theta .
+\end{equation*}
+Hence the coefficients of $\tau$ and $\theta$ must be holomorphic in
+$z_{k+1},\ldots,z_n$ as their derivatives in the bars of those variables
+are zero.
+In particular, if $\tau_{\alpha \beta}$ is one of the coefficients
+of $\tau$, then it is a smooth function of the larger polydisc, but also
+holomorphic in the variables $z_{k+1},\ldots,z_{n}$.
+
+By \lemmaref{lemma:dbaronevar}, there is a smooth function
+$\psi_{\alpha\beta}$ in the
+$z_k$ variable such that $\frac{\partial \psi_{\alpha\beta}}{\partial \bar{z}_k} =
+\tau_{\alpha \beta}$.  Moreover, each $\psi_{\alpha\beta}$ is also a smooth function
+in
+\begin{equation*}
+\Delta_{r_1}(w_1)
+\times \cdots \times
+\Delta_{r_{k-1}}(w_{k-1})
+\times 
+\Delta_{t}(w_{k})
+\times
+\Delta_{r_{k+1}}(w_{k+1})
+\times \cdots \times
+\Delta_{r_{n}}(w_{n})
+\end{equation*}
+for some $t$ such that $s_k < t < r_k$.
+It is also holomorphic in the variables $z_{k+1},\ldots,z_n$.
+From the $\psi_{\alpha\beta}$ functions we construct a form $\psi$.
+We compute
+\begin{equation*}
+\begin{split}
+\bar{\partial} \left(
+\sum_{\alpha \beta}
+\psi_{\alpha\beta} \, dz_\alpha \wedge d\bar{z}_\beta
+\right)
+& =
+\sum_{\alpha \beta}
+\frac{\partial \psi_{\alpha\beta}}{\partial \bar{z}_k} d\bar{z}_k
+\wedge dz_\alpha \wedge d\bar{z}_\beta
++
+\sum_{\alpha \beta}
+\sum_{\ell=1}^{k-1}
+\frac{\partial \psi_{\alpha\beta}}{\partial \bar{z}_\ell} d\bar{z}_\ell
+\wedge dz_\alpha \wedge d\bar{z}_\beta
+\\
+& =
+d\bar{z}_k
+\wedge
+\left(
+\sum_{\alpha \beta}
+\tau_{\alpha\beta}
+\,
+dz_\alpha \wedge d\bar{z}_\beta
+\right)
++
+\sum_{\alpha \beta}
+\sum_{\ell=1}^{k-1}
+\frac{\partial \psi_{\alpha\beta}}{\partial \bar{z}_\ell} d\bar{z}_\ell
+\wedge dz_\alpha \wedge d\bar{z}_\beta
+\\
+& =
+d\bar{z}_k \wedge \tau + \delta ,
+\end{split}
+\end{equation*}
+where $\delta$ which also does not contain
+the barred differentials other than $d\bar{z}_1,\ldots,d\bar{z}_{k-1}$.
+Now note that
+\begin{equation*}
+\bar{\partial}(\theta-\delta)
+=
+\bar{\partial}(\eta-\bar{\partial} \psi)
+=
+\bar{\partial}\eta-\bar{\partial}^2 \psi = 0 .
+\end{equation*}
+Since $\theta$ and $\delta$ both only contain the barred differentials
+$d\bar{z}_1,\ldots,d\bar{z}_{k-1}$ we can apply the
+induction hypothesis, to find a $(p,q-1)$-form $\varphi$ such that
+$\bar{\partial} \varphi = \theta-\delta$.  Then we let
+$\omega = \psi+\varphi$ and note that we are done:
+\begin{equation*}
+\bar{\partial} \omega
+=
+\bar{\partial} (\psi+\varphi )
+=
+d\bar{z}_k \wedge \tau + \delta + \theta - \delta
+=
+\eta .
+\qedhere
+\end{equation*}
 \end{proof}
+
+\begin{exbox}
+\begin{exercise}
+Check the assertion in the proof that the coefficients of
+$\tau$ and $\theta$ are holomorphic in the variables $z_{k+1},\ldots,z_n$.
+\end{exercise}
+\end{exbox}
 
 We can now prove the theorem itself.
 
@@ -11743,13 +11874,7 @@ We can now prove the theorem itself.
 FIXME
 \end{proof}
 
-FIXME: some examples
-
-\begin{exbox}
-\begin{exercise}
-FIXME
-\end{exercise}
-\end{exbox}
+FIXME: some examples?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
