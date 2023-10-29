@@ -1,0 +1,14 @@
+An introduction to the field of Several Complex Variables, a course for graduate students after one semester of standard complex analysis in one variable. This book is a polished version of my course notes for Math 6283, Several Complex Variables, at Oklahoma State University.
+
+Table of contents:
+Introduction
+1. Holomorphic functions in several variables
+2. Convexity and pseudoconvexity
+3. CR functions
+4. The dbar-problem
+5. Integral kernels
+6. Complex analytic varieties
+
+See https://www.jirka.org/scv/ for more information.
+
+
