@@ -11481,7 +11481,10 @@ we work with multi-indices.
 \begin{defn} \label{defn:danddbarform}
 Let $p$ and $q$ be integers between $0$ and $n$.
 Let $\alpha$ and $\beta$ be ordered $p$- and $q$-tuples of
-distinct integers between $1$ and $n$.  Write
+distinct integers between $1$ and $n$:
+$1 \leq \alpha_1 < \alpha_2 < \dots < \alpha_p \leq n$ and
+$1 \leq \beta_1 < \beta_2 < \dots < \beta_q \leq n$.
+Write
 \begin{equation*}
 dz_{\alpha} =
 dz_{\alpha_1}
@@ -11503,8 +11506,10 @@ Then a differential form
 \begin{equation*}
 \eta =
 \sum_{\alpha,\beta}
-\eta_{\alpha \beta} \, dz_\alpha \wedge d\bar{z}_\beta
+\eta_{\alpha \beta} \, dz_\alpha \wedge d\bar{z}_\beta ,
 \end{equation*}
+where the $\alpha$ and $\beta$ run over all $p$- and $q$-tuples
+as above,
 is called a
 \emph{\myindex{$(p,q)$-form}} or a differential form of
 \emph{\myindex{bidegree}} $(p,q)$.
@@ -11543,6 +11548,11 @@ Prove that $d \eta = \partial \eta + \bar{\partial} \eta$.
 \begin{exercise}
 Prove that $\bar{\partial}^2 \eta =
 \bar{\partial} \bar{\partial} \eta = 0$.
+\end{exercise}
+
+\begin{exercise}
+Given a real function $r$, compute 
+$\partial \bar{\partial} r$ and note that it gives the Levi-form.
 \end{exercise}
 \end{exbox}
 
