@@ -10929,7 +10929,8 @@ Stokes now applies on $U \setminus \Delta_r(z)$.
 \caption{Proof of Cauchy--Pompeiu.\label{fig:cauchy-pompeiu}}
 \end{myfig}
 
-Via Stokes, where the exterior derivative inside is with respect to $\zeta$ of
+Via Stokes, where the exterior derivative inside is with respect to $\zeta$
+and $\bar{\zeta}$ of
 course,
 \begin{equation*}
 \int_{\partial U} \frac{f(\zeta)}{\zeta-z}\,  d\zeta -
@@ -11017,8 +11018,7 @@ d\zeta \wedge d\bar{\zeta}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Compactly supported \texorpdfstring{$\bar{\partial}$}{dbar} and the Hartogs phenomenon}
-\label{sec:hartogsphenom}
+\section{Compactly supported \texorpdfstring{$\bar{\partial}$}{dbar}-problem}
 
 For a smooth function $\psi$, consider the exterior
 derivative in terms of $z$ and $\bar{z}$,
@@ -11097,10 +11097,11 @@ Without compactness, the domain where the equation lives
 would come into play.  Let us not worry about this, and prove that this simple
 compactly supported version always has a solution.
 The compactly supported solution
-is unique:  Given any holomorphic
-$f$, $\bar{\partial}(\psi+f) = g$.  But since the difference of
-any two solutions $\psi_1$ and $\psi_2$ is holomorphic, and
-the only holomorphic compactly supported function is 0, then the compactly
+is unique:
+If $\psi_1$ and $\psi_2$ are solutions, then
+$\bar{\partial}(\psi_1-\psi_2) = g-g = 0$, and so $\psi_1-\psi_2$
+is holomorphic.  
+The only holomorphic compactly supported function is 0, and hence the compactly
 supported solution $\psi$ is unique.
 
 \begin{proof}
@@ -11189,7 +11190,7 @@ d\zeta \wedge d\bar{\zeta}
 \frac{1}{2\pi i}
 \int_\C
 \frac{
- \frac{\partial g_k}{\partial \bar{z}_1}(z_1,z_2,\ldots,z_n)
+ \frac{\partial g_k}{\partial \bar{z}_1}(\zeta,z_2,\ldots,z_n)
 }{\zeta-z_1}
 d\zeta \wedge d\bar{\zeta}
 =
@@ -11235,10 +11236,10 @@ Show that if $g$ is supported in $K \subset \subset \C^n$, $n \geq 2$,
 then $\psi$ is supported in the complement of the unbounded component
 of $\C^n \setminus K$.  In particular, show that if $K$ is the support of
 $g$ and $\C^n \setminus K$ is connected, then the support of
-$\psi$ is $K$.
+$\psi$ is~$K$.
 \item
 Find an explicit example where the support of $\psi$ is strictly larger
-than the support of $g$.
+than the support of~$g$.
 \end{exparts}
 \end{exercise}
 
@@ -11251,9 +11252,9 @@ of compact support.
 \end{exbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%\section{The general Hartogs phenomenon}
-%\label{sec:hartogsphenom}
+
+\section{The general Hartogs phenomenon}
+\label{sec:hartogsphenom}
 
 We can now prove the general Hartogs phenomenon as an application of the
 solution of the compactly supported
@@ -11298,8 +11299,8 @@ $g_k$ is smooth on $\C^n$.
 The compatibility conditions
 \eqref{eq:compatconds} are satisfied
 because partial derivatives commute.
-Let us see why $g_k$ is compactly supported.  The
-only place to check is on $U \setminus K$ as elsewhere we have $g_k = 0$
+Let us see why $g$ is compactly supported.  The
+only place to check is on $U \setminus K$ as elsewhere we have $g = 0$
 automatically.  Note that $f$ is holomorphic on $U \setminus K$ and compute
 \begin{equation*}
 \frac{\partial f_0}{\partial \bar{z}_k}
@@ -11313,9 +11314,9 @@ automatically.  Note that $f$ is holomorphic on $U \setminus K$ and compute
 =
 - \frac{\partial \varphi}{\partial \bar{z}_k} f .
 \end{equation*}
-And $\frac{\partial \varphi}{\partial \bar{z}_k}$ is compactly supported in
+The function $\frac{\partial \varphi}{\partial \bar{z}_k}$ is compactly supported in
 $U \setminus K$ by construction.
-Now apply the solution of the compactly supported $\bar{\partial}$-problem
+Apply the solution of the compactly supported $\bar{\partial}$-problem
 to find a
 compactly supported function $\psi$ such that $\bar{\partial}\psi = g$.
 Set $F = f_0 - \psi$.  We check that $F$ is the desired
@@ -11399,7 +11400,7 @@ there is a small ball $B_p$, such that $f$ extends to $B_p$.  Cover $\partial
 U$ by finitely many such balls so that if $B_p$ intersects $B_q$, then
 the (connected) intersection $B_p \cap B_q$ contains points of $\partial U$.
 The extension in $B_p$ and in $B_q$ then agree on a piece of a hypersurface
-$\partial U$, and hence agree.  Taking a union of the $B_p$ we find
+$\partial U$, and hence agree.  Taking a union of the $B_p$, we find
 a unique extension in single neighborhood of $\partial U$.
 We write this neighborhood as $U' \setminus K$ for some compact $K$
 and a connected $U'$ such that $\widebar{U} \subset U'$.
@@ -11618,7 +11619,7 @@ such that $\bar{\partial} \omega = \eta$.
 In other words, $H^{(p,q)}(\Delta) = 0$ for $q \geq 1$.
 \end{thm}
 
-Before tackling the theorem, let us
+Before tackling the proof of the theorem, let us
 solve a simple $\bar{\partial}$-problem in one dimension
 using the Cauchy--Pompeiu formula, though
 for simplicity we do this only for smooth functions only as usual.
