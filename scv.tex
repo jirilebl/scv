@@ -11552,7 +11552,12 @@ Prove that $\bar{\partial}^2 \eta =
 
 \begin{exercise}
 Given a real function $r$, compute 
-$\partial \bar{\partial} r$ and note that it gives the Levi-form.
+$\partial \bar{\partial} r$ and note that it gives the Levi form.
+That is, for a $T^{(1,0)} \C^n$ vector field $Z$,
+the Levi form is given by 
+$\partial \bar{\partial} r(Z,\bar{Z})$.  Hint: See
+\appendixref{ap:diffforms} on how to evaluate differential forms
+as multilinear forms.
 \end{exercise}
 \end{exbox}
 
@@ -11603,6 +11608,7 @@ forms, that is, forms
 \sum_{k=1}^n
 \frac{\partial \eta_{\alpha}}{\partial \bar{z}_k} d\bar{z}_k \wedge
 dz_\alpha = 0.
+\avoidbreak
 \end{equation*}
 That is, all the functions $\eta_{\alpha}$ are holomorphic.
 
@@ -11790,6 +11796,14 @@ In particular, if $\tau_{\alpha \beta}$ is one of the coefficients
 of $\tau$, then it is a smooth function of the larger polydisc, but also
 holomorphic in the variables $z_{k+1},\ldots,z_{n}$.
 
+\begin{exbox}
+\begin{exercise}
+Check the assertion that the coefficients of
+$\tau$ and $\theta$ are holomorphic in the variables $z_{k+1},\ldots,z_n$.
+\end{exercise}
+\end{exbox}
+
+
 By \lemmaref{lemma:dbaronevar}, there is a smooth function
 $\psi_{\alpha\beta}$ in the
 $z_k$ variable such that $\frac{\partial \psi_{\alpha\beta}}{\partial \bar{z}_k} =
@@ -11871,13 +11885,6 @@ d\bar{z}_k \wedge \tau + \delta + \theta - \delta
 \qedhere
 \end{equation*}
 \end{proof}
-
-\begin{exbox}
-\begin{exercise}
-Check the assertion in the proof that the coefficients of
-$\tau$ and $\theta$ are holomorphic in the variables $z_{k+1},\ldots,z_n$.
-\end{exercise}
-\end{exbox}
 
 We can now prove the theorem itself.
 
@@ -16684,6 +16691,46 @@ dx_{\ell_1} \wedge
 dx_{\ell_2} \wedge
 \cdots \wedge
 dx_{\ell_k}  .
+\end{equation*}
+
+In general, just like $1$-forms are linear functionals of vector fields,
+$k$-forms are alternating multilinear functions of $k$ vector fields.
+To simplify matters, let us note how 
+$k$ vectors are plugged into
+$dx_{\ell_1} \wedge dx_{\ell_2} \wedge \cdots \wedge dx_{\ell_k}$.
+Consider vector fields $X_1,\ldots,X_k$ given by
+$X_j = \sum_{m=1}^n c_{m j} \frac{\partial}{\partial x_m}$.
+Then
+\begin{equation*}
+dx_{\ell_1} \wedge
+dx_{\ell_2} \wedge
+\cdots \wedge
+dx_{\ell_k}  (X_1,\ldots,X_k)
+=
+\det
+\left(
+\begin{bmatrix}
+c_{\ell_1 1} & c_{\ell_1 2} & \cdots & c_{\ell_1 k} \\
+c_{\ell_2 1} & c_{\ell_2 2} & \cdots & c_{\ell_2 k} \\
+\vdots & \vdots & \ddots & \vdots \\
+c_{\ell_k 1} & c_{\ell_k 2} & \cdots & c_{\ell_k k}
+\end{bmatrix}
+\right) .
+\end{equation*}
+That is, each $dx_{\ell_j}$ picks out the $\ell_j$th row out of the matrix
+of all coefficients and we take the determinant.  Here is an explicit
+example for $k=2$:
+\begin{equation*}
+dx_1 \wedge dx_2
+\left(
+a \frac{\partial}{\partial x_1} + 
+b \frac{\partial}{\partial x_2}
+,
+c \frac{\partial}{\partial x_1} + 
+d \frac{\partial}{\partial x_2}
+\right)
+=
+ad-bc .
 \end{equation*}
 
 Consider

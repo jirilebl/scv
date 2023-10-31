@@ -121,6 +121,7 @@ which aren't needed
   are connected to our statements.  That makes things more compatible with
   most one-variable books.
 <li> Improve Figure C.1 a little.
+<li> In appendix C add a short note on how to evaluate $k$-forms.
 <li> When computing the Hessian use the vertical bar to evaluate,
   it may be clearer
 <li> Figures now have numbers, captions, float, and have explicit references
