@@ -6776,12 +6776,12 @@ of $U$.  Then $f\equiv 0$.
 \end{exercise}
 \end{exbox}
 
-As harmonic functions are locally real parts of holomorphic functions,
-\exerciseref{exercise:harmonicrealimag},
-harmonic functions are infinitely differentiable.
-It also follows that we can do this on simply connected domains, that is,
+Via \exerciseref{exercise:harmonicrealimag},
+harmonic functions are locally real parts of holomorphic functions,
+and hence they are infinitely differentiable.
+In fact,
 if $U \subset \C$ is a simply connected domain and $u$ is harmonic on $U$,
-then it is the real part of a holomorphic function on $U$.
+then it is the real part of a holomorphic function on~$U$.
 
 It is useful to find a harmonic function given boundary values.
 This problem is called the \emph{\myindex{Dirichlet problem}}, and it is
@@ -8439,7 +8439,8 @@ if and only it is Hartogs pseudoconvex.
 \end{thm}
 
 \begin{proof}
-The forward direction follows from an exercise below.
+The forward direction follows from an exercise below, which is sometimes
+called \emph{\myindex{Oka's Lemma}}.
 We skip the proof of the backward direction
 in order to save some hundred pages or so.
 See H\"ormander's book~\cite{Hormander} for the proof.
@@ -11019,6 +11020,7 @@ d\zeta \wedge d\bar{\zeta}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Compactly supported \texorpdfstring{$\bar{\partial}$}{dbar}-problem}
+\label{sec:compactdbar}
 
 For a smooth function $\psi$, consider the exterior
 derivative in terms of $z$ and $\bar{z}$,
@@ -11224,7 +11226,7 @@ That is, $\psi$ is zero on the unbounded component of the set where $g=0$,
 and so $\psi$ has compact support.
 \end{proof}
 
-The first part of the proof still works when $n=1$, we get a solution
+The first part of the proof still works when $n=1$; we get a solution
 $\psi$.  However, the last bit of the proof does not work in one dimension, so
 $\psi$ does not have compact support.
 
@@ -11551,9 +11553,10 @@ Prove that $\bar{\partial}^2 \eta =
 \end{exercise}
 
 \begin{exercise}
-Given a real function $r$, compute 
-$\partial \bar{\partial} r$ and note that it gives the Levi form.
-That is, for a $T^{(1,0)} \C^n$ vector field $Z$,
+Given a hypersurface $M \subset \C^n$ with a defining function $r$,
+compute 
+$\partial \bar{\partial} r$ and show that it gives the Levi form.
+That is, for a $T^{(1,0)} M$ vector field $Z$,
 the Levi form is given by 
 $\partial \bar{\partial} r(Z,\bar{Z})$.  Hint: See
 \appendixref{ap:diffforms} on how to evaluate differential forms
@@ -11760,6 +11763,8 @@ First we will prove that we can solve the problem on a subpolydisc of
 any (bounded) polydisc,
 which is usually called the \emph{\myindex{Dolbeault Lemma}} or
 \emph{\myindex{Dolbeault--Grothendieck Lemma}}.
+As it is the analogue of the Poincar\'e Lemma, it is sometimes also
+called the \emph{\myindex{$\bar{\partial}$-Poincar\'e Lemma}}.
 
 \begin{lemma}[Dolbeault--Grothendieck]
 Let $\Delta_s(w) \subset \Delta_r(w) \subset \C^n$ be polydiscs
@@ -11885,6 +11890,15 @@ d\bar{z}_k \wedge \tau + \delta + \theta - \delta
 \qedhere
 \end{equation*}
 \end{proof}
+
+\begin{exbox}
+\begin{exercise}
+Prove that the construction from the proof of the Lemma
+reproduces the compactly supported
+solution from \sectionref{sec:compactdbar} provided we start with a
+sufficiently large polydisc of course.
+\end{exercise}
+\end{exbox}
 
 We can now prove the theorem itself.
 
