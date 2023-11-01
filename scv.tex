@@ -11615,19 +11615,33 @@ dz_\alpha = 0.
 \end{equation*}
 That is, all the functions $\eta_{\alpha}$ are holomorphic.
 
-Solvability of the equation $\bar{\partial} \omega = \eta$ for every $(0,q)$-form
-$\eta$ such that $\bar{\partial} \eta = 0$ whenever $1 \leq q \leq n-1$
+Solvability of the equation $\bar{\partial} \omega = \eta$ for every $(p,q)$-form
+$\eta$ such that $\bar{\partial} \eta = 0$ whenever $q \geq 1$
 is equivalent to holomorphic convexity, although
-the proof of this is beyond the scope of this book.
+the proof of this is beyond the scope of this book.  Let us state this
+theorem without proof.
+
+\begin{thm}
+A domain $U \subset \C^n$ is holomorphically convex
+(and hence a domain of holomorphy) if and only if $H^{(p,q)}(U) = 0$
+for all $q \geq 1$.
+\end{thm}
+
+\begin{exbox}
+\begin{exercise}
+Show that it is sufficient in the theorem to consider $p=0$, that is, if
+$H^{(0,q)}(U) = 0$, then $H^{(p,q)}(U) = 0$ for all $p$.
+\end{exercise}
+\end{exbox}
+
 We will prove the solvability of the $\bar{\partial}$-problem for the
-polydisc, in which case we get that all the cohomology groups $H^{(p,q)}$
-are going to be zero for all $q \geq 1$.
+polydisc.
 We will allow some of the factors in the polydisc to be $\C$,
 and so for the moment we define \emph{\myindex{possibly unbounded polydisc}}
 $\Delta \subset \C^n$
 to mean $\Delta = \Delta_1 \times \cdots \times \Delta_n$ where
 each $\Delta_j$ is either a disc or $\C$.  This way we also achieve a
-solution on $\C^n$ itself.
+solution on $\C^n$ itself.  This is the theorem we will actually prove:
 
 \begin{thm} \label{thm:dbaronpoly}
 Let $\Delta \subset \C^n$ be a possibly unbounded polydisc,
