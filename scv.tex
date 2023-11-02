@@ -11074,7 +11074,7 @@ On any open set where $g = 0$, $\psi$ is holomorphic.  So
 for a general $g$, what we are doing is finding a function
 that is not holomorphic in a specific way.
 
-\begin{thm}
+\begin{thm} \label{thm:compactdbar}
 Suppose $g$ is a $(0,1)$-form
 on $\C^n$, $n \geq 2$, given by
 \begin{equation*}
@@ -11475,12 +11475,15 @@ topological component.  Prove that $U$ is not a domain of holomorphy.
 
 Let us tackle solvability of the $\bar{\partial}$-problem for differential forms.
 In general, the problem is equivalent to holomorphic convexity, although
-it is rather involved, and thus we content ourselves with polydiscs.
+it is rather involved, and thus we content ourselves with polydiscs and
+other simple examples.
 To work with differential forms, we, as before, split the derivatives
 into the holomorphic and antiholomorphic parts.  For higher order forms
-we work with multi-indices.
+we work with multi-indices for simplicity, although the way that
+multiindices are applied is slightly different.
 
 \begin{defn} \label{defn:danddbarform}
+\pagebreak[2]
 Let $p$ and $q$ be integers between $0$ and $n$.
 Let $\alpha$ and $\beta$ be ordered $p$- and $q$-tuples of
 distinct integers between $1$ and $n$:
@@ -11548,8 +11551,9 @@ Prove that $d \eta = \partial \eta + \bar{\partial} \eta$.
 \end{exercise}
 
 \begin{exercise}
-Prove that $\bar{\partial}^2 \eta =
-\bar{\partial} \bar{\partial} \eta = 0$.
+Show that $\bar{\partial}^2=0$, that is, prove that $\bar{\partial}^2 \eta =
+\bar{\partial} \bar{\partial} \eta = 0$ for every form $\eta$.
+Similarly, show $\partial^2 = 0$.
 \end{exercise}
 
 \begin{exercise}
@@ -11572,6 +11576,7 @@ $\bar{\partial} \omega = \eta$.  A form $\eta$ is a
 if $\bar{\partial} \eta = 0$.
 One can then define the
 \emph{\myindex{Dolbeault cohomology groups}}\index{cohomology}
+(quotient of complex vector spaces)
 \begin{equation*}
 H^{(p,q)}(U)
 =
@@ -11585,11 +11590,29 @@ H^{(p,q)}(U)
 \bigr\}
 } .
 \end{equation*}
-The $\bar{\partial}$-problem is then the solvability
-of the equation $\bar{\partial} \omega = \eta$ for every $(p,q)$ for
+
+\begin{exbox}
+\begin{exercise}
+Show that the $\bar{\partial}$-closed forms of degree $(p,q)$
+form a subspace in the vector space of all $(p,q)$ forms, and similarly
+that the 
+$\bar{\partial}$-exact forms of degree $(p,q)$
+form a subspace.
+\end{exercise}
+
+\begin{exercise}
+Prove that if two domains $U,V \subset \C^n$ are biholomorphic,
+then for all $(p,q)$, then $H^{(p,q)}(U)$ and $H^{(p,q)}(U)$
+are isomorphic as vector spaces.
+\end{exercise}
+\end{exbox}
+
+The $\bar{\partial}$-problem for $(p,q)$-forms is then the solvability
+of the equation $\bar{\partial} \omega = \eta$ for every $(p,q)$-form
 $\eta$ given the necessary
-compatibility conditions $\bar{\partial} \eta = 0$ is can then
-be stated as the cohomology condition $H^{(p,q)}(U) = 0$.
+compatibility conditions $\bar{\partial} \eta = 0$, and this problem
+can then be stated as the cohomology condition $H^{(p,q)}(U) = 0$,
+where by $0$, we mean the trivial vector space.
 The Dolbeault cohomology is in a sense a refinement
 of the so-called de Rahm cohomology,
 which is the usual smooth cohomology measuring the normal topology of $U$,
@@ -11618,19 +11641,132 @@ That is, all the functions $\eta_{\alpha}$ are holomorphic.
 Solvability of the equation $\bar{\partial} \omega = \eta$ for every $(p,q)$-form
 $\eta$ such that $\bar{\partial} \eta = 0$ whenever $q \geq 1$
 is equivalent to holomorphic convexity, although
-the proof of this is beyond the scope of this book.  Let us state this
-theorem without proof.
+we will leave the proof of this theorem
+the proof of this is beyond the scope of this book.  You will prove
+one direction of this theorem in $\C^2$ in the exercises, that is, you will show
+that for domain $U \subset \C^2$ that if $H^{(0,1)}(U) = 0$, then $U$ is
+a domain of holomorphy and hence holomorphically convex.
+Let us state this theorem without proof.
 
 \begin{thm}
-A domain $U \subset \C^n$ is holomorphically convex
-(and hence a domain of holomorphy) if and only if $H^{(p,q)}(U) = 0$
-for all $q \geq 1$.
+A domain $U \subset \C^n$ is a domain of holomorphy
+(and hence holomorphically convex) if and only if $H^{(0,q)}(U) = 0$
+whenever $1 \leq q \leq n-1$.
 \end{thm}
+
+If $U$ is a domain of holomorphy, it is in fact true that $H^{(p,q)}(U) = 0$
+whenever $q \geq 1$.  We will not prove this fact, but we will prove it for a
+polydisc, and we saw above that $H^{(p,0)}(U)$ is never trivial.
 
 \begin{exbox}
 \begin{exercise}
-Show that it is sufficient in the theorem to consider $p=0$, that is, if
-$H^{(0,q)}(U) = 0$, then $H^{(p,q)}(U) = 0$ for all $p$.
+Prove that
+it is sufficient to consider $p=0$,
+that is,
+$H^{(0,q)}(U) = 0$ if and only if $H^{(p,q)}(U) = 0$ for all $p$.
+\end{exercise}
+\end{exbox}
+
+\begin{example}
+As we mentioned, if $U$ is not a domain of holomorphy, the $\bar{\partial}$
+problem is not always solvable, and hence the Dolbeault cohomology groups
+may be nonzero.  Let us show that
+$H^{(0,1)}\bigl(\C^2 \setminus \{ 0 \}\bigr)$ contains a nonzero element.
+
+Let $r = \sabs{z}^2+\sabs{w}^2$.  Write
+\begin{equation*}
+\frac{1}{zw} = \frac{\bar{w}}{z r} - \frac{-\bar{z}}{w r} .
+\end{equation*}
+That is, the two functions on the right hand side differ by a holomorphic
+function wherever $z$ and $w$ are both not zero and hence their
+$\bar{\partial}$'s are equal (where they are both defined).  The left hand
+term is defined when $z\not=0$ and the right hand term is defined when $w
+\not=0$, and the following form is well-defined on $\C^2 \setminus \{ 0 \}$
+\begin{equation*}
+\eta = 
+\bar{\partial}
+\left(
+\dfrac{\bar{w}}{z r}
+\right)
+\quad \text{if $z\not=0$,}
+\qquad \text{and} \qquad
+\eta =
+\bar{\partial}
+\left(
+\dfrac{-\bar{z}}{w r}
+\right)
+\quad \text{if $w\not=0$} .
+\end{equation*}
+That $\eta$ is $\bar{\partial}$-closed follows by $\bar{\partial}^2 = 0$.
+Suppose for contradiction that there existed a smooth
+$f \colon \C^2 \setminus \{ 0 \} \to \C$
+such that $\bar{\partial} f = \eta$.
+Define $g = z f + \nicefrac{\bar{w}}{r}$.  When $z\not=0$, then
+$\frac{g}{z} = f + \nicefrac{\bar{w}}{zr}$, and so
+$\bar{\partial}\bigl(\nicefrac{g}{z}\bigr) = 0$.  Therefore, $g$ is holomorphic
+where $z\not=0$, but $g$ is, and this is really where the contradiction
+comes in, smooth on $\C^2 \setminus \{ 0 \}$ and hence satisfies the
+Cauchy--Riemann equations on $\C^2 \setminus \{ 0 \}$ and so is holomorphic.
+By Hartogs phenomenon (any version) $g$ extends to be holomorphic in $\C^2$,
+in particular, near $0$, which contradicts the fact that $g(0,w) =
+\nicefrac{1}{w}$.
+\end{example}
+
+\begin{example}
+It is not simply the topology (as we already know) that determines the
+$H^{(p,q)}$ groups.  The previous example still works in $\C^2 \setminus
+\R^2 = \{ z \in \C^2 : \Im z \not= 0 \text{ or } \Im w \not= 0 \}$.
+That is, the function $g$ from the previous example can be defined in
+$\C^2 \setminus \R^2$ and hence extends to $\C^2$
+(see \exerciseref{exercise:C2minusR2}),
+leading again to a contradiction.
+Notice however, that the domain
+$\C^2 \setminus \{ z = 0\}$
+has the same exact topology as $\C^2 \setminus \R^2$.
+However,
+$\C^2 \setminus \{ z = 0\}$
+is a domain of holomorphy, and via an exercise below we know
+$H^{(0,1)}\bigl(\C^2 \setminus \{ z = 0\}\bigr) = 0$.  The thing is that
+the $g$ from the previous example can no longer be extended to all of $\C^2$
+thus not leading to a contradiction.  In particular,
+the $f$ actually exists
+by construction: $f = \nicefrac{\bar{w}}{z r}$.
+\end{example}
+
+\begin{exbox}
+\begin{exercise}
+Prove that if $U \subset \C^2$ and $K \subset U$ is compact,
+then $H^{(0,1)}(U \setminus K)$ is nontrivial.
+\end{exercise}
+
+\begin{exercise}
+Give another example for why simple topology is not enough.  Consider the
+Hartogs figure
+$H =
+\bigl\{ (z,w) \in \D^{2} : \sabs{z} > \nicefrac{1}{2} \text{ or }
+\sabs{w} < \nicefrac{1}{2}
+\bigr\}$.
+Show that while $H$ is homeomorphic to the polydisc (has trivial topology),
+$H^{(0,1)}(H)$ is nontrivial.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \C^2$ is a domain such that $H^{(0,1)}(U) = 0$,
+then $U$ is a domain of holomorphy.
+Hint: Prove the contrapositive, suppose that that $U$ is not a domain of
+holomorphy and show that $H^{(0,1)}(U) \not= 0$.
+\end{exercise}
+
+\begin{exercise} \label{exercise:Levinegdol}
+Suppose $U \subset \C^n$ is a domain with smooth boundary,
+$0 \in \partial U$, $\{ z_1=z_2 =0\} \cap U = \emptyset$, and the Levi form
+at the origin has a negative eigenvalue.  Show that
+$H^{(0,1)}(U) = 0$.
+\end{exercise}
+
+\begin{exercise}
+Prove that $H^{(0,1)}\bigl(\C^2 \setminus \{ 0 \} \bigr)$ is not just
+trivial, it is an infinite dimensional vector space.
 \end{exercise}
 \end{exbox}
 
@@ -11654,8 +11790,7 @@ In other words, $H^{(p,q)}(\Delta) = 0$ for $q \geq 1$.
 
 Before tackling the proof of the theorem, let us
 solve a simple $\bar{\partial}$-problem in one dimension
-using the Cauchy--Pompeiu formula, though
-for simplicity we do this only for smooth functions only as usual.
+using the Cauchy--Pompeiu formula.
 
 \begin{lemma} \label{lemma:dbaronevar}
 Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
@@ -11674,8 +11809,18 @@ solution is given as an integral, we can also solve the problem with
 parameters.  That is, if $g$ depends on some other variables in a smooth or
 holomorphic way, then the solution $\psi$ also depends on those variables
 smoothly or holomorphically.
+Compare the expression for $\psi$ to the one used in the proof of
+\thmref{thm:compactdbar}.
 The proof is around the fact that $\psi(z) = \log \sabs{z}^2$
 solves the problem for $g(z) = \nicefrac{1}{\bar{z}}$.
+This fact may be surprising as blindly doing calculus, one would arrive
+at the multivalued function $\log \bar{z} + \text{holomorphic function}$,
+but $\log \bar{z} + \log z = \log \sabs{z}^2$ as needed.
+The lemma, via the exercises, leads to showing that $H^{(0,1)}(U) = 0$ for 
+every domain $U \subset \C$.  Note that every $(0,1)$-form
+$g \, d\bar{z}$ in $U$ is $\bar{\partial}$-closed, so the statement is
+equivalent to showing that $\frac{\partial \psi}{\partial \bar{z}} = g$
+is solvable for any smooth function $g$ on $U$.
 
 \begin{exbox}
 \begin{exercise}
@@ -11726,7 +11871,6 @@ M
 =
 2\pi r M \log(r^2)
 \underset{\text{as } r \to 0}{\to} 0 .
-%\to 0 \quad \text{as } r \to 0.
 \end{equation*}
 Thus, taking the limit we get
 \begin{equation*}
@@ -11786,16 +11930,16 @@ $\frac{\partial g}{\partial \zeta}$), so $\psi$ is $C^2$.  By induction then,
 $\frac{\partial \psi}{\partial z}$ is smooth, and hence $\psi$ is smooth.
 \end{proof}
 
-First we will prove that we can solve the problem on a subpolydisc of
-any (bounded) polydisc,
+First we prove that we can solve the problem on a subpolydisc of
+any polydisc,
 which is usually called the \emph{\myindex{Dolbeault Lemma}} or
 \emph{\myindex{Dolbeault--Grothendieck Lemma}}.
 As it is the analogue of the Poincar\'e Lemma, it is sometimes
 called the \emph{\myindex{$\bar{\partial}$-Poincar\'e Lemma}}.
 
-\begin{lemma}[Dolbeault--Grothendieck]
+\begin{lemma}[Dolbeault--Grothendieck]\label{lemma:dolgro}
 Let $\Delta_s(w) \subset \Delta_r(w) \subset \C^n$ be polydiscs
-where $0 < s_\ell < r_\ell < \infty$ for each $\ell$.
+where $0 < s_\ell < r_\ell \leq \infty$ for each $\ell$.
 Let $p$ and $q \geq 1$ be integers, and
 let $\eta$ be a smooth $(p,q)$-form on $\Delta_r(w)$ such that
 $\bar{\partial} \eta = 0$, then there exists a smooth $(p,q-1)$-form $\omega$
@@ -11930,21 +12074,93 @@ sufficiently large polydisc of course.
 We can now prove the theorem itself.
 
 \begin{proof}[Proof of \thmref{thm:dbaronpoly}]
+The proof splits in two cases.  First suppose that $q > 1$.
+Pick a sequence of polydiscs $\Delta_k$ all centered at the origin,
+such that $\bigcup_k \Delta_k = \Delta$ and such that $\overline{\Delta_k}
+\subset \Delta_{k+1}$ for all $k$.
+By using the 
+\hyperref[lemma:dolgro]{Dolbeault--Grothendieck Lemma} with $\Delta_3$ and
+$\Delta_4$, we can find a smooth form $\omega_1$ defined on
+$\Delta_3$ such that $\bar{\partial} \omega_1 = \eta$.
+We will construct a sequence $\{ \omega_k \}$ each defined in $\Delta_{k+2}$
+such that $\omega_{k+1}|_{\Delta_k} = \omega_k|_{\Delta_k}$.
+Suppose we have defined $\omega_1,\ldots,\omega_k$.
+Now using $\Delta_{k+2}$ and $\Delta_{k+3}$ using the lemma again,
+define a new form $\sigma$ on $\Delta_{k+2}$ such that $\bar{\partial}
+\sigma = \eta$.  What we need to do is to correct $\sigma$ so that it equals
+$\omega_k$ on $\Delta_k$.  On $\Delta_{k+2}$ we have that
+$\bar{\partial}(\omega_k-\sigma) = \eta-\eta = 0$, so $\omega_k-\sigma$
+is closed.  The lemma gives a new form $\theta$ on $\Delta_{k+1}$ such that
+$\bar{\partial}\theta = \omega_k-\sigma$.
+Define a smooth function $\varphi$ on $\C^n$ such that $\varphi=1$ on
+$\overline{\Delta_{k}}$ and $\varphi$ is compactly supported in
+$\Delta_{k+1}$.  Now define
+$\omega_{k+1} = \sigma + \bar{\partial}(\varphi \theta)$.  The fact that
+$\bar{\partial}^2=0$ ensures that $\bar{\partial}\omega_{k+1} =
+\bar{\partial} \sigma = \eta$.  On $\Delta_k$, we have
+$\omega_{k+1} = \sigma + \bar{\partial}(\theta) = \sigma+\omega_k-\sigma=\omega_k$.
+Thus the sequence is defined.
+We define $\omega$ on $\Delta$ by simply letting $\omega =
+\omega_k$ on $\Delta_k$.
+
+Now assume $q=1$.
 FIXME
 \end{proof}
 
 \begin{exbox}
 \begin{exercise}
-For the unit disc $\D$ and the punctured disc $\D^* = \D \setminus \{ 0 \}$,
-prove the theorem also holds for 
-$U = \D \times \cdots \times \D \times \D^* \times \cdots \times \D^*$.
-Hint: You may have to prove a slightly more general version of the lemma.
+For any disc $\Delta \subset \C$ let $\Delta^*$ denote the punctured disc
+$\Delta^* = \Delta \setminus \{ a \}$ where $a$ is the center.
+Prove that the theorem also holds for 
+$U = \Delta_1 \times \cdots \times \Delta_k \times \Delta_{k+1}^* \times
+\cdots \times \Delta_n^*$ for some (possibly unbounded) discs
+$\Delta_1,\ldots,\Delta_n$.
+Hint: You may have to prove a slightly more general version of the
+Dolbeault--Grothendieck lemma.
+\end{exercise}
+
+\begin{exercise}
+The previous exercise could be extended even further.  Prove the theorem for
+$U = U_1 \times \cdots \times U_n \subset \C^n$ for some domains $U_k \subset \C$.
+In particular, we have that in one variable, $H^{(0,1)}(U) = 0$ for any
+domain $U \subset \C$.
+Hint: Same idea as above, but prove that you can exhaust each $U_k$
+by some nice domains with nice enough boundaries.
+\end{exercise}
+
+\begin{exercise}
+Prove the theorem for the Hartogs triangle
+$T = \bigl\{ (z,w) \in \D^{2} : \sabs{z} > \sabs{w} \bigr\}$.
+\end{exercise}
+
+\begin{exercise} \label{exercise:dollocal}
+Suppose $U \subset \C^n$ is a domain and $p \in \partial U$.  Suppose there
+is some polydisc $\Delta$ centered at $p$ such that
+$H^{(0,q)}(U \cap \Delta) \not= 0$, then $H^{(0,q)}(U) \not= 0$.
+Hint:  Find a smooth function $\varphi$ on $U \cap \Delta$ such that
+$\varphi$ is identically zero near the boundary of $U$ and identically one
+near the boundary of $\Delta$, then use the theorem.
+\end{exercise}
+
+\begin{exercise}
+Use the \exerciseref{exercise:dollocal} and
+\exerciseref{exercise:Levinegdol} to prove that if
+$U \subset \C^n$ is a domain with smooth boundary and $p \in \partial U$
+such that the Levi form at $p$ has a negative eigenvalue and at least $n-2$ positive
+eigenvalues, then $H^{(0,1)}(U) \not= 0$.
+\end{exercise}
+
+\begin{exercise}
+Show that being a subset gives us no relation between the Dolbeault
+cohomology groups.  Find domains $U \subset V \subset W \subset \C^2$
+such that
+$H^{(0,1)}(U) = H^{(0,1)}(W) = 0$ but $H^{(0,1)}(V)$ is nontrivial.
 \end{exercise}
 \end{exbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The Cousin problems} \label{sec:cousinI}
+\section{The Cousin problems} \label{sec:cousin}
 
 A chapter in many a book on one complex variable is devoted to the
 Mittag-Leffler theorem on finding a meromorphic function with prescribed
