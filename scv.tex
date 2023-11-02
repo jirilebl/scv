@@ -11674,8 +11674,21 @@ solution is given as an integral, we can also solve the problem with
 parameters.  That is, if $g$ depends on some other variables in a smooth or
 holomorphic way, then the solution $\psi$ also depends on those variables
 smoothly or holomorphically.
+The proof is around the fact that $\psi(z) = \log \sabs{z}^2$
+solves the problem for $g(z) = \nicefrac{1}{\bar{z}}$.
 
-\begin{proof}
+\begin{exbox}
+\begin{exercise}
+The fact that the functions are complex-valued is important.  Show that
+for $g(x+iy) = \frac{y}{x^2+y^2}$ for $\C \setminus \{ 0 \}$,
+there is no real-valued $\psi \colon \C \setminus \{ 0 \} \to \R$
+such that
+$\frac{\partial \psi}{\partial z} = g$ or
+$\frac{\partial \psi}{\partial \bar{z}} = g$.
+\end{exercise}
+\end{exbox}
+
+\begin{proof}[Proof of the lemma]
 Fix $z \in U$ for a moment and take a small disc $\Delta_r(z)$ such that
 $\overline{\Delta_r(z)} \subset U$.  Then via Stokes,
 \begin{multline*}
@@ -11777,7 +11790,7 @@ First we will prove that we can solve the problem on a subpolydisc of
 any (bounded) polydisc,
 which is usually called the \emph{\myindex{Dolbeault Lemma}} or
 \emph{\myindex{Dolbeault--Grothendieck Lemma}}.
-As it is the analogue of the Poincar\'e Lemma, it is sometimes also
+As it is the analogue of the Poincar\'e Lemma, it is sometimes
 called the \emph{\myindex{$\bar{\partial}$-Poincar\'e Lemma}}.
 
 \begin{lemma}[Dolbeault--Grothendieck]
@@ -11920,7 +11933,14 @@ We can now prove the theorem itself.
 FIXME
 \end{proof}
 
-FIXME: some examples?
+\begin{exbox}
+\begin{exercise}
+For the unit disc $\D$ and the punctured disc $\D^* = \D \setminus \{ 0 \}$,
+prove the theorem also holds for 
+$U = \D \times \cdots \times \D \times \D^* \times \cdots \times \D^*$.
+Hint: You may have to prove a slightly more general version of the lemma.
+\end{exercise}
+\end{exbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
