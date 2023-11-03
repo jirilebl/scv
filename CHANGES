@@ -19,13 +19,15 @@ and add relevant note to the corollary of Hartogs figure.
 <li> Add a note after Theorem 1.2.1 to note that continuity up to the
   boundary is not really necessary.
 <li> Improve the wording of the definition of Reinhardt domain.
-<li> Make Exercise 1.2.7 (domain of convergence is a complete Reinhardt
+<li> Add Exercises 1.2.3 and 1.2.4.  This renumbers the exercises
+in 1.2.
+<li> Make Exercise 1.2.9 (domain of convergence is a complete Reinhardt
 domain) into a proposition (keeping the exercise, but just stating it as a
 proposition), that flows better.  It renumbers the following
 Theorems/Propositions/Lemmas in 1.2.
 <li> After the identity theorem, note the difference with the one variable
   identity theorem, and give a quick example of why it is not so simple.
-<li> Exercise 1.2.10 changed to use the unit ball instead of the polydisc.
+<li> Exercise 1.2.12 changed to use the unit ball instead of the polydisc.
 <li> When introducing the Jacobian put "holomorphic" in parentheses and
   mention that we will not say so explicitly if the mapping is holomorphic.
 <li> Add Exercise 1.3.7 (vector-valued maximum principle)

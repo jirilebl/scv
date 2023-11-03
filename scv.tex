@@ -1979,7 +1979,7 @@ differentiating under the integral obtains the result.
 \begin{exbox}
 \begin{exercise}
 Follow the logic above to prove the converse of the
-theorem,
+theorem
 without using the analogous result for single-variable series.
 Hint:
 Let
@@ -1989,6 +1989,30 @@ such that $\overline{\Delta''} \subset \Delta'$
 and $\overline{\Delta'} \subset \Delta$.
 Apply Cauchy formula on $\Delta'$
 for $z \in \overline{\Delta''}$.
+\end{exercise}
+
+\begin{exercise}
+Suppose that $\Delta \subset \C^n$ is a possibly unbounded polydisc centered at $a \in
+\C^n$, where by possibly unbounded we mean that some of the factors can be
+all of $\C$ (that is, some components of the polyradius are allowed to be
+$\infty$).
+Prove that if $f \colon \Delta \to \C$ is holomorphic,
+then there is a power series representation
+$\sum_\alpha c_\alpha (z-a)^\alpha$ converging uniformly on compact subsets
+to $f$ on $\Delta$.
+\end{exercise}
+
+\begin{exercise} \label{exercise:Laurentser}
+One can also do a \emph{\myindex{Laurent series}} expansion.  Suppose
+$a \in \C^n$ and
+$U = \Delta_1 \times \cdots \times \Delta_k \times \Delta_{k+1}^* \times
+\cdots \times \Delta_n^* \subset \C^n$, where each $\Delta_k$ is a disc
+centered at $a_k$ or $\C$, and $\Delta_k^* = \Delta_k^* \setminus \{ a_k
+\}$.
+Prove that if $f \colon U \to \C$ is holomorphic, then there is a series representation
+$\sum_\alpha c_\alpha (z-a)^\alpha$, where $\alpha_{k+1},\ldots,\alpha_{n}$
+now range over all integers, converging uniformly on compact subsets
+to $f$ on $U$.
 \end{exercise}
 \end{exbox}
 
@@ -2390,6 +2414,7 @@ Hint: Feel free to use the \hyperref[thm:onevarhurwitz]{one-variable result}.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Suppose $p \in \C^n$ is a point and $D \subset \C^n$ is a ball centered at
 $p \in D$.
 A holomorphic function $f \colon D \to \C$ can be
@@ -11659,7 +11684,7 @@ whenever $q \geq 1$.  We will not prove this fact, but we will prove it for a
 polydisc, and we saw above that $H^{(p,0)}(U)$ is never trivial.
 
 \begin{exbox}
-\begin{exercise}
+\begin{exercise} \label{exercise:zeropsufficient}
 Prove that
 it is sufficient to consider $p=0$,
 that is,
@@ -11701,8 +11726,8 @@ That $\eta$ is $\bar{\partial}$-closed follows by $\bar{\partial}^2 = 0$.
 Suppose for contradiction that there existed a smooth
 $f \colon \C^2 \setminus \{ 0 \} \to \C$
 such that $\bar{\partial} f = \eta$.
-Define $g = z f + \nicefrac{\bar{w}}{r}$.  When $z\not=0$, then
-$\frac{g}{z} = f + \nicefrac{\bar{w}}{zr}$, and so
+Define $g = z f - \nicefrac{\bar{w}}{r}$.  When $z\not=0$, then
+$\frac{g}{z} = f - \nicefrac{\bar{w}}{zr}$, and so
 $\bar{\partial}\bigl(\nicefrac{g}{z}\bigr) = 0$.  Therefore, $g$ is holomorphic
 where $z\not=0$, but $g$ is, and this is really where the contradiction
 comes in, smooth on $\C^2 \setminus \{ 0 \}$ and hence satisfies the
@@ -11726,11 +11751,10 @@ has the same exact topology as $\C^2 \setminus \R^2$.
 However,
 $\C^2 \setminus \{ z = 0\}$
 is a domain of holomorphy, and via an exercise below we know
-$H^{(0,1)}\bigl(\C^2 \setminus \{ z = 0\}\bigr) = 0$.  The thing is that
-the $g$ from the previous example can no longer be extended to all of $\C^2$
-thus not leading to a contradiction.  In particular,
-the $f$ actually exists
-by construction: $f = \nicefrac{\bar{w}}{z r}$.
+$H^{(0,1)}\bigl(\C^2 \setminus \{ z = 0\}\bigr) = 0$.
+The thing is that the $f$ actually exists
+by construction: $f = \nicefrac{\bar{w}}{z r}$.  Then $g$ is identically
+zero so we do not get any contradiction.
 \end{example}
 
 \begin{exbox}
@@ -11740,7 +11764,7 @@ then $H^{(0,1)}(U \setminus K)$ is nontrivial.
 \end{exercise}
 
 \begin{exercise}
-Give another example for why simple topology is not enough.  Consider the
+Give another example for why topology is not enough.  Consider the
 Hartogs figure
 $H =
 \bigl\{ (z,w) \in \D^{2} : \sabs{z} > \nicefrac{1}{2} \text{ or }
@@ -12085,8 +12109,8 @@ $\Delta_3$ such that $\bar{\partial} \omega_1 = \eta$.
 We will construct a sequence $\{ \omega_k \}$ each defined in $\Delta_{k+2}$
 such that $\omega_{k+1}|_{\Delta_k} = \omega_k|_{\Delta_k}$.
 Suppose we have defined $\omega_1,\ldots,\omega_k$.
-Now using $\Delta_{k+2}$ and $\Delta_{k+3}$ using the lemma again,
-define a new form $\sigma$ on $\Delta_{k+2}$ such that $\bar{\partial}
+Now using $\Delta_{k+3}$ and $\Delta_{k+4}$ using the lemma again,
+define a new form $\sigma$ on $\Delta_{k+3}$ such that $\bar{\partial}
 \sigma = \eta$.  What we need to do is to correct $\sigma$ so that it equals
 $\omega_k$ on $\Delta_k$.  On $\Delta_{k+2}$ we have that
 $\bar{\partial}(\omega_k-\sigma) = \eta-\eta = 0$, so $\omega_k-\sigma$
@@ -12095,30 +12119,61 @@ $\bar{\partial}\theta = \omega_k-\sigma$.
 Define a smooth function $\varphi$ on $\C^n$ such that $\varphi=1$ on
 $\overline{\Delta_{k}}$ and $\varphi$ is compactly supported in
 $\Delta_{k+1}$.  Now define
-$\omega_{k+1} = \sigma + \bar{\partial}(\varphi \theta)$.  The fact that
+$\omega_{k+1} = \sigma + \bar{\partial}(\varphi \theta)$, which can be
+defined as a smooth form on $\Delta_{k+3}$ as $\varphi$ is identically zero
+where $\theta$ is undefined.  The fact that
 $\bar{\partial}^2=0$ ensures that $\bar{\partial}\omega_{k+1} =
-\bar{\partial} \sigma = \eta$.  On $\Delta_k$, we have
-$\omega_{k+1} = \sigma + \bar{\partial}(\theta) = \sigma+\omega_k-\sigma=\omega_k$.
+\bar{\partial} \sigma = \eta$ on $\Delta_{k+3}$.  On $\Delta_k$, we have
+$\omega_{k+1} = \sigma + \bar{\partial}\theta = \sigma+\omega_k-\sigma=\omega_k$.
 Thus the sequence is defined.
 We define $\omega$ on $\Delta$ by simply letting $\omega =
 \omega_k$ on $\Delta_k$.
 
-Now assume $q=1$.
+Now assume $q=1$.  By \exerciseref{exercise:zeropsufficient}, it is enough
+to consider $p=0$ to simplify notation.  That is, we are now looking for
+a smooth function $\omega$ so that $\bar{\partial}\omega = \eta$.
 We again take the polydiscs $\Delta_k$ as before, and we define $\omega_1$
-as before.  But now instead of ensuring that $\omega_{k+1}$ and $\omega_k$
-are equal, we suppose that if $\omega_{k,\alpha}$ is the coefficient
-of $dz_{\alpha}$ (remember $\omega_k$ is a $(p,0)$ form), and we will
-ensure that for $z \in \overline{\Delta_k}$,
+on $\Delta_2$ using $\eta$ on $\Delta_3$.
+But now instead of ensuring that $\omega_{k+1}$ and $\omega_k$
+are equal on $\Delta_k$, we will ask that
 \begin{equation*}
-\sabs{\omega_{k+1,\alpha}(z)-\omega_{k,\alpha}(z)} < 2^{-k} .
+\sabs{\omega_{k+1}(z)-\omega_{k}(z)} < 2^{-k}
+\quad
+\text{for } z \in \overline{\Delta_k} .
 \end{equation*}
 Suppose that such $\omega_1,\ldots,\omega_k$ have been defined.
-Again, use the lemma to get a $(p,0)$-form $\sigma$ such that
-$\bar{\partial} \sigma = \eta$ (FIXME: where).
+Use the lemma with $\Delta_{k+3}$ and $\Delta_{k+2}$ to get a smooth function $\sigma$
+$\Delta_{k+2}$ on  such that
+$\bar{\partial} \sigma = \eta$.
+The function $\sigma-\omega_k$ is holomorphic (on $\Delta_{k+1}$ where
+$\omega_k$ is defined) as
+$\bar{\partial}(\sigma-\omega_k) = \eta-\eta = 0$, and hence it has a power
+series representation converging uniformly on $\overline{\Delta_k}$.  Thus there exists a
+holomorphic polynomial $P$ such that
+\begin{equation*}
+\sabs{\sigma(z)-\omega_{k}(z) - P(z)} < 2^{-k}
+\quad
+\text{for } z \in \overline{\Delta_k} .
+\end{equation*}
+So let $\omega_{k+1} = \sigma-P$.  As $P$ is holomorphic,
+we still also have $\bar{\partial}\omega_{k+1} = \eta$, and we satisfied the
+required property.
 
-
-
-FIXME
+On any particular $\overline{\Delta_\ell}$, the sequence $\{ \omega_k \}$ is
+uniformly Cauchy as if $m > k \geq \ell$, then
+$\sabs{\omega_{m}(z)-\omega_k(z)} <
+2^{-k}+2^{-k-1} +\cdots+2^{-m+1} < 2^{-k+1}$.  So the sequence converges
+uniformly on compact subsets of $\Delta$ to a function $\omega \colon \Delta
+\to \C$.  We need to show that
+$\omega$ is smooth and satisfies $\bar{\partial} \omega = \eta$.
+The functions
+$\omega_{m}-\omega_\ell$
+converge uniformly as $m \to \infty$ on $\Delta_{\ell}$.
+As
+$\bar{\partial}(\omega_m-\omega_\ell) = \eta-\eta = 0$, these functions
+are holomorphic, and so the limit $\omega -\omega_\ell$ is holomorphic.
+In particular, $\omega$ is smooth as $\omega_\ell$ is smooth and
+$\bar{\partial}\omega = \bar{\partial}\omega_\ell = \eta$.
 \end{proof}
 
 \begin{exbox}
@@ -12130,7 +12185,7 @@ $U = D_1 \times \cdots \times D_k \times D_{k+1}^* \times
 \cdots \times D_n^*$ for some (possibly unbounded) discs
 $D_1,\ldots,D_n$.
 Hint: You may have to prove a slightly more general version of the
-Dolbeault--Grothendieck lemma.
+Dolbeault--Grothendieck Lemma. Also see \exerciseref{exercise:Laurentser}.
 \end{exercise}
 
 \begin{exercise}
