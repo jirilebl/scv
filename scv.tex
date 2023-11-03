@@ -8465,7 +8465,7 @@ if and only it is Hartogs pseudoconvex.
 
 \begin{proof}
 The forward direction follows from an exercise below, which is sometimes
-called \emph{\myindex{Oka's Lemma}}.
+called \emph{\myindex{Oka's lemma}}.
 We skip the proof of the backward direction
 in order to save some hundred pages or so.
 See H\"ormander's book~\cite{Hormander} for the proof.
@@ -11956,10 +11956,10 @@ $\frac{\partial \psi}{\partial z}$ is smooth, and hence $\psi$ is smooth.
 
 First we prove that we can solve the problem on a subpolydisc of
 any polydisc,
-which is usually called the \emph{\myindex{Dolbeault Lemma}} or
-\emph{\myindex{Dolbeault--Grothendieck Lemma}}.
-As it is the analogue of the Poincar\'e Lemma, it is sometimes
-called the \emph{\myindex{$\bar{\partial}$-Poincar\'e Lemma}}.
+which is usually called the \emph{\myindex{Dolbeault lemma}} or
+\emph{\myindex{Dolbeault--Grothendieck lemma}}.
+As it is the analogue of the Poincar\'e lemma, it is sometimes
+called the \emph{\myindex{$\bar{\partial}$-Poincar\'e lemma}}.
 
 \begin{lemma}[Dolbeault--Grothendieck]\label{lemma:dolgro}
 Let $\Delta_s(w) \subset \Delta_r(w) \subset \C^n$ be polydiscs
@@ -12088,7 +12088,7 @@ d\bar{z}_k \wedge \tau + \delta + \theta - \delta
 
 \begin{exbox}
 \begin{exercise}
-Prove that the construction from the proof of the Lemma
+Prove that the construction from the proof of the lemma
 reproduces the compactly supported
 solution from \sectionref{sec:compactdbar} provided we start with a
 sufficiently large polydisc of course.
@@ -12103,7 +12103,7 @@ Pick a sequence of polydiscs $\Delta_k$ all centered at the origin,
 such that $\bigcup_k \Delta_k = \Delta$ and such that $\overline{\Delta_k}
 \subset \Delta_{k+1}$ for all $k$.
 By using the 
-\hyperref[lemma:dolgro]{Dolbeault--Grothendieck Lemma} with $\Delta_3$ and
+\hyperref[lemma:dolgro]{Dolbeault--Grothendieck lemma} with $\Delta_3$ and
 $\Delta_4$, we can find a smooth form $\omega_1$ defined on
 $\Delta_3$ such that $\bar{\partial} \omega_1 = \eta$.
 We will construct a sequence $\{ \omega_k \}$ each defined in $\Delta_{k+2}$
@@ -12185,7 +12185,7 @@ $U = D_1 \times \cdots \times D_k \times D_{k+1}^* \times
 \cdots \times D_n^*$ for some (possibly unbounded) discs
 $D_1,\ldots,D_n$.
 Hint: You may have to prove a slightly more general version of the
-Dolbeault--Grothendieck Lemma. Also see \exerciseref{exercise:Laurentser}.
+Dolbeault--Grothendieck lemma. Also see \exerciseref{exercise:Laurentser}.
 \end{exercise}
 
 \begin{exercise}
@@ -16541,7 +16541,7 @@ U_- = \{ z \in U : \Im z < 0 \}.
 We have the following theorem for extending (reflecting) holomorphic functions past
 boundaries.
 
-\begin{thm}[Schwarz Reflection Principle]
+\begin{thm}[Schwarz reflection principle]
 \index{Schwarz reflection principle}%
 Suppose $U \subset \C$ is a domain symmetric with respect to the real axis,
 $f \colon U_+ \cup U_0 \to \C$ a continuous function holomorphic on $U_+$
@@ -16697,7 +16697,7 @@ everything in this appendix is stated for smooth
 ($C^\infty$) objects to avoid worrying about how much regularity is needed.
 
 The main point of differential forms is to find the proper context for the
-Fundamental Theorem of Calculus,
+Fundamental theorem of calculus,
 \begin{equation*}
 \int_a^b f'(x) \, dx = f(b)-f(a) .
 \end{equation*}
@@ -17692,10 +17692,6 @@ If $R$ is a commutative ring that is a UFD, then $R[x]$ is a UFD\@.
 
 The proof is not difficult, but it is perhaps beyond the scope of this book.
 
-%\begin{proof}
-%FIXME
-%\end{proof}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17962,6 +17958,42 @@ integration such as
 =
 \sum_{n=1}^\infty \int_0^1 a_n(x) \, dx .
 \end{equation*}
+
+\pagebreak[2]
+Here are also a couple of useful estimates for the Lebesgue integral.
+First, we have an infinite-dimensional version of Cauchy--Schwarz.
+
+\begin{thm}[Cauchy--Schwarz]
+Suppose $(X,\sM,\mu)$ is a measure space and $f \colon X \to \C$ and
+$g \colon X \to \C$
+are so-called $L^2$ functions on $X$, that is,
+they are measurable and
+$\int_X \sabs{f}^2 d\mu < \infty$ and
+$\int_X \sabs{g}^2 d\mu < \infty$.  Then
+\begin{equation*}
+\abs{
+\int_X f \bar{g} d\mu
+}^2
+\leq
+\int_X \sabs{f}^2 d\mu
+\int_X \sabs{g}^2 d\mu .
+\end{equation*}
+\end{thm}
+
+Next, we have the integral version of the inequality
+resulting from a convex combination of the values of a convex function.
+
+\begin{thm}[Jensen's inequality]
+Suppose $(X,\sM,\mu)$ is a probability measure space, that is, $\mu(X)=1$,
+$\varphi \colon \R \to \R$ is convex, and $f$ is measurable.  Then
+\begin{equation*}
+\varphi \left(
+\int_X f d\mu
+\right)
+\leq
+\int_X \varphi \circ f d\mu
+\end{equation*}
+\end{thm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
