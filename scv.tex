@@ -11681,7 +11681,7 @@ That is, the two functions on the right hand side differ by a holomorphic
 function wherever $z$ and $w$ are both not zero and hence their
 $\bar{\partial}$'s are equal (where they are both defined).  The left hand
 term is defined when $z\not=0$ and the right hand term is defined when $w
-\not=0$, and the following form is well-defined on $\C^2 \setminus \{ 0 \}$
+\not=0$.  So the following form is well-defined on $\C^2 \setminus \{ 0 \}$
 \begin{equation*}
 \eta = 
 \bar{\partial}
@@ -11720,7 +11720,7 @@ That is, the function $g$ from the previous example can be defined in
 $\C^2 \setminus \R^2$ and hence extends to $\C^2$
 (see \exerciseref{exercise:C2minusR2}),
 leading again to a contradiction.
-Notice however, that the domain
+Notice that the domain
 $\C^2 \setminus \{ z = 0\}$
 has the same exact topology as $\C^2 \setminus \R^2$.
 However,
@@ -11775,8 +11775,8 @@ polydisc.
 We will allow some of the factors in the polydisc to be $\C$,
 and so for the moment we define \emph{\myindex{possibly unbounded polydisc}}
 $\Delta \subset \C^n$
-to mean $\Delta = \Delta_1 \times \cdots \times \Delta_n$ where
-each $\Delta_j$ is either a disc or $\C$.  This way we also achieve a
+to mean $\Delta = D_1 \times \cdots \times D_n$ where
+each $D_k$ is either a disc or $\C$.  This way we also achieve a
 solution on $\C^n$ itself.  This is the theorem we will actually prove:
 
 \begin{thm} \label{thm:dbaronpoly}
@@ -11813,9 +11813,9 @@ Compare the expression for $\psi$ to the one used in the proof of
 \thmref{thm:compactdbar}.
 The proof is around the fact that $\psi(z) = \log \sabs{z}^2$
 solves the problem for $g(z) = \nicefrac{1}{\bar{z}}$.
-This fact may be surprising as blindly doing calculus, one would arrive
+This fact may be surprising, as blindly doing calculus, one would arrive
 at the multivalued function $\log \bar{z} + \text{holomorphic function}$,
-but $\log \bar{z} + \log z = \log \sabs{z}^2$ as needed.
+but $\log \bar{z} + \log z = \log \sabs{z}^2$ is single valued as needed.
 The lemma, via the exercises, leads to showing that $H^{(0,1)}(U) = 0$ for 
 every domain $U \subset \C$.  Note that every $(0,1)$-form
 $g \, d\bar{z}$ in $U$ is $\bar{\partial}$-closed, so the statement is
@@ -11888,7 +11888,7 @@ d \zeta \wedge d \bar{\zeta} .
 \end{equation*}
 Taking partial derivatives (in $\Re z$ and $\Im z$) still leave the
 integrands integrable, and hence we can pass them under the integral sign.
-In particular the function $\psi$ is $C^1$ and we can
+In particular, the function $\psi$ is $C^1$ and we can
 take the $\bar{z}$ derivative.
 We then apply
 the Cauchy--Pompeiu formula (actually the conjugate of it applied to $\bar{g}$)
@@ -12035,7 +12035,7 @@ dz_\alpha \wedge d\bar{z}_\beta
 d\bar{z}_k \wedge \tau + \delta ,
 \end{split}
 \end{equation*}
-where $\delta$ which also does not contain
+where $\delta$ also does not contain
 the barred differentials other than $d\bar{z}_1,\ldots,d\bar{z}_{k-1}$.
 Now note that
 \begin{equation*}
@@ -12046,7 +12046,7 @@ Now note that
 \bar{\partial}\eta-\bar{\partial}^2 \psi = 0 .
 \end{equation*}
 Since $\theta$ and $\delta$ both only contain the barred differentials
-$d\bar{z}_1,\ldots,d\bar{z}_{k-1}$ we can apply the
+$d\bar{z}_1,\ldots,d\bar{z}_{k-1}$, we can apply the
 induction hypothesis, to find a $(p,q-1)$-form $\varphi$ such that
 $\bar{\partial} \varphi = \theta-\delta$.  Then we let
 $\omega = \psi+\varphi$ and note that we are done:
@@ -12104,28 +12104,38 @@ We define $\omega$ on $\Delta$ by simply letting $\omega =
 \omega_k$ on $\Delta_k$.
 
 Now assume $q=1$.
+We again take the polydiscs $\Delta_k$ as before, and we define $\omega_1$
+as before.  But now instead of ensuring that $\omega_{k+1}$ and $\omega_k$
+are equal, we suppose that if $\omega_{k,\alpha}$ is the coefficient
+of $dz_{\alpha}$ (remember $\omega_k$ is a $(p,0)$ form), and we will
+ensure that for $z \in \overline{\Delta_k}$,
+\begin{equation*}
+\sabs{\omega_{k+1,\alpha}(z)-\omega_{k,\alpha}(z)} < 2^{-k} .
+\end{equation*}
+Suppose that such $\omega_1,\ldots,\omega_k$ have been defined.
+Again, use the lemma to get a $(p,0)$-form $\sigma$ such that
+$\bar{\partial} \sigma = \eta$ (FIXME: where).
+
+
+
 FIXME
 \end{proof}
 
 \begin{exbox}
 \begin{exercise}
-For any disc $\Delta \subset \C$ let $\Delta^*$ denote the punctured disc
-$\Delta^* = \Delta \setminus \{ a \}$ where $a$ is the center.
+For any disc $D \subset \C$ let $D^*$ denote the punctured disc
+$D^* = D \setminus \{ a \}$ where $a$ is the center.
 Prove that the theorem also holds for 
-$U = \Delta_1 \times \cdots \times \Delta_k \times \Delta_{k+1}^* \times
-\cdots \times \Delta_n^*$ for some (possibly unbounded) discs
-$\Delta_1,\ldots,\Delta_n$.
+$U = D_1 \times \cdots \times D_k \times D_{k+1}^* \times
+\cdots \times D_n^*$ for some (possibly unbounded) discs
+$D_1,\ldots,D_n$.
 Hint: You may have to prove a slightly more general version of the
 Dolbeault--Grothendieck lemma.
 \end{exercise}
 
 \begin{exercise}
-The previous exercise could be extended even further.  Prove the theorem for
-$U = U_1 \times \cdots \times U_n \subset \C^n$ for some domains $U_k \subset \C$.
-In particular, we have that in one variable, $H^{(0,1)}(U) = 0$ for any
-domain $U \subset \C$.
-Hint: Same idea as above, but prove that you can exhaust each $U_k$
-by some nice domains with nice enough boundaries.
+Prove that in one variable, for any domain $U \subset \C$, we have
+$H^{(0,1)}(U) = 0$.
 \end{exercise}
 
 \begin{exercise}
