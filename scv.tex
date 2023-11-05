@@ -412,7 +412,7 @@ Typeset in \LaTeX.
 \bigskip
 
 \noindent
-Copyright \copyright 2014--2021 Ji{\v r}\'i Lebl
+Copyright \copyright 2014--2023 Ji{\v r}\'i Lebl
 
 %PRINT
 % not for the coil version
@@ -11619,6 +11619,7 @@ H^{(p,q)}(U)
 \bigr\}
 } .
 \end{equation*}
+By convention, the only $(0,0)$-form that is exact is the identically zero form.
 
 \begin{exbox}
 \begin{exercise}
@@ -12616,7 +12617,8 @@ analogue of Weierstrass.
 \begin{defn}[\myindex{Cousin I}]\index{First Cousin problem}
 Suppose $U \subset \C^n$ is open.
 Let $\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
-and let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be such that
+and 
+let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be such that
 \begin{equation*}
 \begin{aligned}
 & h_{\iota\kappa}+h_{\kappa\iota} = 0 & &\text{in } U_\iota \cap U_\kappa
@@ -12635,6 +12637,12 @@ holomorphic functions $f_\iota \in \sO(U_\iota)$ such that
 h_{\iota\kappa} = f_\iota-f_\kappa.
 \end{equation*}
 \end{defn}
+
+We remark that we could always take $\iota$, $\kappa$, and $\lambda$ be
+distinct,
+as the first condition means that $h_{\iota\iota} = 0$ for all $\iota$
+otherwise, and the second condition then just reduces to the first if two
+of the indices are equal.
 
 To see how Cousin I relates to Mittag-Leffler, note that Mittag-Leffler
 could be stated by giving meromorphic functions locally and then trying
@@ -12682,15 +12690,133 @@ $f-g_\iota$ is holomorphic.
 
 So you can see that the data gives some local solution to some problem
 and the solution of the Cousin problem gives
-a way of gluing the local data together into a global solution.
+a way of gluing the local data together into a global solution.  We state
+this as a theorem (the converse also holds but we do not prove it here):
+
+\begin{thm}
+Suppose $U \subset \C^n$ is open,
+$\{ U_{\iota} \}_{\iota \in I}$ an open covering of $U$, and $f_\iota$
+are meromorphic functions on each $U_\iota$ such that $f_\iota - f_\kappa$
+is holomorphic on $U_\iota \cap U_\kappa$.  Suppose that the Cousin I
+problem is solvable on $U$.  Then there exists a meromorphic function $f$ on
+$U$ such that on each $U_\iota$, $f-f_\iota$ is holomorphic.
+\end{thm}
 
 In one dimension, Cousin I (that is, Mittag-Leffler) is solvable for
 any domain in $\C$ (though not always on Riemann surfaces).
 In several variables, Cousin I is solvable on domains of holomorphy in
-$\C^n$, though we will only prove a special case, as we only proved a
-special case 
+$\C^n$, in particular, if we can solve if we can solve the
+$\bar{\partial}$-problem for $(0,1)$ forms.
 
-FIXME: solution?
+\begin{example}
+Let us see an example where the Cousin I problem is not solvable.  Let $U =
+\C^2 \setminus \{ 0 \}$, where we know that $H^{(0,1)}(U)$ is nontrivial.
+Write $U = U_1 \cup U_2$ where
+$U_1 = \{ (z,w) \in \C^2 : z \not= 0 \}$ and
+$U_2 = \{ (z,w) \in \C^2 : w \not= 0 \}$.  On $U_1 \cap U_2$, define
+\begin{equation*}
+h_{12}(z,w) = \frac{1}{zw} , \quad
+h_{21}(z,w) = \frac{-1}{zw} .
+\end{equation*}
+These are holomorphic functions and satisfy the conditions of being Cousin I
+data.  Suppose the problem was solvable and we have holomorphic functions
+$f_1$ and $f_2$ on $U_1$ and $U_2$ such that on $U_1 \cap U_2$ we have
+\begin{equation*}
+f_1 -f_2 = h_{12} = \frac{1}{zw} .
+\end{equation*}
+In other words, $f_1 = \frac{1}{zw}+f_2$
+$U_1 \cap U_2$.  But that means that $zf_1$ is holomorphic in $U_2$ and
+therefore in $U$, and thus extends to $\C^2$.  Similarly $wf_2$ extends to a
+holomorphic function on $\C^2$.  Thus
+$zwf_1 -zwf_2$ is a holomorphic function on $\C^2$ that vanishes at the
+origin, but $zwf_1 -zwf_2 = zw(h_{12}) \equiv 1$ on $U_1 \cap U_2$ which
+leads to a contradiction.
+\end{example}
+
+First we solve the Cousin I problem in any domain for smooth data.
+
+\begin{lemma}
+Suppose $U \subset \C^n$ is open, 
+$\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
+and let $h_{\iota\kappa}$ be smooth (not necessarily holomorphic) Cousin I
+data.  Then there exists a smooth (not necessarily holomorphic) solution
+functions $f_\iota$.
+\end{lemma}
+
+\begin{proof}
+Find a smooth partition of unity $\{ \varphi_\iota \}_{\iota \in I}$ subordinate to
+the cover $\{ U_{\iota} \}_{\iota \in I}$.  That is, $\varphi_\iota$ are
+smooth functions of $U$ valued in $[0,1]$ that add up to $1$ at every point,
+in a neighborhood of any point only finitely many $\varphi_\iota$ are
+nonzero, and each $\varphi_{\iota}$ is supported in $U_\iota$.
+For $z \in U_\iota$, let
+\begin{equation*}
+f_\iota(z) = \sum_{\kappa \in I} \varphi_\kappa(z) h_{\iota \kappa}(z) .
+\end{equation*}
+For $z \in U_\iota \cap U_\kappa$,
+\begin{equation*}
+f_\iota(z)-f_\lambda(z) =
+\sum_{\kappa \in I} \varphi_\kappa(z)
+\bigl( h_{\iota \kappa}(z) - h_{\lambda \kappa}(z) \bigr)
+=
+\sum_{\kappa \in I} \varphi_\kappa(z)
+h_{\iota\lambda}(z)
+=
+h_{\iota\lambda}(z) .
+\qedhere
+\end{equation*}
+\end{proof}
+
+The first Cousin is solvable on any domain of holomorphy, and in general
+on any domain where the first Dolbeault cohomology group vanishes.
+
+\begin{thm}
+Suppose $U \subset \C^n$ is a domain with $H^{(0,1)}(U)=0$.
+Then the Cousin I problem is solvable.
+\end{thm}
+
+\begin{proof}
+Let
+$\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
+and let $h_{\iota\kappa}$ be (holomorphic) Cousin I
+data.
+Let $\varphi_\iota$ be the partitionof unity again and define a smooth
+solution
+\begin{equation*}
+f_\iota(z) = \sum_{\kappa \in I} \varphi_\kappa(z) h_{\iota \kappa}(z) .
+\end{equation*}
+The functions $f_\iota$ need not be holomorphic of course, but they do solve
+the problem.  But as $f_\iota-f_\kappa = h_{\iota\kappa}$ is holomorphic we
+have that $\bar{\partial}(f_\iota-f_\kappa) = 0$.  The $(0,1)$-form $\eta$ given by
+\begin{equation*}
+\eta = \bar{\partial}f_\iota
+\end{equation*}
+is therefore well defined on $U$.  Moreover, $\eta$ is
+$\bar{\partial}$-closed, so by assumption on $U$, we have that
+there exists a $\psi \in \sO(U)$ such that $\bar{\partial}\psi = \eta$.
+Now on each $U_\iota$
+\begin{equation*}
+F_\iota = f_\iota - \psi .
+\end{equation*}
+On $U_\iota \cap U_\kappa$ we have
+\begin{equation*}
+F_\iota - F_\kappa = f_\iota-f_\kappa = h_{\iota \kappa} ,
+\end{equation*}
+and on $U_\iota$ we have
+\begin{equation*}
+\bar{\partial}F_\iota = \bar{\partial}f_\iota - \bar{\partial}\psi =
+\eta-\eta  = 0.
+\end{equation*}
+Therefore, we have a solution to the Cousin I problem.
+\end{proof}
+
+\begin{cor}
+If $\Delta \subset \C^n$ is a possibly unbounded polydisc, then the Cousin I
+problem is solvable on $\Delta$.
+\end{cor}
+
+Let us briefly mention the second Cousin problem and its relation to the
+Cousin I problem and to the theorem of Weierstrass.
 
 \begin{defn}[\myindex{Cousin II}]\index{Second Cousin problem}
 Suppose $U \subset \C^n$ is open.
@@ -12711,9 +12837,9 @@ The covering and the functions $h_{\iota\kappa}$ are called the
 The \emph{\myindex{solution of the Cousin II problem}}
 is a set of
 nonvanishing holomorphic functions $f_\iota \in \sO(U_\iota)$ such that
-\begin{equation}
+\begin{equation*}
 h_{\iota\kappa} = \frac{f_\iota}{f_\kappa}.
-\end{equation}
+\end{equation*}
 \end{defn}
 
 Cousin II is the analogue of the Weierstrass theorem, that is,
@@ -12754,15 +12880,38 @@ $df \not=0$ on~$M$.
 
 The second Cousin problem is not always solvable on every domain of
 holomorphy like the Cousin I problem.  An extra condition on the topology of
-the domain is necessary, however, topology is all that is needed.  If the
+the domain is necessary.  Interestingly, on a domain of holomorphy, if the
 Cousin II problem is solvable just continuously, then it is solvable.
-
-FIXME
-
+We will skip the proof of this fact, but let us describe how does
+the topological obstruction arises.
+Suppose that we have $h_{\iota\kappa}$ Cousin II data.  We could refine the
+covering to make all the sets $U_{\iota}$ and their intersections
+$U_\iota\cap U_\kappa$ simply connected.  Then we take logarithms
+$g_{\iota\kappa} = \log h_{\iota\kappa}$ and we can take the correct
+branch to also get $g_{\kappa\iota} = -g_{\iota\kappa}$, so
+$g_{\iota\kappa}+g_{\kappa\iota} = 0$.  But now we consider the triple sum
+to get
+\begin{equation*}
+g_{\iota\kappa}+g_{\kappa\lambda}+g_{\lambda\iota} = 2\pi i k
+\end{equation*}
+for some integer $k$.  It is not always possible to pick the branches in
+such a way to make the $k=0$, if it were, then we could just apply the
+solution to the Cousin I data.  However, the question is just a question of
+cohomology, that is, just topology.
 
 \begin{exbox}
 \begin{exercise}
-FIXME
+Suppose $U \subset \C^n$ is a domain with $H^{(0,1)}(U)=0$
+and $M \subset U$ is a complex hypersurface (locally the zero set
+of a holomorphic function with nonvanishing derivative).
+Suppose that there exists a continuous function $g$ on $U$
+such that locally near every $p \in M$, if $r$ is a defining function for $M$
+(holomorphic with nonvanishing derivative),
+then $\nicefrac{r}{g}$ extends to be continuous and nonvanishing in a
+neighborhood of $p$, then there exists a global function $f \in \sO(M)$
+such that $f^{-1}(0) = M$ and $df \not= 0$ on $M$.
+Hint: Cover with balls $U_{\iota}$ and in each ball define
+$\log\bigl(\nicefrac{f_\iota}{g}\bigr)$, then obtain a Cousin I problem.
 \end{exercise}
 \end{exbox}
 
@@ -18070,7 +18219,11 @@ The proof is not difficult, but it is perhaps beyond the scope of this book.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Measure Theory Review} \label{ap:measure}
+\chapter{Results From Real Analysis} \label{ap:analysis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Measure theory review} \label{apsec:measure}
 
 The beginning of this course does not require the Lebesgue integral,
 however,
@@ -18160,6 +18313,12 @@ The most common class of functions to deal with is then the
 functions, which are the functions such that
 \begin{equation*}
 \int_X \sabs{f} \, d\mu < \infty .
+\end{equation*}
+For any function where the integral is defined we obtain
+the most basic estimate
+\begin{equation*}
+\abs{\int_X f \, d\mu} \leq
+\int_X \sabs{f} \, d\mu .
 \end{equation*}
 For the purposes of integration, we often allow nonnegative
 functions to take on the value $\infty$ at some points.
@@ -18371,6 +18530,18 @@ $\varphi \colon \R \to \R$ is convex, and $f$ is measurable.  Then
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{Convexity} \label{apsec:convexity}
+
+FIXME
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Bump functions and partitions of unity} \label{apsec:partofunity}
+
+FIXME
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -18491,6 +18662,12 @@ $\varphi \colon \R \to \R$ is convex, and $f$ is measurable.  Then
    isbn={0-534-17088-9},
    review={\MR{1162310}},
    %review={\MR{1162310 (93c:32001)}},
+}
+
+\bib{Lebl:ca}{book}{
+   author={Lebl, Ji\v{r}\'i},
+   title={Guide to Cultivating Complex Analysis, Working the Complex Field},
+   note={\url{https://www.jirka.org/ca/}}
 }
 
 \bib{Rudin:principles}{book}{

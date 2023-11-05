@@ -2,7 +2,8 @@ Since edition 3
 
 FIXME: Some are WORK IN PROGRESS
 
-<li> New short appendix on the useful measure theory results.
+<li> New short appendix on some analysis bits including some
+useful measure theory results.
 <li> New section 4.4 on the solvability of the d-bar problem in the polydisc.
 <li> New section 4.5 on the extension from an affine subspace and its relation
 to being a domain of holomorphy as an application of the \(\bar{\partial}\)-problem.
@@ -126,6 +127,7 @@ which aren't needed
   most one-variable books.
 <li> Improve Figure C.1 a little.
 <li> In appendix C add a short note on how to evaluate $k$-forms.
+<li> Add reference to my one variable book in the reading.
 <li> When computing the Hessian use the vertical bar to evaluate,
   it may be clearer
 <li> Figures now have numbers, captions, float, and have explicit references
