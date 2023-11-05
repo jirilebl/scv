@@ -468,10 +468,13 @@ Derivative works must be prominently marked as such.
 I would like to thank Debraj Chakrabarti, Anirban Dawn, Alekzander Malcom,
 John Treuer, Jianou Zhang, Liz Vivas, Trevor Fancher,
 Nicholas Lawson McLean, Alan Sola, Achinta Nandi,
-Sivaguru Ravisankar, Richard L\"ark\"ang, Elizabeth Wulcan,
+Sivaguru Ravisankar,
 Tomas Rodriguez,
 and students in my classes for pointing out typos/errors
 and helpful suggestions.
+In particular, some of the new material in version 4.0
+was inspired by the lecture notes from
+Richard L\"ark\"ang and Elizabeth Wulcan.
 
 \bigskip
 
@@ -11423,7 +11426,8 @@ $F|_{\partial U} = f$.
 
 \begin{proof}
 By Severi's result (\thmref{thm:severi}), for every $p \in \partial U$,
-there is a small ball $B_p$, such that $f$ extends to $B_p$.  Cover $\partial
+there is a small ball $B_p$ centered at $p$,
+such that $f$ extends to $B_p$.  Cover $\partial
 U$ by finitely many such balls so that if $B_p$ intersects $B_q$, then
 the (connected) intersection $B_p \cap B_q$ contains points of $\partial U$.
 The extension in $B_p$ and in $B_q$ then agree on a piece of a hypersurface
@@ -11668,10 +11672,11 @@ $\eta$ such that $\bar{\partial} \eta = 0$ whenever $q \geq 1$
 is equivalent to holomorphic convexity, although
 we will leave the proof of this theorem
 the proof of this is beyond the scope of this book.  You will prove
-one direction of this theorem in $\C^2$ in the exercises, that is, you will show
-that for domain $U \subset \C^2$ that if $H^{(0,1)}(U) = 0$, then $U$ is
-a domain of holomorphy and hence holomorphically convex.
-Let us state this theorem without proof.
+one direction of this theorem in $\C^2$ in the exercises in this section,
+and we will prove the general version of this direction in the next section,
+see \thmref{thm:dolhomimpliesdoh}.  That is, we will prove that
+the vanishing of the cohomology groups implies domain of holomorphy.
+Let us state this theorem without proof of the other direction.
 
 \begin{thm}
 A domain $U \subset \C^n$ is a domain of holomorphy
@@ -12093,6 +12098,11 @@ reproduces the compactly supported
 solution from \sectionref{sec:compactdbar} provided we start with a
 sufficiently large polydisc of course.
 \end{exercise}
+
+\begin{exercise} \label{exercise:dolbeaultlemmaballs}
+Prove the lemma if you replace the polydiscs $\Delta_s(w)$ and $\Delta_r(w)$
+with two nested balls with center $w$.
+\end{exercise}
 \end{exbox}
 
 We can now prove the theorem itself.
@@ -12178,6 +12188,11 @@ $\bar{\partial}\omega = \bar{\partial}\omega_\ell = \eta$.
 
 \begin{exbox}
 \begin{exercise}
+Prove the theorem also holds for a ball, say the unit ball $\bB_n \subset
+\C^n$.  Hint: Use \exerciseref{exercise:dolbeaultlemmaballs}.
+\end{exercise}
+
+\begin{exercise}
 For any disc $D \subset \C$ let $D^*$ denote the punctured disc
 $D^* = D \setminus \{ a \}$ where $a$ is the center.
 Prove that the theorem also holds for 
@@ -12210,18 +12225,377 @@ near the boundary of $\Delta$, then use the theorem.
 \begin{exercise}
 Use the \exerciseref{exercise:dollocal} and
 \exerciseref{exercise:Levinegdol} to prove that if
-$U \subset \C^n$ is a domain with smooth boundary and $p \in \partial U$
-such that the Levi form at $p$ has a negative eigenvalue and at least $n-2$ positive
+$U \subset \C^n$, $n \geq 2$, is a domain with smooth boundary and $p \in \partial U$
+such that the Levi form at $p$ has a negative eigenvalue and $n-2$ positive
 eigenvalues, then $H^{(0,1)}(U) \not= 0$.
 \end{exercise}
 
 \begin{exercise}
-Show that being a subset gives us no relation between the Dolbeault
-cohomology groups.  Find domains $U \subset V \subset W \subset \C^2$
+Being a subset gives us no relation between the Dolbeault
+cohomology groups:  Find domains $U \subset V \subset W \subset \C^2$
 such that
-$H^{(0,1)}(U) = H^{(0,1)}(W) = 0$ but $H^{(0,1)}(V)$ is nontrivial.
+$H^{(0,1)}(U) = H^{(0,1)}(W) = 0$, but $H^{(0,1)}(V)$ is nontrivial.
 \end{exercise}
 \end{exbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Extension from an affine subspace} \label{sec:hypextension}
+
+Let $L \subset \C^n$ be an \emph{\myindex{affine subspace}} of dimension $k$,
+that is, 
+the set defined by $M z = c$ for a rank
+$n-k$ matrix $M$ and $c \in \C^n$.
+After a complex linear
+transformation and translation,
+we may assume that
+$L = \{ z \in \C^n : z_{k+1} = \cdots = z_n = 0 \}$.
+We say a function $f$ defined on an open subset of $L$ is
+holomorphic
+if after this change of coordinates it is holomorphic in the
+$z_1,\ldots,z_k$ variables.
+A special and most useful case of an \emph{\myindex{affine hyperplane}}
+is when $k=n-1$.
+
+It is easy to see that if $U \subset \C^n$ is a domain, $L$ is an affine
+subspace, and $F \in \sO(U)$, then $F|_{U \cap L}$ is holomorphic.
+It is not hard to see that being able to do the inverse may be quite
+useful in proofs by induction on dimension,
+that is, starting with a holomorphic function $f$ on $U \cap L$
+and finding a holomorphic function on $U$ whose restriction is $f$.
+If $f$ is just smooth, then finding such a smooth extension is not
+difficult no matter what $U$ looks like, however, in the holomorphic
+category it is not that easy (or even always possible).
+
+\begin{example} \label{example:noextend}
+Suppose $U = \C^2 \setminus \{ 0 \}$ and $L = \{ (z,w) \in \C^2 : w = 0 \}$.
+Then $U \cap L$ is the punctured plane.
+Let $f(z) = \nicefrac{1}{z}$ be the function on $U \cap L$.  Suppose that
+there was an $F \in \sO(U)$ whose restriction to $U \cap L$ was $f$.
+Such an $F$ extends to all of $\C^2$, and hence $f$ extends to all of $L$
+(which is just the $z$-plane), which is impossible.  Note that we proved
+that $H^{(0,1)}(U)$ is nontrivial.
+\end{example}
+
+\begin{example} \label{example:ballextend}
+Suppose $U = B_2\bigl((0,1)\bigr) \subset \C^2$ and
+$L = \{ (z,w) \in \C^2 : w = 0 \}$.
+Then $U \cap L$ is a disc of radius $\sqrt{3}$ in the $z$-plane.
+Take a function $f \colon \Delta_{\sqrt{3}}(0) \to \C$ be such that
+it does not extend past any point in the boundary of the disc.
+The obvious way to extend $f$ to an
+$F$ would be to simply take a function $F(z,w) = f(z)$, but that is not
+defined on all of $U$, extending to all of $U$ is not so easy to see.  See
+\figureref{fig:extendingtoball}.  It is possible to do this explicitly in
+this specific case (exercise below).  Note that 
+$H^{(0,1)}(U) = 0$, which you proved
+as an exercise in the previous section.
+\begin{myfig}
+\subimport*{figures/}{extendingtoball.pdf_t}
+\caption{Extending $f$ from a hyperplane to the
+ball,  it is easy to extend to within the dotted lines.\label{fig:extendingtoball}}
+\end{myfig}
+\end{example}
+
+\begin{exbox}
+\begin{exercise}
+Explicitly define the extension of the holomorphic function $f$ to $F$
+in the setup of \exampleref{example:ballextend}.
+\end{exercise}
+
+\begin{exercise}
+Come up with an example domain $U$ and hyperplane $L$ (in $\C^2$)
+where $H^{(0,1)}(U)$ is nontrivial, but where
+every $f \in \sO(U \cap L)$ extends holomorphically to $U$.
+\end{exercise}
+
+\begin{exercise}
+You can also do this with multiple hyperplanes.  Suppose that in $\C^2$,
+$L$ is the set where $z=0$, $M$ is the set where $w=0$, $N$ is the set where
+$z=w$.  Let $f$, $g$, $h$ be holomorphic functions on $L$, $M$, and $N$
+respectively such that $f(0)=g(0)=h(0)$.  Prove that there is a holomorphic
+$F$ on $\C^2$ such that
+$F|_L = f$, 
+$F|_M = g$, 
+$F|_N = h$.
+\end{exercise}
+\end{exbox}
+
+The way to do the extension in general is to do the simple
+extension as in $F(z,w)=f(z)$ to a neighborhood of $L$,
+then extend in a smooth way via a cutoff function to all of $U$.
+But to make the extension be holomorphic we
+need to then correct via the appropriate $\bar{\partial}$-problem.
+We stated the extension with holomorphic functions, but really it is no harder to
+prove a more general version of the problem about
+$\bar{\partial}$-closed $(p,q)$-forms, where holomorphic functions
+are the $\bar{\partial}$-closed $(0,0)$-forms.
+
+To be able to prove this more general theorem, we need to know what it means
+to restrict $(p,q)$-forms and not just functions to $L$.
+Instead of going making this too complicated, let us do the same
+simplification as we did above for functions.
+Vaguely, we will restrict the values of the form
+to $L$ and only take the parts of the form that ``point along $L$.''
+Let us also for simplicity suppose that $L$ is a hyperplane, as the more
+general case then follows.
+As before,
+after a linear map and a translation, assume $L = \{ z \in \C^n : z_n = 0 \}$.
+Write a $(p,q)$-form as
+\begin{equation*}
+\eta = \sum_{\alpha\beta} \eta_{\alpha\beta} \, dz_{\alpha} \wedge d\bar{z}_{\beta}
++ \omega_2 \wedge dz_n + \omega_3 \wedge d\bar{z}_n ,
+\end{equation*}
+where $\alpha$ and $\beta$ do not include $n$ (so no $dz_n$ nor $d\bar{z}_n$
+in the first term).  Then
+\begin{equation*}
+\eta|_L = \sum_{\alpha\beta} \eta_{\alpha\beta}|_L \, dz_{\alpha} \wedge
+d\bar{z}_{\beta} .
+\end{equation*}
+Basically we restrict the components to $L$, and throw out the differentials
+that do not change along $L$.  If $\eta$ is a function (a $(0,0)$-form),
+then of course this
+is just a restriction of the function.
+
+\begin{thm}
+Suppose that $U \subset \C^n$ is a domain with $H^{(p,q+1)}(U) = 0$ and
+$L$ is an affine hyperplane.
+Let $\psi$ be a smooth $\bar{\partial}$-closed $(p,q)$-form on
+$U \cap L$, then there exists a smooth $\bar{\partial}$-closed $(p,q)$-form
+$\Psi$ on $U$ such that $\Psi|_{U \cap L} = \psi$.
+\end{thm}
+
+So for the holomorphic function extension problem from a hyperplane stated above,
+we need $H^{(0,1)}(U) = 0$.
+
+\begin{proof}
+Make the translation and rotation as before to make $L = \{ z \in \C^n : z_n
+= 0 \}$.  Write $z = (z',z_n)$ as usual.
+Let $\chi \colon U \to \R$ be the function that is identically $1$ in some
+neighborhood of $U \cap L$ and such that it is identically $0$ in some
+neighborhood of $\{ z \in U : (z',0) \notin U \cap L \}$.
+See \figureref{fig:extendingcutoff}.
+
+\begin{myfig}
+\subimport*{figures/}{extendingcutoff.pdf_t}
+\caption{The cutoff function $\chi$.
+Note that $\chi \equiv 0$ on a neighborhood where it is not trivial 
+to extend $\psi$.\label{fig:extendingcutoff}}
+\end{myfig}
+
+We will try to define
+\begin{equation*}
+\Psi(z) = \chi(z) \psi(z') + z_n \eta(z) ,
+\end{equation*}
+where $\eta$ is chosen appropriately so that $\Psi$ is
+$\bar{\partial}$-closed.  This form is defined in
+$U$ as $\chi$ is identically zero where $\psi$ is undefined.
+Clearly, if such an $\eta$ can be found,
+we have that $\Psi|_{U \cap L} = \psi$.
+Let us compute what is required of $\eta$.
+\begin{equation*}
+\bar{\partial} \Psi =
+\bar{\partial}\chi \wedge \psi
++ \chi \cancelto{0}{\bar{\partial} \psi}
+ + \cancelto{0}{\bar{\partial} z_n} \wedge \eta
+ + z_n \bar{\partial} \eta
+=
+\bar{\partial}\chi \wedge \psi
+ + z_n \bar{\partial} \eta .
+\end{equation*}
+As $\bar{\partial} \chi$ is identically $0$ in a neighborhood of $U \cap L$,
+the form $\frac{- \bar{\partial}\chi \wedge \psi}{z_n}$ is smooth near $U
+\cap L$.  Moreover since 
+$\bar{\partial}\chi$ is identically zero where $\psi$ is undefined we have a
+smooth $(p,q+1)$-form on $U$.  Clearly the form is also
+$\bar{\partial}$-closed as $\bar{\partial}^2 = 0$.
+By assumption then we can find an $\eta$ such that
+$\bar{\partial} \eta = \frac{- \bar{\partial}\chi \wedge \psi}{z_n}$, and
+we are done.
+\end{proof}
+
+We remark that an extension works for zero sets of holomorphic functions, that
+is, subvarieties
+(see \chapterref{ch:analyticvarieties}), not just
+hyperplanes, a result which is called Cartan extension theorem, but we will
+not prove this fact.  However, as an exercise prove the extension for
+two hyperplanes.
+
+\begin{exbox}
+\begin{exercise}
+Suppose that $U \subset \C^n$ is a domain with $H^{(p,q+1)}(U) = 0$ and
+$L_1$ and $L_2$ are two affine hyperplanes such that $U \cap L_1 \cap L_2 =
+\emptyset$.
+Let $\psi_1$ be a smooth $\bar{\partial}$-closed $(p,q)$-form on
+$U \cap L_1$
+and $\psi_2$ be a smooth $\bar{\partial}$-closed $(p,q)$-form on
+$U \cap L_2$.  Show that there is a smooth
+$\bar{\partial}$-closed $(p,q)$-form
+$\Psi$ on $U$ such that
+$\Psi|_{U \cap L_1} = \psi_1$
+and
+$\Psi|_{U \cap L_2} = \psi_2$.
+\end{exercise}
+\end{exbox}
+
+In what follows, when we talk about $U \cap L$ as a domain for a hyperplane
+$L$, we think of it as a domain in $\C^{n-1}$.  More generally if $L$
+is a $k$-dimensional affine subspace, then we will treat $U \cap L$
+as a domain in $\C^{n-k}$.
+
+\begin{cor}
+Suppose that $U \subset \C^n$ is a domain and $L$ is an affine hyperplane.
+If $H^{(p,q)}(U) = 0$ and 
+$H^{(p,q+1)}(U) = 0$ then $H^{(p,q)}(U \cap L) = 0$.
+\end{cor}
+
+\begin{proof}
+Suppose that $\psi$ is a $(p,q)$-form such that $\bar{\partial} \psi = 0$.
+As $H^{(p,q+1)}(U) = 0$ and the theorem, there is a $(p,q)$-form
+$\Psi$ on $U$ such that
+$\Psi|_L = \psi$ and $\bar{\partial} \Psi = 0$.
+As $H^{(p,q)}(U) = 0$, there is a $(p,q-1)$-form $\Phi$ on $U$
+such that $\bar{\partial} \Phi = \Psi$.  It is not difficult to see that
+$(\bar{\partial}\Phi)|_L = \bar{\partial}(\Phi|_L)$ (true for any form),
+so $\varphi = \Phi|_L$ is the solution to $\bar{\partial} \varphi = \psi$.
+\end{proof}
+
+\begin{exbox}
+\begin{exercise}
+Prove the claim that
+for any $(p,q)$-form, $(\bar{\partial}\Phi)|_L = \bar{\partial}(\Phi|_L)$.
+\end{exercise}
+\end{exbox}
+
+We have the following immediate corollary.
+
+\begin{cor} \label{cor:dolgodown}
+Suppose that $U \subset \C^n$ is a domain
+such that $H^{(0,q)}(U) = 0$ whenever $1 \leq q \leq n-1$
+and $L$ is an affine hyperplane.
+Then $H^{(0,q)}(U \cap L) = 0$ whenever $1 \leq q \leq n-2$.
+\end{cor}
+
+\begin{exbox}
+\begin{exercise}
+Prove a more general corollary.
+Suppose that $U \subset \C^n$ is a domain and suppose that
+$L$ is a $k$-dimensional affine subspace $1 \leq k \leq n-1$.
+Suppose that $H^{(0,q)}(U) = 0$ whenever $1 \leq q \leq n-1$.  Then
+$H^{(0,q)}(U \cap L) = 0$ whenever $1 \leq q \leq k-1$,
+and every $f \in \sO(U \cap L)$ has a holomorphic extension to $U$.
+\end{exercise}
+\end{exbox}
+
+We now prove the general version of one direction of the theorem mentioned
+in the previous section.  That is, as an exercise you proved by direct
+construction that $H^{(0,1)}(U) = 0$ in $\C^2$, then $U$ is a domain of
+holomorphy.  We extend this result to $\C^n$.
+
+\begin{thm} \label{thm:dolhomimpliesdoh}
+Suppose $U \subset \C^n$ is domain such that $H^{(0,q)}(U) = 0$
+whenever $1 \leq q \leq n-1$.  Then $U$ is a domain of holomorphy.
+\end{thm}
+
+\begin{proof}
+We induct on dimension.  When $n=1$, the hypothesis just says that 
+$U$ is a domain, and any domain in $\C$ is a domain of holomorphy.
+Assume the theorem holds for any domain in $\C^{n-1}$.
+
+Let $U \subset \C^n$ be a domain, and
+suppose that $V$ and $W$ are open sets in $\C^n$
+such $V \subset U \cap W$, $W$ is connected, and $W$ contains points outside
+of $U$.  That is, $V$ and $W$ are like in the definition of the domain of
+holomorphy.  What we want to show that there must exist at least one $F \in
+\sO(U)$ for which there does not exist any $G \in \sO(W)$ such that $F=G$ on
+$V$.
+
+Consider a component of $W \cap U$ that contains some component of $V$.
+Without loss of generality we could take $V$ to be any small ball in this
+component of $W \cap U$.
+It is not hard to check (exercise) that there exists such a $V$
+(move it around if you must)
+so that there is a point $z_0 \in \partial U \cap \partial V \cap W$.
+
+\begin{exbox}
+\begin{exercise}
+Prove that such a $V$ exists.
+\end{exercise}
+\end{exbox}
+
+There is some affine hyperplane $L$ through $z_0$ such that
+the boundary of $V \cap L$ (in the topology of $L$) includes $z_0$,
+and hence the boundary of $U \cap L$ (in the topology of $L$)
+includes $z_0$.
+Here we use the fact that $V$ is a ball, so pick a $L$ that includes the
+normal direction to the boundary of $V$ at $z_0$.
+
+By \corref{cor:dolgodown}, $H^{(0,q)}(U \cap L) = 0$ for $1 \leq q \leq
+n-2$.  By the induction hypothesis, $U \cap L$ is a domain of holomorphy.
+Since $z_0$ is in the boundary of $U \cap L$, we have a holomorphic function
+that $f \in \sO(U \cap L)$ that does not extend (along $L$) through $z_0$.
+As $H^{(0,1)}(U) = 0$, we have that there exists an $F \in \sO(U)$
+such that $F|_{U \cap L} = f$.  If there existed a $G \in \sO(W)$ that
+agreed with $F$ on $V$, then $G|_{W \cap L}$ would be an extension of $f$
+through $z_0$, which we know is impossible, so no such $G$ exists.
+\end{proof}
+
+If you think about what we really needed in the proof, it was not the cohomology
+vanishing, we needed the extension.  In particular, we have the following
+theorem that we leave as an exercise.
+
+\begin{thm}
+Suppose $U \subset \C^n$ is domain such that for every
+affine subspace $L$ of any dimension $k$, $1 \leq k \leq n-1$,
+we have that for every $f \in \sO(U \cap L)$ there 
+exists an $F \in \sO(U)$ such that $F|_{U \cap L} = f$.
+Then $U$ is a domain of holomorphy.
+\end{thm}
+
+\begin{exbox}
+\begin{exercise}
+Prove the theorem.
+\end{exercise}
+
+\begin{exercise}
+Prove that it is not enough to extend from hyperplanes.  That is, find
+a domain $U \subset \C^3$ which is not a domain of holomorphy,
+such that for every affine hyperplane $L$
+and every $f \in \sO(U \cap L)$ there is an $F \in \sO(U)$
+such that $F|_{U \cap L} = f$.
+Hint: Modify \exampleref{example:noextend}.
+\end{exercise}
+\end{exbox}
+
+\begin{remark}
+We have by now stated several equivalent conditions for a domain to be a
+domain of holomorphy, although we have not proved all the implications in
+this book.  In particular, for a domain $U \subset \C^n$ the following are
+equivalent:
+\begin{enumerate}[(i)]
+\item
+$U$ is a domain of holomorphy.
+\item
+$U$ is Levi pseudoconvex (if $U$ has smooth boundary).
+\item
+$U$ is Hartogs pseudoconvex (continuous plurisubharmonic exhaustion function).
+\item
+$-\log \rho(z)$ is plurisubharmonic ($\rho$ is distance to $\partial U$).
+\item
+$U$ is convex with respect to plurisubharmonic functions.
+\item
+$U$ is holomorphically convex.
+\item
+$\dist(K,\partial U) = \dist(\hat{K}_U,\partial U)$ for every $K \subset
+\subset U$.
+\item
+$H^{(0,q)}(U) = 0$ for all $1 \leq q \leq n-1$.
+\item
+Every $f \in \sO(U \cap L)$ extends holomorphically to $U$ for every
+affine subspace $L$.
+\end{enumerate}
+\end{remark}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

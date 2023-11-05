@@ -4,10 +4,12 @@ FIXME: Some are WORK IN PROGRESS
 
 <li> New short appendix on the useful measure theory results.
 <li> New section 4.4 on the solvability of the d-bar problem in the polydisc.
-  (WORK IN PROGRESS)
+<li> New section 4.5 on the extension from an affine subspace and its relation
+to being a domain of holomorphy as an application of the \(\bar{\partial}\)-problem.
+<li> New section 4.6 on Cousin problems.
+<li> New font, more readable (shorter lines).
 <li> Move the definition of \((p,q)\)-form and its derivative to section 4.4
   as that's where it's needed first.
-<li> New font, more readable (shorter lines)
 <li> Add a note about \(\log \lvert f \rvert\) being harmonic after Theorem 0.1.3
 <li> Add equivalent definition of "locally bounded" to the footnote.
 <li> In proof of Proposition 1.1.3, emphasize that (1.1) means \(f\) is

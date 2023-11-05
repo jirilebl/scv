@@ -1,12 +1,10 @@
 So current plan for new SCV bits:
 
- * the d-bar in polydiscs theorem (already started)
- * Mention cousin problems, probably earlier.  Don't know how far to go in
-   that direction.  Seems to make sense in the dbar chapter.
+ * work in progress on a short intro to the cousin problems.
 
 Some more uncategorized bits:
 
-From Richard Lärkäng / Elizabeth Wulcan:
+From Richard Lärkäng / Elizabeth Wulcan (by now, some have been implemented):
 
 Maybe I could also mention something about what we used from other sources, which are topics you might consider adding something about (although I suppose you try to keep the text rather short and have already made choices of your favourite topics):
 * When discussing holomorphic convexity, we looked at a sketch of a proof that holo convexity is equivalent to being able to interpolate on any discrete sequence of distinct points, based on the proof in for example Demailly, see the end of https://canvas.gu.se/courses/35064/files/2891526/download?wrap=1.
