@@ -11811,7 +11811,7 @@ solution on $\C^n$ itself.  This is the theorem we will actually prove:
 
 \begin{thm} \label{thm:dbaronpoly}
 Let $\Delta \subset \C^n$ be a possibly unbounded polydisc,
-let $p$ and $q \geq 1$ be integers, and
+let $p \geq 0$ and $q \geq 1$ be integers, and
 let $\eta$ be a smooth $(p,q)$-form on $\Delta$ such that
 $\bar{\partial} \eta = 0$, then there exists a $(p,q-1)$-form $\omega$
 such that $\bar{\partial} \omega = \eta$.
@@ -11824,8 +11824,9 @@ using the Cauchy--Pompeiu formula.
 
 \begin{lemma} \label{lemma:dbaronevar}
 Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
-and let $g \colon \widebar{U} \to \C$ be a smooth function.
-Then $\psi \colon U \to \C$ defined by
+and let $g \colon \widebar{U} \to \C$ be a smooth function (smooth in a
+neighborhood of $\widebar{U}$).
+Then $\psi \colon U \to \C$ given by
 \begin{equation*}
 \psi(z) =
 \frac{1}{2\pi i} \int_U \frac{g(\zeta)}{\zeta-z} d\zeta \wedge d\bar{\zeta}
@@ -11886,6 +11887,8 @@ d \zeta \wedge d \bar{\zeta}
 \frac{g(\zeta)}{\zeta-z}
 d \zeta \wedge d \bar{\zeta} .
 \end{multline*}
+Note that both $\log \sabs{\zeta-z}^2$ and $\frac{1}{\zeta-z}$ are integrable
+over $U$ with respect to the area measure.
 As $r \to 0$, the last term above goes to $\int_U \frac{g(\zeta)}{\zeta-z}
 d\zeta \wedge d\bar{\zeta}$, which is $2\pi i \psi(z)$.
 Next, the function $g$ is bounded on $\overline{U}$, by say $M$, so
@@ -11897,9 +11900,9 @@ g(\zeta) \log \sabs{\zeta-z}^2 d \bar{\zeta}
 \leq
 \int_{\partial \Delta_r(z)}
 M
-\log (r^2) \sabs{d \bar{\zeta}}
+\sabs{\log (r^2)} \sabs{d \bar{\zeta}}
 =
-2\pi r M \log(r^2)
+2\pi r M \sabs{\log(r^2)}
 \underset{\text{as } r \to 0}{\to} 0 .
 \end{equation*}
 Thus, taking the limit we get
@@ -11969,8 +11972,8 @@ called the \emph{\myindex{$\bar{\partial}$-Poincar\'e lemma}}.
 
 \begin{lemma}[Dolbeault--Grothendieck]\label{lemma:dolgro}
 Let $\Delta_s(w) \subset \Delta_r(w) \subset \C^n$ be polydiscs
-where $0 < s_\ell < r_\ell \leq \infty$ for each $\ell$.
-Let $p$ and $q \geq 1$ be integers, and
+where $0 < s_\ell < r_\ell < \infty$ for each $\ell$.
+Let $p \geq 0$ and $q \geq 1$ be integers, and
 let $\eta$ be a smooth $(p,q)$-form on $\Delta_r(w)$ such that
 $\bar{\partial} \eta = 0$, then there exists a smooth $(p,q-1)$-form $\omega$
 on $\Delta_s(w)$ such that $\bar{\partial} \omega = \eta$.
@@ -12028,8 +12031,8 @@ in
 \end{equation*}
 for some $t$ such that $s_k < t < r_k$.
 It is also holomorphic in the variables $z_{k+1},\ldots,z_n$.
-From the $\psi_{\alpha\beta}$ functions we construct a form $\psi$.
-We compute
+From the $\psi_{\alpha\beta}$ functions we construct a $(p,q-1)$-form $\psi$.
+We compute $\bar{\partial}\psi$:
 \begin{equation*}
 \begin{split}
 \bar{\partial} \left(
@@ -16179,13 +16182,13 @@ earthquakes!
 
 \appendix
 
-% No sections in appendixes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% No sections in this appendix
 \counterwithin{thm}{chapter}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \chapter{Basic Notation and Terminology} \label{ap:basicnotation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -16270,6 +16273,8 @@ Y .
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% No sections in this appendix
+\counterwithin{thm}{chapter}
 \chapter{Results from One Complex Variable} \label{ap:onevarresults}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17217,6 +17222,8 @@ which are just too interesting not to mention.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% No sections in this appendix
+\counterwithin{thm}{chapter}
 \chapter{Differential Forms and Stokes' Theorem} \label{ap:diffforms}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17992,6 +17999,8 @@ result.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% No sections in this appendix
+\counterwithin{thm}{chapter}
 \chapter{Basic Terminology and Results from Algebra} \label{ap:algebra}
 
 Let us quickly review some basic definitions
@@ -18236,6 +18245,8 @@ The proof is not difficult, but it is perhaps beyond the scope of this book.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% some sections in this appendix, so go back to section counting
+\counterwithin{thm}{section}
 \chapter{Results From Real Analysis} \label{ap:analysis}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
