@@ -11833,7 +11833,7 @@ Then $\psi \colon U \to \C$ defined by
 is a smooth function such that $\frac{\partial \psi}{\partial \bar{z}} = g$.
 \end{lemma}
 
-By taking conjugates we can also similarly solve the
+By taking conjugates, we can also similarly solve the
 $\frac{\partial \psi}{\partial z} = g$ problem.  Moreover, since the
 solution is given as an integral, we can also solve the problem with
 parameters.  That is, if $g$ depends on some other variables in a smooth or
@@ -11916,7 +11916,7 @@ g(\zeta) \log \sabs{\zeta-z}^2 d \bar{\zeta}
 \log \sabs{\zeta-z}^2
 d \zeta \wedge d \bar{\zeta} .
 \end{equation*}
-Taking partial derivatives (in $\Re z$ and $\Im z$) still leave the
+Taking partial derivatives (in $\Re z$ and $\Im z$) still leaves the
 integrands integrable, and hence we can pass them under the integral sign.
 In particular, the function $\psi$ is $C^1$ and we can
 take the $\bar{z}$ derivative.
@@ -11940,8 +11940,8 @@ is also smooth.
 As $g$ is smooth, then $\frac{\partial \psi}{\partial \bar{z}}$ is also
 smooth.  If we prove that
 $\frac{\partial \psi}{\partial z}$ is also smooth, then $\psi$ must be
-smooth.  To see this we take the $z$ derivative instead of the $\bar{z}$
-derivative to see
+smooth.  We take the $z$ derivative instead of the $\bar{z}$
+derivative to find
 \begin{equation*}
 \frac{\partial \psi}{\partial z}(z)
 = 
@@ -12117,7 +12117,8 @@ By using the
 \hyperref[lemma:dolgro]{Dolbeault--Grothendieck lemma} with $\Delta_3$ and
 $\Delta_4$, we can find a smooth form $\omega_1$ defined on
 $\Delta_3$ such that $\bar{\partial} \omega_1 = \eta$.
-We will construct a sequence $\{ \omega_k \}$ each defined in $\Delta_{k+2}$
+We will construct a sequence of forms $\{ \omega_k \}$
+each $\omega_k$ defined in $\Delta_{k+2}$
 such that $\omega_{k+1}|_{\Delta_k} = \omega_k|_{\Delta_k}$.
 Suppose we have defined $\omega_1,\ldots,\omega_k$.
 Now using $\Delta_{k+3}$ and $\Delta_{k+4}$ using the lemma again,
@@ -12127,7 +12128,7 @@ $\omega_k$ on $\Delta_k$.  On $\Delta_{k+2}$ we have that
 $\bar{\partial}(\omega_k-\sigma) = \eta-\eta = 0$, so $\omega_k-\sigma$
 is closed.  The lemma gives a new form $\theta$ on $\Delta_{k+1}$ such that
 $\bar{\partial}\theta = \omega_k-\sigma$.
-Define a smooth function $\varphi$ on $\C^n$ such that $\varphi=1$ on
+Define a smooth bump function $\varphi$ on $\C^n$ such that $\varphi=1$ on
 $\overline{\Delta_{k}}$ and $\varphi$ is compactly supported in
 $\Delta_{k+1}$.  Now define
 $\omega_{k+1} = \sigma + \bar{\partial}(\varphi \theta)$, which can be
@@ -12153,8 +12154,8 @@ are equal on $\Delta_k$, we will ask that
 \text{for } z \in \overline{\Delta_k} .
 \end{equation*}
 Suppose that such $\omega_1,\ldots,\omega_k$ have been defined.
-Use the lemma with $\Delta_{k+3}$ and $\Delta_{k+2}$ to get a smooth function $\sigma$
-$\Delta_{k+2}$ on  such that
+Use the lemma with $\Delta_{k+3}$ and $\Delta_{k+2}$ to get a smooth function
+$\sigma$ on $\Delta_{k+2}$ such that
 $\bar{\partial} \sigma = \eta$.
 The function $\sigma-\omega_k$ is holomorphic (on $\Delta_{k+1}$ where
 $\omega_k$ is defined) as
@@ -18546,15 +18547,158 @@ $\varphi \colon \R \to \R$ is convex, and $f$ is measurable.  Then
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Convexity} \label{apsec:convexity}
+\section{Classical convexity} \label{apsec:convexity}
 
-FIXME
+A set $S \subset \R^n$ is \emph{convex}\index{convex set}
+(or as we will say in the main text \emph{geometrically convex}),
+if for every $x,y \in S$ and every $\lambda \in [0,1]$ the
+point $(1-\lambda) x + \lambda y$ is in $S$.
+Interior and closure of convex sets is convex.
+Arbitrary intersection of convex sets is convex, and increasing unions
+are convex.  Given a set $S$ the \emph{\myindex{convex hull}} of $S$ is
+the intersection of all convex sets containing $S$.  The closed convex hull
+is the closure of that.
+
+A \emph{\myindex{hyperplane}} $H \subset \R^n$ is the set of solutions $x$ of the equation
+$x \cdot a = b$ for some $a \in \R^n$ and $b \in \R$.  A
+\emph{\myindex{closed half-space}} is the set of points defined by
+$x \cdot a \geq b$.  A function of the form $x \mapsto x \cdot a + b$
+is called a \emph{\myindex{real affine function}}.
+
+\begin{thm}[Supporting hyperplane theorem]
+If $S \subset \R^n$ is convex and $x_0 \in \partial S$, then there exists a
+supporting hyperplane through $x_0$.  That is, there exists an $a \in \R^n$
+and $b \in \R$ such that $x_0 \cdot a = b$ ($x_0$ is on the hyperplane),
+and $x \cdot a \geq b$ for all $x \in S$ ($S$ is in the closed half-space
+defined by that hyperplane).
+\end{thm}
+
+Note that the supporting hyperplanes need not be unique.
+
+\begin{thm}[Minkowski]
+If $S,T \subset \R^n$ are two nonempty disjoint convex sets.  Then there is
+a separating hyperplane, that is, there exists an $a \in \R^n$ and a $b \in
+\R$ such that $x \cdot a \geq b$ for all $x \in S$ and 
+$x \cdot a \leq b$ for all $x \in T$.
+\end{thm}
+
+We can also put these together:
+
+\begin{cor}
+A closed convex set $S \subset \R^n$ is the union of all closed half-spaces
+containing~$S$.  More generally for any set $S$, the closed convex hull of
+$S$ is the intersection of all closed half-spaces that contain $S$.
+\end{cor}
+
+A point $x_0 \in S$ is called an \emph{\myindex{extreme point}}
+if for every $x,y \in S$ and $\lambda \in [0,1]$ such that
+$(1-\lambda) x + \lambda y = x_0$ we have $x_0 = x$ or $x_0 = y$.
+A point $x_0 \in S$ is called an \emph{\myindex{exposed point}}
+if there is an affine linear function whose restriction to 
+$S$ achieves a strict maximum at $x_0$, in other words if there is a
+supporting hyperplane which intersects $S$ at exactly one point.
+
+\begin{thm}[Straszewicz]
+Let $S \subset \R^n$ be closed and convex.  Then the set of extreme points
+of $S$ is the closure of the set of exposed points of $S$.
+\end{thm}
+
+\begin{thm}[Krein--Milman]
+Let $K \subset \R^n$ be compact and convex, then it is the convex hull of
+its extreme points.
+\end{thm}
+
+What is useful a couple of times for us in this book is that a compact
+convex set has exposed points.  Or more generally, the convex hull of a
+compact set has exposed points.
+
+Given a convex set $S$, a function $f \colon S \to \R$ is convex if
+for every $x,y \in S$ and $\lambda \in [0,1]$ we have
+\begin{equation*}
+f\bigl((1-\lambda) x + \lambda y\bigr) \leq 
+(1-\lambda) f(x) + \lambda f(y) .
+\end{equation*}
+Alternatively, $f$ is convex if its \emph{\myindex{epigraph}}
+is a convex set, where
+\begin{equation*}
+\operatorname{epigraph} f
+= \bigl\{ (x,y) \in S \times \R : f(x) \geq y \bigr\} .
+\end{equation*}
+So arguments about convex sets translate to convex functions.
+For example,
+the supporting hyperplane theorem shows a couple of rather interesting
+facts.  First, convex functions have ``tangent'' hyperplanes although not
+unique by considering a supporting hyperplane of the epigraph:
+
+\begin{prop}
+Suppose $S \subset \R^n$ is a convex set, $f \colon S \to \R$ a
+convex function, and $x_0 \in S$.  Then there exists an affine function
+$g$ such that $g(x) \leq f(x)$ for all $x \in S$ and $g(x_0) = f(x_0)$.
+\end{prop}
+
+This proposition has the following consequence:
+\begin{equation*}
+f(x_0) = \sup \bigl\{ g(x_0) : g \text{ is an affine function such that } g(x) \leq
+f(x) \text{ for all } x \in S \bigr\} .
+\end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Bump functions and partitions of unity} \label{apsec:partofunity}
+\section{Smooth bump functions and partitions of unity} \label{apsec:partofunity}
 
-FIXME
+The function $f(x) = 0$ for $x \leq 0$ and $f(x) = e^{-1/x}$ for $x > 0$ is
+a smooth ($C^\infty$) function that is zero for all $x \leq 0$ and positive
+(and less than 1)
+for $x > 0$.  The function $g(x) = \frac{f(x)}{f(x)+f(1-x)}$ is a smooth
+function that is zero for all $x \leq 0$ and $1$ for all $x \geq 1$.
+By modifying such examples we obtain the following
+\emph{\myindex{bump function}}:
+
+\begin{thm}[Bump function]
+Suppose $U \subset \R^n$ is open and $K \subset U$ is compact.  Then there
+exists a smooth function $\varphi \colon \R^n \to [0,1]$ such that
+$\varphi$ is compactly supported in $U$ and $\varphi \equiv 1$ on a
+neighborhood of $K$.
+\end{thm}
+
+By support, $\supp \varphi$, we mean the closure of the set
+$\{ x : \varphi(x) \not= 0 \}$, and by compactly supported in $U$
+we mean that $\supp \varphi$ is a compact subset of $U$.
+Another variant of a bump function is the Urysohn lemma:
+
+\begin{thm}[Smooth Urysohn lemma]
+Suppose $U \subset \R^n$ is open and $A,B \subset U$ are disjoint closed (in
+subspace topology) subsets. Then there
+exists a smooth function $\varphi \colon U \to [0,1]$ such that
+$\varphi=0$ on $A$ and $\varphi=1$ on $B$.
+\end{thm}
+
+These functions are used usually for localizing some problem, or extending
+a smooth function to all of $U$ or all of $\R^n$.  One can also ask for
+such bump functions to glue together nicely.
+Suppose $U \subset \R^n$ is open and $\{ U_\iota \}_{\iota \in I}$
+is an \emph{\myindex{open cover}} of $U$, that is, $U = \bigcup_\iota U_\iota$.
+
+\begin{thm}[Smooth partition of unity]\index{smooth partition of unity}
+\pagebreak[2]
+Suppose $U \subset \R^n$ is open and $\{ U_\iota \}_{\iota \in I}$
+is an open cover of $U$, then there exists a
+\emph{\myindex{partition of unity subordinate to the cover}}.
+That is, there exist a family
+$\{ \varphi_{\kappa} \}_{\kappa \in J}$ of
+smooth compactly supported functions $\varphi_{\kappa} \colon \R^n \to
+[0,1]$ such that:
+\begin{enumerate}[(i)]
+\item
+For each $\kappa \in J$, there is some $\iota \in I$
+such that $\supp \varphi_\kappa \subset U_{\iota}$.
+\item
+For each point $x \in U$, there is a neighborhood on which
+all but finitely many $\varphi_\kappa$ vanish.
+\item
+For every $x \in U$ we have $\sum_{\kappa \in J} \varphi(x) = 1$.
+\end{enumerate}
+\end{thm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
