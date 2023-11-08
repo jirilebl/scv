@@ -72,7 +72,7 @@
 %If you have an older tex installation you might need
 %to comment out the next line:
 %PRINT (COMMENT OUT FOR PRINT)
-%\usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/kdp
+\usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/kdp
 
 \usepackage[shortalphabetic,msc-links]{amsrefs}
 
@@ -12635,7 +12635,7 @@ and
 let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be such that
 \begin{equation*}
 \begin{aligned}
-& h_{\iota\kappa}+h_{\kappa\iota} = 0 & &\text{in } U_\iota \cap U_\kappa
+& h_{\iota\kappa}+h_{\kappa\iota} = 0 & &\text{in } U_\iota \cap U_\kappa ,
 \\
 & h_{\iota\kappa}+h_{\kappa\lambda}+h_{\lambda\iota} = 0 & & \text{in }
 U_\iota \cap U_\kappa \cap U_{\lambda} .
@@ -12702,7 +12702,7 @@ h_{\iota\kappa}+h_{\kappa\iota} = 0.
 The function $f$ has the same singularity as $g_\iota$ in $U_\iota$ since
 $f-g_\iota$ is holomorphic.
 
-So you can see that the data gives some local solution to some problem
+So the data gives some local solution to some problem
 and the solution of the Cousin problem gives
 a way of gluing the local data together into a global solution.  We state
 this as a theorem (the converse also holds but we do not prove it here):
@@ -12794,21 +12794,21 @@ Let
 $\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
 and let $h_{\iota\kappa}$ be (holomorphic) Cousin I
 data.
-Let $\varphi_\iota$ be the partitionof unity again and define a smooth
+Let $\varphi_\iota$ be the partition of unity again and define a smooth
 solution
 \begin{equation*}
 f_\iota(z) = \sum_{\kappa \in I} \varphi_\kappa(z) h_{\iota \kappa}(z) .
 \end{equation*}
 The functions $f_\iota$ need not be holomorphic of course, but they do solve
-the problem.  But as $f_\iota-f_\kappa = h_{\iota\kappa}$ is holomorphic we
-have that $\bar{\partial}(f_\iota-f_\kappa) = 0$.  The $(0,1)$-form $\eta$ given by
+the problem.  As $f_\iota-f_\kappa = h_{\iota\kappa}$ is holomorphic, we
+have $\bar{\partial}(f_\iota-f_\kappa) = 0$.  The $(0,1)$-form $\eta$ given by
 \begin{equation*}
 \eta = \bar{\partial}f_\iota
 \end{equation*}
 is therefore well defined on $U$.  Moreover, $\eta$ is
 $\bar{\partial}$-closed, so by assumption on $U$, we have that
 there exists a $\psi \in \sO(U)$ such that $\bar{\partial}\psi = \eta$.
-Now on each $U_\iota$
+On each $U_\iota$
 \begin{equation*}
 F_\iota = f_\iota - \psi .
 \end{equation*}
@@ -12854,7 +12854,7 @@ and let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be nonvanishing
 functions such that
 \begin{equation*}
 \begin{aligned}
-& h_{\iota\kappa}h_{\kappa\iota} = 1 & &\text{in } U_\iota \cap U_\kappa
+& h_{\iota\kappa}h_{\kappa\iota} = 1 & &\text{in } U_\iota \cap U_\kappa ,
 \\
 & h_{\iota\kappa}h_{\kappa\lambda}h_{\lambda\iota} = 1 & & \text{in }
 U_\iota \cap U_\kappa \cap U_{\lambda} .
