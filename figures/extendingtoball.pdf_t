@@ -10,10 +10,10 @@
   \selectfont}%
 \fi\endgroup%
 \begin{picture}(2634,1814)(-866,-1868)
-\put(451,-1321){\makebox(0,0)[b]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$U \cap P$}%
-}}}}
 \put(451,-691){\makebox(0,0)[b]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$U=B_2\bigl((0,1)\bigr)$}%
 }}}}
-\put(1441,-1321){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$P$}%
+\put(1441,-1321){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$L$}%
+}}}}
+\put(451,-1321){\makebox(0,0)[b]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$U \cap L$}%
 }}}}
 \end{picture}%
