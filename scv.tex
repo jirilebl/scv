@@ -78,12 +78,12 @@
 
 %\usepackage[all]{hypcap} %done by caption
 
-%\usepackage{draftwatermark}
-%\SetWatermarkText{Draft of v4.0 as of \today. May change substantially!}
-%\SetWatermarkAngle{90}
-%\SetWatermarkHorCenter{0.5in}
-%\SetWatermarkColor[gray]{0.7}
-%\SetWatermarkScale{0.18}
+\usepackage{draftwatermark}
+\SetWatermarkText{Draft of v4.0 as of \today. May change substantially!}
+\SetWatermarkAngle{90}
+\SetWatermarkHorCenter{0.5in}
+\SetWatermarkColor[gray]{0.7}
+\SetWatermarkScale{0.18}
 
 \definecolor{gray75}{gray}{0.75}
 
@@ -422,7 +422,7 @@ Copyright \copyright 2014--2023 Ji{\v r}\'i Lebl
 %PRINT only for the kdp version
 %\medskip
 %\noindent
-%Cover image: Emigrant Peak from Lower Lake at Story Ranch, Emigrant, MT,
+%Cover image: Hike to Emigrant Peak, Montana,
 %\copyright 2022 Ji{\v r}\'i Lebl, all rights reserved.  Cover
 %image cannot be reused in derivative works.
 
@@ -531,7 +531,7 @@ at github: \url{https://github.com/jirilebl/scv}
 
 This book is a polished version of my course notes for Math 6283, Several
 Complex Variables, given in
-Spring 2014, Spring 2016, and Spring 2019 semesters
+Spring 2014, Spring 2016, Spring 2019, and Fall 2023 semesters
 at the Oklahoma State University.
 It is a semester-long course.
 Quite a few exercises of various difficulty are
@@ -568,6 +568,15 @@ See \appendixref{ap:onevarresults},
 \appendixref{ap:diffforms},
 \appendixref{ap:algebra}, and
 \appendixref{ap:analysis}.
+
+\textbf{Changes in edition 4:}
+Many minor changes and additions throughout, especially in chapters 1 and 2
+resulted in some renumberings, including some renumbering of exercises.
+The major addition of edition 4 is the expanded chapter on
+$\bar{\partial}$-problem, \chapterref{ch:dbar}.  Also I've added a short
+appendix listing some useful results from analysis, including the very
+basics of measure theory.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -976,6 +985,7 @@ one variable you learned that the maximum principle is really a
 property of harmonic functions.
 
 \begin{thm}[Maximum principle]
+\pagebreak[2]
 Let $U \subset \C$ be a domain and $h \colon U \to \R$
 harmonic, that is,
 \glsadd{not:laplacian}%
