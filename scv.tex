@@ -11634,10 +11634,10 @@ By convention, the only $(0,0)$-form that is exact is the identically zero form.
 \begin{exbox}
 \begin{exercise}
 Show that the $\bar{\partial}$-closed forms of degree $(p,q)$
-form a subspace in the vector space of all $(p,q)$ forms and similarly
+are a subspace of the vector space of all $(p,q)$-forms and similarly
 that the
 $\bar{\partial}$-exact forms of degree $(p,q)$
-form a subspace.
+are a subspace.
 \end{exercise}
 
 \begin{exercise}
@@ -11659,8 +11659,8 @@ which is the usual smooth cohomology measuring the normal topology of $U$,
 whereas the Dolbeault cohomology also takes into account the complex structure.
 Note that $H^{(0,0)}(U)$ is just the set of $\bar{\partial}$-closed
 $(0,0)$-forms, that is, it is the set $\sO(U)$ of holomorphic functions on $U$.
-More generally, $H^{(p,0)}(U)$ is the set of $\bar{\partial}$-closed $(p,0)$
-forms, that is, forms
+More generally, $H^{(p,0)}(U)$ is the set of $\bar{\partial}$-closed
+$(p,0)$-forms, that is, forms
 \begin{equation*}
 \eta =
 \sum_{\alpha}
@@ -12258,7 +12258,8 @@ $H^{(0,1)}(U) = H^{(0,1)}(W) = 0$, but $H^{(0,1)}(V)$ is nontrivial.
 
 \section{Extension from an affine subspace} \label{sec:hypextension}
 
-Let $L \subset \C^n$ be an \emph{\myindex{affine subspace}} of dimension $k$,
+Let $L \subset \C^n$ be a (complex)
+\emph{\myindex{affine subspace}} of dimension $k$,
 that is,
 the set defined by $M z = c$ for a rank
 $n-k$ matrix $M$ and $c \in \C^n$.
@@ -12270,7 +12271,7 @@ We say a function $f$ defined on an open subset of $L$ is
 holomorphic
 if after this change of coordinates it is holomorphic in the
 $z_1,\ldots,z_k$ variables.
-The special case of an \emph{\myindex{affine hyperplane}}
+The special case of a (complex) \emph{\myindex{affine hyperplane}}
 is when $k=n-1$.
 
 It is easy to see that if $U \subset \C^n$ is a domain, $L$ is an affine
@@ -12282,6 +12283,8 @@ and finding a holomorphic function on $U$ whose restriction is $f$.
 If $f$ is just smooth, then finding such a smooth extension is not
 difficult no matter what $U$ looks like, however, in the holomorphic
 category it is not that easy (or even always possible).
+A holomorphic extension from a hyperplane is possible for domains of holomorphy,
+in particular, if $H^{(0,1)}(U)=0$.
 
 \begin{example} \label{example:noextend}
 Suppose $U = \C^2 \setminus \{ 0 \}$ and $L = \{ (z,w) \in \C^2 : w = 0 \}$.
@@ -12334,6 +12337,15 @@ $F$ on $\C^2$ such that
 $F|_L = f$,
 $F|_M = g$,
 $F|_N = h$.
+\end{exercise}
+
+\begin{exercise}
+Show that you cannot replace the hyperplane with something that has no
+complex structure.  Find an example of a domain of holomorphy $U \subset
+\C^2$, and a real-analytic $f \colon U \cap \R^2 \to \C$
+that is not a restriction of a holomorphic function on $U$.
+Note that $f$ does extend holomorphically to some
+neighborhood of $U \cap \R^2$ in $U$, just perhaps not all of $U$.
 \end{exercise}
 \end{exbox}
 
@@ -12634,6 +12646,7 @@ analogue of Weierstrass.
 Suppose $U \subset \C^n$ is open.
 Let $\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
 and
+when $U_\iota \cap U_\kappa \not= \emptyset$,
 let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be such that
 \begin{equation*}
 \begin{aligned}
@@ -12707,22 +12720,22 @@ $f-g_\iota$ is holomorphic.
 So the data gives some local solution to some problem
 and the solution of the Cousin problem gives
 a way of gluing the local data together into a global solution.  We state
-this as a theorem (the converse also holds but we do not prove it here):
+this as a proposition (the converse also holds but we do not prove it here):
 
-\begin{thm}
+\begin{prop}
 Suppose $U \subset \C^n$ is open,
 $\{ U_{\iota} \}_{\iota \in I}$ an open covering of $U$, and $f_\iota$
 are meromorphic functions on each $U_\iota$ such that $f_\iota - f_\kappa$
 is holomorphic on $U_\iota \cap U_\kappa$.  Suppose that the Cousin I
 problem is solvable on $U$.  Then there exists a meromorphic function $f$ on
 $U$ such that on each $U_\iota$, $f-f_\iota$ is holomorphic.
-\end{thm}
+\end{prop}
 
 In one dimension, Cousin I (that is, Mittag-Leffler) is solvable for
 any domain in $\C$ (though not always on Riemann surfaces).
 In several variables, Cousin I is solvable on domains of holomorphy in
 $\C^n$, in particular, if we can solve the
-$\bar{\partial}$-problem for $(0,1)$ forms.
+$\bar{\partial}$-problem for $(0,1)$-forms.
 
 \begin{example}
 Let us see an example where the Cousin I problem is not solvable.  Let $U =
@@ -12852,7 +12865,9 @@ Cousin I problem and to the theorem of Weierstrass.
 \begin{defn}[\myindex{Cousin II}]\index{Second Cousin problem}
 Suppose $U \subset \C^n$ is open.
 Let $\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
-and let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be nonvanishing
+and
+when $U_\iota \cap U_\kappa \not= \emptyset$,
+let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be nonvanishing
 functions such that
 \begin{equation*}
 \begin{aligned}
@@ -12905,7 +12920,7 @@ We state this result as a theorem.
 Suppose $U \subset \C^n$ is a domain on which the Cousin II problem is
 solvable and $M \subset U$ is a complex hypersurface (locally the zero set
 of a holomorphic function with nonvanishing derivative).
-Then there exists $f \in \sO(U)$ such that $f^{-1}(0) = M$ and
+Then there exists an $f \in \sO(U)$ such that $f^{-1}(0) = M$ and
 $df \not=0$ on~$M$.
 \end{thm}
 
@@ -12915,19 +12930,23 @@ the domain is necessary.  Interestingly, on a domain of holomorphy, if the
 Cousin II problem is solvable just continuously, then it is solvable.
 We will skip the proof of this fact, but let us describe how
 the topological obstruction arises.
-Suppose that we have $h_{\iota\kappa}$ Cousin II data.  We could refine the
-covering to make all the sets $U_{\iota}$ and their intersections
+Suppose we have Cousin II data $h_{\iota\kappa}$.  We refine the
+covering to make the sets $U_{\iota}$ and their intersections
 $U_\iota\cap U_\kappa$ simply connected.  Then we take logarithms
-$g_{\iota\kappa} = \log h_{\iota\kappa}$ and we can take the correct
+$g_{\iota\kappa} = \log h_{\iota\kappa}$ and we take the correct
 branch to also get $g_{\kappa\iota} = -g_{\iota\kappa}$, so
-$g_{\iota\kappa}+g_{\kappa\iota} = 0$.  But now we consider the triple sum
-to get
+$g_{\iota\kappa}+g_{\kappa\iota} = 0$.  For the triple sum
+we get
 \begin{equation*}
-g_{\iota\kappa}+g_{\kappa\lambda}+g_{\lambda\iota} = 2\pi i k
+g_{\iota\kappa}+g_{\kappa\lambda}+g_{\lambda\iota} = 2\pi i
+k_{\iota\kappa\lambda}
 \end{equation*}
-for some integer $k$.  It is not always possible to pick the branches in
-such a way to make $k=0$.  If it were, then we could just apply the
-solution to the Cousin I data.  The question is just a question of
+for some integer $k_{\iota\kappa\lambda}$.
+It is not always possible to pick the branches in
+such a way to make $k_{\iota\kappa\lambda}=0$ for all indices.
+If it were possible, we could apply the
+solution to the Cousin I data.
+This question is just a question of
 cohomology, that is, just topology.\footnote{%
 For the interested reader, the needed extra cohomology condition is $H^2(U,\Z)=0$.}
 
