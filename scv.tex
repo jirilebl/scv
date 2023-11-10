@@ -533,11 +533,14 @@ This book is a polished version of my course notes for Math 6283, Several
 Complex Variables, given in
 Spring 2014, Spring 2016, Spring 2019, and Fall 2023 semesters
 at the Oklahoma State University.
-It is a semester-long course.
+There is more material than can fit in a one semester class
+to allow for several different versions of the course.
+In fact, I did it somewhat differently each semester I ran it.
 Quite a few exercises of various difficulty are
 sprinkled throughout the text, and I hope a reader is
-at least attempting most of them.  Many are required later in the
-text.  The reader should attempt exercises in sequence; earlier exercises
+at least attempting or thinking about most of them.
+Many are required later in the text.
+The reader should attempt exercises in sequence; earlier exercises
 can help or even be required to solve later ones.
 
 The prerequisites are a decent knowledge of vector calculus, basic
@@ -557,9 +560,9 @@ in \chapterref{ch:analyticvarieties}
 we use some basic ring theory from algebra.
 By design, it can replace the second semester of complex analysis.
 
-This book is not intended as an exhaustive reference.  It is simply a whirlwind
-tour of several complex variables with slightly more material than can
-be covered within a semester.  See the end of the book
+This book is not intended as an exhaustive reference.
+It is simply a whirlwind tour of several complex variables.
+See the end of the book
 for a \hyperref[ch:furtherreading]{list of books} for
 reference and further reading.  There are also appendices for
 a list of one-variable results, an overview of differential forms,
@@ -12320,7 +12323,8 @@ Take a function $f \colon \Delta_{\sqrt{3}}(0) \to \C$ be such that
 it does not extend past any point in the boundary of the disc.
 The obvious way to extend $f$ to an
 $F$ would be to simply take a function $F(z,w) = f(z)$, but that is not
-defined on all of $U$, extending to all of $U$ is not so easy to see.  See
+defined on all of $U$.
+Extension to all of $U$ is somewhat harder to prove.  See
 \figureref{fig:extendingtoball}.  It is possible to do this explicitly in
 this specific case (exercise below).  Note that
 $H^{(0,1)}(U) = 0$, which you proved
@@ -12376,10 +12380,10 @@ $\bar{\partial}$-closed $(p,q)$-forms, where holomorphic functions
 are the $\bar{\partial}$-closed $(0,0)$-forms.
 
 To be able to prove this more general theorem, we need to know what it means
-to restrict $(p,q)$-forms and not just functions to $L$.
+to restrict $(p,q)$-forms to $L$, not just functions.
 Instead of making this too complicated, let us do the same
 simplification as we did above for functions.
-Vaguely, we will restrict the values of the form
+Informally, we will restrict the values of the form
 to $L$ and only take the parts of the form that ``point along $L$.''
 Let us, also for simplicity, suppose that $L$ is a hyperplane, as the more
 general case then follows.
@@ -12399,7 +12403,7 @@ d\bar{z}_{\beta} .
 Basically we restrict the components to $L$, and throw out the differentials
 that do not change along $L$.  If $\eta$ is a function (a $(0,0)$-form),
 then, of course, this
-is just a restriction of the function.
+is just the restriction of the function.
 
 \begin{thm}
 Suppose that $U \subset \C^n$ is a domain with $H^{(p,q+1)}(U) = 0$ and
@@ -12413,8 +12417,8 @@ So for the holomorphic function extension problem from a hyperplane stated above
 we need $H^{(0,1)}(U) = 0$.
 
 \begin{proof}
-Make the translation and rotation as before to make $L = \{ z \in \C^n : z_n
-= 0 \}$.  Write $z = (z',z_n)$ as usual.
+After a translation and a linear map, we assume
+$L = \{ z \in \C^n : z_n = 0 \}$.  Write $z = (z',z_n)$ as usual.
 Let $\chi \colon U \to \R$ be the function that is identically $1$ in some
 neighborhood of $U \cap L$ and such that it is identically $0$ in some
 neighborhood of $\{ z \in U : (z',0) \notin U \cap L \}$.
@@ -12427,7 +12431,7 @@ Note that $\chi \equiv 0$ on a neighborhood where it is not trivial
 to extend $\psi$.\label{fig:extendingcutoff}}
 \end{myfig}
 
-We will try to define
+We will define
 \begin{equation*}
 \Psi(z) = \chi(z) \psi(z') + z_n \eta(z) ,
 \end{equation*}
@@ -12436,7 +12440,9 @@ $\bar{\partial}$-closed.  This form is defined in
 $U$ as $\chi$ is identically zero where $\psi$ is undefined.
 Clearly, if such an $\eta$ can be found,
 we have $\Psi|_{U \cap L} = \psi$.
-Let us compute what is required of $\eta$.
+Let us compute
+$\bar{\partial} \Psi$
+to see what is required of $\eta$.
 \begin{equation*}
 \bar{\partial} \Psi =
 \bar{\partial}\chi \wedge \psi
@@ -12448,15 +12454,18 @@ Let us compute what is required of $\eta$.
  + z_n \bar{\partial} \eta .
 \end{equation*}
 As $\bar{\partial} \chi$ is identically $0$ in a neighborhood of $U \cap L$,
-the form $\frac{- \bar{\partial}\chi \wedge \psi}{z_n}$ is smooth near
-$U \cap L$.
-Moreover, since
-$\bar{\partial}\chi$ is identically zero where $\psi$ is undefined, we have a
-smooth $(p,q+1)$-form on $U$.  Clearly the form is also
-$\bar{\partial}$-closed as $\bar{\partial}^2 = 0$.
-By hypothesis, we can find an $\eta$ such that
-$\bar{\partial} \eta = \frac{- \bar{\partial}\chi \wedge \psi}{z_n}$, and
-we are done.
+the form $\frac{- \bar{\partial}\chi \wedge \psi}{z_n}$ extends smoothly
+through $U \cap L$.
+It is a
+smooth $(p,q+1)$-form on $U$ as
+$\bar{\partial}\chi$ is identically zero in a neighborhood of
+where $\psi$ is undefined.
+The form is
+$\bar{\partial}$-closed as $\bar{\partial}^2 = 0$, $\bar{\partial}\psi = 0$,
+and $\nicefrac{1}{z_n}$ is holomorphic.
+By hypothesis, we find an $\eta$ such that
+$\bar{\partial} \eta = \frac{- \bar{\partial}\chi \wedge \psi}{z_n}$,
+and we are done.
 \end{proof}
 
 We remark that an extension works for zero sets of holomorphic functions, that
@@ -12495,20 +12504,22 @@ $H^{(p,q+1)}(U) = 0$ then $H^{(p,q)}(U \cap L) = 0$.
 \end{cor}
 
 \begin{proof}
-Suppose that $\psi$ is a $(p,q)$-form such that $\bar{\partial} \psi = 0$.
-As $H^{(p,q+1)}(U) = 0$ and the theorem, there is a $(p,q)$-form
+Let $\psi$ be a $\bar{\partial}$-closed $(p,q)$-form on $U \cap L$.
+As $H^{(p,q+1)}(U) = 0$, via the theorem,
+there is a $\bar{\partial}$-closed $(p,q)$-form
 $\Psi$ on $U$ such that
-$\Psi|_L = \psi$ and $\bar{\partial} \Psi = 0$.
+$\Psi|_{U \cap L} = \psi$.
 As $H^{(p,q)}(U) = 0$, there is a $(p,q-1)$-form $\Phi$ on $U$
 such that $\bar{\partial} \Phi = \Psi$.  It is not difficult to see that
-$(\bar{\partial}\Phi)|_L = \bar{\partial}(\Phi|_L)$ (true for any form),
-so $\varphi = \Phi|_L$ is the solution to $\bar{\partial} \varphi = \psi$.
+$(\bar{\partial}\Phi)|_{U \cap L} = \bar{\partial}(\Phi|_{U \cap L})$ (true for any form),
+so $\varphi = \Phi|_{U \cap L}$ is the solution to $\bar{\partial} \varphi = \psi$.
 \end{proof}
 
 \begin{exbox}
 \begin{exercise}
 Prove the claim that
-for any $(p,q)$-form, $(\bar{\partial}\Phi)|_L = \bar{\partial}(\Phi|_L)$.
+for any $(p,q)$-form, $(\bar{\partial}\Phi)|_{U \cap L} =
+\bar{\partial}(\Phi|_{U \cap L})$.
 \end{exercise}
 \end{exbox}
 
@@ -12549,7 +12560,7 @@ Assume the theorem holds for any domain in $\C^{n-1}$.
 
 Let $U \subset \C^n$ be a domain and
 suppose that $V$ and $W$ are open sets in $\C^n$
-such that $V \subset U \cap W$, $W$ is connected, and $W$ contains points outside
+such that $\emptyset \not= V \subset U \cap W$, $W$ is connected, and $W$ contains points outside
 of $U$.  That is, $V$ and $W$ are like in the definition of the domain of
 holomorphy.  We want to show that there must exist at least one $F \in
 \sO(U)$ for which there does not exist any $G \in \sO(W)$ such that $F=G$ on
@@ -12578,7 +12589,7 @@ normal direction to the boundary of $V$ at $z_0$.
 By \corref{cor:dolgodown}, $H^{(0,q)}(U \cap L) = 0$ for $1 \leq q \leq
 n-2$.  By the induction hypothesis, $U \cap L$ is a domain of holomorphy.
 Since $z_0$ is in the boundary of $U \cap L$, we have a holomorphic function
-that $f \in \sO(U \cap L)$ that does not extend (along $L$) through $z_0$.
+$f \in \sO(U \cap L)$ that does not extend (along $L$) through $z_0$.
 As $H^{(0,1)}(U) = 0$, we have that there exists an $F \in \sO(U)$
 such that $F|_{U \cap L} = f$.  If there existed a $G \in \sO(W)$ that
 agreed with $F$ on $V$, then $G|_{W \cap L}$ would be an extension of $f$
