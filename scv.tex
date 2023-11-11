@@ -12291,7 +12291,8 @@ holomorphic
 if after this change of coordinates it is holomorphic in the
 $z_1,\ldots,z_k$ variables.
 The special case of a (complex) \emph{\myindex{affine hyperplane}}
-is when $k=n-1$.
+is when $k=n-1$, and the case of a \emph{\myindex{complex line}}
+is when $k=1$.
 
 It is easy to see that if $U \subset \C^n$ is a domain, $L$ is an affine
 subspace, and $F \in \sO(U)$, then $F|_{U \cap L}$ is holomorphic.
@@ -12565,7 +12566,6 @@ of $U$.  That is, $V$ and $W$ are like in the definition of the domain of
 holomorphy.  We want to show that there must exist at least one $F \in
 \sO(U)$ for which there does not exist any $G \in \sO(W)$ such that $F=G$ on
 $V$.
-
 Consider a component of $W \cap U$ that contains some component of $V$.
 Without loss of generality we could take $V$ to be any small ball in this
 component of $W \cap U$.
@@ -12583,9 +12583,8 @@ There is some affine hyperplane $L$ through $z_0$ such that
 the boundary of $V \cap L$ (in the topology of $L$) includes $z_0$,
 and hence the boundary of $U \cap L$ (in the topology of $L$)
 includes $z_0$.
-Here we use the fact that $V$ is a ball, so pick a $L$ that includes the
+Here we use the fact that $V$ is a ball; pick an $L$ that includes the
 normal direction to the boundary of $V$ at $z_0$.
-
 By \corref{cor:dolgodown}, $H^{(0,q)}(U \cap L) = 0$ for $1 \leq q \leq
 n-2$.  By the induction hypothesis, $U \cap L$ is a domain of holomorphy.
 Since $z_0$ is in the boundary of $U \cap L$, we have a holomorphic function
@@ -12597,14 +12596,15 @@ through $z_0$, which we know is impossible, so no such $G$ exists.
 \end{proof}
 
 If you think about what we really needed in the proof, it was not the cohomology
-vanishing, we needed the extension.  In particular, we have the following
-theorem, which we leave as an exercise.
+vanishing, we needed the extension.  It is sufficient to extend from
+complex lines, that is, affine subspaces of dimension 1, since 
+the intersection of $U \cap L$ in that case is always a domain of
+holomorphy.
 
 \begin{thm}
 Suppose $U \subset \C^n$ is domain such that for every
-affine subspace $L$ of any dimension $k$, $1 \leq k \leq n-1$,
-we have that for every $f \in \sO(U \cap L)$ there
-exists an $F \in \sO(U)$ such that $F|_{U \cap L} = f$.
+complex line $L$ and every $f \in \sO(U \cap L)$ there
+exists an $F \in \sO(U)$ where $F|_{U \cap L} = f$.
 Then $U$ is a domain of holomorphy.
 \end{thm}
 
@@ -12614,8 +12614,24 @@ Prove the theorem.
 \end{exercise}
 
 \begin{exercise}
-Prove that it is not enough to extend from hyperplanes.  That is, find
-a domain $U \subset \C^3$, which is not a domain of holomorphy,
+Suppose $U \subset \C^n$ is domain of holomorphy
+and $L$ is an affine subspace of dimension $k$.
+Then $U \cap L$ is a domain of holomorphy.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \C^n$ is domain and $k \in \N$
+is such that 
+$H^{(0,q)}(U)=0$ for all $1 \leq q \leq n-k$,
+and
+$U \cap L$ is a domain of holomorphy for
+every affine subspace $L$ of dimension $k$.
+Prove that $U$ is a domain of holomorphy.
+\end{exercise}
+
+\begin{exercise}
+Extension from hyperplanes is not enough:
+Find a domain $U \subset \C^3$ that is not a domain of holomorphy,
 such that for every affine hyperplane $L$
 and every $f \in \sO(U \cap L)$ there is an $F \in \sO(U)$
 such that $F|_{U \cap L} = f$.
@@ -12648,7 +12664,7 @@ $\dist(K,\partial U) = \dist(\hat{K}_U,\partial U)$ for every $K \subset
 $H^{(0,q)}(U) = 0$ for all $1 \leq q \leq n-1$.
 \item
 Every $f \in \sO(U \cap L)$ extends holomorphically to $U$ for every
-affine subspace $L$.
+complex line $L$.
 \end{enumerate}
 \end{remark}
 
@@ -12685,7 +12701,6 @@ U_\iota \cap U_\kappa \cap U_{\lambda} .
 \end{equation*}
 The covering and the functions $h_{\iota\kappa}$ are called the
 \emph{\myindex{Cousin I data}}.
-
 The \emph{\myindex{solution of the Cousin I problem}}
 is a set of
 holomorphic functions $f_\iota \in \sO(U_\iota)$ such that
@@ -12759,7 +12774,7 @@ $U$ such that on each $U_\iota$, $f-f_\iota$ is holomorphic.
 \end{prop}
 
 In one dimension, Cousin I (that is, Mittag-Leffler) is solvable for
-any domain in $\C$ (though not always on Riemann surfaces).
+any domain in $\C$.
 In several variables, Cousin I is solvable on domains of holomorphy in
 $\C^n$, in particular, if we can solve the
 $\bar{\partial}$-problem for $(0,1)$-forms.
@@ -12867,8 +12882,7 @@ Therefore, we have a solution to the Cousin I problem.
 \end{proof}
 
 \begin{cor}
-If $\Delta \subset \C^n$ is a possibly unbounded polydisc, then the Cousin I
-problem is solvable on $\Delta$.
+Cousin I problem is solvable on any possibly unbounded polydisc in $\C^n$.
 \end{cor}
 
 \begin{exbox}
@@ -12881,7 +12895,7 @@ as trying to piece together the meromorphic function above.
 
 \begin{exercise}
 Formulate a version of Cousin I problem for integer-valued continuous
-functions on domains in $\R^2$.  Then prove that the problem is
+functions on domains in $\R^2$.  Prove that the problem is
 not always solvable in $\R^2 \setminus \{ (0,0) \}$.
 \end{exercise}
 \end{exbox}
@@ -12906,7 +12920,6 @@ U_\iota \cap U_\kappa \cap U_{\lambda} .
 \end{equation*}
 The covering and the functions $h_{\iota\kappa}$ are called the
 \emph{\myindex{Cousin II data}}.
-
 The \emph{\myindex{solution of the Cousin II problem}}
 is a set of
 nonvanishing holomorphic functions $f_\iota \in \sO(U_\iota)$ such that
@@ -12980,13 +12993,12 @@ For the interested reader, the needed extra cohomology condition is $H^2(U,\Z)=0
 \begin{exbox}
 \begin{exercise}
 Suppose $U \subset \C^n$ is a domain with $H^{(0,1)}(U)=0$
-and $M \subset U$ is a complex hypersurface (locally the zero set
-of a holomorphic function with nonvanishing derivative).
-Suppose that there exists a continuous function $g$ on $U$
+and $M \subset U$ is a complex hypersurface.
+Suppose there is a continuous function $g$ on $U$
 such that locally near every $p \in M$, if $r$ is a defining function for $M$
 (holomorphic with nonvanishing derivative),
 then $\nicefrac{r}{g}$ extends to be continuous and nonvanishing in a
-neighborhood of $p$, then there exists a global function $f \in \sO(M)$
+neighborhood of $p$.  Prove that there exists an $f \in \sO(M)$
 such that $f^{-1}(0) = M$ and $df \not= 0$ on $M$.
 Hint: Cover with balls $U_{\iota}$ and in each ball define
 $\log\bigl(\nicefrac{f_\iota}{g}\bigr)$, then obtain a Cousin I problem.
