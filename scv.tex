@@ -12454,7 +12454,7 @@ to see what is required of $\eta$.
 \bar{\partial}\chi \wedge \psi
  + z_n \bar{\partial} \eta .
 \end{equation*}
-As $\bar{\partial} \chi$ is identically $0$ in a neighborhood of $U \cap L$,
+As $\bar{\partial} \chi$ is $0$ in a neighborhood of $U \cap L$,
 the form $\frac{- \bar{\partial}\chi \wedge \psi}{z_n}$ extends smoothly
 through $U \cap L$.
 It is a
@@ -12599,7 +12599,8 @@ If you think about what we really needed in the proof, it was not the cohomology
 vanishing, we needed the extension.  It is sufficient to extend from
 complex lines, that is, affine subspaces of dimension 1, since 
 the intersection of $U \cap L$ in that case is always a domain of
-holomorphy.
+holomorphy.  On the other hand, it is not sufficient to have extension
+from hyperplanes, see \exerciseref{exercise:extensionfromhypnotenough}.
 
 \begin{thm}
 Suppose $U \subset \C^n$ is domain such that for every
@@ -12629,7 +12630,7 @@ every affine subspace $L$ of dimension $k$.
 Prove that $U$ is a domain of holomorphy.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:extensionfromhypnotenough}
 Extension from hyperplanes is not enough:
 Find a domain $U \subset \C^3$ that is not a domain of holomorphy,
 such that for every affine hyperplane $L$
@@ -12642,7 +12643,7 @@ Hint: Modify \exampleref{example:noextend}.
 \begin{remark}
 We have by now stated several equivalent conditions for a domain to be a
 domain of holomorphy, although we have not proved all the implications in
-this book.  In particular, for a domain $U \subset \C^n$ the following are
+this book.  In particular, for a domain $U \subset \C^n$, the following are
 equivalent:
 \begin{enumerate}[(i)]
 \item
@@ -12675,14 +12676,14 @@ complex line $L$.
 
 A chapter in many a book on one complex variable is devoted to the
 Mittag-Leffler theorem on finding a meromorphic function with prescribed
-poles, and another one on the Weierstrass theorem for finding a holomorphic
+poles, and another one on a theorem of Weierstrass for finding a holomorphic
 function with a prescribed zero set.  The analogues of these results in
 several complex variables are the so-called Cousin I and Cousin II
 problems\footnote{Named for Pierre Cousin, the French mathematician, and not
 for some family scuffle.}
 respectively.  The Cousin I problem is an additive
-version of the problem and obtains an analogue to the Mittag-Leffler
-theorem.  The Cousin II problem is the multiplicative version to obtain an
+version of the problem and obtains an analogue to Mittag-Leffler.
+The Cousin II problem is the multiplicative version to obtain an
 analogue of Weierstrass.
 
 \begin{defn}[\myindex{Cousin I}]\index{First Cousin problem}
@@ -12699,7 +12700,7 @@ let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be such that
 U_\iota \cap U_\kappa \cap U_{\lambda} .
 \end{aligned}
 \end{equation*}
-The covering and the functions $h_{\iota\kappa}$ are called the
+The covering and the functions $h_{\iota\kappa}$ are called
 \emph{\myindex{Cousin I data}}.
 The \emph{\myindex{solution of the Cousin I problem}}
 is a set of
@@ -12724,7 +12725,7 @@ So suppose that we have a covering $\{ U_\iota \}$ and
 in each $U_\iota$ we have a meromorphic function $g_\iota$ such that
 $g_{\iota}-g_{\kappa}$
 is holomorphic in $U_{\iota} \cap U_{\kappa}$ (or more precisely, extends to
-be holomorphic in that set).  That is, if we were in one
+be holomorphic on that set).  That is, if we were in one
 dimension, the two functions would have the same principal part.
 The solution is to find a global meromorphic function with the same
 singular behavior (principal part).
@@ -12733,7 +12734,7 @@ On $U_\iota \cap U_\kappa$, let
 \begin{equation*}
 h_{\iota\kappa} = g_\iota-g_\kappa .
 \end{equation*}
-It is easy to see that we obtain Cousin I data this way.  Suppose
+It is easy to see that we obtain Cousin I data.  Suppose
 the Cousin I problem is solvable in $U$.  Then we would find
 holomorphic $f_{\iota}$ as above.  We define a meromorphic function $f$
 on $U$
@@ -12741,7 +12742,7 @@ by defining it in each $U_\iota$ as
 \begin{equation*}
 f = g_\iota - f_\iota .
 \end{equation*}
-The function is well-defined.  Indeed, on $U_\iota$ and $U_\kappa$ the
+The function is well-defined.  Indeed, on $U_\iota \cap U_\kappa$ the
 possible definitions are
 $g_\iota - f_\iota$
 and
@@ -12789,14 +12790,15 @@ $U_2 = \{ (z,w) \in \C^2 : w \not= 0 \}$.  On $U_1 \cap U_2$, define
 h_{12}(z,w) = \frac{1}{zw} , \quad
 h_{21}(z,w) = \frac{-1}{zw} .
 \end{equation*}
-These are holomorphic functions and satisfy the conditions of being Cousin I
-data.  Suppose the problem was solvable and we have holomorphic functions
-$f_1$ and $f_2$ on $U_1$ and $U_2$ such that on $U_1 \cap U_2$ we have
+These are holomorphic functions giving Cousin I data.
+Suppose the problem was solvable and we find
+$f_1 \in \sO(U_1)$ and
+$f_2 \in \sO(U_2)$ such that on $U_1 \cap U_2$, we have
 \begin{equation*}
 f_1 -f_2 = h_{12} = \frac{1}{zw} .
 \end{equation*}
-In other words, $f_1 = \frac{1}{zw}+f_2$
-$U_1 \cap U_2$.  But that means that $zf_1$ is holomorphic in $U_2$ and
+In other words, $f_1 = \frac{1}{zw}+f_2$ on $U_1 \cap U_2$.
+But that means that $zf_1$ is holomorphic in $U_2$ and
 therefore in $U$, and thus extends to $\C^2$.  Similarly, $wf_2$ extends to a
 holomorphic function on $\C^2$.  Thus
 $zwf_1 -zwf_2$ is a holomorphic function on $\C^2$ that vanishes at the
@@ -12804,7 +12806,7 @@ origin, but $zwf_1 -zwf_2 = zw(h_{12}) \equiv 1$ on $U_1 \cap U_2$,
 which leads to a contradiction.
 \end{example}
 
-First we solve the Cousin I problem in any domain for smooth data.
+The Cousin I problem with smooth data is solvable in any domain.
 
 \begin{lemma}
 Suppose $U \subset \C^n$ is open,
@@ -12815,22 +12817,24 @@ functions $f_\iota$.
 \end{lemma}
 
 \begin{proof}
-Find a smooth partition of unity $\{ \varphi_\iota \}_{\iota \in I}$ subordinate to
-the cover $\{ U_{\iota} \}_{\iota \in I}$.  That is, $\varphi_\iota$ are
+Find a smooth partition of unity $\{ \varphi_\gamma \}_{\gamma \in \Gamma}$
+subordinate to
+the cover $\{ U_{\iota} \}_{\iota \in I}$.  That is, $\varphi_\gamma$ are
 smooth functions of $U$ valued in $[0,1]$ that add up to $1$ at every point,
-in a neighborhood of any point only finitely many $\varphi_\iota$ are
-nonzero, and each $\varphi_{\iota}$ is supported in $U_\iota$.
+in a neighborhood of any point only finitely many $\varphi_\gamma$ are
+nonzero, and each $\varphi_{\gamma}$ is supported in some $U_\kappa$,
+so denote such $\kappa \in I$ as $\kappa_\gamma$.
 For $z \in U_\iota$, let
 \begin{equation*}
-f_\iota(z) = \sum_{\kappa \in I} \varphi_\kappa(z) h_{\iota \kappa}(z) .
+f_\iota(z) = \sum_{\gamma \in \Gamma} \varphi_\gamma(z) h_{\iota \kappa_\gamma}(z) .
 \end{equation*}
-For $z \in U_\iota \cap U_\kappa$,
+For $z \in U_\iota \cap U_\lambda$,
 \begin{equation*}
 f_\iota(z)-f_\lambda(z) =
-\sum_{\kappa \in I} \varphi_\kappa(z)
-\bigl( h_{\iota \kappa}(z) - h_{\lambda \kappa}(z) \bigr)
+\sum_{\gamma \in \Gamma} \varphi_\gamma(z)
+\bigl( h_{\iota \kappa_\gamma}(z) - h_{\lambda \kappa_\gamma}(z) \bigr)
 =
-\sum_{\kappa \in I} \varphi_\kappa(z)
+\sum_{\gamma \in \Gamma} \varphi_\gamma(z)
 h_{\iota\lambda}(z)
 =
 h_{\iota\lambda}(z) .
@@ -12851,34 +12855,30 @@ Let
 $\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
 and let $h_{\iota\kappa}$ be (holomorphic) Cousin I
 data.
-Let $\varphi_\iota$ be the partition of unity again and define a smooth
-solution
-\begin{equation*}
-f_\iota(z) = \sum_{\kappa \in I} \varphi_\kappa(z) h_{\iota \kappa}(z) .
-\end{equation*}
-The functions $f_\iota$ need not be holomorphic of course, but they do solve
-the problem.  As $f_\iota-f_\kappa = h_{\iota\kappa}$ is holomorphic, we
-have $\bar{\partial}(f_\iota-f_\kappa) = 0$.  The $(0,1)$-form $\eta$ given by
+Using the lemma, find the smooth solutions $f_\iota$.
+The functions $f_\iota$ need not be holomorphic, but
+$f_\iota-f_\kappa = h_{\iota\kappa}$ are holomorphic, and so
+$\bar{\partial}f_\iota-\bar{\partial}f_\kappa = \bar{\partial}(f_\iota-f_\kappa) = 0$.  The $(0,1)$-form $\eta$ given by
 \begin{equation*}
 \eta = \bar{\partial}f_\iota
 \end{equation*}
-is therefore well defined on $U$.  Moreover, $\eta$ is
-$\bar{\partial}$-closed, so by assumption on $U$, we have that
+is therefore well-defined on $U$.  Moreover, $\eta$ is
+$\bar{\partial}$-closed, so by assumption on $U$,
 there exists a $\psi \in \sO(U)$ such that $\bar{\partial}\psi = \eta$.
-On each $U_\iota$
+On each $U_\iota$,
 \begin{equation*}
 F_\iota = f_\iota - \psi .
 \end{equation*}
-On $U_\iota \cap U_\kappa$ we have
+On $U_\iota \cap U_\kappa$, we have
 \begin{equation*}
 F_\iota - F_\kappa = f_\iota-f_\kappa = h_{\iota \kappa} ,
 \end{equation*}
-and on $U_\iota$ we have
+and on $U_\iota$, we have
 \begin{equation*}
 \bar{\partial}F_\iota = \bar{\partial}f_\iota - \bar{\partial}\psi =
 \eta-\eta  = 0.
 \end{equation*}
-Therefore, we have a solution to the Cousin I problem.
+Therefore, the $F_{\iota}$ give a solution to the Cousin I problem.
 \end{proof}
 
 \begin{cor}
@@ -12918,7 +12918,7 @@ functions such that
 U_\iota \cap U_\kappa \cap U_{\lambda} .
 \end{aligned}
 \end{equation*}
-The covering and the functions $h_{\iota\kappa}$ are called the
+The covering and the functions $h_{\iota\kappa}$ are called
 \emph{\myindex{Cousin II data}}.
 The \emph{\myindex{solution of the Cousin II problem}}
 is a set of
@@ -12928,11 +12928,11 @@ h_{\iota\kappa} = \frac{f_\iota}{f_\kappa}.
 \end{equation*}
 \end{defn}
 
-Cousin II is the analogue of the Weierstrass theorem, that is,
-finding of a function with a prescribed zero set.
+Cousin II is the analogue of the Weierstrass product theorem, that is,
+finding a function with a prescribed zero set.
 Suppose that $M \subset U$ is locally given by the vanishing of
 a single holomorphic function with a nonvanishing derivative (a complex
-submanifold of codimension 1), that is for every $p \in U$ there is a
+submanifold of codimension 1), that is for every $p \in U$, there is a
 neighborhood $U_\iota$ and a holomorphic $g_\iota$ with $dg_{\iota} \not= 0$
 such that $g_\iota^{-1}(0) = M \cap U_\iota$.
 On $U_\iota \cap U_\kappa$, let
@@ -12946,8 +12946,8 @@ Prove that $h_{\iota\kappa}$ is holomorphic and nonvanishing.
 \end{exercise}
 \end{exbox}
 
-Thus we have Cousin II data.  If the Cousin II problem is solvable, then
-we have $f_\iota$ as above.  So define a holomorphic function $f$ on $U$
+Thus we have Cousin II data.  If the Cousin II problem is solvable,
+we have $f_\iota$ as above.  Define a holomorphic function $f$ on $U$
 by defining it on each $U_\iota$ via
 \begin{equation*}
 f = \frac{g_{\iota}}{f_\iota} .
@@ -18766,18 +18766,18 @@ Suppose $U \subset \R^n$ is open and $\{ U_\iota \}_{\iota \in I}$
 is an open cover of $U$, then there exists a
 \emph{\myindex{partition of unity subordinate to the cover}}.
 That is, there exist a family
-$\{ \varphi_{\kappa} \}_{\kappa \in J}$ of
+$\{ \varphi_{\kappa} \}_{\kappa \in K}$ of
 smooth compactly supported functions $\varphi_{\kappa} \colon \R^n \to
 [0,1]$ such that:
 \begin{enumerate}[(i)]
 \item
-For each $\kappa \in J$, there is some $\iota \in I$
+For each $\kappa \in K$, there is some $\iota \in I$
 such that $\supp \varphi_\kappa \subset U_{\iota}$.
 \item
 For each point $x \in U$, there is a neighborhood on which
 all but finitely many $\varphi_\kappa$ vanish.
 \item
-For every $x \in U$ we have $\sum_{\kappa \in J} \varphi(x) = 1$.
+For every $x \in U$ we have $\sum_{\kappa \in K} \varphi(x) = 1$.
 \end{enumerate}
 \end{thm}
 
