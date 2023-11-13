@@ -11632,7 +11632,8 @@ if there exists a form $\omega$ such that
 $\bar{\partial} \omega = \eta$.  A form $\eta$ is a
 \emph{\myindex{$\bar{\partial}$-closed form}}\index{exact form}
 if $\bar{\partial} \eta = 0$.
-We then define the
+For an open set $U \subset \C^n$,
+we define the
 \emph{\myindex{Dolbeault cohomology groups}}\index{cohomology}
 (quotient of complex vector spaces)
 \begin{equation*}
@@ -11724,6 +11725,13 @@ it is sufficient to consider $p=0$,
 that is,
 $H^{(0,q)}(U) = 0$ if and only if $H^{(p,q)}(U) = 0$ for all $p$.
 \end{exercise}
+
+\begin{exercise} \label{exercise:dobeaultdisconnected}
+Suppose $U \subset \C^n$ is open.
+Show that
+$H^{(p,q)}(U) = 0$ if and only if $H^{(p,q)}(W) = 0$ for
+every connected component $W$ of $U$.
+\end{exercise}
 \end{exbox}
 
 \begin{example}
@@ -11793,7 +11801,7 @@ zero, so we do not get any contradiction.
 
 \begin{exbox}
 \begin{exercise}
-Prove that if $U \subset \C^2$ and $K \subset U$ is compact,
+Prove that if $U \subset \C^2$ is a domain and $K \subset U$ is compact,
 then $H^{(0,1)}(U \setminus K)$ is nontrivial.
 \end{exercise}
 
@@ -11812,7 +11820,8 @@ $H^{(0,1)}(H)$ is nontrivial.
 Suppose $U \subset \C^2$ is a domain such that $H^{(0,1)}(U) = 0$,
 then $U$ is a domain of holomorphy.
 Hint: Prove the contrapositive, suppose that that $U$ is not a domain of
-holomorphy and show that $H^{(0,1)}(U) \not= 0$.
+holomorphy and show that $H^{(0,1)}(U) \not= 0$ using the reasoning from
+the examples.
 \end{exercise}
 
 \begin{exercise} \label{exercise:Levinegdol}
@@ -12254,7 +12263,7 @@ is some polydisc $\Delta$ centered at $p$ such that
 $H^{(0,q)}(U \cap \Delta) \not= 0$, then $H^{(0,q)}(U) \not= 0$.
 Hint:  Find a smooth function $\varphi$ on $U \cap \Delta$ such that
 $\varphi$ is identically zero near the boundary of $U$ and identically one
-near the boundary of $\Delta$, then use the theorem.
+near the boundary of $\Delta$.  And use the theorem.
 \end{exercise}
 
 \begin{exercise}
@@ -12290,11 +12299,10 @@ We say a function $f$ defined on an open subset of $L$ is
 holomorphic
 if after this change of coordinates it is holomorphic in the
 $z_1,\ldots,z_k$ variables.
-The special case of a (complex) \emph{\myindex{affine hyperplane}}
-is when $k=n-1$, and the case of a \emph{\myindex{complex line}}
-is when $k=1$.
+If $k=n-1$, we call $L$ a (complex) \emph{\myindex{affine hyperplane}},
+and if $k=1$, we call $L$ a \emph{\myindex{complex line}}.
 
-It is easy to see that if $U \subset \C^n$ is a domain, $L$ is an affine
+It is easy to see that if $U \subset \C^n$ is open, $L$ is an affine
 subspace, and $F \in \sO(U)$, then $F|_{U \cap L}$ is holomorphic.
 It is not hard to see that being able to do the inverse may be quite
 useful in proofs by induction on dimension,
@@ -12407,7 +12415,7 @@ then, of course, this
 is just the restriction of the function.
 
 \begin{thm}
-Suppose that $U \subset \C^n$ is a domain with $H^{(p,q+1)}(U) = 0$ and
+Suppose that $U \subset \C^n$ is open with $H^{(p,q+1)}(U) = 0$ and
 $L$ is an affine hyperplane.
 Let $\psi$ be a smooth $\bar{\partial}$-closed $(p,q)$-form on
 $U \cap L$, then there exists a smooth $\bar{\partial}$-closed $(p,q)$-form
@@ -12478,7 +12486,7 @@ two hyperplanes.
 
 \begin{exbox}
 \begin{exercise}
-Suppose that $U \subset \C^n$ is a domain with $H^{(p,q+1)}(U) = 0$ and
+Suppose that $U \subset \C^n$ is open with $H^{(p,q+1)}(U) = 0$ and
 $L_1$ and $L_2$ are two affine hyperplanes such that $U \cap L_1 \cap L_2 =
 \emptyset$.
 Let $\psi_1$ be a smooth $\bar{\partial}$-closed $(p,q)$-form on
@@ -12493,13 +12501,13 @@ $\Psi|_{U \cap L_2} = \psi_2$.
 \end{exercise}
 \end{exbox}
 
-In what follows, when we talk about $U \cap L$ as a domain for a hyperplane
-$L$, we think of it as a domain in $\C^{n-1}$.  More generally, if $L$
+In what follows, when we talk about $U \cap L$ as an open set for a hyperplane
+$L$, we think of it as an open set in $\C^{n-1}$.  More generally, if $L$
 is a $k$-dimensional affine subspace, then we will treat $U \cap L$
-as a domain in $\C^{n-k}$.
+as an open set in $\C^{n-k}$.
 
 \begin{cor}
-Suppose that $U \subset \C^n$ is a domain and $L$ is an affine hyperplane.
+Suppose $U \subset \C^n$ is open and $L$ is an affine hyperplane.
 If $H^{(p,q)}(U) = 0$ and
 $H^{(p,q+1)}(U) = 0$ then $H^{(p,q)}(U \cap L) = 0$.
 \end{cor}
@@ -12527,7 +12535,7 @@ for any $(p,q)$-form, $(\bar{\partial}\Phi)|_{U \cap L} =
 We have the following immediate corollary.
 
 \begin{cor} \label{cor:dolgodown}
-Suppose that $U \subset \C^n$ is a domain
+Suppose that $U \subset \C^n$ is open
 such that $H^{(0,q)}(U) = 0$ whenever $1 \leq q \leq n-1$
 and $L$ is an affine hyperplane.
 Then $H^{(0,q)}(U \cap L) = 0$ whenever $1 \leq q \leq n-2$.
@@ -12585,8 +12593,11 @@ and hence the boundary of $U \cap L$ (in the topology of $L$)
 includes $z_0$.
 Here we use the fact that $V$ is a ball; pick an $L$ that includes the
 normal direction to the boundary of $V$ at $z_0$.
-By \corref{cor:dolgodown}, $H^{(0,q)}(U \cap L) = 0$ for $1 \leq q \leq
-n-2$.  By the induction hypothesis, $U \cap L$ is a domain of holomorphy.
+By \corref{cor:dolgodown},
+$H^{(0,q)}(U \cap L) = 0$ for $1 \leq q \leq n-2$.
+By the induction hypothesis
+(and \exerciseref{exercise:dobeaultdisconnected}),
+every component of $U \cap L$ is a domain of holomorphy.
 Since $z_0$ is in the boundary of $U \cap L$, we have a holomorphic function
 $f \in \sO(U \cap L)$ that does not extend (along $L$) through $z_0$.
 As $H^{(0,1)}(U) = 0$, we have that there exists an $F \in \sO(U)$
@@ -12617,7 +12628,7 @@ Prove the theorem.
 \begin{exercise}
 Suppose $U \subset \C^n$ is domain of holomorphy
 and $L$ is an affine subspace of dimension $k$.
-Then $U \cap L$ is a domain of holomorphy.
+Then every component of $U \cap L$ is a domain of holomorphy.
 \end{exercise}
 
 \begin{exercise}
@@ -12625,6 +12636,7 @@ Suppose $U \subset \C^n$ is domain and $k \in \N$
 is such that 
 $H^{(0,q)}(U)=0$ for all $1 \leq q \leq n-k$,
 and
+every component of
 $U \cap L$ is a domain of holomorphy for
 every affine subspace $L$ of dimension $k$.
 Prove that $U$ is a domain of holomorphy.
@@ -12767,11 +12779,11 @@ this as a proposition (the converse also holds but we do not prove it here):
 
 \begin{prop}
 Suppose $U \subset \C^n$ is open,
-$\{ U_{\iota} \}_{\iota \in I}$ an open covering of $U$, and $f_\iota$
-are meromorphic functions on each $U_\iota$ such that $f_\iota - f_\kappa$
+$\{ U_{\iota} \}_{\iota \in I}$ an open covering of $U$, and $g_\iota$
+are meromorphic functions on each $U_\iota$ such that $g_\iota - g_\kappa$
 is holomorphic on $U_\iota \cap U_\kappa$.  Suppose that the Cousin I
 problem is solvable on $U$.  Then there exists a meromorphic function $f$ on
-$U$ such that on each $U_\iota$, $f-f_\iota$ is holomorphic.
+$U$ such that on each $U_\iota$, $f-g_\iota$ is holomorphic.
 \end{prop}
 
 In one dimension, Cousin I (that is, Mittag-Leffler) is solvable for
@@ -12992,6 +13004,7 @@ For the interested reader, the needed extra cohomology condition is $H^2(U,\Z)=0
 
 \begin{exbox}
 \begin{exercise}
+\pagebreak[2]
 Suppose $U \subset \C^n$ is a domain with $H^{(0,1)}(U)=0$
 and $M \subset U$ is a complex hypersurface.
 Suppose there is a continuous function $g$ on $U$
@@ -13002,6 +13015,16 @@ neighborhood of $p$.  Prove that there exists an $f \in \sO(M)$
 such that $f^{-1}(0) = M$ and $df \not= 0$ on $M$.
 Hint: Cover with balls $U_{\iota}$ and in each ball define
 $\log\bigl(\nicefrac{f_\iota}{g}\bigr)$, then obtain a Cousin I problem.
+\end{exercise}
+
+\begin{exercise}
+\pagebreak[2]
+Let $U \subset \C$ be a domain and
+assume the Cousin II problem is solvable (it always is in $\C$).
+Prove the classical theorem of Weierstrass using Cousin II.  That is,
+given a countable set of points in $U$ and multiplicities, and assuming the
+set has no limit points in $U$, find a function $f \in \sO(U)$ that has
+zeros precisely at the given points of precisely the given multiplicities.
 \end{exercise}
 \end{exbox}
 
@@ -13912,16 +13935,17 @@ Using the formula \eqref{eq:formulaszego} compute $S_{\bB_n}$.
 
 \begin{defn}
 Let $p$ be a point in a topological space $X$.  Let $Y$ be a set and
-$U, V \subset X$ be open neighborhoods of $p$.  We say that
+$U, V \subset X$ be open neighborhoods of $p$.  Say that
 two functions $f \colon U \to Y$ and
 $g \colon V \to Y$ are equivalent if there exists a neighborhood
 $W$ of $p$ such that $f|_W = g|_W$.
-
-An equivalence class of functions defined in a neighborhood of $p$
+An equivalence class of functions under this relation defined in neighborhoods of $p$
 is called a \emph{\myindex{germ of a function}}.
 \glsadd{not:germf}%
-Usually it is denoted by $(f,p)$, but we simply say $f$ when
+The germ is denoted by $(f,p)$, but we may say $f$ when
 the context is clear.
+We usually restrict the functions to a certain category:
+smooth, holomorphic, etc.
 \end{defn}
 
 The set of germs of complex-valued functions forms a
@@ -13947,9 +13971,9 @@ and that the set of germs at $p$ of functions from $\sF$ is a commutative
 ring.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:contgermsnothausdorf}
 Let $X=Y=\R$ and $p=0$.  Consider the ring of germs of
-continuous functions (or smooth functions if you wish).
+continuous functions (or smooth functions).
 Show that for every continuous $f \colon \R \to \R$ and every neighborhood
 $W$ of $0$, there exists a $g \colon \R \to \R$
 such that $(f,0) = (g,0)$, but $g|_W \not= f|_W$.
@@ -13957,10 +13981,11 @@ such that $(f,0) = (g,0)$, but $g|_W \not= f|_W$.
 \end{exbox}
 
 Germs are particularly useful for holomorphic functions because of the identity
-theorem.  In particular, the behavior of the exercise above does not happen
+theorem.  In particular, the behavior of
+\exerciseref{exercise:contgermsnothausdorf} does not happen
 for holomorphic functions.  Furthermore, for holomorphic functions, the
 ring of germs is the same as the ring of convergent power series, see
-exercise below.  No similar result is true for only smooth functions.
+exercise below.  No similar result is true for smooth functions.
 
 \begin{defn}
 Let $p \in \C^n$.
@@ -14006,7 +14031,7 @@ let $W$ be the connected component of $U \cap V$
 that contains $p$.  Prove that $f|_W = g|_W$.
 \item
 Find a germ $(f,p) \in \sO_p$, such that for
-every representative $f \colon U \to \C$ we can
+every representative $f \colon U \to \C$, we can
 find another representative of $g \colon V \to \C$
 of that same germ such that $g|_{U \cap V} \not= f|_{U \cap V}$.
 Hint: $n=1$ is sufficient.
