@@ -12819,7 +12819,7 @@ origin, but $zwf_1 -zwf_2 = zw(h_{12}) \equiv 1$ on $U_1 \cap U_2$,
 which leads to a contradiction.
 \end{example}
 
-The Cousin I problem with smooth data is solvable in any domain.
+The Cousin I problem with smooth data is smoothly solvable in any domain.
 
 \begin{lemma}
 Suppose $U \subset \C^n$ is open,
@@ -12841,6 +12841,13 @@ For $z \in U_\iota$, let
 \begin{equation*}
 f_\iota(z) = \sum_{\gamma \in \Gamma} \varphi_\gamma(z) h_{\iota \kappa_\gamma}(z) .
 \end{equation*}
+Note why this is well-defined and smooth:
+For $z \in U_\iota$, given a $\gamma$ and hence $\kappa_\gamma$,
+either $\varphi_\gamma=0$ in some neighborhood of $z$
+or $z \in U_{\kappa_\gamma} \cap U_\iota$.
+So each term can be interpretted as a smooth function on
+$U_\iota$, and in a neighborhood of $z$ we are adding at most finitely
+smooth functions, so $f_\iota$ is smooth in $U_\iota$.
 For $z \in U_\iota \cap U_\lambda$,
 \begin{equation*}
 f_\iota(z)-f_\lambda(z) =
