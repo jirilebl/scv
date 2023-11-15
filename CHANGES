@@ -118,7 +118,11 @@ proof little bit to make it clearer.
 <li> In the proof of Cartan-Thullen, don't use strict inequalities
 which aren't needed
 <li>Example 3.1.8, remove the square, it's not necessary
+<li> Be more precise in exercise 4.1.3 to mention that the wanted function
+is continuous up to the boundary (so that it has boundary values).
 <li>Rename 4.2 to be a bit more descriptive.
+<li> Ask a little bit more in 4.2.2, that only the second form allows the differentiation
+under the integral.
 <li> New part b) to Exercise 5.2.3.
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.

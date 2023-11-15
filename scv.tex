@@ -10983,6 +10983,7 @@ $\Delta_r(z) \subset
 Stokes now applies on $U \setminus \Delta_r(z)$.
 
 \begin{myfig}
+%NOTE: Same as the figure for fig:usingstokes
 \subimport*{figures/}{cauchy-pompeiu.pdf_t}
 \caption{Proof of Cauchy--Pompeiu.\label{fig:cauchy-pompeiu}}
 \end{myfig}
@@ -11044,7 +11045,7 @@ that
 $\int_{U} \frac{\frac{\partial f}{\partial \bar{z}}(\zeta)}{\zeta-z} \,
 dA(\zeta) =
 0$ for every $z \in \partial U$.  Prove that $f|_{\partial U}$ are the boundary
-values of a holomorphic function in $U$.
+values of a function continuous on $\widebar{U}$ and holomorphic in $U$.
 \item
 Given arbitrary $\epsilon > 0$, find a $C^1$ function $f$ on the closed unit disc
 $\overline{\D}$,
@@ -11259,8 +11260,9 @@ g_k(z) .
 
 \begin{exbox}
 \begin{exercise}
-Show that we were allowed to differentiate under the integral in the
-computation above.
+Show that we were allowed to differentiate $\psi$
+under the integral in the computation above, but only in the second form 
+of the integral.
 \end{exercise}
 \end{exbox}
 
@@ -11904,7 +11906,7 @@ $\frac{\partial \psi}{\partial \bar{z}} = g$.
 
 \begin{proof}[Proof of the lemma]
 Fix $z \in U$ for a moment and take a small disc $\Delta_r(z)$ such that
-$\overline{\Delta_r(z)} \subset U$.  Then via Stokes,
+$\overline{\Delta_r(z)} \subset U$, see \figureref{fig:usingstokes}.  Then via Stokes,
 \begin{multline*}
 \int_{\partial U}
 g(\zeta) \log \sabs{\zeta-z}^2 d \bar{\zeta}
@@ -11929,7 +11931,7 @@ Note that both $\log \sabs{\zeta-z}^2$ and $\frac{1}{\zeta-z}$ are integrable
 over $U$ with respect to the area measure.
 As $r \to 0$, the last term above goes to $\int_U \frac{g(\zeta)}{\zeta-z}
 d\zeta \wedge d\bar{\zeta}$, which is $2\pi i \psi(z)$.
-Next, the function $g$ is bounded on $\overline{U}$, by say $M$, so
+Next, the function $g$ is bounded on $\widebar{U}$, by say $M$, so
 \begin{equation*}
 \abs{
 \int_{\partial \Delta_r(z)}
@@ -11957,6 +11959,12 @@ g(\zeta) \log \sabs{\zeta-z}^2 d \bar{\zeta}
 \log \sabs{\zeta-z}^2
 d \zeta \wedge d \bar{\zeta} .
 \end{equation*}
+\begin{myfig}
+%NOTE: Same as the figure for proof of Cauchy--Pompeiu
+\subimport*{figures/}{cauchy-pompeiu.pdf_t}
+\caption{Using Stokes.\label{fig:usingstokes}}
+\end{myfig}
+
 Taking partial derivatives (in $\Re z$ and $\Im z$) still leaves the
 integrands integrable, and hence we can pass them under the integral sign.
 In particular, the function $\psi$ is $C^1$ and we can
@@ -12179,9 +12187,16 @@ where $\theta$ is undefined.  The fact that
 $\bar{\partial}^2=0$ ensures that $\bar{\partial}\omega_{k+1} =
 \bar{\partial} \sigma = \eta$ on $\Delta_{k+3}$.  On $\Delta_k$, we have
 $\omega_{k+1} = \sigma + \bar{\partial}\theta = \sigma+\omega_k-\sigma=\omega_k$.
-Thus the sequence is defined.
+See \figureref{fig:discsdolbeault}.
+The sequence $\{ \omega_k \}$ is defined.
 We define $\omega$ on $\Delta$ by simply letting $\omega =
 \omega_k$ on $\Delta_k$.
+
+\begin{myfig}
+\subimport*{figures/}{discsdolbeault.pdf_t}
+\caption{Diagram for defining $\omega_{k+1}=\sigma + \bar{\partial}(\varphi \theta)$.
+The dotted line gives $\supp \varphi$. \label{fig:discsdolbeault}}
+\end{myfig}
 
 Now assume $q=1$.  By \exerciseref{exercise:zeropsufficient}, it is enough
 to consider $p=0$ to simplify notation.  That is, we are now looking for
@@ -12312,8 +12327,8 @@ and finding a holomorphic function on $U$ whose restriction is $f$.
 If $f$ is just smooth, then finding such a smooth extension is not
 difficult no matter what $U$ looks like, however, in the holomorphic
 category it is not that easy (or even always possible).
-A holomorphic extension from a hyperplane is possible for domains of holomorphy,
-in particular, if $H^{(0,1)}(U)=0$.
+A holomorphic extension from an affine subspace is possible for domains of
+holomorphy, in fact, it is a defining characteristic of such domains.
 
 \begin{example} \label{example:noextend}
 Suppose $U = \C^2 \setminus \{ 0 \}$ and $L = \{ (z,w) \in \C^2 : w = 0 \}$.
@@ -12423,7 +12438,7 @@ $U \cap L$, then there exists a smooth $\bar{\partial}$-closed $(p,q)$-form
 $\Psi$ on $U$ such that $\Psi|_{U \cap L} = \psi$.
 \end{thm}
 
-So for the holomorphic function extension problem from a hyperplane stated above,
+So to extend holomorphic functions from a hyperplane,
 we need $H^{(0,1)}(U) = 0$.
 
 \begin{proof}
@@ -12593,7 +12608,8 @@ the boundary of $V \cap L$ (in the topology of $L$) includes $z_0$,
 and hence the boundary of $U \cap L$ (in the topology of $L$)
 includes $z_0$.
 Here we use the fact that $V$ is a ball; pick an $L$ that includes the
-normal direction to the boundary of $V$ at $z_0$.
+normal direction to the boundary of $V$ at $z_0$.  See
+\figureref{fig:extendingdohVW}.
 By \corref{cor:dolgodown},
 $H^{(0,q)}(U \cap L) = 0$ for $1 \leq q \leq n-2$.
 By the induction hypothesis
@@ -12605,6 +12621,11 @@ As $H^{(0,1)}(U) = 0$, we have that there exists an $F \in \sO(U)$
 such that $F|_{U \cap L} = f$.  If there existed a $G \in \sO(W)$ that
 agreed with $F$ on $V$, then $G|_{W \cap L}$ would be an extension of $f$
 through $z_0$, which we know is impossible, so no such $G$ exists.
+\begin{myfig}
+\subimport*{figures/}{extendingdohVW.pdf_t}
+\caption{Location of $z_0$ and the placement of $V$ and $L$ with
+respect to $U$ and $W$.\label{fig:extendingdohVW}}
+\end{myfig}
 \end{proof}
 
 If you think about what we really needed in the proof, it was not the cohomology
@@ -12728,6 +12749,25 @@ to be distinct,
 as the first condition means that $h_{\iota\iota} = 0$ for all $\iota$
 otherwise, and the second condition then just reduces to the first if two
 of the indices are equal.
+
+\begin{exbox}
+\begin{exercise}
+The triple sum is enough to force the similar condition on 4 or more
+summands, but the double sum is not enough.  That is,
+\begin{exparts}
+\item
+Find an example
+where the first condition $h_{\iota\kappa}+h_{\kappa\iota} = 0$ is
+satisfied but the second condition
+$h_{\iota\kappa}+h_{\kappa\lambda}+h_{\lambda\iota} = 0$ is not.
+\item
+Show that if both conditions are satisfied (we have valid Cousin I data),
+then 
+$h_{\iota\kappa}+h_{\kappa\lambda}+h_{\lambda\mu} + h_{\mu\iota} = 0$,
+and similarly for any number of terms.
+\end{exparts}
+\end{exercise}
+\end{exbox}
 
 To see how Cousin I relates to Mittag-Leffler, note that Mittag-Leffler
 could be stated by giving meromorphic functions locally and then trying
