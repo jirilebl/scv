@@ -11782,7 +11782,8 @@ in particular, near $0$, which contradicts the fact that $g(0,w) =
 \begin{example}
 It is not simply the topology (as we know already) that determines the
 $H^{(p,q)}$ groups.  The previous example still works in $\C^2 \setminus
-\R^2 = \{ z \in \C^2 : \Im z \not= 0 \text{ or } \Im w \not= 0 \}$.
+\R^2 = \bigl\{ (z,w) \in \C^2 :
+\Im z \not= 0 \text{ or } \Im w \not= 0 \bigr\}$.
 That is, the function $g$ from the previous example can be defined in
 $\C^2 \setminus \R^2$ and hence extends to $\C^2$
 (see \exerciseref{exercise:C2minusR2}),
@@ -11937,9 +11938,9 @@ g(\zeta) \log \sabs{\zeta-z}^2 d \bar{\zeta}
 \leq
 \int_{\partial \Delta_r(z)}
 M
-\sabs{\log (r^2)} \sabs{d \bar{\zeta}}
+\abs{\log (r^2)} \sabs{d \bar{\zeta}}
 =
-2\pi r M \sabs{\log(r^2)}
+2\pi r M \abs{\log(r^2)}
 \underset{\text{as } r \to 0}{\to} 0 .
 \end{equation*}
 Thus, taking the limit we get
@@ -12236,7 +12237,7 @@ Prove the theorem also holds for a ball, say the unit ball $\bB_n \subset
 \end{exercise}
 
 \begin{exercise}
-For any disc $D \subset \C$ let $D^*$ denote the punctured disc
+For any disc $D \subset \C$, let $D^*$ denote the punctured disc
 $D^* = D \setminus \{ a \}$ where $a$ is the center.
 Prove that the theorem also holds for
 $U = D_1 \times \cdots \times D_k \times D_{k+1}^* \times
@@ -12854,8 +12855,9 @@ h_{\iota\lambda}(z) .
 \end{equation*}
 \end{proof}
 
-The first Cousin is solvable on any domain of holomorphy and in general
-on any domain where the first Dolbeault cohomology group vanishes.
+The (holomorphic) Cousin I problem
+is solvable on any domain of holomorphy and in general
+on any domain with a trivial first Dolbeault cohomology group.
 
 \begin{thm}
 Suppose $U \subset \C^n$ is a domain with $H^{(0,1)}(U)=0$.
@@ -12966,15 +12968,15 @@ f = \frac{g_{\iota}}{f_\iota} .
 \end{equation*}
 Similarly as before, this gives a well-defined function, and clearly it
 vanishes precisely on $M$.  Moreover, the derivative is nonzero on $M$.
-We state this result as a theorem.
+We state this result as a proposition.
 
-\begin{thm}
+\begin{prop}
 Suppose $U \subset \C^n$ is a domain on which the Cousin II problem is
 solvable and $M \subset U$ is a complex hypersurface (locally the zero set
 of a holomorphic function with nonvanishing derivative).
 Then there exists an $f \in \sO(U)$ such that $f^{-1}(0) = M$ and
 $df \not=0$ on~$M$.
-\end{thm}
+\end{prop}
 
 The second Cousin problem is not always solvable on every domain of
 holomorphy like the Cousin I problem.  An extra condition on the topology of
