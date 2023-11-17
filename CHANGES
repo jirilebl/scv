@@ -1,7 +1,5 @@
 Since edition 3
 
-FIXME: Some are WORK IN PROGRESS
-
 <li> New short appendix on some analysis bits including some
 useful measure theory results.
 <li> New section 4.4 on the solvability of the d-bar problem in the polydisc.
@@ -124,6 +122,8 @@ is continuous up to the boundary (so that it has boundary values).
 <li> Ask a little bit more in 4.2.2, that only the second form allows the differentiation
 under the integral.
 <li> New part b) to Exercise 5.2.3.
+<li> Define "unit" in 6.2
+<li> Add Figure 6.2 to Exercise 6.2.4 (the square root example).
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
 <li> In appendix B, introduce and use winding numbers and describe how things

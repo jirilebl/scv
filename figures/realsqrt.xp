@@ -1,0 +1,56 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+P F(double x, double y)
+{
+ 	return P(x, y, 0.8*sqrt(sqrt(x*x + y*y))*cos(0.5*atan2(y,x)));
+}
+
+P FN(double x, double y)
+{
+ 	return P(x, y, -0.8*sqrt(sqrt(x*x + y*y))*cos(0.5*atan2(y,x)));
+}
+
+domain R1(P(-1, -1), P(1,1), mesh(20,20), mesh(40,40));
+
+int main()
+{
+  picture(P(-1.5,-1.5), P(1.5,1.2), "2.5x1.9in");
+
+  begin();
+  //border();
+
+  camera.at(P(5,-10,4));
+
+  plain ();
+  fill(White());
+  pen(Black(0.5));
+  surface(FN, R1); // rectangular
+
+  nofill();
+  pen(Black(0.5));
+  grid(P(-1, -1, 0), P(1, 1, 0), 4, 4);
+
+  pen(Black());
+  line(P(-1, 0, 0), P(1, 0, 0));
+  line(P(0, -1, 0), P(0, 1, 0));
+
+  //arrow(P(0,0,0), P(1.1,0,0));
+  //label(P(1.1,0), P(-4,-6), "$x$", l); 
+
+  //arrow(P(0,0,0), P(0,1.1,0));
+  //label(P(0,1.1), P( 0,2), "$y$", t);
+
+  plain ();
+  pen(Black());
+  fill(Black(0.4));
+  surface(F, R1); // rectangular
+
+  //arrow(P(0, 0, 0), P(0,0,1.0));
+
+  //label(P(0,0,5.0), P(0,4), "$z$", t);
+
+  tikz_format();
+  end();
+}

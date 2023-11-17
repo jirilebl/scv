@@ -12,6 +12,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{graphicx}
+\usepackage{graphbox}
 \usepackage{xcolor}
 \usepackage{chngcntr}
 \usepackage{titlesec}
@@ -9909,7 +9910,7 @@ p_\ell(z) \to f(z)
 \end{thm}
 
 A key point is that $K$ cannot be chosen arbitrarily, it depends on $p$ and $M$.
-On the other hand it does not depend on $f$.  Given $M$ and $p \in M$
+On the other hand, $K$ does not depend on $f$.  Given $M$ and $p \in M$
 there is a $K$ such that \emph{every} CR function on $M$ is approximated
 uniformly on $K$ by holomorphic polynomials.  The theorem applies in one
 dimension, although in that case the theorem of Mergelyan
@@ -14048,7 +14049,7 @@ ${}_n\sO_p = \sO_p$ as the ring of germs at $p$ of holomorphic functions.
 The ring of germs $\sO_p$ has many nice properties,
 and it is generally a ``nicer'' ring than the ring $\sO(U)$ for
 some open $U$, and so it is easier to work with if we are interested
-in local properties.
+in local properties and not the geometry of $U$.
 
 \begin{exbox}
 \begin{exercise}
@@ -14097,10 +14098,10 @@ Show that $\sO_p$ is isomorphic to the ring of convergent power series.
 
 \begin{defn}
 Let $p$ be a point in a topological space $X$.
-We say that sets $A, B \subset X$ are equivalent
+Say that sets $A, B \subset X$ are equivalent
 if there exists a neighborhood $W$ of $p$
 such that $A \cap W = B \cap W$.
-An equivalence class of sets
+An equivalence class of sets under this relation
 is called a \emph{\myindex{germ of a set}} at $p$.
 \glsadd{not:germA}%
 It is denoted by $(A,p)$, but we may write $A$ when
@@ -14112,7 +14113,7 @@ that is, there exist representatives $X$ and $Y$, and a neighborhood $W$
 of $p$ such that $X \cap W \subset Y \cap W$.
 Similarly,
 if $(X,p)$, $(Y,p)$ are germs and $X$, $Y$
-are any representatives of these germs, then
+are some representatives of these germs, then
 the intersection $(X,p) \cap (Y,p)$,
 is the germ $(X \cap Y,p)$ and the union
 $(X,p) \cup (Y,p)$ is the germ $(X \cup Y,p)$.
@@ -14174,13 +14175,15 @@ If $f \equiv 0$, define $\ord_p f = \infty$.
 We call the number $\ord_p f$ the \emph{\myindex{order of vanishing}} of $f$ at $p$.
 \end{defn}
 
-In other words, the order of vanishing of $f$ at $p$ is $k$, whenever all
+In other words, the order of vanishing of $f$ at $p$ is $k$ whenever all
 partial derivatives of order less than $k$ vanish at $p$, and there exists
 at least one derivative of order $k$ that does not vanish at $p$.
 
 In one complex variable, a holomorphic function $f$ with $\ord_0 f = k$
 can be written
-(locally) as $f(z) = z^k u(z)$ for a nonvanishing $u$.
+(locally) as $f(z) = z^k u(z)$ for a nonvanishing holomorphic $u$.
+Such a $u$ is a \emph{\myindex{unit}} in the ring $\sO_0$, that is,
+an element with a multiplicative inverse.
 In several variables, there is a similar theorem, or in fact a pair of theorems,
 the so-called Weierstrass preparation and
 division theorems.
@@ -14189,7 +14192,7 @@ division theorems.
 Let $U \subset \C^{n-1}$ be open, and let $z' \in \C^{n-1}$ denote the
 coordinates.
 \glsadd{not:polyinOU}%
-Suppose a polynomial $P \in \sO(U)[z_n]$ is monic of degree $k \geq 0$, that is,
+Suppose $P \in \sO(U)[z_n]$ is a monic polynomial of degree $k \geq 0$,
 \begin{equation*}
 P(z',z_n) = z_n^k + \sum_{\ell=0}^{k-1} c_\ell(z') \, z_n^\ell ,
 \end{equation*}
@@ -14243,7 +14246,7 @@ of $f$,
 there is a small polydisc $V = V' \times D$ such that
 $\widebar{V} \subset U$ and $f$ is not zero on
 $V' \times \partial D$.  We will consider the zeros of
-$z_n \mapsto f(z',z_n)$ for $z'$ near zero.  See \figureref{fig:wprepdiv}.
+$z_n \mapsto f(z',z_n)$ for $z' \in V'$.  See \figureref{fig:wprepdiv}.
 
 \begin{myfig}
 \subimport*{figures/}{wprepdiv.pdf_t}
@@ -14278,7 +14281,7 @@ P(z',z_n)
 z_n^k + c_{k-1}(z') \, z_n^{k-1} + \cdots + c_0 (z') .
 \end{equation*}
 For a fixed $z'$, $P$ is uniquely defined as the ordering of zeros does not
-matter in its definition (see exercise below).  It is
+matter in its definition (see exercises below).  It is
 clear that
 $u$ and $P$ are unique if they exist (that is, if they exist as holomorphic functions).
 
@@ -14322,7 +14325,8 @@ s_m(z') =
 \end{equation*}
 The function $s_m$ is clearly continuous, and if we
 differentiate under the integral
-with $\frac{\partial}{\partial\bar{z}_1}, \ldots, \frac{\partial}{\partial\bar{z}_n}$
+with $\frac{\partial}{\partial\bar{z}_1}, \ldots,
+\frac{\partial}{\partial\bar{z}_{n-1}}$
 we find that $s_m$
 is holomorphic.
 
@@ -14346,7 +14350,8 @@ Differentiating under the integral shows it is also holomorphic in $z'$.
 \end{proof}
 
 \begin{example} \label{sqrt:example}
-A useful example to keep in mind is $f(z_1,z_2) = z_2^2 - z_1$,
+A useful example to keep in mind is to consider the zero set of
+$f(z_1,z_2) = z_2^2 - z_1$,
 a Weierstrass polynomial in $z_2$ of degree $k=2$.  So $z' = z_1$.
 For all $z_1$ except the origin there are two zeros, $\pm \sqrt{z_1}$.
 Call one of them $\alpha_1(z_1)$ and one of them $\alpha_2(z_1)$.  Recall
@@ -14354,9 +14359,20 @@ there is no continuous choice of a square root that works for all $z_1$,
 so no matter how you choose, $\alpha_1$ and $\alpha_2$ will not be continuous.
 At the origin there is only one zero of order two,
 so $\alpha_1(0) = \alpha_2(0) = 0$.
-On the other hand the
+On the other hand, the
 symmetric functions $c_1(z_1) = - \alpha_1(z_1) - \alpha_2(z_1) = 0$
-and $c_0(z_1') = \alpha_1(z_1)\alpha_2(z_1) = -z_1$ are holomorphic.
+and $c_0(z_1) = \alpha_1(z_1)\alpha_2(z_1) = -z_1$ are holomorphic.
+See \figureref{fig:sqrt}.
+
+\begin{myfig}
+\includegraphics[align=c,width=2.5in]{figures/realsqrt.pdf}
+\qquad
+\includegraphics[align=c,width=2.5in]{figures/imagsqrt.pdf}
+\caption{Graphs of the real and imaginary parts of both branches
+$\pm\sqrt{z_1}$.  One possible choice of branch $\alpha_1(z_1)$ is drawn darker, note the
+discontinuity on the right.  Also note
+that the surface $z_2^2-z_1=0$ does not in fact cross itself in $\C^2$.\label{fig:sqrt}}
+\end{myfig}
 
 The $k$ depends on the coordinates chosen.  If we do a
 linear change of coordinates and consider $g(z_1,z_2) = -f(z_2,z_1)$,
@@ -15146,7 +15162,7 @@ X$.''  We get a slightly different concept, and $X$ is said to be a
 some neighborhood of $X$, but it is not necessarily closed in $U$.  As a
 simple example, the set
 $X = \bigl\{ z \in \C^2 : z_1 = 0, \abs{z_2} < 1 \bigr\}$ is a
-local variety, but not a subvariety of $\C^2$.  On the other hand $X$
+local variety, but not a subvariety of $\C^2$.  On the other hand, $X$
 is a subvariety of the unit ball $\bigl\{ z \in \C^2 : \norm{z} < 1 \bigr\}$.
 
 Note that $\sF$ depends on $p$ and near each point may have a different set of
@@ -18359,7 +18375,7 @@ a_k x^{\deg(f_{k+1})-\deg(f_k)} f_k .
 \end{equation*}
 The polynomial $g$ has the same degree as $f_{k+1}$,
 and in fact it also has the same leading term,
-$c_{k+1}$.  On the other hand $g \in (f_1,\ldots,f_{k})$ while
+$c_{k+1}$.  On the other hand, $g \in (f_1,\ldots,f_{k})$ while
 $f_{k+1} \notin (f_1,\ldots,f_k)$ by construction.  The polynomial
 $g-f_{k+1}$ is also not in
 $(f_1,\ldots,f_k)$, but as the leading terms canceled,
