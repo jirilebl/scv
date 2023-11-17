@@ -122,6 +122,9 @@ is continuous up to the boundary (so that it has boundary values).
 <li> Ask a little bit more in 4.2.2, that only the second form allows the differentiation
 under the integral.
 <li> New part b) to Exercise 5.2.3.
+<li> After definition 6.1.3, use A and B for the sets not X and Y, and also
+mention set complement for germs.  So ask about complement in Exercise
+6.1.7.
 <li> Define "unit" in 6.2
 <li> Add Figure 6.2 to Exercise 6.2.4 (the square root example).
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving

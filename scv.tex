@@ -13043,11 +13043,11 @@ $g_{\iota\kappa}+g_{\kappa\iota} = 0$.  For the triple sum
 we get
 \begin{equation*}
 g_{\iota\kappa}+g_{\kappa\lambda}+g_{\lambda\iota} = 2\pi i
-k_{\iota\kappa\lambda}
+m_{\iota\kappa\lambda}
 \end{equation*}
-for some integer $k_{\iota\kappa\lambda}$.
+for some integer $m_{\iota\kappa\lambda}$.
 It is not always possible to pick the branches in
-such a way to make $k_{\iota\kappa\lambda}=0$ for all indices.
+such a way to make $m_{\iota\kappa\lambda}=0$ for all indices.
 If it were possible, we could apply the
 solution to the Cousin I data.
 This question is just a question of
@@ -14108,20 +14108,21 @@ It is denoted by $(A,p)$, but we may write $A$ when
 the context is clear.
 \end{defn}
 
-The concept of $(X,p) \subset (Y,p)$ is defined in an obvious manner,
-that is, there exist representatives $X$ and $Y$, and a neighborhood $W$
-of $p$ such that $X \cap W \subset Y \cap W$.
+The concept of $(A,p) \subset (B,p)$ is defined in an obvious manner,
+that is, there exist representatives $A$ and $B$, and a neighborhood $W$
+of $p$ such that $A \cap W \subset B \cap W$.
 Similarly,
-if $(X,p)$, $(Y,p)$ are germs and $X$, $Y$
+if $(A,p)$, $(B,p)$ are germs and $A$, $B$
 are some representatives of these germs, then
-the intersection $(X,p) \cap (Y,p)$,
-is the germ $(X \cap Y,p)$ and the union
-$(X,p) \cup (Y,p)$ is the germ $(X \cup Y,p)$.
+the intersection $(A,p) \cap (B,p)$
+is the germ $(A \cap B,p)$, the union
+$(A,p) \cup (B,p)$ is the germ $(A \cup B,p)$,
+and the complement $(A,p)^c$ is the germ $(A^c,p)$.
 
 \begin{exbox}
 \begin{exercise}
 Check that the definition of
-subset, union, and intersection of germs
+subset, union, intersection, and complement of germs
 of sets
 is well-defined.
 \end{exercise}
@@ -14189,19 +14190,19 @@ the so-called Weierstrass preparation and
 division theorems.
 
 \begin{defn}
-Let $U \subset \C^{n-1}$ be open, and let $z' \in \C^{n-1}$ denote the
+Let $U \subset \C^{n-1}$ be open, $0 \in U$, and let $z' \in \C^{n-1}$ denote the
 coordinates.
 \glsadd{not:polyinOU}%
 Suppose $P \in \sO(U)[z_n]$ is a monic polynomial of degree $k \geq 0$,
 \begin{equation*}
 P(z',z_n) = z_n^k + \sum_{\ell=0}^{k-1} c_\ell(z') \, z_n^\ell ,
 \end{equation*}
-where $c_\ell$ are holomorphic functions defined on $U$, such that
+where $c_\ell$ are holomorphic functions defined on $U$ such that
 $c_\ell(0) = 0$ for all $\ell$.  Then $P$ is
 called a \emph{\myindex{Weierstrass polynomial}} of degree $k$.
 \glsadd{not:polyinO0}%
 If the $c_\ell$ are germs in $\sO_0 = {}_{n-1}\sO_0$, then $P \in \sO_0[z_n]$ and
-$P$ is a \emph{\myindex{germ of a Weierstrass polynomial}}.
+$P$ is called a \emph{\myindex{germ of a Weierstrass polynomial}}.
 \end{defn}
 
 The definition (and the theorem that follows) still holds for $n=1$.
@@ -14628,7 +14629,7 @@ f(z,w) = \underbrace{\bigl( ze^w \bigr)}_{q} \underbrace{\bigl( w^2 + z^3 \bigr)
 \underbrace{z w + e^z}_{r} .
 \end{equation*}
 Notice that $r$ is a polynomial of degree $1$ in $w$, but it is neither monic,
-nor do coefficients vanish at $0$.
+nor do the coefficients vanish at $0$.
 
 \begin{exbox}
 \begin{exercise}
