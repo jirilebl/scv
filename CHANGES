@@ -130,6 +130,13 @@ mention set complement for germs.  So ask about complement in Exercise
 <li> Reword the proof of Weierstrass preparation theorem somewhat to be
 clearer, and add power sum to the index.
 <li> Add Figure 6.3 to Exercise 6.2.4 (the square root example).
+<li> Mention that the formulas relating the symmetric functions and power
+sums are called the Newton identities or Girard-Newton formulas.
+<li> After the Weierstrass preparation theorem when we remark it is a generalization of
+the implicit function theorem, say it is a k-valued solution rather than
+k solutions, as that could be misinterpreted.
+<li> Before the Weierstrass division theorem, give the one-variable version
+of it.
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
 <li> In appendix B, introduce and use winding numbers and describe how things

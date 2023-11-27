@@ -14252,7 +14252,9 @@ We will consider the zeros of
 $z_n \mapsto f(z',z_n)$ for $z' \in V'$.  See \figureref{fig:wprepdiv}.
 \begin{myfig}
 \subimport*{figures/}{wpreppoly.pdf_t}
-\caption{Setting up the neighborhood $V$.\label{fig:wpreppoly}}
+\caption{Setting up the neighborhood $V$, the two discs in
+\figureref{fig:wprepdiv} are the vertical thick black line and the
+thin dashed line.\label{fig:wpreppoly}}
 \end{myfig}
 \begin{myfig}
 \subimport*{figures/}{wprepdiv.pdf_t}
@@ -14288,8 +14290,12 @@ P(z',z_n)
 z_n^k + c_{k-1}(z') \, z_n^{k-1} + \cdots + c_0 (z') .
 \end{equation*}
 For a fixed $z'$, $P$ (and thus the coefficients $c_0,\ldots,c_{k-1}$)
-is uniquely defined as the ordering of zeros does not
-The uniqueness part of the theorem follows (see exercise below).
+is uniquely defined as its definition is independent of the ordering of the
+zeros.
+That $c_j(0) = 0$ for all $j$ follows as $\alpha_\ell(0)=0$ for all $\ell$.
+As the above is the unique way to define a monic polynomial with these zeros
+(\exerciseref{exercise:monicpolyunique}),
+the uniqueness part of the theorem follows.
 We need to show that the coefficients are holomorphic functions on $V'$,
 and that $u$ is a holomorphic function on $V$.
 
@@ -14302,7 +14308,7 @@ $c_\ell$ are
 the \emph{elementary symmetric functions}
 of $\alpha_1,\ldots,\alpha_k$ (see below).  A standard
 theorem in algebra
-(see \exerciseref{exercise:powersums})
+(Newton's identities, see \exerciseref{exercise:powersums})
 says that the elementary symmetric functions are
 polynomials in the so-called \emph{\myindex{power sum}} functions
 in the $\alpha_\ell$s:
@@ -14337,9 +14343,11 @@ differentiate under the integral
 with $\frac{\partial}{\partial\bar{z}_1}, \ldots,
 \frac{\partial}{\partial\bar{z}_{n-1}}$
 we find that $s_m$
-is holomorphic.
+is holomorphic.  Thus $c_0,\ldots,c_{k-1}$ are holomorphic, and
+so $P$ is a Weierstrass polynomial.
 
-Finally, we wish to show that $P$ divides $f$ as claimed.
+Finally, we wish to show that $P$ divides $f$ as claimed, that is,
+that $u$ is holomorphic.
 For each fixed $z'$, one variable theory says that
 $z_n \mapsto \frac{f(z',z_n)}{P(z',z_n)}$ has only removable singularities,
 and in fact, it has no zeros as we defined $P$
@@ -14379,15 +14387,15 @@ See \figureref{fig:sqrt}.
 \includegraphics[align=c,width=3.0in]{figures/imagsqrt.pdf}
 \caption{Graphs of the real and imaginary parts of both branches
 $\pm\sqrt{z_1}$.  A possible choice of branch $\alpha_1(z_1)$ is drawn darker; note the
-discontinuity of its imaginary part.  Also note
-that the surface $z_2^2-z_1=0$ does not in fact cross itself in $\C^2$.\label{fig:sqrt}}
+discontinuity of its imaginary part.
+The surface $z_2^2-z_1=0$ does not cross itself in $\C^2$,
+we just lack the dimensions to see it.\label{fig:sqrt}}
 \end{myfig}
 
-The $k$ depends on the coordinates chosen.  If we do a
-linear change of coordinates and consider $g(z_1,z_2) = -f(z_2,z_1)$,
-then $g(z_1,z_2) = z_2 - z_1^2$,
+The $k$ depends on the coordinates chosen.
+Consider $g(z_1,z_2) = -f(z_2,z_1) = z_2-z_1^2$,
 which is a Weierstrass polynomial in $z_2$ of degree $k=1$.
-After the change, there is only one zero,
+In these coordinates, there is only one zero for each $z'$,
 $\alpha_1(z_1) = z_1^2$, and so $c_0(z_1) =
 -z_1^2$.
 \end{example}
@@ -14435,10 +14443,17 @@ as a polynomial in the power sums:
 \bigl(\alpha_1^2 + \alpha_2^2\bigr)
 \right) .
 \end{equation*}
+In general, as we said we can write any $\sigma_\ell$ in terms of the power
+sums of the $\alpha$s.  The formulas for this are called the
+\emph{\myindex{Newton's identities}} or \emph{\myindex{Girard--Newton formulas}},
+although we will avoid writing these down explicitly, and we leave finding
+them (or just proving that they exist) as an exercise.
 
 \begin{exbox}
 \begin{exercise} \label{exercise:powersums}
 Show that elementary symmetric functions are polynomials in the power sums.
+Equivalently, show that the elementary symmetric functions $\sigma_\ell$ can
+be found in terms of the power sums of the $\alpha$s.
 \end{exercise}
 
 \begin{exercise} \label{exercise:symmetric}
@@ -14461,6 +14476,7 @@ Now use symmetry to prove that
 P(z_1,\ldots,z_k) =
 L(z_1,\ldots,z_k) +
 z_1z_2\cdots z_k Q(z_1,\ldots,z_k) .
+\avoidbreak
 \end{equation*}
 Then note that $Q$ has lower degree and finish by induction.
 \end{exercise}
@@ -14502,7 +14518,7 @@ Prove the fact above about the existence of $L$ arbitrarily close to the
 identity.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:monicpolyunique}
 Prove that a monic polynomial $P(\zeta)$ of one variable is
 uniquely determined by its zeros up to multiplicity:
 If $P$ and $Q$ are two monic polynomials with the same zeros
@@ -14548,8 +14564,8 @@ the Weierstrass polynomial $z_n + c_0(z')$.  That is, the zero set of
 $f$ is a graph of the holomorphic function $-c_0$.
 Therefore, the Weierstrass theorem is a generalization of the
 implicit function theorem to the case when $\frac{\partial f}{\partial z_n}$
-is zero.  We can still ``solve'' for $z_n$, but we find $k$ solutions
-given as the zeros of the obtained Weierstrass polynomial.
+is zero.  In such a case, we can still ``solve'' for $z_n$,
+but we find $k$-valued solution given by the zeros of the obtained Weierstrass polynomial.
 
 There is an obvious statement of the preparation theorem for germs.
 
@@ -14558,6 +14574,11 @@ There is an obvious statement of the preparation theorem for germs.
 State and prove a germ version of the preparation theorem.
 \end{exercise}
 \end{exbox}
+
+In one variable, if $f$ does not have a zero at the origin, if we set
+$r = f(0)$, we have that $f(z)-r$ is divisible by $z^k$,
+that is, $f(z) = u(z) z^k + r$.  We have a similar theorem for several
+variables.
 
 \begin{thm}[\myindex{Weierstrass division theorem}]
 Suppose $f$ is holomorphic near the origin, and suppose $P$
@@ -14640,7 +14661,8 @@ nor do the coefficients vanish at $0$.
 
 \begin{exbox}
 \begin{exercise}
-Prove the uniqueness part of the theorem.
+Prove the uniqueness part of the theorem.  Hint: Don't forget that we
+defined $V$ to be connected.
 \end{exercise}
 
 \begin{exercise}
@@ -15296,6 +15318,7 @@ is the set $\Gamma_f \subset U' \times \C^{n-k} \subset \C^k \times
 \end{equation*}
 
 \begin{defn}
+\pagebreak[2]
 Let $X \subset U \subset \C^n$ be a subvariety of an open set $U$.  Let $p \in X$ be a
 point.
 Suppose that after a permutation of coordinates, near
@@ -15316,7 +15339,6 @@ If all points of $X$ are regular points of dimension $k$, then $X$ is called
 a \emph{\myindex{complex manifold}}, or
 \emph{\myindex{complex submanifold}}\index{submanifold!complex}\index{manifold!complex},
 of (complex) dimension $k$.
-
 As the ambient\footnote{The word \emph{\myindex{ambient}}
 is used often to mean the set
 that contains whatever object we are talking about.} dimension
@@ -16214,6 +16236,7 @@ $\xi$ and $\bar{\xi}$.  Set $\bar{\xi} = 0$ to obtain
 r\bigl(\varphi(\xi),\bar{\varphi}(0)\bigr) =
 r\bigl(\varphi(\xi),\bar{p}\bigr)
 \qquad \text{for all $\xi \in \D$}.
+\avoidbreak
 \end{equation*}
 In particular, $\varphi(\D) \subset \Sigma_p$ and the result follows.
 \end{proof}
