@@ -126,7 +126,10 @@ under the integral.
 mention set complement for germs.  So ask about complement in Exercise
 6.1.7.
 <li> Define "unit" in 6.2
-<li> Add Figure 6.2 to Exercise 6.2.4 (the square root example).
+<li> Add Figure 6.1 to proof of the Weierstrass preparation theorem.
+<li> Reword the proof of Weierstrass preparation theorem somewhat to be
+clearer, and add power sum to the index.
+<li> Add Figure 6.3 to Exercise 6.2.4 (the square root example).
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
 <li> In appendix B, introduce and use winding numbers and describe how things

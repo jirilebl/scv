@@ -14187,7 +14187,7 @@ Such a $u$ is a \emph{\myindex{unit}} in the ring $\sO_0$, that is,
 an element with a multiplicative inverse.
 In several variables, there is a similar theorem, or in fact a pair of theorems,
 the so-called Weierstrass preparation and
-division theorems.
+division theorems.  We first need to replace $z^k$ with something.
 
 \begin{defn}
 Let $U \subset \C^{n-1}$ be open, $0 \in U$, and let $z' \in \C^{n-1}$ denote the
@@ -14246,9 +14246,14 @@ By continuity
 of $f$,
 there is a small polydisc $V = V' \times D$ such that
 $\widebar{V} \subset U$ and $f$ is not zero on
-$V' \times \partial D$.  We will consider the zeros of
+$V' \times \partial D$.
+See \figureref{fig:wpreppoly} for the setup.
+We will consider the zeros of
 $z_n \mapsto f(z',z_n)$ for $z' \in V'$.  See \figureref{fig:wprepdiv}.
-
+\begin{myfig}
+\subimport*{figures/}{wpreppoly.pdf_t}
+\caption{Setting up the neighborhood $V$.\label{fig:wpreppoly}}
+\end{myfig}
 \begin{myfig}
 \subimport*{figures/}{wprepdiv.pdf_t}
 \caption{The zeros of $z_n \mapsto f(z',z_n)$.\label{fig:wprepdiv}}
@@ -14271,8 +14276,9 @@ is equal to $k$ when $z'=0$, and
 so it is equal to $k$ for all $z' \in V'$.
 Write
 the zeros of $z_n \mapsto f(z',z_n)$ as $\alpha_1(z'),\ldots,\alpha_k(z')$, including
-multiplicity.  The zeros are not ordered in any particular way.
-Pick \emph{some} ordering for every $z'$.
+multiplicity.
+The zeros are not ordered in any particular way---pick
+\emph{some} ordering for every $z'$.
 Write
 \begin{equation*}
 P(z',z_n)
@@ -14281,29 +14287,32 @@ P(z',z_n)
 =
 z_n^k + c_{k-1}(z') \, z_n^{k-1} + \cdots + c_0 (z') .
 \end{equation*}
-For a fixed $z'$, $P$ is uniquely defined as the ordering of zeros does not
-matter in its definition (see exercises below).  It is
-clear that
-$u$ and $P$ are unique if they exist (that is, if they exist as holomorphic functions).
+For a fixed $z'$, $P$ (and thus the coefficients $c_0,\ldots,c_{k-1}$)
+is uniquely defined as the ordering of zeros does not
+The uniqueness part of the theorem follows (see exercise below).
+We need to show that the coefficients are holomorphic functions on $V'$,
+and that $u$ is a holomorphic function on $V$.
 
-The functions $\alpha_\ell$ are not even continuous in general (see
+No matter how you ordered the zeros for each $z'$,
+the functions $\alpha_\ell$ may not be continuous in general (see
 \exampleref{sqrt:example}).  However,
 we will prove that the functions $c_\ell$ are holomorphic.  The functions
 $c_\ell$ are
 (up to sign)
 the \emph{elementary symmetric functions}
-of $\alpha_1,\ldots,\alpha_k$ (see below).  It is a standard
+of $\alpha_1,\ldots,\alpha_k$ (see below).  A standard
 theorem in algebra
 (see \exerciseref{exercise:powersums})
-that the elementary symmetric functions are
-polynomials in the so-called power sum functions in the $\alpha_\ell$s:
+says that the elementary symmetric functions are
+polynomials in the so-called \emph{\myindex{power sum}} functions
+in the $\alpha_\ell$s:
 \begin{equation*}
 s_m(z') = \sum_{\ell=1}^k \alpha_\ell{(z')}^m , \qquad m = 1,\ldots,k.
 \end{equation*}
-If we show that the power sums $s_m$ are holomorphic, then
-$c_\ell$ are holomorphic.
+So if the power sums $s_m$ are holomorphic on $V'$, then
+$c_\ell$ are holomorphic on $V'$.
 
-A refinement of the argument principle (see also \thmref{thm:onevarargprinc}) says:
+A refinement of the argument principle (see \thmref{thm:onevarargprinc}) says:
 If $h$ and $g$ are
 holomorphic functions on a disc $D$, continuous on $\widebar{D}$,
 such that $g$ has no zeros on $\partial D$, and $\alpha_1,\ldots,\alpha_k$
@@ -14313,8 +14322,7 @@ are the zeros of $g$ in $D$, then
 \int_{\partial D} h(\zeta) \frac{g'(\zeta)}{g(\zeta)} ~d\zeta
 = \sum_{\ell=1}^k h(\alpha_\ell) .
 \end{equation*}
-
-The formula above with $h(\zeta) = \zeta^m$ and $g(\zeta)=f(z',\zeta)$ says that
+With $h(\zeta) = \zeta^m$ and $g(\zeta)=f(z',\zeta)$, the theorem says
 \begin{equation*}
 s_m(z') =
 \sum_{\ell=1}^k \alpha_\ell{(z')}^m
@@ -14351,14 +14359,14 @@ Differentiating under the integral shows it is also holomorphic in $z'$.
 \end{proof}
 
 \begin{example} \label{sqrt:example}
-A useful example to keep in mind is to consider the zero set of
+Consider the zero set of
 $f(z_1,z_2) = z_2^2 - z_1$,
 a Weierstrass polynomial in $z_2$ of degree $k=2$.  So $z' = z_1$.
 For all $z_1$ except the origin there are two zeros, $\pm \sqrt{z_1}$.
 Call one of them $\alpha_1(z_1)$ and one of them $\alpha_2(z_1)$.  Recall
 there is no continuous choice of a square root that works for all $z_1$,
 so no matter how you choose, $\alpha_1$ and $\alpha_2$ will not be continuous.
-At the origin there is only one zero of order two,
+At the origin there is one zero of multiplicity two,
 so $\alpha_1(0) = \alpha_2(0) = 0$.
 On the other hand, the
 symmetric functions $c_1(z_1) = - \alpha_1(z_1) - \alpha_2(z_1) = 0$
@@ -14377,7 +14385,7 @@ that the surface $z_2^2-z_1=0$ does not in fact cross itself in $\C^2$.\label{fi
 
 The $k$ depends on the coordinates chosen.  If we do a
 linear change of coordinates and consider $g(z_1,z_2) = -f(z_2,z_1)$,
-then $g(z_1,z_2) = z_1^2 - z_2$,
+then $g(z_1,z_2) = z_2 - z_1^2$,
 which is a Weierstrass polynomial in $z_2$ of degree $k=1$.
 After the change, there is only one zero,
 $\alpha_1(z_1) = z_1^2$, and so $c_0(z_1) =
@@ -14445,14 +14453,14 @@ Write $P(z_1,\ldots,z_{k-1},0)$ by induction hypothesis as a polynomial
 in the elementary symmetric functions of one less variable.  Use the
 same coefficients, but plug in the elementary symmetric functions of $k$
 variables except the symmetric polynomial in $k$ variables of degree $k$,
-that is except the $z_1\cdots z_k$.
+that is, except $z_1z_2\cdots z_k$.
 You will obtain a symmetric function $L(z_1,\ldots,z_k)$ and you need to
 show $L(z_1,\ldots,z_{k-1},0) = P(z_1,\ldots,z_{k-1},0)$.
 Now use symmetry to prove that
 \begin{equation*}
 P(z_1,\ldots,z_k) =
 L(z_1,\ldots,z_k) +
-z_1\cdots z_k Q(z_1,\ldots,z_k) .
+z_1z_2\cdots z_k Q(z_1,\ldots,z_k) .
 \end{equation*}
 Then note that $Q$ has lower degree and finish by induction.
 \end{exercise}
@@ -14496,8 +14504,8 @@ identity.
 
 \begin{exercise}
 Prove that a monic polynomial $P(\zeta)$ of one variable is
-uniquely determined by its zeros up to multiplicity.  That is, suppose
-$P$ and $Q$ are two monic polynomials with the same zeros
+uniquely determined by its zeros up to multiplicity:
+If $P$ and $Q$ are two monic polynomials with the same zeros
 up to multiplicity,
 then $P=Q$.  That proves the uniqueness of the Weierstrass polynomial.
 \end{exercise}
@@ -14535,8 +14543,7 @@ linear change of coordinates to ensure $k = \ord_0 f$.
 With the $f$ as above, $f(z_1 + \epsilon z_2,z_2)$ gives $k = 2$
 as expected.
 
-The Weierstrass preparation theorem is a generalization of
-the implicit function theorem.  When $k=1$ in the theorem, then we obtain
+When $k=1$ in the Weierstrass preparation theorem, then we obtain
 the Weierstrass polynomial $z_n + c_0(z')$.  That is, the zero set of
 $f$ is a graph of the holomorphic function $-c_0$.
 Therefore, the Weierstrass theorem is a generalization of the
