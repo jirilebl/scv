@@ -14559,13 +14559,13 @@ linear change of coordinates to ensure $k = \ord_0 f$.
 With the $f$ as above, $f(z_1 + \epsilon z_2,z_2)$ gives $k = 2$
 as expected.
 
-When $k=1$ in the Weierstrass preparation theorem, then we obtain
+When $k=1$ in the Weierstrass preparation theorem, we obtain
 the Weierstrass polynomial $z_n + c_0(z')$.  That is, the zero set of
 $f$ is a graph of the holomorphic function $-c_0$.
 Therefore, the Weierstrass theorem is a generalization of the
 implicit function theorem to the case when $\frac{\partial f}{\partial z_n}$
 is zero.  In such a case, we can still ``solve'' for $z_n$,
-but we find $k$-valued solution given by the zeros of the obtained Weierstrass polynomial.
+but we find a $k$-valued solution given by the zeros of the obtained Weierstrass polynomial.
 
 There is an obvious statement of the preparation theorem for germs.
 
@@ -14575,8 +14575,8 @@ State and prove a germ version of the preparation theorem.
 \end{exercise}
 \end{exbox}
 
-In one variable, if $f$ does not have a zero at the origin, if we set
-$r = f(0)$, we have that $f(z)-r$ is divisible by $z^k$,
+In one variable, if $f$ does not have a zero at the origin, we set
+$r = f(0)$, and we have that $f(z)-r$ is divisible by $z^k$,
 that is, $f(z) = u(z) z^k + r$.  We have a similar theorem for several
 variables.
 
@@ -14599,7 +14599,7 @@ of the first $n-1$ variables.
 Uniqueness is left as an exercise.  Consider
 a connected neighborhood $V = V' \times D$ of the origin, where
 $D$ is a disc,
-$f$ and $P$ are continuous in $V' \times \widebar{D}$,
+$f$ and $P$ are continuous on $V' \times \widebar{D}$,
 and $P$ is not zero on $V' \times \partial D$.
 Let
 \begin{equation*}
@@ -14692,12 +14692,12 @@ come together.  We will prove shortly that the zeros come together
 only on a small set: a zero set of a certain holomorphic function
 called the discriminant.
 
-A set of zeros are said to be
+A set of zeros of a function of one variable are said to be
 \emph{\myindex{geometrically distinct}} if they are distinct
 points of $\C$.  A zero is called
 \emph{\myindex{geometrically unique}} if it is a unique complex number.
-For example, ${(z_n-1)}^2$ has a geometrically unique zero at $1$, and
-${(z_n-1)}^2(z_n+1)$ has two geometrically distinct zeros, $1$ and $-1$.
+For example, ${(\zeta-1)}^2$ has a geometrically unique zero at $1$, and
+${(\zeta-1)}^2(\zeta+1)$ has two geometrically distinct zeros, $1$ and $-1$.
 
 
 \begin{prop} \label{prop:zerohol}
@@ -14709,11 +14709,11 @@ $z_n \mapsto f(z',z_n)$ has a geometrically unique zero $\alpha(z') \in D$.  The
 holomorphic in $U'$.
 \end{prop}
 
-The proposition shows that the regularity conclusion of the implicit
-function theorem holds under the hypothesis that there exists some locally
+The proposition shows that the regularity conclusion of the
+holomorphic implicit function theorem holds under the hypothesis that there exists some locally
 unique solution for $z_n$, regardless of the derivative vanishing or not.
 Such a result holds only for holomorphic
-functions and not for real-analytic functions.  For example, $x^2-y^3 = 0$ has a
+functions and not for real-analytic or smooth functions.  For example, $x^2-y^3 = 0$ has a
 unique real solution $y = x^{2/3}$, but $x^{2/3}$ is not even
 differentiable.
 
@@ -14818,11 +14818,11 @@ and $z_n \mapsto f(z',z_n)$ has strictly less than $m$ geometrically distinct
 zeros for $z' \in E$.
 \end{thm}
 
-The complement of a zero set of a holomorphic function is connected, open
-and dense.  The function $\Delta$ is
-called the \emph{\myindex{discriminant function}} and its zero set
-$E$ is called the
-\emph{\myindex{discriminant set}}.  For the quadratic equation,
+The complement of a zero set of a holomorphic function is connected,
+open, and dense.
+We call $\Delta$ the \emph{\myindex{discriminant function}} and its zero set
+$E$ the \emph{\myindex{discriminant set}}.
+For the quadratic equation,
 $\Delta$ is the discriminant we learned about in high school.
 
 \begin{proof}
