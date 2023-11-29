@@ -14600,7 +14600,7 @@ polynomial in $z_n$ with coefficients that are holomorphic functions
 of the first $n-1$ variables.
 
 \begin{proof}
-Uniqueness is left as an exercise.  Consider
+Uniqueness is left as an exercise.  There exists
 a connected neighborhood $V = V' \times D$ of the origin, where
 $D$ is a disc,
 $f$ and $P$ are continuous on $V' \times \widebar{D}$,
@@ -14632,7 +14632,7 @@ r(z',z_n) = f(z',z_n) - q(z',z_n)P(z',z_n)
 \end{multline*}
 We need to show $r$ is a polynomial in $z_n$ of degree less than
 $k$.  In the expression inside the integral, the numerator is
-of the form $\sum_\ell h_\ell(z',\zeta)(\zeta^\ell-z_n^\ell)$ and is therefore
+of the form $\sum_{\ell=1}^k h_\ell(z',\zeta)(\zeta^\ell-z_n^\ell)$ and is therefore
 divisible by $(\zeta-z_n)$.
 The numerator is a polynomial of degree $k$ in
 $z_n$.  After dividing by $(\zeta-z_n)$,
@@ -14681,7 +14681,7 @@ polynomial, and $P(\zeta)$ is a nonzero polynomial of degree $k$, then there exi
 polynomials $q(\zeta)$ and $r(\zeta)$ with degree of $r$ less than $k$ such
 that $f = qP + r$.  If the coefficients are in a commutative ring,
 we can divide as long as $P$ is monic.
-The Weierstrass division theorem says that in the case of the ring $\sO_p$,
+The Weierstrass division theorem says that
 we can divide by a monic $P \in {}_{n-1}\sO_p[z_n]$,
 even if $f$ is a holomorphic function (a ``polynomial of
 infinite degree'').
@@ -14704,7 +14704,11 @@ ${(\zeta-1)}^2(\zeta+1)$ has two geometrically distinct zeros, $1$ and $-1$.
 
 
 \begin{prop} \label{prop:zerohol}
-Let $D \subset \C$ and $U' \subset \C^{n-1}$ be domains,
+Let
+$U' \subset \C^{n-1}$
+and
+$D \subset \C$
+be domains,
 and
 $f \in \sO(U' \times D)$.
 Suppose that for each fixed $z' \in U'$ the function
@@ -14723,7 +14727,7 @@ differentiable.
 \begin{proof}
 We must show that $\alpha$
 is holomorphic near any point, which, without loss
-of generality, is the origin.
+of generality, is the origin and $\alpha(0)=0$.
 Apply the preparation
 theorem to find $f = u P$,
 where $P$ is a
@@ -14738,7 +14742,10 @@ The coefficients of $P$ are holomorphic, so $\alpha$ is holomorphic.
 \end{proof}
 
 \begin{prop} \label{prop:zeroshol}
-Let $D \subset \C$ and $U' \subset \C^{n-1}$
+Let
+$U' \subset \C^{n-1}$
+and
+$D \subset \C$
 be domains,
 and
 $f \in \sO(U' \times D)$.
@@ -14760,9 +14767,8 @@ f(z',z_n) = u(z',z_n) \prod_{\ell=1}^m {\bigl( z_n - \alpha_\ell(z')
 
 Proof is left as an exercise.
 We can only define $\alpha_1$ through $\alpha_m$ locally (on a
-smaller domain) as we do not know
-how $\alpha_1$ through $\alpha_m$ are ordered, and the order could change
-as we move around
+smaller domain) as we cannot consistently order
+$\alpha_1$ through $\alpha_m$ as we move around
 $U'$ if it is not simply connected.  If $U'$ is simply connected, then
 the functions can be defined globally by analytic continuation.
 For an example where $U'$ is not simply connected,
@@ -14904,9 +14910,8 @@ and since $\alpha_k$ are locally holomorphic, $\Delta$ is holomorphic.
 Let $p' \in E \cap \overline{U_m'}$,
 so there are fewer than $m$ zeros at $p'$.
 Suppose $\gamma$ and $\lambda$ are as above.
-In each particular component $\gamma_j$ of $\gamma$, there is
+In each component $\gamma_j$ of $\gamma$, there is
 at least one zero for all $z'$ near $p'$ by the same argument as above.
-There exist $z'$ arbitrarily near $p'$ where there are $m$ zeros.
 The region between $\lambda$ and $\gamma$ (including the curves) is compact,
 and so by continuity,
 as $z_n \mapsto f(p',z_n)$ is nonzero on it,
@@ -14914,8 +14919,10 @@ so is $z_n \mapsto f(z',z_n)$ for $z'$ near $p'$.
 As no zeros of $z_n \mapsto f(z',z_n)$ lie outside $\lambda$,
 we have that all
 zeros lie inside $\gamma$.
-So if $z' \in U_m'$ near $p'$, there must be one
-component $\gamma_j$ that contains at least two zeros.
+There exist such $z' \in U_m'$ arbitrarily near $p'$,
+in which case some
+component $\gamma_j$ contains at least two zeros of
+$z_n \mapsto f(z',z_n)$.
 Let $\{ z'_\ell \}$
 be an arbitrary sequence of points in $U_m'$ going to $p'$.
 As the number of zeros is finite, we pass to a subsequence
@@ -14929,15 +14936,16 @@ us name it $\alpha_1(p')$.
 As $f^{-1}(0)$ is closed,
 $\alpha_1(z'_\ell)$ and $\alpha_2(z'_\ell)$ both approach $\alpha_1(p')$ as
 $\ell \to \infty$.
-All zeros are necessarily bounded and so
+The zeros are bounded, so
 $\lim_{\ell \to \infty} \Delta(z'_\ell) = 0$.  As the limit is zero for a
 subsequence of an arbitrary sequence,
 \begin{equation*}
 \lim_{z' \in U_m' \to p'} \Delta(z') = 0 .
 \end{equation*}
 
-We have already defined $\Delta$ on $U_m'$, so set $\Delta(z') = 0$ if $z' \in E$.
-The function $\Delta$ is a continuous function on $U'$ that is zero precisely on
+We have already defined $\Delta$ on $U_m'$, where it is nonzero,
+so set $\Delta(z') = 0$ if $z' \in E$.
+The function $\Delta$ is continuous on $U'$ and is zero precisely on
 $E$ and holomorphic on $U_m'$.
 Rad{\'o}'s theorem
 (\thmref{thm:rado}) says that $\Delta$ is holomorphic in $U'$.
@@ -14962,7 +14970,7 @@ simply connected if $E \not= \emptyset$.
 
 \begin{exercise}
 \pagebreak[2]
-Let $D \subset \C$ be a bounded domain,
+Let $D \subset \C$ be a bounded domain
 and
 $U' \subset \C^{n-1}$ a domain.
 Suppose
@@ -14970,14 +14978,13 @@ $f$ is a continuous function on
 $U' \times \widebar{D}$ holomorphic on $U' \times D$,
 and $f$ is never zero on
 $U' \times \partial D$.
-Suppose $\gamma \colon [0,1] \to U'$ is a continuous function
-such that $f\bigl(\gamma(0),c\bigr) = 0$ for some $c \in D$.
-Prove that there exists a continuous function $\alpha \colon [0,1] \to \C$
+Suppose $\gamma \colon [0,1] \to U'$ is continuous and
+$f\bigl(\gamma(0),c\bigr) = 0$ for some $c \in D$.
+Prove that there exists a continuous $\alpha \colon [0,1] \to \C$
 such that $\alpha(0) = c$ and
 $f\bigl(\gamma(t),\alpha(t)\bigr) = 0$ for all $t \in [0,1]$.
-Hint: Show it is possible for a path
-arbitrarily close to $\gamma$, but one that stays away from
-the discriminant.
+Hint: Start with a path arbitrarily close to $\gamma$
+that misses the discriminant.
 \end{exercise}
 \end{exbox}
 
