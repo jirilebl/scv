@@ -14858,14 +14858,19 @@ around all the zeros exactly once for $z'$ near $p'$.
 \caption{Curve around each zero.\label{fig:curve-around-each-zero}}
 \end{myfig}
 
-The argument principle applied to $z_n \mapsto f(z',z_n)$ using $\lambda$ for $z'$ near
-$p'$ shows that the number of zeros (counting multiplicity) is locally constant
-as a function of $z'$.  Near each point $p'$ we can pick $\lambda$ to
-contain all the zeros.  As $U'$ is connected, we find that the number of
-zeros (counting multiplicity) of of $z_n \mapsto f(z',z_n)$ is constant
-say $M \in \N$.
-The maximum number of
-geometrically distinct zeros must be bounded by $M$.  Let $m$ be the maximal
+Let $M(z')$ be the number of zeros (counting multiplicity) of 
+$z_n \mapsto f(z',z_n)$.
+Given any $p'$
+pick a $\lambda$ as above that contains all zeros
+of $z_n \mapsto f(z',z_n)$ for all $z'$ in some neighborhood of $p'$.
+The argument principle applied to this function shows that
+$M$ is constant in this neighborhood.
+So $M$ is a locally constant function on $U'$,
+which is connected and so $M$ is constant.
+The number of
+geometrically distinct zeros at any $z'$ is bounded by $M$,
+although the number of geometrically distinct zeros may not be constant.
+Let $m$ be the maximal
 number of geometrically distinct zeros and suppose that at some point
 in $U'$, there are exactly $m$ geometrically distinct zeros.
 
@@ -14899,28 +14904,29 @@ and since $\alpha_k$ are locally holomorphic, $\Delta$ is holomorphic.
 Let $p' \in E \cap \overline{U_m'}$,
 so there are fewer than $m$ zeros at $p'$.
 Suppose $\gamma$ and $\lambda$ are as above.
-In each particular component $\gamma_j$ of $\gamma$, there must
-be at least one zero for all $z'$ near $p'$ by the same argument as above.
+In each particular component $\gamma_j$ of $\gamma$, there is
+at least one zero for all $z'$ near $p'$ by the same argument as above.
 There exist $z'$ arbitrarily near $p'$ where there are $m$ zeros.
 The region between $\lambda$ and $\gamma$ (including the curves) is compact,
 and so by continuity,
-if $z_n \mapsto f(p',z_n)$ was nonzero on it,
+as $z_n \mapsto f(p',z_n)$ is nonzero on it,
 so is $z_n \mapsto f(z',z_n)$ for $z'$ near $p'$.
 As no zeros of $z_n \mapsto f(z',z_n)$ lie outside $\lambda$,
 we have that all
-zeros lie in one of the components of $\gamma$.  So if $z' \in U_m'$ near
-$p'$, there must be one
-component $\gamma_j$ that contains at least two zeros.  Let $\{ z'_\ell \}$
+zeros lie inside $\gamma$.
+So if $z' \in U_m'$ near $p'$, there must be one
+component $\gamma_j$ that contains at least two zeros.
+Let $\{ z'_\ell \}$
 be an arbitrary sequence of points in $U_m'$ going to $p'$.
 As the number of zeros is finite, we pass to a subsequence
-so that there is some fixed com fixed component $\gamma_j$ of $\gamma$
+so that there is some fixed component $\gamma_j$ of $\gamma$
 where
-$z_n \mapsto f(z'_\ell,z_n)$ has at least two zeros in $\gamma_j$ for every $z'_\ell$.
-Label the two distinct zeros at $z'_\ell$
-as $\alpha_1(z'_\ell)$ and
-$\alpha_2(z'_\ell)$.  At $p'$ there is only a single (geometrically) zero in $\gamma_j$, let
+$z_n \mapsto f(z'_\ell,z_n)$ has at least two distinct zeros in $\gamma_j$ for every $z'_\ell$.
+Label the two distinct zeros
+as $\alpha_1(z'_\ell)$ and $\alpha_2(z'_\ell)$.
+At $p'$ there is only a single (geometrically) zero in $\gamma_j$, let
 us name it $\alpha_1(p')$.
-As $f^{-1}(0)$ is closed it must be that
+As $f^{-1}(0)$ is closed,
 $\alpha_1(z'_\ell)$ and $\alpha_2(z'_\ell)$ both approach $\alpha_1(p')$ as
 $\ell \to \infty$.
 All zeros are necessarily bounded and so
