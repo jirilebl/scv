@@ -14859,24 +14859,25 @@ around all the zeros exactly once for $z'$ near $p'$.
 \end{myfig}
 
 The argument principle applied to $z_n \mapsto f(z',z_n)$ using $\lambda$ for $z'$ near
-$p'$ shows that the number of zeros (with multiplicity) is bounded by some $M \in \N$
-near $p'$.  The $M$ is locally well-defined (it does not depend on $\lambda$ as
-long as it contains all the zeros), and it is a locally constant function of
-$z' \in U'$.
-As $U'$ is connected, and it is a fixed number.  The maximum number of
+$p'$ shows that the number of zeros (counting multiplicity) is locally constant
+as a function of $z'$.  Near each point $p'$ we can pick $\lambda$ to
+contain all the zeros.  As $U'$ is connected, we find that the number of
+zeros (counting multiplicity) of of $z_n \mapsto f(z',z_n)$ is constant
+say $M \in \N$.
+The maximum number of
 geometrically distinct zeros must be bounded by $M$.  Let $m$ be the maximal
 number of geometrically distinct zeros and suppose that at some point
 in $U'$, there are exactly $m$ geometrically distinct zeros.
 
 Let $U_m' \subset U'$ be the set of $z' \in U'$ for which $z_n \mapsto f(z',z_n)$
-has exactly $m$ zeros.
+has exactly $m$ geometrically distinct zeros.
 Write $U'$ as a union of disjoint sets $U' = U_m' \cup E$, where $E = U'
 \setminus U_m'$.
 By definition of $m$, $U_m'$ is nonempty.  Suppose $p' \in U_m'$ and $\gamma$
-goes around the zeros as above.  Let $\gamma'$ be a single component curve
+goes around the zeros as above.  Let $\gamma_j$ be a single component curve
 of the path $\gamma$ going around one of the zeros.
-The argument principle with respect to $\gamma'$ says that
-$\gamma'$ must contain at least one zero for all $z'$ near $p'$.
+The argument principle with respect to $\gamma_j$ says that
+$\gamma_j$ must contain at least one zero for all $z'$ near $p'$.
 There are only finitely many zeros, and so for $z'$ in
 some neighborhood of $p'$,
 $z_n \mapsto f(z',z_n)$ has at least $m$
@@ -14898,7 +14899,7 @@ and since $\alpha_k$ are locally holomorphic, $\Delta$ is holomorphic.
 Let $p' \in E \cap \overline{U_m'}$,
 so there are fewer than $m$ zeros at $p'$.
 Suppose $\gamma$ and $\lambda$ are as above.
-In each particular component $\gamma'$ of $\gamma$, there must
+In each particular component $\gamma_j$ of $\gamma$, there must
 be at least one zero for all $z'$ near $p'$ by the same argument as above.
 There exist $z'$ arbitrarily near $p'$ where there are $m$ zeros.
 The region between $\lambda$ and $\gamma$ (including the curves) is compact,
@@ -14909,18 +14910,20 @@ As no zeros of $z_n \mapsto f(z',z_n)$ lie outside $\lambda$,
 we have that all
 zeros lie in one of the components of $\gamma$.  So if $z' \in U_m'$ near
 $p'$, there must be one
-component $\gamma'$ that contains at least two zeros.  Let $\{ z'_\ell \}$
+component $\gamma_j$ that contains at least two zeros.  Let $\{ z'_\ell \}$
 be an arbitrary sequence of points in $U_m'$ going to $p'$.
-As the number of zeros is finite, $\{ z'_\ell \}$ has a
-subsequence such that $z_n \mapsto f(z'_\ell,z_n)$ has at least two zeros in
-some fixed component $\gamma'$ of $\gamma$ for $z'_\ell$.  Assume $\{ z'_\ell
-\}$ is this subsequence.  Label the two distinct zeros at $z'_\ell$
+As the number of zeros is finite, we pass to a subsequence
+so that there is some fixed com fixed component $\gamma_j$ of $\gamma$
+where
+$z_n \mapsto f(z'_\ell,z_n)$ has at least two zeros in $\gamma_j$ for every $z'_\ell$.
+Label the two distinct zeros at $z'_\ell$
 as $\alpha_1(z'_\ell)$ and
-$\alpha_2(z'_\ell)$.  At $p'$ there is only a single (geometrically) zero in $\gamma'$, let
-us name it $\alpha_1(p')$.  As $f^{-1}(0)$ is closed it must be that
+$\alpha_2(z'_\ell)$.  At $p'$ there is only a single (geometrically) zero in $\gamma_j$, let
+us name it $\alpha_1(p')$.
+As $f^{-1}(0)$ is closed it must be that
 $\alpha_1(z'_\ell)$ and $\alpha_2(z'_\ell)$ both approach $\alpha_1(p')$ as
 $\ell \to \infty$.
-As all zeros are necessarily bounded,
+All zeros are necessarily bounded and so
 $\lim_{\ell \to \infty} \Delta(z'_\ell) = 0$.  As the limit is zero for a
 subsequence of an arbitrary sequence,
 \begin{equation*}
@@ -14935,7 +14938,8 @@ Rad{\'o}'s theorem
 \end{proof}
 
 The discriminant given above is really the discriminant of the set
-$f^{-1}(0)$ rather than of the corresponding Weierstrass polynomial.
+$f^{-1}(0)$ rather than of the corresponding function, which we can,
+via the preparation theorem, assume is a Weierstrass polynomial.
 For Weierstrass polynomials, the discriminant is often defined as
 $\prod_{j \not= k} \bigl( \alpha_j(z') - \alpha_k(z') \bigr)$ taking
 multiple zeros into account, and therefore the ``discriminant'' could be

@@ -139,6 +139,8 @@ k solutions, as that could be misinterpreted.
 of it.
 <li> At the beginning of section 6.3, when talking about geometrically
 distinct zeros, use \(\zeta\) for the (single) variable instead of \(z_n .\)
+<li> Clarify the proof of Theorem 6.3.3, and use \(\gamma_j\) instead of
+\(\gamma'\) as that could be misinterpreted.
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
 <li> In appendix B, introduce and use winding numbers and describe how things
