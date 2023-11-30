@@ -137,6 +137,8 @@ the implicit function theorem, say it is a k-valued solution rather than
 k solutions, as that could be misinterpreted.
 <li> Before the Weierstrass division theorem, give the one-variable version
 of it.
+<li> Add a remark about how the preparation and division theorems are
+really theorems about formal power series.
 <li> At the beginning of section 6.3, when talking about geometrically
 distinct zeros, use \(\zeta\) for the (single) variable instead of \(z_n .\)
 <li> In the proof of Proposition 6.3.1, mention that WLOG we are assuming
