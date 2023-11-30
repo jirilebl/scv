@@ -145,6 +145,10 @@ distinct zeros, use \(\zeta\) for the (single) variable instead of \(z_n .\)
 that \(\alpha(0)=0 .\)
 <li> Clarify the proof of Theorem 6.3.3, and use \(\gamma_j\) instead of
 \(\gamma'\) as that could be misinterpreted.
+<li> Make the definition of ideal in 6.4 clearer.
+<li> Put the definition of radical into the main text rather than as a
+footnote for more consistency (and add it to the index).
+<li> Simplify the statement in 6.5.4.
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
 <li> In appendix B, introduce and use winding numbers and describe how things
