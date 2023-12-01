@@ -14842,8 +14842,9 @@ The complement of a zero set of a holomorphic function is connected,
 open, and dense.
 We call $\Delta$ the \emph{\myindex{discriminant function}} and its zero set
 $E$ the \emph{\myindex{discriminant set}}.
-For the quadratic equation,
-$\Delta$ is the discriminant we learned about in high school.
+For the quadratic equation $a(z') z_n^2 + b(z') z_n + c(z') = 0$,
+$\Delta$ is the discriminant we learned about in high school:
+$\Delta = b^2-4ac$.
 
 \begin{proof}
 The zeros of $z_n \mapsto f(z',z_n)$ are isolated, and there are finitely
@@ -14851,15 +14852,14 @@ many for every $z'$ as $D$ is bounded and $f^{-1}(0)$ has no limit points on
 $U' \times \partial D$.
 For any $p' \in U'$, we define two useful paths.
 Let $\gamma$ be the union of nonintersecting
-small simple closed curves
+small simple closed curves around small nonintersecting discs
 in $D$, one around each geometrically distinct zero of $z_n \mapsto f(p',z_n)$.
 Let $\lambda$ be a large closed path in $D$ going
 exactly once around all the zeros and such that the interior of $\lambda$ is
-in $D$.  Suppose $\gamma$ and $\lambda$
-intersect no zeros.
+in $D$.
+Suppose $\gamma$ and $\lambda$ intersect no zeros.
 See \figureref{fig:curve-around-each-zero}.
-By continuity,
-the curves $\gamma$
+By continuity, the curves $\gamma$
 and $\lambda$ do not intersect any zeros for $z'$ near $p'$.
 Since the set $f^{-1}(0)$ is closed and the zeros
 do not
@@ -14867,7 +14867,7 @@ accumulate on $U' \times \partial D$,
 then
 for $z'$ near $p'$ the zeros stay a positive distance away from
 the boundary.  So $\lambda$ can be picked to go
-around all the zeros exactly once for $z'$ near $p'$.
+around all the zeros of $z_n \mapsto f(z',z_n)$ exactly once for $z'$ near $p'$.
 
 \begin{myfig}
 \subimport*{figures/}{curve-around-each-zero.pdf_t}
@@ -14879,8 +14879,14 @@ $z_n \mapsto f(z',z_n)$.
 Given any $p'$
 pick a $\lambda$ as above that contains all zeros
 of $z_n \mapsto f(z',z_n)$ for all $z'$ in some neighborhood of $p'$.
-The argument principle applied to this function shows that
-$M$ is constant in this neighborhood.
+The argument principle show that
+\begin{equation*}
+M(z') = \frac{1}{2\pi i}
+\int_{\lambda}
+\frac{\frac{\partial f}{\partial z_n}(z',\zeta)}{f(z',\zeta)} d\zeta ,
+\end{equation*}
+and so $M$ is constant in this neighborhood (it is an integer-valued
+continuous function).
 So $M$ is a locally constant function on $U'$,
 which is connected and so $M$ is constant.
 The number of
@@ -14899,10 +14905,10 @@ goes around the zeros as above.  Let $\gamma_j$ be a single component curve
 of the path $\gamma$ going around one of the zeros.
 The argument principle with respect to $\gamma_j$ says that
 $\gamma_j$ must contain at least one zero for all $z'$ near $p'$.
-There are only finitely many zeros, and so for $z'$ in
-some neighborhood of $p'$,
-$z_n \mapsto f(z',z_n)$ has at least $m$
-zeros in $\gamma$, and as $m$ is the maximum, it has exactly $m$ zeros.
+So for $z'$ in some neighborhood of $p'$,
+$z_n \mapsto f(z',z_n)$ has at least $m$ zeros in $\gamma$
+(at least one in each component),
+and as $m$ is the maximum, it has exactly $m$ zeros.
 In other words, $U_m'$ is open.
 
 Locally on $U_m'$, there exist $m$ holomorphic functions
@@ -14915,27 +14921,36 @@ The function
 \end{equation*}
 defined for $z' \in U_m'$ does not depend on the order.
 That means $\Delta$ is well-defined as a function on the open set $U_m'$,
-and since $\alpha_k$ are locally holomorphic, $\Delta$ is holomorphic.
+and since $\alpha_k$ can locally be picked to be holomorphic,
+$\Delta$ is holomorphic.
 
 Let $p' \in E \cap \overline{U_m'}$,
 so there are fewer than $m$ zeros at $p'$.
-Suppose $\gamma$ and $\lambda$ are as above.
+Suppose $\gamma$ and $\lambda$ are as above, so there are fewer than $m$
+components of $\gamma$.
 In each component $\gamma_j$ of $\gamma$, there is
 at least one zero for all $z'$ near $p'$ by the same argument as above.
-The region between $\lambda$ and $\gamma$ (including the curves) is compact,
-and so by continuity,
-as $z_n \mapsto f(p',z_n)$ is nonzero on it,
-so is $z_n \mapsto f(z',z_n)$ for $z'$ near $p'$.
-As no zeros of $z_n \mapsto f(z',z_n)$ lie outside $\lambda$,
-we have that all
-zeros lie inside $\gamma$.
+The path $\lambda$ goes around all the zeros of 
+$z_n \mapsto f(z',z_n)$ for $z'$ near $p'$.
+The number of between $\lambda$ and $\gamma$ at $z'$ is
+\begin{equation*}
+\frac{1}{2\pi i}
+\int_{\lambda - \gamma}
+\frac{\frac{\partial f}{\partial z_n}(z',\zeta)}{f(z',\zeta)} d\zeta ,
+\end{equation*}
+which is a continuous integer-valued function that is zero at $z'=p'$
+and so it is zero in a neighborhood.  Thus there are no zeros between
+$\gamma$ and $\lambda$.
+As $\lambda$ goes around all the zeros for $z'$ near $p'$,
+all zeros of $z_n \mapsto f(z',z_n)$
+lie inside $\gamma$ for $z'$ near $p'$.
 There exist such $z' \in U_m'$ arbitrarily near $p'$,
-in which case some
-component $\gamma_j$ contains at least two zeros of
+in which case, by pidgeonhole principle, some
+component $\gamma_j$ contains at least two geometrically distinct zeros of
 $z_n \mapsto f(z',z_n)$.
 Let $\{ z'_\ell \}$
 be an arbitrary sequence of points in $U_m'$ going to $p'$.
-As the number of zeros is finite, we pass to a subsequence
+As the number of components of $\gamma$ is finite, we pass to a subsequence
 so that there is some fixed component $\gamma_j$ of $\gamma$
 where
 $z_n \mapsto f(z'_\ell,z_n)$ has at least two distinct zeros in $\gamma_j$ for every $z'_\ell$.
@@ -14954,7 +14969,7 @@ subsequence of an arbitrary sequence,
 \end{equation*}
 
 We have already defined $\Delta$ on $U_m'$, where it is nonzero,
-so set $\Delta(z') = 0$ if $z' \in E$.
+so set $\Delta(z') = 0$ for $z' \in E$.
 The function $\Delta$ is continuous on $U'$ and is zero precisely on
 $E$ and holomorphic on $U_m'$.
 Rad{\'o}'s theorem
@@ -16010,6 +16025,7 @@ such that $X$ is given near $0$ by
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Using the local parametrization theorem, prove that
 if $(X,p)$ is an irreducible germ of a subvariety of dimension greater
 than $1$, then there exists a neighborhood $U$ of $p$ and a closed subvariety

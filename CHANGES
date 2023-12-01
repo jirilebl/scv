@@ -143,8 +143,11 @@ really theorems about formal power series.
 distinct zeros, use \(\zeta\) for the (single) variable instead of \(z_n .\)
 <li> In the proof of Proposition 6.3.1, mention that WLOG we are assuming
 that \(\alpha(0)=0 .\)
-<li> Clarify the proof of Theorem 6.3.3, and use \(\gamma_j\) instead of
-\(\gamma'\) as that could be misinterpreted.
+<li> Clarify the proof of Theorem 6.3.3, explicitly write out the argument
+principle, use \(\gamma_j\) instead of
+\(\gamma'\) as that could be misinterpreted,
+and make the figure in the proof
+more correct as the curves are picked at \(p'\) not any \(z'.\)
 <li> Make the definition of ideal in 6.4 clearer.
 <li> Put the definition of radical into the main text rather than as a
 footnote for more consistency (and add it to the index).
