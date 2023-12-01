@@ -152,6 +152,10 @@ more correct as the curves are picked at \(p'\) not any \(z'.\)
 <li> Put the definition of radical into the main text rather than as a
 footnote for more consistency (and add it to the index).
 <li> Simplify the statement in 6.5.4.
+<li> Reorganize section 6.6, and add a theorem (Theorem 6.6.5) proving that the singular
+set of a hypervariety is a subvariety, makes things more complete at least
+for hypervarieties.  Add a figure to go with Theorem 6.6.5 and a couple of
+exercises to finish the proof.  That renumbers the exercises in the section.
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
 <li> In appendix B, introduce and use winding numbers and describe how things
