@@ -15793,10 +15793,10 @@ neighborhood of the origin with $\widebar{V} \subset D$.
 Pick a $q \in X_{\textit{reg}} \cap V$.  By definition, it means that $X$ is a graph
 near $q$, so we can, after reordering variables, assume it is a graph of $z_n$
 over $z'=(z_1,\ldots,z_{n-1})$.
-Write $D = D' \times D'' \subset \C^{n-1} \times \C$.  Let $E \subset D'$
+Write $D = D' \times D_n \subset \C^{n-1} \times \C$.  Let $E \subset D'$
 be the discriminant set given by the function $\Delta \in \sO(D')$.
 We can think of $\Delta$ as a function in $\sO(D)$.
-If $q \not\in E \times D''$, then we have $\Delta(q) \not= 0$, so we have
+If $q \not\in E \times D_n$, then we have $\Delta(q) \not= 0$, so we have
 found a function holomorphic in $V$ that is nonzero at $q$.
 Let us start a collection $\sF$ of holomorphic functions on $V$ and put
 $\Delta$ in it.
@@ -15837,7 +15837,7 @@ $\epsilon'$ will give us $k$ distinct intersections nearby.
 See \exerciseref{exercise:nonverticalintersections}.
 
 We take a slightly smaller polydisc
-$\widetilde{D} \subset \widetilde{D}' \times D'' \subset D$
+$\widetilde{D} \subset \widetilde{D}' \times D_n \subset D$
 in the $\tilde{z}$ variables
 such that
 still $V \subset \widetilde{D}$ (we may need to pick $\epsilon'$ small
@@ -15845,8 +15845,8 @@ enough to arrange this), we can apply \thmref{thm:discrthm}.  As the number
 of zeros of $f\bigl(\tilde{z}' + (q_n-z_n) \epsilon', z_n\bigr)$ is $m$
 for all $\tilde{z}'$ near $q'$ including $\tilde{z}'=q'$,
 we find that the discriminant
-$\widetilde{\Delta}$ in these variables does not vanish at $q$
-using the same argument as before.  We also have that $\widetilde{\Delta}$
+$\widetilde{\Delta}$ in these variables does not vanish at $q$.
+We also have that $\widetilde{\Delta}$
 is a holomorphic function on $V$ and we add $\widetilde{\Delta}$ to $\sF$.
 See \figureref{fig:Xsingvariety} for the setup.
 
@@ -16154,7 +16154,7 @@ See \figureref{fig:puiseux} for an example.
 $1$ to $2$, $2$ to $3$, $3$ to $4$,
 and $4$ to $1$.  As $\xi$ moves along the short circular arrow on the right, $\xi^4$
 moves along the long circular arrow on the left.  The definition of $g$ is
-then given in the right-hand diagram.\label{fig:puiseux}}
+given in the right-hand diagram.\label{fig:puiseux}}
 \end{myfig}
 \end{proof}
 
