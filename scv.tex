@@ -15689,34 +15689,22 @@ $z_n \mapsto f(0,z_n)$ being of finite order.  Show that
 \begin{equation*}
 f = u p_1^{d_1} p_2^{d_2} \cdots p_\ell^{d_\ell} ,
 \end{equation*}
-where $p_k$ are Weierstrass polynomials of degree $\mu_k$ that have
-generically (that is, on an open dense set) $\mu_k$ distinct zeros
-(no multiple zeros), the regular points of $Z_{p_k}$ are
-connected, and $u$ is a nonzero holomorphic function
-in a neighborhood of the origin.  See also the next section, these
+where $p_k$ are Weierstrass polynomials of degree $\mu_k$ such that
+for an open dense set of $z'$, $z_n \mapsto f(z',z_n)$
+has $\mu_k$ geometrically distinct zeros (no multiple zeros),
+the set of regular points of $Z_{p_k}$ are
+connected, and $u$ is a nonzero holomorphic function near $0$.
+Note: In the next section, these
 polynomials will be the irreducible factors in the factorization of $f$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:singlegenerator}
-Finish the proof of \thmref{thm:codim1var}, that is,
-suppose $(X,p)$ is a germ of a pure codimension-$1$ subvariety.  Show that
+Finish the proof of \thmref{thm:codim1var}:
+Show that if $(X,p)$ is a germ of a pure codimension-$1$ subvariety, then
 the ideal $I_p(X)$ is a principal ideal (has a single generator).
 \end{exercise}
 
 \begin{exercise}
-FIXME: check if true, I don't think it is, $(z_1^2 z_2, z_1 z_2^2)$ gives a
-FIXME: pure codim-$1$ subvariety, there is probably some sort of hypothesis
-FIXME: missing
-
-Suppose $I \subset \sO_p$ is an ideal such that $V(I)$ is a germ of a pure
-codimension-$1$ subvariety.  Show that
-the ideal $I$ is principal.
-\end{exercise}
-
-\begin{exercise}
-FIXME: check
-%Let $I \subset \sO_p$ be an ideal such that $V(I)$ is a germ of a
-%pure codimension-$1$ subvariety.
 Suppose $I \subset \sO_p$ is a principal ideal.
 Prove the
 \emph{\myindex{Nullstellensatz}} for hypervarieties:
@@ -15858,13 +15846,17 @@ point and so not all of those points would be singular for $X$,
 see \exerciseref{exercise:hypersurfaceinhypervariety}.
 \end{proof}
 
-Note that we have used infinitely many functions in $\sF$ to defne
+\pagebreak[2]
+Note that we have used infinitely many functions in $\sF$ to define
 $X_{\mathit{sing}}$.  It is possible to use finitely many near each point
-as the ideals $I_p(X)$ are Noetherian, but it is not possible to use just the
-$n$ discriminant functions one for each variable, more than $n$ functions
-may be necessary as situations such as the one depicted in
+as the ideals $I_p(X_{\mathit{sing}})$ are Noetherian,
+but despite the temptation, it is not possible to do a generic rotation
+and to use just the
+$n$ discriminant functions, one for each variable.
+More than $n$ functions
+may be necessary as situations like the one depicted in
 \figureref{fig:Xsingvariety} may occur for some $q$ no matter how we rotate
-$X$.
+$X$ to start with.
 
 \begin{exbox}
 \begin{exercise} \label{exercise:nonverticalintersections}
