@@ -15673,6 +15673,64 @@ The topological component is a connected set and it is dense in
 $(X_\ell)_{\mathit{reg}}$, which proves the corollary.
 \end{proof}
 
+\begin{exbox}
+\begin{exercise}
+Suppose $p(z',z_n)$ is a Weierstrass polynomial of degree $k$ such that
+for an open dense set of $z'$ near the origin
+$z_n \mapsto p(z',z_n)$ has geometrically $k$ zeros, and such that the
+regular points of $Z_p$ are connected.  Show that $p$ is
+irreducible in the sense that if $p = rs$ for two Weierstrass polynomials
+$r$ and $s$, then either $r=1$ or $s=1$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $f$ is a function holomorphic in a neighborhood of the origin with
+$z_n \mapsto f(0,z_n)$ being of finite order.  Show that
+\begin{equation*}
+f = u p_1^{d_1} p_2^{d_2} \cdots p_\ell^{d_\ell} ,
+\end{equation*}
+where $p_k$ are Weierstrass polynomials of degree $\mu_k$ that have
+generically (that is, on an open dense set) $\mu_k$ distinct zeros
+(no multiple zeros), the regular points of $Z_{p_k}$ are
+connected, and $u$ is a nonzero holomorphic function
+in a neighborhood of the origin.  See also the next section, these
+polynomials will be the irreducible factors in the factorization of $f$.
+\end{exercise}
+
+\begin{exercise} \label{exercise:singlegenerator}
+Finish the proof of \thmref{thm:codim1var}, that is,
+suppose $(X,p)$ is a germ of a pure codimension-$1$ subvariety.  Show that
+the ideal $I_p(X)$ is a principal ideal (has a single generator).
+\end{exercise}
+
+\begin{exercise}
+FIXME: check if true, I don't think it is, $(z_1^2 z_2, z_1 z_2^2)$ gives a
+FIXME: pure codim-$1$ subvariety, there is probably some sort of hypothesis
+FIXME: missing
+
+Suppose $I \subset \sO_p$ is an ideal such that $V(I)$ is a germ of a pure
+codimension-$1$ subvariety.  Show that
+the ideal $I$ is principal.
+\end{exercise}
+
+\begin{exercise}
+FIXME: check
+%Let $I \subset \sO_p$ be an ideal such that $V(I)$ is a germ of a
+%pure codimension-$1$ subvariety.
+Suppose $I \subset \sO_p$ is a principal ideal.
+Prove the
+\emph{\myindex{Nullstellensatz}} for hypervarieties:
+$I_p\bigl(V(I)\bigr) = \sqrt{I}$.  That is, show that if
+$(f,p) \in I_p\bigl(V(I)\bigr)$, then $(f^k,p) \in I$ for some integer $k$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $X \subset U$ is a subvariety of pure codimension $1$ for an open set $U \subset \C^n$.
+Let $X'$ be a topological component of $X_{\textit{reg}}$.  Prove that the
+closure $\overline{X'}$ is a subvariety of $U$ of pure codimension $1$.
+\end{exercise}
+\end{exbox}
+
 \begin{example} \label{example:discriminantnotsingset}
 If $X$ is a hypervariety and you choose coordinates
 where the preparation theorem applies and $E$ the corresponding discriminant set,
@@ -15810,21 +15868,19 @@ $X$.
 
 \begin{exbox}
 \begin{exercise} \label{exercise:nonverticalintersections}
-Suppose $U \subset \C^n$ is a domain, $q = (q',q'') \in \C^{n-1} \times \C$
-where $q'' \not= 0$,
-$L$ is the line given by $\zeta \in \C \mapsto \zeta q$, and
-$f \in \sO(U)$ a function such that $f(\zeta q) = 0$ if and only if
+Suppose $U \subset \C^n$ is a domain, $q = (0,1) \in \C^{n-1} \times \C$,
+and
+$f \in \sO(U)$ a function such that $f(0,\zeta) = 0$ if and only if
 $\zeta = 0$.  Prove that there exists an open dense set $W$ of
 a some ball $B$ centered at the origin in $\C^{n-1}$, such that
 for every $\epsilon \in W$, the line
 $L_\epsilon$ for $\epsilon \in \C^{n-1}$ given by
-$\zeta \mapsto \bigl( (1-\zeta) \epsilon + \zeta q' , \zeta q'' \bigr)$
-intersects $Z_f$ only in points where $Z_f$ is a graph of $z_n$ over $z' =
-(z_1,\ldots,z_{n-1})$.
-Hint: First make a linear change of coordinates so that $q= (0,1)$, then
-make another change of coordinates near the origin so that $L_\epsilon$
-are all vertical (make $\zeta$ your $n$th variable).  Then apply
-\thmref{thm:discrthm}.
+$\zeta \mapsto \bigl( (1-\zeta) \epsilon , \zeta \bigr)$
+intersects $Z_f$ only in points where $Z_f$ is a graph of $z_n$ over
+$z' = (z_1,\ldots,z_{n-1})$. (Note that $q \in L_\epsilon$ for all $\epsilon$.)
+Hint: First make a change of coordinates near the origin so that $L_\epsilon$
+are all vertical (make $\zeta$ your $n$th variable).  Apply
+\thmref{thm:discrthm} in both sets of coordinates.
 \end{exercise}
 
 \begin{exercise} \label{exercise:hypersurfaceinhypervariety}
@@ -15846,56 +15902,6 @@ singular point).
 For every $0 \leq k \leq n-2$, find a hypervariety $X$ of $\C^n$ whose set
 of singular points is a subvariety of dimension $k$.
 \end{exparts}
-\end{exercise}
-
-\begin{exercise}
-Suppose $p(z',z_n)$ is a Weierstrass polynomial of degree $k$ such that
-for an open dense set of $z'$ near the origin
-$z_n \mapsto p(z',z_n)$ has geometrically $k$ zeros, and such that the
-regular points of $Z_p$ are connected.  Show that $p$ is
-irreducible in the sense that if $p = rs$ for two Weierstrass polynomials
-$r$ and $s$, then either $r=1$ or $s=1$.
-\end{exercise}
-
-\begin{samepage}
-\begin{exercise}
-Suppose $f$ is a function holomorphic in a neighborhood of the origin with
-$z_n \mapsto f(0,z_n)$ being of finite order.  Show that
-\begin{equation*}
-f = u p_1^{d_1} p_2^{d_2} \cdots p_\ell^{d_\ell} ,
-\end{equation*}
-where $p_k$ are Weierstrass polynomials of degree $\mu_k$ that have
-generically (that is, on an open dense set) $\mu_k$ distinct zeros
-(no multiple zeros), the regular points of $Z_{p_k}$ are
-connected, and $u$ is a nonzero holomorphic function
-in a neighborhood of the origin.  See also the next section, these
-polynomials will be the irreducible factors in the factorization of $f$.
-\end{exercise}
-\end{samepage}
-
-\begin{exercise} \label{exercise:singlegenerator}
-Suppose $(X,p)$ is a germ of a pure codimension-$1$ subvariety.  Show that
-the ideal $I_p(X)$ is a principal ideal (has a single generator).
-Use the function from the proof of \thmref{thm:codim1var}.
-\end{exercise}
-
-\begin{exercise}
-Suppose $I \subset \sO_p$ is an ideal such that $V(I)$ is a germ of a pure
-codimension-$1$ subvariety.  Show that
-the ideal $I$ is principal.
-\end{exercise}
-
-\begin{exercise}
-Let $I \subset \sO_p$ be a principal ideal.  Prove the
-\emph{\myindex{Nullstellensatz}} for hypervarieties:
-$I_p\bigl(V(I)\bigr) = \sqrt{I}$.  That is, show that if
-$(f,p) \in I_p\bigl(V(I)\bigr)$, then $(f^k,p) \in I$ for some integer $k$.
-\end{exercise}
-
-\begin{exercise}
-Suppose $X \subset U$ is a subvariety of pure codimension $1$ for an open set $U \subset \C^n$.
-Let $X'$ be a topological component of $X_{\textit{reg}}$.  Prove that the
-closure $\overline{X'}$ is a subvariety of $U$ of pure codimension $1$.
 \end{exercise}
 \end{exbox}
 
