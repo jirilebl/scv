@@ -166,7 +166,8 @@ footnote for more consistency (and add it to the index).
 the singular
 set of a hypervariety is a subvariety, makes things more complete at least
 for hypervarieties.  Add a figure to go with Theorem 6.6.5 and a couple of
-exercises to finish the proof.  Also one exercise was removed due to an
+exercises to finish the proof.  Also a figure to the parabola example.
+Also one exercise was removed due to an
 erratum.  That all renumbers the exercises in the section.
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
@@ -174,7 +175,7 @@ erratum.  That all renumbers the exercises in the section.
   are connected to our statements.  That makes things more compatible with
   most one-variable books.
 <li> Improve Figure C.1 a little.
-<li> In appendix C add a short note on how to evaluate $k$-forms.
+<li> In appendix C add a short note on how to evaluate \(k\)-forms.
 <li> Add reference to my one variable book in the reading.
 <li> When computing the Hessian use the vertical bar to evaluate,
   it may be clearer

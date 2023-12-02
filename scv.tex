@@ -15730,8 +15730,21 @@ A simple example of this behavior is the set defined by
 $z_2^2 - z_1 = 0$.  The defining function is a Weierstrass
 polynomial in $z_2$ and the discriminant set is given by $z_1 = 0$.
 However, the subvariety has no singular points as it is the graph of $z_1$
-over $z_2$.
-A less trivial example, where the singular set is of any given codimension is given in
+over $z_2$.  See~\figureref{fig:sidewaysparabola}.
+
+\begin{myfig}
+\medskip
+\subimport*{figures/}{sidewaysparabola.eepic}
+\bigskip
+\caption{The sideways parabola $z_2^2-z_1=0$ for real $z_1$ and $z_2$.
+For each nonzero $z_1$, there are two solutions (for negative $z_1$ these
+are obviously not real).  But for each fixed $z_2$, there is exactly
+one solution.\label{fig:sidewaysparabola}}
+\end{myfig}
+
+A less trivial example $z_1^2+\cdots+z_k^2=0$,
+where the singular set is of any given dimension $n-k$
+is given in
 \exerciseref{exercise:morsesingularity}.
 \end{example}
 
@@ -15748,8 +15761,10 @@ Furthermore, if $Z_f$ is a pure codimension-$1$ subvariety, then
 $(Z_f)_{\mathit{reg}}$ is open and dense in $Z_f$.
 \end{thm}
 
-We can, however, improve on that theorem now since we know that
+We will improve on that theorem, since we now know that
 hypervarieties are precisely the zero sets of a single function locally.
+We can use the discriminant to locate singularities, but we must allow
+infinitely many linear changes of coordinates.
 
 \begin{thm} \label{thm:hypervarsingularity}
 Let $U \subset \C^n$ be a domain and $X \subset U$
@@ -15760,16 +15775,18 @@ $n-2$.
 
 \begin{proof}
 It is sufficient to consider a certain fixed point $p \in X$ and prove the
-results locally near $p$.
+result locally near $p$.
 At $p$, there is a single holomorphic function $f$ that defines the germ of
 $(X,p)$ meaning that its zero set is equal to $X$ near $p$.
 Without loss of generality, assume that $p=0$,
 and after a linear change of coordinates, assume that we can apply
-\thmref{thm:discrthm} near the origin with respect to each variable
+the preparation theorem and \thmref{thm:discrthm} near the origin with respect to each variable
 (e.g., if we can apply the preparation in each variable).
 Suppose that $D$ is a
-small enough polydisc in $U$ where $f$ is defined, $Z_f = X \cap D$, and such that
-we can apply \thmref{thm:discrthm} with respect to each variable in the polydisc $D$.
+small enough polydisc in $U$ where $f$ is defined, $Z_f = X \cap D$,
+and such that
+we can apply \thmref{thm:discrthm} with respect to each variable
+in the polydisc $D$.
 Let $V$ be some small
 neighborhood of the origin with $\widebar{V} \subset D$.
 
@@ -15784,54 +15801,63 @@ found a function holomorphic in $V$ that is nonzero at $q$.
 Let us start a collection $\sF$ of holomorphic functions on $V$ and put
 $\Delta$ in it.
 
-Now suppose that $\Delta(q) = 0$.  Write $q = (q',q'')$.  We are really
-considering $X$ sitting above $D'$ along the vertical line
-$L = \{ z' = q' \}$.  The issue is that $L$ intersects $X \cap D$ 
-at points near which $X \cap D$ is not a graph of $z_n$ over $z'$.
-What we want is to find a nearby (nearly vertical) line
-$\widetilde{L}$ that still goes through $q$, but intersects $X \cap D$
-at such graph points.
-By ``nearby,'' we mean that $\widetilde{L}$ is given via an affine function whose coefficients
-are close to those of $L$.
-This can be done near every intersection
-via \exerciseref{exercise:nonverticalintersections},
-and once a line intersects at a point where $X$ is a graph of $z_n$
-over $z'$ then for all nearby lines also only intersect such points.
-So we can nudge the line one intersection at a time and since there
-are finitely many intersection we find our $\widetilde{L}$ and it can be
-arbitrarily close to $L$.  We make a linear change of coordinates to make
-$\widetilde{L}$ a vertical line.
-Call $\tilde{z} = (\tilde{z}',\tilde{z}_n)$ the new coordinates.
-By picking $\widetilde{L}$ close enough to $L$ we can ensure that
-$X$ is a graph of $\tilde{z}_n$ over $\tilde{z}'$ near all the intersections
-$\widetilde{L} \cap X \cap D$.  We can also pick $\widetilde{L}$ close
-enough to $L$ so that there is a polydisc
-$\widetilde{D} = \widetilde{D}' \times \widetilde{D}'' \subset D$ in these new coordinates
-such that we can apply the preparation theorem in this polydisc, that is,
-we need $X \cap \widetilde{D}' \times \partial \widetilde{D}'' = \emptyset$
-and such that the vertical line $\{ \tilde{z}' = 0 \}$ only hits $X \cap
-\widetilde{D}$ at the origin.  Furthermore, we can also arrange that
-$V \subset \widetilde{D}$ as $\widebar{V}$ is compact in $D$.
-See \figureref{fig:Xsingvariety} for a plot in two real dimensions.
+Now suppose that $\Delta(q) = 0$.
+Moreover, we can assume that the $f$ we get is the Weierstrass polynomial
+in $z_n$ we found in the proof of \thmref{thm:codim1var}.  In particular, it is
+a Weierstrass polynomial of degree $m$ and
+for a generic $z'$ (outside of the discriminant set),
+the function $z_n \mapsto f(z',z_n)$ has $m$ geometrically distinct roots
+(so $m$ roots up to multiplicity as well).
+Write $q = (q',q_n)$.
+The zero of $z_n \mapsto f(q',z_n)$ at $z_n=q_n$ is simple.
+We will try to change variables so that the new vertical line through $q$
+intersects $X$ only at simple zeros.  We already have that the root at $q$
+is simple and so we will rotate the line around $q$.
+
+We will change variables to
+$\tilde{z} = (\tilde{z}',z_n)$ where
+$(z',z_n) = \bigl(\tilde{z}' + (q_n-z_n) \epsilon', z_n\bigr)$
+and where $\epsilon' \in \C^{n-1}$ is small,
+so that the chosen line becomes the vertical $\{ \tilde{z}' = q' \}$.
+For small $\epsilon'$ and $\tilde{z}'$ near $q'$, the function
+$z_n \mapsto f\bigl(\tilde{z}' + (q_n-z_n) \epsilon', z_n\bigr)$
+still has exactly $m$ roots up to
+multiplicity via the argument principle.
+If $z_n \mapsto f\bigl(q' + (q_n-z_n) \epsilon', z_n\bigr)$ has $m$ geometrically
+distinct roots, then so does 
+$z_n \mapsto f\bigl(\tilde{z}' + (q_n-z_n) \epsilon', z_n\bigr)$ has $m$ geometrically
+distinct roots via the same argument with the $m$ small discs and
+the argument principle as in the proof of \thmref{thm:discrthm}.
+
+The problem of finding arbitrarily small $\epsilon'$ that do the trick is
+left as an exercise.  It can be done one intersection of the line
+$z_n \mapsto \bigl(q' + (q_n-z_n) \epsilon', z_n\bigr)$ with $X$ at a time,
+that is, if we have a multiplicity $k$ intersection, a small generic change in
+$\epsilon'$ will give us $k$ distinct intersections nearby.
+See \exerciseref{exercise:nonverticalintersections}.
+
+We take a slightly smaller polydisc
+$\widetilde{D} \subset \widetilde{D}' \times D'' \subset D$
+in the $\tilde{z}$ variables
+such that
+still $V \subset \widetilde{D}$ (we may need to pick $\epsilon'$ small
+enough to arrange this), we can apply \thmref{thm:discrthm}.  As the number
+of zeros of $f\bigl(\tilde{z}' + (q_n-z_n) \epsilon', z_n\bigr)$ is $m$
+for all $\tilde{z}'$ near $q'$ including $\tilde{z}'=q'$,
+we find that the discriminant
+$\widetilde{\Delta}$ in these variables does not vanish at $q$
+using the same argument as before.  We also have that $\widetilde{\Delta}$
+is a holomorphic function on $V$ and we add $\widetilde{\Delta}$ to $\sF$.
+See \figureref{fig:Xsingvariety} for the setup.
 
 \begin{myfig}
 \medskip
 \subimport*{figures/}{Xsingvariety.pdf_t}
 \bigskip
-\caption{Moving to make the discriminant not vanish at
-$q$.\label{fig:Xsingvariety}}
+\caption{Changing variables to make the discriminant not vanish at
+$q$, where $L$ is the line $\{z' = q'\}$ while $\widetilde{L}$
+is the tilted line $\{ \tilde{z}' = q' \}$.\label{fig:Xsingvariety}}
 \end{myfig}
-
-We can now repeat the argument as before, applying \thmref{thm:discrthm}
-to get the discriminant function $\widetilde{\Delta}$ with respect to the
-polydisc $\widetilde{D}$.  Since near all the points on $\widetilde{L} \cap X$
-$X$ is a graph of $\bar{z}_n$, we must have that the intersection with all
-nearby vertical lines gives the same number of intersections.  In other
-words, writing $q = (\widetilde{q}',\widetilde{q}'')$ in these new
-coordinates, we find that $\widetilde{q}'$ is not in the discriminant set,
-so $\widetilde{\Delta}(\widetilde{q}') \not= 0$.  So again thinking of
-$\widetilde{\Delta}$ as a function on $V$ we found a holomorphic function
-on $V$ that does not vanish at $q$ and we put it into $\sF$.
 
 Now if $q \in X \cap V$ is singular, then every discriminant function
 used above must be zero at $q$.
@@ -15850,29 +15876,33 @@ see \exerciseref{exercise:hypersurfaceinhypervariety}.
 Note that we have used infinitely many functions in $\sF$ to define
 $X_{\mathit{sing}}$.  It is possible to use finitely many near each point
 as the ideals $I_p(X_{\mathit{sing}})$ are Noetherian,
-but despite the temptation, it is not possible to do a generic rotation
-and to use just the
+but despite the temptation, it is not possible to do a single
+generic linear change of variables and use just the
 $n$ discriminant functions, one for each variable.
 More than $n$ functions
 may be necessary as situations like the one depicted in
-\figureref{fig:Xsingvariety} may occur for some $q$ no matter how we rotate
-$X$ to start with.
+\figureref{fig:Xsingvariety} may occur for some $q$ no matter how we change
+variables to start with.
 
 \begin{exbox}
 \begin{exercise} \label{exercise:nonverticalintersections}
-Suppose $U \subset \C^n$ is a domain, $q = (0,1) \in \C^{n-1} \times \C$,
-and
-$f \in \sO(U)$ a function such that $f(0,\zeta) = 0$ if and only if
-$\zeta = 0$.  Prove that there exists an open dense set $W$ of
-a some ball $B$ centered at the origin in $\C^{n-1}$, such that
-for every $\epsilon \in W$, the line
-$L_\epsilon$ for $\epsilon \in \C^{n-1}$ given by
-$\zeta \mapsto \bigl( (1-\zeta) \epsilon , \zeta \bigr)$
-intersects $Z_f$ only in points where $Z_f$ is a graph of $z_n$ over
-$z' = (z_1,\ldots,z_{n-1})$. (Note that $q \in L_\epsilon$ for all $\epsilon$.)
-Hint: First make a change of coordinates near the origin so that $L_\epsilon$
-are all vertical (make $\zeta$ your $n$th variable).  Apply
-\thmref{thm:discrthm} in both sets of coordinates.
+\begin{exparts}
+\item
+Suppose $D \subset \C^n$ is a polydisc, $0 \in D$,
+$q = (0,1) \in \C^{n-1} \times \C$,
+and $P$ is a Weierstrass polynomial of degree $k$
+such that for a generic $z'$ (not in the discriminant set),
+$z_n \mapsto P(z',z_n)$ has $k$ simple zeros.
+Prove that there exists a ball $B \subset \C^{n-1}$ centered at the origin
+and a dense open set $W \subset B$
+such that
+for every $\epsilon' \in W$, the function
+$z_n \mapsto \bigl( (1-z_n) \epsilon' , z_n \bigr)$
+has exactly $k$ geometrically distinct zeros.
+Hint: Change coordinates near the origin to make all these lines vertical.
+\item
+Show that part a) proves the claim in the proof of theorem.
+\end{exparts}
 \end{exercise}
 
 \begin{exercise} \label{exercise:hypersurfaceinhypervariety}
