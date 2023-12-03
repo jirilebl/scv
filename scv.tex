@@ -79,12 +79,12 @@
 
 %\usepackage[all]{hypcap} %done by caption
 
-\usepackage{draftwatermark}
-\SetWatermarkText{Draft of v4.0 as of \today. May change substantially!}
-\SetWatermarkAngle{90}
-\SetWatermarkHorCenter{0.5in}
-\SetWatermarkColor[gray]{0.7}
-\SetWatermarkScale{0.18}
+%\usepackage{draftwatermark}
+%\SetWatermarkText{Draft of v4.0 as of \today. May change substantially!}
+%\SetWatermarkAngle{90}
+%\SetWatermarkHorCenter{0.5in}
+%\SetWatermarkColor[gray]{0.7}
+%\SetWatermarkScale{0.18}
 
 \definecolor{gray75}{gray}{0.75}
 
@@ -536,7 +536,7 @@ Spring 2014, Spring 2016, Spring 2019, and Fall 2023 semesters
 at the Oklahoma State University.
 There is more material than can fit in a one semester class
 to allow for several different versions of the course.
-In fact, I did it somewhat differently each semester I ran it.
+In fact, I did a different selection each semester I taught it.
 Quite a few exercises of various difficulty are
 sprinkled throughout the text, and I hope a reader is
 at least attempting or thinking about most of them.
@@ -559,7 +559,8 @@ and most of
 basic knowledge of differential forms is useful, and
 in \chapterref{ch:analyticvarieties}
 we use some basic ring theory from algebra.
-By design, it can replace the second semester of complex analysis.
+By design, it can replace the second semester of complex analysis,
+perhaps taught with my one-variable book~\cite{Lebl:ca}.
 
 This book is not intended as an exhaustive reference.
 It is simply a whirlwind tour of several complex variables.
@@ -578,7 +579,7 @@ The major addition of this edition is the greatly
 expanded chapter on the
 $\bar{\partial}$-problem, \chapterref{ch:dbar}.
 Many minor changes and additions throughout, especially in chapters
-\ref{ch:holfunc} and \ref{ch:convexity},
+\ref{ch:holfunc}, \ref{ch:convexity}, and \ref{ch:analyticvarieties},
 resulted in some renumberings, including some renumbering of exercises.
 Finally, I've added a short
 appendix listing some useful results from analysis, including the very
@@ -18622,7 +18623,7 @@ $(c_1,\ldots,c_{k+1}) \subset (c_1,\ldots,c_k)$ or
 \begin{equation*}
 c_{k+1} = a_1 c_1 + \cdots a_k c_k .
 \end{equation*}
-As degree of $f_{k+1}$ is at least the degree of $f_1$, through $f_k$,
+As degree of $f_{k+1}$ is at least the degree of $f_1$ through $f_k$,
 we can define the polynomial
 \begin{equation*}
 g =
@@ -18988,7 +18989,7 @@ $\varphi \colon \R \to \R$ is convex, and $f$ is measurable.  Then
 
 A set $S \subset \R^n$ is \emph{convex}\index{convex}
 (or as we will say in the main text
-\emph{\myindex{geometrically convex}}\index{convex!geometrically}),
+\emph{\myindex{geometrically convex}}\index{convex!geometrically})
 if for every $x,y \in S$ and every $\lambda \in [0,1]$ the
 point $(1-\lambda) x + \lambda y$ is in $S$.
 Interior and closure of convex sets is convex.
