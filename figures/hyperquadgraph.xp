@@ -1,0 +1,33 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+P F(double x, double y)
+{
+ 	return P(x, y, x*x-y*y);
+}
+
+domain R(P(-2, -2), P(2,2), mesh(10,20), mesh(20,40));
+
+int main()
+{
+  picture(P(-2.9,-3.0), P(2.9,3.0), "2.3x1.5in");
+
+  begin();
+  //border();
+
+  camera.at(P(5,8,30));
+
+  plain ();  
+  fill(White());
+  surface(F, R); // rectangular
+
+  bold();
+  line(P(-2,-2,0),P(2,2,0));
+  //line(P(2,-2,0),P(-2,2,0));
+  line(P(2,-2,0),P(1.55,-1.55,0)); // not the whole line is visible
+  line(P(1.1,-1.1,0),P(-2,2,0));
+
+  tikz_format();
+  end();
+}

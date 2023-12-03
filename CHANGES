@@ -171,6 +171,8 @@ Also one exercise was removed due to an
 erratum.  That all renumbers the exercises in the section.
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
+<li>Add a figure to Example 6.8.2.
+<li>In section 6.8, add a figure for the definition of the Segre variety.
 <li> In appendix B, introduce and use winding numbers and describe how things
   are connected to our statements.  That makes things more compatible with
   most one-variable books.

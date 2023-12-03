@@ -15653,7 +15653,9 @@ that define this subvariety.  In more technical
 language, the subvariety is not a \emph{\myindex{complete intersection}}.
 \end{example}
 
-Interestingly we also proved the following theorem.  Same theorem is true
+Interestingly, a small refinement of the proof of the theorem above proves
+the following result.
+Same theorem is true
 for higher codimension, but it is harder to prove.
 
 \begin{cor}
@@ -16270,7 +16272,7 @@ the Levi form of $M$ vanishes on $M \cap X$.
 
 \begin{example}
 The vanishing of the Levi form is not necessary if the complex varieties in
-$M$ are small.  Consider $M\subset \C^3$ with a nondegenerate (but not definite)
+$M$ are smaller.  Consider $M\subset \C^3$ with a nondegenerate (but not definite)
 Levi form:
 \begin{equation*}
 \Im w = \abs{z_1}^2-\abs{z_2}^2 .
@@ -16281,8 +16283,17 @@ given by $z_1 = e^{i\theta} z_2$ and
 $w = 0$.  The union $\bigcup_\theta L_\theta$ of those
 complex lines is not
 contained in some single unique complex subvariety inside $M$.  Any complex
-subvariety that contains all $L_\theta$ must contain the entire complex hypersurface given
+subvariety that contains all the lines $L_\theta$ must contain the entire complex hypersurface given
 by $w = 0$, which is not contained in $M$.
+See \figureref{fig:hyperquadgraph}.
+
+\begin{myfig}
+\includegraphics[width=0.4\textwidth]{figures/hyperquadgraph.pdf}
+\caption{A trace of the hypersurface in the $(\Re z_1,\Re z_2,\Im w)$
+space.  The traces of the two complex lines $L_0$ and $L_{\pi}$ in the plane
+$w=0$ corresponding to 
+$z_1=z_2$ and $z_1=-z_2$.\label{fig:hyperquadgraph}}
+\end{myfig}
 \end{example}
 
 \begin{exbox}
@@ -16328,8 +16339,8 @@ converges in $U \times U^*$ when treating $z$ and $\bar{z}$ as separate
 variables.  That is, $r(z,\zeta)$ is a well-defined function on
 $U \times U^*$, and $r(z,\zeta) = 0$ defines a complexification $\sM$
 in $U \times U^*$.  Assume also that $U$ is small enough that
-the complexified
-$dr$ does not vanish on $\sM$ and that $\sM$ is connected.
+the derivative $dr$ of the complexified $r$ does not vanish on
+$\sM$ and that $\sM$ is connected.
 See also \propref{prop:complexificationofrasurface}.
 
 Given $q \in U$,
@@ -16340,6 +16351,7 @@ define the \emph{Segre variety}
 \bigl\{ z \in U : r(z,\bar{q}) = 0 \bigr\} =
 \bigl\{ z \in U : (z,\bar{q}) \in \sM \bigr\} .
 \end{equation*}
+See a diagram in \figureref{fig:segrefig}.
 A priory, the subvariety $\Sigma_p$ depends on $U$ and $r$.
 However, if $\widetilde{r}$ is a
 real-analytic function that complexifies to $U \times U^*$
@@ -16366,6 +16378,15 @@ The Segre variety is
 well-defined as a germ, and so often when one talks about $\Sigma_q$
 without mentioning the $U$ or $r$, then one means some small enough
 representative of a Segre variety or the germ itself.
+
+\begin{myfig}
+\medskip
+\subimport*{figures/}{segrefig.pdf_t}
+\caption{Diagram of $\Sigma_q(U,r)$.
+The ``$M$'' is in quotation marks as it is really in the $z$ space not in
+the diagonal, but we identify it with a subset of the diagonal in this
+picture.\label{fig:segrefig}}
+\end{myfig}
 
 \begin{exbox}
 \begin{exercise}
