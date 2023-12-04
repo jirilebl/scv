@@ -161,6 +161,8 @@ more correct as the curves are picked at \(p'\) not any \(z'.\)
 <li> Make the definition of ideal in 6.4 clearer.
 <li> Put the definition of radical into the main text rather than as a
 footnote for more consistency (and add it to the index).
+<li> Use \(V_p(I)\) instead of \(V(I)\) as we are doing the germ notion
+and that's more consistent.
 <li> Simplify the statement in 6.5.4.
 <li> Define the dimension of a subvariety and the concept of pure dimension
 using only regular points, that way we get around the technicality
