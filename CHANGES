@@ -162,6 +162,10 @@ more correct as the curves are picked at \(p'\) not any \(z'.\)
 <li> Put the definition of radical into the main text rather than as a
 footnote for more consistency (and add it to the index).
 <li> Simplify the statement in 6.5.4.
+<li> Define the dimension of a subvariety and the concept of pure dimension
+using only regular points, that way we get around the technicality
+that we never prove that the set of regular points is dense in general.
+Also simplifies the last exercise in 6.5.
 <li> Reorganize section 6.6, and add a theorem (Theorem 6.6.5) proving that
 the singular
 set of a hypervariety is a subvariety, makes things more complete at least
