@@ -182,11 +182,13 @@ erratum.  That all renumbers the exercises in the section.
   an if and only if for irreducibility, which is really what was meant.
 <li>Add a figure to Example 6.8.2.
 <li>In section 6.8, add a figure for the definition of the Segre variety.
-<li> In appendix B, introduce and use winding numbers and describe how things
+<li> In Appendix B, introduce and use winding numbers and describe how things
   are connected to our statements.  That makes things more compatible with
   most one-variable books.
 <li> Improve Figure C.1 a little.
-<li> In appendix C add a short note on how to evaluate \(k\)-forms.
+<li> In Appendix C add a short note on how to evaluate \(k\)-forms.
+<li> In Appendix D define integral domain and properly assume it for the
+definitions of PID and UFD.
 <li> Add reference to my one variable book in the reading.
 <li> When computing the Hessian use the vertical bar to evaluate,
   it may be clearer
