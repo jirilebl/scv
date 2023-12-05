@@ -15149,10 +15149,14 @@ if $n > 1$, then ${}_n\sO_p$ is not a PID\@.
 \end{exercise}
 \end{exbox}
 
+In a commutative ring $R$, $f \in R$ is
+\emph{\myindex{irreducible}} if $f$ is not a unit and whenever $f=gh$,
+either $g$ or $h$ is a unit.
+
 \begin{thm}
 $\sO_p$ is a \emph{\myindex{unique factorization domain}}\index{UFD}
 (UFD)\@.  That is, up to a
-multiplication by a unit, every element has a unique factorization into
+multiplication by a unit, every nonunit has a unique factorization into
 irreducible elements of $\sO_p$.
 \end{thm}
 
@@ -15785,38 +15789,43 @@ $(X,p)$ meaning that its zero set is equal to $X$ near $p$.
 Without loss of generality, assume that $p=0$,
 and after a linear change of coordinates, assume that we can apply
 the preparation theorem and \thmref{thm:discrthm} near the origin with respect to each variable
-(e.g., if we can apply the preparation in each variable).
-Suppose that $D$ is a
-small enough polydisc in $U$ where $f$ is defined, $Z_f = X \cap D$,
-and such that
-we can apply \thmref{thm:discrthm} with respect to each variable
-in the polydisc $D$.
-Let $V$ be some small
-neighborhood of the origin with $\widebar{V} \subset D$.
+(e.g.\ if we can apply the preparation in each variable).
+Then we can assume that $f$ is holomorphic in some neighborhood $W$,
+$Z_f = X \cap W$, and
+there exists an open neighborhood $V$ of the origin so that for every
+variable $z_k$, $k=1,\ldots,n$, there is a polydisc $D=D_1 \times \cdots
+\times D_n$ centered at the origin with
+$\widebar{V} \subset D$ and $\widebar{D} \subset W$, where
+\thmref{thm:discrthm} applies with respect to $z_k$, that is,
+$Z_f \cap D_1 \times \cdots \times \partial D_k \times \cdots \times D_n =
+\emptyset$.
 
-Pick a $q \in X_{\textit{reg}} \cap V$.  By definition, it means that $X$ is a graph
+Consider a $q \in X_{\textit{reg}} \cap V$.  By definition, $X$ is a graph
 near $q$, so we can, after reordering variables, assume it is a graph of $z_n$
 over $z'=(z_1,\ldots,z_{n-1})$.
-Write $D = D' \times D_n \subset \C^{n-1} \times \C$.  Let $E \subset D'$
+Let $D$ be the corresponding polydisc and
+write $D = D' \times D_n \subset \C^{n-1} \times \C$.  Let $E \subset D'$
 be the discriminant set given by the function $\Delta \in \sO(D')$.
 We can think of $\Delta$ as a function in $\sO(D)$.
 If $q \not\in E \times D_n$, then we have $\Delta(q) \not= 0$, so we have
 found a function holomorphic in $V$ that is nonzero at $q$.
-Let us start a collection $\sF$ of holomorphic functions on $V$ and put
-$\Delta$ in it.
+Let us start a collection $\sF$ of holomorphic functions on $V$,
+one for each $q \in X_{\mathit{reg}} \cap V$,
+and we put $\Delta$ in $\sF$.
 
-Now suppose that $\Delta(q) = 0$.
-Moreover, we can assume that the $f$ we get is the Weierstrass polynomial
+Suppose that $\Delta(q) = 0$.
+We may assume that the $f$ is the Weierstrass polynomial
 in $z_n$ we found in the proof of \thmref{thm:codim1var}.  In particular, it is
 a Weierstrass polynomial of degree $m$ and
 for a generic $z'$ (outside of the discriminant set),
 the function $z_n \mapsto f(z',z_n)$ has $m$ geometrically distinct roots
 (so $m$ roots up to multiplicity as well).
 Write $q = (q',q_n)$.
-The zero of $z_n \mapsto f(q',z_n)$ at $z_n=q_n$ is simple.
-We will try to change variables so that the new vertical line through $q$
-intersects $X$ only at simple zeros.  We already have that the root at $q$
-is simple and so we will rotate the line around $q$.
+The zero of $z_n \mapsto f(q',z_n)$ at $z_n=q_n$ is simple, but the others
+are not all simple as $q'$ is in the discriminant.
+We will change variables so that the new vertical line through $q$
+intersects $X$ only at simple zeros.  The root at $q$
+is already simple and so we will rotate the line around $q$.
 
 We will change variables to
 $\tilde{z} = (\tilde{z}',z_n)$ where
@@ -15829,14 +15838,14 @@ still has exactly $m$ roots up to
 multiplicity via the argument principle.
 If $z_n \mapsto f\bigl(q' + (q_n-z_n) \epsilon', z_n\bigr)$ has $m$ geometrically
 distinct roots, then so does 
-$z_n \mapsto f\bigl(\tilde{z}' + (q_n-z_n) \epsilon', z_n\bigr)$ has $m$ geometrically
-distinct roots via the same argument with the $m$ small discs and
+$z_n \mapsto f\bigl(\tilde{z}' + (q_n-z_n) \epsilon', z_n\bigr)$
+for $\tilde{z}'$ near $q'$
+via the same argument with the $m$ small discs and
 the argument principle as in the proof of \thmref{thm:discrthm}.
-
 The problem of finding arbitrarily small $\epsilon'$ that do the trick is
 left as an exercise.  It can be done one intersection of the line
 $z_n \mapsto \bigl(q' + (q_n-z_n) \epsilon', z_n\bigr)$ with $X$ at a time,
-that is, if we have a multiplicity $k$ intersection, a small generic change in
+that is, if we have an intersection of multiplicity $k$, a small generic change in
 $\epsilon'$ will give us $k$ distinct intersections nearby.
 See \exerciseref{exercise:nonverticalintersections}.
 
@@ -15846,13 +15855,14 @@ in the $\tilde{z}$ variables
 such that
 still $V \subset \widetilde{D}$ (we may need to pick $\epsilon'$ small
 enough to arrange this), we can apply \thmref{thm:discrthm}.  As the number
-of zeros of $f\bigl(\tilde{z}' + (q_n-z_n) \epsilon', z_n\bigr)$ is $m$
+of distinct zeros of $f\bigl(\tilde{z}' + (q_n-z_n) \epsilon', z_n\bigr)$ is $m$
 for all $\tilde{z}'$ near $q'$ including $\tilde{z}'=q'$,
 we find that the discriminant
-$\widetilde{\Delta}$ in these variables does not vanish at $q$.
-We also have that $\widetilde{\Delta}$
-is a holomorphic function on $V$ and we add $\widetilde{\Delta}$ to $\sF$.
-See \figureref{fig:Xsingvariety} for the setup.
+$\widetilde{\Delta}$ in these variables does not vanish at $q'$.
+We againt consider $\widetilde{\Delta}$ as a function
+on $V$ and as it does not vanish at $q$, we add $\widetilde{\Delta}$ to $\sF$.
+See \figureref{fig:Xsingvariety} for the setup.  We have finished defining
+the $\sF$.
 
 \begin{myfig}
 \medskip
@@ -15863,21 +15873,20 @@ $q$, where $L$ is the line $\{z' = q'\}$ while $\widetilde{L}$
 is the tilted line $\{ \tilde{z}' = q' \}$.\label{fig:Xsingvariety}}
 \end{myfig}
 
-Now if $q \in X \cap V$ is singular, then every discriminant function
-used above must be zero at $q$.
-If it were not, than outside of the
-discriminant set all points are graphs of the zeros and hence nonsingular.
+Next, if $q \in X \cap V$ is singular, then every discriminant function
+used above must be zero at $q$;
+outside of the discriminant set, all points of $X$ are graphs of the zeros and hence nonsingular.
 That is, $\varphi(q)=0$ for every $\varphi \in \sF$.
 Thus the common zero set of all the functions in $\sF$ intersected with
 $X \cap V$ gives us precisely $X_{\textit{sing}} \cap V$, so
 $X_{\textit{sing}}$ is a subvariety.  It cannot be of dimension $n-1$ as
 if it were it would be a complex submanifold of dimension $n-1$ near some
-point and so not all of those points would be singular for $X$,
+point and then not all of those points would be singular for $X$,
 see \exerciseref{exercise:hypersurfaceinhypervariety}.
 \end{proof}
 
 \pagebreak[2]
-Note that we have used infinitely many functions in $\sF$ to define
+We used infinitely many functions in $\sF$ to define
 $X_{\mathit{sing}}$.  It is possible to use finitely many near each point
 as the ideals $I_p(X_{\mathit{sing}})$ are Noetherian,
 but despite the temptation, it is not possible to do a single
@@ -16042,7 +16051,7 @@ together is left as an exercise).
 \label{localparthm}
 Let $(X,0)$ be an irreducible germ of a subvariety of dimension $k$
 in $\C^n$.  Let $X$ denote a representative of the germ.
-Then after a linear change of coordinates, we let
+Then after a possible linear change of coordinates, we let
 $\pi \colon \C^n \to \C^k$ be the projection onto the first $k$
 components, and obtain that there exists a neighborhood $U \subset \C^n$
 of the origin, and a proper subvariety $E \subset \pi(U)$ such that
@@ -16120,10 +16129,10 @@ Without loss of generality
 assume $(X,0)$
 is irreducible, so that
 the local parametrization theorem applies.
-We work in a small disc $D \subset \C$ centered at the origin, such that the
+We work in a small disc $D \subset \C$ centered at the origin, so that the
 origin is the unique point of the discriminant set (the subvariety
 $E$).  Let $N = \{ z \in D : \Im z = 0 , \Re z \leq 0 \}$.
-As $D \setminus N$ is simply connected we have the well-defined functions
+As $D \setminus N$ is simply connected, we have the well-defined functions
 $\alpha_1(z),\ldots,\alpha_m(z)$ holomorphic on $D \setminus N$
 that are solutions to $f\bigl(z,\alpha_j(z)\bigr) = 0$.
 These functions continue analytically across $N$ away from the
@@ -16146,7 +16155,7 @@ whose boundaries are where $\xi^k \in N$.
 Transition to $\alpha_{\sigma(1)}(\xi^k)$ after we reach the boundary
 of the first sector, then to
 $\alpha_{\sigma(\sigma(1))}(\xi^k)$ after we reach the boundary of the next sector, and so on.
-After $k$ steps, that is as
+After $k$ steps, that is, as
 $\xi$ moved all the way around the circle,
 we are back at $\alpha_1(\xi^k)$,
 because
@@ -17585,7 +17594,7 @@ and at second glance, it should seem outright outrageous.
 \begin{thm}[Koebe quarter theorem]\index{Koebe quarter theorem}\index{Koebe
 $\frac{1}{4}$-theorem}
 Suppose $f \colon \D \to \C$ is holomorphic and injective.  Then
-$f(\D)$ contains a disc centered at $f(0)$ and radius $\frac{\sabs{f'(0)}}{4}$.
+$f(\D)$ contains a disc of radius $\frac{\sabs{f'(0)}}{4}$ centered at $f(0)$.
 \end{thm}
 
 The $\frac{1}{4}$ is sharp, that is, it is the best it can be.
@@ -18651,12 +18660,13 @@ $I = (f_1,\ldots,f_k)$.
 
 \begin{defn}
 An element $f \in R$ is \emph{\myindex{irreducible}}
-if whenever $f = gh$ for two elements $g,h \in R$, then either $g$ or
+if $f$ is not a unit and
+whenever $f = gh$ for two elements $g,h \in R$, then either $g$ or
 $h$ is a unit.
 A commutative ring $R$ is a
 \emph{\myindex{unique factorization domain}}\index{UFD}
 (UFD) if up to
-multiplication by a unit, every element has a unique factorization into
+multiplication by a unit, every nonunit has a unique factorization into
 irreducible elements of $R$.
 \end{defn}
 
@@ -19149,9 +19159,6 @@ For every $x \in U$, we have $\sum_{\kappa \in K} \varphi(x) = 1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%FIXME: else I don't get links, weird
-%\def\MR#1{\relax\ifhmode\unskip\spacefactor3000 \space\fi%
-  %\href{http://www.ams.org/mathscinet-getitem?mr=#1}{MR#1}}
 \def\myDOI#1{\href{http://dx.doi.org/#1}{#1}}
 
 

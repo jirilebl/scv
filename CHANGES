@@ -159,6 +159,9 @@ principle, use \(\gamma_j\) instead of
 and make the figure in the proof
 more correct as the curves are picked at \(p'\) not any \(z'.\)
 <li> Make the definition of ideal in 6.4 clearer.
+<li> Add a quick definition of irreducible just above Theorem 6.4.2
+for completeness.  Also state Theorem 6.4.2 for nonunits only as to avoid
+having to think of what does it mean for a unit.
 <li> Put the definition of radical into the main text rather than as a
 footnote for more consistency (and add it to the index).
 <li> Use \(V_p(I)\) instead of \(V(I)\) as we are doing the germ notion
