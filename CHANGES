@@ -125,6 +125,8 @@ proof little bit to make it clearer.
   easier then.
 <li> In the proof of Cartan-Thullen, don't use strict inequalities
 which aren't needed
+<li>In 3.1, when looking at convergence of real power series, use open
+product of intervals to start with for consistency.
 <li>Example 3.1.8, remove the square, it's not necessary
 <li> Be more precise in exercise 4.1.3 to mention that the wanted function
 is continuous up to the boundary (so that it has boundary values).
@@ -178,6 +180,8 @@ for hypervarieties.  Add a figure to go with Theorem 6.6.5 and a couple of
 exercises to finish the proof.  Also a figure to the parabola example.
 Also one exercise was removed due to an
 erratum.  That all renumbers the exercises in the section.
+<li> Reword the Local parametrization theorem a little bit and explicitly say
+that E is the discriminant set.
 <li> Exercise 6.7.9 was missing a conclusion to prove.  Make it into proving
   an if and only if for irreducibility, which is really what was meant.
 <li>Add a figure to Example 6.8.2.

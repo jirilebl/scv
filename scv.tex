@@ -8909,7 +8909,7 @@ the series
 \begin{equation*}
 \sum_{\alpha} c_{\alpha} {(x-a)}^\alpha
 \end{equation*}
-converges whenever $\sabs{x_k-a_k} \leq r_k$ for all $k$.
+converges whenever $\sabs{x_k-a_k} < r_k$ for all $k$.
 Here convergence is absolute convergence.  That is,
 \begin{equation*}
 \sum_{\alpha} \sabs{c_{\alpha}}\, \sabs{x-a}^\alpha
@@ -9040,7 +9040,7 @@ $f=g$ on $D \cap V$.  Then $f=g$ on all of $V$.
 The set $D$ is sometimes called the \emph{\myindex{diagonal}}.
 
 \begin{proof}
-Without loss of generality assume that $g=0$.
+Without loss of generality, assume that $g=0$.
 For $(z,\bar{z}) \in V$, we have $f(z,\bar{z}) = 0$, which is really
 $f$ composed with the map taking $z$ to $(z,\bar{z})$.  This
 composition is identically zero, so applying Wirtinger operators yields zero.
@@ -9187,14 +9187,14 @@ $z,w\in \C^n$, by simply knowing the value of
 \begin{equation*}
 \linnprod{Az}{z} = z^*Az = \sum_{k,\ell=1}^n a_{k\ell} \, \bar{z}_k z_\ell
 \end{equation*}
-for all $z \in \C^n$.  In fact, under the hood \propref{prop:complexificationpt2} is
+for all $z \in \C^n$.  In fact, under the hood, \propref{prop:complexificationpt2} is
 polarization in an infinite-dimensional Hilbert space, but we digress.
 \end{remark}
 
 Treating $\bar{z}$ as a separate variable is a very powerful idea, and
 as we have just seen it is completely natural for
 real-analytic functions.  This is one of the reasons why real-analytic
-functions play a special role in several complex variables.
+functions play a special role in complex analysis.
 
 \begin{exbox}
 \begin{exercise}
@@ -15765,7 +15765,7 @@ Let $U \subset \C^n$ be a domain and $f \in \sO(U)$.
 Then $Z_f$ is empty,
 $Z_f$ is a subvariety of pure codimension $1$,
 or $Z_f = U$.
-Furthermore, if $Z_f$ is a pure codimension-$1$ subvariety, then
+Furthermore,
 $(Z_f)_{\mathit{reg}}$ is open and dense in $Z_f$.
 \end{thm}
 
@@ -15776,7 +15776,7 @@ infinitely many linear changes of coordinates.
 
 \begin{thm} \label{thm:hypervarsingularity}
 Let $U \subset \C^n$ be a domain and $X \subset U$
-a subvariety of pure dimension $n-1$ (a hypervariety).
+a subvariety of pure codimension $1$ (a hypervariety).
 Then $X_{\mathit{sing}}$ is a subvariety of dimension less than or equal to
 $n-2$.
 \end{thm}
@@ -16051,10 +16051,11 @@ together is left as an exercise).
 \label{localparthm}
 Let $(X,0)$ be an irreducible germ of a subvariety of dimension $k$
 in $\C^n$.  Let $X$ denote a representative of the germ.
-Then after a possible linear change of coordinates, we let
+Then after a possible linear change of coordinates, letting
 $\pi \colon \C^n \to \C^k$ be the projection onto the first $k$
-components, and obtain that there exists a neighborhood $U \subset \C^n$
-of the origin, and a proper subvariety $E \subset \pi(U)$ such that
+components, there exists a neighborhood $U \subset \C^n$
+of the origin, and a proper subvariety $E \subset \pi(U)$
+(the \emph{\myindex{discriminant set}}) such that
 \begin{enumerate}[(i)]
 \item $X' = X \cap U \setminus \pi^{-1}(E)$ is a connected
 $k$-dimensional complex manifold that is dense in $X \cap U$.
@@ -16085,16 +16086,16 @@ when $X$ is the zero set of a single function.
 
 \medskip
 
-We saw hypersurfaces are the simpler cases of complex-analytic
+We saw that hypersurfaces are the simpler cases of complex-analytic
 subvarieties.  At the other end of the spectrum, complex-analytic
 subvarieties of dimension $1$ are also reasonably simple for different reasons.
 Locally, complex-analytic subvarieties of dimension $1$ are analytic discs.
-Moreover, they are locally the one-to-one holomorphic images of discs,
-and so they have a natural topological manifold structure even at singular
-points.
+Moreover, these disccs can be chosen to be one-to-one,
+and so such subvarieties have a natural topological manifold structure
+even at singular points.
 
 \begin{example}
-The image of the analytic disc
+The image of the holomorphic map
 $\xi \mapsto (\xi^2,\xi^3)$ is the cusp subvariety
 defined by $z_1^3-z_2^2 = 0$ in $\C^2$.
 \end{example}
