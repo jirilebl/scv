@@ -173,6 +173,8 @@ and that's more consistent.
 using only regular points, that way we get around the technicality
 that we never prove that the set of regular points is dense in general.
 Also simplifies the last exercise in 6.5.
+<li>Add the statement about dimension of singularity being less than the
+dimension of the variety to Theorem 6.5.9 (which is left without proof).
 <li> Reorganize section 6.6, and add a theorem (Theorem 6.6.5) proving that
 the singular
 set of a hypervariety is a subvariety, makes things more complete at least

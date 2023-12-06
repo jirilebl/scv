@@ -15382,24 +15382,25 @@ near $p$, the set $X$ is a graph of a holomorphic
 mapping.
 That is, after relabeling coordinates,
 there is a neighborhood $U' \times U'' \subset \C^{k}
-\times \C^{n-k}$ of $p$, where $k =0,1,\ldots,n$, such that
+\times \C^{n-k}$ of $p$, for some $k =0,1,\ldots,n$,
+and a holomorphic $f \colon U' \to \C^{n-k}$
+such that
 \begin{equation*}
 X \cap (U' \times U'') = \Gamma_f
 \end{equation*}
-for a holomorphic mapping $f \colon U' \to \C^{n-k}$.
-Then $p$ is a \emph{\myindex{regular point}} (or
-\emph{\myindex{simple point}}) of $X$ and
+Then $p$ is a \emph{\myindex{regular point}}
+(or a \emph{\myindex{simple point}}) of $X$ and
 the (complex) \emph{dimension}\index{dimension at a regular point}
 of $X$ at $p$ is $k$.  We write $\dim_p X = k$.
-If all points of $X$ are regular points of dimension $k$, then $X$ is called
-a \emph{\myindex{complex manifold}}, or
-\emph{\myindex{complex submanifold}}\index{submanifold!complex}\index{manifold!complex},
-of (complex) dimension $k$.
 As the ambient\footnote{The word \emph{\myindex{ambient}}
 is used often to mean the set
 that contains whatever object we are talking about.} dimension
-is $n$, we say $X$ is of
-\emph{\myindex{codimension}} $n-k$ at $p$.
+is $n$ ($X$ is a subvariety of $U$), we say $X$ is of
+\emph{\myindex{codimension}} $n-k$ at~$p$.
+If all points of $X$ are regular points of dimension $k$, then $X$ is
+a \emph{\myindex{complex manifold}}, or
+a \emph{\myindex{complex submanifold}}\index{submanifold!complex}\index{manifold!complex},
+of (complex) dimension~$k$.
 
 \glsadd{not:Xreg}%
 The set of regular points of $X$ is denoted by $X_{\mathit{reg}}$.  Any
@@ -15511,7 +15512,7 @@ ambient dimension minus the dimension of $X$.
 \end{defn}
 
 \begin{example}
-We saw that $C = \bigl\{ z \in \C^2 : z_1^3-z_2^2 = 0 \bigr\}$ is of
+The cusp $C = \bigl\{ z \in \C^2 : z_1^3-z_2^2 = 0 \bigr\}$ is of
 dimension $1$ at all the regular points, and the only singular point is the
 origin.  Hence $\dim_0 C = 1$, and so $\dim C = 1$.  The subvariety $C$ is
 of pure dimension $1$.
@@ -15527,7 +15528,8 @@ in the next section.
 Let $U \subset \C^n$ be open and connected and let $X \subset U$
 be a subvariety, then the set of regular points $X_{\mathit{reg}}$
 is open and dense in $X$.
-In fact, $X_{\mathit{sing}} \subset X$ is a subvariety.
+In fact, $X_{\mathit{sing}} \subset X$ is a subvariety
+and $\dim X_{\mathit{sing}} < \dim X$.
 \end{thm}
 
 \begin{exbox}
@@ -15546,7 +15548,7 @@ Pure codimension-$1$ subvarieties are particularly nice.
 Sometimes pure codimension-$1$ subvarieties are called
 \emph{hypervarieties}\index{hypervariety}.  We will prove two things for
 hypervarieties.  First we will prove that locally, a hypervariety can be
-defined via a single function (something not true for higher codimension),
+defined via a single function,
 and second, we will prove that the singular set of a hypervariety is a
 subvariety.
 
@@ -15580,7 +15582,7 @@ distinct zeros of $z_n \mapsto P(z',z_n)$.
 Let $X'$ be a topological component of $X \setminus ( E \times D )$.
 Above each point $z' \in U' \setminus E$, let
 $\alpha_1(z'),\ldots,\alpha_k(z')$ denote the distinct zeros that are in $X'$,
-that is $\bigl(z',\alpha_\ell(z')\bigr) \in X'$.
+that is, $\bigl(z',\alpha_\ell(z')\bigr) \in X'$.
 If $\alpha_\ell$ is a holomorphic function in some small neighborhood and
 $\bigl(z',\alpha_\ell(z')\bigr) \in X'$ at one point, then
 $\bigl(z',\alpha_\ell(z')\bigr) \in X'$ for all nearby points too
@@ -15611,7 +15613,7 @@ The zeros of $F$
 above $z' \in U' \setminus E$
 are simple and give precisely $X'$.
 By using the argument principle
-again, we find that all zeros above points of $E$ are limits of zeros
+as in \thmref{thm:discrthm}, we find that all zeros above points of $E$ are limits of zeros
 above points in $U' \setminus E$.
 Consequently,
 the zero set of $F$ is the closure of $X'$ in $U' \times D$ by continuity.
