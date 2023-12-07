@@ -9,7 +9,9 @@ to being a domain of holomorphy as an application of the \(\bar{\partial}\)-prob
 <li> New short appendix on some analysis bits including some
 useful measure theory results.
 <li> A couple of new results in existing sections, another version of
-the Kontinuitatssatz in section 2.1, and the proof that the singular
+the Kontinuitatssatz in section 2.1, prove the existence of
+regular points (and hence density) of a subvariety in 6.5,
+and prove that the singular
 set of a hypervariety is a subvariety in section 6.6.
 <li> New font, more readable (shorter lines).
 <li> Lots of minor improvements, new exercises, some new figures, fixed errata.
@@ -173,8 +175,14 @@ and that's more consistent.
 using only regular points, that way we get around the technicality
 that we never prove that the set of regular points is dense in general.
 Also simplifies the last exercise in 6.5.
+<li> Move the statement of the theorem about \(Z_f\) to section 6.5 from
+6.6 (now Theorem 6.5.9), and add the generalization of this result (that
+regular points exist and are thus dense) to arbitrary varieties,
+Lemma 6.5.10.
 <li>Add the statement about dimension of singularity being less than the
-dimension of the variety to Theorem 6.5.9 (which is left without proof).
+dimension of the variety to Theorem 6.5.11 (which is left without proof).
+<li> In 6.6, what is now Theorem 6.6.2 had a gap (must use that
+that regular points are dense, so fix this gap).
 <li> Reorganize section 6.6, and add a theorem (Theorem 6.6.5) proving that
 the singular
 set of a hypervariety is a subvariety, makes things more complete at least

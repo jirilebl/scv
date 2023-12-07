@@ -15414,12 +15414,17 @@ A subvariety $X$ can have
 regular points of several different dimensions, although if a point
 is a regular point of dimension $k$, then all nearby points are regular
 points of dimension $k$ as the same $U'$ and $U''$ works.
+In particular, $X_{\mathit{reg}}$ is an open subset of $X$.
 Any isolated point of $X$ is automatically a regular point of
 dimension~$0$.
 Finally, we remark is that dimension is well-defined.  We leave it as an
 exercise below.
 Sometimes the empty set is considered a complex manifold of dimension $-1$ (or
 $-\infty$).
+Although it may not perhaps be immediately clear, but it is not
+difficult to show that the definition 
+of a regular point is invariant under biholomorphic changes of coordinates
+(\exerciseref{exercise:regularbiholomorphic}).
 
 \begin{example}
 The set $X = \C^n$ is a complex submanifold of dimension $n$
@@ -15464,7 +15469,7 @@ $C = \bigl\{ z \in \C^2 : z_1^3-z_2^2 = 0 \bigr\}$.  Prove that
 the origin is not a regular point of $C$.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:regularbiholomorphic}
 Show that $p$ is a regular point of dimension $k$ of a subvariety $X$
 if and only if there
 exists a local biholomorphic change of coordinates that puts $p$ to the
@@ -15476,12 +15481,9 @@ we can let $f=0$ in the definition.
 \end{exbox}
 
 We also define dimension at a singular point.
-A fact that we will not prove in general is that
-the set of regular points of a
-subvariety is open and dense in the subvariety; a
-subvariety is regular at most points.  Therefore, the
-following definition makes sense without resorting to
-the convention that $\max \emptyset = -\infty$.
+Below, we will prove that the set of regular points is not only nonempty,
+but also dense in any subvariety, and so arbitrarily near to every point,
+there is a regular point.
 
 \begin{defn}
 Let $X \subset U \subset \C^n$ be a (complex) subvariety of $U$.  Let $p \in
@@ -15518,17 +15520,84 @@ origin.  Hence $\dim_0 C = 1$, and so $\dim C = 1$.  The subvariety $C$ is
 of pure dimension $1$.
 \end{example}
 
+Back in \sectionref{sec:riemannextzerosetsinjmaps}, we proved
+following theorem (\thmref{thm:regptsdense}).  We restate it in the
+language of varieties.
 
-We have the following theorem, which we
-state without proof, at least in the general setting.
+\begin{thm} \label{thm:regptsdense2}
+Let $U \subset \C^n$ be a domain and $f \in \sO(U)$.
+Then $Z_f$ is empty,
+$Z_f$ is a subvariety of pure codimension $1$,
+or $Z_f = U$.
+Furthermore,
+$(Z_f)_{\mathit{reg}}$ is open and dense in $Z_f$.
+\end{thm}
+
+Let us improve on this for arbitrary varieties.
+
+\begin{lemma}
+Let $U \subset \C^n$ be open and let $X \subset U$ be a subvariety,
+then $X_{\mathit{reg}}$ is nonempty.  Consequently, $X_{\mathit{reg}}$ is
+open and dense in $X$.
+\end{lemma}
+
+\begin{proof}
+In the same way that we proved \thmref{thm:regptsdense},
+by restricting to arbitrary neighborhoods,
+it is sufficient to show the existence of one regular point.
+
+We will work by induction on dimension.  For $n=1$ the result is obvious as
+the only subvarieties are either isolated points or entire components of
+$U$, so all points are regular.
+So suppose the lemma is true in dimension $n-1$.
+It is enoough to find a regular point in some neighborhood of some point
+$p$, so suppose $p = 0 \in X$.  
+Either $X$ contains a whole neighborhood of $0$, in which case
+$0$ is a regular point, or there is some function $f$ that vanishes on $X$.
+After a small linear change of coordinates, we can assume that the
+Weierstrass preparation theorem applies and we can assume that $f$ is a
+Weierstrass polynomial.  Write the variables as
+$(z_1,\ldots,z_{n-1},z_n) = (z',z_n)$ as before.
+In some neighborhood $U' \times D$ of the origin (where $U' \times D \subset U$),
+\thmref{thm:discrthm} applies to $f$, so
+let $\Delta(z')$ denote the discriminant function and let
+$E = Z_\Delta \subset U'$.  If $X \cap \bigl( (U' \setminus E) \times D\bigr)
+\not= \emptyset$, then let $q$ be a point in that set, that is, $\Delta$
+does not vanish at $q$.  Then there is some
+neighborhood $W$ of $q$, such that $Z_f \cap W$ is a
+graph of a holomorphic function and $X \cap W \subset Z_f \cap W$.
+By a local biholomorphic change of variables, we can make $W$ be an open
+subset of $\C^{n-1} \times \{ 0 \}$, so $X \cap W$ is really contained in
+$\C^{n-1}$ and we apply induction.
+
+So suppose $X \cap (U' \times D) \subset E \times D$, then $X \cap (U'
+\times D)$ is contained in the zero set of $\Delta$, which is a function of
+$z'=(z_1,\ldots,z_{n-1})$.  After a linear change of variables in $z'$,
+we can apply the preparation theorem in $z'$ with respect to $z_{n-1}$
+and get $\Delta = u P$ where $u$ is a unit $P$ is a Weierstrass polynomial
+in $z_{n-1}$ with coefficients that only depend on $z_1,\ldots,z_{n-2}$.
+Let $\Delta'$ be the discriminant for $P$, we now repeat the procedure
+above.  Either $\Delta'$ does not vanish some point of $X$, or near the
+origin $X$ is contained in the zero set of $\Delta'$.  If $X$ is contained
+in the zero set of $\Delta'$ we again apply the preparation theorem
+and get a polynomial in $z_{n-2}$ with coefficients depending only on
+$z_1,\ldots,z_{n-3}$.  Rinse and repeat.  Either at some point we could
+apply the induction step, or we end after $n$ steps with $X$ being
+in the zero set of the Weierstrass polynomial in $z_1$ with coefficients
+being constant, that is, $X$ is locally near the origin contained in the
+set where $z_1 = 0$, and we can again apply the induction.
+\end{proof}
+
+We will state without proof that we actually have that the singular set is a
+subvariety, that is, we have the following theorem.
 We will prove it for varieties of pure codimension $1$
 in the next section.
 
-\begin{thm}
-Let $U \subset \C^n$ be open and connected and let $X \subset U$
-be a subvariety, then the set of regular points $X_{\mathit{reg}}$
-is open and dense in $X$.
-In fact, $X_{\mathit{sing}} \subset X$ is a subvariety
+\begin{thm} \label{thm:varietysingularity}
+Let $U \subset \C^n$ be open and let $X \subset U$
+be a subvariety, then
+$X_{\mathit{sing}} \subset X$ is a subvariety
+which is nowhere dense in $X$
 and $\dim X_{\mathit{sing}} < \dim X$.
 \end{thm}
 
@@ -15612,9 +15681,6 @@ in $\sO(U')[z_n]$.
 The zeros of $F$
 above $z' \in U' \setminus E$
 are simple and give precisely $X'$.
-By using the argument principle
-as in \thmref{thm:discrthm}, we find that all zeros above points of $E$ are limits of zeros
-above points in $U' \setminus E$.
 Consequently,
 the zero set of $F$ is the closure of $X'$ in $U' \times D$ by continuity.
 It is left to the reader to check that %(using the argument principle)
@@ -15629,6 +15695,13 @@ most $m$).
 So we can find an $F$ for every topological component of
 $X \setminus ( E \times D )$.  Then we multiply those functions together
 to get $f$.
+No open piece $M \subset X_{\mathit{reg}}$ can lie completely in $E \times D$,
+as otherwise $M$ would in fact agree with some open piece of $E \times D$,
+see \exerciseref{exercise:hypersurfaceinhypervariety},
+but we know that $P$ which must vanish on $M$, only vanishes at finitely
+many points for each fixed $z'$.  Therefore, the closure
+of $X \setminus (E \times D)$ contains $X \cap (U' \times D)$ and so
+$Z_f = X \cap (U' \times D)$.
 
 The fact that this $f$ generates $I_p(X)$ is left as
 \exerciseref{exercise:singlegenerator}.
@@ -15709,9 +15782,18 @@ polynomials will be the irreducible factors in the factorization of $f$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:singlegenerator}
-Finish the proof of \thmref{thm:codim1var}:
+Prove the last part of \thmref{thm:codim1var}:
 Show that if $(X,p)$ is a germ of a pure codimension-$1$ subvariety, then
 the ideal $I_p(X)$ is a principal ideal (has a single generator).
+\end{exercise}
+
+\begin{exercise} \label{exercise:hypersurfaceinhypervariety}
+Suppose that $U \subset \C^n$ is a domain and $X \subset U$
+is a subvariety of dimension $n-1$.  Suppose that $M$
+is a small piece of a complex submanifold of dimension $n-1$ such that
+$M \subset X$.  Prove that the set $M \cap X_{\textit{sing}}$ is
+nowhere dense in $M$.  Hint: Locally near some point of $M$, make $M$ into
+$\{z_n = 0 \}$ and apply \thmref{thm:discrthm} to $X$ there.
 \end{exercise}
 
 \begin{exercise}
@@ -15758,26 +15840,14 @@ is given in
 \exerciseref{exercise:morsesingularity}.
 \end{example}
 
-Back in \sectionref{sec:riemannextzerosetsinjmaps}, we proved
-following theorem (\thmref{thm:regptsdense}).  We restate it in the
-language of varieties.
-
-\begin{thm} \label{thm:regptsdense2}
-Let $U \subset \C^n$ be a domain and $f \in \sO(U)$.
-Then $Z_f$ is empty,
-$Z_f$ is a subvariety of pure codimension $1$,
-or $Z_f = U$.
-Furthermore,
-$(Z_f)_{\mathit{reg}}$ is open and dense in $Z_f$.
-\end{thm}
-
-We will improve on that theorem, since we now know that
-hypervarieties are precisely the zero sets of a single function locally.
-We can use the discriminant to locate singularities, but we must allow
+Let us prove the version of \thmref{thm:varietysingularity} for
+hypervarieties.
+We now know that locally hypervarieties are defined by a single function,
+so we can use the discriminant to locate singularities, but we must allow
 infinitely many linear changes of coordinates.
 
 \begin{thm} \label{thm:hypervarsingularity}
-Let $U \subset \C^n$ be a domain and $X \subset U$
+Let $U \subset \C^n$ be open and $X \subset U$
 a subvariety of pure codimension $1$ (a hypervariety).
 Then $X_{\mathit{sing}}$ is a subvariety of dimension less than or equal to
 $n-2$.
@@ -15918,16 +15988,6 @@ Hint: Change coordinates near the origin to make all these lines vertical.
 \item
 Show that part a) proves the claim in the proof of theorem.
 \end{exparts}
-\end{exercise}
-
-\begin{exercise} \label{exercise:hypersurfaceinhypervariety}
-\pagebreak[2]
-Suppose that $U \subset \C^n$ is a domain and $X \subset U$
-is a subvariety of pure dimension $n-1$.  Suppose that $M$
-is a small piece of a complex submanifold of dimension $n-1$ such that
-$M \subset X$.  Prove that the set $M \cap X_{\textit{sing}}$ is
-nowhere dense in $M$.  Hint: Locally near some point of $M$, make $M$ into
-$\{z_n = 0 \}$ and apply \thmref{thm:discrthm} to $X$ there.
 \end{exercise}
 
 \begin{exercise} \label{exercise:morsesingularity}
