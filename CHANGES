@@ -174,9 +174,11 @@ and that's more consistent.
 renumbered.
 <li> Simplify the statement in 6.5.4.
 <li> Define the dimension of a subvariety and the concept of pure dimension
-using only regular points, that way we get around the technicality
-that we never prove that the set of regular points is dense in general.
+using only regular points, which seems a little ontologically simpler.
 Also simplifies the last exercise in 6.5.
+<li> Add the intersection of two complex manifolds to example 6.5.6,
+and add the relevant figure.
+Also rename X and Y to U and M so that the naming in the example makes more sense.
 <li> Move the statement of the theorem about \(Z_f\) to section 6.5 from
 6.6 (now Theorem 6.5.9), and add the generalization of this result (that
 regular points exist and are thus dense) to arbitrary varieties,

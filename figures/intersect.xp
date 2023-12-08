@@ -1,0 +1,49 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  double slope;
+  double c;
+  double x;
+
+  picture(P(-1.0,-1.0), P(1.0,1.0), "2.25x1.5in");
+
+  begin();
+
+  //h_axis(5);
+  //v_axis(5);
+
+  //h_axis_labels(3, P(-1, 2), tl); // align top-left
+  //v_axis_labels(3, P(-1, 2), tl);
+
+  pen(Black(0.4));
+  line_style(".");
+  dash_size(1);
+
+  bold();
+  line(P(-1,0),P(1,0));
+  line(P(0,-1),P(0,1));
+
+  plain();
+  line(P(-1,1),P(1,1));
+  line(P(0.5,-1),P(0.5,1));
+  line(P(-0.5,-1),P(-0.5,1));
+  line(P(1,-1),P(1,1));
+
+  solid();
+  pen(Black());
+
+  font_size("footnotesize");
+  bottom_axis(4, P(0,-4)).draw();
+  left_axis(2, P(-4,0)).draw();
+
+  bold();
+  line(P(-1,-1),P(1,1));
+  line(P(-1,1),P(1,-1));
+
+  tikz_format();
+  end();
+}
+
