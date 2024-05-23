@@ -18918,8 +18918,9 @@ that is,
 i
 \int_X v\, d \mu .
 \end{equation*}
-The most common class of functions to deal with is then the
+The most common class of functions we deal with is the class of
 \emph{$L^1$-integrable}\index{L1-integrable@$L^1$-integrable}
+(or simply~$L^1$)
 functions, which are the functions such that
 \begin{equation*}
 \int_X \sabs{f} \, d\mu < \infty .
@@ -18980,9 +18981,10 @@ almost everywhere to a function~$f$.  Then
 
 \begin{thm}[Monotone convergence theorem]\index{Monotone convergence theorem}
 \pagebreak[2]
-Let $(X,\sM,\mu)$ be a measure space and
-$\{ f_n \}$ a sequence of nonnegative measurable functions that converges
-pointwise to a function~$f$.  Then
+Let $(X,\sM,\mu)$ be a measure space,
+$\{ f_n \}$ a sequence of nonnegative measurable functions
+where $f_n \leq f_{n+1}$ almost everywhere for all $n$, and suppose $\{f_n
+\}$ converges to $f$ almost everywhere.  Then
 \begin{equation*}
 \int_X f \, d\mu = \lim_{n\to \infty} \int_X f_n \, d\mu .
 \end{equation*}
@@ -18990,25 +18992,25 @@ pointwise to a function~$f$.  Then
 
 \begin{thm}[Dominated convergence theorem]\index{Dominated convergence theorem}
 \pagebreak[2]
-Let $(X,\sM,\mu)$ be a measure space and
-$\{ f_n \}$ a sequence of measurable complex-valued functions that converges
-almost everywhere to a function $f$.  Suppose $g$ is a nonnegative
-$L^1$-integrable function such that $\sabs{f(x)} \leq g(x)$ for almost every
+Let $(X,\sM,\mu)$ be a measure space,
+$\{ f_n \}$ a sequence of measurable complex-valued functions converging
+almost everywhere to $f$, and $g \colon X \to [0,\infty]$ an
+$L^1$ function such that $\sabs{f(x)} \leq g(x)$ for almost every
 $x$.  Then
 \begin{equation*}
 \int_X f \, d\mu = \lim_{n\to \infty} \int_X f_n \, d\mu .
 \end{equation*}
 \end{thm}
 
-A common application of the dominated convergence theorem is differentiating
+A common application of this theorem is differentiating
 under the integral.
 
 \begin{thm}[Differentiation under the integral]\index{Differentiation under the integral}
 Let $U \subset \R$ be open and $(X,\sM,\mu)$ be a measure space.
-Suppose $f \colon U \times X \to \C$ is a function such that
-for each $t \in U$, $x \mapsto f(t,x)$ is $L^1$-integrable,
+Suppose $f \colon U \times X \to \C$ is such that
+for each $t \in U$, $x \mapsto f(t,x)$ is~$L^1$,
 for almost every $x$, $\frac{\partial f}{\partial t}$ exists on all of $U$,
-and there exists an $L^1$-integrable $g \colon X \to [0,\infty]$ such that
+and $g \colon X \to [0,\infty]$ is an $L^1$ function such that
 $\babs{\frac{\partial f}{\partial t}(t,x)} \leq g(x)$ for all $t \in U$
 and almost every $x \in X$.  Then for all $t \in U$,
 \begin{equation*}
@@ -19092,7 +19094,7 @@ Tonelli theorem is often applied in tandem with the Fubini theorem.  Tonelli
 establishes integrability and Fubini is used to write the integral we need
 as iterated integral, or swap the order of integrations.
 
-Note that the Tonelli and Fubini theorems are very useful in simplifying the
+The Tonelli and Fubini theorems are useful in simplifying the
 development of the power series by using the counting measure as we
 mentioned above.  They are also useful for swapping a series summation and
 integration such as
@@ -19217,7 +19219,8 @@ Alternatively, $f$ is convex if its \emph{\myindex{epigraph}}
 is a convex set, where
 \begin{equation*}
 \operatorname{epigraph} f
-= \bigl\{ (x,y) \in S \times \R : f(x) \geq y \bigr\} .
+\overset{\text{def}}{=}
+\bigl\{ (x,y) \in S \times \R : f(x) \geq y \bigr\} .
 \end{equation*}
 So arguments about convex sets translate to convex functions.
 For example,
