@@ -655,7 +655,7 @@ partial derivatives exist and are continuous.
 \glsadd{not:Ck}%
 Similarly, it is $C^k$ or \emph{$C^k$-smooth}
 \index{Ck-smooth function@$C^k$-smooth function}
-if the first $k$ partial derivatives all exist and are differentiable.
+if the first $k$ partial derivatives all exist and are continuous.
 \glsadd{not:Cinfty}%
 Finally, a function is said to be $C^\infty$ or simply
 \emph{smooth}\index{smooth function}\footnote{%
@@ -1620,9 +1620,9 @@ $\sabs{f(z)}$ achieves its maximum on $\Gamma$.
 \end{exercise}
 
 \begin{exercise}
-A ball and is different from a polydisc.  Prove that for every $p \in \partial \bB_n$
+A ball is different from a polydisc.  Prove that for every $p \in \partial \bB_n$
 there exists a continuous $f \colon \overline{\bB_n} \to \C$, holomorphic
-on $\bB_n$, such that $\sabs{f(z)}$ achieves a strict maximum at $p$.
+on $\bB_n$, such that $\sabs{f(z)}$ achieves a strict maximum at~$p$.
 \end{exercise}
 
 \begin{exercise}
@@ -2264,7 +2264,7 @@ and draw the corresponding picture.
 
 \begin{exercise}
 Find the domain of convergence of $\sum_{k,\ell} c_{k \ell} z_1^k z_2^\ell$
-and draw the corresponding picture if $c_{\ell \ell} = 2^k$, $c_{0 \ell} = c_{k 0} =
+and draw the corresponding picture if $c_{\ell \ell} = 2^\ell$, $c_{0 \ell} = c_{k 0} =
 1$ and $c_{k \ell} = 0$ otherwise.
 \end{exercise}
 
@@ -2496,8 +2496,9 @@ Prove that $\sO(U)$ is actually a commutative ring with the operations
 \begin{exercise}
 Show that $\sO(U)$ is an \myindex{integral domain} (has no zero divisors) if and only
 if $U$ is connected.
-That is, show that $U$ being connected is equivalent to showing that
-if $h(z) = f(z)g(z)$ is identically zero for $f,g \in \sO(U)$,
+That is, show that $U$ being connected is equivalent to the following
+property of $U$:
+If $h(z) = f(z)g(z)$ is identically zero for $f,g \in \sO(U)$,
 then either $f$ or $g$ is
 identically zero.
 \end{exercise}
@@ -6246,7 +6247,7 @@ $U$ is strongly pseudoconvex at $p$ if and only if $U'$ is strongly pseudoconvex
 To finish proving the theorem, the only thing left is to observe that if
 $f(U \cap V) = U' \cap V'$, then $f(\partial U \cap V) = \partial U' \cap
 V'$, and to note that if $r$ is a defining function for $U'$ at $q$,
-then $f \circ r$ is a defining function for $U$ at $p$.
+then $r \circ f$ is a defining function for $U$ at $p$.
 
 \begin{exbox}
 \begin{exercise}
@@ -8218,7 +8219,7 @@ write a defining function $r$ as
 \begin{equation*}
 r(z) = \varphi(z',\bar{z}',\Re z_n) - \Im z_n ,
 \end{equation*}
-where $z' = (z_1,\ldots,z_{n-1})$.
+where $z' = (z_1,\ldots,z_{n-1})$ and $\varphi \in O(2)$.
 Levi pseudoconvexity says
 \begin{equation} \label{eq:psconvcond}
 \sum_{k=1,\ell=1}^n
@@ -8790,6 +8791,7 @@ pseudoconvex is logarithmically convex.
 
 \begin{exercise}
 \pagebreak[2]
+Let $\alpha_1,\ldots,\alpha_n \geq 0$ and $\beta \in \R$.
 For each $k \in \N_0$, let $\ell_m^k \in \N_0$ be the smallest nonnegative integer such that
 $\ell_m^k \geq k \alpha_m$.
 Prove that the domain of convergence of the power series
@@ -11276,7 +11278,7 @@ simply from its definition.  See \figureref{fig:dbarcpt-fig}.
 
 \begin{myfig}
 \subimport*{figures/}{dbarcpt-fig.pdf_t}
-\caption{Far enough, $\partial \psi = 0$.\label{fig:dbarcpt-fig}}
+\caption{Far enough, $\bar{\partial} \psi = 0$.\label{fig:dbarcpt-fig}}
 \end{myfig}
 
 As $\bar{\partial} \psi = 0$ on the light gray and white areas in the
@@ -11838,7 +11840,7 @@ $H^{(0,1)}(U) = 0$.
 
 \begin{exercise}
 Prove that $H^{(0,1)}\bigl(\C^2 \setminus \{ 0 \} \bigr)$ is not just
-trivial, it is an infinite-dimensional vector space.
+nontrivial, it is an infinite-dimensional vector space.
 \end{exercise}
 \end{exbox}
 
@@ -12029,7 +12031,7 @@ on $\Delta_s(w)$ such that $\bar{\partial} \omega = \eta$.
 \end{lemma}
 
 \begin{proof}
-Take $k$ be an integer such that $\eta$ only involves
+Le $k$ be an integer such that $\eta$ only involves
 $d\bar{z}_1,\ldots,d\bar{z}_k$ from the barred differentials.
 If $k=0$, then the lemma is true trivially as $q \geq 1$ so $\eta$ would
 just have to be zero.
@@ -12045,7 +12047,7 @@ Now
 \begin{equation*}
 0 = \bar{\partial} \eta
 = \bar{\partial} (d\bar{z}_k \wedge \tau + \theta)
-= d\bar{z}_k \wedge \bar{\partial} \tau + \bar{\partial} \theta .
+= -d\bar{z}_k \wedge \bar{\partial} \tau + \bar{\partial} \theta .
 \end{equation*}
 Hence the coefficients of $\tau$ and $\theta$ must be holomorphic in
 $z_{k+1},\ldots,z_n$ as their derivatives in the bars of those variables
@@ -19210,7 +19212,7 @@ compact set has exposed points.
 
 Given a convex set $S$, a function $f \colon S \to \R$ is
 \emph{convex}\index{convex function} if
-for every $x,y \in S$ and $\lambda \in [0,1]$ we have
+for every $x,y \in S$ and $\lambda \in [0,1]$, we have
 \begin{equation*}
 f\bigl((1-\lambda) x + \lambda y\bigr) \leq
 (1-\lambda) f(x) + \lambda f(y) .
@@ -19220,7 +19222,7 @@ is a convex set, where
 \begin{equation*}
 \operatorname{epigraph} f
 \overset{\text{def}}{=}
-\bigl\{ (x,y) \in S \times \R : f(x) \geq y \bigr\} .
+\bigl\{ (x,y) \in S \times \R : f(x) \leq y \bigr\} .
 \end{equation*}
 So arguments about convex sets translate to convex functions.
 For example,
