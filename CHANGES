@@ -1,3 +1,28 @@
-<li>Simplify the wording of some of the theorems in Appendix E
+<li>The notation
+\(\C \otimes T_p M\) is changed to the more
+common \(\C T_p M\) which also avoids a slight abuse of notation.
+Thanks to Richard Lärkäng for the suggestion.
+<li>Lemma 2.3.9, the statement about the Levi form doesn't really make sense
+if \(M\) is not a boundary, so change the statement to explicitly say that
+the inside is "above" the \(M\) in the new coordinates.
+Also explicitly mention this at the end of the proof.
+Thanks to Richard Lärkäng for the suggestion.
+<li>In Example 2.5.4, put a square on the norm of \(z\) as that makes the
+computation easier.
+Thanks to Richard Lärkäng for the suggestion.
+<li>In Theorem 2.5.6, add part (iv) which is just the conclusion of the
+second version of the Kontinuitatssatz as that just follows from the proof
+directly with no extra work.
+Thanks to Richard Lärkäng for the suggestion.
+<li>In Theorem 2.5.6, make part (ii) less wordy: "U is Hartogs
+pseudoconvex".  I mean the definition is just above the theorem!
+<li>Mark Exercise 2.6.1 as Oka's lemma to make the connection to the "proof"
+above clear.
+<li><b>Change Exercise 4.4.1</b> to ask also to prove the Leibniz rule
+(which easily follows from the first part and the real Leibniz rule), but
+this is good to understand for the computations later in the section.
+Thanks to Richard Lärkäng for the suggestion.
+<li>Add Leibniz rule to Appendix C.
+<li>Simplify the wording of some of the theorems in Appendix E.
 
 See https://www.jirka.org/scv/changes.html for older changes.

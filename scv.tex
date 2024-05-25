@@ -5289,10 +5289,10 @@ $y > x^tx + E(x)$ on $U$.
 Recall that $U$ is
 \emph{\myindex{geometrically convex}}\index{convex!geometrically}
 if for every $p,q \in U$ the
-line between $p$ and $q$ is in $U$, or in other words
+line between $p$ and $q$ is in $U$, that is,
 $tp +(1-t)q \in U$ for all $t \in [0,1]$.
-In particular, geometric convexity is a \emph{global} condition.  You need
-to know all of $U$.  On the other hand, the notion of convex for a smooth boundary is
+Geometric convexity is a \emph{global} condition; it considers
+the entire $U$.  The notion of convexity for a smooth boundary is
 \emph{local} in that you only need to know $\partial U$ in a small
 neighborhood.  For domains with
 smooth boundaries the two notions are equivalent.  Proving
@@ -5302,7 +5302,7 @@ one direction is easy.
 \begin{exercise}
 Suppose a domain $U \subset \R^n$ with smooth
 boundary is geometrically
-convex.  Show that it is convex.
+convex.  Show that $U$ is convex.
 \end{exercise}
 \end{exbox}
 
@@ -5319,10 +5319,13 @@ holomorphy.
 
 As $\C^n$ is identified with $\R^{2n}$ using $z=x+iy$, we have
 $T_p\C^n = T_p\R^{2n}$.  If we take the complex span instead of the real
-span we get the \emph{\myindex{complexified tangent space}}
+span, we get the \emph{\myindex{complexified tangent space}}\footnote{%
+Abstractly, a real vector space $X$
+can be complexified as
+$X \otimes_{\R} \C$.}%
 \glsadd{not:complexifiedtangentspace}%
 \begin{equation*}
-\C \otimes T_p\C^n
+\C T_p\C^n
 = \operatorname{span}_{\C} \left\{
 \frac{\partial}{\partial x_1}\Big|_p,
 \frac{\partial}{\partial y_1}\Big|_p,
@@ -5331,13 +5334,12 @@ span we get the \emph{\myindex{complexified tangent space}}
 \frac{\partial}{\partial y_n}\Big|_p \right\} .
 \end{equation*}
 We simply replace all the real coefficients with complex ones.
-The space $\C \otimes T_p\C^n$ is a $2n$-dimensional complex vector space.
+The space $\C T_p\C^n$ is a $2n$-dimensional complex vector space.
 Both
 $\frac{\partial}{\partial z_k}\big|_p$ and
-$\frac{\partial}{\partial \bar{z}_k}\big|_p$ are in $\C \otimes
-T_p\C^n$, and
+$\frac{\partial}{\partial \bar{z}_k}\big|_p$ are in $\C T_p\C^n$, and
 \begin{equation*}
-\C \otimes T_p\C^n
+\C T_p\C^n
 = \operatorname{span}_{\C} \left\{
 \frac{\partial}{\partial z_1}\Big|_p,
 \frac{\partial}{\partial \bar{z}_1}\Big|_p,
@@ -5367,7 +5369,7 @@ $T_p^{(0,1)} \C^n$ are the
 \emph{\myindex{antiholomorphic vectors}}.
 We decompose the full tangent space as the direct sum
 \begin{equation*}
-\C \otimes T_p\C^n
+\C T_p\C^n
 =
 T_p^{(1,0)} \C^n \oplus
 T_p^{(0,1)} \C^n .
@@ -5382,12 +5384,12 @@ is a real-linear mapping $D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$.
 Given the basis above, this mapping is represented by
 the standard real Jacobian matrix, that is, a real $2m \times 2n$ matrix
 that we wrote before as $D_\R f(p)$.
-As a basis for $T_p\C^n$ is a basis for $\C \otimes T_p \C^n$, the mapping
+As a basis for $T_p\C^n$ is a basis for $\C T_p \C^n$, the mapping
 $D_\R f(p) \colon T_p\C^n \to T_{f(p)} \C^m$ naturally uniquely
 extends to
 \glsadd{not:DCf}%
 \begin{equation*}
-D_\C f(p) \colon \C \otimes T_p\C^n \to \C \otimes T_{f(p)} \C^m .
+D_\C f(p) \colon \C T_p\C^n \to \C T_{f(p)} \C^m .
 \end{equation*}
 
 \begin{prop} \label{prop:holvectmap}
@@ -5398,7 +5400,7 @@ $p \in U$.
 %is the real derivative of $f$ at $p$.
 %\glsadd{not:DCf}%
 %We naturally
-%extend the derivative to $D_\C f(p) \colon \C \otimes T_p\C^n \to \C \otimes  T_{f(p)}
+%extend the derivative to $D_\C f(p) \colon \C T_p\C^n \to \C T_{f(p)}
 %\C^m$.
 Then
 \begin{equation*}
@@ -5464,7 +5466,7 @@ and for which we also used the notation $Df(p)$.
 
 As before, define the tangent bundles
 \begin{equation*}
-\C \otimes T\C^n,
+\C T\C^n,
 \quad
 T^{(1,0)} \C^n,
 \quad \text{and} \quad
@@ -5473,12 +5475,12 @@ T^{(0,1)} \C^n ,
 by taking the disjoint unions.
 One can also define vector fields in these bundles.
 
-Let us describe $\C \otimes T_pM$
+Let us describe $\C T_pM$
 for a smooth real hypersurface $M \subset \C^n$.
 Let $r$ be a real-valued defining function of
 $M$ at $p$.  A vector
-$X_p \in \C \otimes T_p\C^n$ is in
-$\C \otimes T_pM$ whenever $X_p r = 0$.  That is,
+$X_p \in \C T_p\C^n$ is in
+$\C T_pM$ whenever $X_p r = 0$.  That is,
 \begin{equation*}
 X_p = \sum_{k=1}^n
 \left(
@@ -5487,7 +5489,7 @@ a_k
 +
 b_k
 \frac{\partial}{\partial \bar{z}_k} \Big|_p
-\right) \in \C \otimes T_p M
+\right) \in \C T_p M
 \quad
 \text{whenever}
 \quad
@@ -5501,18 +5503,18 @@ b_k
 \right)
 = 0 .
 \end{equation*}
-Therefore, $\C \otimes T_p M$ is a $(2n-1)$-dimensional complex vector space.
-We decompose $\C \otimes T_p M$ as
+Therefore, $\C T_p M$ is a $(2n-1)$-dimensional complex vector space.
+We decompose $\C T_p M$ as
 \begin{equation*}
-\C \otimes T_pM =
+\C T_pM =
 T_p^{(1,0)} M \oplus T_p^{(0,1)} M \oplus B_p ,
 \end{equation*}
 where
 \begin{equation*}
-T_p^{(1,0)} M \overset{\text{def}}{=} \bigl( \C \otimes T_pM \bigr) \cap
+T_p^{(1,0)} M \overset{\text{def}}{=} \bigl( \C T_pM \bigr) \cap
 \bigl( T_p^{(1,0)} \C^n \bigr),  \quad \text{and}
 \quad
-T_p^{(0,1)} M \overset{\text{def}}{=} \bigl( \C \otimes T_pM \bigr) \cap
+T_p^{(0,1)} M \overset{\text{def}}{=} \bigl( \C T_pM \bigr) \cap
 \bigl( T_p^{(0,1)} \C^n \bigr) .
 \end{equation*}
 The $B_p$ is the ``leftover'' and must
@@ -5529,7 +5531,7 @@ Write $T^c_p M = J(T_p M) \cap T_pM$ (the subspace fixed by $J$, sometimes
 called the \emph{\myindex{complex tangent space}} despite being a real
 vector space).
 The map $J$ restricts to an endomorphism of $T^c_pM$ and thus it naturally induces
-an endomorphism of $\C \otimes T^c_pM$.
+an endomorphism of $\C T^c_pM$.
 Then $T^{(1,0)}_pM$ and
 $T^{(0,1)}_pM$ are the eigenspaces of $J$, which has eigenvalues $\pm i$.
 \end{exercise}
@@ -5537,7 +5539,7 @@ $T^{(0,1)}_pM$ are the eigenspaces of $J$, which has eigenvalues $\pm i$.
 
 Make sure to notice what sort of vector spaces these are.
 The space $T_pM$ is a real vector space;
-$\C \otimes T_pM$, $T_p^{(1,0)}M$, $T_p^{(0,1)} M$, and $B_p$
+$\C T_pM$, $T_p^{(1,0)}M$, $T_p^{(0,1)} M$, and $B_p$
 are complex vector spaces.
 To see that these give vector bundles,
 we must first show that their dimensions do not vary
@@ -5580,7 +5582,7 @@ That is,
 D_\C f(p)\Bigl(T_p^{(1,0)}\C^n\Bigr) \subset T_{f(p)}^{(1,0)}\C^m, \quad
 D_\C f(p)\Bigl(T_p^{(0,1)}\C^n\Bigr) \subset T_{f(p)}^{(0,1)}\C^m, \quad
 \text{and} \\
-D_\C f(p)\bigl(\C \otimes T_pM\bigr) \subset \C \otimes  T_{f(p)}M' .
+D_\C f(p)\bigl(\C T_pM\bigr) \subset \C T_{f(p)}M' .
 \avoidbreak
 \end{multline*}
 Then $D_\C f(p)$ must take
@@ -5721,7 +5723,7 @@ is called the
 $p$.\footnote{%
 People sometimes call the complex Hessian the ``Levi form of $r$,''
 which is incorrect.  The Levi form is something defined for a boundary
-or a submanifold, not for $r$.}
+or a hypersurface acting only on its tangent vectors.}
 So, $U$ is pseudoconvex at $p \in \partial U$ if
 the complex Hessian
 of $r$ at $p$ as a Hermitian form is positive (semi)definite
@@ -6276,7 +6278,9 @@ E(z,\bar{z},\Re w) ,
 \avoidbreak
 \end{equation*}
 where $E$ is $O(3)$ at the origin.
-Here $\alpha$ is the number of positive eigenvalues of the Levi form at $p$,
+If $M$ is a boundary, then the coordinates are chosen so that
+the domain is given by replacing $=$ with $>$ as usual and where
+$\alpha$ is the number of positive eigenvalues of the Levi form at $p$,
 $\beta$ is the number of negative eigenvalues, and $\alpha+\beta \leq n-1$.
 \end{lemma}
 
@@ -6478,8 +6482,13 @@ If $T$ is a linear transformation on the $z$ variables, say $z'=Tz$, we
 obtain ${z'}^*Cz' = {(Tz)}^*CTz = z^* ( T^*CT) z$.  Thus, we normalize $C$
 up to $*$-congruence.  A Hermitian matrix
 is $*$-congruent to a diagonal matrix with only $1$s, $-1$s, and $0$s on the
-diagonal, again by Sylvester's law of inertia.  Writing out what that means is precisely the conclusion of the
+diagonal, again by Sylvester's law of inertia.
+Writing out what that means is precisely the conclusion of the
 proposition.
+If $M$ is a boundary, we make sure the interior of the domain is
+given by $\Im w > \varphi(z,\bar{z},\Re w)$
+by possibly replacing $w$ with $-w$, which reverses the signs of the 
+eigenvalues.
 \end{proof}
 
 \begin{exbox}
@@ -7893,7 +7902,7 @@ or the $r$-\emph{sublevel set}.
 The unit ball $\bB_n$ is Hartogs pseudoconvex.  The continuous
 function
 \begin{equation*}
-z \mapsto - \log \bigl( 1-\snorm{z} \bigr)
+z \mapsto - \log \bigl( 1-\snorm{z}^2 \bigr)
 \end{equation*}
 is an exhaustion function, and it is easy to
 check directly that it is plurisubharmonic.
@@ -7916,10 +7925,19 @@ Suppose $U \subsetneq \C^n$ is a domain.  The following are equivalent:
 $-\log \rho(z)$ is plurisubharmonic, where $\rho(z)$ is the distance from $z$
 to $\partial U$.
 \item \label{thm:pscvx:itemii}
-$U$ has a continuous plurisubharmonic exhaustion function,
-that is, $U$ is Hartogs pseudoconvex.
+%$U$ has a continuous plurisubharmonic exhaustion function,
+%that is,
+$U$ is Hartogs pseudoconvex.
 \item \label{thm:pscvx:itemiii}
 $U$ is convex with respect to plurisubharmonic functions defined on $U$.
+\item \label{thm:pscvx:itemiv}
+The conclusion of
+\hyperref[thm:contprinciple2]{Kontinuit\"atssatz (second version)}
+holds:
+for any collection of closed analytic discs $\Delta_\alpha \subset U$
+such that $\bigcup_\alpha \partial \Delta_\alpha \subset \subset U$,
+we have
+$\bigcup_\alpha \Delta_\alpha \subset \subset U$.
 \end{enumerate}
 \end{thm}
 \end{samepage}
@@ -7944,6 +7962,12 @@ $\widehat{K} \subset \{ z \in U : f(z) < r \} \subset \subset U$.
 
 \ref{thm:pscvx:itemiii}
 $\Rightarrow$
+\ref{thm:pscvx:itemiv}:
+That is simply the statement of
+\hyperref[thm:contprinciple2]{Kontinuit\"atssatz (second version)}.
+
+\ref{thm:pscvx:itemiv}
+$\Rightarrow$
 \ref{thm:pscvx:itemi}:
 As long as $U \not= \C^n$,
 the function $-\log \rho(z)$ is real-valued and continuous.
@@ -7959,7 +7983,8 @@ As $\rho(z) = \inf_c \rho_c(z)$,
 \begin{equation*}
 - \log \rho(z) = \sup_{\snorm{c}=1} \bigl(-\log \rho_c(z)\bigr) .
 \end{equation*}
-If we prove that for all $a, b \in \C^n$ the function $\xi \mapsto -\log \rho_c(a+b\xi)$ is
+If we prove that for all $a, b \in \C^n$ and
+$c \in \C^n$ with $\snorm{c}=1$, the function $\xi \mapsto -\log \rho_c(a+b\xi)$ is
 subharmonic, then $\xi \mapsto - \log \rho(a+b\xi)$ is subharmonic,
 and we are done.
 See \figureref{fig:distfun-hartogs} for the setup.
@@ -7987,7 +8012,8 @@ or in other words
 \begin{equation*}
 \rho_c(a+b\xi) \geq e^{-\Re f(\xi)} = \babs{e^{-f(\xi)}}.
 \end{equation*}
-Using $\zeta = t e^{-f(\xi)}$ in the definition of $\rho_c(a+b\xi)$, the statement above is equivalent
+Using $\zeta = t e^{-f(\xi)}$ in the definition of $\rho_c(a+b\xi)$, the
+statement above is equivalent to
 to saying that
 \begin{equation*}
 (a+b\xi)+te^{-f(\xi)}c \in U \quad \text{for all $t \in \D$}.
@@ -8012,8 +8038,7 @@ Then
 \subset \subset U ,
 \end{equation*}
 because continuous functions take compact sets to compact sets.
-\hyperref[thm:contprinciple2]{Kontinuit\"atssatz} (second version)
-implies
+The hypothesis \ref{thm:pscvx:itemiv} implies
 \begin{equation*}
 \bigcup_{\sabs{t} < t_0} \varphi_t(\Delta)
 \subset \subset U  .
@@ -8140,7 +8165,7 @@ the distance to $\partial U$.  The setup is illustrated in
 \end{myfig}
 
 The part of the boundary $\partial U$ in $W$ is marked by a thick
-black line, the part of the boundary of $\partial (W \cap U)$ that arises as
+black line, the part of the boundary of $\partial (W \cap U)$ that is
 the boundary of $W$ is marked by a thick gray line.  A point $q \in B$ is
 marked and a ball of radius $\nicefrac{r}{2}$ around $q$ is dotted.
 No point of distance $\nicefrac{r}{2}$ from $q$ is in $\partial W$, and
@@ -8148,7 +8173,7 @@ the distance of $q$ to $\partial U$ is at most $\nicefrac{r}{2}$ as $p \in \part
 and $p$ is the center of $B$.
 \glsadd{not:dist}%
 Let $\operatorname{dist}(x,y)$ denote the
-euclidean distance function\footnote{If either $x$ and/or $y$ are sets
+euclidean distance function\footnote{If $x$ and/or $y$ are sets
 of points, we take the infimum of the euclidean distance over all the points.}.
 Then for $z \in B \cap U$
 \begin{equation*}
@@ -8499,15 +8524,16 @@ if and only it is Hartogs pseudoconvex.
 
 \begin{proof}
 The forward direction follows from an exercise below, which is sometimes
-called \emph{\myindex{Oka's lemma}}.
+called Oka's lemma.
 We skip the proof of the backward direction
 in order to save some hundred pages or so.
 See H\"ormander's book~\cite{Hormander} for the proof.
 \end{proof}
 
 \begin{exbox}
-\begin{exercise}
-Prove that a holomorphically convex domain is Hartogs pseudoconvex.
+\begin{exercise}[Oka's lemma\index{Oka's lemma}]
+Prove that if a domain $U \subset \C^n$ is holomorphically convex,
+then it is Hartogs pseudoconvex.
 See \exerciseref{exercise:modholplush}.
 \end{exercise}
 
@@ -9385,8 +9411,8 @@ $X_p F = X_p G$.
 Due to the last exercise, we can apply vectors of $T_p M$ to
 a smooth function on a hypersurface by simply applying
 them to any smooth extension.  We can similarly apply vectors of
-$\C \otimes T_p M$ to smooth functions on $M$, as
-$\C \otimes T_p M$ is simply the complex span of vectors in $T_p M$.
+$\C T_p M$ to smooth functions on $M$, as
+$\C T_p M$ is simply the complex span of vectors in $T_p M$.
 
 \begin{defn}
 Let $M \subset \C^n$ be a smooth real hypersurface.
@@ -9426,8 +9452,8 @@ definition.
 Similarly for real-analytic.
 
 Let us show $f$ is CR at some $p \in M$.
-Differentiating $f$ with vectors in $\C \otimes
-T_pM$ is the same as differentiating $F$.
+Differentiating $f$ with vectors in $\C T_pM$
+is the same as differentiating $F$.
 As $T_p^{(0,1)} M \subset T_p^{(0,1)} \C^n$, we have
 \begin{equation*}
 X_p f = X_p F = 0 \qquad \text{for all} \quad X_p \in T_p^{(0,1)} M.
@@ -10884,8 +10910,7 @@ Lewy, Hans, \emph{An example of a smooth linear partial differential
 equation without solution}, Annals of Mathematics, \textbf{66} (1957), 155--158.}.
 The example is surprising because when a linear PDE has real-analytic
 coefficients, a solution always exists by the theorem of Cauchy--Kowalevski.
-Furthermore, if $X$ is a real vector field ($X$ is in $TM$ not in $\C
-\otimes TM$),
+Furthermore, if $X$ is a real vector field ($X$ is in $TM$ not in $\C TM$),
 then a solution to $Xf = \psi$ exists by the method of characteristics, even
 if $X$ and $\psi$ are only smooth.
 \end{remark}
@@ -11610,7 +11635,19 @@ We get the total exterior derivative $d \eta = \partial \eta + \bar{\partial} \e
 
 \begin{exbox}
 \begin{exercise}
-Prove $d \eta = \partial \eta + \bar{\partial} \eta$.
+Prove $d \eta = \partial \eta + \bar{\partial} \eta$
+and prove the \emph{\myindex{Leibniz rule}}:
+If $\eta$ is a $(p,q)$-form, then
+\begin{equation*}
+\partial(\eta \wedge \omega) = 
+\partial\eta \wedge \omega + {(-1)}^p \eta \wedge \partial \omega
+\quad
+\text{and}
+\quad
+\bar{\partial}(\eta \wedge \omega) = 
+\bar{\partial}\eta \wedge \omega + {(-1)}^q \eta \wedge
+\bar{\partial}\omega .
+\end{equation*}
 \end{exercise}
 
 \begin{exercise}
@@ -18453,6 +18490,14 @@ If $\omega$ is a $0$-form in $\R^3$, then $d\omega$ is like the gradient.
 If $\omega$ is a $1$-form in $\R^3$, then $d\omega$ is like the curl.
 If $\omega$ is a $2$-form in $\R^3$, then $d\omega$ is like the divergence.
 
+A quick computation gives the \emph{\myindex{Leibniz rule}}:
+If $\omega$ is a $p$-form and $\eta$ is a $q$-form, then
+\begin{equation*}
+d(\omega \wedge \eta) = 
+d\omega \wedge \eta + {(-1)}^p \omega \wedge d\eta .
+\end{equation*}
+
+
 \medskip
 
 Something to notice is that
@@ -18460,7 +18505,8 @@ Something to notice is that
 d(d\omega) = 0
 \end{equation*}
 for every $\omega$,
-which follows because partial derivatives commute.  In particular, we get a
+which follows because partial derivatives commute.
+That is sometimes written as $d^2=0$.  In particular, we get a
 so-called complex:  If
 $\Lambda^k(M)$ denotes the $k$-forms on an $n$-dimensional submanifold $M$,
 then we get the complex
