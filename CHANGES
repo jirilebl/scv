@@ -1,3 +1,8 @@
+<li>Instead of the functional notation for plugging vectors into
+differential forms, use the angle bracket pairing notation that is more
+standard and since we don't really use this much at all, there is no reason to
+have a less standard notation.  This affects one place in chapter 1,
+exercise 4.4.3, and one place in appendix C.
 <li>The notation
 \(\C \otimes T_p M\) is changed to the more
 common \(\C T_p M\) which also avoids a slight abuse of notation.

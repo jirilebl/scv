@@ -1470,9 +1470,13 @@ or
 Rudin~\cite{Rudin:principles} for an introduction with all the details.
 
 Given real coordinates $x = (x_1,\ldots,x_n)$, a one-form $d x_k$ is a linear functional on tangent vectors
-such that $d x_k \bigl( \frac{\partial}{\partial x_k} \bigr) = 1$ and
-$d x_k \bigl( \frac{\partial}{\partial x_{\ell}} \bigr) = 0$ if $k \not=
-{\ell}$.
+such that $\bigl\langle d x_k , \frac{\partial}{\partial x_k} \bigr\rangle = 1$ and
+$\bigl\langle d x_k , \frac{\partial}{\partial x_{\ell}} \bigr\rangle = 0$ if $k \not=
+{\ell}$,
+where we use the pairing notation
+\glsadd{not:pairing}%
+$\langle \omega , v \rangle$ instead of the functional notation
+$\omega(v)$ as is traditional to indicate multilinearity.
 As $z_k = x_k + i y_k$ and
 $\bar{z}_k = x_k - i y_k$,
 \glsadd{not:dz}\glsadd{not:dzbar}%
@@ -1486,13 +1490,18 @@ Let
 $\delta_{k}^{\ell}$ be the Kronecker delta, that is, $\delta_k^k = 1$,
 and $\delta_k^{\ell} = 0$ if $k \not= {\ell}$.  Then, as expected,
 \begin{equation*}
-d z_k \left( \frac{\partial}{\partial z_{\ell}} \right) = \delta_k^{\ell} ,
+\left\langle
+d z_k , \frac{\partial}{\partial z_{\ell}} \right\rangle =
+\delta_k^{\ell} ,
 \qquad
-d z_k \left( \frac{\partial}{\partial \bar{z}_{\ell}} \right) = 0 ,
+\left\langle
+d z_k , \frac{\partial}{\partial \bar{z}_{\ell}} \right\rangle = 0 ,
 \qquad
-d \bar{z}_k \left( \frac{\partial}{\partial z_{\ell}} \right) = 0 ,
+\left\langle
+d \bar{z}_k , \frac{\partial}{\partial z_{\ell}} \right\rangle = 0 ,
 \qquad
-d \bar{z}_k \left( \frac{\partial}{\partial \bar{z}_{\ell}} \right) =
+\left\langle
+d \bar{z}_k , \frac{\partial}{\partial \bar{z}_{\ell}} \right\rangle =
 \delta_k^{\ell}
 .
 \end{equation*}
@@ -11640,12 +11649,12 @@ and prove the \emph{\myindex{Leibniz rule}}:
 If $\eta$ is a $(p,q)$-form, then
 \begin{equation*}
 \partial(\eta \wedge \omega) = 
-\partial\eta \wedge \omega + {(-1)}^p \eta \wedge \partial \omega
+\partial\eta \wedge \omega + {(-1)}^{p+q} \eta \wedge \partial \omega
 \quad
 \text{and}
 \quad
 \bar{\partial}(\eta \wedge \omega) = 
-\bar{\partial}\eta \wedge \omega + {(-1)}^q \eta \wedge
+\bar{\partial}\eta \wedge \omega + {(-1)}^{p+q} \eta \wedge
 \bar{\partial}\omega .
 \end{equation*}
 \end{exercise}
@@ -11662,7 +11671,8 @@ compute
 $\partial \bar{\partial} r$ and show that it gives the Levi form.
 That is, for a $T^{(1,0)} M$ vector field $Z$,
 the Levi form is given by
-$\partial \bar{\partial} r(Z,\bar{Z})$.  Hint: See
+$\langle\partial \bar{\partial} r , Z \wedge \bar{Z} \rangle$.
+Hint: See
 \appendixref{ap:diffforms} on how to evaluate differential forms
 as multilinear forms.
 \end{exercise}
@@ -18042,19 +18052,27 @@ nonzero on at most finitely many points of $M$) or that $M$ is compact (it
 is a finite set).
 
 The correct definition of a $1$-form is that it is a ``smooth section'' of
-the dual of the vector bundle $T \R^n$.  That is, it is something that eats
-a vector field, and spits out a function.  The $1$-form
+the dual of the vector bundle $T \R^n$.
+It is something that eats
+a vector field, and spits out a function.
+We use the pairing notation $\langle \omega , v \rangle$
+\glsadd{not:pairing}%
+instead of the functional
+notation $\omega(v)$ to indicate linearity in $v$ (and in $\omega$).
+The $1$-form
 $dx_k$ is supposed to be the object that does
 \begin{equation*}
-dx_k\left(
+\left\langle
+dx_k,
 \frac{\partial}{\partial x_k}
-\right)
+\right\rangle
 =
 1,
 \qquad
-dx_k\left(
+\left\langle
+dx_k ,
 \frac{\partial}{\partial x_\ell}
-\right)
+\right\rangle
 =
 0 \quad \text{if $\ell\not=k$}.
 \end{equation*}
@@ -18191,12 +18209,20 @@ $k$ vectors are plugged into
 $dx_{\ell_1} \wedge dx_{\ell_2} \wedge \cdots \wedge dx_{\ell_k}$.
 Consider vector fields $X_1,\ldots,X_k$ given by
 $X_j = \sum_{m=1}^n c_{m j} \frac{\partial}{\partial x_m}$.
+As $k$-forms are alternating and multilinear, instead of plugging in
+the $k$-tuple $(X_1,\ldots,X_k)$, we write it as taking the
+wedge product $X_1 \wedge \cdots \wedge X_k$, where the wedge has the
+same properties as for forms.
 Then
 \begin{equation*}
+\bigl\langle
 dx_{\ell_1} \wedge
 dx_{\ell_2} \wedge
 \cdots \wedge
-dx_{\ell_k}  (X_1,\ldots,X_k)
+dx_{\ell_k}
+,
+X_1 \wedge \cdots \wedge X_k
+\rangle
 =
 \det
 \left(
@@ -18212,14 +18238,19 @@ That is, each $dx_{\ell_j}$ picks out the $\ell_j$th row out of the matrix
 of all coefficients and we take the determinant.  Here is an explicit
 example for $k=2$:
 \begin{equation*}
+\left\langle
 dx_1 \wedge dx_2
+,
 \left(
 a \frac{\partial}{\partial x_1} +
 b \frac{\partial}{\partial x_2}
-,
+\right)
+\wedge
+\left(
 c \frac{\partial}{\partial x_1} +
 d \frac{\partial}{\partial x_2}
 \right)
+\right\rangle
 =
 ad-bc .
 \end{equation*}
