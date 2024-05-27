@@ -6968,6 +6968,7 @@ the following result.
 Let $U \subset \C$ be an open set.
 \begin{enumerate}[(i)]
 \item
+\label{prop:meansubmeanprop:i}%
 A continuous function
 $f \colon U \to \R$
 is harmonic if and only if
@@ -6977,6 +6978,7 @@ f(a) = \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta
 \overline{\Delta_r(a)} \subset U .
 \end{equation*}
 \item
+\label{prop:meansubmeanprop:ii}%
 An upper-semicontinuous function $f \colon U \to \R \cup \{ -\infty \}$
 is subharmonic if and only if
 \begin{equation*}
@@ -6997,6 +6999,11 @@ functions and not too much will be lost.
 \begin{exbox}
 \begin{exercise}
 Fill in the details of the proof of \propref{prop:meansubmeanprop}.
+Hint 1: \ref{prop:meansubmeanprop:i} follows from
+\ref{prop:meansubmeanprop:ii} if you can solve
+the Dirichlet problem in a disc.
+Hint 2: Prove the reverse direction of \ref{prop:meansubmeanprop:ii}
+by contrapositive.
 \end{exercise}
 
 \begin{exercise} \label{exercise:limsupsubharmonic}
@@ -7039,21 +7046,32 @@ connected.
 \end{proof}
 
 A very useful fact we will use over and over without mentioning much is that subharmonicity
+(like harmonicity)
 is a local property,
-even if it does not seems so from the
-definition.  The proof is left as an exercise.
+even if it does not seems so from the definition.
+The proof is left as an exercise.
 
 \begin{prop} \label{prop:shlocal}
 Given an open
-$U \subset \C$, a function $f \colon U \to \R \cup \{ -\infty \}$ is subharmonic if
+$U \subset \C$, an upper-semicontinuous $f \colon U \to \R \cup \{ -\infty \}$
+is subharmonic if
+for every $p \in U$ there is an $R_p > 0$ where $\Delta_{R_p}(p) \subset U$ 
+and such that the estimate in
+\propref{prop:meansubmeanprop} part \ref{prop:meansubmeanprop:ii}
+holds for all $r$ with $0 < r < R_p$.
+
+In particular,
+a function $f \colon U \to \R \cup \{ -\infty \}$ is subharmonic if
 and only if for every $p \in U$ there exists a neighborhood $W$ of $p$,
-$W \subset U$, such that $f|_{W}$ is subharmonic.  \end{prop}
+$W \subset U$, such that $f|_{W}$ is subharmonic.
+\end{prop}
 
 \begin{exbox}
 \begin{exercise}
 Prove \propref{prop:shlocal}.
-Hint: Perhaps try to use
-the maximum principle and \exerciseref{exercise:fminusgsubharmonic}.
+Hint: Analyze your proof of \propref{prop:meansubmeanprop}.
+%Hint: Perhaps try to use
+%the maximum principle and \exerciseref{exercise:fminusgsubharmonic}.
 \end{exercise}
 
 \begin{exercise}

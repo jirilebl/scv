@@ -12,6 +12,15 @@ if \(M\) is not a boundary, so change the statement to explicitly say that
 the inside is "above" the \(M\) in the new coordinates.
 Also explicitly mention this at the end of the proof.
 Thanks to Richard Lärkäng for the suggestion.
+<li>Add hints to Exercise 2.4.8.
+<li>Change Proposition 2.4.5, to be about the sub-mean-value property 
+for all small enough discs (which is really the best way to prove
+the original statement in the first place),
+leaving the original statement as an "In particular".
+That also
+<b>changes Exercise 2.4.11</b> by really making it a bit easier as it
+gives a way to do it (and change the hint to that exercise too).
+Thanks to Richard Lärkäng for the suggestion.
 <li>In Example 2.5.4, put a square on the norm of \(z\) as that makes the
 computation easier.
 Thanks to Richard Lärkäng for the suggestion.
