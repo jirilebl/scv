@@ -3,8 +3,6 @@ Minor changes from suggestions by Richard Lärkäng:
     rather use a different letter like u.  Downside is that U is used for
     the domain often and makes things a bit funky to say in lecture.
     Not sure about this.  I see upsides and downsides.
-  * Proposition 2.4.3 should really have the "local" version perhaps, though
-    it really follows from 2.4.5, no?
 
 Minor things:
 
