@@ -12,6 +12,9 @@ if \(M\) is not a boundary, so change the statement to explicitly say that
 the inside is "above" the \(M\) in the new coordinates.
 Also explicitly mention this at the end of the proof.
 Thanks to Richard Lärkäng for the suggestion.
+<li>At the beginning of section 2.4, give a reference to the one-variable
+book as not every student may have had a treatment of harmonic and
+subharmonic functions in a one-variable course.
 <li>Add hints to Exercise 2.4.8.
 <li>Change Proposition 2.4.5, to be about the sub-mean-value property 
 for all small enough discs (which is really the best way to prove
