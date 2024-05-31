@@ -1,21 +1,15 @@
-Minor changes from suggestions by Richard Lärkäng:
-  * In 2.4 and onwards, don't use f for harminic/subharmonic functions but
-    rather use a different letter like u.  Downside is that U is used for
-    the domain often and makes things a bit funky to say in lecture.
-    Not sure about this.  I see upsides and downsides.
-
 Minor things:
 
 * The back cover text line splitting is weird, try to fix for next time, not a big
-issue, but looks a bit weird.
+  issue, but looks a bit weird.
 
-So current plan for new SCV bits:
+Some major maybe things for next big version:
 
-* Nothing right now
+* A very short history section at the end of each chapter/section with the
+  proper references.
 
 Some more uncategorized bits:
 
 Some remaining maybes from Richard Lärkäng / Elizabeth Wulcan (by now, lot has been added):
 
 * When discussing holomorphic convexity, we looked at a sketch of a proof that holo convexity is equivalent to being able to interpolate on any discrete sequence of distinct points, based on the proof in for example Demailly, see the end of https://canvas.gu.se/courses/35064/files/2891526/download?wrap=1.
-* The treatment of (sub)harmonic functions in C was a bit too brief for our students, since most had hardly seen anything of that theory before, so we included many of the proofs that you left as exercises. 
