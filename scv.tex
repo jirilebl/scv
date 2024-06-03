@@ -9541,14 +9541,15 @@ exist nonconstant functions such that $\sabs{f}$ attains a (nonstrict) maximum $
 
 Real-analytic CR functions on a real-analytic
 hypersurface $M$ always extend to holomorphic functions of a neighborhood of $M$.
-To prove this we wish to complexify everything, that is treat the
+To prove this fact, we complexify everything, that is, we treat the
 $z$s and $\bar{z}$s as separate variables.  The standard way of
 writing a hypersurface as a graph is not as convenient for this setting, so
-let us prove that for a real-analytic hypersurface, we can write it as a
-graph of a holomorphic function in the complexified variables.  That is,
+we prove that a real-analytic hypersurface is a
+graph of a holomorphic function in the complexified variables restricted to
+the diagonal.  That is,
 using variables $(z,w)$,
-we will write $M$ as a graph of $\bar{w}$ over $z$, $\bar{z}$, and $w$.
-This allows us to eliminate $\bar{w}$ in any real-analytic
+we write $M$ as a graph of $\bar{w}$ over $z$, $\bar{z}$, and $w$.
+We can then eliminate $\bar{w}$ in any real-analytic
 expression.
 
 \begin{prop} \label{prop:complexificationofrasurface}
@@ -9595,7 +9596,7 @@ is a real-analytic function vanishing on $M$ near the origin, then
 $f(z,\zeta,w,\omega)$ vanishes on $\sM$ near the origin.
 \end{prop}
 
-Again as a slight abuse of notation $\Phi$ refers to both the function
+Again as a slight abuse of notation, $\Phi$ refers to both the function
 $\Phi(z,\zeta,w)$ and $\Phi(z,\bar{z},w)$.
 
 \begin{proof}
@@ -9785,7 +9786,7 @@ $F(z) = f\bigl(z,\nicefrac{1}{z}\bigr)$ is a holomorphic function
 defined on a neighborhood of the circle and
 equal to $f$ on the circle.
 Our strategy then is to solve for one of the barred variables via
-\propref{prop:complexificationofrasurface}, and hope
+\propref{prop:complexificationofrasurface} and hope
 the CR conditions take care of the rest of the barred variables
 in more than one dimension.
 
