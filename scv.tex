@@ -28,8 +28,6 @@
 \usepackage{faktor}
 \usepackage{tabto}
 
-\usepackage{perpage}
-
 \usepackage{tikz}
 \usetikzlibrary{cd}
 \usepackage{rotating}
@@ -108,21 +106,10 @@
 
 
 % Footnotes should use symbols, not numbers.  Numbered footnotes are
-% evil, not using footmisc as it conflicts with hyperref
-%\usepackage[perpage,symbol*]{footmisc}
+% evil, (footmisc no longer conflicts with hyperref)
+\usepackage[perpage,symbol*]{footmisc}
 
 \usepackage{footnote}
-
-% The [2] would not use star
-%\MakePerPage[2]{footnote}
-\MakePerPage{footnote}
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-
-% to avoid counter error on footnotes on first pass
-\makeatletter
-\gdef\@ctrerr{%
-  \@latex@warning{Counter too large}}
-\makeatother
 
 % Enumitem extra penalties
 \setlist[enumerate]{beginpenalty=100,midpenalty=-5}
