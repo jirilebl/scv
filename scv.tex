@@ -400,7 +400,7 @@ Typeset in \LaTeX.
 \bigskip
 
 \noindent
-Copyright \copyright 2014--2024 Ji{\v r}\'i Lebl
+Copyright \copyright 2014--2025 Ji{\v r}\'i Lebl
 
 %PRINT
 % not for the coil version
@@ -413,6 +413,12 @@ Copyright \copyright 2014--2024 Ji{\v r}\'i Lebl
 %Cover image: Hike to Emigrant Peak, Montana,
 %\copyright 2022 Ji{\v r}\'i Lebl, all rights reserved.  Cover
 %image cannot be reused in derivative works.
+
+%PRINT
+% note that I am the copyright holder, I can put out versions
+% that are under any license, so for kdp, they are non-free
+% because kdp is weird.
+%\ignore{
 
 \bigskip
 
@@ -458,6 +464,9 @@ whichever is compatible with what you wish to do.
 Your derivative work must use at least one of the licenses.
 Derivative works must be prominently marked as such.
 
+%PRINT
+%}
+
 \bigskip
 
 \noindent
@@ -468,6 +477,7 @@ John Treuer, Jianou Zhang, Liz Vivas, Trevor Fancher,
 Nicholas Lawson McLean, Alan Sola, Achinta Nandi,
 Sivaguru Ravisankar,
 Tomas Rodriguez,
+Mina Farag,
 and students in my classes for pointing out typos/errors
 and helpful suggestions.
 Some of the new material in version 4.0
@@ -2035,8 +2045,9 @@ to $f$ on $\Delta$.
 One can also do a \emph{\myindex{Laurent series}} expansion.  Suppose
 $a \in \C^n$ and
 $U = \Delta_1 \times \cdots \times \Delta_k \times \Delta_{k+1}^* \times
-\cdots \times \Delta_n^* \subset \C^n$, where each $\Delta_k$ is a disc
-centered at $a_k$ or $\C$, and $\Delta_k^* = \Delta_k^* \setminus \{ a_k
+\cdots \times \Delta_n^* \subset \C^n$, where each $\Delta_\ell$ is a disc
+centered at $a_\ell$ or $\C$, and $\Delta_\ell^* = \Delta_\ell \setminus \{
+a_\ell
 \}$.
 Prove that if $f \colon U \to \C$ is holomorphic, then there is a series representation
 $\sum_\alpha c_\alpha (z-a)^\alpha$, where $\alpha_{k+1},\ldots,\alpha_{n}$
@@ -2844,7 +2855,7 @@ if we write $\bar{f}(z)$ we really mean $z \mapsto \overline{f(\bar{z})}$,
 that is, composing both the function and the argument with conjugation.
 Prove $z \mapsto \bar{f}(z)$ is holomorphic, and prove $f$ is
 real-valued on $\R^n$ (when $y=0$) if and only if $f(z) =
-\bar{f}(z)$ for all $z \in \C$.
+\bar{f}(z)$ for all $z \in \C^n$.
 \end{exercise}
 \end{exbox}
 
@@ -4746,14 +4757,17 @@ $\frac{\partial g}{\partial x_k} \big|_p$.  Therefore, $X_p$ is also such a
 functional.  It is the directional derivative from calculus;
 it is computed as $X_p f = \nabla f|_p \cdot (a_1,\ldots,a_n)$.
 
+\begin{savenotes}
 \begin{exbox}
 \begin{exercise}
-Suppose that $X$ is a real linear functional on the set of real
-polynomials in $n$ variables
-such that $X (fg) = (Xf) g + f (Xg)$.  Show that we can compute $X$
-by identifying it with an element of $X \in T_0 \R^n$.
+Let $X$ be a real linear functional on the set of real
+polynomials\footnote{This result works for smooth functions too
+by applying Taylor's theorem.} in $n$ variables
+such that $X (fg) = (Xf) g(0) + f(0) (Xg)$.  Show that $X$
+can be identified with an element of $T_0 \R^n$.
 \end{exercise}
 \end{exbox}
+\end{savenotes}
 
 
 \begin{defn}
@@ -4766,8 +4780,8 @@ X_p r = 0, \qquad \text{or in other words} \qquad
 \sum_{k=1}^n a_k \frac{\partial r}{\partial x_k} \Big|_p = 0 .
 \end{equation*}
 \glsadd{not:realtangentspace}%
-The space of tangent vectors to $M$ is denoted by $T_p M$, and
-is called the \emph{\myindex{tangent space}} to $M$ at $p$.
+The set of such tangent vectors is denoted by $T_p M$,
+called the \emph{\myindex{tangent space}} of $M$ at $p$.
 \end{defn}
 
 The space $T_pM$ is an $(n-1)$-dimensional real vector space---it is a subspace
@@ -4945,7 +4959,7 @@ function, such as
 $\varphi(y_1,y_2) = \alpha y_1 + \beta y_2$, that the definition above is
 satisfied.
 
-Suppose that for a smooth map $f$ and a smooth hypersurfaces $M$ and $M'$
+Suppose that for a smooth map $f$ and smooth hypersurfaces $M$ and $M'$
 you have $f(M) \subset M'$.  Then you get the same containment for the
 tangent spaces.  Indeed, suppose that $r$ is a defining function for $M$
 near $p$ and $r'$ is a defining function for $M'$ near $f(p)$, and
@@ -4955,7 +4969,7 @@ and hence
 \bigl( Df(p) X_p \bigr) r' = X_p (r' \circ f) = X_p (0) = 0 .
 \end{equation*}
 If the map is a diffeomorphism (has an inverse), then $f(M)$ is a smooth
-hypersurface with defining function $f^{-1} \circ r$, the derivative is
+hypersurface with defining function $r \circ f^{-1}$, the derivative is
 an invertible linear map, and we get that $Df(p)$ restricts to an
 isomorphism of $T_pM$ and $T_{f(p)} f(M)$.  That is, we proved the following
 proposition.
@@ -7787,7 +7801,7 @@ $f \colon \R \to \R$ with $f''(x) \geq 0$, then
 $\widehat{\{ a, b \}} = [a,b]$ for any $a,b \in \R$.
 In general, if $\sF$ is the set of convex functions, then
 a domain $U \subset \R^n$ is geometrically convex if and only if it is
-convex with respect to convex functions~\footnote{%
+convex with respect to convex functions\footnote{%
 The technicality is, of course, that we must define convex functions on
 not-necessarily-convex sets, and that is not completely straightforward.},
 although let us not define
@@ -9453,7 +9467,7 @@ distribution sense, but we digress.
 
 \begin{remark}
 When $n=1$, a real hypersurface $M \subset \C$ is a curve and $T^{(0,1)}_p M$
-is trivial.  Therefore, all functions $f \colon M \to \C$ are CR functions.
+is trivial.  Therefore, all smooth functions $f \colon M \to \C$ are CR functions.
 \end{remark}
 
 \begin{prop}
@@ -11944,7 +11958,7 @@ holomorphic way, then the solution $\psi$ also depends on those variables
 smoothly or holomorphically.
 Compare the expression for $\psi$ to the one used in the proof of
 \thmref{thm:compactdbar}.
-The proof is around the fact that $\psi(z) = \log \sabs{z}^2$
+The proof is based on the fact that $\psi(z) = \log \sabs{z}^2$
 solves the problem for $g(z) = \nicefrac{1}{\bar{z}}$.
 This fact may be surprising, as doing calculus blindly, one would arrive
 at the multivalued function $\log \bar{z} + \text{holomorphic function}$,
@@ -12514,7 +12528,7 @@ See \figureref{fig:extendingcutoff}.
 \begin{myfig}
 \subimport*{figures/}{extendingcutoff.pdf_t}
 \caption{The cutoff function $\chi$.
-Note that $\chi \equiv 0$ on a neighborhood where it is not trivial
+Note that $\chi \equiv 0$ on a neighborhood of where it is not trivial
 to extend $\psi$.\label{fig:extendingcutoff}}
 \end{myfig}
 
@@ -12631,8 +12645,8 @@ and every $f \in \sO(U \cap L)$ has a holomorphic extension to $U$.
 \end{exbox}
 
 We now prove the general version of one direction of the theorem mentioned
-in the previous section.  That is, as an exercise, you proved by direct
-construction that $H^{(0,1)}(U) = 0$ in $\C^2$, then $U$ is a domain of
+in the previous section.  As an exercise, you proved by direct
+construction that if $H^{(0,1)}(U) = 0$ in $\C^2$, then $U$ is a domain of
 holomorphy.  We extend this result to $\C^n$.
 
 \begin{thm} \label{thm:dolhomimpliesdoh}
@@ -13848,7 +13862,7 @@ Hence for $(z,\bar{\zeta}) \in K \times K^*$,
 \leq
 C_K < \infty .
 \end{equation*}
-And so the convergence is uniform on $K \times K^*$.
+So the convergence is uniform on $K \times K^*$.
 \end{proof}
 
 \begin{exbox}
@@ -14450,8 +14464,7 @@ See \figureref{fig:sqrt}.
 \caption{Graphs of the real and imaginary parts of both branches
 $\pm\sqrt{z_1}$.  A possible choice of branch $\alpha_1(z_1)$ is drawn darker; note the
 discontinuity of its imaginary part.
-The surface $z_2^2-z_1=0$ does not cross itself in $\C^2$,
-we just lack the dimensions to see it.\label{fig:sqrt}}
+We remark that the surface $z_2^2-z_1=0$ does not cross itself in $\C^2$.\label{fig:sqrt}}
 \end{myfig}
 
 The $k$ depends on the coordinates chosen.
@@ -14764,7 +14777,7 @@ convergent.
 
 Let us prove that the zeros change holomorphically as long as they do not
 come together.  We will prove shortly that the zeros come together
-only on a small set: a zero set of a certain holomorphic function
+only on a small set---a zero set of a certain holomorphic function
 called the discriminant.
 
 A set of zeros of a function of one variable are said to be
@@ -15838,7 +15851,7 @@ is a pure $4$-dimensional subvariety of $\C^6$, so of codimension $2$,
 and the defining equations are
 $z_1z_5-z_2z_4 = 0$,
 $z_1z_6-z_3z_4 = 0$, and
-$z_2z_6-z_3z_5 = 0$.  Let us state without proof that the unique singular point is the origin and there exist
+$z_2z_6-z_3z_5 = 0$.  We state without proof that the unique singular point is the origin and there exist
 no $2$ holomorphic functions near the origin
 that define this subvariety.  In more technical
 language, the subvariety is not a \emph{\myindex{complete intersection}}.
@@ -16607,25 +16620,26 @@ $\zeta \in \Sigma_z(U,r)$.
 \end{exbox}
 
 \begin{example}
-Suppose we start with the real-analytic hypersurface $M$ given by
+Consider a real-analytic hypersurface $M$ given by
 \begin{equation*}
 \Im w = (\Re w) \rho(z,\bar{z},\Re w) ,
 \end{equation*}
 with $\rho$ vanishing at the origin.
-Rewriting in terms of $w$ and $\bar{w}$, we find
+The hypersurface given by $w=0$ lies in $M$.
+Rewrite in terms of $w$ and $\bar{w}$,
 \begin{equation*}
 \frac{w-\bar{w}}{2i} = \left(\frac{w+\bar{w}}{2}\right)
 \rho\left(z,\bar{z},\frac{w+\bar{w}}{2}\right) .
 \end{equation*}
-Setting $\bar{z} = \bar{w} = 0$, we obtain
+Set $\bar{z} = \bar{w} = 0$ to find
 \begin{equation*}
 \frac{w}{2i} = \left(\frac{w}{2}\right)
 \rho\left(z,0,\frac{w}{2}\right) .
 \end{equation*}
 As $\rho$ vanishes at the origin, then near the origin the equation
-defines the complex hypersurface given by $w=0$.
-So $\Sigma_0$ is defined by $w = 0$.
-This is precisely the complex hypersurface that lies inside $M$.
+defines the complex hypersurface given by $w=0$,
+that is, $\Sigma_0$ is defined by $w = 0$.
+So $\Sigma_0$ is precisely the complex hypersurface that lies inside $M$.
 \end{example}
 
 The last example is not a fluke.
@@ -17079,7 +17093,9 @@ for an overview of differential forms.
 \begin{thm}[Green's theorem]\index{Green's theorem} \label{thm:greens}
 Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
 $\partial U$ oriented positively, and let
-$f \colon \widebar{U} \to \C$ be continuous
+$f \colon \widebar{U} \to \C$ and 
+$g \colon \widebar{U} \to \C$
+be continuous
 with bounded continuous partial derivatives in $U$.
 Then
 \begin{multline*}
@@ -17116,8 +17132,10 @@ Then
 \end{multline*}
 \end{thm}
 
+It is sufficient to prove the conclusion of Green's
+with $g\equiv 0$, and it is sometimes stated that way.
 The Cauchy integral formula is equivalent to
-what is usually called just Cauchy's theorem:
+Cauchy's theorem:
 
 \begin{thm}[Cauchy]
 Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
@@ -18280,7 +18298,7 @@ the coordinates on $U$.  Define
 \overset{\text{def}}{=}
 \sum_{1 \leq \ell_1 < \ell_2 < \cdots < \ell_k \leq n}
 \int_U
-g_{\ell_1,\ldots,\ell_k}(t)
+g_{\ell_1,\ldots,\ell_k}\bigl(\varphi(t)\bigr)
 \det D (\varphi_{\ell_1},\varphi_{\ell_2},\ldots,\varphi_{\ell_k})
 \,
 dt
@@ -18293,7 +18311,8 @@ denotes the derivative of the mapping whose $m$th component
 is $\varphi_{\ell_m}$.
 
 Similarly as before, if $\omega$ is not supported in the
-image of a single parametrization, write
+image of a single parametrization, then using a partition of unity,
+write
 \begin{equation*}
 \omega = \sum_{\ell} \omega_\ell
 \end{equation*}
@@ -18542,13 +18561,13 @@ d\omega \wedge \eta + {(-1)}^p \omega \wedge d\eta .
 
 \medskip
 
-Something to notice is that
+Notice is that
 \begin{equation*}
 d(d\omega) = 0
 \end{equation*}
 for every $\omega$,
 which follows because partial derivatives commute.
-That is sometimes written as $d^2=0$.  In particular, we get a
+The equation is sometimes written as $d^2=0$.  In particular, we get a
 so-called complex:  If
 $\Lambda^k(M)$ denotes the $k$-forms on an $n$-dimensional submanifold $M$,
 then we get the complex
@@ -18577,7 +18596,9 @@ on this idea and one appears in \chapterref{ch:dbar}, but we digress.
 
 Let us now state \emph{\myindex{Stokes' theorem}}, sometimes
 called the \emph{\myindex{generalized Stokes' theorem}} to distinguish it
-from the classical Stokes' theorem you know from vector calculus, which is a special case.
+from the classical Stokes' theorem you know from vector calculus, which is a special
+case.\footnote{Interestingly, Stokes had nothing to do with proving either version
+aside from liking the theorem.}
 
 \begin{thm}[Stokes]
 Suppose $M \subset \R^n$ is an embedded
@@ -18593,18 +18614,17 @@ $M$.  Then
 One can get away with less regularity, both on $\omega$ and $M$ (and
 $\partial M$) including ``corners.''
 In $\R^2$, it is easy to state
-in more generality, see \thmref{thm:greens}.
-
-A final note is that the classical Stokes' theorem is just the generalized
+in more generality, see Green's theorem (\thmref{thm:greens}).
+The classical Stokes' theorem is just the generalized
 Stokes' theorem with $n=3$, $k=2$.  Classically instead of
 using differential forms, the line integral is an integral of a vector field
 instead of a $1$-form
 $\omega$, and its derivative $d\omega$ is the curl operator.
 
-As to at least get a flavor of the theorem, let us prove it in a simpler
+To at least get a flavor of the theorem, we prove it in a simpler
 setting, which however is often almost good enough, and it is the key idea
 in the proof.
-Suppose $U \subset \R^n$ is a domain such that for each $k=1,\ldots,n$
+Suppose $U \subset \R^n$ is a domain such that for each $k=1,\ldots,n$,
 there exist two smooth functions $\alpha_k$ and $\beta_k$ and $U$
 as a set is given by
 \begin{equation*}
@@ -18619,7 +18639,6 @@ as a set is given by
 where $\pi_k(U)$ is the projection of $U$ onto the
 $(x_1,\ldots,x_{k-1},x_{k+1},\ldots,x_n)$ components.
 Orient $\partial U$ as usual.
-
 Write $x' = (x_1,\ldots,x_{k-1},x_{k+1},\ldots,x_n)$, and let $dV_{n-1}$ be the
 volume form for $\R^{n-1}$.
 Consider the $(n-1)$-form
