@@ -11950,9 +11950,9 @@ Then $\psi \colon U \to \C$ given by
 is a smooth function such that $\frac{\partial \psi}{\partial \bar{z}} = g$.
 \end{lemma}
 
-By taking conjugates, we can also similarly solve the
+By taking conjugates, we can similarly solve the
 $\frac{\partial \psi}{\partial z} = g$ problem.  Moreover, since the
-solution is given as an integral, we can also solve the problem with
+solution is given as an integral, we can solve the problem with
 parameters.  That is, if $g$ depends on some other variables in a smooth or
 holomorphic way, then the solution $\psi$ also depends on those variables
 smoothly or holomorphically.
@@ -11964,8 +11964,8 @@ This fact may be surprising, as doing calculus blindly, one would arrive
 at the multivalued function $\log \bar{z} + \text{holomorphic function}$,
 but $\log \bar{z} + \log z = \log \sabs{z}^2$ is single valued as needed.
 The lemma, via the exercises, leads to showing that $H^{(0,1)}(U) = 0$ for
-every domain $U \subset \C$.  Note that every $(0,1)$-form
-$g \, d\bar{z}$ in $U$ is $\bar{\partial}$-closed, so the statement is
+every domain $U \subset \C$.  Every $(0,1)$-form
+$g \, d\bar{z}$ in $U$ is $\bar{\partial}$-closed, so $H^{(0,1)}(U) = 0$ is
 equivalent to showing that $\frac{\partial \psi}{\partial \bar{z}} = g$
 is solvable for any smooth function $g$ on $U$.
 
@@ -12105,7 +12105,7 @@ on $\Delta_s(w)$ such that $\bar{\partial} \omega = \eta$.
 \begin{proof}
 Le $k$ be an integer such that $\eta$ only involves
 $d\bar{z}_1,\ldots,d\bar{z}_k$ from the barred differentials.
-If $k=0$, then the lemma is true trivially as $q \geq 1$ so $\eta$ would
+If $k=0$, then the lemma is true trivially as $q \geq 1$, so $\eta$ would
 just have to be zero.
 We will proceed by induction.
 
@@ -12203,7 +12203,7 @@ Now note that
 \end{equation*}
 Since $\theta$ and $\delta$ both only contain the barred differentials
 $d\bar{z}_1,\ldots,d\bar{z}_{k-1}$, we can apply the
-induction hypothesis, to find a $(p,q-1)$-form $\varphi$ such that
+induction hypothesis to find a $(p,q-1)$-form $\varphi$ such that
 $\bar{\partial} \varphi = \theta-\delta$.  Then we let
 $\omega = \psi+\varphi$ and note that we are done:
 \begin{equation*}
@@ -12247,7 +12247,7 @@ We will construct a sequence of forms $\{ \omega_k \}$
 each $\omega_k$ defined in $\Delta_{k+2}$
 such that $\omega_{k+1}|_{\Delta_k} = \omega_k|_{\Delta_k}$.
 Suppose we have defined $\omega_1,\ldots,\omega_k$.
-Now using $\Delta_{k+3}$ and $\Delta_{k+4}$ using the lemma again,
+Using $\Delta_{k+3}$ and $\Delta_{k+4}$ with the lemma again,
 define a new form $\sigma$ on $\Delta_{k+3}$ such that $\bar{\partial}
 \sigma = \eta$.  What we need to do is to correct $\sigma$ so that it equals
 $\omega_k$ on $\Delta_k$.  On $\Delta_{k+2}$, we have
