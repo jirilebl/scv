@@ -11585,7 +11585,7 @@ In general, the problem is equivalent to holomorphic convexity, although
 it is rather involved, and thus we content ourselves with polydiscs and
 other simple examples.
 To work with differential forms, we, as before, split the derivatives
-into the holomorphic and antiholomorphic parts.  For higher order forms
+into the holomorphic and antiholomorphic parts.  For higher order forms,
 we work with multi-indices for simplicity, although the way that
 multi-indices are applied is slightly different.
 
@@ -11648,7 +11648,7 @@ Define
 \end{defn}
 
 If $\eta$ is of bidegree $(p,q)$, then
-$\partial \eta$ if of bidegree $(p+1,q)$ and
+$\partial \eta$ is of bidegree $(p+1,q)$ and
 $\bar{\partial} \eta$ is of bidegree $(p,q+1)$.
 We get the total exterior derivative $d \eta = \partial \eta + \bar{\partial} \eta$ as before.
 
@@ -11733,13 +11733,14 @@ are isomorphic as vector spaces.
 The $\bar{\partial}$-problem for $(p,q)$-forms is then the solvability
 of the equation $\bar{\partial} \omega = \eta$ for every $(p,q)$-form
 $\eta$ given the necessary
-compatibility conditions $\bar{\partial} \eta = 0$, and this problem
+compatibility conditions $\bar{\partial} \eta = 0$.
+This problem
 can then be stated as the cohomology condition $H^{(p,q)}(U) = 0$,
 where by $0$, we mean the trivial vector space.
-The Dolbeault cohomology is in a sense a refinement
+The Dolbeault cohomology is, in a sense, a refinement
 of the so-called de Rahm cohomology,
 which is the usual smooth cohomology measuring the normal topology of $U$,
-whereas the Dolbeault cohomology also takes into account the complex structure.
+where the Dolbeault cohomology also takes into account the complex structure.
 Note that $H^{(0,0)}(U)$ is just the set of $\bar{\partial}$-closed
 $(0,0)$-forms, that is, it is the set $\sO(U)$ of holomorphic functions on $U$.
 More generally, $H^{(p,0)}(U)$ is the set of $\bar{\partial}$-closed
@@ -11832,14 +11833,14 @@ Suppose for contradiction that there existed a smooth
 $f \colon \C^2 \setminus \{ 0 \} \to \C$
 such that $\bar{\partial} f = \eta$.
 Define $g = z f - \nicefrac{\bar{w}}{r}$.  When $z\not=0$, then
-$\frac{g}{z} = f - \nicefrac{\bar{w}}{zr}$, and so
+$\nicefrac{g}{z} = f - \nicefrac{\bar{w}}{zr}$, and so
 $\bar{\partial}\bigl(\nicefrac{g}{z}\bigr) = 0$.  Therefore, $g$ is holomorphic
 where $z\not=0$, but $g$ is, and this is really where the contradiction
 comes in, smooth on $\C^2 \setminus \{ 0 \}$ and hence satisfies the
 Cauchy--Riemann equations on $\C^2 \setminus \{ 0 \}$ and so is holomorphic.
 By Hartogs phenomenon (any version) $g$ extends to be holomorphic in $\C^2$,
 in particular, near $0$, which contradicts the fact that $g(0,w) =
-\nicefrac{1}{w}$.
+\nicefrac{-1}{w}$.
 \end{example}
 
 \begin{example}
