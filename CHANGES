@@ -1,7 +1,13 @@
-<li>In Example 6.8.3, mention at the beginning that we made \(M\) to
-contain the hypersurface \(w=0 .\)
 <li>Add footnote to Exercise 2.2.1 that it works for smooth functions too by
 using Taylor's theorem so that the reader doesn't think it is only for
 polynomials.
+<li>In the first sentence defining complex affine subspace, avoid trying to
+be cute and short and just give the standard, though slightly longer
+definition.  The original had the issue that we really should have said that
+\(c\) is in the image of \(M.\)
+<li>In Example 6.8.3, mention at the beginning that we made \(M\) to
+contain the hypersurface \(w=0 .\)
+<li>Add footnote to the sentence introducing Stokes (Theorem C.6) about the
+naming.
 
 See https://www.jirka.org/scv/changes.html for older changes.

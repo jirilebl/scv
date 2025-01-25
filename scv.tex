@@ -12381,11 +12381,11 @@ $H^{(0,1)}(U) = H^{(0,1)}(W) = 0$, but $H^{(0,1)}(V)$ is nontrivial.
 Let $L \subset \C^n$ be a (complex)
 \emph{\myindex{affine subspace}} of dimension $k$,
 that is,
-the set defined by $M z = c$ for a rank
-$n-k$ matrix $M$ and $c \in \C^n$.
+the set defined by $M z = c$ for an $(n-k) \times n$ matrix
+$M$ of rank $n-k$ and $c \in \C^{n-k}$.
 After a complex linear
 transformation and translation,
-we may assume that
+we assume that
 $L = \{ z \in \C^n : z_{k+1} = \cdots = z_n = 0 \}$.
 We say a function $f$ defined on an open subset of $L$ is
 holomorphic
@@ -12420,8 +12420,8 @@ that $H^{(0,1)}(U)$ is nontrivial.
 Suppose $U = B_2\bigl((0,1)\bigr) \subset \C^2$ and
 $L = \{ (z,w) \in \C^2 : w = 0 \}$.
 Then $U \cap L$ is a disc of radius $\sqrt{3}$ in the $z$-plane.
-Take a function $f \colon \Delta_{\sqrt{3}}(0) \to \C$ be such that
-it does not extend past any point in the boundary of the disc.
+Take a holomorphic $f \colon \Delta_{\sqrt{3}}(0) \to \C$ that
+does not extend past any point in the boundary of the disc.
 The obvious way to extend $f$ to an
 $F$ would be to simply take a function $F(z,w) = f(z)$, but that is not
 defined on all of $U$.
@@ -12473,11 +12473,11 @@ neighborhood of $U \cap \R^2$ in $U$, just perhaps not all of $U$.
 The way to do the extension in general is to do the simple
 extension as in $F(z,w)=f(z)$ to a neighborhood of $L$,
 then extend in a smooth way via a cutoff function to all of $U$.
-But to make the extension holomorphic, we
+To make the extension to $U$ holomorphic, we
 need to then correct via the appropriate $\bar{\partial}$-problem.
-We stated the extension with holomorphic functions, but really it is no harder to
+We discussed the extension of holomorphic functions, but it is no harder to
 prove a more general version of the problem about
-$\bar{\partial}$-closed $(p,q)$-forms, where holomorphic functions
+$\bar{\partial}$-closed $(p,q)$-forms---holomorphic functions
 are the $\bar{\partial}$-closed $(0,0)$-forms.
 
 To be able to prove this more general theorem, we need to know what it means
@@ -12486,7 +12486,7 @@ Instead of making this too complicated, let us do the same
 simplification as we did above for functions.
 Informally, we will restrict the values of the form
 to $L$ and only take the parts of the form that ``point along $L$.''
-Let us, also for simplicity, suppose that $L$ is a hyperplane, as the more
+Let us, also for simplicity, suppose that $L$ is a hyperplane; the more
 general case then follows.
 As before,
 after a linear map and a translation, assume $L = \{ z \in \C^n : z_n = 0 \}$.
@@ -12501,8 +12501,9 @@ in the first term).  Then
 \eta|_L = \sum_{\alpha\beta} \eta_{\alpha\beta}|_L \, dz_{\alpha} \wedge
 d\bar{z}_{\beta} .
 \end{equation*}
-Basically we restrict the components to $L$, and throw out the differentials
-that do not change along $L$.  If $\eta$ is a function (a $(0,0)$-form),
+Basically, we restrict the components to $L$, and throw out the differentials
+that would take vectors that do not point along $L$.
+If $\eta$ is a function (a $(0,0)$-form),
 then, of course, this
 is just the restriction of the function.
 
