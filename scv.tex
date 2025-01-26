@@ -11605,9 +11605,10 @@ multi-indices are applied is slightly different.
 
 \begin{defn} \label{defn:danddbarform}
 \pagebreak[2]
-Let $p$ and $q$ be integers between $0$ and $n$.
+Suppose $U \subset \C^n$ is open and
+let $p$ and $q$ be integers, $0 \leq p,q \leq n$.
 Let $\alpha$ and $\beta$ be ordered $p$- and $q$-tuples of
-distinct integers between $1$ and $n$:
+distinct integers such that
 $1 \leq \alpha_1 < \alpha_2 < \dots < \alpha_p \leq n$ and
 $1 \leq \beta_1 < \beta_2 < \dots < \beta_q \leq n$.
 Write
@@ -11635,10 +11636,11 @@ Then a differential form
 \eta_{\alpha \beta} \, dz_\alpha \wedge d\bar{z}_\beta ,
 \end{equation*}
 where the $\alpha$ and $\beta$ run over all $p$- and $q$-tuples
-as above,
+as above and $\eta_{\alpha \beta}$ are smooth functions on $U$,
 is called a
 \emph{\myindex{$(p,q)$-form}} or a differential form of
 \emph{\myindex{bidegree}} $(p,q)$.
+Note that $(0,0)$-forms are simply smooth functions on $U$.
 A general $k$-form can be written as a sum of $(p,q)$-forms
 for different $p$ and $q$ where $p+q = k$.
 Define
@@ -11919,7 +11921,7 @@ nontrivial, it is an infinite-dimensional vector space.
 We will prove the solvability of the $\bar{\partial}$-problem for the
 polydisc.
 We will allow some of the factors in the polydisc to be $\C$,
-so for the moment we define \emph{\myindex{possibly unbounded polydisc}}
+so we define \emph{\myindex{possibly unbounded polydisc}}
 $\Delta \subset \C^n$
 to mean $\Delta = D_1 \times \cdots \times D_n$ where
 each $D_k$ is either a disc or $\C$.  In this way, we also achieve a
@@ -12541,10 +12543,11 @@ where $\eta$ is chosen appropriately so that $\Psi$ is
 $\bar{\partial}$-closed.  This form is defined in
 $U$ as $\chi$ is identically zero where $\psi$ is undefined.
 Clearly, if such an $\eta$ can be found,
-we have $\Psi|_{U \cap L} = \psi$.
+then $\Psi|_{U \cap L} = \psi$.
 Let us compute
 $\bar{\partial} \Psi$
-to see what is required of $\eta$.
+to see what is required of $\eta$.  Where $\psi$
+is defined we get
 \begin{equation*}
 \bar{\partial} \Psi =
 \bar{\partial}\chi \wedge \psi
@@ -12558,7 +12561,7 @@ to see what is required of $\eta$.
 As $\bar{\partial} \chi$ is $0$ in a neighborhood of $U \cap L$,
 the form $\frac{- \bar{\partial}\chi \wedge \psi}{z_n}$ extends smoothly
 through $U \cap L$.
-It is a
+Moreover, it is a
 smooth $(p,q+1)$-form on $U$ as
 $\bar{\partial}\chi$ is identically zero in a neighborhood of
 where $\psi$ is undefined.
@@ -12692,9 +12695,9 @@ $H^{(0,q)}(U \cap L) = 0$ for $1 \leq q \leq n-2$.
 By the induction hypothesis
 (and \exerciseref{exercise:dobeaultdisconnected}),
 every component of $U \cap L$ is a domain of holomorphy.
-Since $z_0$ is in the boundary of $U \cap L$, we have a holomorphic function
+Since $z_0$ is in the boundary of $U \cap L$, there exists a holomorphic function
 $f \in \sO(U \cap L)$ that does not extend (along $L$) through $z_0$.
-As $H^{(0,1)}(U) = 0$, we have that there exists an $F \in \sO(U)$
+As $H^{(0,1)}(U) = 0$, there exists an $F \in \sO(U)$
 such that $F|_{U \cap L} = f$.  If there existed a $G \in \sO(W)$ that
 agreed with $F$ on $V$, then $G|_{W \cap L}$ would be an extension of $f$
 through $z_0$, which we know is impossible, so no such $G$ exists.
@@ -12712,7 +12715,7 @@ the intersection of $U \cap L$ in that case is always a domain of
 holomorphy.  On the other hand, it is not sufficient to have extension
 from hyperplanes, see \exerciseref{exercise:extensionfromhypnotenough}.
 
-\begin{thm}
+\begin{thm} \label{thm:extensionfromlinesmeansDOH}
 Suppose $U \subset \C^n$ is domain such that for every
 complex line $L$ and every $f \in \sO(U \cap L)$ there
 exists an $F \in \sO(U)$ where $F|_{U \cap L} = f$.
@@ -12721,13 +12724,14 @@ Then $U$ is a domain of holomorphy.
 
 \begin{exbox}
 \begin{exercise}
-Prove the theorem.
+Prove \thmref{thm:extensionfromlinesmeansDOH}.
 \end{exercise}
 
 \begin{exercise}
 Suppose $U \subset \C^n$ is domain of holomorphy
 and $L$ is an affine subspace of dimension $k$.
-Then every component of $U \cap L$ is a domain of holomorphy.
+Show that
+every component of $U \cap L$ is a domain of holomorphy.
 \end{exercise}
 
 \begin{exercise}
@@ -12963,10 +12967,10 @@ f_\iota(z) = \sum_{\gamma \in \Gamma} \varphi_\gamma(z) h_{\iota \kappa_\gamma}(
 \end{equation*}
 Note why this is well-defined and smooth:
 For $z \in U_\iota$, given a $\gamma$ and hence $\kappa_\gamma$,
-either $\varphi_\gamma=0$ in some neighborhood of $z$
+either $\varphi_\gamma=0$ in some neighborhood of $z$,
 or $z \in U_{\kappa_\gamma} \cap U_\iota$.
-So each term can be interpretted as a smooth function on
-$U_\iota$, and in a neighborhood of $z$ we are adding at most finitely
+So each term can be interpreted as a smooth function on
+$U_\iota$, and in a neighborhood of $z$, we are adding at most finitely
 smooth functions, so $f_\iota$ is smooth in $U_\iota$.
 For $z \in U_\iota \cap U_\lambda$,
 \begin{equation*}
@@ -13005,7 +13009,7 @@ $\bar{\partial}f_\iota-\bar{\partial}f_\kappa = \bar{\partial}(f_\iota-f_\kappa)
 \end{equation*}
 is therefore well-defined on $U$.  Moreover, $\eta$ is
 $\bar{\partial}$-closed, so by assumption on $U$,
-there exists a $\psi \in \sO(U)$ such that $\bar{\partial}\psi = \eta$.
+there exists a smooth function $\psi$ such that $\bar{\partial}\psi = \eta$.
 On each $U_\iota$,
 \begin{equation*}
 F_\iota = f_\iota - \psi .
@@ -13072,8 +13076,11 @@ h_{\iota\kappa} = \frac{f_\iota}{f_\kappa}.
 Cousin II is the analogue of the Weierstrass product theorem, that is,
 finding a function with a prescribed zero set.
 Suppose that $M \subset U$ is locally given by the vanishing of
-a single holomorphic function with a nonvanishing derivative (a complex
-submanifold of codimension $1$), that is for every $p \in U$, there is a
+a single holomorphic function with a nonvanishing derivative
+(a complex
+submanifold of codimension $1$)\footnote{%
+The nonvanishing condition on the derivative is not necessary, we use it for simplicity.},
+that is, for every $p \in U$, there is a
 neighborhood $U_\iota$ and a holomorphic $g_\iota$ with $dg_{\iota} \not= 0$
 such that $g_\iota^{-1}(0) = M \cap U_\iota$.
 On $U_\iota \cap U_\kappa$, let
@@ -13114,7 +13121,7 @@ the topological obstruction arises.
 Suppose we have Cousin II data $h_{\iota\kappa}$.  We refine the
 covering to make the sets $U_{\iota}$ and their intersections
 $U_\iota\cap U_\kappa$ simply connected.  Then we take logarithms
-$g_{\iota\kappa} = \log h_{\iota\kappa}$ and we take the correct
+$g_{\iota\kappa} = \log h_{\iota\kappa}$, where we pick the correct
 branch to also get $g_{\kappa\iota} = -g_{\iota\kappa}$, so
 $g_{\iota\kappa}+g_{\kappa\iota} = 0$.  For the triple sum
 we get
@@ -13124,11 +13131,11 @@ m_{\iota\kappa\lambda}
 \end{equation*}
 for some integer $m_{\iota\kappa\lambda}$.
 It is not always possible to pick the branches in
-such a way to make $m_{\iota\kappa\lambda}=0$ for all indices.
-If it were possible, we could apply the
-solution to the Cousin I data.
-This question is just a question of
-cohomology, that is, just topology.\footnote{%
+such a way as to make $m_{\iota\kappa\lambda}=0$ for all indices.
+Were it possible, we could try to solve
+this corresponding Cousin I problem.
+This is a question of
+plain old singular cohomology, that is, topology.\footnote{%
 For the interested reader, the needed extra cohomology condition is $H^2(U,\Z)=0$.}
 
 \begin{exbox}

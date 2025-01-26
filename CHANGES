@@ -1,10 +1,15 @@
 <li>Add footnote to Exercise 2.2.1 that it works for smooth functions too by
 using Taylor's theorem so that the reader doesn't think it is only for
 polynomials.
+<li>In 4.4, when defining \((p,q)\)-forms,
+note that the coefficients are smooth on some open set \(U .\)
 <li>In the first sentence defining complex affine subspace, avoid trying to
 be cute and short and just give the standard, though slightly longer
 definition.  The original had the issue that we really should have said that
 \(c\) is in the image of \(M.\)
+<li>In 4.6, when describing the relationship of Cousin II to Weierstrass,
+add a footnote mentioning that the reason we assume nonvanishing of the
+derivative is only for simplicity (we don't know anything about varieties).
 <li>In Example 6.8.3, mention at the beginning that we made \(M\) to
 contain the hypersurface \(w=0 .\)
 <li>Add footnote to the sentence introducing Stokes (Theorem C.6) about the
