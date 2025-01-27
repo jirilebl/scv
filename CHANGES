@@ -12,6 +12,9 @@ add a footnote mentioning that the reason we assume nonvanishing of the
 derivative is only for simplicity (we don't know anything about varieties).
 <li>In Example 6.8.3, mention at the beginning that we made \(M\) to
 contain the hypersurface \(w=0 .\)
+<li>Mention that the cohomology groups from differential forms are
+the de Rham cohomology and add that to the index.  Also put the initial
+trivial map \(d\) into the complex for completeness.
 <li>Add footnote to the sentence introducing Stokes (Theorem C.6) about the
 naming.
 

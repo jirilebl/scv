@@ -18066,7 +18066,7 @@ A classical nonorientable example is the M\"obius strip.
 
 \medskip
 
-Now that we know ``on'' what we integrate, let us figure out what ``it'' is
+Now that we know what we integrate ``on'', let us figure out what ``it'' is
 that we integrate.  Let us start with $0$-forms.
 We define $0$-forms as smooth functions (possibly complex-valued).
 Sometimes we need a function defined just on a submanifold.  A function $f$ defined
@@ -18357,7 +18357,7 @@ need that level of generality.
 In computations, we can avoid sets of zero measure ($k$-dimensional),
 so we can ignore the boundary of the submanifold.  Similarly, if we parametrize
 several subsets we can leave out a measure zero subset.
-Let us give a couple of examples of computations.
+Let us give a few examples of computations.
 
 \begin{example} \label{example:diffformscircleint}
 Consider the circle $S^1 \subset
@@ -18569,17 +18569,16 @@ d\omega \wedge \eta + {(-1)}^p \omega \wedge d\eta .
 
 \medskip
 
-Notice is that
+Because partial derivatives commute, we find that for every $\omega$,
 \begin{equation*}
-d(d\omega) = 0
+d(d\omega) = 0 .
 \end{equation*}
-for every $\omega$,
-which follows because partial derivatives commute.
-The equation is sometimes written as $d^2=0$.  In particular, we get a
-so-called complex:  If
-$\Lambda^k(M)$ denotes the $k$-forms on an $n$-dimensional submanifold $M$,
-then we get the complex
+The equation is sometimes written as $d^2=0$.
+If $\Lambda^k(M)$ denotes the $k$-forms on an $n$-dimensional submanifold $M$,
+then we get a so-called complex
 \begin{equation*}
+0
+\overset{d}{\to}
 \Lambda^0(M)
 \overset{d}{\to}
 \Lambda^1(M)
@@ -18592,17 +18591,23 @@ then we get the complex
 \overset{d}{\to}
 0 .
 \end{equation*}
-We remark that one can study the topology of $M$
-by computing from this complex the cohomology groups,
+The initial $d$ from the trivial space to $\Lambda^0(M)$ is just the zero
+map.
+One can study the topology of $M$
+by computing from this complex the so-called
+\emph{\myindex{de Rham cohomology}} groups
+$H_{dR}^0(M),\ldots,H_{dR}^n(M)$, that is,
 $\frac{\operatorname{ker}(d \colon \Lambda^k
 \to \Lambda^{k+1})}{\operatorname{im}(d \colon \Lambda^{k-1} \to \Lambda^k)}$,
-which is really about global solvability of the differential
-equation $d\omega = \eta$ for an unknown $\omega$.  There are variations
-on this idea and one appears in \chapterref{ch:dbar}, but we digress.
+which measure global solvability of the differential
+equation $d\omega = \eta$ for an unknown $\omega$.  These groups
+are isomorphic (the de Rham theorem) to the singular cohomology groups 
+$H^0(M,\R),\ldots,H^n(M,\R)$.  Variations
+on this idea abound and one appears in \chapterref{ch:dbar}, but we digress.
 
 \medskip
 
-Let us now state \emph{\myindex{Stokes' theorem}}, sometimes
+We now state \emph{\myindex{Stokes' theorem}}, sometimes
 called the \emph{\myindex{generalized Stokes' theorem}} to distinguish it
 from the classical Stokes' theorem you know from vector calculus, which is a special
 case.\footnote{Interestingly, Stokes had nothing to do with proving either version
@@ -18679,8 +18684,7 @@ f(x_1,\ldots,x_{k-1}, \beta_k(x'), x_{k+1}, \ldots, x_n)
 \int_{\pi_k(U)}
 f(x_1,\ldots,x_{k-1}, \alpha_k(x'), x_{k+1}, \ldots, x_n)
 \,dV_{n-1}
-\\
-& =
+=
 \int_{\partial U} \omega .
 \end{split}
 \end{equation*}
@@ -18885,7 +18889,7 @@ The sequence of degrees $\deg(f_1),\deg(f_2),\ldots$ is by construction
 nondecreasing.
 Let $c_k$ be the leading coefficient of $f_k$.
 
-As $R$ is Noetherian, then there exists a finite $k$ such
+As $R$ is Noetherian, there exists a finite $k$ such
 that $(c_1,c_2,\ldots,c_m) \subset (c_1,c_2,\ldots,c_k)$ for all $m$.
 Suppose for contradiction there exists a $f_{k+1}$, that is, the sequence
 of polynomials
