@@ -13739,7 +13739,7 @@ $2n$ variables.
 Let us compute the Bergman kernel (and
 the Szeg{\"o} kernel of the next section while we're at it)
 explicitly for the
-unit disc $\D \subset \C$.  Let $f \in \sO(\D) \cap C(\widebar{D})$, that
+unit disc $\D \subset \C$.  Let $f \in \sO(\D) \cap C(\widebar{\D})$, that
 is, $f$ is holomorphic in $\D$ and continuous up to the boundary.
 Let $z \in \D$.
 Then
@@ -13747,10 +13747,10 @@ Then
 f(z) = \frac{1}{2\pi i} \int_{\partial \D} \frac{f(\zeta)}{\zeta-z} \,
 d\zeta .
 \end{equation*}
-On the unit circle $\zeta \bar{\zeta} = 1$.  Let $ds$ be
+On the unit circle, $\zeta \bar{\zeta} = 1$.  Let $ds$ be
 the arc-length measure on the circle, parametrized as $\zeta =
 e^{is}$.
-Then $d\zeta = i e^{is} ds$, and
+Then $d\zeta = i e^{is} \, ds$ or $\bar{\zeta} d\zeta = i \,ds$, and
 \begin{equation*}
 f(z) = \frac{1}{2\pi i} \int_{\partial \D} \frac{f(\zeta)}{\zeta-z} \,
 d\zeta
@@ -13931,12 +13931,12 @@ K_{\D^n}(z,\bar{\zeta}) =
 Show that for
 some constants $c_\alpha$,
 the set of all monomials $\frac{z^\alpha}{c_\alpha}$ gives a complete orthonormal
-system of $A^2(\bB_n)$.  Hint: To show orthonormality
+system of $A^2(\bB_n)$.  Hint: To show orthogonality
 compute the integral using polar coordinates in each variable
 separately, that is, let $z_\ell = r_\ell e^{i\theta_\ell}$ where $\theta \in
 [0,2\pi]^n$ and $\sum_\ell r_\ell^2 < 1$.  Then show completeness by showing that
 if $f \in A^2(\bB_n)$ is orthogonal to all $z^\alpha$, then $f = 0$.
-Finding $c_\alpha = \sqrt{\frac{\pi^n \alpha!}{(n+\abs{\alpha})!}}$ requires
+Note that explicitly finding $c_\alpha = \sqrt{\frac{\pi^n \alpha!}{(n+\abs{\alpha})!}}$ requires
 the classical $\beta$ function of special function theory.
 \end{exercise}
 
@@ -14042,7 +14042,7 @@ and so it extends to
 $(U \times \widebar{U}^*) \cup (\widebar{U} \times U^*)$.
 
 \begin{example}
-In \exerciseref{example:bergmankerneldisc}, we computed that
+In \exampleref{example:bergmankerneldisc}, we computed that
 if $f \in C(\overline{\D}) \cap \sO(\D)$, then
 \begin{equation*}
 f(z) = \frac{1}{2\pi} \int_{\partial \D} \frac{f(\zeta)}{1-z\bar{\zeta}} \, ds .
