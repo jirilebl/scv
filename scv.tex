@@ -478,6 +478,7 @@ Nicholas Lawson McLean, Alan Sola, Achinta Nandi,
 Sivaguru Ravisankar,
 Tomas Rodriguez,
 Mina Farag,
+Frank Wikstr\"om,
 and students in my classes for pointing out typos/errors
 and helpful suggestions.
 Some of the new material in version 4.0
@@ -12452,10 +12453,14 @@ every $f \in \sO(U \cap L)$ extends holomorphically to $U$.
 \end{exercise}
 
 \begin{exercise}
-You can also do this with multiple hyperplanes.  Suppose that in $\C^2$,
-$L$ is the set where $z=0$, $M$ is the set where $w=0$, $N$ is the set where
-$z=w$.  Let $f$, $g$, $h$ be holomorphic functions on $L$, $M$, and $N$,
-respectively such that $f(0)=g(0)=h(0)$.  Prove that there is a holomorphic
+Multiple hyperplanes are possible.  Let $L$ be the set $\C^2$
+where $z=0$, $M$ be the set where $w=0$, and $N$ be the set where
+$z=w$.  Let $f$, $g$, $h$ be holomorphic functions on $L$, $M$, and $N$.
+Some extra hypothesis is necessary to tie the
+three functions together.  For simplicity,
+suppose that the functions and all their first derivatives vanish at
+the origin.
+Prove that there is a holomorphic
 $F$ on $\C^2$ such that
 $F|_L = f$,
 $F|_M = g$,
@@ -12472,11 +12477,11 @@ neighborhood of $U \cap \R^2$ in $U$, just perhaps not all of $U$.
 \end{exercise}
 \end{exbox}
 
-The way to do the extension in general is to do the simple
-extension as in $F(z,w)=f(z)$ to a neighborhood of $L$,
+The way to find the extension in general is to start with a simple
+extension to some neighborhood of $L$, such as $F(z,w)=f(z)$,
 then extend in a smooth way via a cutoff function to all of $U$.
 To make the extension to $U$ holomorphic, we
-need to then correct via the appropriate $\bar{\partial}$-problem.
+then correct via the appropriate $\bar{\partial}$-problem.
 We discussed the extension of holomorphic functions, but it is no harder to
 prove a more general version of the problem about
 $\bar{\partial}$-closed $(p,q)$-forms---holomorphic functions
