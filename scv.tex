@@ -1754,7 +1754,6 @@ instance, we can interpret $\frac{1}{z}$ in different ways depending
 on whether we interpret $1$ as a vector or not, and whether we
 expect a vector or a number.  Best to just keep to the limited set of
 cases as given above, and only use it when it is clear what is meant.
-
 In this notation, the Cauchy formula becomes the perhaps deceptively simple
 \begin{equation*}
 f(z) =
@@ -1797,7 +1796,7 @@ talk about conditional convergence.  When we say the series
 \emph{converges}%
 \index{power series convergence}%
 \index{convergence of power series}, we mean absolutely.
-Fortunately, power series converge
+Fortunately, power series do converge
 absolutely, so the ordering does not matter.  If you want to write
 the limit in terms of partial sums, you pick some ordering of the
 multi-indices, $\alpha(1), \alpha(2), \ldots$, and then
@@ -1809,7 +1808,7 @@ c_\alpha {z}^\alpha
 \sum_{k=1}^m
 c_{\alpha(k)} {z}^{\alpha(k)} .
 \end{equation*}
-By the Fubini theorem (for sums) this limit is equal to the iterated
+By the Fubini theorem (for sums), this limit is equal to the iterated
 sum such as \eqref{eq:iteratedsum}.
 
 A power series $\sum_\alpha c_\alpha z^\alpha$
@@ -2206,7 +2205,7 @@ proposition.
 Let $U \subset \C^n$ be an open set.
 Suppose the sequence $f_\ell \colon U \to \C$ converges uniformly on compact subsets
 to $f \colon U \to \C$.  If every $f_\ell$ is holomorphic, then $f$ is
-holomorphic and the sequence
+holomorphic, and for every $\alpha$, the sequence
 $\left\{ \frac{\partial^{\sabs{\alpha}} f_\ell}{\partial z^\alpha}\right\}$
 converges to
 $\frac{\partial^{\sabs{\alpha}} f}{\partial z^\alpha}$ uniformly on compact
@@ -17552,8 +17551,18 @@ such that $c_k \not= 0$.
 \end{prop}
 
 \pagebreak[3]
-If $p$ is an isolated singularity of $f$, then call the corresponding
-$c_{-1}$ the \emph{\myindex{residue}} of $f$ at $p$, and write it
+Suppose that $f$ has an isolated singularity at $p$.
+The part of the series for negative $k$,
+that is, 
+$\sum_{k=-\infty}^{-1} c_k {(z-p)}^k$,
+is called the
+the \emph{\myindex{principal part}}.
+The singularity is removable if the principal part is zero, it is a pole if
+the principal part is a finite sum, and essential if the 
+principal part is an infinite series.
+
+We call the $c_{-1}$ corresponding to $p$
+the \emph{\myindex{residue}} of $f$ at $p$, and write it
 as $\operatorname{Res}(f,p)$.
 The proposition says that for a small $\gamma$ around $p$ in the positive direction,
 \begin{equation*}
@@ -17588,7 +17597,7 @@ by requiring that the interior of $\gamma$ lies in $U$ and hence avoid
 mentioning winding numbers.
 
 The identity theorem says that zeros of a nonconstant holomorphic $f$
-have no limit points, and so are isolated points.
+have no limit points; they are isolated points.
 Since $\frac{1}{f}$ is a meromorphic
 function with zeros at the poles of $f$, poles are also
 isolated.  Zeros and poles of  can be counted fairly easily.
@@ -17873,6 +17882,23 @@ The $p_k$ are chosen such that
 \sum_{k=1}^\infty {\abs{\frac{r}{a_k}}}^{1+p_k}
 \end{equation*}
 converges for all $r > 0$.
+
+A companion to the Weierstrass product theorem,
+which says that you can prescribe zeros,
+is the Mittag-Leffler theorem, which says that you
+can prescribe principal parts of poles.
+
+\begin{thm}[Mittag-Leffler]\index{Mittag-Leffler theorem}
+Suppose $U \subset \C$ is open, $S \subset U$ is a countable set with no
+limit point in $U$, and for every $p \in S$ there is a principal part
+\begin{equation*}
+P_p(z) = \sum_{n=1}^{k_p} \frac{c_{p,n}}{{(z-p)}^n}
+\end{equation*}
+of a pole of order $k_p$.  Then there exists a meromorphic function $f$ in $U$
+with poles precisely at points of $S$, and for each $p \in S$,
+the principal part of $f$ at $p$ is $P_p$.
+\end{thm}
+
 
 \begin{center}
 * * *
