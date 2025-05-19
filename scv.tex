@@ -7785,7 +7785,8 @@ respect to $\sF$, as the set
 \end{equation*}
 An open set $U$ is \emph{convex with respect to $\sF$}\index{convex!with respect to $\sF$}
 if for every $K \subset \subset U$, the hull $\widehat{K} \subset \subset U$.%
-\footnote{Recall that $\subset \subset$ means relatively compact:
+\footnote{Recall that $\subset \subset$ means a relatively
+compact subset;
 the closure in the relative (subspace) topology is compact.}
 \end{defn}
 
@@ -7910,7 +7911,7 @@ $\bigcup_{\alpha} [ x_\alpha,y_\alpha ] \subset \subset U$.
 \end{exercise}
 \end{exbox}
 
-We can now define another version of pseudoconvexity,
+We now define another version of pseudoconvexity,
 this time only in terms of the interior
 of the domain.
 
@@ -8047,7 +8048,7 @@ or in other words
 \end{equation*}
 Using $\zeta = t e^{-f(\xi)}$ in the definition of $\rho_c(a+b\xi)$, the
 statement above is equivalent
-to saying that
+to
 \begin{equation*}
 (a+b\xi)+te^{-f(\xi)}c \in U \quad \text{for all $t \in \D$}.
 \end{equation*}
@@ -8150,8 +8151,8 @@ Compare with \exerciseref{exercise:affinedisctouchingsmooth}.
 \end{exercise}
 
 \begin{exercise}
-Let $U \subset \C^n$ be a domain, and $f \colon \widebar{U} \to \R$ be a
-continuous function, plurisubharmonic and negative on $U$, and $f=0$ on $\partial
+Let $U \subset \C^n$ be a domain and $f \colon \widebar{U} \to \R$ be
+continuous, plurisubharmonic, negative on $U$, and $f=0$ on $\partial
 U$.  Prove that $U$ is Hartogs pseudoconvex.
 \end{exercise}
 \end{exbox}
@@ -8289,17 +8290,17 @@ a_k \frac{\partial r}{\partial z_k} \Big|_q = 0 ,
 for all $q \in \partial U$ near $0$.
 Let $s$ be a small real constant,
 and let $\widetilde{q} = (q_1,\ldots,q_{n-1},q_n + is)$.
-None of the derivatives of $r$ depend on $\Im z_n$, and therefore
+As no derivatives of $r$ depend on $\Im z_n$, we have
 $\frac{\partial r}{\partial z_\ell} \big|_{\widetilde{q}} =
 \frac{\partial r}{\partial z_\ell} \big|_{q}$ and
 $\frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \big|_{\widetilde{q}} =
 \frac{\partial^2 r}{\partial \bar{z}_k \partial z_\ell} \big|_{q}$
 for all $k$ and $\ell$.
 So condition \eqref{eq:psconvcond} holds for all $q \in U$ near $0$.
-We will use $r$ to manufacture a plurisubharmonic exhaustion function, that
-is one with a positive semidefinite Hessian.
-Starting with $r$, we already
-have what we need in all but one direction.
+We will use $r$ to manufacture a plurisubharmonic exhaustion function.
+We need a
+positive semidefinite complex Hessian,
+and $r$ already has what we need in all but one direction.
 
 Let $\nabla_z r|_q =
 \bigl(
@@ -8495,7 +8496,10 @@ c_\ell
 }^2 .
 \end{equation*}
 All the nonconstant terms go away and
-$A=\frac{3^4 M^2}{4}$ makes the discriminant zero.  Thus for that $A$,
+$A=\frac{3^4 M^2}{4}$ makes the discriminant zero.
+Any larger $A$ would also work
+by making the discriminant negative.
+Thus for that $A$,
 \begin{equation*}
 \sum_{k=1,\ell=1}^n
 \bar{c}_k c_\ell \frac{\partial^2 f}{\partial \bar{z}_k \partial z_\ell} \Big|_q
@@ -8510,10 +8514,24 @@ distance away from $\partial U$ near $0$.
 
 We have constructed a local continuous plurisubharmonic
 exhaustion function for $U$ near $p$.  If we intersect
-with a small ball $B$ centered at $p$, then we get that $U \cap B$ is
+with a small ball $B$ centered at $p$, then $U \cap B$ is
 Hartogs pseudoconvex.  This is true at all
 $p \in \partial U$, so $U$ is Hartogs pseudoconvex.
 \end{proof}
+
+\begin{exbox}
+\begin{exercise}
+Show that any defining function works in the construction above.
+Suppose
+$U$ is Levi pseudoconvex, $p \in \partial U$, and let
+$\tilde{r} = r \varphi$ for some smooth $\varphi$
+defined near $p$, $\varphi(p)\not=1$, and
+$r$ is the defining function from the proof.
+Show that for $z \in U$ near $p$, the function
+$f(z) = -\log(-\tilde{r}(z)) + A \snorm{z}^2$
+is plurisubharmonic if $A$ is sufficiently large.
+\end{exercise}
+\end{exbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -8638,17 +8656,17 @@ then so are all the topological components of $U_1 \cap U_2$.
 
 \begin{exercise}
 \pagebreak[2]
-Let $n \geq 2$.
+Let $n \geq 2$ and $U \subset \C^n$ a domain.
 \begin{exparts}
 \item
-Let $U \subset \C^n$ be a domain and $K \subset \subset U$
-a nonempty compact subset.  Show that $U \setminus K$ is not
+Let $K \subset \subset U$ be
+nonempty and compact. Prove $U \setminus K$ is not
 holomorphically convex.
 \item
-Let $U \subset \C^n$ be a bounded holomorphically
-convex domain.  Prove that $\C^n \setminus U$ is connected.
+Prove that if
+$U$ is bounded and holomorphically convex, then $\C^n \setminus U$ is connected.
 \item
-Find an unbounded holomorphically convex domain $U \subset \C^n$ where
+Find an unbounded holomorphically convex domain $U$ where
 $\C^n \setminus U$ is disconnected.
 \end{exparts}
 \end{exercise}
@@ -8677,10 +8695,10 @@ $U$ is holomorphically convex.
 \begin{proof}
 We start with \ref{thm:cartthul:domhol} $\Rightarrow$
 \ref{thm:cartthul:disthull}.
-Suppose there is a $K \subset
+Consider a $K \subset
 \subset U$ with $\operatorname{dist}(K,\partial U) > \operatorname{dist}(\widehat{K}_U,\partial U)$.
-After possibly a rotation by a unitary,
-there exists a point $p \in \widehat{K}_U$ and a polydisc
+After a possible rotation by a unitary,
+there is a point $p \in \widehat{K}_U$ and a polydisc
 $\Delta = \Delta_r(0)$ with polyradius $r = (r_1,\ldots,r_n)$ such that
 $p + \Delta = \Delta_r(p)$ contains a point of $\partial U$, but
 \begin{equation*}
@@ -8778,16 +8796,17 @@ holomorphy, as the
 biholomorphism is defined only on the interior of our domains.
 
 Holomorphic convexity is an intrinsic notion; it does not require
-knowing anything about points outside of $U$.  It is a much
+knowing anything about points outside of $U$.  It is a
 better way to think about domains of holomorphy.  Holomorphic
 convexity generalizes easily to more complicated complex
-manifolds\footnote{Manifolds with complex structure, that is, ``manifolds
+manifolds\footnote{Manifolds with complex structure, i.e., ``manifolds
 with multiplication by $i$ on the tangent space.''}, while
 the notion of a domain of holomorphy only makes sense for domains in $\C^n$.
 
 \begin{exbox}
 \begin{exercise}[Behnke--Stein again]
 \index{Behnke--Stein theorem}\label{exercise:behnkestein}
+\pagebreak[2]
 Show that the union $\bigcup_\ell U_\ell$ of a nested sequence of holomorphically
 convex domains $U_{\ell-1} \subset U_\ell \subset \C^n$ is holomorphically convex.
 \end{exercise}
@@ -8844,8 +8863,8 @@ for some nonnegative $\alpha_1,\ldots,\alpha_n$, and $\beta \in \R$.
 \end{exercise}
 
 \begin{exercise}
-Prove that a complete Reinhardt domain that is Hartogs
-pseudoconvex is logarithmically convex.
+Prove that if a complete Reinhardt domain is Hartogs
+pseudoconvex, then it is logarithmically convex.
 \end{exercise}
 
 \begin{exercise}
@@ -8873,8 +8892,10 @@ e^{\beta}$.
 \end{exercise}
 
 \begin{exercise}
-Prove that a logarithmically convex Reinhardt domain is holomorphically
-convex and therefore it is a domain of holomorphy.
+Prove that if a complete Reinhardt domain is 
+logarithmically convex,
+then it is holomorphically
+convex and therefore a domain of holomorphy.
 \end{exercise}
 
 \begin{exercise}
@@ -8937,7 +8958,7 @@ $f=g$ on $V \cap \R^n$.  Then $f=g$ on $V$.
 \end{lemma}
 
 \begin{proof}
-Considering $f-g$ we may assume that $g=0$.
+Considering $f-g$, we may assume that $g=0$.
 Let $z = x+iy$ as usual so that $\R^n$ is given by $y=0$.
 Our assumption is that $f = 0$ when $y=0$,
 so the derivative of $f$ with respect to $x_k$ is zero.
@@ -8953,7 +8974,7 @@ Therefore, on $y=0$,
 \end{equation*}
 The derivative $\frac{\partial f }{\partial z_k}$ is holomorphic
 and $\frac{\partial f }{\partial z_k} = 0$ on $y=0$.
-By induction all holomorphic derivatives of $f$ at $p \in \R^n \cap V$ vanish,
+By induction, all holomorphic derivatives of $f$ at $p \in \R^n \cap V$ vanish,
 and $f$ has a zero
 power series.  Hence $f$ is identically zero in a neighborhood of
 $p$ in $\C^n$.
@@ -8993,11 +9014,12 @@ Then there exists a domain $V \subset \C^n$ such that $U \subset V$
 and a unique holomorphic function $F \colon V \to \C$ such that $F|_U = f$.
 \end{prop}
 
-Among many other things that follow from this proposition, we
-can now conclude that a real-analytic function is $C^\infty$ smooth.  Be careful
+One of many consequences
+of this proposition is that
+a real-analytic function is $C^\infty$ smooth.  Be careful
 and notice that $U$ is a domain in $\R^n$, but it is not an open set
 when considered as a subset of $\C^n$.  Furthermore, $V$ may be a very
-``thin'' neighborhood around $U$.  There is no way of finding $V$ just from
+``thin'' neighborhood around $U$ and there is no way of finding $V$ just from
 knowing $U$.  You need to also know $f$.
 As an example, consider
 $f(x) = \frac{1}{\epsilon^2+x^2}$ for $\epsilon > 0$, which is
@@ -9005,7 +9027,7 @@ real-analytic on $\R$, but the complexification is not holomorphic at $\pm
 \epsilon i$.
 
 \begin{proof}
-We proved the local version already.  But we must prove that if we
+We proved the local version already.  We must prove that if we
 extend our $f$ near every point, we always get the same function.
 That follows from \lemmaref{lemma:sameonRn}; any two such functions are
 equal on $\R^n$, and hence equal.  There is a subtle topological technical
@@ -9020,14 +9042,15 @@ of $\R^n$, and we may apply the lemma.
 \begin{exbox}
 \begin{exercise}
 Prove the identity theorem for real-analytic functions.  That is, if $U
-\subset \R^n$ is a domain, $f \colon U \to \R$ a real-analytic function and
+\subset \R^n$ is a domain, $f \colon U \to \R$ a real-analytic function, and
 $f$ is zero on a nonempty open subset of $U$, then $f$ is identically zero.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \R^n$ is a domain and $f \colon U \to \R$ a real-analytic
-function.  Suppose that $W \subset U$ is a nonempty open subset and
-$f|_W$ is harmonic.  Prove that $f$ is harmonic.
+Suppose $U \subset \R^n$ is a domain and $f \colon U \to \R$ is
+a real-analytic function such that $f|_W$ is harmonic for
+some nonempty open $W \subset U$.
+Prove that $f$ is harmonic.
 \end{exercise}
 
 \begin{exercise}
@@ -9038,6 +9061,7 @@ proposition?
 \end{exercise}
 \end{exbox}
 
+\pagebreak[2]
 A polynomial $P(x)$ in $n$ real variables $(x_1,\ldots,x_n)$ is homogeneous of degree $d$ if
 $P(s x) = s^d P(x)$ for all $s \in \R$ and $x \in \R^n$.
 A homogeneous polynomial of degree $d$ is a polynomial whose
@@ -9113,7 +9137,7 @@ Using the chain rule,
 =
 \frac{\partial f}{\partial \zeta_k}(z,\bar{z}) .
 \end{equation*}
-Let us do this again with the $z_k$,
+Similarly with the $z_k$,
 \begin{equation*}
 0 =
 \frac{\partial}{\partial z_k} \Bigl[f(z,\bar{z})\Bigr]
@@ -9218,7 +9242,7 @@ understood well.
 
 \begin{remark}
 The domain $V$ in the proposition is not simply $U$ times the conjugate of $U$.
-In general, it is much smaller.  For example, a real-analytic $f \colon \C^n \to
+In general, it is smaller.  For example, a real-analytic $f \colon \C^n \to
 \C$ does not necessarily complexify to all of $\C^n \times \C^n$.
 That is
 because the domain of convergence for a real-analytic function on $\C^n$
@@ -9294,7 +9318,7 @@ $f \colon \R \to \R$ is $C^\infty$ and $f^{(k)}(0) = 0$ for all $k$.
 The Taylor series of $f$ at the origin does
 not converge to $f$ in any neighborhood of the origin; it converges to the
 zero function but not to $f$.
-Because of this, there is no neighborhood $V$ of the origin in $\C$ such that
+Consequently, there is no neighborhood $V$ of the origin in $\C$ such that
 $f$ is the restriction to $V \cap \R$ of a holomorphic function in $V$.
 \end{example}
 
@@ -9304,7 +9328,7 @@ Prove the statements of the example above.
 \end{exercise}
 \end{exbox}
 
-\begin{defn}
+\begin{defn}\label{def:rahypersurfacesimple}
 A real hypersurface $M \subset \R^n$ is said to be
 \emph{real-analytic}\index{real-analytic hypersurface}\index{hypersurface!real-analytic}
 if locally at every point it is the graph of a real-analytic function.  That
@@ -9322,15 +9346,15 @@ Compare this definition to \defnref{def:hypersurface}.  We could
 define a real-analytic hypersurface as in
 \defnref{def:hypersurface} and then prove an analogue of
 \propref{prop:realgraphcoords} to show that this new definition
-would be identical to the definition above.
-However, the definition we gave is sufficient, and so we avoid
-the complication, leaving it to the interested reader.
+is identical to the definition above.
+We avoid this complication, leaving it to the interested reader.
 
 \begin{exbox}
 \begin{exercise}
-Show that the definition above is equivalent to an analogue of
+Show that \defnref{def:rahypersurfacesimple}
+is equivalent to an analogue of
 \defnref{def:hypersurface}.  That is, state the alternative definition of
-real-analytic hypersurface and then prove the analogue of
+real-analytic hypersurface and prove the analogue of
 \propref{prop:realgraphcoords}.
 \end{exercise}
 \end{exbox}
@@ -9500,9 +9524,9 @@ On the other hand, not every smooth CR function is a restriction of a holomorphi
 \begin{example}
 Take the smooth function $f \colon \R \to \R$ we defined before
 that is not real-analytic at the origin.
-Take $M \subset \C^2$ be the set defined by $\Im z_2 = 0$.
-$M$ is a
-real-analytic real hypersurface.  Clearly
+Let $M \subset \C^2$ be the real-analytic hypersurface defined by
+$\Im z_2 = 0$.
+Clearly,
 $T_p^{(0,1)} M$ is one-complex-dimensional, and at each $p \in M$,
 $\frac{\partial}{\partial \bar{z}_1}\big|_p$ is tangent and spans
 $T_p^{(0,1)} M$.  Define $g \colon M \to \C$ by
@@ -9534,10 +9558,12 @@ $f$ on $M$ such that $\sabs{f}$ attains a strict maximum at a point.
 \end{exercise}
 
 \begin{exercise}
-Suppose $M \subset \C^n$, $n \geq 2$, is the hypersurface given by $\Im z_n
-= 0$.  Show that every smooth CR function on $M$ is holomorphic in the variables
-$z_1,\ldots,z_{n-1}$.  Use this to show that for no smooth CR function $f$ on $M$ can
-$\sabs{f}$ attain a \emph{strict} maximum on $M$.  But show that there do
+Suppose $M \subset \C^n$, $n \geq 2$, is the real hypersurface given
+by $\Im z_n = 0$.
+Show that every smooth CR function on $M$ is holomorphic in the variables
+$z_1,\ldots,z_{n-1}$.
+Use this to show that for no smooth CR function $f$ on $M$ can
+$\sabs{f}$ attain a \emph{strict} maximum on $M$.  Show that there do
 exist nonconstant functions such that $\sabs{f}$ attains a (nonstrict) maximum $M$.
 \end{exercise}
 \end{exbox}
@@ -10829,12 +10855,12 @@ not necessary to prove that fact.
 
 We state the next corollary for a strongly convex domain, even though it
 holds with far more generality.
-It is a simpler version of the \emph{\myindex{Hartogs--Bochner}}\footnote{What is called
+It is a special case of the \emph{\myindex{Hartogs--Bochner}}\footnote{What is called
 Hartogs--Bochner is
 the $C^1$ version of this theorem where the domain is only assumed to be bounded
 and the boundary connected,
 and it was proved by neither Hartogs nor
-Bochner, but by Martinelli in 1961.}.
+Bochner, but by Martinelli in 1961.} theorem.
 Later, in \exerciseref{exercise:HartogsBochnerSPCVX},
 you will prove it for strongly pseudoconvex
 domains.  However, the theorem is true for every bounded domain with connected smooth
@@ -10865,7 +10891,7 @@ extension holomorphic in $U$.
 \begin{exbox}
 \begin{exercise}
 Prove the existence of the strongly convex $K$ in the proof of
-\corref{cor:bochnerhartogsstrconvex} above.
+\corref{cor:bochnerhartogsstrconvex}.
 \end{exercise}
 
 \begin{exercise}

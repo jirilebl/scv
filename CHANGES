@@ -1,6 +1,7 @@
 <li>Add footnote to Exercise 2.2.1 that it works for smooth functions too by
 using Taylor's theorem so that the reader doesn't think it is only for
 polynomials.
+<li>Add Exercise 2.5.16.
 <li>In 4.4, when defining \((p,q)\)-forms,
 note that the coefficients are smooth on some open set \(U .\)
 <li>In the first sentence defining complex affine subspace, avoid trying to
