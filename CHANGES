@@ -12,6 +12,8 @@ definition.  The original had the issue that we really should have said that
 add a footnote mentioning that the reason we assume nonvanishing of the
 derivative is only for simplicity (we don't know anything about varieties
 in chapter 4 yet).
+<li>Before Exercise 5.2.1, cite Wiegerinck for the results stated
+without proof.
 <li>In Example 6.8.3, mention at the beginning that we made \(M\) to
 contain the hypersurface \(w=0 .\)
 <li>Add "principal part" definition and the Mittag-Leffler theorem to

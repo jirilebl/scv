@@ -8530,10 +8530,10 @@ $p \in \partial U$, so $U$ is Hartogs pseudoconvex.
 \begin{exercise}
 Show that any defining function works in the construction above.
 Suppose
-$U$ is Levi pseudoconvex, $p \in \partial U$, and let
-$\tilde{r} = r \varphi$ for some smooth $\varphi$
-defined near $p$, $\varphi(p)\not=1$, and
-$r$ is the defining function from the proof.
+$U$ is Levi pseudoconvex, $p \in \partial U$,
+$r$ is the defining function from the proof, and let
+$\tilde{r} = \varphi r$ for some smooth $\varphi$
+defined near $p$, $\varphi(p)\not=0$.
 Show that for $z \in U$ near $p$, the function
 $f(z) = -\log(-\tilde{r}(z)) + A \snorm{z}^2$
 is plurisubharmonic if $A$ is sufficiently large.
@@ -13657,8 +13657,15 @@ Consequently, $A^2(U)$ is a closed subspace of $L^2(U)$, and hence complete.
 
 For a bounded domain, $A^2(U)$ is always infinite-dimensional, see exercise
 below.  There exist unbounded domains for which either
-$A^2(U)$ is trivial (just the zero function) or even finite-dimensional.
-When $n=1$, $A^2(U)$ is either trivial, or infinite-dimensional.
+$A^2(U)$ is trivial (just the zero function, e.g., $U=\C^n$)
+or even finite-dimensional.
+When $n=1$, $A^2(U)$ is either trivial, or
+infinite-dimensional.\footnote{For examples of nontrivial finite dimensional
+$A^2(U)$ for $n \geq 2$
+as well as the result in $n=1$, see:
+Wiegerinck, J.J.O.O.\ \emph{Domains with
+finite dimensional Bergman space.} Math.\ Z.\ \textbf{187} (1984),
+559--562.}
 
 \begin{exbox}
 \begin{exercise}
@@ -13716,8 +13723,6 @@ $U \times U^*$, where we write
 \begin{equation*}
 U^* = \{ \zeta \in \C^n : \bar{\zeta} \in U \}.
 \end{equation*}
-
-
 Then for all $f \in A^2(U)$, we have
 \begin{equation} \label{eq:repropropBergman}
 f(z)
@@ -13818,12 +13823,13 @@ d\bar{\zeta} \wedge d\zeta
 \frac{f(\zeta)}{{(1-z\bar{\zeta})}^2} \, dA(\zeta) .
 \end{split}
 \end{equation*}
-The Bergman kernel in the unit disc is, therefore,
+We therefore have a candidate for the 
+Bergman kernel in the unit disc:
 \begin{equation*}
 K_{\D}(z,\bar{\zeta}) = \frac{1}{\pi} \frac{1}{{(1-z\bar{\zeta})}^2} .
 \end{equation*}
-It follows from the exercises below that
-this function really is the Bergman kernel.
+That this function really is the Bergman kernel
+follows from \exerciseref{exercise:Bergmanunique}.
 That is, $K_{\D}$ is the unique conjugate symmetric
 reproducing function that is in
 $A^2({\D})$ for a fixed $\zeta$.
@@ -13925,7 +13931,7 @@ Find a (trivial) counterexample.
 \end{exparts}
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:Bergmanunique}
 Show that given a domain $U \subset \C^n$, the Bergman kernel is the unique
 function $K_U(z,\bar{\zeta})$ such that
 \begin{exnumparts}
