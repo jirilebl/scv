@@ -14095,7 +14095,7 @@ f(z) = \frac{1}{2\pi} \int_{\partial \D} \frac{f(\zeta)}{1-z\bar{\zeta}} \, ds .
 \avoidbreak
 \end{equation*}
 In other words, $S_{\D}(z,\zeta) =
-\frac{1}{\pi}
+\frac{1}{2\pi}
 \frac{1}{1-z\bar{\zeta}}$ .
 \end{example}
 
@@ -17072,7 +17072,8 @@ the domain is on the left ($\gamma'(t)$ rotated by $\frac{\pi}{2}$ points into t
 domain), then the boundary is \emph{\myindex{positively oriented}}.
 As in the introduction, we have the following version of Cauchy integral formula.
 
-\begin{thm}[Cauchy integral formula]
+\begin{thm}[Cauchy integral formula]%
+\index{Cauchy integral formula}\index{Cauchy formula}
 Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary
 $\partial U$ oriented positively, and let
 $f \colon \widebar{U} \to \C$ be a continuous function
@@ -17243,7 +17244,7 @@ around $p$ inside $\Delta_\rho(p)$,
 c_k = \frac{f^{(k)}(p)}{k!} =
 \frac{1}{2\pi i}
 \int_{\gamma}
-\frac{f(\zeta)}{{(\zeta-z)}^{k+1}}
+\frac{f(\zeta)}{{(\zeta-p)}^{k+1}}
 \,
 d \zeta  .
 \end{equation*}
@@ -17775,8 +17776,7 @@ Suppose $K \subset \subset \C$ is a compact set such that $\C \setminus K$
 is connected and
 $f \colon K \to \C$ is a continuous function that is
 holomorphic in the interior $K^\circ$.
-Then for every $\epsilon > 0$ and every compact
-$K \subset \subset U$, there exists a polynomial $P$
+Then for every $\epsilon > 0$, there exists a polynomial $P$
 such that
 \begin{equation*}
 \sabs{P(z) - f(z)} < \epsilon \qquad \text{for all $z \in K$}.
