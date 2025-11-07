@@ -700,7 +700,7 @@ $P(z)$, to obtain a function $P \colon \C \to \C$.
 
 We try to write
 \begin{equation*}
-f(z) = \sum_{k=0}^\infty c_k \, z^k
+f(z) = \sum_{k=0}^\infty c_k \, z^k ,
 \end{equation*}
 and all is very fine until we wish to know what $f(z)$ is for some number
 $z \in \C$.
@@ -1384,7 +1384,7 @@ it satisfies the
 \frac{\partial f}{\partial \bar{z}_k}  = 0 \qquad \text{for $k=1,2,\ldots,n$}.
 \end{equation*}
 For holomorphic functions, using the natural definition for partial
-derivatives obtains the Wirtinger $\frac{\partial}{\partial z_k}$.
+derivatives yields the Wirtinger $\frac{\partial}{\partial z_k}$.
 Namely, if $f$ is holomorphic, then
 \begin{equation*}
 \frac{\partial f}{\partial z_k}(z)
@@ -1539,9 +1539,9 @@ identify $z = x+iy$ as either
 (x_1,y_1,x_2,y_2,\ldots,x_n,y_n) .
 \end{equation*}
 If we take the natural orientation of $\R^{2n}$,
-it is possible (if $n$ is even) that we obtain
-two opposite orientations on $\C^n$ (if $n$ is even, the real linear map
-that takes one ordering to the other has determinant $-1$).
+it is possible that we obtain
+two opposite orientations on $\C^n$ (the real linear map
+that takes one ordering to the other has determinant ${(-1)}^{n(n-1)/2}$).
 The orientation we take as the natural orientation of $\C^n$ (in this book)
 corresponds to
 the second ordering above, that
@@ -1748,7 +1748,7 @@ dz & \overset{\text{def}}{=} dz_1 \wedge dz_2 \wedge \cdots \wedge dz_n ,
 \end{align*}
 We can also make sense of this notation, especially the notation $z^\alpha$,
 if $\alpha \in \Z^n$, that is, if it includes negative integers.
-Although usually, $\alpha$ is assumed to be in $\N_0^n$.
+Although $\alpha$ is usually assumed to be in $\N_0^n$.
 Furthermore, when we use $1$ as a vector, it means $(1,1,\ldots,1)$.
 If $z \in \C^n$, then
 \begin{equation*}
@@ -1851,7 +1851,7 @@ $z \in \D^n$ (unit polydisc),
 \sum_{k_n=0}^\infty
 \left(
 {z_1}^{k_1}
-{z_n}^{k_2}
+{z_2}^{k_2}
 \cdots
 {z_n}^{k_n}
 \right)
@@ -1865,8 +1865,8 @@ polydisc:  Any compact set in the unit
 polydisc is contained in a closed polydisc $\overline{\Delta}$
 centered at $0$ of radius $1-\epsilon$
 for some $\epsilon > 0$.  The convergence is uniformly absolute on
-$\overline{\Delta}$.  This claim follows by simply noting the
-same fact for each factor is true in one dimension.
+$\overline{\Delta}$.  This claim follows by noting that the
+same fact holds for each factor in one dimension.
 
 Holomorphic functions are precisely those that allow
 a power series expansion:
@@ -2424,7 +2424,7 @@ Prove $f$ is constant.
 \begin{exercise}
 \pagebreak[2]
 Improve Liouville's theorem slightly in $\C^2$.
-A complex line though the origin is
+A complex line through the origin is
 the image of a nonzero linear map $L \colon \C \to \C^n$.
 \begin{exparts}
 \item
@@ -2525,7 +2525,7 @@ A function $F$ defined on a dense open subset of $U$ is
 \emph{\myindex{meromorphic}} if locally near every $p \in U$,
 $F = \nicefrac{f}{g}$ for $f$ and $g$ holomorphic in some neighborhood of
 $p$.
-It is from a deep result
+It is a deep result
 of Oka that,
 for domains $U \subset \C^n$, every meromorphic function can be represented
 as $\nicefrac{f}{g}$ globally.  That is, the ring of meromorphic functions
@@ -2584,7 +2584,7 @@ of the Wirtinger operators,
 \text{for all $\ell=1,\ldots,n$.}
 \end{equation*}
 
-For functions that are neither holomorphic or antiholomorphic, we
+For functions that are neither holomorphic nor antiholomorphic, we
 pretend they depend on both $z$ and $\bar{z}$.
 Since we want to write functions in terms of $z$ and $\bar{z}$,
 let us figure out how the chain rule works for Wirtinger derivatives,
@@ -2626,8 +2626,8 @@ $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
 \end{prop}
 
 \begin{proof}
-Write $f = u+iv$, $z = x+iy$, $w=s+it$, and let
-$f$ be a function of $z$, and $g$ be a function of $w$.
+Write $f = u+iv$, $z = x+iy$, $w=s+it$.
+Let $f$ be a function of $z$ and $g$ be a function of $w$.
 The composition plugs in $f$ for $w$, and so it plugs in $u$ for $s$, and
 $v$ for $t$.
 Using the standard chain rule,
@@ -3851,7 +3851,7 @@ on $N$.  Then there is some point $p \in N$ such that $\frac{\partial
 h}{\partial z_n}(p) \not= 0$.
 We apply the implicit function theorem at $p$ to find $g$ such that
 \begin{equation*}
-h\bigr(z_1,\ldots,z_{n-1},g(z_1,\ldots,z_{n-1})\bigr) = 0 ,
+h\bigl(z_1,\ldots,z_{n-1},g(z_1,\ldots,z_{n-1})\bigr) = 0 ,
 \end{equation*}
 and $z_n = g(z_1,\ldots,z_{n-1})$ is the unique solution to
 $h=0$ near $p$.
