@@ -3205,7 +3205,7 @@ contains no analytic discs.
 
 \begin{proof}
 Suppose there is a holomorphic function $g \colon \D \to \C^n$
-such that the image $g(\D)$ is inside the unit sphere.  In other words,
+such that the image $g(\D)$ is contained in the unit sphere.  In other words,
 for all $z \in \D$,
 \begin{equation*}
 \snorm{g(z)}^2
@@ -3214,8 +3214,9 @@ for all $z \in \D$,
 Without loss of generality (after composing with a unitary matrix),
 assume that $g(0) = (1,0,0,\ldots,0)$.
 Consider the first component and notice that $g_1(0) = 1$.
-If a sum of positive numbers is less than or equal to $1$,
-then they all are, and hence $\sabs{g_1(z)} \leq 1$.
+If a sum of nonnegative numbers is less than or equal to $1$,
+then they all are.
+Hence, $\sabs{g_1(z)} \leq 1$.
 The maximum principle says
 that $g_1(z) = 1$ for all $z \in \D$.  But then $g_k(z) = 0$
 for all $k=2,\ldots,n$ and all $z \in \D$.  Therefore, $g$ is constant and
@@ -3368,7 +3369,7 @@ of the generalization is left as an exercise.
 Let $U = U' \times U'' \subset \C^n \times \C^k$, $n,k \geq 1$, and $V
 \subset \C^m$, $m \geq 1$, be bounded
 domains such that $\partial V$ contains no analytic discs.
-Then there exist no proper
+Then there exists no proper
 holomorphic mapping $f \colon U \to V$.
 \end{thm}
 
@@ -3406,7 +3407,7 @@ different, it is not solved in general.
 
 \begin{exbox}
 \begin{exercise}
-Suppose $f \colon U \to \D$ be a proper holomorphic map where $U \subset
+Suppose $f \colon U \to \D$ is a proper holomorphic map where $U \subset
 \C^n$ is a nonempty domain.  Prove that $n=1$.  Hint: Consider the same idea as in
 \exerciseref{exercise:noisolatedzeros}.
 \end{exercise}
@@ -3423,11 +3424,12 @@ $f|_{\bB_n}$ maps into $\bB_m$ and furthermore that this map is proper.
 
 \section{Cartan's uniqueness theorem}
 
-The following theorem is another analogue of Schwarz's lemma to
-several variables.  It says that for a bounded domain, it is enough to know
-that a self mapping is the identity at a single point to show that it is the
-identity everywhere.  As there are quite a few theorems named for Cartan,
-this one is often referred to as the
+The following theorem is another analogue of Schwarz's lemma in
+several variables.  It says that for a bounded domain,
+a self mapping that is the identity up to first order at a single point
+must, in fact, be the identity.
+As there are quite a few theorems named for Cartan,
+this one is referred to as the
 \emph{\myindex{Cartan's uniqueness theorem}}.  It is useful in
 computing the automorphism groups of certain domains.
 An \emph{\myindex{automorphism}} of $U$ is a biholomorphic map from
@@ -3484,7 +3486,7 @@ componentwise.}.
 \begin{exbox}
 \begin{exercise}
 Prove a vector-valued version of the Cauchy estimates.  Suppose $f
-\colon \overline{\Delta_r(a)} \to \C^m$ is continuous function holomorphic
+\colon \overline{\Delta_r(a)} \to \C^m$ is a continuous function holomorphic
 on a polydisc $\Delta_r(a) \subset \C^n$.  Let $\Gamma$ denote the distinguished
 boundary of $\Delta$.  Show that for every multi-index $\alpha$,
 \begin{equation*}
@@ -3504,7 +3506,8 @@ Write $f$ as a power series at the origin, written in homogeneous parts:
 f(z) = z + f_k(z) + \sum_{m=k+1}^\infty f_m(z) = z + f_k(z) + \text{higher
 order terms},
 \end{equation*}
-where $k \geq 2$ is an integer such that $f_2(z),f_3(z),\ldots,f_{k-1}(z)$ is zero.
+where $k \geq 2$ is an integer such that
+$f_2(z)=f_3(z)=\cdots=f_{k-1}(z)=0$.
 The degree-one homogeneous part is simply the vector $z$,
 because
 the derivative of $f$ at the origin is the identity.
@@ -3513,7 +3516,7 @@ Compose $f$ with itself $\ell$ times:
 f^\ell(z) = \underbrace{f \circ f \circ \cdots \circ f}_{\ell\text{ times}}
 (z) .
 \end{equation*}
-As $f(U) \subset U$, then $f^\ell$ is a holomorphic map
+As $f(U) \subset U$, we have that $f^\ell$ is a holomorphic map
 of $U$ to $U$.  As $U$ is bounded, there is an $M$ such that $\snorm{z} \leq
 M$ for all $z \in U$.  Therefore, $\snorm{f(z)} \leq M$ for all $z \in U$, and
 $\snorm{f^\ell(z)} \leq M$ for all $z \in U$.
@@ -3556,7 +3559,7 @@ $\frac{\partial^{\sabs{\alpha}} f}{\partial z^\alpha}(0) = 0$.  Therefore,
 $f_k \equiv 0$.  On the domain of convergence of the expansion,
 we get $f(z) = z$, as there is no other
 nonzero homogeneous part in the expansion of $f$.  As $U$ is connected,
-then the identity theorem says $f(z) = z$ for all $z \in U$.
+the identity theorem says $f(z) = z$ for all $z \in U$.
 \end{proof}
 
 As an application, let us classify all biholomorphisms of all bounded
@@ -3657,7 +3660,7 @@ happens to those points you took out.
 Show that Cartan's uniqueness theorem is not true in the real case,
 even for rational
 functions.  That is, find a rational function $R(t)$ of
-a real variable $t$, such that $R$ that takes $(-1,1)$ to
+a real variable $t$, such that $R$ takes $(-1,1)$ to
 $(-1,1)$, $R'(0) = 1$, and $R(t)$ is not the identity.  You can even make
 $R$ bijective.
 \item
@@ -3694,9 +3697,9 @@ is injective.
 In one dimension, if a function is holomorphic in
 $U \setminus \{ p \}$ and
 locally bounded\index{locally bounded in $U$}\footnote{%
-$f \colon U \setminus X \to \C$ is locally bounded in $U$
-if for every $p \in U$, there is a neighborhood $W$ of
-$p$ such that $f$ is bounded on $W \cap (U \setminus X)$.}
+Recall that $f \colon U \setminus X \to \C$ is \emph{locally bounded in $U$}
+if for every $q \in U$, there is a neighborhood $W$ of
+$q$ such that $f$ is bounded on $W \cap (U \setminus X)$.}
 in $U$, in particular bounded near
 $p$, then the function extends holomorphically to $U$ (see
 \propref{prop:onevarclassifysing} \ref{prop:onevarclassifysing:i}).
@@ -3705,7 +3708,7 @@ the same theorem holds, and the analogue of a single point
 is the zero set of a holomorphic function.
 
 \begin{thm}[\myindex{Riemann extension theorem}]
-Let $U \subset \C^n$ be a domain,  $g \in \sO(U)$, and $g$ is not
+Let $U \subset \C^n$ be a domain, $g \in \sO(U)$, and suppose $g$ is not
 identically zero.  Let
 $N = g^{-1}(0)$ be the zero set of $g$.
 If $f \in \sO(U \setminus N)$ is locally bounded in $U$,
@@ -3763,7 +3766,7 @@ F(z',z_n) =
 \int_{\sabs{\xi}=r} \frac{f(z',\xi)}{\xi-z_n} \,d\xi .
 \end{equation*}
 The function $\xi \to f(z',\xi)$ is bounded and thus extends holomorphically to the entire
-disc of radius $r$ by the Riemann extension from one dimension.  By Cauchy
+disc of radius $r$ by the Riemann extension from one dimension.  By the Cauchy
 integral formula,
 $F$ is equal to $f$ at the points where they are both defined.
 By differentiating under the integral, the function $F$ is holomorphic
@@ -3842,7 +3845,7 @@ If some first order derivative of $f$ does not vanish identically on $N$,
 let $h=f$.
 Otherwise, suppose $k$ is such that a derivative of $f$ of order $k$
 does not vanish identically on $N$, and
-all derivatives of $f$ order less than $k$ vanish identically on
+all derivatives of $f$ of order less than $k$ vanish identically on
 $N$.  Let $h$ be one of the derivatives of order $k-1$.
 We obtain a function $h \colon U \to \C$, holomorphic, vanishing on $N$,
 and such that
@@ -3898,7 +3901,7 @@ a holomorphic function is always quite large when $n \geq 2$.
 \begin{example}
 For $U = \C^2$,
 let $f(z) = z_1^2-z_2^2$ and consider $X = f^{-1}(0)$. As $\nabla f =
-(2z_1,2z_2) \not= 0$
+(2z_1,-2z_2) \not= 0$
 outside of the origin, we can solve for $z_1$ or $z_2$ and so
 all points of $X \setminus \{ 0 \}$ are regular.  In fact,
 $z_1 = z_2$ and $z_1 = -z_2$ are the two possibilities.
@@ -3947,7 +3950,7 @@ connected.
 \end{exercise}
 
 \begin{exercise} \label{exercise:zerosetnotcompact}
-Suppose $U \subset \C^n$ is a domain and $f \in \sO(U)$.
+Suppose $U \subset \C^n$ is a domain, $n \geq 2$, and $f \in \sO(U)$.
 Show that the zero set $f^{-1}(0)$ is not compact if it is nonempty.
 Hint: A compact set has a point farthest from the origin.
 \end{exercise}
@@ -4095,7 +4098,7 @@ This is an appropriate place to state a well-known and as yet unsolved conjectur
 likely ridiculously hard to solve):
 the \emph{\myindex{Jacobian conjecture}}.
 This conjecture is a converse to the theorem above in a special case:
-\emph{Suppose $F \colon \C^n \to \C^n$ is a polynomial map (each component is a
+\emph{If $F \colon \C^n \to \C^n$ is a polynomial map (each component is a
 polynomial) and the Jacobian derivative $J_F$ is never zero, then $F$ is
 invertible with a polynomial inverse.}
 Clearly $F$ would be locally one-to-one, but proving (or
@@ -4126,7 +4129,7 @@ onto, and therefore $f(z) = az + b$ for $a \not= 0$.
 \end{exbox}
 
 We remark that while every injective holomorphic
-map of $f \colon \C \to \C$ is onto, the same is not true in higher
+map $f \colon \C \to \C$ is onto, the same is not true in higher
 dimensions.
 In $\C^n$, $n \geq 2$, there exist so-called
 \emph{Fatou--Bieberbach domains}\index{Fatou--Bieberbach domain},
@@ -8338,7 +8341,7 @@ By the equality part of Cauchy--Schwarz,
 =
 \snorm{b} \, \bnorm{\nabla_z r|_q} .
 \end{equation*}
-As $\nabla_z r|_0 = (0,\ldots,0,-\nicefrac{1}{2i})$, then for $q$
+As $\nabla_z r|_0 = (0,\ldots,0,-\nicefrac{1}{2i})$, for $q$
 sufficiently near $0$, we have
 $\bnorm{\nabla_z r|_q} \geq \nicefrac{1}{3}$, and
 \begin{equation} \label{eq:25boundingb}
@@ -9688,7 +9691,7 @@ Conjugating, we get that $\sM$ is also given by
 \begin{equation*}
 w = \bar{\Phi}(\zeta,z,\omega).
 \end{equation*}
-As $\bigl(z,\zeta,w,\Phi(z,\zeta,w)\bigr) \in \sM$, then
+As $\bigl(z,\zeta,w,\Phi(z,\zeta,w)\bigr) \in \sM$,
 for all $z$, $\zeta$, and $w$,
 \begin{equation*}
 w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr).
@@ -10211,7 +10214,7 @@ df(0) =
 \end{equation*}
 Also, at the origin $d\xi_n(0) = d(\Re \xi_n)(0) + i d(\Im \xi_n)(0) = d(\Re \xi_n)(0)$.
 So $df(0)$ is a linear combination of $d\xi_1(0),\ldots,d\xi_n(0)$.
-As $\xi$ is a complex affine function of $z$, then each $d\xi_k$ is a linear
+As $\xi$ is a complex affine function of $z$, each $d\xi_k$ is a linear
 combination of $dz_1$ through $dz_n$, and the claim follows.
 So if $f$ is a CR function, then
 $d(f\,dz) = df \wedge dz = 0$ since $dz_k \wedge dz_k = 0$.
@@ -10840,8 +10843,8 @@ See \figureref{fig:lewy-extension-figure}.
 \caption{Proof of Lewy extension.\label{fig:lewy-extension-figure}}
 \end{myfig}
 
-As $p_\ell \to f$ uniformly on $K$, then $p_\ell \to f$ uniformly on
-$\partial \Delta$.  As  $p_\ell$ are holomorphic, then by the maximum
+As $p_\ell \to f$ uniformly on $K$, we have that $p_\ell \to f$ uniformly on
+$\partial \Delta$.  The $p_\ell$ are holomorphic, so by the maximum
 principle, $p_\ell$ converge uniformly on all of $\Delta$.  In fact, as $(z_1,z',w)$ was
 an arbitrary point in $(D \times W) \cap \Omega_-$,
 the polynomials $p_\ell$ converge uniformly on
@@ -12100,7 +12103,7 @@ d \zeta \wedge d \bar{\zeta}
 \end{equation*}
 So we are done with the existence of this solution, we need to show that it
 is also smooth.
-As $g$ is smooth, then $\frac{\partial \psi}{\partial \bar{z}}$ is also
+As $g$ is smooth, $\frac{\partial \psi}{\partial \bar{z}}$ is also
 smooth.  If we prove that
 $\frac{\partial \psi}{\partial z}$ is also smooth, then $\psi$ must be
 smooth.  We take the $z$ derivative instead of the $\bar{z}$
@@ -13750,7 +13753,7 @@ antiholomorphic in $\zeta$.  If we prove
 $\overline{K_U(z,\bar{\zeta})} = K_U(\zeta,\bar{z})$, then we prove $K_U$
 is holomorphic in $z$.
 
-As $\overline{K_U(z,\bar{\zeta})} = k_z(\zeta)$ is in $A^2(U)$, then
+As $\overline{K_U(z,\bar{\zeta})} = k_z(\zeta)$ is in $A^2(U)$, we have
 \begin{equation*}
 \begin{split}
 \overline{K_U(z,\bar{\zeta})}
@@ -14072,8 +14075,8 @@ If $f \in H^2(\partial U)$, then
 Pf(z) = \int_{\partial U} f(\zeta) \, S_U(z,\bar{\zeta}) \, d\sigma(\zeta) .
 \end{equation*}
 
-As functions in $H^2(\partial U)$ extend to $\widebar{U}$, then
-$f \in H^2(\partial U)$ may be considered a function on
+Functions in $H^2(\partial U)$ extend to $\widebar{U}$,
+so $f \in H^2(\partial U)$ may be considered a function on
 $\widebar{U}$, where values in $U$ are given by $Pf$.  Similarly, we
 extend $S(z,\bar{\zeta})$ to a function on $U \times \widebar{U}^*$ (where
 the values on the boundary are defined only almost everywhere).
@@ -16276,7 +16279,7 @@ Suppose $(X,p)$ is reducible:
 Find $(Y_1,p)$ and $(Y_1,p)$ such that $(Y_1,p) \not\subset (Y_2,p)$,
 $(Y_2,p) \not\subset (Y_1,p)$, and
 $(Y_1,p) \cup (Y_2,p) = (X,p)$.
-As $(Y_\ell,p) \subsetneq (X,p)$, then
+As $(Y_\ell,p) \subsetneq (X,p)$, we find
 $I_p(Y_\ell) \supsetneq I_p(X)$ for both $\ell$.  If both
 $(Y_1,p)$ and $(Y_2,p)$ are irreducible, then stop, we are done.  Otherwise
 apply the same reasoning to whichever (or both) $(Y_\ell,p)$ that was
@@ -16530,7 +16533,7 @@ $M$ is given by
 \Im w = \rho(z,\bar{z},\Re w) ,
 \end{equation*}
 where $d\rho = 0$.
-As $w = 0$ on $M$, then $\rho = 0$
+As $w = 0$ on $M$, we find $\rho = 0$
 when $\Re w = 0$. That is, $\rho$
 is divisible by $\Re w$.  So $M$ is defined by
 \begin{equation*}
@@ -16634,7 +16637,7 @@ and the zero set of the complexified $\widetilde{r}$ is connected
 in $U \times U^*$, then $\widetilde{r}(z,\zeta) = 0$ also
 defines $\sM$.
 Hence the actual $r$ does not matter.
-As long as $q \in M$, then
+As long as $q \in M$, we have
 $q \in \Sigma_q(U,r)$, and furthermore the
 Segre variety is a complex hypersurface for every $q$.
 It is not hard to see that
@@ -16690,10 +16693,10 @@ Set $\bar{z} = \bar{w} = 0$ to find
 \frac{w}{2i} = \left(\frac{w}{2}\right)
 \rho\left(z,0,\frac{w}{2}\right) .
 \end{equation*}
-As $\rho$ vanishes at the origin, then near the origin the equation
-defines the complex hypersurface given by $w=0$,
-that is, $\Sigma_0$ is defined by $w = 0$.
-So $\Sigma_0$ is precisely the complex hypersurface that lies inside $M$.
+The function $\rho$ vanishes at the origin, so near the origin, the equation
+defines the complex hypersurface given by $w=0$.
+That is, $\Sigma_0$ is defined by $w = 0$.
+Hence, $\Sigma_0$ is precisely the complex hypersurface that lies inside $M$.
 \end{example}
 
 The last example is not a fluke.
