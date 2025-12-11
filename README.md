@@ -4,7 +4,8 @@ Tasty Bits of Several Complex Variables
 Graduate level mathematics textbook on Several Complex Variables (complex
 analysis in several variables).  A free online textbook based on class notes
 for the graduate course at Oklahoma State University.
-See https://www.jirka.org/scv/
+
+See https://www.jirka.org/scv/ or https://jirilebl.github.io/scv/
 
 Branches: _master_ is the current working version (edition 4),
 _edition3_ is edition 3, which is no longer updated.
