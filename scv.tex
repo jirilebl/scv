@@ -4730,7 +4730,7 @@ We can, in fact, find a
 single global defining function for every open set with smooth boundary,
 but we have no need of this.
 
-Same definition works for $\C^n$, where we treat $\C^n$ as $\R^{2n}$.
+The same definition works for $\C^n$, where we treat $\C^n$ as $\R^{2n}$.
 For example, the ball $\bB_n$ is a domain with smooth boundary with defining
 function $r(z,\bar{z}) = \snorm{z}^2-1$.
 In $\C^n$
@@ -4869,7 +4869,7 @@ that is not open) is \emph{smooth} if it is
 locally the restriction to $M$ of a smooth function in an open neighborhood.
 This extension of $f$ is not unique, so
 the above calculation shows that differentiating $f$
-via $T_p M$ is indepdendent on how $f$ is extended to a neighborhood.
+via $T_p M$ is independent of how $f$ is extended to a neighborhood.
 
 \begin{example}
 If $M \subset \R^n$ is given by $x_n = 0$, then $T_p M$ is given by
@@ -5282,7 +5282,7 @@ If $M$ is the boundary
 $\partial U$ of an open set $U$, then
 we pick the rotation so that $y > \frac{1}{2}\,x^t H x + E(x)$ on $U$.
 It is an easy exercise to show that $U$ is convex at $p$ if
-$H$ positive semidefinite, and $U$ is strongly convex at $p$ if $H$ is positive definite.
+$H$ is positive semidefinite, and $U$ is strongly convex at $p$ if $H$ is positive definite.
 
 \begin{exbox}
 \begin{exercise}
@@ -5318,7 +5318,7 @@ Geometric convexity is a \emph{global} condition; it considers
 the entire $U$.  The notion of convexity for a smooth boundary is
 \emph{local} in that you only need to know $\partial U$ in a small
 neighborhood.  For domains with
-smooth boundaries the two notions are equivalent.  Proving
+smooth boundaries, the two notions are equivalent.  Proving
 one direction is easy.
 
 \begin{exbox}
@@ -5575,9 +5575,9 @@ Note that a biholomorphic map is a diffeomorphism.
 
 \begin{prop} \label{prop:whereTgoeshol}
 Suppose $M \subset \C^n$ is a smooth real hypersurface, $p \in M$,
-and $U \subset \C^n$ is open with $M \subset U$, and supose $M' \subset
+and $U \subset \C^n$ is open with $M \subset U$, and suppose $M' \subset
 \C^m$ a smooth real hypersurface.
-Let $f \colon U \to \C^m$ be holomorphic such $f(M) \subset M'$.
+Let $f \colon U \to \C^m$ be holomorphic such that $f(M) \subset M'$.
 Let $D_\C f(p)$ be
 the complexified real derivative as before.  Then
 \begin{equation*}
@@ -5594,7 +5594,7 @@ $D_\C f(p)\Bigl(T_p^{(0,1)}M\Bigr) = T_{f(p)}^{(0,1)} f(M)$.
 That is, the spaces are isomorphic as complex vector spaces.
 \end{prop}
 
-The proposition is local, if $U$ is only a neighborhood of $p$,
+The proposition is local; if $U$ is only a neighborhood of $p$,
 replace $M$ with $M \cap U$.
 
 \begin{proof}
@@ -5630,7 +5630,7 @@ $M$ is written in variables $(z,w) \in \C^{n-1}
 \begin{equation*}
 \Im w = \varphi(z,\bar{z},\Re w) ,
 \end{equation*}
-with the $\varphi(0)$  and $d\varphi(0) = 0$.  Consequently,
+with $\varphi(0) = 0$  and $d\varphi(0) = 0$.  Consequently,
 \begin{gather*}
 T_0^{(1,0)} M
 = \operatorname{span}_{\C} \left\{
@@ -5806,7 +5806,7 @@ the Hermitian matrix
 To make it a Hermitian form, note that when multiplying on the left by $X_p$
 we are also taking the conjugate so the rows for the $z$s and the $\bar{z}$s
 are flipped.\footnote{It is common to also write it not flipped, in which case it
-will be a symmetric martrix.}
+will be a symmetric matrix.}
 Note that it is Hermitian only for a real-valued $r$ (see an exercise below).
 The complex Hessian is the upper left,
 or the transpose of the lower right, block---if you write the full Hessian as
@@ -6739,7 +6739,7 @@ Levi-flat one.
 \begin{exbox}
 \begin{exercise}
 Suppose $U = V \times \C^{n-1} \subset \C^n$, where $V \subset \C$ is an
-open set with smooth boundary.  Show that $U$ is has a smooth Levi-flat boundary.
+open set with smooth boundary.  Show that $U$ has a smooth Levi-flat boundary.
 \end{exercise}
 
 \begin{exercise}
