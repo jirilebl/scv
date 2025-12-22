@@ -3131,8 +3131,11 @@ The notation ``$\subset \subset$'' is a common notation for a relatively
 compact subset, that is, the closure is compact in the relative (subspace)
 topology.  Often the distinction between compact and relatively
 compact is not important.  For instance, in the definition above we can replace
-compact with relatively compact.
-So the notation is sometimes used if ``compact'' is meant.
+compact with relatively compact;
+$f^{-1}(K)$ is relatively compact
+in $X$ for every $K$ relatively compact in $Y$.
+Sometimes, simply stating ``$K \subset \subset Y$''
+means that $K$ is compact if it is clear from context.
 
 Vaguely, ``proper'' means that ``boundary goes to the boundary.''
 As a continuous map, $f$ pushes compacts to compacts; a proper map is
@@ -4102,7 +4105,7 @@ likely ridiculously hard to solve):
 the \emph{\myindex{Jacobian conjecture}}.
 This conjecture is a converse to the theorem above in a special case:
 \emph{If $F \colon \C^n \to \C^n$ is a polynomial map (each component is a
-polynomial) and the Jacobian derivative $J_F$ is never zero, then $F$ is
+polynomial) and the Jacobian determinant $J_F$ is never zero, then $F$ is
 invertible with a polynomial inverse.}
 Clearly $F$ would be locally one-to-one, but proving (or
 disproving)
@@ -4554,7 +4557,7 @@ Suppose $U \subset \C^n$ is open and there exists a sequence of
 closed analytic discs $\varphi_k \colon \widebar{\D} \to \C^n$ converging
 (pointwise) to a closed analytic disc $\varphi$, such that
 $\varphi_k(\widebar{\D}) \subset U$ and $\varphi(\partial \D) \subset U$.
-Then there exists an $s$ such that for every $f \in \sO(U)$
+Then there exists an $s > 0$ such that for every $f \in \sO(U)$
 and for every $p \in \varphi(\D)$,
 there is an $F \in \sO\bigl(\Delta_s(p)\bigr)$ where $F=f$ on some
 open subset of $U \cap \Delta_s(p)$.
@@ -4604,7 +4607,7 @@ Cauchy estimates give that
 \begin{equation} \label{eq:kontinuitatonecauchy}
 \abs{\frac{\partial^\alpha f}{\partial z^\alpha}(q)}
 \leq
-\frac{M \alpha!}{s^\alpha}
+\frac{M \alpha!}{s^{\abs{\alpha}}}
 \end{equation}
 for all $q \in \varphi_k(\partial \D)$.  By the maximum principle,
 \eqref{eq:kontinuitatonecauchy} holds for all $q \in \varphi_k(\widebar{\D})$,
@@ -6089,7 +6092,7 @@ $\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$ is also called the
 \emph{\myindex{Heisenberg group}}.  The group in this case
 is defined on the parameters $(z,\Re w)$ of this hypersurface with the
 group law $(z,\Re w)(z',\Re w') =
-(z+z',\Re w + \Re w' + 2 \Im z \cdot z')$.
+(z+z',\Re w + \Re w' + 2 \Im \linnprod{z}{z'})$.
 \begin{myfig}
 \subimport*{figures/}{lewy-hyper.eepic}
 \caption{Lewy hypersurface.\label{fig:lewy-hyper}}
@@ -6459,7 +6462,7 @@ $[c_{k\ell}]$ is Hermitian.
 
 We make another change of coordinates.  Fix the $z$s again, and set
 \begin{equation} \label{eq:wprimeexpression}
-w' = w'' + i
+w' = w'' + 2i
 \sum_{k,\ell=1}^{n-1}
 a_{k\ell} z_kz_\ell .
 \end{equation}
@@ -6468,7 +6471,7 @@ In particular,
 \Im w'
 = \Im w''
 + \Im \biggl(
-i
+2i
 \sum_{k,\ell=1}^{n-1}
 a_{k\ell} z_kz_\ell
 \biggr)
