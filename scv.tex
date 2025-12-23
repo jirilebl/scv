@@ -8962,7 +8962,7 @@ Let $U \subset \R^n$ be open.
 A function $f \colon U \to \C$ is
 \emph{\myindex{real-analytic}} (or simply \emph{analytic} if
 clear from context) if at each point $p \in U$, the function $f$
-has a convergent power series that converges (absolutely) to $f$ in some
+admits a power series that converges (absolutely) to $f$ in some
 neighborhood of $p$.
 \glsadd{not:Comega}%
 A common notation for real-analytic is $C^\omega$.
@@ -9077,7 +9077,7 @@ Prove that $f$ is harmonic.
 \begin{exercise}
 Let $(0,1) \subset \R$.  Construct a real-analytic function
 on $(0,1)$ that does not complexify to the rectangle $(0,1) + i(-\epsilon,\epsilon)
-\subset \C$ for every $\epsilon > 0$.  Why does this not contradict the
+\subset \C$ for any $\epsilon > 0$.  Why does this not contradict the
 proposition?
 \end{exercise}
 \end{exbox}
@@ -9397,9 +9397,9 @@ allowing $x$ to be a complex vector in a small neighborhood of $U$ in
 $\C^n$
 and $y$ to be a complex vector in a small neighborhood of $V$ in $\C^k$.
 So treat $f$ and $g$ as holomorphic functions.  On a certain
-neighborhood of $U$ in $\C^n$, the composition $f \circ g$ makes sense
+neighborhood of $U$ in $\C^n$, the composition $g \circ f$ makes sense
 and it is holomorphic, as composition of holomorphic mappings is holomorphic.
-Restricting the complexified $f \circ g$ back to $\R^n$ we obtain a
+Restricting the complexified $g \circ f$ back to $\R^n$ we obtain a
 real-analytic function.
 \end{proof}
 
@@ -9410,7 +9410,7 @@ equations).  There is no PDE
 that defines real-analytic functions, so complexification provides a useful
 tool to transfer certain properties of holomorphic functions to
 real-analytic functions.  We must be careful, however.  Hypotheses on
-real-analytic functions only give us hypotheses on certain points of the
+real-analytic functions only give us those hypotheses at certain points for the
 complexified holomorphic functions.
 
 \begin{exbox}
@@ -9584,8 +9584,9 @@ by $\Im z_n = 0$.
 Show that every smooth CR function on $M$ is holomorphic in the variables
 $z_1,\ldots,z_{n-1}$.
 Use this to show that for no smooth CR function $f$ on $M$ can
-$\sabs{f}$ attain a \emph{strict} maximum on $M$.  Show that there do
-exist nonconstant functions such that $\sabs{f}$ attains a (nonstrict) maximum $M$.
+$\sabs{f}$ attain a \emph{strict} maximum on $M$.  Show that there does
+exist a smooth nonconstant CR function $f$ such that $\sabs{f}$ attains a (nonstrict)
+maximum on $M$.
 \end{exercise}
 \end{exbox}
 
@@ -9713,7 +9714,7 @@ $X_k = \frac{\partial}{\partial \bar{z}_k}
 annihilates
 the function $\Phi(z,\bar{z},w)-\bar{w}$, but that is not enough.
 The vector field must annihilate a real defining function such as the
-real part of $\Phi(z,\bar{z},w)-\bar{w}$.  So $X_k$ must also
+real or imaginary part of $\Phi(z,\bar{z},w)-\bar{w}$.  So $X_k$ must also
 annihilate the conjugate
 $\bar{\Phi}(\bar{z},z,\bar{w})-w$, at least on $M$.  Compute, for $(z,w) \in M$,
 \begin{equation*}
@@ -9781,7 +9782,7 @@ $\Phi(z,\zeta,w) =
 -2iz \zeta + w$, and
 $\bar{\Phi}(\zeta,z,\omega) = 2i\zeta z + \omega$.  Let us check
 that $\Phi$ is the right sort of function:
-$\bar{\Phi}\bigl(z,\zeta,\Phi(z,\zeta,w)\bigr)
+$\bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)
 =
 2i\zeta z + (-2i z \zeta + w) = w$.  The CR vector field is
 given by
@@ -9813,7 +9814,7 @@ in $\C^{n-1} \times \C^{n-1} \times \C$.
 \begin{exparts}
 \item
 Show that $\bar{w} = \Phi(z,\bar{z},w)$ defines a real-analytic hypersurface
-near the origin if and only
+near the origin if and only if
 $w = \bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)$
 for all $z$, $\zeta$, and $w$.  Hint: One direction was proved already.
 \item
@@ -9876,7 +9877,7 @@ $\frac{\partial}{\partial \bar{z}_k}
 =
 \frac{\partial F}{\partial \zeta_k} = 0
 \end{equation*}
-on $M \subset \sM$.  We have a real analytic function
+on $M \subset \sM$.  We have a real-analytic function
 $\frac{\partial F}{\partial \zeta_k}(z,w,\bar{z})$
 that is zero on $M$, so
 $\frac{\partial F}{\partial \zeta_k}(z,w,\zeta) = 0$
