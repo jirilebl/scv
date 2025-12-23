@@ -10021,7 +10021,7 @@ p_\ell(z) \to f(z)
 \end{equation*}
 \end{thm}
 
-A key point is that $K$ cannot be chosen arbitrarily, it depends on $p$ and $M$.
+A key point is that $K$ cannot be chosen arbitrarily---it depends on $p$ and $M$.
 On the other hand, $K$ does not depend on $f$.  Given $M$ and $p \in M$
 there is a $K$ such that \emph{every} CR function on $M$ is approximated
 uniformly on $K$ by holomorphic polynomials.  The theorem applies in one
@@ -10043,7 +10043,8 @@ which is impossible.  Clearly $K$ cannot be the entire circle.
 
 The example is easily extended to $\C^n$
 by considering
-$M = S^1 \times \C^{n-1}$, then $\Re z_1$ is a smooth CR function on $M$ that cannot be
+$M = S^1 \times \C^{n-1}$.
+Then $\Re z_1$ is a smooth CR function on $M$ that cannot be
 approximated uniformly on $S^1 \times \{ 0 \}$ by holomorphic polynomials.
 \end{example}
 
@@ -10078,7 +10079,8 @@ completely foreign even to the reader who does not know the Weierstrass
 approximation theorem.  Basically what we do is use the standard convolution
 argument, this time against a holomorphic function.  Letting $z=x+iy$
 we only do the convolution in the
-$x$ variables keeping $y=0$.  Then we use the fact that the
+$x$ variables keeping the ``free components'' of $y$ zero.
+Then we use the fact that the
 function is CR to show that we get an approximation even for other $y$.
 
 In the formulas below, given a vector $v = (v_1,\ldots,v_n)$,
@@ -10089,7 +10091,7 @@ it will be useful to write
 \end{equation*}
 
 The following lemma is a neat application of ideas from several complex
-variables to solve a problem that does not at first seems to involve
+variables to solve a problem that does not at first seem to involve
 holomorphic functions.
 
 \begin{lemma} \label{lemma:matrixint}
@@ -10260,10 +10262,10 @@ set where $\snorm{x} \leq r$ and $\snorm{y'} \leq d$.
 There exists a smooth $g \colon \R^n \to [0,1]$ such that $g \equiv 1$ on
 $B_{r/2}(0)$ and $g \equiv 0$ outside of $B_{r}(0)$.
 See \figureref{fig:cutoff-bt}.
-Explicit formula
-can be given.  Alternatively we obtain such a $g$ by use of
+An explicit formula can be given.
+Alternatively, $g$ can be obtained by using
 mollifiers on a function that is identically one on
-$B_{3r/4}(0)$ and zero elsewhere.  Such a $g$ is commonly called a
+$B_{3r/4}(0)$ and zero elsewhere.  Such a $g$ is called a
 \emph{\myindex{cutoff function}}.
 
 \begin{myfig}
@@ -10568,7 +10570,7 @@ C
 e^{-\ell r^2  / 64} ,
 \end{equation*}
 for some constant $C$.  Note that $D$ depends on $y'$.  The set of
-all $y'$ with $\snorm{y'} \leq d$,
+all $y'$ with $\snorm{y'} \leq d$
 is a compact set, so we can make $C$
 large enough to not depend on the $y'$ that was chosen.
 The claim follows.
@@ -10786,7 +10788,7 @@ So if the Levi form has eigenvalues of both signs,
 then near $p$ all CR functions are restrictions of holomorphic
 functions.
 The function $r$ can be any defining
-function for $M$.  Either we can extend it to all of $U$ or we could take a
+function for $M$.  Either we can extend it to all of $U$ or we can take a
 smaller $U$ such that $r$ is defined on $U$.  As we noticed before,
 once we pick sides (where $r$ is positive and where it is negative), then
 the number of positive eigenvalues and the number of negative eigenvalues of
@@ -10822,7 +10824,7 @@ Therefore, for $(z',w) \in W$ in some
 small neighborhood $W \subset \C^{n-1}$ of the origin,
 the function
 \begin{equation*}
-z_1 \mapsto \sabs{z_1}^2 + \sum_{k=2}^n \epsilon_k \sabs{z_k}^2 +
+z_1 \mapsto \sabs{z_1}^2 + \sum_{k=2}^{n-1} \epsilon_k \sabs{z_k}^2 +
 E(z_1,z',\bar{z}_1,\bar{z}',\Re w) - \Im w
 \end{equation*}
 is still strictly positive on $\partial D$.
@@ -10843,8 +10845,8 @@ The set $\Omega_+$ where $r > 0$ is open and it contains
 $(\partial D) \times \{ (z',w) \}$.  Therefore,
 $\partial \Delta$ contains no points of $(\partial D) \times \{ (z',w) \}$.
 Consequently, $\partial \Delta$ contains only points where
-$r = 0$, that is $\partial \Delta \subset M$, and
-also
+$r = 0$, that is, $\partial \Delta \subset M$.
+Also
 $\partial \Delta \subset D \times W$.
 As $(D \times W) \cap M \subset K$, we have $\partial \Delta \subset K$.
 See \figureref{fig:lewy-extension-figure}.
@@ -10893,8 +10895,8 @@ a different approach would have to be taken.
 \begin{cor} \label{cor:bochnerhartogsstrconvex}
 Suppose $U \subset \C^n$, $n \geq 2$, is a bounded domain with smooth boundary that is
 strongly convex
-and $f \colon \partial U \to \C$ is a smooth CR function, then
-there exists a continuous function $F \colon \widebar{U} \to \C$
+and $f \colon \partial U \to \C$ is a smooth CR function.
+Then there exists a continuous function $F \colon \widebar{U} \to \C$
 holomorphic in $U$
 such that $F|_{\partial U} = f$.
 \end{cor}
@@ -10928,7 +10930,7 @@ Write down an explicit formula for the extension $F$.
 
 \begin{exercise}
 A smooth real hypersurface $M \subset \C^3$ is defined by $\Im w = \sabs{z_1}^2-\sabs{z_2}^2 + O(3)$
-and $f$ is a real-valued smooth CR function on $M$.  Show
+and $f$ is a nonconstant smooth CR function on $M$.  Show
 that $\sabs{f}$ does not attain a maximum at the origin.
 \end{exercise}
 
@@ -10993,7 +10995,7 @@ Lewy, Hans, \emph{An example of a smooth linear partial differential
 equation without solution}, Annals of Mathematics, \textbf{66} (1957), 155--158.}.
 The example is surprising because when a linear PDE has real-analytic
 coefficients, a solution always exists by the theorem of Cauchy--Kowalevski.
-Furthermore, if $X$ is a real vector field ($X$ is in $TM$ not in $\C TM$),
+Furthermore, if $X$ is a real vector field ($X$ is in $TM$, not simply in $\C TM$),
 then a solution to $Xf = \psi$ exists by the method of characteristics, even
 if $X$ and $\psi$ are only smooth.
 \end{remark}
