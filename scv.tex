@@ -690,8 +690,8 @@ just not enough.  For example, there is no nonzero polynomial function that solv
 the simplest of differential equations, $f' = f$.  We need the exponential
 function, which is holomorphic.
 
-We start with polynomials.  A polynomial in $z$ is
-an expression of the form
+We start with polynomials.  A nonzero polynomial in $z$ is
+an expression
 \begin{equation*}
 P(z) = \sum_{k=0}^d c_k \, z^k ,
 \end{equation*}
@@ -716,7 +716,7 @@ We usually mean
 \end{equation*}
 As long as the limit exists, we have a function.  You know all
 this; it is your one-variable complex analysis.  We typically
-start with the functions and prove that we can expand into series.
+start with the functions and prove that we can expand them as series.
 
 Let $U \subset \C$ be open.  A function $f \colon U \to \C$
 is \emph{\myindex{holomorphic}}
@@ -1025,7 +1025,7 @@ then $h$ is constant, that is, $h \equiv h(z_0)$.
 
 In one variable, if $f = u+iv$ is holomorphic for real-valued $u$ and $v$,
 then $u$ and $v$ are harmonic.
-Similarly, $\log \sabs{f}$ is harmonic.
+Similarly, outside the zero set of $f$, $\log \sabs{f}$ is harmonic.
 Locally, a harmonic function is
 the real (or imaginary) part of a holomorphic function, so in
 one complex variable, studying
@@ -2437,12 +2437,12 @@ there exists an entire nonconstant holomorphic function ($n \geq 2$)
 bounded (hence constant) on these complex lines.
 \item
 Prove that if an entire holomorphic function in $\C^2$ is bounded on
-countably many distinct
+infinitely many distinct
 complex lines through the origin, then it is constant.
 \item
 Find a nonconstant entire holomorphic function in $\C^3$ that is
 bounded on
-countably many distinct
+infinitely many distinct
 complex lines through the origin.
 \end{exparts}
 \end{exercise}
@@ -2514,10 +2514,9 @@ Prove that $\sO(U)$ is actually a commutative ring with the operations
 \end{exercise}
 
 \begin{exercise}
-Show that $\sO(U)$ is an \myindex{integral domain} (has no zero divisors) if and only
+Show that $\sO(U)$ is an \myindex{integral domain} (no zero divisors) if and only
 if $U$ is connected.
-That is, show that $U$ being connected is equivalent to the following
-property of $U$:
+That is, show that $U$ being connected is equivalent to the following:
 If $h(z) = f(z)g(z)$ is identically zero for $f,g \in \sO(U)$,
 then either $f$ or $g$ is
 identically zero.
@@ -2571,8 +2570,10 @@ $z_2,\ldots,z_n$ around, and use, perhaps,
 
 Given a function $f = u+iv$, the complex conjugate is $\bar{f} = u-iv$,
 defined simply by $z \mapsto \overline{f(z)}$.
-When $f$ is holomorphic, then $\bar{f}$ is
-called an \emph{\myindex{antiholomorphic function}}.  An antiholomorphic function is a
+Suppose $f$ is holomorphic.
+Then $\bar{f}$ is
+called an \emph{\myindex{antiholomorphic function}}.
+An antiholomorphic function is a
 function that depends on $\bar{z}$ but not on $z$.
 So if we write the variable, we write $\bar{f}$ as
 $\bar{f}(\bar{z})$.  Let us see why this makes sense.  Using the definitions
@@ -3051,7 +3052,7 @@ Prove the vector-valued version of the maximum principle:
 If $\snorm{f(z)}$ achieves a (local) maximum at $p \in U$,
 then $f$ is constant.
 \item
-Find a counterexample to a vector-valued mimimum principle:
+Find a counterexample to a vector-valued minimum principle:
 Find an $f$ such that $\snorm{f(z)}$ achieves a nonzero minimum,
 but where $f$ is not constant.
 \end{exparts}
@@ -7061,7 +7062,7 @@ f(a) \leq \frac{1}{2\pi} \int_0^{2\pi} f(a+re^{i\theta})\, d\theta \leq f(a)
 \end{equation*}
 Hence, $f = f(a)$ almost everywhere on $\partial \Delta_r(a)$.
 By upper-semicontinuity, $f = f(a)$ everywhere on $\partial \Delta_r(a)$.
-This was true for all $r$
+This is true for all $r$
 with $\overline{\Delta_r(a)} \subset U$, so $f=f(a)$ on $\Delta_r(a)$,
 and so the set where $f=f(a)$ is open.  The set where an upper-semicontinuous
 function attains a maximum is closed.  So $f=f(a)$ on $U$ as $U$ is
@@ -7071,7 +7072,7 @@ connected.
 A very useful fact we will use over and over without mentioning much is that subharmonicity
 (like harmonicity)
 is a local property,
-even if it does not seems so from the definition.
+even if it does not seem so from the definition.
 The proof is left as an exercise.
 
 \begin{prop} \label{prop:shlocal}
@@ -7299,7 +7300,7 @@ example of a harmonic function that is not pluriharmonic.
 Let $U \subset \C^n$ be open.
 Show that $f \colon U \to \R$ is pluriharmonic if and
 only if it is locally the real or imaginary part of a holomorphic function.
-Hint:  Using a previous exercise
+Hint:  Using a previous exercise,
 $\frac{\partial f}{\partial z_\ell}$ is holomorphic for all $\ell$.
 Assume that $U$ is simply connected, $p \in U$, and
 $f(p) = 0$.
@@ -7311,7 +7312,7 @@ F(q) =
 \avoidbreak
 \end{equation*}
 Prove that it is path independent, compute derivatives of $F$, and
-find out what is $F+\bar{F}-f$.
+find out what $F+\bar{F}-f$ is.
 \end{exercise}
 
 \begin{exercise}
@@ -7628,7 +7629,8 @@ Hint: Try a $C^2$ function first and use Green's theorem.
 \item
 Use this
 fact to show that the $f_\epsilon(z)$ from \thmref{thm:subharlim} is monotone
-decreasing in $\epsilon$.
+increasing in $\epsilon$ (so $f_\epsilon(z)$ decreases to $f(z)$
+as $\epsilon$ decreases).
 \end{exparts}
 \end{exercise}
 \end{exbox}
@@ -7656,7 +7658,7 @@ Monotone convergence is useful.
 \end{exercise}
 
 \begin{exercise}
-Using the computation from
+With the computation from
 \thmref{thm:subharlim} show that if $f$ is pluriharmonic, then
 $f_\epsilon = f$ (where it makes sense), obtaining another proof that
 a pluriharmonic $f$ is $C^\infty$.
@@ -7676,14 +7678,13 @@ exercise.
 \end{exercise}
 \end{exbox}
 
-Let us prove the theorem of
-Rad\'o, which is a complementary result to the Riemann extension theorem.
-Here on the one hand the function is
-continuous and vanishes on the set you wish to extend across, but on the
-other hand you know nothing about this set.
-It is sometimes covered in a one-variable course,
-and in several variables it follows directly from
-the one-variable result.
+We turn to the theorem of
+Rad\'o, a result complementary to the Riemann extension theorem.
+Here the function to be extended is
+continuous and vanishes on the set you wish to extend across,
+but you know nothing about this set.
+We prove the one-variable result and leave its straightforward
+extension to several variables as an exercise.
 
 \begin{thm}[Rad\'o] \index{Rad\'o's theorem}\label{thm:rado}
 Let $U \subset \C^n$ be open and $f \colon U \to \C$ a continuous
@@ -7863,8 +7864,8 @@ we have
 $\bigcup_\alpha \Delta_\alpha \subset \subset U$.
 \end{thm}
 
-Various similar theorems are named the \emph{continuity principle},
-we have now seen two.
+Various similar theorems are named the
+\emph{continuity principle}---we have now seen two.
 What they have in common is a family of analytic discs whose
 boundaries stay inside a domain, and where the conclusion has to do
 with extension of holomorphic functions, with domains of holomorphy, or
@@ -8583,11 +8584,11 @@ difficult.  The thing is, there are lots of plurisubharmonic functions,
 and they are easy to construct; we can even construct them locally, and then
 piece them together by taking maxima.  There are far fewer holomorphic functions, and
 we cannot just construct them locally and expect the pieces to somehow fit
-together.  As it is so fundamental, let us state it as a theorem.
+together.  As the result is so fundamental, let us state it as a theorem.
 
 \begin{thm}[Solution of the Levi problem]
 A domain $U \subset \C^n$ is holomorphically convex
-if and only it is Hartogs pseudoconvex.
+if and only if it is Hartogs pseudoconvex.
 \end{thm}
 
 \begin{proof}
@@ -8850,7 +8851,7 @@ is a complex line and $K$ is a circle in $L$.  What is $\widehat{K}_W$?
 \end{exercise}
 \end{exbox}
 
-In the following series of exercises, which you should most definitely do in
+In the following series of exercises, which you should do in
 order, you will solve the
 Levi problem\index{Levi problem!for complete Reinhardt domains}
 (and more) for complete Reinhardt domains.
@@ -8861,8 +8862,11 @@ entire closed polydisc $\overline{\Delta_r(0)} \subset U$.
 We say a complete Reinhardt domain $U$ is \emph{\myindex{logarithmically convex}}%
 \index{Reinhardt domain!logarithmically convex}
 if there exists a
-(geometrically) convex $C \subset \R^n$ such that $z \in U$ if and only if
-$\bigl(\log \sabs{z_1},\ldots,\log\sabs{z_n}\bigr) \in C$.
+(geometrically) convex $C \subset \R^n$ such that
+$z \in U^*$  if and only if
+$\bigl(\log \sabs{z_1},\ldots,\log\sabs{z_n}\bigr) \in C$,
+where
+$U^* = \{ z \in U : z_1 \not= 0, \ldots, z_n \not= 0 \}$.
 
 \begin{exbox}
 \begin{exercise}
@@ -8901,9 +8905,9 @@ $\bigl\{ z \in \C^n :
 \sabs{z_1}^{\alpha_1} \cdots \sabs{z_n}^{\alpha_n}
 < e^\beta \bigr\}$.
 Hint: That it diverges outside is easy, what is hard is that it converges
-inside.  Perhaps useful is to notice
+inside.  It is perhaps useful to notice that
 $\frac{\ell_m^k}{k}-\alpha_m \leq \frac{1}{k}$, and
-that if $z$ is in the set, there is some $\epsilon > 0$ such that
+that for $z$ in the set, there is some $\epsilon > 0$ such that
 $(1+\epsilon)\sabs{z_1}^{\alpha_1} \cdots \sabs{z_n}^{\alpha_n} =
 e^{\beta}$.
 \end{exercise}
