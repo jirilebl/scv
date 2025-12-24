@@ -3,5 +3,8 @@ we mean infinitely many lines.  In both parts, it is better to just ask for
 infinitely many.  No need to bring countability into it.
 <li>To fix erratum in Exercise 3.4.4, change hypothesis that \(f\) is
 "real-valued" to "nonconstant".
+<li>In Exercise 4.1.3 part a), write the derivative with respect to
+\(\bar{\zeta}\) as in the
+rest of the formulas and make the formula displayed for clarity.
 
 See https://www.jirka.org/scv/changes.html for older changes.

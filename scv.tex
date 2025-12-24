@@ -11016,7 +11016,7 @@ version of Cauchy's formula using Stokes' theorem (really Green's theorem).
 This version is called the \emph{\myindex{Cauchy--Pompeiu integral formula}}.
 We only need the theorem for smooth functions, but as it is often
 applied in less regular contexts and it is just an application of Stokes'
-theorem, let us state it more generally.  In applications, the boundary is often
+theorem, we state it more generally.  In applications, the boundary is often
 only piecewise smooth, and again that is all we need for Stokes.
 
 \begin{thm}[Cauchy--Pompeiu] \label{thm:generalizedcauchy}
@@ -11042,7 +11042,7 @@ d\zeta \wedge d\bar{\zeta} .
 \end{thm}
 
 If $f$ is holomorphic, then the second term is zero, and we
-obtain the standard Cauchy formula.
+have the standard Cauchy formula.
 \glsadd{not:dA}%
 If $\zeta = x+iy$, then the standard orientation on $\C$ is the one
 corresponding to the area form $dA = dx \wedge dy$.
@@ -11073,8 +11073,8 @@ d \psi
 
 \begin{exbox}
 \begin{exercise}
-Observe the singularity in the second term of the Cauchy--Pompeiu formula,
-and prove that the integral still makes
+Observe the singularity in the second term of the Cauchy--Pompeiu formula.
+Prove that the integral still makes
 sense (the function is integrable).  Hint: polar coordinates.
 \end{exercise}
 
@@ -11093,7 +11093,6 @@ but the integrand is not smooth at $z$.
 Let $\Delta_r(z)$ be a small disc such that
 $\Delta_r(z) \subset
 \subset U$.  See \figureref{fig:cauchy-pompeiu}.
-Stokes now applies on $U \setminus \Delta_r(z)$.
 
 \begin{myfig}
 %NOTE: Same as the figure for fig:usingstokes
@@ -11101,9 +11100,9 @@ Stokes now applies on $U \setminus \Delta_r(z)$.
 \caption{Proof of Cauchy--Pompeiu.\label{fig:cauchy-pompeiu}}
 \end{myfig}
 
-Via Stokes, where the exterior derivative inside is with respect to $\zeta$
-and $\bar{\zeta}$ of
-course,
+Stokes applies on $U \setminus \Delta_r(z)$,
+writing the exterior derivative with respect to $\zeta$
+and $\bar{\zeta}$,
 \begin{equation*}
 \int_{\partial U} \frac{f(\zeta)}{\zeta-z}\,  d\zeta -
 \int_{\partial \Delta_r(z)} \frac{f(\zeta)}{\zeta-z}\,  d\zeta
@@ -11113,7 +11112,7 @@ course,
 \int_{U \setminus \Delta_r(z)} \frac{\frac{\partial f}{\partial
 \bar{\zeta}}(\zeta)}{\zeta-z} \, d\bar{\zeta} \wedge d\zeta .
 \end{equation*}
-The second equality follows because the holomorphic derivative in $\zeta$
+The second equality follows because the derivative in $\zeta$
 has a $d\zeta$ and when we wedge it with $d\zeta$ we get zero.
 We now wish to let the radius $r$ go to zero.
 Via the exercise above,
@@ -11133,7 +11132,7 @@ is integrable over all of $U$.  Therefore,
 \end{equation*}
 The second equality is simply swapping the order of $d\zeta$ and
 $d\bar{\zeta}$.
-By continuity of $f$,
+By continuity of $f$, we finish the proof,
 \begin{equation*}
 \lim_{r \to 0}
 \frac{1}{2\pi i}
@@ -11144,8 +11143,8 @@ By continuity of $f$,
 \int_0^{2\pi} f(z + r e^{i\theta})\, d\theta
 =
 f(z) .
+\qedhere
 \end{equation*}
-The theorem follows.
 \end{proof}
 
 \begin{exbox}
@@ -11155,16 +11154,18 @@ The theorem follows.
 Let $U \subset \C$ be a bounded open set with piecewise-$C^1$ boundary and
 suppose $f \colon \widebar{U} \to \C$ is a $C^1$ function such
 that
-$\int_{U} \frac{\frac{\partial f}{\partial \bar{z}}(\zeta)}{\zeta-z} \,
-dA(\zeta) =
-0$ for every $z \in \partial U$.  Prove that $f|_{\partial U}$ are the boundary
+\begin{equation*}
+\int_{U} \frac{\frac{\partial f}{\partial \bar{\zeta}}(\zeta)}{\zeta-z} \,
+dA(\zeta) = 0
+\end{equation*}
+for every $z \in \partial U$.  Prove that $f|_{\partial U}$ gives the boundary
 values of a function continuous on $\widebar{U}$ and holomorphic in $U$.
 \item
 Given arbitrary $\epsilon > 0$, find a $C^1$ function $f$ on the closed unit disc
 $\overline{\D}$,
 such that $\frac{\partial f}{\partial \bar{z}}$ is identically zero
 outside an $\epsilon$-neighborhood of the origin, yet $f|_{\partial \D}$
-are not the boundary values of a holomorphic function.
+does not represent the boundary values of a holomorphic function.
 \end{exparts}
 \end{exercise}
 
@@ -11231,7 +11232,7 @@ g = g_1 d\bar{z}_1 + \cdots + g_n d\bar{z}_n .
 \end{equation*}
 Such a $g$ is called a \emph{\myindex{$(0,1)$-form}}.
 The fact that the partial
-derivatives of $\psi$ commute, forces certain compatibility conditions
+derivatives of $\psi$ commute forces certain compatibility conditions
 on $g$ for us to have any hope of getting a solution (see below).
 
 \begin{exbox}
@@ -11400,7 +11401,7 @@ and so $\psi$ has compact support.
 
 The first part of the proof still works when $n=1$; we get a solution
 $\psi$.  However, the last bit of the proof does not work in one dimension, so
-$\psi$ does not have compact support.
+$\psi$ need not have compact support.
 
 \begin{exbox}
 \begin{exercise} \label{exercise:supportofpsi}
@@ -11508,7 +11509,7 @@ g_k
 = 0 .
 \end{equation*}
 Next, \exerciseref{exercise:supportofpsi} and the fact that $U \setminus
-K$ is connected reveals that $\psi$ must be compactly supported in $U$.
+K$ is connected reveal that $\psi$ must be compactly supported in $U$.
 This means that $F$ agrees with $f$ near the boundary (in particular
 on an open set) and thus everywhere in $U \setminus K$ since $U \setminus K$
 is connected.
@@ -11531,7 +11532,7 @@ Suppose $U \subset \C^n$ is a domain and
 $K \subset U$ is a compact set (perhaps $U \setminus
 K$ is disconnected).
 Prove that given $f \in \sO(U \setminus K)$ there exists an $F \in \sO(U)$ that equals
-to $f$ on the intersection of $U$ and the unbounded component
+$f$ on the intersection of $U$ and the unbounded component
 of $\C^n \setminus K$.
 \end{exercise}
 
@@ -11574,7 +11575,7 @@ there is a small ball $B_p$ centered at $p$,
 such that $f$ extends to $B_p$.  Cover $\partial
 U$ by finitely many such balls so that if $B_p$ intersects $B_q$, then
 the (connected) intersection $B_p \cap B_q$ contains points of $\partial U$.
-The extension in $B_p$ and in $B_q$ then agree on a piece of a hypersurface
+The extensions in $B_p$ and in $B_q$ then agree on a piece of a hypersurface
 $\partial U$, and hence agree.  Taking a union of the $B_p$, we find
 a unique extension in single neighborhood of $\partial U$.
 We write this neighborhood as $U' \setminus K$ for some compact $K$
