@@ -13,5 +13,7 @@ the point is to show that \(H^{(0,1)}(U) \not= 0 .\)
 \(\mathbb{C}\) not \({\mathbb{C}}^2\)).
 <li>In Exercise 4.6.5, the \(f\) to be found should be in \(\mathcal{O}(U)\)
 to fix erratum.
+<li>In Exercise 5.2.3, add hypothesis that \(f\) is not identically zero to
+fix erratum.
 
 See https://www.jirka.org/scv/changes.html for older changes.

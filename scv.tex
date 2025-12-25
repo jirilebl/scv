@@ -13247,7 +13247,7 @@ First, let us define the \emph{\myindex{Bochner--Martinelli kernel}}:
 \overset{\text{def}}{=}
 \frac{(n-1)!}{{(2\pi i)}^n}
 \sum_{k=1}^n
-\frac{\bar{\zeta}_k-\bar{z}_k}{\norm{\zeta-z}^{2n}}
+\frac{\bar{\zeta}_k-\bar{z}_k}{\snorm{\zeta-z}^{2n}}
 \,
 d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
@@ -13346,7 +13346,7 @@ f(\zeta)
 \frac{(n-1)!}{{(2\pi i)}^n}
 \sum_{k=1}^n
 \frac{\partial}{\partial \bar{\zeta}_k} \left[
-\frac{\bar{\zeta}_k-\bar{z}_k}{\norm{\zeta-z}^{2n}}
+\frac{\bar{\zeta}_k-\bar{z}_k}{\snorm{\zeta-z}^{2n}}
 \right]
 d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
@@ -13358,14 +13358,14 @@ We compute
 \sum_{k=1}^n
 \frac{\partial}{\partial \bar{\zeta}_k}
 \left[
-\frac{\bar{\zeta}_k-\bar{z}_k}{\norm{\zeta-z}^{2n}}
+\frac{\bar{\zeta}_k-\bar{z}_k}{\snorm{\zeta-z}^{2n}}
 \right]
 =
 \sum_{k=1}^n
 \left(
-\frac{1}{\norm{\zeta-z}^{2n}}
+\frac{1}{\snorm{\zeta-z}^{2n}}
 -n
-\frac{\abs{\zeta_k-z_k}^2}{\norm{\zeta-z}^{2n+2}}
+\frac{\abs{\zeta_k-z_k}^2}{\snorm{\zeta-z}^{2n+2}}
 \right)
 = 0 .
 \end{equation*}
@@ -13426,7 +13426,7 @@ $\frac{\pi^n}{n!}r^{2n}$.
 \int_{\partial B_r(z)}
 \frac{(n-1)!}{{(2\pi i)}^n}
 \sum_{k=1}^n
-\frac{\bar{\zeta}_k-\bar{z}_k}{\norm{\zeta-z}^{2n}} \,
+\frac{\bar{\zeta}_k-\bar{z}_k}{\snorm{\zeta-z}^{2n}} \,
 d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
 \widehat{ d\bar{\zeta}_k } \wedge d\zeta_k \wedge
@@ -13604,7 +13604,7 @@ Hint: Look at the previous proof.
 
 \section{The Bergman kernel}
 
-Let $U \subset \C^n$ be a domain.  Define
+Let $U \subset \C^n$ be a domain.  Define the
 \emph{\myindex{Bergman space}} of $U$:
 \glsadd{not:A2}%
 \glsadd{not:L2}%
@@ -13626,7 +13626,7 @@ $L^2(U)$ inner product
 \linnprod{f}{g} \overset{\text{def}}{=} \int_U f(z) \overline{g(z)} \, dV .
 \end{equation*}
 We will prove that $A^2(U)$ is
-complete, in other words, it is a Hilbert space.  We first
+complete; in other words, it is a Hilbert space.  We first
 prove that
 the $A^2(U)$ norm bounds the
 uniform norm on compact sets.
@@ -13669,7 +13669,7 @@ dV(\xi)}
 \snorm{f}_{A^2(U)} .
 \end{split}
 \end{equation*}
-Taking supremum over $z \in K$ proves the estimate.
+Taking the supremum over $z \in K$ proves the estimate.
 Therefore, if $\{ f_\ell \}$ is a sequence of functions in $A^2(U)$
 converging in $L^2(U)$ to some $f \in
 L^2(U)$, then it converges uniformly on compact sets, and so $f \in \sO(U)$.
@@ -13714,7 +13714,8 @@ Show that $A^2(\D)$ can be identified with $A^2(\D \setminus \{ 0 \})$,
 that is, every function in the latter can be extended to a function in the
 former.
 \item
-Let $U \subset \C^n$ be a domain, $f \in \sO(U)$, and $X = f^{-1}(0)$.
+Let $U \subset \C^n$ be a domain, $f \in \sO(U)$, $f$ not identically zero,
+and $X = f^{-1}(0)$.
 Show that every function in $A^2(U \setminus X)$ is a restriction of a
 function in $A^2(U)$, that is, $A^2(U) \cong A^2(U \setminus X)$.
 \end{exparts}
@@ -13724,7 +13725,7 @@ function in $A^2(U)$, that is, $A^2(U) \cong A^2(U \setminus X)$.
 The lemma says that
 point evaluation is a bounded linear
 functional.
-That is, fix $z \in U$ and take $K= \{ z \}$, then the linear operator
+That is, for a fixed $z \in U$, taking $K= \{ z \}$, the linear operator
 \begin{equation*}
 f \mapsto f(z)
 \end{equation*}
@@ -13864,7 +13865,7 @@ $A^2(\C^n) = \{ 0 \}$.  Therefore,
 $K_{\C^n}(z,\bar{\zeta}) \equiv 0$.
 \end{example}
 
-The Bergman kernel for a more general domain is diffcult (usually impossible)
+The Bergman kernel for a more general domain is difficult (usually impossible)
 to compute explicitly.  We do have the following formula however.
 
 \begin{prop}
@@ -13997,7 +13998,7 @@ K_{\D^n}(z,\bar{\zeta}) =
 Show that for
 some constants $c_\alpha$,
 the set of all monomials $\frac{z^\alpha}{c_\alpha}$ gives a complete orthonormal
-system of $A^2(\bB_n)$.  Hint: To show orthogonality
+system of $A^2(\bB_n)$.  Hint: To show orthogonality,
 compute the integral using polar coordinates in each variable
 separately, that is, let $z_\ell = r_\ell e^{i\theta_\ell}$ where $\theta \in
 [0,2\pi]^n$ and $\sum_\ell r_\ell^2 < 1$.  Then show completeness by showing that
@@ -15399,7 +15400,7 @@ some neighborhood of $X$, but it is not necessarily closed in $U$.  As a
 simple example, the set
 $X = \bigl\{ z \in \C^2 : z_1 = 0, \abs{z_2} < 1 \bigr\}$ is a
 local variety, but not a subvariety of $\C^2$.  On the other hand, $X$
-is a subvariety of the unit ball $\bigl\{ z \in \C^2 : \norm{z} < 1 \bigr\}$.
+is a subvariety of the unit ball $\bigl\{ z \in \C^2 : \snorm{z} < 1 \bigr\}$.
 
 Note that $\sF$ depends on $p$ and near each point may have a different set of
 functions.  Clearly the family $\sF$ is not unique.  A priori, we let $\sF$
@@ -19405,7 +19406,7 @@ if for every $x,y \in S$ and $\lambda \in [0,1]$ such that
 $(1-\lambda) x + \lambda y = x_0$ we have $x_0 = x$ or $x_0 = y$.
 A point $x_0 \in S$ is called an \emph{\myindex{exposed point}}
 if there is an affine linear function whose restriction to
-$S$ achieves a strict maximum at $x_0$, in other words if there is a
+$S$ achieves a strict maximum at $x_0$, in other words, if there is a
 supporting hyperplane which intersects $S$ at exactly one point.
 
 \begin{thm}[Straszewicz]
