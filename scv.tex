@@ -11682,17 +11682,16 @@ d\bar{z}_{\beta_1}
 \wedge
 d\bar{z}_{\beta_q} .
 \end{equation*}
-Then a differential form
+A differential form of
+\emph{\myindex{bidegree}} $(p,q)$, or
+a \emph{\myindex{$(p,q)$-form}} for short, is
 \begin{equation*}
 \eta =
 \sum_{\alpha,\beta}
 \eta_{\alpha \beta} \, dz_\alpha \wedge d\bar{z}_\beta ,
 \end{equation*}
 where the $\alpha$ and $\beta$ run over all $p$- and $q$-tuples
-as above and $\eta_{\alpha \beta}$ are smooth functions on $U$,
-is called a
-\emph{\myindex{$(p,q)$-form}} or a differential form of
-\emph{\myindex{bidegree}} $(p,q)$.
+as above and $\eta_{\alpha \beta}$ are smooth functions on $U$.
 Note that $(0,0)$-forms are simply smooth functions on $U$.
 A general $k$-form can be written as a sum of $(p,q)$-forms
 for different $p$ and $q$ where $p+q = k$.
@@ -11705,7 +11704,7 @@ Define
 \,
 \sum_{k=1}^n
 \frac{\partial \eta_{\alpha \beta}}{\partial z_k} dz_k \wedge dz_\alpha
-\wedge d\bar{z}_\beta ,
+\wedge d\bar{z}_\beta 
 \quad \text{and} \quad
 \bar{\partial} \eta \overset{\text{def}}{=}
 \sum_{\alpha,\beta}
@@ -11807,7 +11806,7 @@ This problem
 can then be stated as the cohomology condition $H^{(p,q)}(U) = 0$,
 where by $0$, we mean the trivial vector space.
 The Dolbeault cohomology is, in a sense, a refinement
-of the so-called de Rahm cohomology,
+of the so-called de Rham cohomology,
 which is the usual smooth cohomology measuring the normal topology of $U$,
 where the Dolbeault cohomology also takes into account the complex structure.
 Note that $H^{(0,0)}(U)$ is just the set of $\bar{\partial}$-closed
@@ -11877,11 +11876,11 @@ Let $r = \sabs{z}^2+\sabs{w}^2$.  Write
 \begin{equation*}
 \frac{1}{zw} = \frac{\bar{w}}{z r} - \frac{-\bar{z}}{w r} .
 \end{equation*}
-That is, the two functions on the right hand side differ by a holomorphic
+That is, the two functions on the right-hand side differ by a holomorphic
 function wherever $z$ and $w$ are both not zero and hence their
-$\bar{\partial}$'s are equal (where they are both defined).  The left hand
-term is defined when $z\not=0$ and the right hand term is defined when $w
-\not=0$.  So the following form is well-defined on $\C^2 \setminus \{ 0 \}$
+$\bar{\partial}$'s are equal (where they are both defined).  The left-hand
+term is defined when $z\not=0$ and the right-hand term is defined when $w
+\not=0$.  So the following form $\eta$ is well-defined on $\C^2 \setminus \{ 0 \}$
 \begin{equation*}
 \eta =
 \bar{\partial}
@@ -11906,10 +11905,11 @@ $\nicefrac{g}{z} = f - \nicefrac{\bar{w}}{zr}$, and so
 $\bar{\partial}\bigl(\nicefrac{g}{z}\bigr) = 0$.  Therefore, $g$ is holomorphic
 where $z\not=0$, but $g$ is, and this is really where the contradiction
 comes in, smooth on $\C^2 \setminus \{ 0 \}$ and hence satisfies the
-Cauchy--Riemann equations on $\C^2 \setminus \{ 0 \}$ and so is holomorphic.
-By Hartogs phenomenon (any version) $g$ extends to be holomorphic in $\C^2$,
-in particular, near $0$, which contradicts the fact that $g(0,w) =
-\nicefrac{-1}{w}$.
+Cauchy--Riemann equations on $\C^2 \setminus \{ 0 \}$ and so $g$ is holomorphic
+on $\C^2 \setminus \{ 0 \}$.
+By Hartogs phenomenon (any version), $g$ extends to be holomorphic in $\C^2$.
+In particular, $g$ is holomorphic near $0$,
+which contradicts the fact that $g(0,w) = \nicefrac{-1}{w}$.
 \end{example}
 
 \begin{example}
@@ -11953,7 +11953,8 @@ $H^{(0,1)}(H)$ is nontrivial.
 \begin{exercise}
 Suppose $U \subset \C^2$ is a domain such that $H^{(0,1)}(U) = 0$,
 then $U$ is a domain of holomorphy.
-Hint: Prove the contrapositive, suppose that $U$ is not a domain of
+Hint: Prove the contrapositive.
+Suppose that $U$ is not a domain of
 holomorphy and show that $H^{(0,1)}(U) \not= 0$ using the reasoning from
 the examples.
 \end{exercise}
@@ -11962,7 +11963,7 @@ the examples.
 Suppose $U \subset \C^n$ is a domain with smooth boundary,
 $0 \in \partial U$, $\{ z_1=z_2 =0\} \cap U = \emptyset$, and the Levi form
 at the origin has a negative eigenvalue.  Show that
-$H^{(0,1)}(U) = 0$.
+$H^{(0,1)}(U) \not= 0$.
 \end{exercise}
 
 \begin{exercise}
@@ -12158,7 +12159,7 @@ on $\Delta_s(w)$ such that $\bar{\partial} \omega = \eta$.
 \end{lemma}
 
 \begin{proof}
-Le $k$ be an integer such that $\eta$ only involves
+Let $k$ be an integer such that $\eta$ only involves
 $d\bar{z}_1,\ldots,d\bar{z}_k$ from the barred differentials.
 If $k=0$, then the lemma is true trivially as $q \geq 1$, so $\eta$ would
 just have to be zero.
@@ -12459,13 +12460,13 @@ If $f$ is just smooth, then finding such a smooth extension is not
 difficult no matter what $U$ looks like, however, in the holomorphic
 category it is not that easy (or even always possible).
 A holomorphic extension from an affine subspace is possible for domains of
-holomorphy, in fact, it is a defining characteristic of such domains.
+holomorphy; in fact, it is a defining characteristic of such domains.
 
 \begin{example} \label{example:noextend}
 Suppose $U = \C^2 \setminus \{ 0 \}$ and $L = \{ (z,w) \in \C^2 : w = 0 \}$.
 Then $U \cap L$ is the punctured plane.
 Let $f(z) = \nicefrac{1}{z}$ be the function on $U \cap L$.  Suppose that
-there was an $F \in \sO(U)$ whose restriction to $U \cap L$ was $f$.
+there is an $F \in \sO(U)$ whose restriction to $U \cap L$ was $f$.
 Such an $F$ extends to all of $\C^2$, and hence $f$ extends to all of $L$
 (which is just the $z$-plane), which is impossible.  Note that we proved
 that $H^{(0,1)}(U)$ is nontrivial.
@@ -12475,7 +12476,7 @@ that $H^{(0,1)}(U)$ is nontrivial.
 Suppose $U = B_2\bigl((0,1)\bigr) \subset \C^2$ and
 $L = \{ (z,w) \in \C^2 : w = 0 \}$.
 Then $U \cap L$ is a disc of radius $\sqrt{3}$ in the $z$-plane.
-Take a holomorphic $f \colon \Delta_{\sqrt{3}}(0) \to \C$ that
+Take a holomorphic $f \colon U \cap L \to \C$ (as a function of $z$) that
 does not extend past any point in the boundary of the disc.
 The obvious way to extend $f$ to an
 $F$ would be to simply take a function $F(z,w) = f(z)$, but that is not
@@ -12488,7 +12489,7 @@ as an exercise in the previous section.
 \begin{myfig}
 \subimport*{figures/}{extendingtoball.pdf_t}
 \caption{Extending $f$ from a hyperplane to the
-ball,  it is easy to extend to within the dotted lines.\label{fig:extendingtoball}}
+ball.  It is easy to extend to within the dotted lines.\label{fig:extendingtoball}}
 \end{myfig}
 \end{example}
 
@@ -12569,7 +12570,7 @@ is just the restriction of the function.
 \begin{thm}
 Suppose that $U \subset \C^n$ is open with $H^{(p,q+1)}(U) = 0$ and
 $L$ is an affine hyperplane.
-Let $\psi$ be a smooth $\bar{\partial}$-closed $(p,q)$-form on
+If $\psi$ is a smooth $\bar{\partial}$-closed $(p,q)$-form on
 $U \cap L$, then there exists a smooth $\bar{\partial}$-closed $(p,q)$-form
 $\Psi$ on $U$ such that $\Psi|_{U \cap L} = \psi$.
 \end{thm}
@@ -12596,8 +12597,8 @@ We will define
 \begin{equation*}
 \Psi(z) = \chi(z) \psi(z') + z_n \eta(z) ,
 \end{equation*}
-where $\eta$ is chosen appropriately so that $\Psi$ is
-$\bar{\partial}$-closed.  This form is defined in
+where $\eta$ will be chosen appropriately to make $\Psi$
+$\bar{\partial}$-closed.  This form $\Psi$ is defined in
 $U$ as $\chi$ is identically zero where $\psi$ is undefined.
 Clearly, if such an $\eta$ can be found,
 then $\Psi|_{U \cap L} = \psi$.
@@ -12711,7 +12712,7 @@ construction that if $H^{(0,1)}(U) = 0$ in $\C^2$, then $U$ is a domain of
 holomorphy.  We extend this result to $\C^n$.
 
 \begin{thm} \label{thm:dolhomimpliesdoh}
-Suppose $U \subset \C^n$ is domain such that $H^{(0,q)}(U) = 0$
+Suppose $U \subset \C^n$ is a domain such that $H^{(0,q)}(U) = 0$
 whenever $1 \leq q \leq n-1$.  Then $U$ is a domain of holomorphy.
 \end{thm}
 
@@ -12773,7 +12774,7 @@ holomorphy.  On the other hand, it is not sufficient to have extension
 from hyperplanes, see \exerciseref{exercise:extensionfromhypnotenough}.
 
 \begin{thm} \label{thm:extensionfromlinesmeansDOH}
-Suppose $U \subset \C^n$ is domain such that for every
+Suppose $U \subset \C^n$ is a domain such that for every
 complex line $L$ and every $f \in \sO(U \cap L)$ there
 exists an $F \in \sO(U)$ where $F|_{U \cap L} = f$.
 Then $U$ is a domain of holomorphy.
@@ -12785,14 +12786,14 @@ Prove \thmref{thm:extensionfromlinesmeansDOH}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \C^n$ is domain of holomorphy
+Suppose $U \subset \C^n$ is a domain of holomorphy
 and $L$ is an affine subspace of dimension $k$.
 Show that
 every component of $U \cap L$ is a domain of holomorphy.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \C^n$ is domain and $k \in \N$
+Suppose $U \subset \C^n$ is a domain and $k \in \N$
 is such that
 $H^{(0,q)}(U)=0$ for all $1 \leq q \leq n-k$,
 and
@@ -12893,7 +12894,7 @@ of the indices are equal.
 
 \begin{exbox}
 \begin{exercise}
-The triple sum is enough to force the similar condition on $4$ or more
+The triple sum is enough to force a similar condition on $4$ or more
 summands, but the double sum is not enough.  That is,
 \begin{exparts}
 \item
@@ -12913,7 +12914,7 @@ and similarly for any number of terms.
 To see how Cousin I relates to Mittag-Leffler, note that Mittag-Leffler
 could be stated by giving meromorphic functions locally and then trying
 to piece them together.
-Recall that meromorphic functions are locally
+Recall that a meromorphic function is locally
 a ratio of holomorphic functions.
 So suppose that we have a covering $\{ U_\iota \}$ and
 in each $U_\iota$ we have a meromorphic function $g_\iota$ such that
@@ -12985,7 +12986,7 @@ h_{12}(z,w) = \frac{1}{zw} , \quad
 h_{21}(z,w) = \frac{-1}{zw} .
 \end{equation*}
 These are holomorphic functions giving Cousin I data.
-Suppose the problem was solvable and we find
+Suppose the problem were solvable and we find
 $f_1 \in \sO(U_1)$ and
 $f_2 \in \sO(U_2)$ such that on $U_1 \cap U_2$, we have
 \begin{equation*}
@@ -13027,7 +13028,8 @@ For $z \in U_\iota$, given a $\gamma$ and hence $\kappa_\gamma$,
 either $\varphi_\gamma=0$ in some neighborhood of $z$,
 or $z \in U_{\kappa_\gamma} \cap U_\iota$.
 So each term can be interpreted as a smooth function on
-$U_\iota$, and in a neighborhood of $z$, we are adding at most finitely
+$U_\iota$, and in a neighborhood of $z$, we are adding up at most
+finitely many
 smooth functions, so $f_\iota$ is smooth in $U_\iota$.
 For $z \in U_\iota \cap U_\lambda$,
 \begin{equation*}
@@ -13136,7 +13138,8 @@ Suppose that $M \subset U$ is locally given by the vanishing of
 a single holomorphic function with a nonvanishing derivative
 (a complex
 submanifold of codimension $1$)\footnote{%
-The nonvanishing condition on the derivative is not necessary, we use it for simplicity.},
+The nonvanishing condition on the derivative is not necessary.
+We use it for simplicity.},
 that is, for every $p \in U$, there is a
 neighborhood $U_\iota$ and a holomorphic $g_\iota$ with $dg_{\iota} \not= 0$
 such that $g_\iota^{-1}(0) = M \cap U_\iota$.
@@ -13204,7 +13207,7 @@ Suppose there is a continuous function $g$ on $U$
 such that locally near every $p \in M$, if $r$ is a defining function for $M$
 (holomorphic with nonvanishing derivative),
 then $\nicefrac{r}{g}$ extends to be continuous and nonvanishing in a
-neighborhood of $p$.  Prove that there exists an $f \in \sO(M)$
+neighborhood of $p$.  Prove that there exists an $f \in \sO(U)$
 such that $f^{-1}(0) = M$ and $df \not= 0$ on $M$.
 Hint: Cover with balls $U_{\iota}$ and in each ball define
 $\log\bigl(\nicefrac{f_\iota}{g}\bigr)$, then obtain a Cousin I problem.
