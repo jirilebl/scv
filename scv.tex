@@ -13618,7 +13618,7 @@ of holomorphic functions $f \in \sO(U)$ such that
 \snorm{f}_{A^2(U)}^2 \overset{\text{def}}{=} \snorm{f}_{L^2(U)}^2
 = \int_U \sabs{f(z)}^2 dV < \infty .
 \end{equation*}
-$A^2(U)$ is
+The space $A^2(U)$ is
 an inner product space with the
 $L^2(U)$ inner product
 \glsadd{not:L2innprod}%
@@ -14029,13 +14029,13 @@ kernel where we integrate over the boundary rather than the domain itself.
 Let us give a quick overview, but let us not get into the details.
 
 Let $U \subset \C^n$ be a bounded domain with smooth boundary.  Let
-$C(\widebar{U}) \cap \sO(U)$ be the holomorphic functions in $U$
+$C(\widebar{U}) \cap \sO(U)$ be the set of holomorphic functions in $U$
 continuous up to the boundary.  The restriction of
 $f \in C(\widebar{U}) \cap \sO(U)$ to $\partial U$ is a continuous
 function,
 and hence $f|_{\partial U}$ is in $L^2(\partial U,d\sigma)$, where $d\sigma$
 is the surface measure on $\partial U$.
-Taking a closure
+Taking the closure
 of these restrictions in $L^2(\partial U)$ obtains the Hilbert space
 $H^2(\partial U)$,
 \glsadd{not:H2}%
@@ -14049,7 +14049,7 @@ d\sigma)$ inner product:
 
 \begin{exbox}
 \begin{exercise}
-Show that monomials $z^\alpha$ are a complete orthonormal system in
+Show that monomials $z^\alpha$ are a complete orthogonal system in
 $H^2(\partial \bB_n)$.
 \end{exercise}
 
@@ -14095,16 +14095,18 @@ Pf(z) = \int_{\partial U} f(\zeta) \, S_U(z,\bar{\zeta}) \, d\sigma(\zeta) .
 
 Functions in $H^2(\partial U)$ extend to $\widebar{U}$,
 so $f \in H^2(\partial U)$ may be considered a function on
-$\widebar{U}$, where values in $U$ are given by $Pf$.  Similarly, we
-extend $S(z,\bar{\zeta})$ to a function on $U \times \widebar{U}^*$ (where
-the values on the boundary are defined only almost everywhere).
+$\widebar{U}$, where values in $U$ are given by $Pf$.
+Of course, since we are extending an $L^2$ function, the values
+on the boundary are only defined almost everywhere.
+Similarly, we
+extend $S_U(z,\bar{\zeta})$ to a function on $U \times \widebar{U}^*$.
 We state without proof that if $\{ \varphi_\ell \}_{\ell\in I}$ is a complete
 orthonormal system for $H^2(\partial U)$, then
 \begin{equation} \label{eq:formulaszego}
 S_U(z,\bar{\zeta}) = \sum_{\ell \in I} \varphi_\ell(z)\overline{\varphi_\ell(\zeta)}
 \end{equation}
 for $(z,\bar{\zeta}) \in U \times U^*$, converging uniformly on compact subsets.
-As before, this formula shows that $S$ is conjugate symmetric,
+As before, this formula shows that $S_U$ is conjugate symmetric,
 and so it extends to
 $(U \times \widebar{U}^*) \cup (\widebar{U} \times U^*)$.
 
@@ -14122,7 +14124,7 @@ In other words, $S_{\D}(z,\bar{\zeta}) =
 
 \begin{exbox}
 \begin{exercise}
-Using the formula \eqref{eq:formulaszego} compute $S_{\bB_n}$.
+Using the formula \eqref{eq:formulaszego}, compute $S_{\bB_n}$.
 \end{exercise}
 \end{exbox}
 
@@ -14154,7 +14156,7 @@ smooth, holomorphic, etc.
 The set of germs of complex-valued functions forms a
 commutative ring, see exercise below to check the details.
 For example, to multiply $(f,p)$ and $(g,p)$, take two representatives
-$f$ and $g$ defined on a common neighborhood multiply them and
+$f$ and $g$ defined on a common neighborhood, multiply them, and
 then consider the germ $(fg,p)$.  Similarly, $(f,p) + (g,p)$ is
 defined as $(f+g,p)$.  It is easy to check that these operations are
 well-defined.
@@ -14163,7 +14165,7 @@ well-defined.
 \begin{exercise}
 Let $X$ be a topological space and $p \in X$.
 Let $\sF$ be a class of complex-valued functions defined on open subsets
-of such that whenever $f \colon U \to \C$ is in $\sF$ and $W \subset U$ is open,
+of $X$ such that whenever $f \colon U \to \C$ is in $\sF$ and $W \subset U$ is open,
 then $f|_W \in \sF$, and such that whenever $f$ and $g$
 are two functions in $\sF$, and $W$ is an open set where both are defined,
 then $fg|_W$ and $(f+g)|_W$ are also in $\sF$.
@@ -14200,7 +14202,7 @@ ${}_n\sO_p = \sO_p$ as the ring of germs at $p$ of holomorphic functions.
 The ring of germs $\sO_p$ has many nice properties,
 and it is generally a ``nicer'' ring than the ring $\sO(U)$ for
 some open $U$, and so it is easier to work with if we are interested
-in local properties and not the geometry of $U$.
+in local properties and not in the geometry of $U$.
 
 \begin{exbox}
 \begin{exercise}
@@ -14226,7 +14228,7 @@ Show that given a germ $(f,p) \in \sO_p$,
 there exists a fixed open neighborhood $U$
 of $p$ and a representative $f \colon U \to \C$ such that any other
 representative $g$ can be analytically continued from $p$ to a holomorphic
-function $U$.
+function on $U$.
 \item
 (easy) Given two representatives $f \colon U \to \C$
 and $g \colon V \to \C$ of a germ $(f,p) \in \sO_p$,
@@ -14235,7 +14237,7 @@ that contains $p$.  Prove that $f|_W = g|_W$.
 \item
 Find a germ $(f,p) \in \sO_p$, such that for
 every representative $f \colon U \to \C$, we can
-find another representative of $g \colon V \to \C$
+find another representative $g \colon V \to \C$
 of that same germ such that $g|_{U \cap V} \not= f|_{U \cap V}$.
 Hint: $n=1$ is sufficient.
 \end{exparts}
@@ -14291,8 +14293,8 @@ set of some representative and look at its germ at $p$.
 
 \begin{exbox}
 \begin{exercise}
-Suppose $f$ and $g$ are two representatives of a germ $(f,p)$
-show that the germs $(Z_f,p)$ and $(Z_g,p)$ are the same.
+Suppose $f$ and $g$ are two representatives of a germ $(f,p)$.
+Show that the germs $(Z_f,p)$ and $(Z_g,p)$ are the same.
 \end{exercise}
 
 \begin{exercise}
