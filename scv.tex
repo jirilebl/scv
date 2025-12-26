@@ -14365,8 +14365,8 @@ polynomial of degree $k$ is $z^k$.
 Note that for any $n$, if $k=0$, then $P = 1$.
 
 The purpose of this section is to show that every holomorphic function
-in $\sO_0$ is up to a unit
-and a possible small rotation a Weierstrass
+in $\sO_0$ is, up to a unit
+and a possible small rotation, a Weierstrass
 polynomial, which carries the zeros of $f$.
 Consequently the
 algebraic and geometric properties of
@@ -14405,7 +14405,7 @@ We will consider the zeros of
 $z_n \mapsto f(z',z_n)$ for $z' \in V'$.  See \figureref{fig:wprepdiv}.
 \begin{myfig}
 \subimport*{figures/}{wpreppoly.pdf_t}
-\caption{Setting up the neighborhood $V$, the two discs in
+\caption{Setting up the neighborhood $V$.  The two discs in
 \figureref{fig:wprepdiv} are the vertical thick black line and the
 thin dashed line.\label{fig:wpreppoly}}
 \end{myfig}
@@ -14489,7 +14489,7 @@ s_m(z') =
 \frac{1}{2\pi i}
 \int_{\partial D}
 \zeta^m
-\frac{\frac{\partial f}{\partial \zeta} (z',\zeta)}{f(z',\zeta)} ~d\zeta .
+\frac{\frac{\partial f}{\partial z_n} (z',\zeta)}{f(z',\zeta)} ~d\zeta .
 \end{equation*}
 The function $s_m$ is clearly continuous, and if we
 differentiate under the integral
@@ -14524,7 +14524,7 @@ Consider the zero set of
 $f(z_1,z_2) = z_2^2 - z_1$,
 a Weierstrass polynomial in $z_2$ of degree $k=2$.  So $z' = z_1$.
 For all $z_1$ except the origin there are two zeros, $\pm \sqrt{z_1}$.
-Call one of them $\alpha_1(z_1)$ and one of them $\alpha_2(z_1)$.  Recall
+Call one of them $\alpha_1(z_1)$ and the other $\alpha_2(z_1)$.  Recall
 there is no continuous choice of a square root that works for all $z_1$,
 so no matter how you choose, $\alpha_1$ and $\alpha_2$ will not be continuous.
 At the origin there is one zero of multiplicity two,
@@ -14841,7 +14841,7 @@ infinite degree'').
 \begin{remark}
 Despite what it looks like given our proofs,
 the preparation and division theorems are really theorems about power
-series, and they also work with formal power series, that is, power
+series.  They also hold for formal power series, that is, power
 series which do not necessarily converge.  Another standard way to prove the
 theorems is to prove the formal version and then to prove that in case we
 stick in convergent power series, the series we obtain back are also
@@ -14857,10 +14857,12 @@ come together.  We will prove shortly that the zeros come together
 only on a small set---a zero set of a certain holomorphic function
 called the discriminant.
 
-A set of zeros of a function of one variable are said to be
-\emph{\myindex{geometrically distinct}} if they are distinct
-points of $\C$.  A zero is called
-\emph{\myindex{geometrically unique}} if it is a unique complex number.
+Zeros of a function of one variable that are distinct
+points of $\C$ are said to be
+\emph{\myindex{geometrically distinct}}.
+If the set of zeros is one unique complex
+number, we say it is a
+\emph{\myindex{geometrically unique}} zero.
 For example, ${(\zeta-1)}^2$ has a geometrically unique zero at $1$, and
 ${(\zeta-1)}^2(\zeta+1)$ has two geometrically distinct zeros, $1$ and $-1$.
 

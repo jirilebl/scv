@@ -20,5 +20,8 @@ to fix erratum.
 fix erratum.
 <li>In Exercise 5.3.1, only ask for "complete orthogonal" not "orthonormal"
 to fix erratum.
+<li>In proof of Theorem 6.2.3, for consistency, write
+\(\frac{\partial f}{\partial z_n}(z',\zeta)\) rather than
+\(\frac{\partial f}{\partial \zeta}(z',\zeta) .\)
 
 See https://www.jirka.org/scv/changes.html for older changes.
