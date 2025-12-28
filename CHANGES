@@ -23,5 +23,18 @@ to fix erratum.
 <li>In proof of Theorem 6.2.3, for consistency, write
 \(\frac{\partial f}{\partial z_n}(z',\zeta)\) rather than
 \(\frac{\partial f}{\partial \zeta}(z',\zeta) .\)
+<li>Be clearer with the definitions of "geometrically distinct" and
+geometrically unique" in 6.3.
+<li>In Exercise 6.3.1, be more precise using the "geometrically distinct" and
+"geometrically unique" terminology so that it is not misread (though the
+problem has the same solution if misread).
+<li>In Exercise 6.4.2, in the more precise version specify that the ideal is
+nonzero to fix erratum.
+<li>Allow a linear change of coordinates in Exercise 6.4.4 to fix an
+erratum.
+<li>In the proof of theorem 6.4.2, argue that the \(P_1,\ldots,P_k\)
+are Weierstrass as that is needed in the fixed Exercise 6.4.7 which only
+holds for Weierstrass polynomials.
+
 
 See https://www.jirka.org/scv/changes.html for older changes.

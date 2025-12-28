@@ -14860,7 +14860,7 @@ called the discriminant.
 Zeros of a function of one variable that are distinct
 points of $\C$ are said to be
 \emph{\myindex{geometrically distinct}}.
-If the set of zeros is one unique complex
+If the set of zeros is a single complex
 number, we say it is a
 \emph{\myindex{geometrically unique}} zero.
 For example, ${(\zeta-1)}^2$ has a geometrically unique zero at $1$, and
@@ -14929,7 +14929,7 @@ f(z',z_n) = u(z',z_n) \prod_{\ell=1}^m {\bigl( z_n - \alpha_\ell(z')
 \end{equation*}
 \end{prop}
 
-Proof is left as an exercise.
+The proof is left as an exercise.
 We can only define $\alpha_1$ through $\alpha_m$ locally (on a
 smaller domain) as we cannot consistently order
 $\alpha_1$ through $\alpha_m$ as we move around
@@ -14961,10 +14961,10 @@ on $U' \times D$,
 where $f$ is zero on at least one point
 of $U' \times D$, and $f$ is never zero on
 $U' \times \partial D$.
-Suppose that for each fixed $z' \in U'$, the function
+Suppose that for each $z' \in U'$, the function
 $z_n \mapsto f(z',z_n)$
-has at most one zero in $D$.  Prove that for each $z' \in U'$,
-$z_n \mapsto f(z',z_n)$ has exactly one zero in $D$.
+has no more than one geometrically distinct zero in $D$.  Prove that for each $z' \in U'$,
+$z_n \mapsto f(z',z_n)$ has exactly one geometrically unique zero in $D$.
 Note: By \propref{prop:zerohol}, that zero is
 a holomorphic function.
 \end{exercise}
@@ -14988,7 +14988,7 @@ and
 a holomorphic function $\Delta \colon U' \to \C$, not identically zero, such
 that for every $z' \in U' \setminus E$, where $E = \Delta^{-1}(0)$,
 $z_n \mapsto f(z',z_n)$ has exactly $m$ geometrically distinct zeros in $D$,
-and $z_n \mapsto f(z',z_n)$ has strictly less than $m$ geometrically distinct
+and $z_n \mapsto f(z',z_n)$ has strictly fewer than $m$ geometrically distinct
 zeros for $z' \in E$.
 \end{thm}
 
@@ -14996,10 +14996,11 @@ The complement of a zero set of a holomorphic function is connected,
 open, and dense.
 We call $\Delta$ the \emph{\myindex{discriminant function}} and its zero set
 $E$ the \emph{\myindex{discriminant set}}.
-For the quadratic equation $a(z') z_n^2 + b(z') z_n + c(z') = 0$,
-$\Delta$ is the discriminant we learned about in high school:
-$\Delta = b^2-4ac$ (that is, this is equal to the $\Delta$
-from the theorem assuming we get at least two zeros at some $z'$).
+For the quadratic equation $a(z') z_n^2 + b(z') z_n + c(z') = 0$ (assuming
+$a$ never zero and 2 distinct zeros at some $z'$),
+$\Delta$ is, up to a unit, the discriminant we learned about in high school:
+$b^2-4ac$.  To be precise, for the $\Delta$ from the proof below,
+$-a^2 \Delta = b^2-4ac$.
 
 \begin{proof}
 The zeros of $z_n \mapsto f(z',z_n)$ are isolated, and there are finitely
@@ -15019,8 +15020,7 @@ and $\lambda$ do not intersect any zeros for $z'$ near $p'$.
 Since the set $f^{-1}(0)$ is closed and the zeros
 do not
 accumulate on $U' \times \partial D$,
-then
-for $z'$ near $p'$ the zeros stay a positive distance away from
+for $z'$ near $p'$, the zeros stay a positive distance away from
 the boundary.  So $\lambda$ can be picked to go
 around all the zeros of $z_n \mapsto f(z',z_n)$ exactly once for $z'$ near $p'$.
 
@@ -15034,7 +15034,7 @@ $z_n \mapsto f(z',z_n)$.
 Given any $p'$
 pick a $\lambda$ as above that contains all zeros
 of $z_n \mapsto f(z',z_n)$ for all $z'$ in some neighborhood of $p'$.
-The argument principle show that
+The argument principle shows that
 \begin{equation*}
 M(z') = \frac{1}{2\pi i}
 \int_{\lambda}
@@ -15055,7 +15055,7 @@ Let $U_m' \subset U'$ be the set of $z' \in U'$ for which $z_n \mapsto f(z',z_n)
 has exactly $m$ geometrically distinct zeros.
 Write $U'$ as a union of disjoint sets $U' = U_m' \cup E$, where $E = U'
 \setminus U_m'$.
-By definition of $m$, $U_m'$ is nonempty.  Suppose $p' \in U_m'$ and $\gamma$
+By the definition of $m$, $U_m'$ is nonempty.  Suppose $p' \in U_m'$ and $\gamma$
 goes around the zeros as above.  Let $\gamma_j$ be a single component curve
 of the path $\gamma$ going around one of the zeros.
 The argument principle with respect to $\gamma_j$ says that
@@ -15088,7 +15088,7 @@ In each component $\gamma_j$ of $\gamma$, there is
 at least one zero for all $z'$ near $p'$ by the same argument as above.
 The path $\lambda$ goes around all the zeros of 
 $z_n \mapsto f(z',z_n)$ for $z'$ near $p'$.
-The number of between $\lambda$ and $\gamma$ at $z'$ is
+The number of zeros between $\lambda$ and $\gamma$ at $z'$ is
 \begin{equation*}
 \frac{1}{2\pi i}
 \int_{\lambda - \gamma}
@@ -15101,7 +15101,7 @@ As $\lambda$ goes around all the zeros for $z'$ near $p'$,
 all zeros of $z_n \mapsto f(z',z_n)$
 lie inside $\gamma$ for $z'$ near $p'$.
 There exist such $z' \in U_m'$ arbitrarily near $p'$,
-in which case, by pidgeonhole principle, some
+in which case, by pigeonhole principle, some
 component $\gamma_j$ contains at least two geometrically distinct zeros of
 $z_n \mapsto f(z',z_n)$.
 Let $\{ z'_\ell \}$
@@ -15112,7 +15112,7 @@ where
 $z_n \mapsto f(z'_\ell,z_n)$ has at least two distinct zeros in $\gamma_j$ for every $z'_\ell$.
 Label the two distinct zeros
 as $\alpha_1(z'_\ell)$ and $\alpha_2(z'_\ell)$.
-At $p'$ there is only a single (geometrically) zero in $\gamma_j$, let
+At $p'$ there is only a geometrically unique zero in $\gamma_j$, let
 us name it $\alpha_1(p')$.
 As $f^{-1}(0)$ is closed,
 $\alpha_1(z'_\ell)$ and $\alpha_2(z'_\ell)$ both approach $\alpha_1(p')$ as
@@ -15175,7 +15175,7 @@ that misses the discriminant.
 
 Given a commutative ring $R$,
 an \emph{\myindex{ideal}} $I \subset R$ is
-a subset such that firstly, $f g \in I$ whenever $f \in R$ and $g \in I$,
+a nonempty subset such that firstly, $f g \in I$ whenever $f \in R$ and $g \in I$,
 and secondly, $g+h \in I$ whenever $g,h \in I$.
 An intersection of ideals is again an ideal, and hence it makes sense to
 talk about the smallest ideal containing a set of elements.
@@ -15193,8 +15193,8 @@ we often identify a representative
 with the germ when the context is clear.
 So by abuse of notation, we may write
 $f \in \sO_p$ instead of $(f,p) \in \sO_p$ and
-$(f_1,\ldots,f_k)$ instead of $\bigl((f_1,p),\ldots,(f_k,p)\bigr)$.
-As in the following exercises.
+$(f_1,\ldots,f_k)$ instead of $\bigl((f_1,p),\ldots,(f_k,p)\bigr)$,
+as in the following exercises.
 
 \begin{exbox}
 \begin{exercise}
@@ -15220,12 +15220,13 @@ $I \subset \mathfrak{m}_p$, that is, $\mathfrak{m}_p$ is a \emph{\myindex{maxima
 Suppose $n=1$.  Show that ${}_1\sO_p$ is a
 \emph{\myindex{principal ideal domain}}\index{PID} (PID)\@,
 that is, every ideal is a principal ideal.
-More precisely, show that given an ideal $I \subset {}_1 \sO_p$, then there
+More precisely, show that given an ideal $I \subset {}_1 \sO_p$, $I \not= \{
+0 \}$, there
 exists a $k=0,1,2,\ldots$, such that $I = \bigl( (z-p)^k \bigr)$.
 \end{exercise}
 
 \begin{exercise}\label{exercise:biholringiso}
-If $U,V \subset \C^n$ are two neighborhoods of $p$
+Suppose $U,V \subset \C^n$ are two neighborhoods of $p$
 and $h \colon U \to V$ is a biholomorphism.  First
 prove that it makes sense to talk about $f \circ h$
 for any $(f,p) \in \sO_p$.  Then
@@ -15239,7 +15240,7 @@ That is, for every ideal $I \subset R$
 there exist finitely many generators $f_1,\ldots,f_k \in I$:
 Every $g \in I$ can be written as $g = c_1 f_1 + \cdots + c_k f_k$,
 for some $c_1,\ldots,c_k \in R$.
-In an exercise, you proved ${}_1\sO_p$ is a PID\@.
+In an exercise above, you proved ${}_1\sO_p$ is a PID\@.
 So ${}_1\sO_p$ is Noetherian.  In higher dimensions, the ring of germs may not
 be a PID\@, but it is Noetherian.
 
@@ -15290,7 +15291,8 @@ $h_1,\ldots,h_k$ also generate $I$ in ${}_n \sO_0$.
 
 \begin{exbox}
 \begin{exercise}
-Prove that every proper ideal $I \subset \sO_0$ where $I \not= \{ 0 \}$
+Prove that after possibly a linear change of coordinates,
+every proper ideal $I \subset \sO_0$ where $I \not= \{ 0 \}$
 is generated by Weierstrass polynomials.  As a technicality,
 note that a
 Weierstrass polynomial of degree $0$ is just $1$, so it works for $I = \sO_0$.
@@ -15309,7 +15311,7 @@ either $g$ or $h$ is a unit.
 
 \begin{thm}
 $\sO_p$ is a \emph{\myindex{unique factorization domain}}\index{UFD}
-(UFD)\@.  That is, up to a
+(UFD)\@.  That is, up to
 multiplication by a unit, every nonzero nonunit has a unique factorization into
 irreducible elements of $\sO_p$.
 \end{thm}
@@ -15326,7 +15328,11 @@ $f = qP$, for $q$ a unit in ${}_n\sO_0$,
 and $P$ a Weierstrass polynomial in $z_n$.
 As ${}_{n-1}\sO_0[z_n]$ is a UFD\@, $P$ has a unique
 factorization in ${}_{n-1}\sO_0[z_n]$ into $P = P_1 P_2 \cdots P_k$.
-So $f = q P_1 P_2 \cdots P_k$.  That $P_\ell$ are irreducible
+So $f = q P_1 P_2 \cdots P_k$.
+We choose $P_1,\ldots,P_k$ to be monic.
+As $P$ has a geometrically unique zero at $z'=0$, $P_1,\ldots,P_k$
+do as well, and so they are Weierstrass polynomials.
+That $P_\ell$ are irreducible
 in ${}_n\sO_0$ is left as an exercise.
 
 Suppose $f = \tilde{q} g_1 g_2 \cdots g_m$ is another factorization.
@@ -15334,7 +15340,7 @@ The preparation theorem applies to each $g_\ell$.  Therefore, write
 $g_\ell = u_\ell \widetilde{P}_\ell$ for a unit $u_\ell$ and a Weierstrass polynomial
 $\widetilde{P}_\ell$.  We obtain
 $f = u \widetilde{P}_1 \widetilde{P}_2 \cdots \widetilde{P}_m$ for a unit $u$.  By
-uniqueness part of the preparation theorem we obtain
+the uniqueness part of the preparation theorem we obtain
 $P = \widetilde{P}_1 \widetilde{P}_2 \cdots \widetilde{P}_m$.
 The conclusion is obtained by noting that
 ${}_{n-1}\sO_0[z_n]$ is a UFD\@.
@@ -15346,8 +15352,8 @@ Prove that ${}_1\sO_p$ is a UFD\@.
 \end{exercise}
 
 \begin{exercise}
-Show that an irreducible element of
-${}_{n-1}\sO_0[z_n]$, is irreducible in
+Show that an irreducible Weierstrass polynomial in
+${}_{n-1}\sO_0[z_n]$ is irreducible in
 ${}_{n}\sO_0$.
 \end{exercise}
 \end{exbox}
