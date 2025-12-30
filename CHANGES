@@ -35,6 +35,13 @@ erratum.
 <li>In the proof of theorem 6.4.2, argue that the \(P_1,\ldots,P_k\)
 are Weierstrass as that is needed in the fixed Exercise 6.4.7 which only
 holds for Weierstrass polynomials.
+<li>In Example 6.5.6, when we refer to the pictures be more precise
+by saying that the plots are of \(C \cap {\mathbb{R}}^2\) and 
+\(X \cap {\mathbb{R}}^2 .\)
+<li>Slightly rephrase the definition of dimension at a point, Definition
+6.5.7.
+<li>Slightly reword the proof of Lemma 6.5.10.
+
 
 
 See https://www.jirka.org/scv/changes.html for older changes.

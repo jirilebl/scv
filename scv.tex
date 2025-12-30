@@ -15417,7 +15417,7 @@ functions.  Clearly the family $\sF$ is not unique.  A priori, we let $\sF$
 be infinite, but let us note why it would be sufficient
 to restrict to finite families $\sF$.
 
-We work with germs of functions.  Recall, that when $(f,p)$ is a germ of a function
+We work with germs of functions.  Recall that when $(f,p)$ is a germ of a function
 the germ $(Z_f,p)$ is the germ of the zero set of some representative.
 Let
 \glsadd{not:idealfromset}%
@@ -15446,7 +15446,7 @@ element of $I$ vanishes on the points where all the generators vanish.
 Suppose representatives $f_1,\ldots,f_k$ of the generators are defined
 in some neighborhood $W$ of $p$,
 and a germ $(g,p) \in I$ has a representative $g$ defined in $W$
-such that $g = c_1 f_1 + \cdots + c_k f_k$, where $c_k$ are also holomorphic
+such that $g = c_1 f_1 + \cdots + c_k f_k$, where $c_j$ are also holomorphic
 functions on $W$.  If $q \in Z_{f_1} \cap \cdots \cap Z_{f_k}$,
 then $g(q) = 0$.  Thus,
 $Z_{f_1} \cap \cdots \cap Z_{f_k} \subset Z_g$, or in terms of germs,
@@ -15600,11 +15600,11 @@ An isolated point of $X$ is automatically a regular point of
 dimension~$0$.
 Sometimes the empty set is considered a complex manifold of dimension $-1$ (or
 $-\infty$).
-Although it may not perhaps be immediately clear, but it is not
+Although it may not perhaps be immediately clear, it is not
 difficult to show that the definition 
 of a regular point is invariant under biholomorphic changes of coordinates
 (\exerciseref{exercise:regularbiholomorphic}).
-Finally, we remark is that dimension is well-defined
+Finally, we remark that dimension is well-defined
 (\exerciseref{exercise:regdimwelldef}).
 
 \begin{example}
@@ -15625,7 +15625,7 @@ so $C_{\mathit{reg}} = C \setminus \{0\}$, and so $C_{\mathit{sing}} = \{ 0
 \}$.
 The dimension at every regular point is $1$.
 See \figureref{fig:cuspintersect} for a
-plot of $C$ in two real dimensions.
+plot of $C \cap \R^2$.
 
 Another type of singularity could be where two complex manifolds
 intersect.  For example, $X = \{ z \in \C^2 : z_1^2-z_2^2 = 0 \}$
@@ -15633,7 +15633,7 @@ is the union of the two complex manifolds of dimension 1 given by $z_1+z_2=0$ an
 $z_1-z_2=0$.  In this case $X_{\mathit{sing}} = \{ 0 \}$ and
 $X_{\mathit{reg}} = X \setminus \{ 0 \}$.
 See \figureref{fig:cuspintersect} for a
-plot of $X$ in two real dimensions.
+plot of $X \cap \R^2$.
 
 \begin{myfig}
 \medskip
@@ -15686,8 +15686,8 @@ X$ be a point.  We define the (complex)
 \glsadd{not:dimpX}%
 \begin{equation*}
 \dim_p X \overset{\text{def}}{=}
-\max \bigl\{ k \in \N_0 : \text{ $\forall$ neighbhds.
-$W$ of $p$, $\exists \, q \in W \cap X_{\mathit{reg}}$ with $\dim_q X = k$}
+\max \bigl\{ k \in \N_0 : \text{ $\forall$ open
+$W \ni p$, $\exists \, q \in W \cap X_{\mathit{reg}}$ with $\dim_q X = k$}
 \bigr\} .
 \end{equation*}
 If $(X,p)$ is a germ and $X$ a representative,
@@ -15745,11 +15745,12 @@ We will induct on dimension.  For $n=1$,
 the only subvarieties are either isolated points or entire components of
 $U$, so all points are regular.
 Suppose the lemma is true in dimension $n-1$.
-It is enough to find a regular point in some neighborhood of some point
-$p \in X$.
-Suppose $p = 0$ for simplicity.
+It is enough to find one regular point on $X$ as 
+that means there is a regular point on
+any neighborhood of any point of $X$.
+Suppose $0 \in X$ for simplicity.
 Either $X$ contains a whole neighborhood of $0$, in which case
-$0$ is a regular point, or there is some holomorphic function
+$0$ is a regular point, or there is some nontrivil holomorphic function
 $f$ near $0$ that vanishes on $X$.
 After a small linear change of coordinates, the
 Weierstrass preparation theorem applies and we can assume that $f$ is a
@@ -15763,8 +15764,8 @@ on $V$, suppose that $\Delta(q) \not= 0$ for some $q \in X \cap V$.
 Then there is some
 neighborhood $W$ of $q$, such that $Z_f \cap W$ is a
 graph of a holomorphic function and $X \cap W \subset Z_f \cap W$.
-By a local biholomorphic change of variables, we make $W$ an open
-subset of $\C^{n-1} \times \{ 0 \}$, so $X \cap W$ is really contained in
+After a local biholomorphic change of variables, we can assume that
+$Z_f \cap W$ an open subset of $\C^{n-1} \times \{ 0 \}$, so $X \cap W$ is really contained in
 $\C^{n-1}$ and we apply induction.
 
 So suppose $\Delta$ vanishes on $X$.  Note that
