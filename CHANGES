@@ -41,6 +41,11 @@ by saying that the plots are of \(C \cap {\mathbb{R}}^2\) and
 <li>Slightly rephrase the definition of dimension at a point, Definition
 6.5.7.
 <li>Slightly reword the proof of Lemma 6.5.10.
+<li>In Exercise 6.7.5, use \(\xi\) instead of \(z\) for the parameter.
+<li>In Theorem 6.7.6, explicitly state that \(g\) is
+\({\mathbb{C}}^{n-1}\)-valued.
+<li>Change Exercise 6.7.6 to fix an erratum.
+<li>Fix erratum in Exercise 6.8.4.
 
 
 

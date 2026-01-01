@@ -16306,7 +16306,7 @@ $(X_1,p) \cup \ldots \cup (X_k,p) = (X,p)$ and such that $(X_m,p)
 \end{prop}
 
 \begin{proof}
-Suppose $(X,p)$ is reducible:
+Suppose $(X,p)$ is reducible.
 Find $(Y_1,p)$ and $(Y_1,p)$ such that $(Y_1,p) \not\subset (Y_2,p)$,
 $(Y_2,p) \not\subset (Y_1,p)$, and
 $(Y_1,p) \cup (Y_2,p) = (X,p)$.
@@ -16320,8 +16320,8 @@ have an infinite ascending chain of ideals since $\sO_p$ is Noetherian.
 
 These $(X_1,p),\ldots,(X_k,p)$ are the
 \emph{\myindex{irreducible components}}.
-We omit the proof in general
-that they are unique.
+We omit the proof
+that they are unique in general.
 For a germ of a hypervariety,
 the UFD property of ${}_{n}\sO_p$ gives the irreducible
 components.  You found this factorization in an exercise above,
@@ -16376,7 +16376,7 @@ We saw that hypersurfaces are the simpler cases of
 subvarieties.  At the other end of the spectrum,
 subvarieties of dimension $1$ are also reasonably simple for different reasons.
 Locally, subvarieties of dimension $1$ are analytic discs.
-Moreover, these disccs can be chosen to be one-to-one,
+Moreover, these discs can be chosen to be one-to-one,
 and so such subvarieties have a natural topological manifold structure
 even at singular points.
 
@@ -16402,7 +16402,8 @@ is a holomorphic map such that
 $f(z,w) = 0$ defines a one-dimensional subvariety $X$ of $U$,
 $0 \in X$,
 and $w \mapsto f(0,w)$ has an isolated zero at the origin.
-Then there exists an integer $k$ and a holomorphic function $g$ defined near
+Then there exists an integer $k$ and a holomorphic $\C^{n-1}$-valued $g$
+defined near
 the origin in $\C$ such that
 for all $\xi$ near the origin
 \begin{equation*}
@@ -16466,7 +16467,7 @@ Consider an irreducible germ
 $(X,0) \subset (\C^2,0)$ defined
 by an irreducible Weierstrass polynomial $f(z,w) = 0$ (polynomial in $w$)
 of degree $k$.  Prove there exists a holomorphic $g$ such that
-$f\bigl(z^k,g(z)\bigr) = 0$ and $z \mapsto \bigl(z^k,g(z)\bigr)$
+$f\bigl(\xi^k,g(\xi)\bigr) = 0$ and $\xi \mapsto \bigl(\xi^k,g(\xi)\bigr)$
 is one-to-one and onto a neighborhood of $0$ in $X$.
 \end{exercise}
 
@@ -16476,10 +16477,11 @@ Show that after a possible linear change of coordinates,
 there are natural numbers
 $d_1,\ldots,d_k$
 and
-holomorphic functions $c_1(z),\ldots,c_k(z)$ vanishing at $0$,
+holomorphic functions $c_1(\xi),\ldots,c_k(\xi)$ vanishing at $0$,
 such that $X$ is given near $0$ by
 \begin{equation*}
-\prod_{\ell=1}^k {\bigl( w^{d_\ell} - c_\ell(z) \bigr)} = 0.
+\prod_{\ell=1}^k \prod_{m=0}^{d_\ell-1}
+{\Bigl( w - c_\ell\bigl(e^{m 2\pi i/d_\ell} z^{1/d_\ell}\bigr) \Bigr)} = 0.
 \end{equation*}
 \end{exercise}
 
@@ -16503,7 +16505,7 @@ q$.
 
 \begin{exercise}
 Suppose $X \subset U$ is a subvariety of a domain $U \subset \C^n$.
-Show that $X$ is irreducble
+Show that $X$ is irreducible
 if and only if
 for every pair of points $p,q \in X$ there exists a finite sequence
 of points $p_0 = p, p_1, \ldots, p_k = q$ in $X$, and a finite sequence of analytic discs
@@ -16522,9 +16524,10 @@ at some point $p \in X$, then the restriction $f|_X$ is constant.
 \end{exercise}
 
 \begin{exercise}
-Prove that an analytic disc (namely the image of the disc) in $\C^2$
-is a one-dimensional local variety (that is, a subvariety of some
-open subset of $\C^2$).
+Prove that an analytic disc in $\C^2$ is locally a one-dimensional local
+variety in the following sense:  If $f \colon \D \to \C^2$ is nonconstant
+and holomorphic and $p \in \D$, then there is some neighbourhood $\Delta$
+of $p$ so that $f(\Delta)$ is a one-dimensional local variety.
 \end{exercise}
 \end{exbox}
 
@@ -16701,7 +16704,7 @@ real-analytic function that complexifies to
 $U \times U^*$.  Show that
 $r(z,\bar{\zeta}) = 0$
 if and only if
-$r(w,\bar{\zeta}) = 0$.  In other words,
+$r(\zeta,\bar{z}) = 0$.  In other words,
 $z \in \Sigma_{\zeta}(U,r)$ if and only if
 $\zeta \in \Sigma_z(U,r)$.
 \end{exercise}
