@@ -400,7 +400,7 @@ Typeset in \LaTeX.
 \bigskip
 
 \noindent
-Copyright \copyright 2014--2025 Ji{\v r}\'i Lebl
+Copyright \copyright 2014--2026 Ji{\v r}\'i Lebl
 
 %PRINT
 % not for the coil version
@@ -823,7 +823,7 @@ parts are zero.  In other words, %if and only if
 \begin{equation*}
 \frac{\partial u}{\partial x}
 - \frac{\partial v}{\partial y}
-= 0,
+= 0
 \qquad
 \text{and}
 \qquad
@@ -1135,7 +1135,7 @@ then
 }
 \leq
 M
-{\left(\frac{\abs{z-a}}{\rho}\right)}^k,
+{\left(\frac{\abs{z-a}}{\rho}\right)}^k
 \qquad \text{and} \qquad
 \frac{\abs{z-a}}{\rho} < 1 .
 \end{equation*}
@@ -5498,9 +5498,9 @@ As before, define the tangent bundles
 \begin{equation*}
 \C T\C^n,
 \quad
-T^{(1,0)} \C^n,
+T^{(1,0)} \C^n ,
 \quad \text{and} \quad
-T^{(0,1)} \C^n ,
+T^{(0,1)} \C^n
 \end{equation*}
 by taking the disjoint unions.
 One can also define vector fields in these bundles.
@@ -5542,8 +5542,8 @@ T_p^{(1,0)} M \oplus T_p^{(0,1)} M \oplus B_p ,
 where
 \begin{equation*}
 T_p^{(1,0)} M \overset{\text{def}}{=} \bigl( \C T_pM \bigr) \cap
-\bigl( T_p^{(1,0)} \C^n \bigr),  \quad \text{and}
-\quad
+\bigl( T_p^{(1,0)} \C^n \bigr)
+\quad \text{and} \quad
 T_p^{(0,1)} M \overset{\text{def}}{=} \bigl( \C T_pM \bigr) \cap
 \bigl( T_p^{(0,1)} \C^n \bigr) .
 \end{equation*}
@@ -16944,7 +16944,7 @@ $\N = \{ 1,2,3, \ldots \}$ for
 the natural numbers,
 $\N_0 = \{ 0,1,2,3, \ldots \}$ for the zero-based natural numbers,
 and $\Z$ for all integers.
-When we write $\C^n$ or $\R^n$ we implicitly mean that $n \geq 1$, unless
+When we write $\C^n$ or $\R^n$, we implicitly mean that $n \geq 1$, unless
 otherwise stated.
 
 \glsadd{not:setminus}%
@@ -16958,12 +16958,12 @@ Topological closure of a set $S$ is denoted by $\widebar{S}$, its
 boundary is denoted by
 \glsadd{not:boundary}%
 $\partial S$.  If $S$ is a relatively compact subset of $X$
-(its closure in $X$ is compact) or compact, we write $S \subset \subset X$.
+(its closure in $X$ is compact), we write $S \subset \subset X$.
 
 \glsadd{not:function}%
-A function with domain $X$ and codomain $Y$ we denote by
-$f \colon X \to Y$.  The direct image of $S$ by if is $f(S)$.
-The notation $f^{-1}$ for the inverse image of sets and
+We denote a function with domain $X$ and codomain $Y$ by
+$f \colon X \to Y$.  The direct image of $S$ by $f$ is $f(S)$.
+We write $f^{-1}$ for the inverse image of sets and
 single points.  When $f$ is bijective (one-to-one and onto),
 we use $f^{-1}$ for the inverse mapping.  So $f^{-1}(T)$ for
 a set $T \subset Y$ denotes the points of $X$ that $f$ maps to $T$.
@@ -16972,10 +16972,8 @@ but if the mapping is bijective, then it means the unique point
 mapping to $q$.
 To define a function without giving it a name, we use
 \glsadd{not:mapsto}%
-\begin{equation*}
-x \mapsto F(x),
-\end{equation*}
-where $F(x)$ would generally be some formula giving the output.
+$x \mapsto F(x)$,
+where $F(x)$ is some formula giving the output.
 The notation
 \glsadd{not:restriction}%
 $f|_S$
@@ -16985,29 +16983,30 @@ $f|_S \colon S \to Y$ such that $f|_S(x) = f(x)$ for all $x \in S$.
 A function $f \colon U \to \C$ is
 \emph{\myindex{compactly supported}} if
 the \emph{\myindex{support}}, that is the set
-$\overline{\{ p \in U : f(p) \not= 0 \}}$, is compact.
+$\overline{\{ p \in U : f(p) \not= 0 \}}$ (closure in $U$), is compact.
 If $f(x) = g(x)$ for all $x$ in the domain,
 we write
 \glsadd{not:identeq}%
-\begin{equation*}
-f \equiv g ,
-\end{equation*}
+%\begin{equation*}
+$f \equiv g$,
+%\end{equation*}
 and we say that $f$ and $g$ are identically equal.
 The notation
 \glsadd{not:composition}%
-\begin{equation*}
-f \circ g
-\end{equation*}
+%\begin{equation*}
+$f \circ g$
+%\end{equation*}
 denotes the composition defined by $x \mapsto
 f\bigl(g(x)\bigr)$.
 
 To define $X$ to be $Y$ rather than just show equality, we write
 \glsadd{not:definition}%
-\begin{equation*}
+%\begin{equation*}
+$
 X
 \overset{\text{def}}{=}
-Y .
-\end{equation*}
+Y$.
+%\end{equation*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17076,7 +17075,7 @@ i \, \Bigl( f\bigl(x+i\, y\bigr) - g\bigl(x+i\, y\bigr) \Bigr) \, dy
 \Bigl(
 f\bigl(\gamma(t)\bigr) \gamma'(t)
 +
-f\bigl(\gamma(t)\bigr) \overline{\gamma'(t)}
+g\bigl(\gamma(t)\bigr) \overline{\gamma'(t)}
 \Bigr) \, dt
 \\
 & =
@@ -17162,7 +17161,7 @@ d \zeta .
 By the \emph{\myindex{Jordan curve theorem}}, a simple closed path
 divides the plane into two components, one bounded and one unbounded.
 The bounded component is called the \emph{\myindex{interior}} of $\gamma$,
-and the unbounded component, called the \emph{\myindex{exterior}}.
+and the unbounded component is called the \emph{\myindex{exterior}}.
 It can be shown that for a piecewise-$C^1$ path $\gamma$,
 $n(\gamma;p) = \pm 1$ for $p$ in the interior of
 $\gamma$ and $n(\gamma;p) = 0$ for $p$ in the exterior of $\gamma$.
@@ -17178,7 +17177,7 @@ for $p \in U$ and $n(\partial U;p) = 0$ for $p \in \C \setminus \widebar{U}$.
 One way to get at the Cauchy integral formula is via Green's theorem,
 which is the Stokes' theorem
 in two dimensions.  In the versions we state, one needs to
-approximate the open set by smaller open sets from the inside to insure
+approximate the open set by smaller open sets from the inside to ensure
 the partial derivatives are bounded.  See
 \thmref{thm:generalizedcauchy}.  Let us state Green's theorem using
 the $dz$ and $d\bar{z}$ for completeness.  See \appendixref{ap:diffforms}
@@ -17297,7 +17296,7 @@ is the maximum of $\sabs{f}$ on the circle $\partial \Delta_r(p)$, then
 Conversely, if a power series satisfies such estimates,
 it converges on $\Delta_r(p)$.
 
-A holomorphic $f \colon \C \to \C$ that is
+A holomorphic $f \colon \C \to \C$ is said to be
 \emph{\myindex{entire}}.  An immediate application of Cauchy estimates
 is Liouville's theorem:
 
@@ -17374,7 +17373,7 @@ achieves a local maximum in $U$, then $f$ is constant.
 If $U$ is bounded and $f \colon \widebar{U} \to \C$ is holomorphic in $U$
 and continuous, then $\sabs{f}$ achieves its maximum on $\partial U$.
 \item
-If $f \colon U \to \R$ is harmonic
+If $f \colon U \to \R$ is harmonic and
 achieves a local maximum or a minimum in $U$, then $f$ is constant.
 \item
 If $U$ is bounded and $f \colon \widebar{U} \to \R$ is harmonic in $U$
@@ -17435,7 +17434,7 @@ If $f \colon U \to V$ is holomorphic and bijective (one-to-one and onto),
 then $f'(z) \not= 0$ for all $z \in V$, and $f^{-1} \colon V \to U$
 is holomorphic.  If $f(p) = q$, then
 \begin{equation*}
-\left(f^{-1}\right)(q) = \frac{1}{f'(p)} .
+\left(f^{-1}\right)'(q) = \frac{1}{f'(p)} .
 \end{equation*}
 \item
 If $f \colon U \to V$ is holomorphic, $f(p) = q$,
@@ -17626,7 +17625,7 @@ The singularity at $p$ is
 \item \emph{removable} if $c_k = 0$ for all $k < 0$.
 \item \emph{pole} of order $\ell \in \N$ if $c_k = 0$ for all $k < -\ell$ and $c_{-\ell}
 \not= 0$.
-\item \emph{essential} if for every exist infinitely negative $k$
+\item \emph{essential} if there exist infinitely many negative $k$
 such that $c_k \not= 0$.
 \end{enumerate}
 \end{prop}
@@ -17636,8 +17635,7 @@ Suppose that $f$ has an isolated singularity at $p$.
 The part of the series for negative $k$,
 that is, 
 $\sum_{k=-\infty}^{-1} c_k {(z-p)}^k$,
-is called the
-the \emph{\myindex{principal part}}.
+is called the \emph{\myindex{principal part}}.
 The singularity is removable if the principal part is zero, it is a pole if
 the principal part is a finite sum, and essential if the 
 principal part is an infinite series.
@@ -17681,7 +17679,7 @@ The identity theorem says that zeros of a nonconstant holomorphic $f$
 have no limit points; they are isolated points.
 Since $\frac{1}{f}$ is a meromorphic
 function with zeros at the poles of $f$, poles are also
-isolated.  Zeros and poles of  can be counted fairly easily.
+isolated.  Zeros and poles can be counted fairly easily.
 
 \begin{thm}[Argument principle]\index{argument principle}\label{thm:onevarargprinc}
 Suppose $U \subset \C$ is an open set, and $\gamma$ is a piecewise-$C^1$
@@ -17720,7 +17718,7 @@ the hypothesis on $\gamma$ could be replaced with the requirement that
 the interior of $\gamma$ lies in $U$.
 The proof is an immediate application of the residue theorem.  Simply
 compute the residues at the zeros and poles of $f$.  In particular,
-if $f$ has a zero at $p$ or multiplicity $m$, then $h(z) \frac{f'(z)}{f(z)}$
+if $f$ has a zero at $p$ of multiplicity $m$, then $h(z) \frac{f'(z)}{f(z)}$
 has a simple pole
 at $p$ with residue $m\, h(p)$.  Similarly, if $f$ has a pole at $p$ of
 order $m$,
@@ -17743,8 +17741,8 @@ have the same number of zeros
 inside $\gamma$ (up to multiplicity).
 \end{thm}
 
-In the classical statement of the theorem the weaker
-inequality $\sabs{f(z)-g(z)} < \sabs{f(z)}$ is used.
+In the classical (weaker) statement of the theorem uses the
+the stronger inequality $\sabs{f(z)-g(z)} < \sabs{f(z)}$.
 Notice that either inequality precludes any zeros on $\gamma$ itself.
 
 A holomorphic function with an essential singularity achieves essentially
@@ -17768,7 +17766,7 @@ and the function is never $0$.
 Since we stated the big theorem, let us also state the little theorem.
 
 \begin{thm}[Picard's little theorem]\index{Picard's little theorem}
-If $f \colon \C \to \C$ is holomorphic,
+If $f \colon \C \to \C$ is holomorphic and nonconstant,
 then
 $f(\C)$ is either $\C$ or $\C$ minus a point.
 \end{thm}
@@ -18005,8 +18003,8 @@ which are just too interesting not to mention.
 Differential forms come up quite a bit in this book, especially
 in \chapterref{ch:dbar} and \chapterref{ch:integralkernels}.
 Let us overview their definition
-and state the general Stokes' theorem.  No proofs are given, this appendix
-is just a bare bones guide.
+and state the general Stokes' theorem.  No proofs are given; this appendix
+is just a bare-bones guide.
 For a more complete introduction to differential forms,
 see Rudin~\cite{Rudin:principles}.
 
@@ -18082,7 +18080,7 @@ the image $\varphi(U)$.
 an interior and a boundary point of a submanifold.\label{fig:maif-bound}}
 \end{myfig}
 
-Completely correctly, we should say \emph{submanifold of $\R^k$}.
+Completely correctly, we should say \emph{submanifold of $\R^n$}.
 Sometimes people (including me)
 say \emph{\myindex{manifold}} when they mean \emph{submanifold}.
 A manifold is a more abstract concept, but
@@ -18108,11 +18106,11 @@ it easy to evaluate integrals in the same way that parametrizing curves
 makes it easy to evaluate integrals.
 
 Examples of such submanifolds are domains with smooth boundaries
-as in \defnref{def:hypersurface}, we can take the inclusion map $x \mapsto
+as in \defnref{def:hypersurface}; we can take the inclusion map $x \mapsto
 x$ as our parametrization.  The domain is then the submanifold $M$
 and $\partial M$ is the boundary of the domain.
 Domains are the key application for our purposes.
-Another example are smooth curves.
+Another example is a smooth curve.
 
 If $M$ is an embedded submanifold-with-boundary
 of dimension $k$, then $\partial M$ is also an embedded submanifold of dimension
@@ -18451,7 +18449,7 @@ and the sum is finite.
 
 The only nontrivial differential forms on $\R^n$
 are $0,1,2,\ldots,n$ forms.  The only $n$-forms are
-object of the form
+of the form
 \begin{equation*}
 f(x) \,
 dx_1 \wedge dx_2 \wedge \cdots \wedge dx_n .
@@ -18489,7 +18487,7 @@ measure zero.
 \end{example}
 
 \begin{example}
-Consider a domain $U \subset \R^n$, then $U$ is an oriented submanifold.
+A domain $U \subset \R^n$ is an oriented submanifold.
 We use the parametrization $\varphi \colon U \to U$, where $\varphi(x) =
 x$.  Then
 \begin{equation*}
@@ -18505,7 +18503,7 @@ where $dV$ is the standard volume measure.
 \begin{example}
 Finally, consider $M$
 the upper hemisphere of the unit sphere $S^2 \subset \R^3$ as a submanifold
-with boundary.  That is consider
+with boundary.  That is, consider
 \begin{equation*}
 M = \bigl\{ x \in \R^3 : x_1^2+x_2^2+x_3^2=1, x_3 \geq 0 \bigr\} .
 \end{equation*}
@@ -18525,7 +18523,7 @@ a rotation this is a subset of a half-plane with the points corresponding to
 $\psi = \nicefrac{\pi}{2}$ corresponding to boundary points.  We miss the
 points where $\theta = \pi$, including the point $(0,0,1)$, but the set of
 those points is a $1$-dimensional curve, and so a set of $2$-dimensional
-measure zero. For the purposes of integration we can ignore it.
+measure zero. For the purposes of integration, we can ignore it.
 Let
 \begin{equation*}
 \omega(x_1,x_2,x_3) =
@@ -18772,34 +18770,41 @@ Consider the $(n-1)$-form
 dx_1 \wedge \cdots \wedge dx_{k-1} \wedge dx_{k+1} \wedge \cdots \wedge dx_n
 .
 \end{equation*}
-Then $d\omega = \frac{\partial f}{\partial x_k} dx_1 \wedge \cdots \wedge
+Then $d\omega = {(-1)}^{k-1} \frac{\partial f}{\partial x_k} dx_1 \wedge \cdots \wedge
 dx_n$.
 By the fundamental theorem of
 calculus,
 \begin{equation*}
 \begin{split}
 \int_U d\omega &=
-\int_U \frac{\partial f}{\partial x_k} \, dV_n
+\int_U {(-1)}^{k-1} \frac{\partial f}{\partial x_k} \, dV_n
 \\
 & =
+{(-1)}^{k-1}
 \int_{\pi_k(U)}
 \int_{\alpha_k(x')}^{\beta_k(x')}
 \frac{\partial f}{\partial x_k} \, dx_k \, dV_{n-1}
 \\
 & =
+{(-1)}^{k-1}
+\left(
 \int_{\pi_k(U)}
 f(x_1,\ldots,x_{k-1}, \beta_k(x'), x_{k+1}, \ldots, x_n)
 \,dV_{n-1}
+\right.
 \\
-& \phantom{=xxx}
+& \phantom{={(-1)}^{k-1}x}
+\left.
 -
 \int_{\pi_k(U)}
 f(x_1,\ldots,x_{k-1}, \alpha_k(x'), x_{k+1}, \ldots, x_n)
 \,dV_{n-1}
+\right)
 =
 \int_{\partial U} \omega .
 \end{split}
 \end{equation*}
+The $(-1)^{k-1}$ disappears due to orientation on $\partial U$.
 Any $(n-1)$-form can be written as a sum of forms like $\omega$ for various
 $k$.  Integrating each one of them in the correct direction provides the
 result.
@@ -18812,15 +18817,15 @@ result.
 \counterwithin{thm}{chapter}
 \chapter{Basic Terminology and Results from Algebra} \label{ap:algebra}
 
-We quickly review some basic definitions
+We quickly review a few basic definitions
 and a result or two
-from commutative
-that we need in
+from commutative algebra
+needed in
 \chapterref{ch:analyticvarieties}.  See a book such as
-Zariski--Samuel~\cite{ZariskiSamuel} for a full reference.
+Zariski--Samuel~\cite{ZariskiSamuel} for a complete reference.
 
 \begin{defn}
-A set $G$ is called a \emph{\myindex{group}} if it has an operation
+A set $G$ is called a \emph{\myindex{group}} if it has a binary operation
 $x * y$ defined on it and it satisfies the following axioms:
 \begin{enumerate}[({G}1)]
 \item If $x \in G$ and $y \in G$, then $x * y \in G$.
@@ -18828,10 +18833,10 @@ $x * y$ defined on it and it satisfies the following axioms:
 $(x*y)*z = x*(y*z)$ for all $x,y,z \in G$.
 \item \emph{(identity)}
 There exists an element $1 \in G$ such that
-$1*x = x$ for all $x \in G$.
+$1*x = x*1 = x$ for all $x \in G$.
 \item \emph{(inverse)}
 For every element $x\in G$ there exists an element $x^{-1} \in G$
-such that $x * x^{-1} = 1$.
+such that $x * x^{-1} = x^{-1} * x = 1$.
 \end{enumerate}
 A group $G$ is called \emph{\myindex{abelian}} if it also satisfies:
 \begin{enumerate}[resume*]
@@ -18839,21 +18844,21 @@ A group $G$ is called \emph{\myindex{abelian}} if it also satisfies:
 $x*y = y*x$ for all $x,y \in G$.
 \end{enumerate}
 
-A subset $K \subset G$ is called a \emph{\myindex{subgroup}}
+A subset $K \subset G$ is a \emph{\myindex{subgroup}}
 if $K$ is a group with the same operation as the group $G$.
-If $G$ and $H$ are groups, a function $f \colon G \to H$ is a
+For groups $G$ and $H$, a function $f \colon G \to H$ is a
 \emph{\myindex{group homomorphism}}\index{homomorphism}
-if it respects the group law, that is, $f(a * b) = f(a) * f(b)$.  If $f$ is
+if it respects the group law: $f(a * b) = f(a) * f(b)$.  If $f$ is
 bijective, then it is a
 \emph{\myindex{group isomorphism}}\index{isomorphism}.
 \end{defn}
 
-An example of a group is a group of automorphisms.  For example, let
+An example of a group is a group of automorphisms.  Let
 $U \subset \C$ be open and suppose $G$ is the set of
 biholomorphisms $f \colon U \to U$.  Then $G$ is a group
 under composition, but $G$ is not necessarily abelian:  If
 $U=\C$, then $f(z)= z+1$ and $g(z)=-z$ are members of $G$, but
-$f\circ g (z) = -z+1$ and $g \circ f(z) = -z-1$.
+$(f\circ g) (z) = -z+1$ and $(g \circ f)(z) = -z-1$.
 
 
 
@@ -18935,7 +18940,8 @@ Given a commutative ring $R$, let $R[x]$ be the set of polynomials
 \begin{equation*}
 P(x) = c_k x^k + c_{k-1} x^{k-1} + \cdots + c_1 x + c_0 ,
 \end{equation*}
-where $c_0,\ldots,c_k \in R$.  The integer $k$ is the
+where $c_0,\ldots,c_k \in R$.
+If $c_k \not= 0$, the integer $k$ is the
 \emph{\myindex{degree}} of the polynomial and $c_k$ is the
 \emph{\myindex{leading coefficient}} of $P(x)$.  If the
 leading coefficient is $1$, then $P$ is \emph{\myindex{monic}}.
@@ -19010,7 +19016,7 @@ $(c_1,\ldots,c_{k+1}) \subset (c_1,\ldots,c_k)$ or
 \begin{equation*}
 c_{k+1} = a_1 c_1 + \cdots a_k c_k .
 \end{equation*}
-As degree of $f_{k+1}$ is at least the degree of $f_1$ through $f_k$,
+As the degree of $f_{k+1}$ is at least the degree of $f_1$ through $f_k$,
 we can define the polynomial
 \begin{equation*}
 g =
@@ -19071,7 +19077,7 @@ The proof is not difficult, but it is perhaps beyond the scope of this book.
 The beginning of this course does not require the Lebesgue integral,
 however,
 knowing it may make some of the earlier results easier to understand and the
-exercises easier to work.  In some of the later chapters, Lebesgue integral
+exercises easier to work.  In some of the later chapters, the Lebesgue integral
 does become necessary in several places.  To make the first reading of the
 entire book easier for a student who has not had a course on measure theory
 yet, we present the basic ideas of the Lebesgue integral and list the
@@ -19088,9 +19094,9 @@ The collection $\sM$ should be a
 it is closed under taking complements, countable unions, and
 countable intersections.
 On these measurable sets
-we define a measure, that is, a function $\mu \colon \sM \to \R$,
-such that $\mu \geq 0$,
-$\mu(\emptyset) = 0$, and $\mu$ is
+we define a measure, that is, a function $\mu \colon \sM \to [0,\infty]$,
+such that
+$\mu(\emptyset) = 0$ and $\mu$ is
 \emph{$\sigma$-additive}\index{sigma-additive@$\sigma$-additive},
 that is, the measure of a union of countably many disjoint sets is the
 sum of the measures.  If $X$ is the euclidean space $\R^n$, there always
@@ -19228,7 +19234,7 @@ where $f_n \leq f_{n+1}$ almost everywhere for all $n$, and suppose $\{f_n
 Let $(X,\sM,\mu)$ be a measure space,
 $\{ f_n \}$ a sequence of measurable complex-valued functions converging
 almost everywhere to $f$, and $g \colon X \to [0,\infty]$ an
-$L^1$ function such that $\sabs{f(x)} \leq g(x)$ for almost every
+$L^1$ function such that for all $n$, $\sabs{f_n(x)} \leq g(x)$ for almost every
 $x$.  Then
 \begin{equation*}
 \int_X f \, d\mu = \lim_{n\to \infty} \int_X f_n \, d\mu .
@@ -19308,7 +19314,7 @@ Then:
 \item For almost every $x \in X$, $y \mapsto f(x,y)$ is $L^1$-integrable,
 and for almost every $y \in Y$, $x \mapsto f(x,y)$ is $L^1$-integrable.
 \item The functions $y \mapsto \int_X f(x,y) \, d\mu(x)$ and
-$x \mapsto \int_Y f(x,y) \, d\nu(y)$ is $L^1$-integrable.
+$x \mapsto \int_Y f(x,y) \, d\nu(y)$ are $L^1$-integrable.
 \item
 \begin{equation*}
 \begin{split}
@@ -19382,7 +19388,7 @@ A set $S \subset \R^n$ is \emph{convex}\index{convex}
 \emph{\myindex{geometrically convex}}\index{convex!geometrically})
 if for every $x,y \in S$ and every $\lambda \in [0,1]$ the
 point $(1-\lambda) x + \lambda y$ is in $S$.
-Interior and closure of convex sets is convex.
+Interior and closure of convex sets are convex.
 Arbitrary intersection of convex sets is convex, and increasing unions
 are convex.  Given a set $S$ the \emph{\myindex{convex hull}} of $S$ is
 the intersection of all convex sets containing $S$.  The closed convex hull
@@ -19414,7 +19420,7 @@ $x \cdot a \leq b$ for all $x \in T$.
 We can also put these together:
 
 \begin{cor}
-A closed convex set $S \subset \R^n$ is the union of all closed half-spaces
+A closed convex set $S \subset \R^n$ is the intersection of all closed half-spaces
 containing~$S$.  More generally, for any set $S$, the closed convex hull of
 $S$ is the intersection of all closed half-spaces that contain $S$.
 \end{cor}
@@ -19428,8 +19434,8 @@ $S$ achieves a strict maximum at $x_0$, in other words, if there is a
 supporting hyperplane which intersects $S$ at exactly one point.
 
 \begin{thm}[Straszewicz]
-Let $S \subset \R^n$ be closed and convex.  Then the set of extreme points
-of $S$ is the closure of the set of exposed points of $S$.
+Let $S \subset \R^n$ be closed and convex.  Then the set of exposed points
+of $S$ is dense in the set of extreme points of $S$.
 \end{thm}
 
 \begin{thm}[Krein--Milman]
@@ -19527,7 +19533,7 @@ such that $\supp \varphi_\kappa \subset U_{\iota}$.
 For each point $x \in U$, there is a neighborhood on which
 all but finitely many $\varphi_\kappa$ vanish.
 \item
-For every $x \in U$, we have $\sum_{\kappa \in K} \varphi(x) = 1$.
+For every $x \in U$, we have $\sum_{\kappa \in K} \varphi_{\kappa}(x) = 1$.
 \end{enumerate}
 \end{thm}
 
