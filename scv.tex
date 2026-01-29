@@ -4163,7 +4163,7 @@ do define it so.}
 (connected open set).  The set $U$ is
 a \emph{\myindex{domain of holomorphy}} if there do not exist
 nonempty open sets
-$V$ and $W$, with $V \subset U \cap W$, $W \nsubset U$, and $W$
+$V$ and $W$, with $V \subset U \cap W$, $W \not\subset U$, and $W$
 connected, such that for every $f \in \sO(U)$ there exists an $F \in
 \sO(W)$ with $f(z) = F(z)$ for all $z \in V$.  See
 \figureref{fig:domain-of-hol-def}.
@@ -14324,7 +14324,7 @@ If $f$ is not identically zero,
 define
 \glsadd{not:ord}%
 \begin{equation*}
-\ord_p f \overset{\text{def}}{=} \min \bigl\{ k \in \N_0 : f_k \nequiv 0 \bigr\} .
+\ord_p f \overset{\text{def}}{=} \min \bigl\{ k \in \N_0 : f_k \not\equiv 0 \bigr\} .
 \end{equation*}
 If $f \equiv 0$, define $\ord_p f = \infty$.
 We call the number $\ord_p f$ the \emph{\myindex{order of vanishing}} of $f$ at $p$.
@@ -15323,7 +15323,7 @@ The one-dimensional statement is an exercise below.  If ${}_{n-1}\sO_0$ is a UFD
 ${}_{n-1}\sO_0[z_n]$ is a UFD by the Gauss lemma
 (see \thmref{thm:gausslemma}).
 
-Take $f \in {}_n\sO_0$ such that $f(0)=0$ and $f \nequiv 0$.
+Take $f \in {}_n\sO_0$ such that $f(0)=0$ and $f \not\equiv 0$.
 After perhaps a linear change of coordinates
 $f = qP$, for $q$ a unit in ${}_n\sO_0$,
 and $P$ a Weierstrass polynomial in $z_n$.
@@ -16234,8 +16234,8 @@ of singular points is a subvariety of dimension $k$.
 A germ of a subvariety $(X,p) \subset (\C^n,p)$ is
 \emph{\myindex{reducible}} at $p$ if there exist
 two germs $(X_1,p)$ and $(X_2,p)$ with
-$(X_1,p) \nsubset (X_2,p)$ and
-$(X_2,p) \nsubset (X_1,p)$ such that
+$(X_1,p) \not\subset (X_2,p)$ and
+$(X_2,p) \not\subset (X_1,p)$ such that
 $(X,p) = (X_1,p) \cup (X_2,p)$.
 Otherwise, the germ $(X,p)$ is \emph{\myindex{irreducible}} at $p$.
 
@@ -16243,8 +16243,8 @@ Similarly globally, a subvariety $X \subset U$ is
 \emph{reducible} in $U$ if there exist
 two subvarieties
 $X_1$ and $X_2$ of $U$ with
-$X_1 \nsubset X_2$ and
-$X_2 \nsubset X_1$ such that
+$X_1 \not\subset X_2$ and
+$X_2 \not\subset X_1$ such that
 $X = X_1 \cup X_2$.
 Otherwise, the subvariety $X$ is \emph{irreducible} in $U$.
 \end{defn}
@@ -16303,13 +16303,13 @@ It then makes sense that we can split a subvariety into its irreducible parts.
 Let $(X,p) \subset (\C^n,p)$ be a germ of a subvariety.  Then there exist
 finitely many irreducible subvarieties $(X_1,p),\ldots,(X_k,p)$ such that
 $(X_1,p) \cup \ldots \cup (X_k,p) = (X,p)$ and such that $(X_m,p)
-\nsubset (X_\ell,p)$ for all $m$ and $\ell$.
+\not\subset (X_\ell,p)$ for all $m$ and $\ell$.
 \end{prop}
 
 \begin{proof}
 Suppose $(X,p)$ is reducible.
-Find $(Y_1,p)$ and $(Y_1,p)$ such that $(Y_1,p) \nsubset (Y_2,p)$,
-$(Y_2,p) \nsubset (Y_1,p)$, and
+Find $(Y_1,p)$ and $(Y_1,p)$ such that $(Y_1,p) \not\subset (Y_2,p)$,
+$(Y_2,p) \not\subset (Y_1,p)$, and
 $(Y_1,p) \cup (Y_2,p) = (X,p)$.
 As $(Y_\ell,p) \subsetneq (X,p)$, we find
 $I_p(Y_\ell) \supsetneq I_p(X)$ for both $\ell$.  If both
