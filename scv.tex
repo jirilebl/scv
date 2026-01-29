@@ -695,7 +695,7 @@ an expression
 \begin{equation*}
 P(z) = \sum_{k=0}^d c_k \, z^k ,
 \end{equation*}
-where $c_k \in \C$ and $c_d \not= 0$.  The number $d$ is called the
+where $c_k \in \C$ and $c_d \neq 0$.  The number $d$ is called the
 \emph{degree}\index{degree of a polynomial}
 of the
 polynomial $P$.  We can plug in some number $z$ and compute
@@ -1482,8 +1482,8 @@ Rudin~\cite{Rudin:principles} for an introduction with all the details.
 
 Given real coordinates $x = (x_1,\ldots,x_n)$, a one-form $d x_k$ is a linear functional on tangent vectors
 such that $\bigl\langle d x_k , \frac{\partial}{\partial x_k} \bigr\rangle = 1$ and
-$\bigl\langle d x_k , \frac{\partial}{\partial x_{\ell}} \bigr\rangle = 0$ if $k \not=
-{\ell}$,
+$\bigl\langle d x_k , \frac{\partial}{\partial x_{\ell}} \bigr\rangle = 0$ if
+$k \neq {\ell}$,
 where we use the pairing notation
 \glsadd{not:pairing}%
 $\langle \omega , v \rangle$ instead of the functional notation
@@ -1499,7 +1499,7 @@ d \bar{z}_k = d x_k - i \, d y_k .
 Let
 \glsadd{not:kronecker}%
 $\delta_{k}^{\ell}$ be the Kronecker delta, that is, $\delta_k^k = 1$,
-and $\delta_k^{\ell} = 0$ if $k \not= {\ell}$.  Then, as expected,
+and $\delta_k^{\ell} = 0$ if $k \neq {\ell}$.  Then, as expected,
 \begin{equation*}
 \left\langle
 d z_k , \frac{\partial}{\partial z_{\ell}} \right\rangle =
@@ -3240,7 +3240,7 @@ Modify the proof to show some stronger results.
 \begin{exparts}
 \item
 Let $\Delta$ be an analytic disc
-and $\Delta \cap \partial \bB_n \not= \emptyset$.
+and $\Delta \cap \partial \bB_n \neq \emptyset$.
 Prove $\Delta$ contains points not in
 $\overline{\bB_n}$.
 \item
@@ -3610,7 +3610,7 @@ By the uniqueness of the Taylor expansion,
 $e^{i\theta} f_m(z)  = e^{im\theta} f_m(z)$, or
 $f_m(z)  = e^{i(m-1)\theta} f_m(z)$,
 for all $m$, all $z$, and all $\theta$.
-If $m\not=1$, we obtain that $f_m \equiv
+If $m \neq 1$, we obtain that $f_m \equiv
 0$, which proves the claim.
 \end{proof}
 
@@ -3630,7 +3630,7 @@ a permutation matrix $P$.
 
 \begin{exercise}
 Given $a \in \bB_n$, define the linear map $P_a z =
-\frac{\linnprod{z}{a}}{\linnprod{a}{a}}a$ if $a \not= 0$ and $P_0z = 0$.
+\frac{\linnprod{z}{a}}{\linnprod{a}{a}}a$ if $a \neq 0$ and $P_0z = 0$.
 Let $s_a = \sqrt{1-\snorm{a}^2}$.  Show that every automorphism $f$ of
 $\bB_n$ (that is, a biholomorphism $f \colon \bB_n \to \bB_n$)
 can be written as
@@ -3810,7 +3810,7 @@ of $U$.  Hint: Every countable closed subset of $\C$ has isolated points.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U = \{ z \in \D^2 : z_1 \not=0 \text{ and } z_2 \not= 0 \}$.
+Suppose $U = \{ z \in \D^2 : z_1 \neq 0 \text{ and } z_2 \neq 0 \}$.
 Compute the group of automorphisms $\Aut(U)$.
 Hint: See \exerciseref{exercise:autofpolydisc}.
 \end{exercise}
@@ -3858,7 +3858,7 @@ We obtain a function $h \colon U \to \C$, holomorphic, vanishing on $N$,
 and such that
 without loss of generality the $z_n$ derivative does not vanish identically
 on $N$.  Then there is some point $p \in N$ such that $\frac{\partial
-h}{\partial z_n}(p) \not= 0$.
+h}{\partial z_n}(p) \neq 0$.
 We apply the implicit function theorem at $p$ to find $g$ such that
 \begin{equation*}
 h\bigl(z_1,\ldots,z_{n-1},g(z_1,\ldots,z_{n-1})\bigr) = 0 ,
@@ -3908,7 +3908,7 @@ a holomorphic function is always quite large when $n \geq 2$.
 \begin{example}
 For $U = \C^2$,
 let $f(z) = z_1^2-z_2^2$ and consider $X = f^{-1}(0)$. As $\nabla f =
-(2z_1,-2z_2) \not= 0$
+(2z_1,-2z_2) \neq 0$
 outside of the origin, we can solve for $z_1$ or $z_2$ and so
 all points of $X \setminus \{ 0 \}$ are regular.  In fact,
 $z_1 = z_2$ and $z_1 = -z_2$ are the two possibilities.
@@ -4046,7 +4046,7 @@ consider one of the components
 of $f$ and one of the derivatives of that component.
 Without loss of generality, suppose the point is $0$, and
 for contradiction suppose
-$\frac{\partial f_1}{\partial z_1}(0) \not= 0$.
+$\frac{\partial f_1}{\partial z_1}(0) \neq 0$.
 The map
 \begin{equation*}
 G(z_1,\ldots,z_n) = \bigl(f_1(z),z_2,\ldots,z_n\bigr)
@@ -4077,7 +4077,7 @@ We obtain a contradiction, as at the origin
 \begin{equation*}
 \det
 D(f \circ G^{-1})
-= \det D\varphi \not= 0 . \qedhere
+= \det D\varphi \neq 0 . \qedhere
 \end{equation*}
 \end{proof}
 
@@ -4131,7 +4131,7 @@ Prove that the Jacobian conjecture is false if
 
 \begin{exercise}
 Prove that if a holomorphic $f \colon \C \to \C$ is injective, then it is
-onto, and therefore $f(z) = az + b$ for $a \not= 0$.
+onto, and therefore $f(z) = az + b$ for $a \neq 0$.
 \end{exercise}
 \end{exbox}
 
@@ -4163,7 +4163,7 @@ do define it so.}
 (connected open set).  The set $U$ is
 a \emph{\myindex{domain of holomorphy}} if there do not exist
 nonempty open sets
-$V$ and $W$, with $V \subset U \cap W$, $W \not\subset U$, and $W$
+$V$ and $W$, with $V \subset U \cap W$, $W \nsubset U$, and $W$
 connected, such that for every $f \in \sO(U)$ there exists an $F \in
 \sO(W)$ with $f(z) = F(z)$ for all $z \in V$.  See
 \figureref{fig:domain-of-hol-def}.
@@ -4530,9 +4530,9 @@ Therefore, $U_1$ and $U_2$ are rather different as far as complex variables are
 concerned, yet they are the same set if we ignore the complex structure.
 They are both a $4$-dimensional real vector space minus a $2$-dimensional
 real vector subspace.  That is, $U_1$ is the set
-where either $\Im z_1 \not= 0$ or $\Im z_2 \not= 0$,
+where either $\Im z_1 \neq 0$ or $\Im z_2 \neq 0$,
 while $U_2$ is the set
-where either $\Re z_2 \not= 0$ or $\Im z_2 \not= 0$.
+where either $\Re z_2 \neq 0$ or $\Im z_2 \neq 0$.
 
 The condition of being a domain of holomorphy,
 requires something more than just some real geometric condition on the
@@ -4764,7 +4764,7 @@ X_p = \sum_{k=1}^n a_k
 \frac{\partial}{\partial x_k}\Big|_p ,
 \end{equation*}
 for real numbers $a_k$.  For computations, $X_p$ could be represented
-by an $n$-vector $a = (a_1,\ldots,a_n)$.  However, if $p \not= q$, then
+by an $n$-vector $a = (a_1,\ldots,a_n)$.  However, if $p \neq q$, then
 $T_p \R^n$ and
 $T_q \R^n$ are distinct spaces.
 \glsadd{not:evalpartial}%
@@ -5221,7 +5221,7 @@ Let $r$ be a defining function at $p$.  Take $v = \nabla r|_p$.
 By translating $p$ to the origin, and applying a rotation (an orthogonal matrix),
 we assume $v = (0,0,\ldots,0,v_n)$, where $v_n < 0$.  Denote our
 coordinates by $(x,y) \in \R^{n-1} \times \R$.  As $\nabla r|_0 =
-v$, then $\frac{\partial r}{\partial y}(0) \not= 0$.
+v$, then $\frac{\partial r}{\partial y}(0) \neq 0$.
 The implicit function theorem gives a
 smooth function $\varphi$ such that
 $r\bigl(x,\varphi(x)\bigr) = 0$ for all $x$ in a neighborhood of the
@@ -5256,7 +5256,7 @@ r\bigl(x,\varphi(x)\bigr)
 \end{equation*}
 At the origin,
 $\frac{\partial r}{\partial x_k}(0,0) = 0$ and
-$\frac{\partial r}{\partial y}(0,0) = v_n \not= 0$, and therefore
+$\frac{\partial r}{\partial y}(0,0) = v_n \neq 0$, and therefore
 $\frac{\partial \varphi}{\partial x_k}(0) = 0$.
 That $T_0 M$ is the span of the $x_k$ derivatives
 follows at once from the fact that $\nabla r|_0 = (0,\ldots,0,v_n)$.
@@ -6014,8 +6014,8 @@ We change variables to $(z_1,\ldots,z_{n-1},w)$ where
 z_k = \frac{Z_k}{1-Z_n} \quad \text{ for all $k=1,\ldots,n-1$}, \qquad
 w = i\frac{1+Z_n}{1-Z_n} .
 \end{equation*}
-This change of variables is a biholomorphic map from the set where $Z_n \not= 1$
-to the set where $w\not= -i$ (exercise).  For us, it suffices
+This change of variables is a biholomorphic map from the set where $Z_n \neq 1$
+to the set where $w\neq -i$ (exercise).  For us, it suffices
 that the map is invertible near
 $(0,\ldots,0,-1)$, which follows by computing the derivative.
 Notice
@@ -6328,7 +6328,7 @@ a {(\Re w)}^2 +
 O(3) ,
 \end{equation*}
 where $q$ is quadratic, $L \colon \C^{n-1} \to \C$ is linear, and $a \in \R$.
-If $L \not= 0$,
+If $L \neq 0$,
 do a linear change of coordinates in the $z$ only to make $Lz = z_1$.
 So assume $Lz = \epsilon z_1$ where $\epsilon = 0$ or $\epsilon = 1$.
 
@@ -6622,7 +6622,7 @@ where $z' = (z_2,\ldots,z_{n-1})$, $\epsilon_k = -1,0,1$, and $E$ is $O(3)$.
 We embed an analytic disc via the map
 $\xi \in \widebar{\D} \overset{\varphi}{\mapsto} (\lambda \xi, 0, 0, \ldots, 0)$
 for some small $\lambda > 0$.
-Clearly $\varphi(0) = 0 \in \partial U$.  For $\xi \not= 0$ near the origin
+Clearly $\varphi(0) = 0 \in \partial U$.  For $\xi \neq 0$ near the origin
 \begin{equation*}
 -\lambda^2 \sabs{\xi}^2 + \sum_{k=2}^{n-1} \epsilon_k \sabs{0}^2 + E(\lambda
 \xi,0,\lambda \bar{\xi},0,0)
@@ -6636,7 +6636,7 @@ Clearly $\varphi(0) = 0 \in \partial U$.  For $\xi \not= 0$ near the origin
 because
 the function above has a strict maximum at $\xi = 0$
 by the second derivative test.
-Therefore, for $\xi \not= 0$ near the origin,
+Therefore, for $\xi \neq 0$ near the origin,
 $\varphi(\xi) \in U$.  By picking $\lambda$ small enough,
 $\varphi(\overline{\D}\setminus\{0\}) \subset U$.
 
@@ -6725,7 +6725,7 @@ $z \in W \cap \widebar{U} \setminus \{ p \}$.
 Suppose $U \subset \C^n$ is an open set with smooth boundary.  Suppose
 for $p \in \partial U$, there is a neighborhood $W$ of $p$
 and a holomorphic $f \colon W \to
-\C$ such that $df(p) \not= 0$, $f(p) = 0$, but
+\C$ such that $df(p) \neq 0$, $f(p) = 0$, but
 $f$ is never zero on $W \cap U$.  Show that $U$ is pseudoconvex
 at $p$.  Hint: You may need the holomorphic implicit function theorem
 (\thmref{thm:ift}).
@@ -6756,7 +6756,7 @@ Prove that a real hyperplane is Levi-flat.
 \begin{exercise}
 Let $U \subset \C^n$ be open, $f \in \sO(U)$, and
 $M = \bigl\{ z \in U : \Im f(z) = 0 \bigr\}$.  Show that
-if $df(p) \not=0$ for some $p \in M$, then near $p$,
+if $df(p) \neq 0$ for some $p \in M$, then near $p$,
 $M$ is a Levi-flat hypersurface.
 \end{exercise}
 
@@ -7174,7 +7174,7 @@ is a family of subharmonic functions.  Let
 \avoidbreak
 \end{equation*}
 If the family is finite, then $\varphi$ is subharmonic.
-If the family is infinite, $\varphi(z) \not= \infty$ for
+If the family is infinite, $\varphi(z) \neq \infty$ for
 all $z$, and $\varphi$
 is upper-semicontinuous, then $\varphi$ is subharmonic.
 \end{prop}
@@ -7690,7 +7690,7 @@ extension to several variables as an exercise.
 Let $U \subset \C^n$ be open and $f \colon U \to \C$ a continuous
 function that is holomorphic on the set
 \begin{equation*}
-U' = \bigl\{ z \in U : f(z) \not= 0 \bigr\} .
+U' = \bigl\{ z \in U : f(z) \neq 0 \bigr\} .
 \avoidbreak
 \end{equation*}
 Then $f \in \sO(U)$.
@@ -8021,7 +8021,7 @@ That is simply the statement of
 \ref{thm:pscvx:itemiv}
 $\Rightarrow$
 \ref{thm:pscvx:itemi}:
-As long as $U \not= \C^n$,
+As long as $U \neq \C^n$,
 the function $-\log \rho(z)$ is real-valued and continuous.
 For $c \in \C^n$ with $\snorm{c}=1$, let
 $\rho_c(z)$ be the supremum of the radii of the affine discs centered at $z$
@@ -8139,7 +8139,7 @@ set where $z_1$ and $z_2$ are real).  Show that the set $\C^2 \setminus
 
 \begin{exercise}
 Let $U \subset \C^n$ be a domain and $f \in \sO(U)$.  Prove that
-$U' = \bigl\{ z \in U : f(z) \not= 0 \bigr\}$ is a Hartogs pseudoconvex
+$U' = \bigl\{ z \in U : f(z) \neq 0 \bigr\}$ is a Hartogs pseudoconvex
 domain.  Hint: See also \exerciseref{exercise:connectedcomplement}.
 \end{exercise}
 
@@ -8455,7 +8455,7 @@ Compute:
 A\delta_{k}^{\ell} ,
 \end{equation*}
 where $\delta_k^\ell$ is the Kronecker delta\footnote{%
-Recall $\delta_k^\ell = 0$ if $k\not= \ell$ and $\delta_k^\ell = 1$ if $k =
+Recall $\delta_k^\ell = 0$ if $k \neq \ell$ and $\delta_k^\ell = 1$ if $k =
 \ell$.}.
 Apply the complex Hessian of $f$ to $c$ at $q \in U$ near the origin
 (recall that $r$ is negative on $U$ and so for $q \in U$, $-r = \sabs{r}$):
@@ -8544,7 +8544,7 @@ Suppose
 $U$ is Levi pseudoconvex, $p \in \partial U$,
 $r$ is the defining function from the proof, and let
 $\tilde{r} = \varphi r$ for some smooth $\varphi$
-defined near $p$, $\varphi(p)\not=0$.
+defined near $p$, $\varphi(p) \neq 0$.
 Show that for $z \in U$ near $p$, the function
 $f(z) = -\log(-\tilde{r}(z)) + A \snorm{z}^2$
 is plurisubharmonic if $A$ is sufficiently large.
@@ -8639,7 +8639,7 @@ is not holomorphically convex.
 Let $U \subset \C^n$ be a domain, $f \in \sO(U)$, and $f$ is not identically
 zero.  Show that if
 $U$ is holomorphically convex, then
-$\widetilde{U} = \bigl\{ z \in U : f(z) \not= 0 \bigr\}$
+$\widetilde{U} = \bigl\{ z \in U : f(z) \neq 0 \bigr\}$
 is holomorphically convex.
 Hint: First see \exerciseref{exercise:connectedcomplement}.
 \end{exercise}
@@ -8798,9 +8798,9 @@ Clearly there cannot be any open $W \subset \C^n$
 containing $p$ to which $f$ extends (see
 \hyperref[defn:domainofhol]{definition of domain of holomorphy}).  As every
 connected open $W$ such that
-$W \setminus U \not= \emptyset$
+$W \setminus U \neq \emptyset$
 and
-$W \setminus U^c \not= \emptyset$
+$W \setminus U^c \neq \emptyset$
 must contain a
 point of $\partial U$, we are done.
 \end{proof}
@@ -8866,7 +8866,7 @@ if there exists a
 $z \in U^*$  if and only if
 $\bigl(\log \sabs{z_1},\ldots,\log\sabs{z_n}\bigr) \in C$,
 where
-$U^* = \{ z \in U : z_1 \not= 0, \ldots, z_n \not= 0 \}$.
+$U^* = \{ z \in U : z_1 \neq 0, \ldots, z_n \neq 0 \}$.
 
 \begin{exbox}
 \begin{exercise}
@@ -8973,7 +8973,7 @@ we prove a simple lemma.
 
 \begin{lemma} \label{lemma:sameonRn}
 Let $\R^n \subset \C^n$ be the natural inclusion and
-$V \subset \C^n$ a domain such that $V \cap \R^n \not= \emptyset$.
+$V \subset \C^n$ a domain such that $V \cap \R^n \neq \emptyset$.
 Suppose $f,g \colon V \to \C$ are holomorphic functions such that
 $f=g$ on $V \cap \R^n$.  Then $f=g$ on $V$.
 \end{lemma}
@@ -9139,7 +9139,7 @@ Let $V \subset \C^n \times \C^n$ be a domain, let the coordinates be $(z,\zeta) 
 \begin{equation*}
 D = \bigl\{ (z,\zeta) \in \C^n \times \C^n : \zeta = \bar{z} \bigr\},
 \end{equation*}
-and suppose $D \cap V \not= \emptyset$.
+and suppose $D \cap V \neq \emptyset$.
 Suppose $f,g \colon V \to \C$ are holomorphic functions such that
 $f=g$ on $D \cap V$.  Then $f=g$ on all of $V$.
 \end{lemma}
@@ -10173,7 +10173,7 @@ the conclusion of the lemma is true.
 
 Given an $n \times n$ matrix $A$, let $\snorm{A}$ denote the operator norm,
 \begin{equation*}
-\snorm{A} = \sup_{\snorm{v}=1} \snorm{Av} = \sup_{v \in \C^n, v\not= 0}
+\snorm{A} = \sup_{\snorm{v}=1} \snorm{Av} = \sup_{v \in \C^n, v \neq 0}
 \frac{\snorm{Av}}{\snorm{v}} .
 \end{equation*}
 
@@ -11879,31 +11879,32 @@ Let $r = \sabs{z}^2+\sabs{w}^2$.  Write
 That is, the two functions on the right-hand side differ by a holomorphic
 function wherever $z$ and $w$ are both not zero and hence their
 $\bar{\partial}$'s are equal (where they are both defined).  The left-hand
-term is defined when $z\not=0$ and the right-hand term is defined when $w
-\not=0$.  So the following form $\eta$ is well-defined on $\C^2 \setminus \{ 0 \}$
+term is defined when $z \neq 0$ and the right-hand term is defined when
+$w \neq 0$.
+So the following form $\eta$ is well-defined on $\C^2 \setminus \{ 0 \}$
 \begin{equation*}
 \eta =
 \bar{\partial}
 \left(
 \dfrac{\bar{w}}{z r}
 \right)
-\quad \text{if $z\not=0$,}
+\quad \text{if $z \neq 0$,}
 \qquad \text{and} \qquad
 \eta =
 \bar{\partial}
 \left(
 \dfrac{-\bar{z}}{w r}
 \right)
-\quad \text{if $w\not=0$} .
+\quad \text{if $w \neq 0$} .
 \end{equation*}
 That $\eta$ is $\bar{\partial}$-closed follows by $\bar{\partial}^2 = 0$.
 Suppose for contradiction that there existed a smooth
 $f \colon \C^2 \setminus \{ 0 \} \to \C$
 such that $\bar{\partial} f = \eta$.
-Define $g = z f - \nicefrac{\bar{w}}{r}$.  When $z\not=0$, then
+Define $g = z f - \nicefrac{\bar{w}}{r}$.  When $z \neq 0$, then
 $\nicefrac{g}{z} = f - \nicefrac{\bar{w}}{zr}$, and so
 $\bar{\partial}\bigl(\nicefrac{g}{z}\bigr) = 0$.  Therefore, $g$ is holomorphic
-where $z\not=0$, but $g$ is, and this is really where the contradiction
+where $z \neq 0$, but $g$ is, and this is really where the contradiction
 comes in, smooth on $\C^2 \setminus \{ 0 \}$ and hence satisfies the
 Cauchy--Riemann equations on $\C^2 \setminus \{ 0 \}$ and so $g$ is holomorphic
 on $\C^2 \setminus \{ 0 \}$.
@@ -11916,7 +11917,7 @@ which contradicts the fact that $g(0,w) = \nicefrac{-1}{w}$.
 It is not simply the topology (as we know already) that determines the
 $H^{(p,q)}$ groups.  The previous example still works in $\C^2 \setminus
 \R^2 = \bigl\{ (z,w) \in \C^2 :
-\Im z \not= 0 \text{ or } \Im w \not= 0 \bigr\}$.
+\Im z \neq 0 \text{ or } \Im w \neq 0 \bigr\}$.
 That is, the function $g$ from the previous example can be defined in
 $\C^2 \setminus \R^2$ and hence extends to $\C^2$
 (see \exerciseref{exercise:C2minusR2}),
@@ -11955,7 +11956,7 @@ Suppose $U \subset \C^2$ is a domain such that $H^{(0,1)}(U) = 0$,
 then $U$ is a domain of holomorphy.
 Hint: Prove the contrapositive.
 Suppose that $U$ is not a domain of
-holomorphy and show that $H^{(0,1)}(U) \not= 0$ using the reasoning from
+holomorphy and show that $H^{(0,1)}(U) \neq 0$ using the reasoning from
 the examples.
 \end{exercise}
 
@@ -11963,7 +11964,7 @@ the examples.
 Suppose $U \subset \C^n$ is a domain with smooth boundary,
 $0 \in \partial U$, $\{ z_1=z_2 =0\} \cap U = \emptyset$, and the Levi form
 at the origin has a negative eigenvalue.  Show that
-$H^{(0,1)}(U) \not= 0$.
+$H^{(0,1)}(U) \neq 0$.
 \end{exercise}
 
 \begin{exercise}
@@ -12408,7 +12409,7 @@ $T = \bigl\{ (z,w) \in \D^{2} : \sabs{z} > \sabs{w} \bigr\}$.
 \begin{exercise} \label{exercise:dollocal}
 Suppose $U \subset \C^n$ is a domain and $p \in \partial U$.  Suppose there
 is some polydisc $\Delta$ centered at $p$ such that
-$H^{(0,q)}(U \cap \Delta) \not= 0$, then $H^{(0,q)}(U) \not= 0$.
+$H^{(0,q)}(U \cap \Delta) \neq 0$, then $H^{(0,q)}(U) \neq 0$.
 Hint:  Find a smooth function $\varphi$ on $U \cap \Delta$ such that
 $\varphi$ is identically zero near the boundary of $U$ and identically one
 near the boundary of $\Delta$.  And use the theorem.
@@ -12419,7 +12420,7 @@ Use the \exerciseref{exercise:dollocal} and
 \exerciseref{exercise:Levinegdol} to prove that if
 $U \subset \C^n$, $n \geq 2$, is a domain with smooth boundary and $p \in \partial U$
 such that the Levi form at $p$ has a negative eigenvalue and $n-2$ positive
-eigenvalues, then $H^{(0,1)}(U) \not= 0$.
+eigenvalues, then $H^{(0,1)}(U) \neq 0$.
 \end{exercise}
 
 \begin{exercise}
@@ -12723,7 +12724,7 @@ Assume the theorem holds for any domain in $\C^{n-1}$.
 
 Let $U \subset \C^n$ be a domain and
 suppose that $V$ and $W$ are open sets in $\C^n$
-such that $\emptyset \not= V \subset U \cap W$, $W$ is connected, and $W$ contains points outside
+such that $\emptyset \neq V \subset U \cap W$, $W$ is connected, and $W$ contains points outside
 of $U$.  That is, $V$ and $W$ are like in the definition of the domain of
 holomorphy.  We want to show that there must exist at least one $F \in
 \sO(U)$ for which there does not exist any $G \in \sO(W)$ such that $F=G$ on
@@ -12863,7 +12864,7 @@ analogue of Weierstrass.
 Suppose $U \subset \C^n$ is open.
 Let $\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
 and
-when $U_\iota \cap U_\kappa \not= \emptyset$,
+when $U_\iota \cap U_\kappa \neq \emptyset$,
 let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be such that
 \begin{equation*}
 \begin{aligned}
@@ -12979,8 +12980,8 @@ $\bar{\partial}$-problem for $(0,1)$-forms.
 Let us see an example where the Cousin I problem is not solvable.  Let $U =
 \C^2 \setminus \{ 0 \}$, where we know that $H^{(0,1)}(U)$ is nontrivial.
 Write $U = U_1 \cup U_2$ where
-$U_1 = \{ (z,w) \in \C^2 : z \not= 0 \}$ and
-$U_2 = \{ (z,w) \in \C^2 : w \not= 0 \}$.  On $U_1 \cap U_2$, define
+$U_1 = \{ (z,w) \in \C^2 : z \neq 0 \}$ and
+$U_2 = \{ (z,w) \in \C^2 : w \neq 0 \}$.  On $U_1 \cap U_2$, define
 \begin{equation*}
 h_{12}(z,w) = \frac{1}{zw} , \quad
 h_{21}(z,w) = \frac{-1}{zw} .
@@ -13111,7 +13112,7 @@ Cousin I problem and to the theorem of Weierstrass.
 Suppose $U \subset \C^n$ is open.
 Let $\{ U_{\iota} \}_{\iota \in I}$ be an open covering of $U$,
 and
-when $U_\iota \cap U_\kappa \not= \emptyset$,
+when $U_\iota \cap U_\kappa \neq \emptyset$,
 let $h_{\iota\kappa} \in \sO(U_{\iota} \cap U_{\kappa})$ be nonvanishing
 functions such that
 \begin{equation*}
@@ -13141,7 +13142,7 @@ submanifold of codimension $1$)\footnote{%
 The nonvanishing condition on the derivative is not necessary.
 We use it for simplicity.},
 that is, for every $p \in U$, there is a
-neighborhood $U_\iota$ and a holomorphic $g_\iota$ with $dg_{\iota} \not= 0$
+neighborhood $U_\iota$ and a holomorphic $g_\iota$ with $dg_{\iota} \neq 0$
 such that $g_\iota^{-1}(0) = M \cap U_\iota$.
 On $U_\iota \cap U_\kappa$, let
 \begin{equation*}
@@ -13169,7 +13170,7 @@ Suppose $U \subset \C^n$ is a domain on which the Cousin II problem is
 solvable and $M \subset U$ is a complex hypersurface (locally the zero set
 of a holomorphic function with nonvanishing derivative).
 Then there exists an $f \in \sO(U)$ such that $f^{-1}(0) = M$ and
-$df \not=0$ on~$M$.
+$df \neq 0$ on~$M$.
 \end{prop}
 
 The second Cousin problem is not always solvable on every domain of
@@ -13208,7 +13209,7 @@ such that locally near every $p \in M$, if $r$ is a defining function for $M$
 (holomorphic with nonvanishing derivative),
 then $\nicefrac{r}{g}$ extends to be continuous and nonvanishing in a
 neighborhood of $p$.  Prove that there exists an $f \in \sO(U)$
-such that $f^{-1}(0) = M$ and $df \not= 0$ on $M$.
+such that $f^{-1}(0) = M$ and $df \neq 0$ on $M$.
 Hint: Cover with balls $U_{\iota}$ and in each ball define
 $\log\bigl(\nicefrac{f_\iota}{g}\bigr)$, then obtain a Cousin I problem.
 \end{exercise}
@@ -14181,7 +14182,7 @@ Let $X=Y=\R$ and $p=0$.  Consider the ring of germs of
 continuous functions (or smooth functions).
 Show that for every continuous $f \colon \R \to \R$ and every neighborhood
 $W$ of $0$, there exists a $g \colon \R \to \R$
-such that $(f,0) = (g,0)$, but $g|_W \not= f|_W$.
+such that $(f,0) = (g,0)$, but $g|_W \neq f|_W$.
 \end{exercise}
 \end{exbox}
 
@@ -14238,7 +14239,7 @@ that contains $p$.  Prove that $f|_W = g|_W$.
 Find a germ $(f,p) \in \sO_p$, such that for
 every representative $f \colon U \to \C$, we can
 find another representative $g \colon V \to \C$
-of that same germ such that $g|_{U \cap V} \not= f|_{U \cap V}$.
+of that same germ such that $g|_{U \cap V} \neq f|_{U \cap V}$.
 Hint: $n=1$ is sufficient.
 \end{exparts}
 \end{exercise}
@@ -14323,7 +14324,7 @@ If $f$ is not identically zero,
 define
 \glsadd{not:ord}%
 \begin{equation*}
-\ord_p f \overset{\text{def}}{=} \min \bigl\{ k \in \N_0 : f_k \not\equiv 0 \bigr\} .
+\ord_p f \overset{\text{def}}{=} \min \bigl\{ k \in \N_0 : f_k \nequiv 0 \bigr\} .
 \end{equation*}
 If $f \equiv 0$, define $\ord_p f = \infty$.
 We call the number $\ord_p f$ the \emph{\myindex{order of vanishing}} of $f$ at $p$.
@@ -14381,7 +14382,7 @@ and its order of vanishing at the origin is $k \geq 1$.
 
 Then there exists an open polydisc $V = V' \times D \subset \C^{n-1} \times \C$
 with $0 \in V \subset U$,
-a unique $u \in \sO(V)$, $u(z) \not=0$ for all $z \in V$, and a unique
+a unique $u \in \sO(V)$, $u(z) \neq 0$ for all $z \in V$, and a unique
 Weierstrass polynomial $P$ of degree $k$
 with coefficients holomorphic in $V'$ such that
 \begin{equation*}
@@ -14394,7 +14395,7 @@ of $z_n \mapsto P(z',z_n)$ lie in $D$ for all $z' \in V'$
 \begin{proof}
 There exists a small disc $D \subset \C$ centered at zero such that
 $\{0\} \times \widebar{D} \subset U$ and such that
-$f(0,z_n) \not= 0$ for $z_n \in \widebar{D} \setminus \{ 0 \}$.
+$f(0,z_n) \neq 0$ for $z_n \in \widebar{D} \setminus \{ 0 \}$.
 By continuity
 of $f$,
 there is a small polydisc $V = V' \times D$ such that
@@ -14657,7 +14658,7 @@ coordinates $L$ ($L$ can be a matrix arbitrarily close to the identity) such
 that $f \circ L$ satisfies the hypotheses of the theorem.
 For example, $f(z_1,z_2,z_3) = z_1z_3+z_2z_3$ does not satisfy the
 hypotheses of the theorem as $f(0,0,z_3) \equiv 0$.  But for an arbitrarily
-small $\epsilon \not= 0$, replacing
+small $\epsilon \neq 0$, replacing
 $z_2$ with $z_2 + \epsilon z_3$ leads to $\tilde{f}(z_1,z_2,z_3)
 = f(z_1,z_2+\epsilon z_3,z_3) =
 z_1z_3+z_2z_3 + \epsilon z_3^2$, and $\tilde{f}(0,0,z_3) = \epsilon z_3^2$.
@@ -15073,7 +15074,7 @@ We cannot define these on all of $U_m'$ as we do not know how they are
 ordered.
 The function
 \begin{equation*}
-\Delta(z') = \prod_{j \not= k} \bigl( \alpha_j(z') - \alpha_k(z') \bigr)
+\Delta(z') = \prod_{j \neq k} \bigl( \alpha_j(z') - \alpha_k(z') \bigr)
 \end{equation*}
 defined for $z' \in U_m'$ does not depend on the order.
 That means $\Delta$ is well-defined as a function on the open set $U_m'$,
@@ -15136,7 +15137,7 @@ The discriminant given above is really the discriminant of the set
 $f^{-1}(0)$ rather than of the corresponding function, which we can,
 via the preparation theorem, assume is a Weierstrass polynomial.
 For Weierstrass polynomials, the discriminant is often defined as
-$\prod_{j \not= k} \bigl( \alpha_j(z') - \alpha_k(z') \bigr)$ taking
+$\prod_{j \neq k} \bigl( \alpha_j(z') - \alpha_k(z') \bigr)$ taking
 multiple zeros into account, and therefore the ``discriminant'' could be
 identically zero.  It will be clear from upcoming exercises that if
 the Weierstrass polynomial is irreducible, then the two notions do in fact
@@ -15146,7 +15147,7 @@ coincide.
 \begin{exercise}
 Prove that if $f \in \sO(U)$, then $U \setminus f^{-1}(0)$ is not simply
 connected if $f^{-1}(0)$ is nonempty.  In particular, in the theorem, $U' \setminus E$ is not
-simply connected if $E \not= \emptyset$.
+simply connected if $E \neq \emptyset$.
 \end{exercise}
 
 \begin{exercise}
@@ -15201,7 +15202,7 @@ as in the following exercises.
 \pagebreak[2]
 \begin{exparts}
 \item
-Suppose $f \in \sO_p$, $f(p) \not= 0$, and
+Suppose $f \in \sO_p$, $f(p) \neq 0$, and
 $(f)$ is the ideal generated by $f$.  Prove $(f) = \sO_p$.
 \item
 Let $\mathfrak{m}_p = (z_1-p_1,\ldots,z_n-p_n) \subset \sO_p$ be the ideal generated by the coordinate
@@ -15210,7 +15211,7 @@ functions.  Show that if $f(p) = 0$, then $f \in
 \item
 Show that if $I \subsetneq \sO_p$ is a \emph{\myindex{proper ideal}}
 (ideal such that $I
-\not= \sO_0$), then
+\neq \sO_0$), then
 $I \subset \mathfrak{m}_p$, that is, $\mathfrak{m}_p$ is a \emph{\myindex{maximal ideal}}.
 \end{exparts}
 \end{exercise}
@@ -15220,7 +15221,7 @@ $I \subset \mathfrak{m}_p$, that is, $\mathfrak{m}_p$ is a \emph{\myindex{maxima
 Suppose $n=1$.  Show that ${}_1\sO_p$ is a
 \emph{\myindex{principal ideal domain}}\index{PID} (PID)\@,
 that is, every ideal is a principal ideal.
-More precisely, show that given an ideal $I \subset {}_1 \sO_p$, $I \not= \{
+More precisely, show that given an ideal $I \subset {}_1 \sO_p$, $I \neq \{
 0 \}$, there
 exists a $k=0,1,2,\ldots$, such that $I = \bigl( (z-p)^k \bigr)$.
 \end{exercise}
@@ -15259,9 +15260,9 @@ For induction, suppose ${}_{n-1}\sO_0$ is Noetherian
 and let $I \subset {}_n \sO_0$ be an ideal.
 If $I = \{ 0 \}$
 or $I = {}_n \sO_0$, then the assertion is obvious.  Therefore, assume
-that all elements of $I$ vanish at the origin ($I \not= {}_n \sO_0$), and
+that all elements of $I$ vanish at the origin ($I \neq {}_n \sO_0$), and
 that there exist elements that are not identically zero
-($I \not= \{ 0 \}$).  Let $g$
+($I \neq \{ 0 \}$).  Let $g$
 be such an element.  After perhaps a linear change of coordinates,
 assume $g$ is a Weierstrass polynomial in $z_n$
 by the preparation theorem.
@@ -15292,7 +15293,7 @@ $h_1,\ldots,h_k$ also generate $I$ in ${}_n \sO_0$.
 \begin{exbox}
 \begin{exercise}
 Prove that after possibly a linear change of coordinates,
-every proper ideal $I \subset \sO_0$ where $I \not= \{ 0 \}$
+every proper ideal $I \subset \sO_0$ where $I \neq \{ 0 \}$
 is generated by Weierstrass polynomials.  As a technicality,
 note that a
 Weierstrass polynomial of degree $0$ is just $1$, so it works for $I = \sO_0$.
@@ -15322,7 +15323,7 @@ The one-dimensional statement is an exercise below.  If ${}_{n-1}\sO_0$ is a UFD
 ${}_{n-1}\sO_0[z_n]$ is a UFD by the Gauss lemma
 (see \thmref{thm:gausslemma}).
 
-Take $f \in {}_n\sO_0$ such that $f(0)=0$ and $f \not\equiv 0$.
+Take $f \in {}_n\sO_0$ such that $f(0)=0$ and $f \nequiv 0$.
 After perhaps a linear change of coordinates
 $f = qP$, for $q$ a unit in ${}_n\sO_0$,
 and $P$ a Weierstrass polynomial in $z_n$.
@@ -15381,7 +15382,7 @@ or a
 \emph{\myindex{subvariety}}\index{complex
 subvariety}\index{complex-analytic subvariety} of $U$.
 Sometimes $X$ is called an \emph{\myindex{analytic set}}.
-We say $X \subset U$ is a proper subvariety if $\emptyset \not= X \subsetneq
+We say $X \subset U$ is a proper subvariety if $\emptyset \neq X \subsetneq
 U$.
 \end{defn}
 
@@ -15398,7 +15399,7 @@ is a subvariety of $\C^n$, where we let $\sF = \emptyset$.
 
 \begin{example}
 The set defined by $z_2 = e^{1/z_1}$ is a subvariety of
-$U = \bigl\{ z \in \C^2 : z_1 \not=0 \bigr\}$.  It is not a subvariety of
+$U = \bigl\{ z \in \C^2 : z_1 \neq 0 \bigr\}$.  It is not a subvariety of
 any open set larger than $U$.
 \end{example}
 
@@ -15519,7 +15520,7 @@ one-to-one correspondence with radical ideals of $\sO_p$.
 The subvariety $X = \{ 0 \} \subset \C^2$ can be given by
 $\sF = \bigl\{ z_1^2, z_2^2 \bigr\}$.
 If $I = \bigl(z_1^2,z_2^2\bigr) \subset \sO_0$ is the ideal of germs
-generated by these two functions, then $I_0(X) \not= I$.  We have
+generated by these two functions, then $I_0(X) \neq I$.  We have
 seen that the ideal $I_0(X)$ is the maximal ideal $\mathfrak{m}_0 =
 (z_1,z_2)$.
 As $I \subset (z_1,z_2) = \mathfrak{m}_0$
@@ -15760,7 +15761,7 @@ In some neighborhood $V$ of the origin (where $V \subset U$),
 \thmref{thm:discrthm} applies to $f$, so
 let $\Delta(z')$ denote the discriminant function.
 Thinking of $\Delta$ as a function
-on $V$, suppose that $\Delta(q) \not= 0$ for some $q \in X \cap V$.
+on $V$, suppose that $\Delta(q) \neq 0$ for some $q \in X \cap V$.
 Then there is some
 neighborhood $W$ of $q$, such that $Z_f \cap W$ is a
 graph of a holomorphic function and $X \cap W \subset Z_f \cap W$.
@@ -16095,7 +16096,7 @@ Let $D$ be the corresponding polydisc and
 write $D = D' \times D_n \subset \C^{n-1} \times \C$.  Let $E \subset D'$
 be the discriminant set given by the function $\Delta \in \sO(D')$.
 We think of $\Delta$ as a function in $\sO(D)$.
-If $q \not\in E \times D_n$, then $\Delta(q) \not= 0$, so we have
+If $q \notin E \times D_n$, then $\Delta(q) \neq 0$, so we have
 found a function holomorphic in $V$ that is nonzero at $q$.
 Let us start a collection $\sF$ of holomorphic functions on $V$,
 one for each $q \in X_{\mathit{reg}} \cap V$,
@@ -16233,8 +16234,8 @@ of singular points is a subvariety of dimension $k$.
 A germ of a subvariety $(X,p) \subset (\C^n,p)$ is
 \emph{\myindex{reducible}} at $p$ if there exist
 two germs $(X_1,p)$ and $(X_2,p)$ with
-$(X_1,p) \not\subset (X_2,p)$ and
-$(X_2,p) \not\subset (X_1,p)$ such that
+$(X_1,p) \nsubset (X_2,p)$ and
+$(X_2,p) \nsubset (X_1,p)$ such that
 $(X,p) = (X_1,p) \cup (X_2,p)$.
 Otherwise, the germ $(X,p)$ is \emph{\myindex{irreducible}} at $p$.
 
@@ -16242,8 +16243,8 @@ Similarly globally, a subvariety $X \subset U$ is
 \emph{reducible} in $U$ if there exist
 two subvarieties
 $X_1$ and $X_2$ of $U$ with
-$X_1 \not\subset X_2$ and
-$X_2 \not\subset X_1$ such that
+$X_1 \nsubset X_2$ and
+$X_2 \nsubset X_1$ such that
 $X = X_1 \cup X_2$.
 Otherwise, the subvariety $X$ is \emph{irreducible} in $U$.
 \end{defn}
@@ -16302,13 +16303,13 @@ It then makes sense that we can split a subvariety into its irreducible parts.
 Let $(X,p) \subset (\C^n,p)$ be a germ of a subvariety.  Then there exist
 finitely many irreducible subvarieties $(X_1,p),\ldots,(X_k,p)$ such that
 $(X_1,p) \cup \ldots \cup (X_k,p) = (X,p)$ and such that $(X_m,p)
-\not\subset (X_\ell,p)$ for all $m$ and $\ell$.
+\nsubset (X_\ell,p)$ for all $m$ and $\ell$.
 \end{prop}
 
 \begin{proof}
 Suppose $(X,p)$ is reducible.
-Find $(Y_1,p)$ and $(Y_1,p)$ such that $(Y_1,p) \not\subset (Y_2,p)$,
-$(Y_2,p) \not\subset (Y_1,p)$, and
+Find $(Y_1,p)$ and $(Y_1,p)$ such that $(Y_1,p) \nsubset (Y_2,p)$,
+$(Y_2,p) \nsubset (Y_1,p)$, and
 $(Y_1,p) \cup (Y_2,p) = (X,p)$.
 As $(Y_\ell,p) \subsetneq (X,p)$, we find
 $I_p(Y_\ell) \supsetneq I_p(X)$ for both $\ell$.  If both
@@ -16639,7 +16640,7 @@ Suppose $M \subset U$,
 where $U \subset \C^n$ is a small domain with a defining function $r \colon
 U  \to \R$ for $M$.  That is, $r$ is a real-analytic function in $U$ such that
 $M = r^{-1}(0)$, but
-$dr \not= 0$ on $M$.  Define
+$dr \neq 0$ on $M$.  Define
 \glsadd{not:Ustar}%
 \begin{equation*}
 U^* = \bigl\{ z \in \C^n : \bar{z} \in U \bigr\} .
@@ -16983,7 +16984,7 @@ $f|_S \colon S \to Y$ such that $f|_S(x) = f(x)$ for all $x \in S$.
 A function $f \colon U \to \C$ is
 \emph{\myindex{compactly supported}} if
 the \emph{\myindex{support}}, that is the set
-$\overline{\{ p \in U : f(p) \not= 0 \}}$ (closure in $U$), is compact.
+$\overline{\{ p \in U : f(p) \neq 0 \}}$ (closure in $U$), is compact.
 If $f(x) = g(x)$ for all $x$ in the domain,
 we write
 \glsadd{not:identeq}%
@@ -17130,7 +17131,7 @@ d \zeta .
 Usually the theorem is stated with
 \emph{winding numbers}\index{winding number}.
 The winding number is the number of times a closed path $\gamma$ ``goes
-around'' a point $p \not\in \gamma$.
+around'' a point $p \notin \gamma$.
 More precisely it is defined by
 \begin{equation*}
 n(\gamma;p)
@@ -17148,7 +17149,7 @@ A common statement of the Cauchy integral formula with
 winding numbers is that if
 $U$ is open, $f \colon U \to \C$ holomorphic, and $\gamma$ is
 a closed piecewise $C^1$ path (or cycle) in $U$, such that
-$n(\gamma;p) = 0$ for all $p \not\in U$, then
+$n(\gamma;p) = 0$ for all $p \notin U$, then
 \begin{equation*}
 n(\gamma;z) f(z) =
 \frac{1}{2\pi i}
@@ -17244,7 +17245,7 @@ f(z) \, dz = 0 .
 Again, the alternative statement with winding numbers
  is that if $U$ is open, $f \colon U \to \C$ holomorphic, and $\gamma$ is
 a closed piecewise $C^1$ path (or cycle) in $U$, such that
-$n(\gamma;p) = 0$ for all $p \not\in U$, then
+$n(\gamma;p) = 0$ for all $p \notin U$, then
 the integral of $f$ over $\gamma$ vanishes.
 
 There is a converse to Cauchy.  A triangle $T \subset \C$ is
@@ -17431,14 +17432,14 @@ Suppose $U$ and $V$ are open subsets of $\C$.
 \begin{enumerate}[(i)]
 \item
 If $f \colon U \to V$ is holomorphic and bijective (one-to-one and onto),
-then $f'(z) \not= 0$ for all $z \in V$, and $f^{-1} \colon V \to U$
+then $f'(z) \neq 0$ for all $z \in V$, and $f^{-1} \colon V \to U$
 is holomorphic.  If $f(p) = q$, then
 \begin{equation*}
 \left(f^{-1}\right)'(q) = \frac{1}{f'(p)} .
 \end{equation*}
 \item
 If $f \colon U \to V$ is holomorphic, $f(p) = q$,
-and $f'(p) \not= 0$, then there exists a neighborhood $W$ of $q$
+and $f'(p) \neq 0$, then there exists a neighborhood $W$ of $q$
 and a holomorphic function $g \colon W \to U$ that is
 one-to-one and $f\bigl(g(z)\bigr) = z$ for all $z \in W$.
 \end{enumerate}
@@ -17473,7 +17474,7 @@ Suppose $U \subset \C$ is a domain and
 $f \colon U \to \C$ is holomorphic, not identically zero, and $f(p) = 0$
 for some $p \in U$.  There exists a $k \in \N$ and
 a holomorphic function $g \colon U \to \C$,
-such that $g(p) \not= 0$ and
+such that $g(p) \neq 0$ and
 \begin{equation*}
 f(z) = {(z-p)}^k g(z) \qquad \text{for all $z \in U$.}
 \end{equation*}
@@ -17492,7 +17493,7 @@ $f \colon U \to \C$ is holomorphic, not identically zero, and $p \in U$.
 Then there exists a $k \in \N$,
 a neighborhood $V \subset U$ of $p$,  and
 a holomorphic function $\varphi \colon V \to \C$ with
-$\varphi'(p) \not= 0$, such that
+$\varphi'(p) \neq 0$, such that
 \begin{equation*}
 {\bigl(\varphi(z)\bigr)}^k = f(z) - f(p)
 \qquad \text{for all $z \in V$.}
@@ -17624,9 +17625,9 @@ The singularity at $p$ is
 \begin{enumerate}[(i)]
 \item \emph{removable} if $c_k = 0$ for all $k < 0$.
 \item \emph{pole} of order $\ell \in \N$ if $c_k = 0$ for all $k < -\ell$ and $c_{-\ell}
-\not= 0$.
+\neq 0$.
 \item \emph{essential} if there exist infinitely many negative $k$
-such that $c_k \not= 0$.
+such that $c_k \neq 0$.
 \end{enumerate}
 \end{prop}
 
@@ -17660,7 +17661,7 @@ compute.  For example, if $p$ is a simple pole (of order $1$), then
 \begin{thm}[Residue theorem]\index{residue theorem}\label{thm:residue}
 Suppose $U \subset \C$ is an open set, and $\gamma$ is a piecewise-$C^1$
 closed path in $U$
-such that $n(\gamma;p)=0$ for all $p \not\in U$.
+such that $n(\gamma;p)=0$ for all $p \notin U$.
 Suppose that $f \colon U \setminus S \to \C$ is a holomorphic function with isolated
 singularities in a finite set $S$, and suppose $S$ lies in the interior of $\gamma$.
 Then
@@ -17684,8 +17685,8 @@ isolated.  Zeros and poles can be counted fairly easily.
 \begin{thm}[Argument principle]\index{argument principle}\label{thm:onevarargprinc}
 Suppose $U \subset \C$ is an open set, and $\gamma$ is a piecewise-$C^1$
 closed path in $U$ such that
-$n(\gamma;p)=0$ for all $p \not\in U$ and $n(\gamma;p) \in \{ 0,1 \}$ for
-all $p \not\in \gamma$.
+$n(\gamma;p)=0$ for all $p \notin U$ and $n(\gamma;p) \in \{ 0,1 \}$ for
+all $p \notin \gamma$.
 Suppose that $f \colon U \to \bP^1$ is a meromorphic function with no zeros
 or poles on $\gamma$.
 Then
@@ -17729,8 +17730,8 @@ Another useful way to count zeros is Rouch\'e's theorem.
 \begin{thm}[Rouch\'e]\index{Rouch\'e's theorem}\label{thm:onevarrouche}
 Suppose $U \subset \C$ is an open set, and $\gamma$ is a piecewise-$C^1$
 closed path in $U$ such that
-$n(\gamma;p)=0$ for all $p \not\in U$ and $n(\gamma;p) \in \{ 0,1 \}$ for
-all $p \not\in \gamma$.
+$n(\gamma;p)=0$ for all $p \notin U$ and $n(\gamma;p) \in \{ 0,1 \}$ for
+all $p \notin \gamma$.
 Suppose that $f \colon U \to \C$ and $g \colon U \to \C$
 are holomorphic functions such that
 \begin{equation*}
@@ -18127,7 +18128,7 @@ and
 if
 $\varphi \colon U \to M$ and $\widetilde{\varphi} \colon \widetilde{U} \to
 M$ are two parametrizations such
-that $\varphi(U) \cap \widetilde{\varphi}(\widetilde{U}) \not= \emptyset$, then the
+that $\varphi(U) \cap \widetilde{\varphi}(\widetilde{U}) \neq \emptyset$, then the
 \emph{\myindex{transition map}} (automatically smooth) defined by
 \begin{equation*}
 {\widetilde{\varphi}}^{~{-1}} \circ \varphi
@@ -18221,7 +18222,7 @@ dx_k ,
 \frac{\partial}{\partial x_\ell}
 \right\rangle
 =
-0 \quad \text{if $\ell\not=k$}.
+0 \quad \text{if $\ell \neq k$}.
 \end{equation*}
 For our purposes here, just suppose that a $1$-form
 in $\R^n$ is an object of the form
@@ -18883,7 +18884,7 @@ such that $x + (-x) = 0$.
 $xy = yx$ for all $x,y \in R$.
 \item \emph{(associativity of multiplication)}
 $(xy)z = x(yz)$ for all $x,y,z \in R$.
-\item There exists an element $1 \in R$ (and $1 \not= 0$) such that
+\item There exists an element $1 \in R$ (and $1 \neq 0$) such that
 $1x = x$ for all $x \in R$.
 \item[(D)] \emph{(distributive law)} $x(y+z) = xy+xz$
 for all $x,y,z \in R$.
@@ -18899,7 +18900,7 @@ $xy=0$ implies that $x=0$ or $y=0$.
 The ring $R$ is called a \emph{\myindex{field}}
 if in addition to being a commutative ring:
 \begin{enumerate}%[({F}1)]
-\item[(F)] For every $x\in R$ such that $x \not= 0$ there exists an element
+\item[(F)] For every $x\in R$ such that $x \neq 0$ there exists an element
 $\nicefrac{1}{x} \in R$
 such that $x(\nicefrac{1}{x}) = 1$.
 \end{enumerate}
@@ -18941,7 +18942,7 @@ Given a commutative ring $R$, let $R[x]$ be the set of polynomials
 P(x) = c_k x^k + c_{k-1} x^{k-1} + \cdots + c_1 x + c_0 ,
 \end{equation*}
 where $c_0,\ldots,c_k \in R$.
-If $c_k \not= 0$, the integer $k$ is the
+If $c_k \neq 0$, the integer $k$ is the
 \emph{\myindex{degree}} of the polynomial and $c_k$ is the
 \emph{\myindex{leading coefficient}} of $P(x)$.  If the
 leading coefficient is $1$, then $P$ is \emph{\myindex{monic}}.
@@ -19499,7 +19500,7 @@ neighborhood of $K$.
 \end{thm}
 
 By support, $\supp \varphi$, we mean the closure of the set
-$\{ x : \varphi(x) \not= 0 \}$, and by compactly supported in $U$
+$\{ x : \varphi(x) \neq 0 \}$, and by compactly supported in $U$
 we mean that $\supp \varphi$ is a compact subset of $U$.
 Another variant of a bump function is the Urysohn lemma:
 
