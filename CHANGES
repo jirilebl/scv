@@ -1,4 +1,14 @@
-
+<li>In Proposition 1.1.3, add the note that
+\(\frac{partial f}{\partial z_k}\) is holomorphic.
+(thanks to a suggestion by Richard Lärkäng)
+<li>Slightly add to the hint to Exercise 2.1.5.
+(thanks to a suggestion by Richard Lärkäng)
+<li>Reword the proof of Theorem 2.3.11 a little to choose
+the \(s\) correctly to fix an erratum reported by
+Richard Lärkäng.
+<li>Add a note in 6.5 about (sub)varieties in algebraic
+geometry often being defined to be irreducible.
+(thanks to a suggestion by Richard Lärkäng)
 
 
 See https://www.jirka.org/scv/changes.html for older changes.

@@ -1404,14 +1404,12 @@ Namely, if $f$ is holomorphic, then
 
 Due to the following proposition, the alternative definition using the
 Cauchy--Riemann equations is just as good as the definition we gave.
-%In the proof, if you wish to stay with just the Riemann integral instead of
-%the Lebesgue integral, feel free to assume that $f$ is continuously
-%differentiable.
 
 \begin{prop}
 Let $U \subset \C^n$ be an open set and
 suppose $f \colon U \to \C$ is holomorphic.  Then $f$ is infinitely
 differentiable.
+Moreover, $\frac{\partial f}{\partial z_k}$ is holomorphic for every $k$.
 \end{prop}
 
 \begin{proof}
@@ -1471,6 +1469,10 @@ all continuous, as long as $z$
 is a positive distance away from
 $\partial \Delta_1 \times \cdots \times \partial \Delta_n$.
 We may differentiate as many times as we wish.
+We can take Wirtinger derivatives under the integral too.
+The ``Moreover'' follows by differentiating in $z_k$
+and then differentiating in $\bar{z}_\ell$
+for all $\ell$ to confirm the Cauchy--Riemann equations.
 \end{proof}
 
 In \eqref{iteratedcauchy:eq} above,
@@ -4521,7 +4523,7 @@ holomorphy, but such that there is no domain $W \subset \C^2$ with $U
 \subset W$ such that every $f \in \sO(U)$ extends to $W$.
 Hint: Extending the example from \remarkref{remark:notsimpledefofdoh} will
 almost give you a $U$, but it will be a domain of holomorphy, you need to modify it
-a little bit.
+a little bit (e.g., add a bump).
 \end{exercise}
 \end{exbox}
 
@@ -6644,7 +6646,7 @@ the function above has a strict maximum at $\xi = 0$
 by the second derivative test.
 Therefore, for $\xi \neq 0$ near the origin,
 $\varphi(\xi) \in U$.  By picking $\lambda$ small enough,
-$\varphi(\overline{\D}\setminus\{0\}) \subset U$.
+$\varphi(\widebar{\D}\setminus\{0\}) \subset U$.
 
 We can ``wiggle the disc a little'' and
 find discs entirely in $U$.  In particular, for all small enough $s > 0$,
@@ -6654,9 +6656,19 @@ the closed disc given by
 \end{equation*}
 (that is, for slightly positive $\Im w$)
 is entirely inside $U$.
-Fix such a small $s > 0$.
-Suppose $\epsilon > 0$ is small and $\epsilon < s$.
-Define the Hartogs figure
+For small enough $s$, we also have that
+the set where $\sabs{z_1} = \lambda$, $z' = 0$,
+and $\sabs{w-is} \leq s$ is inside $U$.
+We can find such an $s$ as $E$ can be made arbitrarily small
+and $\Im w \geq 0$ on this set.
+An $\epsilon$-neighborhood of that set is in $U$.
+Fix such an $s > 0$.
+The whole disc $\varphi_s(\widebar{D})$, that is,
+where $\sabs{z_1} \leq \lambda$, $z'=0$, and $w=is$, is in $U$.
+An $\epsilon$-neighborhood of $\varphi_s(\widebar{D})$ is in $U$ as well.
+For small $\epsilon > 0$ where
+$\epsilon < s$,
+define the Hartogs figure
 \begin{equation*}
 \begin{split}
 H =
@@ -6671,19 +6683,14 @@ H =
 \sabs{w-is} < \epsilon \bigr\} .
 \end{split}
 \end{equation*}
-The set where $\sabs{z_1} = \lambda$, $z' = 0$,
-and $\sabs{w-is} \leq s$ is inside $U$, so
-an $\epsilon$-neighborhood of that is in $U$.
-For
-$w = is$ the whole disc where $\sabs{z_1} \leq \lambda$ and $z'=0$ is in $U$,
-so an $\epsilon$-neighborhood of that is in $U$.
-Thus, for small enough $\epsilon >0$, $H \subset U$.
+As we noted,
+for small enough $\epsilon >0$, $H \subset U$.
 We are really just taking a Hartogs figure in the $z_1,w$ variables, and then
 ``fattening it up'' to the $z'$ variables.
 In \figureref{fig:hartogs-figure-tomato}, we picture the Hartogs figure in the $\sabs{z_1}$ and $\sabs{w-is}$
 variables.  The boundary $\partial U$ and $U$ are only pictured diagrammatically.
-Also, we make a ``picture'' the analytic discs giving the ``tomato can.''
-In the picture, the $U$ is below its boundary $\partial U$, unlike usually.
+Also, we make a ``picture'' of the analytic discs $\varphi_s$ giving the ``tomato can.''
+In the figure, the $U$ is below its boundary $\partial U$, unlike usually.
 
 \begin{myfig}
 \subimport*{figures/}{hartogs-figure-tomato.pdf_t}
@@ -15328,7 +15335,6 @@ Again assume $p=0$ and induct on the dimension.
 The one-dimensional statement is an exercise below.  If ${}_{n-1}\sO_0$ is a UFD\@, then
 ${}_{n-1}\sO_0[z_n]$ is a UFD by the Gauss lemma
 (see \thmref{thm:gausslemma}).
-
 Take $f \in {}_n\sO_0$ such that $f(0)=0$ and $f \not\equiv 0$.
 After perhaps a linear change of coordinates
 $f = qP$, for $q$ a unit in ${}_n\sO_0$,
@@ -15392,10 +15398,12 @@ We say $X \subset U$ is a proper subvariety if $\emptyset \neq X \subsetneq
 U$.
 \end{defn}
 
-We generally leave out the ``complex'' from ``complex subvariety'' as it is
-clear from context.  But you should know that there are other types of
+We will leave out the ``complex'' from ``complex subvariety'' if it is
+clear from context.  There are other types of
 subvarieties, namely real subvarieties given by real-analytic functions.  We
-will not cover those in this book.
+will not cover those here.
+Also, in algebraic geometry, ``(sub)variety'' is defined
+by polynomials and is typically required to be ``irreducible''.
 
 \begin{example}
 The set $X = \{ 0 \} \subset \C^n$ is a subvariety as it is the only common vanishing
@@ -15420,10 +15428,9 @@ local variety, but not a subvariety of $\C^2$.  On the other hand, $X$
 is a subvariety of the unit ball $\bigl\{ z \in \C^2 : \snorm{z} < 1 \bigr\}$.
 
 Note that $\sF$ depends on $p$ and near each point may have a different set of
-functions.  Clearly the family $\sF$ is not unique.  A priori, we let $\sF$
-be infinite, but let us note why it would be sufficient
+functions.  Clearly the family $\sF$ is not unique.  A priori, we allow $\sF$
+be infinite, but let us show why it would be sufficient
 to restrict to finite families $\sF$.
-
 We work with germs of functions.  Recall that when $(f,p)$ is a germ of a function
 the germ $(Z_f,p)$ is the germ of the zero set of some representative.
 Let
@@ -15597,7 +15604,7 @@ point that is not regular is \emph{singular}\index{singular point}.
 The set of singular points of $X$ is denoted by $X_{\mathit{sing}}$.
 \end{defn}
 
-A couple of remarks are in order.
+A few remarks are in order.
 A subvariety $X$ can have
 regular points of several different dimensions, although if a point
 is a regular point of dimension $k$, then all nearby points are regular
@@ -15732,7 +15739,7 @@ Then $Z_f$ is empty,
 $Z_f$ is a subvariety of pure codimension $1$,
 or $Z_f = U$.
 Furthermore,
-$(Z_f)_{\mathit{reg}}$ is open and dense in $Z_f$.
+$(Z_f)_{\mathit{reg}}$ is open and dense in~$Z_f$.
 \end{thm}
 
 Let us improve on this for arbitrary varieties.
@@ -15927,8 +15934,7 @@ In other words, local properties of a codimension $1$ subvariety can be
 studied by studying the zero set of a single Weierstrass polynomial.
 
 \begin{example}
-It is not true that
-a subvariety in $\C^n$ of dimension $n-k$ (codimension $k$)
+Not every subvariety in $\C^n$ of dimension $n-k$ (codimension $k$)
 has $k$
 holomorphic functions that ``cut it out.''  That only works for $k=1$.
 The set defined by
