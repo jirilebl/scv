@@ -6244,7 +6244,8 @@ language, consider an invertible $D$, a subspace $T$, and its image $DT$.
 Then the inertia of $L$ restricted to $DT$ is the same
 as the inertia of $D^*LD$ restricted to $T$.
 
-Let $M$ be a smooth real hypersurface given by $r=0$, then $f^{-1}(M)$ is
+Let $M$ be a smooth real hypersurface given by $r=0$.
+Then $f^{-1}(M)$ is
 a smooth real hypersurface given by $r \circ f = 0$.
 The holomorphic derivative $D = Df(p)$
 takes
@@ -8633,7 +8634,7 @@ is holomorphically convex.
 \end{exercise}
 
 \begin{exercise}
-Prove the Hartogs figure (see \thmref{thm:extensionhartogsfigure})
+Prove that the Hartogs figure (see \thmref{thm:extensionhartogsfigure})
 is not holomorphically convex.
 \end{exercise}
 
@@ -8661,9 +8662,9 @@ $K \subset \subset \C^n$ is the same as the holomorphic hull $\widehat{K}_{\C^n}
 
 \begin{exercise}
 \begin{exparts}
-\item Prove the Hartogs triangle $T$ (see \exerciseref{exercise:hartogstriangle})
+\item Prove that the Hartogs triangle $T$ (see \exerciseref{exercise:hartogstriangle})
 is holomorphically convex.
-\item Prove $T \cup B_{\epsilon}(0)$ (for a small enough $\epsilon > 0$) is
+\item Prove that $T \cup B_{\epsilon}(0)$ (for a small enough $\epsilon > 0$) is
 not holomorphically convex.
 \end{exparts}
 \end{exercise}
@@ -8676,7 +8677,7 @@ then so are all the topological components of $U_1 \cap U_2$.
 
 \begin{exercise}
 \pagebreak[2]
-Let $n \geq 2$ and $U \subset \C^n$ a domain.
+Let $n \geq 2$ and $U \subset \C^n$ be a domain.
 \begin{exparts}
 \item
 Let $K \subset \subset U$ be
@@ -9179,7 +9180,7 @@ By induction, for all $\alpha$ and $\beta$ we get
 \frac{\partial^{\sabs{\alpha}+\sabs{\beta}} f}{\partial z^\alpha \partial
 \zeta^\beta}(z,\bar{z}) .
 \end{equation*}
-All holomorphic derivatives in $z$ and $\zeta$ of $f$ are zero on every point
+All holomorphic derivatives in $z$ and $\zeta$ of $f$ are zero at every point
 $(z,\bar{z})$, so the power series is zero at every point $(z,\bar{z})$,
 and so $f$ is identically zero in a neighborhood of every
 point $(z,\bar{z})$.  The lemma follows by the identity
@@ -9202,7 +9203,7 @@ convergence,
 \end{equation*}
 converges.
 The series still converges if we replace $\bar{z}_k$  with
-$\zeta_k$ where $\sabs{\zeta_k-\bar{a}} \leq \sabs{\bar{z}_k-\bar{a}}$.
+$\zeta_k$ where $\sabs{\zeta_k-\bar{a}_k} \leq \sabs{\bar{z}_k-\bar{a}_k}$.
 So the series
 \begin{equation*}
 F(z,\zeta) =
@@ -9452,7 +9453,7 @@ For an arbitrary set $X$, issues surrounding this definition can be
 rather subtle.  The definition
 is easy to work with,
 however, if $X$ is nice, such as a hypersurface, or if $X$ is
-a closure of a domain with smooth boundary.
+the closure of a domain with smooth boundary.
 
 \begin{prop}
 Suppose $M \subset \R^n$ is a smooth (resp.\ real-analytic) real hypersurface.
@@ -9562,7 +9563,7 @@ Then $g$ is CR as it is independent of $\bar{z}_1$.
 If $G \colon U \subset \C^2 \to \C$ is a holomorphic
 function where $U$ is some open set containing the origin, then $G$
 restricted to $M$ must be real-analytic (a power series in $\Re z_1$, $\Im
-z_1$, and $\Re z_2$) and therefore $G$ cannot equal to
+z_1$, and $\Re z_2$) and therefore $G$ cannot equal
 $g$ on $M$.
 \end{example}
 
@@ -9779,19 +9780,19 @@ and hence $\sM' = \sM$ near the origin.
 
 As an example, recall that the sphere (minus a point) in $\C^2$ is biholomorphic to the
 hypersurface
-given by $\Im w = \sabs{z}^2$.  That is, $\frac{w-\bar{w}}{2i} = z \bar{z}$.  Solving for
-$\bar{w}$ and using $\zeta$ and $\omega$ obtains the equation for the
-complexification $\omega = -2iz \zeta + w$.  Then
-$\Phi(z,\zeta,w) =
--2iz \zeta + w$, and
-$\bar{\Phi}(\zeta,z,\omega) = 2i\zeta z + \omega$.  Let us check
-that $\Phi$ is the right sort of function:
+given by $\Im w = \sabs{z}^2$.  That is, $\frac{w-\bar{w}}{2i} = z \bar{z}$.
+Solving for
+$\bar{w}$ and using $\zeta$ and $\omega$ yields the equation for the
+complexification $\omega = -2iz \zeta + w$.
+Then $\Phi(z,\zeta,w) = -2iz \zeta + w$, and
+$\bar{\Phi}(\zeta,z,\omega) = 2i\zeta z + \omega$.
+Let us check that $\Phi$ is the right sort of function:
 $\bar{\Phi}\bigl(\zeta,z,\Phi(z,\zeta,w)\bigr)
 =
 2i\zeta z + (-2i z \zeta + w) = w$.  The CR vector field is
 given by
 $\frac{\partial}{\partial \bar{z}}
-+2i z \frac{\partial}{\partial \bar{w}}$.
+-2i z \frac{\partial}{\partial \bar{w}}$.
 
 \begin{exbox}
 \begin{exercise}
@@ -9834,7 +9835,7 @@ of holomorphic functions.  To motivate the proof, consider
 a real-analytic function $f$ on the circle $\sabs{z}^2 = z \bar{z} = 1$
 ($f$ is vacuously CR).  This $f$
 is a restriction of a real-analytic function on a
-neighborhood of the circle, that we write $f(z,\bar{z})$.
+neighborhood of the circle, which we write as $f(z,\bar{z})$.
 On the circle
 $\bar{z} = \nicefrac{1}{z}$.  Thus,
 $F(z) = f\bigl(z,\nicefrac{1}{z}\bigr)$ is a holomorphic function
@@ -10221,7 +10222,7 @@ $\frac{\partial}{\partial \xi_1}\big|_0,
 and such that $\frac{\partial}{\partial \Re \xi_n}\big|_0$ is tangent
 and $\frac{\partial}{\partial \Im \xi_n}\big|_0$ is normal.
 At the origin, the CR conditions are
-$\frac{\partial f}{\partial \bar{\xi}_k}(0) = 0$ for all $k$, so
+$\frac{\partial f}{\partial \bar{\xi}_k}(0) = 0$ for all $k=1,\ldots,n-1$, so
 \begin{equation*}
 df(0) =
 \frac{\partial f}{\partial \xi_1}(0) \, d\xi_1(0) + \cdots +
@@ -10416,11 +10417,9 @@ In the next claim it is important that $f$ is a CR function.
 \pagebreak[2]
 We have
 \begin{equation*}
-%\int_D
 d \alpha_\ell(x,s)
 =
 {\left(\frac{\ell}{\pi}\right)}^{n/2}
-%\int_D
 e^{-\ell [w - z(x,s)]^2} f(x,s)
 \,
 dg(x)
@@ -10504,7 +10503,7 @@ a = \sup_{\snorm{\hat{x}} \leq r, \snorm{\hat{y}'} \leq d}
 \norm{\,\left[\frac{\partial \varphi}{\partial x}(\hat{x},\hat{y}')\right]\,},
 \qquad
 A = \sup_{\snorm{\hat{x}} \leq r, \snorm{\hat{y}'} \leq d}
-\norm{\,\left[\frac{\partial \varphi}{\partial y'}(\hat{x},\hat{y}'))\right]\,}.
+\norm{\,\left[\frac{\partial \varphi}{\partial y'}(\hat{x},\hat{y}')\right]\,}.
 \end{equation*}
 Here $\bigl[ \frac{\partial \varphi}{\partial x} \bigr]$ and
 $\bigl[ \frac{\partial \varphi}{\partial y'} \bigr]$ are
@@ -10760,7 +10759,7 @@ with
 Baouendi--Tr{\`e}ves to prove the
 Lewy extension theorem.  Lewy's original proof was different
 and predates Baouendi--Tr{\`e}ves.  A local extension theorem of this type
-was first proved by Helmut Knesser in 1936.
+was first proved by Helmut Kneser in 1936.
 
 \begin{thm}[Lewy]%
 \index{Lewy extension theorem}
@@ -10768,7 +10767,8 @@ Suppose $M \subset \C^n$ is a smooth real hypersurface and $p \in M$.
 There exists a neighborhood $U$ of $p$ with the following
 property.
 Suppose $r \colon U \to \R$ is
-a smooth defining function for $M \cap U$, denote by $U_- \subset U$ the set where $r$
+a smooth defining function for $M \cap U$.
+Denote by $U_- \subset U$ the set where $r$
 is negative and $U_+ \subset U$ the set where $r$ is positive.
 Let $f \colon M \to \C$ be a smooth CR function.
 Then:
@@ -10796,7 +10796,7 @@ function for $M$.  Either we can extend it to all of $U$ or we can take a
 smaller $U$ such that $r$ is defined on $U$.  As we noticed before,
 once we pick sides (where $r$ is positive and where it is negative), then
 the number of positive eigenvalues and the number of negative eigenvalues of
-the Levi form is fixed.  A different $r$ may flip $U_-$
+the Levi form are fixed.  A different $r$ may flip $U_-$
 and $U_+$, but the conclusion of the theorem is exactly the same.
 
 \begin{proof}
@@ -10866,7 +10866,8 @@ principle, $p_\ell$ converge uniformly on all of $\Delta$.  In fact, as $(z_1,z'
 an arbitrary point in $(D \times W) \cap \Omega_-$,
 the polynomials $p_\ell$ converge uniformly on
 $(D \times W) \cap \overline{\Omega_-}$.
-Let $U = D \times W$, then $U_- = (D \times W) \cap \Omega_-$.
+Let $U = D \times W$.
+Then $U_- = (D \times W) \cap \Omega_-$.
 Notice $U$ depends on $K$, but not on $f$.
 So $p_\ell$ converge to a continuous function $F$ on $\overline{U_-} \cap
 U$ and $F$ is holomorphic on $U_-$.  Clearly $F$ equals $f$ on $M \cap U$.
@@ -10924,7 +10925,7 @@ Prove the existence of the strongly convex $K$ in the proof of
 
 \begin{exercise}
 Show by example that the corollary is not true when $n=1$.  Explain where in
-the proof have we used that $n \geq 2$.
+the proof we used that $n \geq 2$.
 \end{exercise}
 
 \begin{exercise}
@@ -18478,7 +18479,8 @@ Consider the circle $S^1 \subset
 \R^2$.  We use a parametrization $\varphi \colon (-\pi,\pi) \to S^1$
 where $\varphi(t) = \bigl(\cos(t),\sin(t)\bigr)$, so the circle is oriented
 counter-clockwise.
-Let $\omega(x_1,x_2) = P(x_1,x_2) \, dx_1 + Q(x_1,x_2) \, dx_2$, then
+Let $\omega(x_1,x_2) = P(x_1,x_2) \, dx_1 + Q(x_1,x_2) \, dx_2$.
+Then
 \begin{equation*}
 \int_{S^1} \omega =
 \int_{-\pi}^{\pi}
@@ -19443,7 +19445,7 @@ of $S$ is dense in the set of extreme points of $S$.
 \end{thm}
 
 \begin{thm}[Krein--Milman]
-Let $K \subset \R^n$ be compact and convex, then it is the convex hull of
+If $K \subset \R^n$ is compact and convex, then it is the convex hull of
 its extreme points.
 \end{thm}
 
