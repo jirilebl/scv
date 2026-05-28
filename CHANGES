@@ -18,6 +18,18 @@ mean \(r\) or \(g\) evaluated at \(p.\)
 <li>Reword the proof of Theorem 2.3.11 a little to choose
 the \(s\) correctly to fix an erratum reported by
 Richard Lärkäng.
+<li>In the proof of Theorem 2.4.10, when integrating in 
+polar coordinates, don't
+integrate over the epsilon polydisc to avoid confusing abuse of notation.
+We had better integrate over the ball, and that's not actually hard.
+Otherwise after applying Fubini we may be integrating f outside its 
+set of definition, which is not really a problem as we are multiplying
+that by zero, but it is unnecessary abuse.
+<li>In Exercise 2.6.17, add a note about convention handling
+\(\alpha_j=0.\)
+<li>In proof of Theorem 2.6.3, choose \(f_1\) so that \(|f_1(p_1)| \geq 1\)
+(that is add in the absolute values).  There is no reason to make \(f_1\)
+real at \(p_1\) and it may be confusing.
 <li>Add a note in 6.5 about (sub)varieties in algebraic
 geometry often being defined to be irreducible.
 (thanks to a suggestion by Richard Lärkäng)

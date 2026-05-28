@@ -1630,8 +1630,8 @@ bidisc.
 
 The set $\Gamma$ is a $2$-dimensional torus, like the surface of a
 donut.  Whereas the set $\partial \D^2 =
-(\partial \D \times \overline{\D}) \cup
-(\overline{\D} \times \partial \D)$ is the union of two filled donuts, or more
+(\partial \D \times \widebar{\D}) \cup
+(\widebar{\D} \times \partial \D)$ is the union of two filled donuts, or more
 precisely, it is both the inside and the outside of the donut put together,
 and these two things meet on the surface of the donut.  So the
 set $\Gamma$ is quite small in comparison to the entire boundary
@@ -3186,8 +3186,8 @@ prominently appears in complex geometry.
 A nonconstant holomorphic mapping
 $\varphi \colon \D \to \C^n$ is called an \emph{\myindex{analytic disc}}.
 If the mapping $\varphi$ extends continuously to the closed unit disc
-$\overline{\D}$, then the mapping
-$\varphi \colon \overline{\D} \to \C^n$ is called
+$\widebar{\D}$, then the mapping
+$\varphi \colon \widebar{\D} \to \C^n$ is called
 a \emph{\myindex{closed analytic disc}}.
 
 Often we call the image $\Delta = \varphi(\D)$ the analytic disc
@@ -3353,7 +3353,7 @@ This limit holds for all $e^{i\theta}$ and some subsequence of
 an arbitrary sequence $\{ w_k \}$ where $w_k \to e^{i\theta}$.  The
 holomorphic mapping $w \mapsto \frac{\partial f}{\partial z_1} (\zeta, w)$,
 therefore, extends continuously
-to the closure $\overline{\D}$ and is zero on $\partial \D$.
+to the closure $\widebar{\D}$ and is zero on $\partial \D$.
 We apply the maximum
 principle or the Cauchy formula and the fact that $\zeta$ was arbitrary to find
 $\frac{\partial f}{\partial z_1} \equiv 0$.  By symmetry
@@ -6831,7 +6831,7 @@ convex function of one real variable, where affine linear functions play the rol
 functions: A function of one real variable is
 \emph{convex}\index{convex function} if
 for every interval it is less than the affine linear function with the same
-end points.
+endpoints.
 A function of one real variable is harmonic if the second
 derivative vanishes, and it is therefore affine linear.
 In one real dimension it is also easier to picture.
@@ -6908,7 +6908,7 @@ P_r(\theta)
 \begin{thm} \label{thm:dirichsol}
 Let $u \colon \partial \D \to \R$ be a continuous function.
 Define
-$Pu \colon \overline{\D} \to \R$ by
+$Pu \colon \widebar{\D} \to \R$ by
 \begin{equation*}
 Pu(re^{i\theta})
 =
@@ -6917,7 +6917,7 @@ Pu(re^{i\theta})
 Pu(e^{i\theta}) = u(e^{i\theta}).
 \avoidbreak
 \end{equation*}
-Then $Pu$ is harmonic in $\D$ and continuous on $\overline{\D}$.
+Then $Pu$ is harmonic in $\D$ and continuous on $\widebar{\D}$.
 \end{thm}
 
 In the proof, it is useful to consider how
@@ -6985,7 +6985,7 @@ less than $- \epsilon \log \sabs{z}$ for every $\epsilon > 0$.
 
 The Poisson kernel is a reproducing kernel for
 holomorphic (and antiholomorphic) functions, as (the real and imaginary parts of) holomorphic functions are harmonic.
-Poisson kernel exists for higher dimensions as well.
+The Poisson kernel exists for higher dimensions as well.
 Solving the Dirichlet problem using the Poisson kernel leads to
 the following result.
 
@@ -7192,7 +7192,7 @@ Suppose $\overline{\Delta_r(a)} \subset U$.  For all $\alpha$,
 \frac{1}{2\pi} \int_0^{2\pi} f_\alpha (a+re^{i\theta})\, d\theta
 \geq f_\alpha(a) .
 \end{equation*}
-Taking the supremum on the right over $\alpha$ obtains the results.
+Taking the supremum on the right over $\alpha$ obtains the result.
 \end{proof}
 
 \begin{exbox}
@@ -7524,7 +7524,7 @@ in fact,
 $g_\epsilon(w_1,\ldots,w_n) =
 g_\epsilon(\sabs{w_1},\ldots,\sabs{w_n})$.
 Without loss of generality, we consider $z=0$ and we use polar coordinates
-for the integral.
+for the integral, where $w_j = r_je^{i\theta_j}$.
 \pagebreak[1]
 \begin{equation*}
 \begin{split}
@@ -7534,8 +7534,7 @@ f_\epsilon(0)
 \, dV(w)
 \\
 & =
-\int_0^\epsilon \cdots
-\int_0^\epsilon
+\int_{\snorm{r} < \epsilon}
 \left(
 \int_0^{2\pi}
 \cdots
@@ -7550,8 +7549,7 @@ g_\epsilon (r_1,\ldots,r_n) \,
  r_1 \cdots r_n \,d r_1 \cdots d r_n
 \\
 & \geq
-\int_0^\epsilon \cdots
-\int_0^\epsilon
+\int_{\snorm{r} < \epsilon}
 \left(
 \int_0^{2\pi}
 \cdots
@@ -7568,8 +7566,7 @@ g_\epsilon (r_1,\ldots,r_n) \,
 \\
 & \geq
 f(0)
-\int_0^\epsilon \cdots
-\int_0^\epsilon
+\int_{\snorm{r} < \epsilon}
 {(2\pi)}^n
 g_\epsilon (r_1,\ldots,r_n) \,
  r_1 \cdots r_n \,d r_1 \cdots d r_n
@@ -7582,7 +7579,7 @@ g_\epsilon (r_1,\ldots,r_n) \,
 \end{equation*}
 The second equality above
 follows as $g_\epsilon$ is zero
-outside the polydisc of radius $\epsilon$.
+outside the ball of radius $\epsilon$.
 For the inequalities, we again needed that $g_\epsilon \geq 0$.
 The penultimate equality follows from the fact that
 $2\pi = \int_0^{2\pi}d \theta$.
@@ -7816,7 +7813,7 @@ the closure in the relative (subspace) topology is compact.}
 Clearly $K \subset \widehat{K}$.  The key is to show that $\widehat{K}$
 is not ``too large'' for $U$.
 Keep in mind that the functions in $\sF$ are defined on $U$, so $\widehat{K}$
-depends on $U$ not just on $K$.  An easy mistake is to consider functions defined
+depends on $U$, not just on $K$.  An easy mistake is to consider functions defined
 on a larger set, obtaining a smaller $\sF$ and hence a larger
 $\widehat{K}$.  Sometimes it is useful to write $\widehat{K}_{\sF}$ to
 denote the dependence on $\sF$, especially when talking about several different
@@ -7878,7 +7875,7 @@ with some sort of convexity as above.
 
 \begin{proof}
 Let $f$ be a plurisubharmonic function on $U$.  If $\varphi_\alpha \colon
-\overline{\D} \to U$ is the holomorphic (in $\D$) mapping giving the closed
+\widebar{\D} \to U$ is the holomorphic (in $\D$) mapping giving the closed
 analytic disc, then $f \circ \varphi_\alpha$ is subharmonic.
 By the maximum principle,
 $f$ on $\Delta_\alpha$ must be less than or equal to the supremum
@@ -8210,8 +8207,8 @@ Suppose $p \in \partial U$, and let
 $W$ be such that $U \cap W$
 is Hartogs pseudoconvex.  Intersection of
 Hartogs pseudoconvex domains is Hartogs pseudoconvex,
-see \exerciseref{exercise:intersectionhpseudo}, so
-assume $W = B_r(p)$.
+see \exerciseref{exercise:intersectionhpseudo}.
+So assume $W = B_r(p)$.
 Let $B = B_{r/2}(p)$.  If $q \in B \cap U$, the distance from $q$ to the boundary of $W \cap U$ is the same as
 the distance to $\partial U$.  The setup is illustrated in
 \figureref{fig:hartogs-pseudoconvex-local}.
@@ -8224,7 +8221,7 @@ the distance to $\partial U$.  The setup is illustrated in
 The part of the boundary $\partial U$ in $W$ is marked by a thick
 black line, the part of the boundary of $\partial (W \cap U)$ that is
 the boundary of $W$ is marked by a thick gray line.  A point $q \in B$ is
-marked and a ball of radius $\nicefrac{r}{2}$ around $q$ is dotted.
+marked, and a ball of radius $\nicefrac{r}{2}$ around $q$ is dotted.
 No point of distance $\nicefrac{r}{2}$ from $q$ is in $\partial W$, and
 the distance of $q$ to $\partial U$ is at most $\nicefrac{r}{2}$ as $p \in \partial U$
 and $p$ is the center of $B$.
@@ -8287,7 +8284,7 @@ by
 \Im z_n > - \sabs{z_1}^2 + \sum_{k=2}^{n-1} \epsilon_k \sabs{z_k}^2 + O(3) .
 \end{equation*}
 For a small fixed $\lambda > 0$, the
-closed analytic discs defined by $\xi \in \overline{\D} \mapsto (\lambda \xi, 0, \cdots, 0, is)$
+closed analytic discs defined by $\xi \in \widebar{\D} \mapsto (\lambda \xi, 0, \cdots, 0, is)$
 are in $U$ for all small enough $s > 0$.  The origin
 is a limit point of the insides of the discs, but not a limit point of their boundaries.
 \hyperref[thm:contprinciple2]{Kontinuit\"atssatz} (second version) is not satisfied,
@@ -8748,7 +8745,8 @@ The series
 \sum_{\alpha}
 \frac{1}{\alpha !}\frac{\partial^\alpha f}{\partial z^\alpha}(p) {(z-p)}^\alpha
 \end{equation*}
-converges in $\Delta_r(p)$.  The function $f$ extends to all of $\Delta_r(p)$ and
+converges in $\Delta_r(p)$.  We have a holomorphic function
+on all of $\Delta_r(p)$ that agrees with $f$ near $p$ and
 $\Delta_r(p)$ contains points outside of $U$.
 In other words, $U$ is not a domain of holomorphy.
 
@@ -8768,7 +8766,7 @@ there exists a
 sequence of points $p_\ell \in K_\ell \setminus K_{\ell-1}$ such that
 $\lim_{\ell\to\infty} p_\ell = p$.
 
-Choose $f_1 \in \sO(U)$ so that $f_1(p_1) \geq 1$.
+Choose $f_1 \in \sO(U)$ so that $\sabs{f_1(p_1)} \geq 1$.
 Proceed inductively.
 As $p_\ell$ is not in the hull of $K_{\ell-1}$, there is a function $f_\ell \in
 \sO(U)$ such that $\sabs{f_\ell} \leq 2^{-\ell}$ on $K_{\ell-1}$, but
@@ -8885,7 +8883,8 @@ is the intersection of sets of the form
 < e^\beta \bigr\}
 \avoidbreak
 \end{equation*}
-for some nonnegative $\alpha_1,\ldots,\alpha_n$, and $\beta \in \R$.
+for some $\alpha_1,\ldots,\alpha_n \geq 0$, and $\beta \in \R$.
+(Interpret $\log 0 = -\infty$, $0 \cdot (-\infty) = 0$, and $0^0 = 1$.)
 \end{exercise}
 
 \begin{exercise}
@@ -10043,7 +10042,7 @@ z$ could be uniformly
 approximated on $S^1$ by holomorphic polynomials.
 By the maximum principle, the
 polynomials would converge on $\D$ to a holomorphic function on $\D$
-continuous on $\overline{\D}$.  This function would have nonconstant real boundary values,
+continuous on $\widebar{\D}$.  This function would have nonconstant real boundary values,
 which is impossible.  Clearly $K$ cannot be the entire circle.
 
 The example is easily extended to $\C^n$
@@ -11167,7 +11166,7 @@ for every $z \in \partial U$.  Prove that $f|_{\partial U}$ gives the boundary
 values of a function continuous on $\widebar{U}$ and holomorphic in $U$.
 \item
 Given arbitrary $\epsilon > 0$, find a $C^1$ function $f$ on the closed unit disc
-$\overline{\D}$,
+$\widebar{\D}$,
 such that $\frac{\partial f}{\partial \bar{z}}$ is identically zero
 outside an $\epsilon$-neighborhood of the origin, yet $f|_{\partial \D}$
 does not represent the boundary values of a holomorphic function.
@@ -14118,7 +14117,7 @@ $(U \times \widebar{U}^*) \cup (\widebar{U} \times U^*)$.
 
 \begin{example}
 In \exampleref{example:bergmankerneldisc}, we computed that
-if $f \in C(\overline{\D}) \cap \sO(\D)$, then
+if $f \in C(\widebar{\D}) \cap \sO(\D)$, then
 \begin{equation*}
 f(z) = \frac{1}{2\pi} \int_{\partial \D} \frac{f(\zeta)}{1-z\bar{\zeta}} \, ds .
 \avoidbreak
