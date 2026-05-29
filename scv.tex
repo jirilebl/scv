@@ -3156,7 +3156,8 @@ The inequivalence of the ball and the polydisc was first proved by
 Poincar\'e by computing the automorphism groups of $\D^2$ and $\bB_2$,
 although his proof
 assumed the maps extended past the boundary.
-The first complete proof was by Henri Cartan in 1931, though the theorem is
+Henri Cartan gave the
+first complete proof in 1931, though the theorem is
 popularly attributed to Poincar\'e.  It seems standard practice that any general audience talk
 about several complex variables contains a mention of Poincar\'e,
 and often the reference is to this exact theorem.
@@ -3268,16 +3269,14 @@ $\{ p_k \}$ be a sequence in $U$ such that $p_k \to p \in \partial U$.
 Take any convergent subsequence $\bigl\{ f(p_{k_\ell}) \bigr\}$ of
 $\bigl\{ f(p_k) \bigr\}$
 converging to some $q \in \widebar{V}$.  Consider
-$E = \bigl\{ f(p_{k_\ell}) \bigr\}$ as a set.  Let $\widebar{E}$ be the closure of $E$
-in $V$ (subspace topology).  If $q \in V$, then $\widebar{E} = E \cup \{ q
-\}$ and $\widebar{E}$ is compact.
-Otherwise, if $q \notin V$, then
-$\widebar{E} = E$ and $\widebar{E}$ is not compact.
-The inverse image $f^{-1}(\widebar{E})$
+$E = \bigl\{ f(p_{k_\ell}) \bigr\}$ as a set.
+Let $\widebar{E}$ be the closure of $E$
+in $V$ (subspace topology).
+The inverse image $f^{-1}\bigl(\widebar{E}\bigr)$
 is not compact (it contains a sequence going to $p \in \partial U$)
-and hence $\widebar{E}$ is not
-compact either as $f$ is proper.  Thus $q \notin V$, and hence $q \in
-\partial V$.
+and hence $\widebar{E} = \big( E \cup \{ q \} \bigr) \cap V$ is not
+compact either as $f$ is proper.
+That means that $q \notin V$ and so $q \in \partial V$.
 As we took an arbitrary convergent subsequence of $\bigl\{ f(p_k) \bigr\}$,
 $q$ was an arbitrary limit point.
 Therefore, all limit points are in $\partial V$.
@@ -3291,7 +3290,7 @@ is not compact.  Then there exists a sequence $\{ p_k \}$ in $f^{-1}(E)$
 such that $p_k \to p \in \partial U$, because $f^{-1}(E)$ is closed
 (in $U$), bounded, but not compact.
 The hypothesis then says that the limit points of
-$\bigl\{ f(p_k) \bigr\}$ are in $\partial V$.  Hence $E$ has limit points in
+$\bigl\{ f(p_k) \bigr\}$ are in $\partial V$.  Hence, $E$ has limit points in
 $\partial V$ and is not compact.
 \end{proof}
 
@@ -3454,7 +3453,7 @@ Hint: For simplicity take $a=0$ and $U=\C^n$.
 \end{exbox}
 
 
-Before we get into the proof, we write the Taylor
+For the proof, we write the Taylor
 series of a function in a nicer way, splitting it up into parts of different
 degree.
 A polynomial $P \colon \C^n \to \C$ is \emph{\myindex{homogeneous}}
@@ -3463,14 +3462,14 @@ of degree $d$ if
 P(s z) = s^d P(z)
 \end{equation*}
 for all $s \in \C$ and $z \in \C^n$.
-A homogeneous polynomial of degree $d$ is a polynomial whose
-every monomial
+A polynomial is homogeneous of degree $d$ if
+every one of its monomials
 is of total degree $d$.  For instance, $z^2w-iz^3+9zw^2$ is homogeneous of
 degree $3$ in the variables $(z,w) \in \C^2$.
 A polynomial vector-valued mapping is homogeneous of degree $d$
 if each component is.
-If $f$ is holomorphic near $a \in \C^n$, then
-write the power series of $f$ at $a$ as
+The power series at $a$ of a holomorphic $f$
+is then written as
 \begin{equation*}
 \sum_{m=0}^{\infty} f_m(z-a) ,
 \end{equation*}
@@ -3480,8 +3479,8 @@ The $f_m$ is called the
 at $a$.  The $f_m$ would be vector-valued if $f$ is vector-valued,
 such as in the statement of the theorem.
 In the proof, we will require the vector-valued
-Cauchy estimates (exercise below)\footnote{The normal Cauchy estimates
-could also be used in the proof of Cartan by applying them
+Cauchy estimates (exercise below)\footnote{Normal Cauchy estimates
+could also be used in the proof by applying them
 componentwise.}.
 
 \begin{exbox}
@@ -3662,13 +3661,14 @@ Show that Cartan's uniqueness theorem is not true in the real case,
 even for rational
 functions.  That is, find a rational function $R(t)$ of
 a real variable $t$, such that $R$ takes $(-1,1)$ to
-$(-1,1)$, $R'(0) = 1$, and $R(t)$ is not the identity.  You can even make
+$(-1,1)$, $R(0)=0$, $R'(0) = 1$, and $R(t)$ is not the identity.  You can even make
 $R$ bijective.
 \item
 Show that \exerciseref{exercise:boundedeigen} is not true in the real
 case.
 For every $\alpha \in \R$, find a rational function $R(t)$ of
-a real variable $t$, such that $R$ takes $(-1,1)$ to $(-1,1)$ and
+a real variable $t$, such that $R$ takes $(-1,1)$ to $(-1,1)$,
+$R(0)=0$, and
 $R'(0) = \alpha$.
 \end{exparts}
 \end{exercise}
@@ -3717,7 +3717,7 @@ then there exists a unique $F \in \sO(U)$ such that $F|_{U \setminus N} = f$.
 \end{thm}
 
 The proof is an application of the Riemann extension theorem from one dimension.
-And just as in one dimension, the boundedness condition is necessary to
+As in one dimension, the boundedness condition is necessary to
 expect an extension.  For instance, $\frac{1}{g(z)}$ is not bounded near $N$
 and indeed does not extend through $N$.
 
@@ -3726,7 +3726,7 @@ Take any $p \in N$, and let $L$ be a complex line through $p$.
 That is,
 $L$ is an image of an affine mapping
 $\varphi \colon \C \to \C^n$ defined by
-$\varphi(\xi) = a\xi + p$, for a vector $a \in \C^n$.
+$\varphi(\xi) = a\xi + p$ for a vector $a \in \C^n$.
 The composition $g \circ \varphi$
 is a holomorphic function of one variable, and it
 is either identically zero, or
@@ -3796,8 +3796,8 @@ unbounded near $p$.
 
 \begin{exercise}
 Suppose that $U \subset \C^n$ is open and $N \subset U$ is a closed set
-such that for every $\zeta \in \C$, the set
-$\{ z \in U : z_n = \zeta \} \cap N$ is countable.
+such that for every $\zeta \in \C^{n-1}$, the set
+$\{ z \in U : z_{1} = \zeta_1, \ldots, z_{n-1} = \zeta_{n-1} \} \cap N$ is countable.
 Suppose that $f \colon U \setminus N \to \C$ is holomorphic and
 locally bounded in $U$.  Then $f$ uniquely extends to a holomorphic function
 of $U$.  Hint: Every countable closed subset of $\C$ has isolated points.
@@ -3839,7 +3839,7 @@ $N \cap W$ has a regular point, then $N_{\mathit{reg}}$ is dense.
 Replacing $N$ with $N \cap W$, it thus suffices to show
 $N_{\mathit{reg}}$ is nonempty.
 
-Since $f$ is not identically zero, then not all derivatives (of arbitrary
+Since $f$ is not identically zero, not all derivatives (of arbitrary
 order) of $f$
 vanish identically on $N$.
 If some first order derivative of $f$ does not vanish identically on $N$,
@@ -3863,14 +3863,15 @@ $h=0$ near $p$.
 The zero set of $h$ contains $N$, the zero set of $f$.
 We must show equality near $p$.  That is, we need to show that
 near $p$, every zero of $h$ is also a zero of $f$.
-Write $p = (p',p_n)$.  Then the function
+Write $p = (p',p_n)$.  The function
 \begin{equation*}
 \xi \mapsto f(p',\xi)
 \end{equation*}
 has an isolated zero in a small disc $\Delta$ around $p_n$ and is
 nonzero on the circle $\partial \Delta$.  By
 \hyperref[thm:onevarrouche]{Rouch\'e's theorem},
-$\xi \mapsto f(z',\xi)$ must have a zero for all $z'$ sufficiently close to $p'$
+$\xi \mapsto f(z',\xi)$ has a zero in $\Delta$
+for all $z'$ sufficiently close to $p'$
 (close enough to make $\sabs{f(p',\xi)-f(z',\xi)} < \sabs{f(p',\xi)}$ for all $\xi \in
 \partial \Delta$).
 Since $g(z')$ is the unique solution $z_n$ to $h(z',z_n) = 0$
@@ -3989,9 +3990,9 @@ is not zero.  This follows from the inverse function theorem, which is just
 a special case of \hyperref[thm:ift]{the implicit function theorem}.
 The trick to prove the theorem above is to prove that $J_f$ is nowhere zero.
 
-In one complex dimension, every holomorphic function $f$ can, in
+In one complex dimension, every nonconstant holomorphic function $f$ can, in
 the proper local holomorphic coordinates (and up to adding a constant),
-be written as $z^d$ for $d=0,1,2,\ldots$:
+be written as $z^d$ for $d=1,2,\ldots$:
 Near a $z_0 \in \C$,
 there exists a constant $c$ and a local biholomorphic $g$
 with $g(z_0) = 0$ such that
@@ -4019,9 +4020,9 @@ assume $q=0$.  The biholomorphic (near the origin) map
 \begin{equation*}
 \Psi(z_1,\ldots,z_n) = \bigl(z_1,z_2,\ldots,z_{n-1},z_n-g(z_1,\ldots,z_{n-1}) \bigr)
 \end{equation*}
-takes the zero set of $J_f$ to the set given by $z_n=0$.  By considering
-$f \circ \Psi^{-1}$ instead of $f$, we may assume
-that $J_f = 0$ on the set given by $z_n=0$.  We may also
+takes the zero set of $J_f$ to the set given by $z_n=0$.  Considering
+$f \circ \Psi^{-1}$ instead of $f$, we assume
+that $J_f = 0$ on the set given by $z_n=0$.  We also
 assume that $f(0) = 0$.
 
 If $J_f$ vanishes identically, then there is no need to do anything other

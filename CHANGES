@@ -3,6 +3,14 @@ of convergence is computed from the domain.
 <li>In Proposition 1.1.3, add the note that
 \(\frac{partial f}{\partial z_k}\) is holomorphic.
 (thanks to a suggestion by Richard Lärkäng)
+<li>Slightly simplify the wording in the proof of Lemma 1.4.7.
+<li><b>Change 1.6.2 to fix an erratum</b>.  While the exercise was
+doable, the hint was for the version that really mattered, which is
+restriction to lines (not hyperplanes) being countable.  So change
+it to lines.  Same idea, but now as intended.
+<li>Just before the proof of Theorem 1.6.6, the normal form for a function
+of one variable is better stated for nonconstant functions to avoid
+the nonsense of taking \(d=0.\)
 <li>Slightly add to the hint to Exercise 2.1.5.
 (thanks to a suggestion by Richard Lärkäng)
 <li>In proof of corollary 2.1.5, explicitly mention that
