@@ -824,8 +824,8 @@ We check:
 + \frac{\partial u}{\partial y}
 \right) .
 \end{equation*}
-This expression is zero if and only if the real parts and the imaginary
-parts are zero.  In other words, %if and only if
+This expression is zero if and only if the real part and the imaginary
+part are zero.  In other words,
 \begin{equation*}
 \frac{\partial u}{\partial x}
 - \frac{\partial v}{\partial y}
@@ -839,9 +839,6 @@ parts are zero.  In other words, %if and only if
 \end{equation*}
 That is, the Cauchy--Riemann equations are satisfied.
 
-%Another common way to define a holomorphic function is to say that
-%the complex derivative at each point exists.  If $f'$ exists
-%at every point, it equals the derivative in $z$.
 If $f$ is holomorphic, the derivative in $z$ is the standard complex derivative you know and love:
 \begin{equation*}
 \frac{\partial f}{\partial z} (z_0)
@@ -927,13 +924,6 @@ d \zeta
 \qquad \text{for all $z \in U$.}
 \end{equation*}
 \end{thm}
-
-%The path integral for a smooth path $\gamma \colon [a,b] \to \C$ is defined as
-%\begin{equation*}
-%\int_\gamma f(z) \, dz
-%=
-%\int_a^b f\bigl(\gamma(t)\bigr) \gamma'(t) \, dt .
-%\end{equation*}
 
 The Cauchy formula is the essential ingredient we need from
 one complex variable.  It follows
@@ -1083,8 +1073,6 @@ converges uniformly absolutely for $(z,\zeta) \in \overline{\Delta_{\rho'}(a)}
 \times \partial \Delta_\rho(a)$ (that is, $\sum_k {\bigl\lvert
 \frac{z-a}{\zeta-a} \bigr\rvert}^k$
 converges uniformly).
-%In particular, the
-%series converges uniformly absolutely in $z$ on compact subsets of $\Delta_{\rho}(a)$.
 
 Let $\gamma$
 be the path going around
@@ -1157,8 +1145,9 @@ $\frac{1}{\zeta-z}$ as
 and then using the geometric series.
 
 Not only have we proved that $f$ has a power series, but we computed
-that the radius of convergence is at least $R$, where $R$ is the maximum $R$
-such that $\Delta_R(a) \subset U$.  We also obtained a formula for the
+that the radius of convergence is at least $R$, where $R$ is the supremum
+of all $r$
+such that $\Delta_r(a) \subset U$.  We also obtained a formula for the
 coefficients
 \begin{equation*}
 c_k =
@@ -1326,7 +1315,7 @@ Define \emph{balls}\index{ball} as in $\R^{2n}$:
 B_\rho(a)  \overset{\text{def}}{=}
 \bigl\{ z \in \C^n : \snorm{z - a} < \rho \bigr\} ,
 \end{equation*}
-And the \emph{\myindex{unit ball}},
+and the \emph{\myindex{unit ball}},
 \glsadd{not:unitball}%
 \begin{equation*}
 \bB_n \overset{\text{def}}{=} B_1(0) =
@@ -1338,7 +1327,7 @@ can also be pictured by plotting against the modulus of the
 variables, since the inequality defining the ball only
 depends on the moduli of the variables.
 Not every domain can be drawn like this, but if it can,
-it is called a \emph{Reinhardt domain}, more on this later.
+it is called a \emph{Reinhardt domain}---more on this later.
 A picture of $\bB_2$ is in \figureref{fig:ball}.
 \begin{myfig}
 \subimport*{figures/}{ball.pdf_t}
@@ -1419,7 +1408,7 @@ and suppose $\overline{\Delta} \subset U$, that is, $f$ is holomorphic
 on a neighborhood of the closure of $\Delta$.
 Let $z$ be in $\Delta$.
 Orient $\partial \Delta_1$ positively and
-apply the Cauchy formula (after all $f$ is holomorphic in $z_1$):
+apply the Cauchy formula (after all, $f$ is holomorphic in $z_1$):
 \begin{equation*}
 f(z) =
 \frac{1}{2\pi i}
@@ -1534,7 +1523,7 @@ Two-forms are combinations of wedge products,
 $\omega \wedge \eta$, of one-forms.  A wedge of a two-form and
 a one-form is a three-form, etc.
 An $m$-form is an object that
-can be integrated on a so-called $m$-chain, for example, a
+can be integrated on a so-called $m$-chain, for example, an
 $m$-dimensional surface.  The wedge product takes care of the orientation
 as it is anticommutative on one-forms:
 For one-forms $\omega$ and $\eta$, we have
@@ -1629,13 +1618,13 @@ bidisc.
 \end{myfig}
 
 The set $\Gamma$ is a $2$-dimensional torus, like the surface of a
-donut.  Whereas the set $\partial \D^2 =
+donut.  The set $\partial \D^2 =
 (\partial \D \times \widebar{\D}) \cup
 (\widebar{\D} \times \partial \D)$ is the union of two filled donuts, or more
 precisely, it is both the inside and the outside of the donut put together,
-and these two things meet on the surface of the donut.  So the
-set $\Gamma$ is quite small in comparison to the entire boundary
-$\partial \D^2$.
+and these two things meet on the surface of the donut.  The
+set $\Gamma$ is quite small in comparison to the entire
+boundary~$\partial \D^2$.
 
 \begin{exbox}
 \begin{exercise}
@@ -1643,8 +1632,8 @@ $\partial \D^2$.
 Suppose $\Delta$ is a polydisc, $\Gamma$ its distinguished boundary,
 and $f \colon \overline{\Delta} \to \C$ is continuous on $\overline{\Delta}$
 and holomorphic on $\Delta$.
-Prove
-$\sabs{f(z)}$ achieves its maximum on $\Gamma$.
+Prove that
+$\sabs{f(z)}$ achieves its maximum on~$\Gamma$.
 \end{exercise}
 
 \begin{exercise}
@@ -2017,8 +2006,8 @@ We leave that as an exercise.
 First, one must show that the term-by-term derivative
 series also converges uniformly absolutely on compact subsets.
 Then one applies the theorem from real analysis about derivatives
-of limits: If a sequence of functions and the sequences of its derivatives converge
-uniformly, then the derivatives converge to the derivative of the limit.
+of limits: If a sequence of functions and the sequences of their derivatives converge
+uniformly, then the derivatives converge to the derivatives of the limit.
 
 \begin{exbox}
 \begin{exercise}
@@ -2108,7 +2097,7 @@ and we have the \emph{\myindex{Cauchy estimates}}:
 Consequently, the coefficients of the power series depend only on
 the derivatives of $f$ at $a$
 (and so on the values of $f$ in an arbitrarily small
-neighborhood of $a$) and not the specific polydisc used in the theorem.
+neighborhood of $a$) and not on the specific polydisc used in the theorem.
 
 \begin{proof}
 By the Leibniz rule,
@@ -2313,7 +2302,7 @@ They are exactly the domains that you can
 draw by plotting what happens for the moduli of the variables.
 A domain is a
 \emph{\myindex{complete Reinhardt domain}}\index{Reinhardt domain!complete}
-if $z \in U$, then $\overline{\Delta_r(0)} \subset U$ where
+if $z \in U$ implies that $\overline{\Delta_r(0)} \subset U$ where
 $r = (r_1,\ldots,r_n)$ and $r_k = \sabs{z_k}$ for all $k$.
 So a complete Reinhardt domain is a union (possibly infinite) of polydiscs
 centered at the origin.
@@ -2395,7 +2384,7 @@ that $f(z) = f(a)$ for all $z \in U$.
 \begin{exbox}
 \begin{exercise} \label{exercise:averageDelta}
 Let $V$ be the volume measure on $\R^{2n}$ and hence on $\C^n$.
-Suppose $\Delta$ centered at $a \in \C^n$, and $f$ is a function holomorphic on
+Suppose $\Delta$ is centered at $a \in \C^n$, and $f$ is a function holomorphic on
 a neighborhood of $\overline{\Delta}$.  Prove
 \begin{equation*}
 f(a) =
@@ -2489,7 +2478,7 @@ in $D_t \cap D_{t_0}$.
 Prove a several variables version of the \emph{\myindex{Monodromy theorem}}:
 If $U \subset \C^n$ is a simply connected domain, $D \subset U$ a ball, and
 $f \colon D \to \C$ a holomorphic function that can be analytically
-continued from $p \in D$ to every $q \in U$, then there exists
+continued along every path in $U$ starting at some $p \in D$, then there exists
 a unique holomorphic function $F \colon U \to \C$ such that $F|_D = f$.
 \end{exercise}
 \end{exbox}
@@ -2795,14 +2784,14 @@ $x$ and $y$, where $z = x+iy$.
 
 \begin{remark}
 We could have swapped $z$ and $\bar{z}$, by
-flipping the bars everywhere.  There is no difference between the two,
+flipping the bars everywhere.  There is no difference between the two;
 they are twins in effect.  We just need to know which one is which.
 After all, it all starts with taking the two square roots of $-1$ and
 deciding which one is $i$ (remember the chickens?).
 There is no ``natural choice'' for that, but once
-we make that choice we must be consistent.  And once we picked which
+we make that choice we must be consistent.  And once we pick which
 root
-is $i$, we also picked what is holomorphic and what is
+is $i$, we also pick what is holomorphic and what is
 antiholomorphic.  This is a subtle philosophical as much as a mathematical point.
 \end{remark}
 
@@ -2824,7 +2813,7 @@ Then the composition $g \circ f$ is holomorphic.
 \end{thm}
 
 \begin{proof}
-The proof is almost trivial by chain rule.
+The proof is almost trivial by the chain rule.
 Again let $g$ be a function of $w \in V$ and $f$ be a function of $z \in U$.
 For $\ell = 1,\ldots,n$ and $\nu=1,\ldots,q$, compute
 \begin{equation*}
@@ -2843,15 +2832,15 @@ For $\ell = 1,\ldots,n$ and $\nu=1,\ldots,q$, compute
 \end{equation*}
 \end{proof}
 
-For holomorphic mappings the chain rule simplifies, and it formally looks
-like the familiar vector calculus rule.
+For holomorphic mappings, the chain rule simplifies to look like
+the familiar vector calculus rule.
 Suppose again
 $U \subset \C^n$ and $V \subset \C^m$ are open, and
 $f \colon U \to V$ and $g \colon V \to \C$ are holomorphic.
 Name the variables
 $z = (z_1,\ldots,z_n) \in U \subset \C^n$ and $w = (w_1,\ldots,w_m) \in V
 \subset \C^m$.  In formula \eqref{eq:chainrule} for the $z_\ell$ derivative,
-the $\bar{w}_\ell$ derivative of $g$ is zero and the $z_\ell$ derivative of
+the $\bar{w}_k$ derivative of $g$ is zero and the $z_\ell$ derivative of
 $\bar{f}_k$ is also zero because $f$ and $g$ are holomorphic.
 Therefore, for $\ell=1,\ldots,n$,
 \begin{equation*}
@@ -2916,7 +2905,7 @@ the derivative of the composition is the composition of derivatives
 
 \begin{prop}[Chain rule for holomorphic mappings\index{chain rule for holomorphic mappings}]
 Let $U \subset \C^n$ and $V \subset \C^m$ be open sets.  Suppose
-$f \colon U \to V$ and $g \colon V \to \C^k$ are both holomorphic,
+$f \colon U \to V$ and $g \colon V \to \C^q$ are both holomorphic,
 and $p \in U$.  Then
 \begin{equation*}
 D(g \circ f)(p) = Dg\bigl(f(p)\bigr) \, Df(p) .
@@ -2966,11 +2955,11 @@ $(\Re f_1,\Im f_1, \ldots, \Re f_n, \Im f_n)$
 as a function of $(x_1,y_1,\ldots,x_n,y_n)$,
 using our identification of $\C^n$ and $\R^{2n}$.
 The statement is about the two Jacobians at $p$, that is, the derivatives
-at $p$.  Hence, we can assume that
-$p=0$ and $f$ is complex linear, $f(z) = Az$ for some $n \times n$
+at $p$.  Hence, we assume that
+$p=0$ and $f$ is complex linear: $f(z) = Az$ for some $n \times n$
 matrix $A$.  It is just a statement about matrices.
 The matrix $A$ is the (holomorphic) Jacobian matrix of $f$.
-Let $B$ be the real Jacobian matrix of $f$.
+Let $B$ be the real Jacobian matrix of~$f$.
 
 We change the basis of $B$ to be $(z,\bar{z})$
 using $z = x+iy$ and $\bar{z}=x-iy$
@@ -2991,19 +2980,16 @@ A & 0 \\
 \end{bmatrix} .
 \end{equation*}
 Thus
-\begin{multline*}
+\begin{equation*}
 \det (B) =
-\det(M^{-1}M B)
-=
 \det(M^{-1} B M)
-\\
 =
 \det(A) \det(\widebar{A})
 =
 \det(A) \, \overline{\det(A)}
 =
 \abs{\det(A)}^2 .  \qedhere
-\end{multline*}
+\end{equation*}
 \end{proof}
 
 The regular (real) implicit function theorem and the chain rule
@@ -4285,7 +4271,7 @@ take into account single-valuedness.  For instance, let $f$ be the principal bra
 of the logarithm defined on the slit plane
 $U = \C \setminus \{ z \in \C : \Im z = 0, \Re z \leq 0 \}$.
 We can locally define an extension from one side through the boundary
-of the domain, but we cannot define an extension on a open set that
+of the domain, but we cannot define an extension on an open set that
 contains $U$.  This one-dimensional example should be motivation for why we let $V$
 be a proper subset of $U \cap W$, and why $W$ need not contain all of $U$.
 This one dimensional intuition can be extended to an actual example in
@@ -5582,8 +5568,8 @@ Note that a biholomorphic map is a diffeomorphism.
 
 \begin{prop} \label{prop:whereTgoeshol}
 Suppose $M \subset \C^n$ is a smooth real hypersurface, $p \in M$,
-and $U \subset \C^n$ is open with $M \subset U$, and suppose $M' \subset
-\C^m$ a smooth real hypersurface.
+$U \subset \C^n$ is open with $M \subset U$, and suppose $M' \subset
+\C^m$ is a smooth real hypersurface.
 Let $f \colon U \to \C^m$ be holomorphic such that $f(M) \subset M'$.
 Let $D_\C f(p)$ be
 the complexified real derivative as before.  Then
@@ -5660,7 +5646,7 @@ $\dim_\C T_p^{(1,0)} M = \dim_\C T_p^{(0,1)} M = n-1$ and
 $\dim_\C B_p = 1$.
 
 \nopagebreak
-If $M$ is the boundary of a open set $U$ with smooth boundary,
+If $M$ is the boundary of an open set $U$ with smooth boundary,
 the rotation can be chosen so that
 $\Im w > \varphi(z,\bar{z},\Re w)$ on $U$.
 \end{prop}
@@ -6078,8 +6064,8 @@ origin, and so the domain is strongly pseudoconvex at the origin.
 We will prove that (strong) pseudoconvexity is a biholomorphic invariant,
 and so the ball is strongly pseudoconvex.
 
-Not the entire sphere gets transformed, the points where $Z_n=1$
-get ``sent to infinity.''
+Not the entire sphere gets transformed:
+The points where $Z_n=1$ get ``sent to infinity.''
 The hypersurface $\Im w = \sabs{z_1}^2 + \cdots + \sabs{z_{n-1}}^2$
 is sometimes called the \emph{\myindex{Lewy hypersurface}}, and in the
 literature some even say it \emph{is} the sphere\footnote{That is not, in
@@ -6317,7 +6303,7 @@ $\beta$ is the number of negative eigenvalues, and $\alpha+\beta \leq n-1$.
 
 Recall that $O(\ell)$ at the origin means
 a function that together with its derivatives up to and including
-order $\ell-1$ vanish at the origin.
+order $\ell-1$ vanishes at the origin.
 
 \begin{proof}
 Change coordinates so that $M$ is given by
@@ -6606,7 +6592,7 @@ The theorem says that a domain of holomorphy must be pseudoconvex.
 The theorem's name comes from the proof, and sometimes other theorems using a
 similar proof of a ``tomato can'' of analytic discs are called
 tomato can principles.
-The general statement of proof of the principle is that ``an
+The general statement of the proof of the principle is that ``an
 analytic function holomorphic in a neighborhood of the sides and the bottom
 of a tomato can extends to the inside.''  And the theorem we gave as
 the principle states that ``if the Levi form at $p$ has a negative

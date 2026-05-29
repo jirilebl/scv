@@ -1,3 +1,5 @@
+<li>Be a bit more precise with how the radius
+of convergence is computed from the domain.
 <li>In Proposition 1.1.3, add the note that
 \(\frac{partial f}{\partial z_k}\) is holomorphic.
 (thanks to a suggestion by Richard Lärkäng)
