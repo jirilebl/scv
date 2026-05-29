@@ -3111,7 +3111,7 @@ that is, $f$ is a bijection, and both $f$ and $f^{-1}$ are continuous.
 Let us stick with $n=2$.
 Instead of proving that $\bB_2$ and
 $\D^2$ are biholomorphically
-inequivalent we will prove a stronger theorem.  First a
+inequivalent, we will prove a stronger theorem.  First, a
 definition.
 
 \begin{defn}
@@ -3242,7 +3242,7 @@ $\overline{\bB_n}$.
 Let $\Delta$ be an analytic disc.
 Prove that $\Delta \cap \partial \bB_n$ is nowhere dense in $\Delta$.
 \item
-Find an analytic disc in $\C^2$, such that $(1,0) \in \Delta$, $\Delta \cap \bB_2 =
+Find an analytic disc in $\C^2$ such that $(1,0) \in \Delta$, $\Delta \cap \bB_2 =
 \emptyset$, and locally near
 $(1,0) \in \partial \bB_2$, the set
 $\Delta \cap \partial \bB_2$ is the
@@ -3326,7 +3326,7 @@ By \hyperref[thm:onevarmontel]{Montel's theorem} and
 by passing to a subsequence, assume that
 the sequence of functions converges (uniformly on compact subsets) to
 a limit $g \colon \D \to \overline{\bB}_2$.  As $(\zeta,w_k) \to
-(\zeta,e^{i\theta}) \in \partial \D^2$, then by
+(\zeta,e^{i\theta}) \in \partial \D^2$, by
 \lemmaref{lemma:bndrytobndry}, $g(\D) \subset \partial \bB_2$,
 and hence $g$ is constant by \propref{prop:noanaldiscinsphere}.
 
@@ -3426,7 +3426,7 @@ $f|_{\bB_n}$ maps into $\bB_m$ and furthermore that this map is proper.
 
 The following theorem is another analogue of Schwarz's lemma in
 several variables.  It says that for a bounded domain,
-a self mapping that is the identity up to first order at a single point
+a self-mapping that is the identity up to first order at a single point
 must, in fact, be the identity.
 As there are quite a few theorems named for Cartan,
 this one is referred to as the
@@ -3486,9 +3486,9 @@ componentwise.}.
 \begin{exbox}
 \begin{exercise}
 Prove a vector-valued version of the Cauchy estimates.  Suppose $f
-\colon \overline{\Delta_r(a)} \to \C^m$ is a continuous function holomorphic
+\colon \overline{\Delta_r(a)} \to \C^m$ is a continuous function, holomorphic
 on a polydisc $\Delta_r(a) \subset \C^n$.  Let $\Gamma$ denote the distinguished
-boundary of $\Delta$.  Show that for every multi-index $\alpha$,
+boundary of $\Delta_r(a)$.  Show that for every multi-index $\alpha$,
 \begin{equation*}
 \norm{\frac{\partial^{\abs{\alpha}}f}{\partial z^\alpha} (a)}
 \leq
@@ -3501,10 +3501,10 @@ boundary of $\Delta$.  Show that for every multi-index $\alpha$,
 
 \begin{proof}[Proof of Cartan's uniqueness theorem]
 Without loss of generality, assume $a=0$.
-Write $f$ as a power series at the origin, written in homogeneous parts:
+Write $f$ as a power series at the origin in terms of homogeneous parts:
 \begin{equation*}
-f(z) = z + f_k(z) + \sum_{m=k+1}^\infty f_m(z) = z + f_k(z) + \text{higher
-order terms},
+f(z) = z + f_k(z) + \sum_{m=k+1}^\infty f_m(z) = z + f_k(z) +
+\text{higher-order terms},
 \end{equation*}
 where $k \geq 2$ is an integer such that
 $f_2(z)=f_3(z)=\cdots=f_{k-1}(z)=0$.
@@ -3525,22 +3525,22 @@ Note that
 \begin{equation*}
 f_k\bigl(f(z)\bigr)
 =
-f_k\bigl(z + \text{higher order terms}\bigr)
+f_k\bigl(z + \text{higher-order terms}\bigr)
 =
-f_k(z) + \text{higher order terms}.
+f_k(z) + \text{higher-order terms}.
 \end{equation*}
 Therefore,
 \begin{multline*}
 f^2(z) =
 f\bigl(f(z)\bigr) =
-f(z) + f_k\bigl(f(z)\bigr) + \text{higher order terms}
+f(z) + f_k\bigl(f(z)\bigr) + \text{higher-order terms}
 \\
 =
-z + 2 f_k(z) + \text{higher order terms}.
+z + 2 f_k(z) + \text{higher-order terms}.
 \end{multline*}
 Continuing this procedure,
 \begin{equation*}
-f^\ell(z) = z + \ell f_k(z) + \text{higher order terms}.
+f^\ell(z) = z + \ell f_k(z) + \text{higher-order terms}.
 \end{equation*}
 Suppose $\Delta_r(0)$ is a polydisc whose
 closure is in $U$.
@@ -3581,7 +3581,7 @@ also circular and bounded.  In fact, every Reinhardt domain is circular.
 
 \begin{proof}
 The map $g(z) = f^{-1}\bigl(e^{-i\theta}f(e^{i\theta} z)\bigr)$ is an
-automorphism of $U$ and via the
+automorphism of $U$, and via the
 chain rule, $g'(0) = I$.  Therefore,
 Cartan says that
 $f^{-1}\bigl(e^{-i\theta}f(e^{i\theta} z)\bigr) = z$, or in other words,
@@ -3766,7 +3766,7 @@ F(z',z_n) =
 \frac{1}{2\pi i}
 \int_{\sabs{\xi}=r} \frac{f(z',\xi)}{\xi-z_n} \,d\xi .
 \end{equation*}
-The function $\xi \to f(z',\xi)$ is bounded and thus extends holomorphically to the entire
+The function $\xi \mapsto f(z',\xi)$ is bounded and thus extends holomorphically to the entire
 disc of radius $r$ by the Riemann extension from one dimension.  By the Cauchy
 integral formula,
 $F$ is equal to $f$ at the points where they are both defined.
@@ -3897,7 +3897,7 @@ submanifold of real dimension $2n-2$.
 The points on a subvariety that are not regular are called
 \emph{singular points}\index{singular point}.
 
-To wit, one of important consequences of the theorem is that the zero set of
+To wit, one of the important consequences of the theorem is that the zero set of
 a holomorphic function is always quite large when $n \geq 2$.
 
 \begin{example}
@@ -5207,7 +5207,7 @@ Let $r$ be a defining function at $p$.  Take $v = \nabla r|_p$.
 By translating $p$ to the origin, and applying a rotation (an orthogonal matrix),
 we assume $v = (0,0,\ldots,0,v_n)$, where $v_n < 0$.  Denote our
 coordinates by $(x,y) \in \R^{n-1} \times \R$.  As $\nabla r|_0 =
-v$, then $\frac{\partial r}{\partial y}(0) \neq 0$.
+v$, we have $\frac{\partial r}{\partial y}(0) \neq 0$.
 The implicit function theorem gives a
 smooth function $\varphi$ such that
 $r\bigl(x,\varphi(x)\bigr) = 0$ for all $x$ in a neighborhood of the
@@ -6283,7 +6283,7 @@ we find the normal form for the
 quadratic part of the defining equation for a smooth real hypersurface
 under biholomorphic transformations.
 It is possible to do better than the following lemma, but it is not always possible
-to get rid of the dependence on $\Re w$ in the higher order terms.
+to get rid of the dependence on $\Re w$ in the higher-order terms.
 
 \begin{lemma} \label{lemma:normformquad}
 Let $M \subset \C^n$ be a smooth real hypersurface and $p \in M$.  Then there
@@ -10781,7 +10781,7 @@ functions.
 The function $r$ can be any defining
 function for $M$.  Either we can extend it to all of $U$ or we can take a
 smaller $U$ such that $r$ is defined on $U$.  As we noticed before,
-once we pick sides (where $r$ is positive and where it is negative), then
+once we pick sides (where $r$ is positive and where it is negative),
 the number of positive eigenvalues and the number of negative eigenvalues of
 the Levi form are fixed.  A different $r$ may flip $U_-$
 and $U_+$, but the conclusion of the theorem is exactly the same.
@@ -11644,7 +11644,7 @@ In general, the problem is equivalent to holomorphic convexity, although
 it is rather involved, and thus we content ourselves with polydiscs and
 other simple examples.
 To work with differential forms, we, as before, split the derivatives
-into the holomorphic and antiholomorphic parts.  For higher order forms,
+into the holomorphic and antiholomorphic parts.  For higher-order forms,
 we work with multi-indices for simplicity, although the way that
 multi-indices are applied is slightly different.
 
@@ -17404,7 +17404,7 @@ that $f(z_0) = 0$.
 Schwarz's lemma can also be used to classify the automorphisms of the disc
 (and hence any simply connected domain).  Let
 $\Aut(\D)$ denote the group of biholomorphic (both $f$ and
-$f^{-1}$ are holomorphic) self maps of the
+$f^{-1}$ are holomorphic) self-maps of the
 disc to itself.
 
 \begin{prop}
