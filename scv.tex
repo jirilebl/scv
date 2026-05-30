@@ -11080,7 +11080,7 @@ Notice that it would lead to an impossible result.
 \begin{proof}
 Fix $z \in U$.  We wish to apply Stokes' theorem\footnote{%
 We are really using Green's theorem, which is the generalized
-Stokes' theorem in $2$ dimensions, see \thmref{thm:greens}.},
+Stokes' theorem in $2$ dimensions. See \thmref{thm:greens}.},
 but the integrand is not smooth at $z$.
 Let $\Delta_r(z)$ be a small disc such that
 $\Delta_r(z) \subset
@@ -11209,7 +11209,7 @@ Let us give a name to the two parts of the derivative:
 \frac{\partial \psi}{\partial \bar{z}_n} d\bar{z}_n .
 \end{equation*}
 Then $d \psi = \partial \psi + \bar{\partial} \psi$.
-Notice $\psi$ is holomorphic if and only if $\bar{\partial} \psi = 0$.
+Notice that $\psi$ is holomorphic if and only if $\bar{\partial} \psi = 0$.
 
 The so-called
 \emph{\myindex{inhomogeneous $\bar{\partial}$-problem}}\index{$\bar{\partial}$-problem}
@@ -11332,7 +11332,8 @@ d\zeta \wedge d\bar{\zeta}  .
 \end{equation*}
 
 Using the second form of the definition of $\psi$, the
-compatibility conditions \eqref{eq:compatconds}, and the computation above we get
+compatibility conditions \eqref{eq:compatconds}, and the computation above,
+we get
 \begin{equation*}
 \begin{split}
 \frac{\partial\psi}{\partial \bar{z}_k}(z)
@@ -11431,7 +11432,7 @@ The proof of the theorem has a complicated history as
 Hartogs' original proof from 1906 contained gaps.
 A fully working proof was finally supplied by Fueter in 1939 for $n=2$
 and independently by Bochner and Martinelli for higher $n$
-in the early 40s.
+in the early 1940s.
 The proof we give is the
 standard one given nowadays due to Leon Ehrenpreis from 1961.
 
@@ -11461,7 +11462,7 @@ and equal to $f$ near the boundary of $U$, where $\varphi$ is $0$.
 We let $g = \bar{\partial} f_0$ on $U$, that is $g_k = \frac{\partial
 f_0}{\partial \bar{z}_k}$,
 and we let $g=0$ outside $U$.
-As $g_k$ are identically zero near $\partial U$, we find that each
+As the $g_k$ are identically zero near $\partial U$, we find that each
 $g_k$ is smooth on $\C^n$.
 The compatibility conditions
 \eqref{eq:compatconds} are satisfied
@@ -11569,7 +11570,7 @@ U$ by finitely many such balls so that if $B_p$ intersects $B_q$, then
 the (connected) intersection $B_p \cap B_q$ contains points of $\partial U$.
 The extensions in $B_p$ and in $B_q$ then agree on a piece of a hypersurface
 $\partial U$, and hence agree.  Taking a union of the $B_p$, we find
-a unique extension in single neighborhood of $\partial U$.
+a unique extension in a single neighborhood of $\partial U$.
 We write this neighborhood as $U' \setminus K$ for some compact $K$
 and a connected $U'$ such that $\widebar{U} \subset U'$.
 Consider the topological components of $\C^n \setminus K$.  As
@@ -11752,7 +11753,7 @@ A form $\eta$ is a
 \emph{\myindex{$\bar{\partial}$-exact form}}\index{exact form}
 if there exists a form $\omega$ such that
 $\bar{\partial} \omega = \eta$.  A form $\eta$ is a
-\emph{\myindex{$\bar{\partial}$-closed form}}\index{exact form}
+\emph{\myindex{$\bar{\partial}$-closed form}}\index{closed form}
 if $\bar{\partial} \eta = 0$.
 For an open set $U \subset \C^n$,
 we define the
@@ -11785,8 +11786,8 @@ are a subspace.
 
 \begin{exercise}
 Prove that if two domains $U,V \subset \C^n$ are biholomorphic,
-then for all $(p,q)$, then $H^{(p,q)}(U)$ and $H^{(p,q)}(V)$
-are isomorphic as vector spaces.
+then $H^{(p,q)}(U)$ and $H^{(p,q)}(V)$
+are isomorphic as vector spaces for all $(p,q)$.
 \end{exercise}
 \end{exbox}
 
@@ -11830,6 +11831,7 @@ one direction of this theorem in $\C^2$ in the exercises in this section,
 and we will prove the general version of this direction in the next section;
 see \thmref{thm:dolhomimpliesdoh}.  That is, we will prove that
 the vanishing of the cohomology groups implies domain of holomorphy.
+The other direction is a version of what is called Cartan's Theorem B.
 Let us state this theorem without proof.
 
 \begin{thm}
@@ -11841,6 +11843,8 @@ whenever $1 \leq q \leq n-1$.
 If $U$ is a domain of holomorphy, it is in fact true that $H^{(p,q)}(U) = 0$
 whenever $q \geq 1$.  We will not prove this fact, but we will prove it for a
 polydisc, and we saw above that $H^{(p,0)}(U)$ is never trivial.
+It is also true (Malgrange's vanishing theorem) that $H^{(p,n)}(U) = 0$
+for any domain $U \subset \C^n$.
 
 \begin{exbox}
 \begin{exercise} \label{exercise:zeropsufficient}
@@ -11928,8 +11932,8 @@ zero, so we do not get any contradiction.
 
 \begin{exbox}
 \begin{exercise}
-Prove that if $U \subset \C^2$ is a domain and $K \subset U$ is compact,
-then $H^{(0,1)}(U \setminus K)$ is nontrivial.
+If $U \subset \C^2$ is a domain and $K \subset U$ is compact,
+prove that $H^{(0,1)}(U \setminus K) \neq 0$.
 \end{exercise}
 
 \begin{exercise}
@@ -12007,16 +12011,17 @@ holomorphic way, then the solution $\psi$ also depends on those variables
 smoothly or holomorphically.
 Compare the expression for $\psi$ to the one used in the proof of
 \thmref{thm:compactdbar}.
+
 The proof is based on the fact that $\psi(z) = \log \sabs{z}^2$
-solves the problem for $g(z) = \nicefrac{1}{\bar{z}}$.
-This fact may be surprising, as doing calculus blindly, one would arrive
+solves the $\bar{\partial}$-problem for $g(z) = \nicefrac{1}{\bar{z}}$.
+This fact may be surprising, as doing calculus blindly, one arrives
 at the multivalued function $\log \bar{z} + \text{holomorphic function}$,
-but $\log \bar{z} + \log z = \log \sabs{z}^2$ is single valued as needed.
+but $\log \bar{z} + \log z = \log \sabs{z}^2$ is single-valued as needed.
 The lemma, via the exercises, leads to showing that $H^{(0,1)}(U) = 0$ for
 every domain $U \subset \C$.  Every $(0,1)$-form
 $g \, d\bar{z}$ in $U$ is $\bar{\partial}$-closed, so $H^{(0,1)}(U) = 0$ is
 equivalent to showing that $\frac{\partial \psi}{\partial \bar{z}} = g$
-is solvable for any smooth function $g$ on $U$.
+is solvable for any smooth function $g$ on~$U$.
 
 \begin{exbox}
 \begin{exercise}
@@ -12109,8 +12114,8 @@ the Cauchy--Pompeiu formula (actually its conjugate applied to $\bar{g}$)
 d \zeta \wedge d \bar{\zeta}
 = g(z) .
 \end{equation*}
-So we are done with the existence of this solution, we need to show that it
-is also smooth.
+So we are done with the existence of this solution.
+We need to show that it is also smooth.
 As $g$ is smooth, $\frac{\partial \psi}{\partial \bar{z}}$ is also
 smooth.  If we prove that
 $\frac{\partial \psi}{\partial z}$ is also smooth, then $\psi$ must be
@@ -12157,7 +12162,6 @@ $d\bar{z}_1,\ldots,d\bar{z}_k$ from the barred differentials.
 If $k=0$, then the lemma is true trivially as $q \geq 1$, so $\eta$ would
 just have to be zero.
 We will proceed by induction.
-
 Write
 \begin{equation*}
 \eta = d\bar{z}_k \wedge \tau + \theta,
@@ -12240,9 +12244,9 @@ dz_\alpha \wedge d\bar{z}_\beta
 d\bar{z}_k \wedge \tau + \delta ,
 \end{split}
 \end{equation*}
-where $\delta$ also does not contain
+where $\delta$ does not contain
 the barred differentials other than $d\bar{z}_1,\ldots,d\bar{z}_{k-1}$.
-Now note that
+Now
 \begin{equation*}
 \bar{\partial}(\theta-\delta)
 =
@@ -12284,7 +12288,7 @@ with two nested balls with center $w$.
 We can now prove the theorem itself.
 
 \begin{proof}[Proof of \thmref{thm:dbaronpoly}]
-The proof splits in two cases.  First, suppose that $q > 1$.
+The proof splits into two cases.  First, suppose that $q > 1$.
 Pick a sequence of polydiscs $\Delta_k$ all centered at the origin,
 such that $\bigcup_k \Delta_k = \Delta$ and such that $\overline{\Delta_k}
 \subset \Delta_{k+1}$ for all $k$.
@@ -12354,7 +12358,7 @@ we have $\bar{\partial}\omega_{k+1} = \eta$, and we satisfied the
 required properties.
 
 On any particular $\overline{\Delta_\ell}$, the sequence $\{ \omega_k \}$ is
-uniformly Cauchy as if $m > k \geq \ell$, then
+uniformly Cauchy since if $m > k \geq \ell$, then
 $\sabs{\omega_{m}(z)-\omega_k(z)} <
 2^{-k}+2^{-k-1} +\cdots+2^{-m+1} < 2^{-k+1}$.  So the sequence converges
 uniformly on compact subsets of $\Delta$ to a function $\omega \colon \Delta
@@ -12408,7 +12412,7 @@ near the boundary of $\Delta$.  And use the theorem.
 \end{exercise}
 
 \begin{exercise}
-Use the \exerciseref{exercise:dollocal} and
+Use \exerciseref{exercise:dollocal} and
 \exerciseref{exercise:Levinegdol} to prove that if
 $U \subset \C^n$, $n \geq 2$, is a domain with smooth boundary and $p \in \partial U$
 such that the Levi form at $p$ has a negative eigenvalue and $n-2$ positive
@@ -12450,7 +12454,7 @@ useful in proofs by induction on dimension,
 that is, starting with a holomorphic function $f$ on $U \cap L$
 and finding a holomorphic function on $U$ whose restriction is $f$.
 If $f$ is just smooth, then finding such a smooth extension is not
-difficult no matter what $U$ looks like, however, in the holomorphic
+difficult no matter what $U$ looks like.  However, in the holomorphic
 category it is not that easy (or even always possible).
 A holomorphic extension from an affine subspace is possible for domains of
 holomorphy; in fact, it is a defining characteristic of such domains.
@@ -12459,7 +12463,7 @@ holomorphy; in fact, it is a defining characteristic of such domains.
 Suppose $U = \C^2 \setminus \{ 0 \}$ and $L = \{ (z,w) \in \C^2 : w = 0 \}$.
 Then $U \cap L$ is the punctured plane.
 Let $f(z) = \nicefrac{1}{z}$ be the function on $U \cap L$.  Suppose that
-there is an $F \in \sO(U)$ whose restriction to $U \cap L$ was $f$.
+there is an $F \in \sO(U)$ whose restriction to $U \cap L$ is $f$.
 Such an $F$ extends to all of $\C^2$, and hence $f$ extends to all of $L$
 (which is just the $z$-plane), which is impossible.  Note that we proved
 that $H^{(0,1)}(U)$ is nontrivial.
@@ -12499,7 +12503,7 @@ every $f \in \sO(U \cap L)$ extends holomorphically to $U$.
 \end{exercise}
 
 \begin{exercise}
-Multiple hyperplanes are possible.  Let $L$ be the set $\C^2$
+Multiple hyperplanes are possible.  Let $L \subset \C^2$ be the set
 where $z=0$, $M$ be the set where $w=0$, and $N$ be the set where
 $z=w$.  Let $f$, $g$, $h$ be holomorphic functions on $L$, $M$, and $N$.
 Some extra hypothesis is necessary to tie the
@@ -12627,8 +12631,8 @@ and we are done.
 We remark that an extension works for zero sets of holomorphic functions, that
 is, subvarieties
 (see \chapterref{ch:analyticvarieties}), not just
-hyperplanes, a result which is called the Cartan extension theorem, but we will
-not prove this fact.  However, as an exercise prove the extension for
+hyperplanes.   This result is called the Cartan extension theorem, but we will
+not prove this fact.  However, as an exercise, prove the extension for
 two hyperplanes.
 
 \begin{exbox}
@@ -12654,9 +12658,9 @@ is a $k$-dimensional affine subspace, then we will treat $U \cap L$
 as an open set in $\C^{n-k}$.
 
 \begin{cor}
-Suppose $U \subset \C^n$ is open and $L$ is an affine hyperplane.
+Suppose $U \subset \C^n$ is open, $L$ is an affine hyperplane, and $q \geq 1$.
 If $H^{(p,q)}(U) = 0$ and
-$H^{(p,q+1)}(U) = 0$ then $H^{(p,q)}(U \cap L) = 0$.
+$H^{(p,q+1)}(U) = 0$, then $H^{(p,q)}(U \cap L) = 0$.
 \end{cor}
 
 \begin{proof}
@@ -12744,7 +12748,7 @@ normal direction to the boundary of $V$ at $z_0$.  See
 By \corref{cor:dolgodown},
 $H^{(0,q)}(U \cap L) = 0$ for $1 \leq q \leq n-2$.
 By the induction hypothesis
-(and \exerciseref{exercise:dobeaultdisconnected}),
+(and \exerciseref{exercise:dolbeaultdisconnected}),
 every component of $U \cap L$ is a domain of holomorphy.
 Since $z_0$ is in the boundary of $U \cap L$, there exists a holomorphic function
 $f \in \sO(U \cap L)$ that does not extend (along $L$) through $z_0$.
@@ -12881,8 +12885,8 @@ satisfy the two conditions.  The point is going the other way: finding
 $f_\iota$ given $h_{\iota \kappa}$.
 We remark that we could always take $\iota$, $\kappa$, and $\lambda$
 to be distinct,
-as the first condition means that $h_{\iota\iota} = 0$ for all $\iota$
-otherwise, and the second condition then just reduces to the first if two
+as the first condition means that $h_{\iota\iota} = 0$ for all $\iota$,
+and the second condition then just reduces to the first if two
 of the indices are equal.
 
 \begin{exbox}
@@ -12965,7 +12969,7 @@ $U$ such that on each $U_\iota$, $f-g_\iota$ is holomorphic.
 In one dimension, Cousin I (that is, Mittag-Leffler) is solvable for
 any domain in $\C$.
 In several variables, Cousin I is solvable on domains of holomorphy in
-$\C^n$, in particular, it is solvable when we can solve the
+$\C^n$.  In particular, it is solvable when we can solve the
 $\bar{\partial}$-problem for $(0,1)$-forms.
 
 \begin{example}
@@ -13079,7 +13083,7 @@ Therefore, the $F_{\iota}$ give a solution to the Cousin I problem.
 \end{proof}
 
 \begin{cor}
-Cousin I problem is solvable on any possibly unbounded polydisc in $\C^n$.
+Cousin I problem is solvable on any possibly unbounded polydisc in~$\C^n$.
 \end{cor}
 
 \begin{exbox}
@@ -13091,7 +13095,7 @@ as trying to piece together the meromorphic function above.
 \end{exercise}
 
 \begin{exercise}
-Formulate a version of Cousin I problem for integer-valued continuous
+Formulate a version of the Cousin I problem for integer-valued continuous
 functions on domains in $\R^2$.  Prove that the problem is
 not always solvable in $\R^2 \setminus \{ (0,0) \}$.
 \end{exercise}
@@ -13203,7 +13207,7 @@ then $\nicefrac{r}{g}$ extends to be continuous and nonvanishing in a
 neighborhood of $p$.  Prove that there exists an $f \in \sO(U)$
 such that $f^{-1}(0) = M$ and $df \neq 0$ on $M$.
 Hint: Cover with balls $U_{\iota}$ and in each ball define
-$\log\bigl(\nicefrac{f_\iota}{g}\bigr)$, then obtain a Cousin I problem.
+$\log\bigl(\nicefrac{r_\iota}{g}\bigr)$, then obtain a Cousin I problem.
 \end{exercise}
 
 \begin{exercise}
@@ -13452,8 +13456,8 @@ d\bar{\zeta}_n \wedge d\zeta_n
 &=
 \frac{(n-1)!}{{(2\pi i)}^n}\frac{1}{r^{2n}}
 \int_{B_r(z)}
-n~
-d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
+n
+\, d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
 d\bar{\zeta}_n \wedge d\zeta_n
 \\
@@ -13461,7 +13465,7 @@ d\bar{\zeta}_n \wedge d\zeta_n
 \frac{(n-1)!}{{(2\pi i)}^n}\frac{1}{r^{2n}}
 \int_{B_r(z)}
 n
-{(2i)}^n dV
+{(2i)}^n \, dV
 %\\
 %&=
 %\frac{(n-1)!}{{(2\pi i)}^n}\frac{1}{r^{2n}}
@@ -13487,7 +13491,8 @@ Via the same computation as above we find
 \Biggl(
 \int_{B_r(z)}
 \bigl(f(\zeta)-f(z)\bigr)
-n~
+n
+\,
 d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
 d\bar{\zeta}_n \wedge d\zeta_n
@@ -13500,7 +13505,7 @@ d\bar{\zeta}_n \wedge d\zeta_n
 \sum_{k=1}^n
 \frac{\partial f}{\partial \bar{\zeta}_k}(\zeta)
 (\bar{\zeta}_k-\bar{z}_k)
-~
+\,
 d\bar{\zeta}_1 \wedge d\zeta_1 \wedge
 \cdots \wedge
 d\bar{\zeta}_n \wedge d\zeta_n \Biggr).
@@ -13511,7 +13516,7 @@ As $U$ is bounded, $\abs{f(\zeta)-f(z)} \leq M
 and
 $\abs{\frac{\partial f}{\partial \bar{\zeta}_k}(\zeta)
 (\bar{\zeta}_k-\bar{z}_k)} \leq M \snorm{\zeta-z}$ for some $M$.
-So for all $\zeta \in \partial B_r(z)$,
+So for all $\zeta \in B_r(z)$,
 we have
 $\abs{f(\zeta)-f(z)} \leq Mr$
 and $\abs{\frac{\partial f}{\partial \bar{\zeta}_k}(\zeta)
@@ -13545,7 +13550,7 @@ holomorphic in $z$ unless $n=1$.  It does not simply produce
 holomorphic functions.  If we differentiate in $\bar{z}$ underneath the
 $\partial U$ integral, we do not necessarily obtain zero.
 On the other hand, we have an explicit formula and this formula does not
-depend on $U$.  This is not the case for the Bergman and Szeg\"o
+depend on $U$.  This is not the case for the Bergman and Szeg\H{o}
 kernels, which we will see next, although those are holomorphic in the
 right way.
 
@@ -13722,7 +13727,7 @@ That is, for a fixed $z \in U$, taking $K= \{ z \}$, the linear operator
 \begin{equation*}
 f \mapsto f(z)
 \end{equation*}
-is a bounded linear functional.  By the Riesz--Fisher theorem, there exists
+is a bounded linear functional.  By the Riesz representation theorem, there exists
 a $k_z \in A^2(U)$, such that
 \begin{equation*}
 f(z) = \linnprod{f}{k_z} .
@@ -13794,9 +13799,9 @@ $2n$ variables.
 
 \begin{example} \label{example:bergmankerneldisc}
 \index{Bergman kernel!unit disc}%
-\index{Szeg{\"o} kernel!unit disc}%
+\index{Szeg{\H{o}} kernel!unit disc}%
 Let us compute the Bergman kernel (and
-the Szeg{\"o} kernel of the next section while we're at it)
+the Szeg{\H{o}} kernel of the next section while we're at it)
 explicitly for the
 unit disc $\D \subset \C$.  Let $f \in \sO(\D) \cap C(\widebar{\D})$, that
 is, $f$ is holomorphic in $\D$ and continuous up to the boundary.
@@ -13821,7 +13826,7 @@ The integral is now a regular line integral of a function whose
 singularity, which used to be inside the unit disc, disappeared
 (we ``reflected it'' to the outside).
 The kernel $\frac{1}{2\pi} \frac{1}{1-z\bar{\zeta}}$ is called the
-\emph{Szeg{\"o} kernel}, which we will briefly mention next.
+\emph{Szeg{\H{o}} kernel}, which we will briefly mention next.
 We apply Stokes to the second integral above:
 \begin{equation*}
 \begin{split}
@@ -14013,7 +14018,7 @@ where $\linnprod{z}{\zeta}$ is the standard inner product on $\C^n$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The Szeg{\"o} kernel}
+\section{The Szeg{\H{o}} kernel}
 
 We use the same technique to create a reproducing kernel on the
 boundary by starting with $L^2(\partial U, d\sigma)$ instead of $L^2(U)$.
@@ -14029,7 +14034,7 @@ function,
 and hence $f|_{\partial U}$ is in $L^2(\partial U,d\sigma)$, where $d\sigma$
 is the surface measure on $\partial U$.
 Taking the closure
-of these restrictions in $L^2(\partial U)$ obtains the Hilbert space
+of these restrictions in $L^2(\partial U)$ yields the Hilbert space
 $H^2(\partial U)$,
 \glsadd{not:H2}%
 which is called the \emph{\myindex{Hardy space}}.
@@ -14080,7 +14085,7 @@ S_U(z,\bar{\zeta}) \overset{\text{def}}{=} \overline{s_z(\zeta)} ,
 \end{equation*}
 although for a fixed $z$ this is a function only defined almost everywhere
 as it is an element of $L^2(\partial U,d\sigma)$.
-The function $S_U$ is the \emph{\myindex{Szeg{\"o} kernel}}.
+The function $S_U$ is the \emph{\myindex{Szeg{\H{o}} kernel}}.
 If $f \in H^2(\partial U)$, then
 \begin{equation*}
 Pf(z) = \int_{\partial U} f(\zeta) \, S_U(z,\bar{\zeta}) \, d\sigma(\zeta) .
@@ -14112,7 +14117,7 @@ f(z) = \frac{1}{2\pi} \int_{\partial \D} \frac{f(\zeta)}{1-z\bar{\zeta}} \, ds .
 \end{equation*}
 In other words, $S_{\D}(z,\bar{\zeta}) =
 \frac{1}{2\pi}
-\frac{1}{1-z\bar{\zeta}}$ .
+\frac{1}{1-z\bar{\zeta}}$.
 \end{example}
 
 \begin{exbox}
@@ -14164,12 +14169,12 @@ are two functions in $\sF$, and $W$ is an open set where both are defined,
 then $fg|_W$ and $(f+g)|_W$ are also in $\sF$.
 Assume that all constant functions are in $\sF$.
 Show that the ring operations defined above
-on a set of germs at $p$ of functions from $\sF$ are well-defined,
+on the set of germs at $p$ of functions from $\sF$ are well-defined,
 and that the set of germs at $p$ of functions from $\sF$ is a commutative
 ring.
 \end{exercise}
 
-\begin{exercise} \label{exercise:contgermsnothausdorf}
+\begin{exercise} \label{exercise:contgermsnothausdorff}
 Let $X=Y=\R$ and $p=0$.  Consider the ring of germs of
 continuous functions (or smooth functions).
 Show that for every continuous $f \colon \R \to \R$ and every neighborhood
@@ -14180,7 +14185,7 @@ such that $(f,0) = (g,0)$, but $g|_W \neq f|_W$.
 
 Germs are particularly useful for holomorphic functions because of the identity
 theorem.  In particular, the behavior of
-\exerciseref{exercise:contgermsnothausdorf} does not happen
+\exerciseref{exercise:contgermsnothausdorff} does not happen
 for holomorphic functions.  Furthermore, for holomorphic functions, the
 ring of germs is the same as the ring of convergent power series, see
 exercise below.  No similar result is true for smooth functions.
@@ -14189,7 +14194,7 @@ exercise below.  No similar result is true for smooth functions.
 Let $p \in \C^n$.
 \glsadd{not:ringofgerms}%
 Write
-${}_n\sO_p = \sO_p$ as the ring of germs at $p$ of holomorphic functions.
+${}_n\sO_p = \sO_p$ for the ring of germs at $p$ of holomorphic functions.
 \end{defn}
 
 The ring of germs $\sO_p$ has many nice properties,
@@ -14203,7 +14208,7 @@ in local properties and not in the geometry of $U$.
 \item
 Show that $\sO_p$ is an \myindex{integral domain} (has no zero divisors).
 \item
-Prove the ring of germs at $0 \in \R$ of smooth real-valued functions
+Prove that the ring of germs at $0 \in \R$ of smooth real-valued functions
 is not an integral domain.
 \end{exparts}
 \end{exercise}
@@ -14230,7 +14235,7 @@ that contains $p$.  Prove that $f|_W = g|_W$.
 \item
 Find a germ $(f,p) \in \sO_p$, such that for
 every representative $f \colon U \to \C$, we can
-find another representative $g \colon V \to \C$
+find another representative $g \colon V \to \C$ with $V$ connected
 of that same germ such that $g|_{U \cap V} \neq f|_{U \cap V}$.
 Hint: $n=1$ is sufficient.
 \end{exparts}
@@ -14413,7 +14418,7 @@ multiplicity) of $z_n
 \begin{equation*}
 \frac{1}{2\pi i}
 \int_{\partial D}
-\frac{\frac{\partial f}{\partial z_n} (z',\zeta)}{f(z',\zeta)} ~d\zeta .
+\frac{\frac{\partial f}{\partial z_n} (z',\zeta)}{f(z',\zeta)} \,d\zeta .
 \end{equation*}
 As $f(z',\zeta)$ does not vanish when $z' \in V'$ and $\zeta \in \partial
 D$,
@@ -14471,7 +14476,7 @@ such that $g$ has no zeros on $\partial D$, and $\alpha_1,\ldots,\alpha_k$
 are the zeros of $g$ in $D$, then
 \begin{equation*}
 \frac{1}{2 \pi i}
-\int_{\partial D} h(\zeta) \frac{g'(\zeta)}{g(\zeta)} ~d\zeta
+\int_{\partial D} h(\zeta) \frac{g'(\zeta)}{g(\zeta)} \, d\zeta
 = \sum_{\ell=1}^k h(\alpha_\ell) .
 \end{equation*}
 With $h(\zeta) = \zeta^m$ and $g(\zeta)=f(z',\zeta)$, the theorem says
@@ -14482,7 +14487,7 @@ s_m(z') =
 \frac{1}{2\pi i}
 \int_{\partial D}
 \zeta^m
-\frac{\frac{\partial f}{\partial z_n} (z',\zeta)}{f(z',\zeta)} ~d\zeta .
+\frac{\frac{\partial f}{\partial z_n} (z',\zeta)}{f(z',\zeta)} \,d\zeta .
 \end{equation*}
 The function $s_m$ is clearly continuous, and if we
 differentiate under the integral
@@ -14754,7 +14759,7 @@ Let
 \begin{equation*}
 q(z',z_n) =
 \frac{1}{2\pi i} \int_{\partial D} \frac{f(z',\zeta)}{P(z',\zeta)(\zeta-z_n)}
-~d\zeta .
+\,d\zeta .
 \end{equation*}
 As $P$ is not zero on $V' \times \partial D$,
 the function $q$
@@ -14773,7 +14778,7 @@ r(z',z_n) = f(z',z_n) - q(z',z_n)P(z',z_n)
 =
 \frac{1}{2\pi i}
 \int_{\partial D} \frac{f(z',\zeta)P(z',\zeta) - f(z',\zeta)P(z',z_n)}{P(z',\zeta)(\zeta-z_n)}
-~d\zeta .
+\,d\zeta .
 \end{multline*}
 We need to show $r$ is a polynomial in $z_n$ of degree less than
 $k$.  In the expression inside the integral, the numerator is
@@ -17139,7 +17144,7 @@ by simply summing the corresponding integrals.
 A common statement of the Cauchy integral formula with
 winding numbers is that if
 $U$ is open, $f \colon U \to \C$ holomorphic, and $\gamma$ is
-a closed piecewise $C^1$ path (or cycle) in $U$, such that
+a closed piecewise-$C^1$ path (or cycle) in $U$, such that
 $n(\gamma;p) = 0$ for all $p \notin U$, then
 \begin{equation*}
 n(\gamma;z) f(z) =
@@ -17167,7 +17172,7 @@ for $p \in U$ and $n(\partial U;p) = 0$ for $p \in \C \setminus \widebar{U}$.
 
 
 One way to get at the Cauchy integral formula is via Green's theorem,
-which is the Stokes' theorem
+which is Stokes' theorem
 in two dimensions.  In the versions we state, one needs to
 approximate the open set by smaller open sets from the inside to ensure
 the partial derivatives are bounded.  See
@@ -17235,7 +17240,7 @@ f(z) \, dz = 0 .
 
 Again, the alternative statement with winding numbers
  is that if $U$ is open, $f \colon U \to \C$ holomorphic, and $\gamma$ is
-a closed piecewise $C^1$ path (or cycle) in $U$, such that
+a closed piecewise-$C^1$ path (or cycle) in $U$, such that
 $n(\gamma;p) = 0$ for all $p \notin U$, then
 the integral of $f$ over $\gamma$ vanishes.
 
@@ -17243,7 +17248,7 @@ There is a converse to Cauchy.  A triangle $T \subset \C$ is
 the convex hull of the three vertices (we include the inside of the
 triangle), and $\partial T$ is the boundary of the triangle oriented
 counter-clockwise.  We state the following theorem as an
-``if and only if,'' even though, usually it is only the reverse direction that
+``if and only if,'' even though usually it is only the reverse direction that
 is called Morera's theorem.
 
 \begin{thm}[Morera] \label{thm:onevarmorera}
@@ -17342,7 +17347,7 @@ Laplacian.
 A domain $U$ is \emph{\myindex{simply connected}} if every simple closed
 path
 is homotopic in $U$ to a constant, in other words, if the domain has no
-holes.  For example a disc is simply connected.
+holes.  For example, a disc is simply connected.
 
 \begin{prop}
 If $U \subset \C$ is a simply connected domain and $u \colon U \to \R$
@@ -17423,7 +17428,7 @@ Suppose $U$ and $V$ are open subsets of $\C$.
 \begin{enumerate}[(i)]
 \item
 If $f \colon U \to V$ is holomorphic and bijective (one-to-one and onto),
-then $f'(z) \neq 0$ for all $z \in V$, and $f^{-1} \colon V \to U$
+then $f'(z) \neq 0$ for all $z \in U$, and $f^{-1} \colon V \to U$
 is holomorphic.  If $f(p) = q$, then
 \begin{equation*}
 \left(f^{-1}\right)'(q) = \frac{1}{f'(p)} .
@@ -17508,7 +17513,7 @@ Holomorphic functions satisfy a Heine--Borel-like property:
 \begin{thm}[Montel]\index{Montel's theorem}\label{thm:onevarmontel}
 Suppose
 $U \subset \C$ is open and
-$f_n \subset U \to \C$ is a sequence of holomorphic functions.
+$f_n \colon U \to \C$ is a sequence of holomorphic functions.
 If $\{ f_n \}$ is uniformly bounded on compact subsets of $U$,
 then there exists a subsequence converging uniformly on compact subsets
 of $U$.
@@ -17527,8 +17532,8 @@ multiplicity) in $\Delta_r(z_0)$ as $f$ (counting multiplicity).
 \end{thm}
 
 A common application, and sometimes the way
-the theorem is stated, is that if $f_n$ have no zeros in $U$, then
-either the limit $f$ is identically zero, or it also has no zeros.
+the theorem is stated, is that if the $f_n$ have no zeros in $U$, then
+either the limit $f$ is identically zero, or it has no zeros.
 
 
 \pagebreak[2]
@@ -17578,7 +17583,7 @@ The topology on $\bP^1$ is given by insisting that
 the function $\frac{1}{z}$ is a homeomorphism
 of $\bP^1$ to itself,
 where $\frac{1}{\infty} = 0$ and $\frac{1}{0} = \infty$.
-A function $f \colon U \to \bP^1$ is called \emph{\myindex{meromorphic}},
+A function $f \colon U \to \bP^1$ is called \emph{\myindex{meromorphic}}
 if it is not
 identically $\infty$, is holomorphic on $U \setminus f^{-1}(\infty)$,
 and has poles at $f^{-1}(\infty)$.
@@ -17654,7 +17659,7 @@ Suppose $U \subset \C$ is an open set, and $\gamma$ is a piecewise-$C^1$
 closed path in $U$
 such that $n(\gamma;p)=0$ for all $p \notin U$.
 Suppose that $f \colon U \setminus S \to \C$ is a holomorphic function with isolated
-singularities in a finite set $S$, and suppose $S$ lies in the interior of $\gamma$.
+singularities in a finite set $S \subset U \setminus \gamma$.
 Then
 \begin{equation*}
 \int_{\gamma} f(z) \, dz = 2\pi i \sum_{p \in S} n(\gamma;p) \operatorname{Res}(f,p) .
@@ -17733,7 +17738,7 @@ have the same number of zeros
 inside $\gamma$ (up to multiplicity).
 \end{thm}
 
-In the classical (weaker) statement of the theorem uses the
+In the classical (weaker) statement of the theorem uses
 the stronger inequality $\sabs{f(z)-g(z)} < \sabs{f(z)}$.
 Notice that either inequality precludes any zeros on $\gamma$ itself.
 
@@ -17765,7 +17770,7 @@ $f(\C)$ is either $\C$ or $\C$ minus a point.
 
 
 One theorem from algebra that is important in complex analysis, and becomes
-perhaps even more important in several variables is the fundamental theorem
+perhaps even more important in several variables, is the fundamental theorem
 of algebra.  It really is a theorem of complex analysis and its standard
 proof is via the maximum principle.
 
@@ -17891,7 +17896,7 @@ a unique holomorphic function $F \colon U \to \C$ such that $F|_D = f$.
 An interesting and useful theorem getting an inequality in the opposite
 direction from
 Schwarz's lemma, and one which is often not covered in a one-variable
-course is the Koebe $\frac{1}{4}$-theorem.
+course, is the Koebe $\frac{1}{4}$-theorem.
 Think of why no such theorem could possibly hold for just smooth
 functions.  At first glance the theorem should seem quite counterintuitive,
 and at second glance, it should seem outright outrageous.
@@ -17911,7 +17916,7 @@ not just finitely many.  Similarly, we can work with poles.
 
 \begin{thm}[Weierstrass product theorem]\index{Weierstrass product theorem}
 Suppose $U \subset \C$ is a domain, $\{ a_k \}$, $\{ b_k \}$ are
-countable sets in $U$
+disjoint countable sets in $U$
 with no limit points in $U$, and $\{ n_k \}$, $\{ m_k \}$ countable sets of
 natural numbers.
 Then there exists a meromorphic function $f$ of $U$ whose

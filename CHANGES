@@ -40,9 +40,24 @@ that by zero, but it is unnecessary abuse.
 <li>In proof of Theorem 2.6.3, choose \(f_1\) so that \(|f_1(p_1)| \geq 1\)
 (that is add in the absolute values).  There is no reason to make \(f_1\)
 real at \(p_1\) and it may be confusing.
+<li>Before Theorem 4.4.2, mention that the hard direction (the one we do not
+prove) is Cartan's Theorem B.
+<li>After Theorem 4.4.2, mention the theorem by Malgrange about the top
+degree cohomology vanishing.
+<li>In Corollary 4.5.4, add the condition that \(q \geq 1 .\)  The theorem
+is vacuously true as the hypotheses can never be satisfied, but the proof
+them doesn't make sense.
+<li>In Exercise 4.6.6, in the hint use \(r_\iota\) rather than \(f_\iota\)
+as that hopefully is clearer since we use \(r\) in the statement.
+<li><b>Change Exercise 6.1.5 part c)</b> to require that \(V\) is
+connected to fix a loophole.
+<li>In 5.2, correctly refer to the Riesz representation theorem.
 <li>Add a note in 6.5 about (sub)varieties in algebraic
 geometry often being defined to be irreducible.
 (thanks to a suggestion by Richard Lärkäng)
+<li>In Theorem B.24, avoid saying "interior", it works when \(S\) simply
+avoids \(\gamma\text{.}\)
+<li>Use the correct umlaut on Szegő.
 
 
 See https://www.jirka.org/scv/changes.html for older changes.
