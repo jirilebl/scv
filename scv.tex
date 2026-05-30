@@ -8215,8 +8215,8 @@ the distance of $q$ to $\partial U$ is at most $\nicefrac{r}{2}$ as $p \in \part
 and $p$ is the center of $B$.
 \glsadd{not:dist}%
 Let $\operatorname{dist}(x,y)$ denote the
-euclidean distance function\footnote{If $x$ and/or $y$ are sets
-of points, we take the infimum of the euclidean distance over all the points.}.
+Euclidean distance function\footnote{If $x$ and/or $y$ are sets
+of points, we take the infimum of the Euclidean distance over all the points.}.
 Then for $z \in B \cap U$
 \begin{equation*}
 - \log \, \operatorname{dist}(z, \partial U) =
@@ -11854,7 +11854,7 @@ that is,
 $H^{(0,q)}(U) = 0$ if and only if $H^{(p,q)}(U) = 0$ for all $p$.
 \end{exercise}
 
-\begin{exercise} \label{exercise:dobeaultdisconnected}
+\begin{exercise} \label{exercise:dolbeaultdisconnected}
 Suppose $U \subset \C^n$ is open.
 Show that
 $H^{(p,q)}(U) = 0$ if and only if $H^{(p,q)}(W) = 0$ for
@@ -14806,7 +14806,7 @@ d\zeta
 =
 z e^w
 ,
-\quad \text{so} \quad
+\hspace{0.9em} \text{so} \hspace{0.9em}
 f(z,w) = \underbrace{\bigl( ze^w \bigr)}_{q} \underbrace{\bigl( w^2 + z^3 \bigr)}_{P} +
 \underbrace{z w + e^z}_{r} .
 \end{equation*}
@@ -16935,7 +16935,7 @@ earthquakes!
 
 We quickly review some basic notation used in this
 book that is perhaps not described elsewhere.
-We use $\C$, $\R$ for complex and real numbers, and $i$ for imaginary unit
+We use $\C$, $\R$ for complex and real numbers, and $i$ for the imaginary unit
 (a square root of $-1$).  We use
 $\N = \{ 1,2,3, \ldots \}$ for
 the natural numbers,
@@ -16945,26 +16945,31 @@ When we write $\C^n$ or $\R^n$, we implicitly mean that $n \geq 1$, unless
 otherwise stated.
 
 \glsadd{not:setminus}%
-We denote set subtraction by $A \setminus B$, meaning all elements of
+We denote set subtraction by $A \setminus B$, meaning the set of all elements of
 $A$ that are not in $B$.
-We denote complement of a set by $X^c$.  The ambient set
-should be clear.  So, for example, if $X \subset \C$ naturally,
+We denote the complement of a set by
+\glsadd{not:complement}%
+$X^c$, if the ambient set
+is clear.  So, for example, if $X \subset \C$ naturally,
 then $X^c = \C \setminus X$.
 \glsadd{not:closure}%
-Topological closure of a set $S$ is denoted by $\widebar{S}$, its
+The topological closure of a set $S$ is denoted by $\widebar{S}$, its
 boundary is denoted by
 \glsadd{not:boundary}%
-$\partial S$.  If $S$ is a relatively compact subset of $X$
+$\partial S$, and its interior by
+\glsadd{not:interior}%
+$S^\circ$.
+If $S$ is a relatively compact subset of $X$
 (its closure in $X$ is compact), we write $S \subset \subset X$.
 
 \glsadd{not:function}%
 We denote a function with domain $X$ and codomain $Y$ by
-$f \colon X \to Y$.  The direct image of $S$ by $f$ is $f(S)$.
+$f \colon X \to Y$.  The direct image of $S$ under $f$ is $f(S)$.
 We write $f^{-1}$ for the inverse image of sets and
 single points.  When $f$ is bijective (one-to-one and onto),
 we use $f^{-1}$ for the inverse mapping.  So $f^{-1}(T)$ for
-a set $T \subset Y$ denotes the points of $X$ that $f$ maps to $T$.
-For a point $q$, $f^{-1}(q)$ denotes the points that map to $q$,
+a set $T \subset Y$ denotes the set of points of $X$ that $f$ maps to $T$.
+For a point $q$, $f^{-1}(q)$ denotes the set of points that map to $q$,
 but if the mapping is bijective, then it means the unique point
 mapping to $q$.
 To define a function without giving it a name, we use
@@ -16979,31 +16984,22 @@ a function
 $f|_S \colon S \to Y$ such that $f|_S(x) = f(x)$ for all $x \in S$.
 A function $f \colon U \to \C$ is
 \emph{\myindex{compactly supported}} if
-the \emph{\myindex{support}}, that is the set
+the \emph{\myindex{support}}, that is, the set
 $\overline{\{ p \in U : f(p) \neq 0 \}}$ (closure in $U$), is compact.
 If $f(x) = g(x)$ for all $x$ in the domain,
 we write
 \glsadd{not:identeq}%
-%\begin{equation*}
 $f \equiv g$,
-%\end{equation*}
 and we say that $f$ and $g$ are identically equal.
 The notation
 \glsadd{not:composition}%
-%\begin{equation*}
 $f \circ g$
-%\end{equation*}
 denotes the composition defined by $x \mapsto
 f\bigl(g(x)\bigr)$.
 
 To define $X$ to be $Y$ rather than just show equality, we write
 \glsadd{not:definition}%
-%\begin{equation*}
-$
-X
-\overset{\text{def}}{=}
-Y$.
-%\end{equation*}
+$X \overset{\text{def}}{=} Y$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17078,7 +17074,7 @@ g\bigl(\gamma(t)\bigr) \overline{\gamma'(t)}
 & =
 \int_a^b
 \biggl(
-\Bigl(f\bigl(\gamma(t)\bigr) + g\bigl(\gamma(t)\bigr) \Bigr) \,
+\Bigl(f\bigl(\gamma(t)\bigr) + g\bigl(\gamma(t)\bigr) \Bigr)
 \gamma_1'(t)
 +
 i \, \Bigl( f\bigl(\gamma(t)\bigr) - g\bigl(\gamma(t)\bigr) \Bigr)
@@ -17999,7 +17995,7 @@ which are just too interesting not to mention.
 
 Differential forms come up quite a bit in this book, especially
 in \chapterref{ch:dbar} and \chapterref{ch:integralkernels}.
-Let us overview their definition
+Let us review their definition
 and state the general Stokes' theorem.  No proofs are given; this appendix
 is just a bare-bones guide.
 For a more complete introduction to differential forms,
@@ -18021,8 +18017,8 @@ We interpret both sides as integration.  The left-hand side is an integral
 of the $1$-form $f'\, dx$ over the $1$-dimensional interval $[a,b]$
 and the right-hand side is an integral of the $0$-form (a function)
 $f$ over the $0$-dimensional (two-point) set $\{ a, b \}$.  Both sides
-consider orientation, $[a,b]$ is integrated from $a$ to $b$,
-$\{a\}$ is oriented negatively and
+consider orientation: $[a,b]$ is integrated from $a$ to $b$,
+$\{a\}$ is oriented negatively, and
 $\{b\}$ is oriented positively.  The two-point set
 $\{a,b\}$ is the boundary of $[a,b]$, and the orientation of $\{ a,b \}$
 is induced by the orientation of $[a,b]$.
@@ -18067,14 +18063,14 @@ $M$ is simply an
 \end{defn}
 
 The situation for a boundary point and an interior point is depicted in
-\figureref{fig:maif-bound}.
+\figureref{fig:mainf-bound}.
 Note that $W$ is a bigger neighborhood in $\R^n$ than
 the image $\varphi(U)$.
 
 \begin{myfig}
 \subimport*{figures/}{manif-bound.pdf_t}
 \caption{Parametrization at
-an interior and a boundary point of a submanifold.\label{fig:maif-bound}}
+an interior and a boundary point of a submanifold.\label{fig:mainf-bound}}
 \end{myfig}
 
 Completely correctly, we should say \emph{submanifold of $\R^n$}.
@@ -18130,7 +18126,7 @@ that $\varphi(U) \cap \widetilde{\varphi}(\widetilde{U}) \neq \emptyset$, then t
 {\widetilde{\varphi}}^{~{-1}} \circ \varphi
 \end{equation*}
 on $\varphi^{-1}\bigl(\varphi(U) \cap \widetilde{\varphi}(\widetilde{U})\bigr)$ (in other
-words, wherever it makes sense) is orientation preserving, that is,
+words, wherever it makes sense) is orientation-preserving, that is,
 \begin{equation*}
 \det D\bigl({\widetilde{\varphi}}^{~{-1}} \circ \varphi \bigr) > 0
 \end{equation*}
@@ -18153,7 +18149,7 @@ $[0,\infty)$ we give this boundary point the orientation
 $-$, and if it corresponds to the $0$ in $(-\infty,0]$, then
 we give this point the orientation $+$.  The reason for this complication is
 that unlike in $\R^k$ for $k \geq 2$, the set $\bH^1 = [0,\infty)$ cannot be
-``rotated'' (in $\R^1$) or mapped via an orientation preserving map onto
+``rotated'' (in $\R^1$) or mapped via an orientation-preserving map onto
 $-\bH^1 = (-\infty,0]$, but in $\R^2$ the upper-half-plane $\bH^2$ can
 be rotated to the lower-half-plane $-\bH^2 = \{ x \in \R^2 : x_2 \leq 0 \}$.
 For computations, it is often useful for compact curves
@@ -18198,7 +18194,7 @@ is a finite set).
 The correct definition of a $1$-form is that it is a ``smooth section'' of
 the dual of the vector bundle $T \R^n$.
 It is something that eats
-a vector field, and spits out a function.
+a vector field and spits out a function.
 We use the pairing notation $\langle \omega , v \rangle$
 \glsadd{not:pairing}%
 instead of the functional
@@ -18509,16 +18505,22 @@ The boundary is the circle in the $(x_1,x_2)$-plane:
 \begin{equation*}
 \partial M = \bigl\{ x \in \R^3 : x_1^2+x_2^2=1, x_3 = 0 \bigr\} .
 \end{equation*}
-Consider the parametrization of $M$ using the spherical coordinates
+Consider the parametrization of $M$
+via the spherical coordinates
 \begin{equation*}
-\varphi(\theta,\psi) =
+\varphi(\psi,\theta) =
 \bigl(\cos(\theta) \sin(\psi),
  \sin(\theta) \sin(\psi),
  \cos(\psi)\bigr)
 \end{equation*}
-for $U$ given by $-\pi < \theta < \pi$, $0 < \psi \leq \nicefrac{\pi}{2}$.  After
-a rotation this is a subset of a half-plane with the points corresponding to
-$\psi = \nicefrac{\pi}{2}$ corresponding to boundary points.  We miss the
+for $U$ given by $-\pi < \theta < \pi$, $0 < \psi \leq \nicefrac{\pi}{2}$.
+Up to a rotation and a translation,
+it is a subset of a half-plane in the $(\psi,\theta)$-plane
+with the points corresponding to
+$\psi = \nicefrac{\pi}{2}$ going to the boundary points.
+We use the corresponding orientation (it is the orientation with respect to
+the outward normal).
+We miss the
 points where $\theta = \pi$, including the point $(0,0,1)$, but the set of
 those points is a $1$-dimensional curve, and so a set of $2$-dimensional
 measure zero. For the purposes of integration, we can ignore it.
@@ -18536,32 +18538,32 @@ Then
 \int_{-\pi}^\pi
 \int_{0}^{\pi/2}
 \biggl[
-P\bigl(\varphi(\theta,\psi)\bigr) \biggl(
-\frac{\partial \varphi_1}{\partial \theta}
-\frac{\partial \varphi_2}{\partial \psi}
--
-\frac{\partial \varphi_2}{\partial \theta}
+P\bigl(\varphi(\psi,\theta)\bigr) \biggl(
 \frac{\partial \varphi_1}{\partial \psi}
+\frac{\partial \varphi_2}{\partial \theta}
+-
+\frac{\partial \varphi_2}{\partial \psi}
+\frac{\partial \varphi_1}{\partial \theta}
 \biggr)
 \\
-& \hspace{1.8cm}
+& \hspace{2.4cm}
 +
-Q\bigl(\varphi(\theta,\psi)\bigr) \biggl(
-\frac{\partial \varphi_1}{\partial \theta}
-\frac{\partial \varphi_3}{\partial \psi}
--
-\frac{\partial \varphi_3}{\partial \theta}
+Q\bigl(\varphi(\psi,\theta)\bigr) \biggl(
 \frac{\partial \varphi_1}{\partial \psi}
+\frac{\partial \varphi_3}{\partial \theta}
+-
+\frac{\partial \varphi_3}{\partial \psi}
+\frac{\partial \varphi_1}{\partial \theta}
 \biggr)
 \\
-& \hspace{1.8cm}
+& \hspace{2.4cm}
 +
-R\bigl(\varphi(\theta,\psi)\bigr) \biggl(
-\frac{\partial \varphi_2}{\partial \theta}
-\frac{\partial \varphi_3}{\partial \psi}
--
-\frac{\partial \varphi_3}{\partial \theta}
+R\bigl(\varphi(\psi,\theta)\bigr) \biggl(
 \frac{\partial \varphi_2}{\partial \psi}
+\frac{\partial \varphi_3}{\partial \theta}
+-
+\frac{\partial \varphi_3}{\partial \psi}
+\frac{\partial \varphi_2}{\partial \theta}
 \biggr)
 \biggr]\, d\theta \, d\psi
 \\
@@ -18570,17 +18572,17 @@ R\bigl(\varphi(\theta,\psi)\bigr) \biggl(
 \int_{0}^{\pi/2}
 \Bigl[
 P\bigl(\cos(\theta)\sin(\psi),\sin(\theta)\sin(\psi),\cos(\psi)\bigr)
-\bigl(-\cos(\psi)\sin(\psi) \bigr)
+\cos(\psi)\sin(\psi)
 \\
-& \hspace{1.8cm}
+& \hspace{2.4cm}
 +
 Q\bigl(\cos(\theta)\sin(\psi),\sin(\theta)\sin(\psi),\cos(\psi)\bigr)
-\sin(\theta)\sin^2(\psi)
+\bigl(-\sin(\theta)\sin^2(\psi)\bigr)
 \\
-& \hspace{1.8cm}
+& \hspace{2.4cm}
 +
 R\bigl(\cos(\theta)\sin(\psi),\sin(\theta)\sin(\psi),\cos(\psi)\bigr)
-\bigl(-\cos(\theta)\sin^2(\psi)\bigr)
+\cos(\theta)\sin^2(\psi)
 \Bigr]
 \,
 d\theta
@@ -18592,9 +18594,10 @@ d\psi .
 The induced orientation on the boundary $\partial M$
 is the counter-clockwise orientation used in
 \exampleref{example:diffformscircleint},
-because that is the parametrization we get when we restrict
-to the boundary, $\varphi(\theta,\nicefrac{\pi}{2}) =
-\bigl(\cos(\theta),\sin(\theta),0\bigr)$.
+because when we restrict
+to the boundary, $\varphi(\nicefrac{\pi}{2},\theta) =
+\bigl(\cos(\theta),\sin(\theta),0\bigr)$, it is the
+correct orientation of the corresponding half-plane.
 \end{example}
 
 \medskip
@@ -18733,7 +18736,7 @@ $M$.  Then
 \end{thm}
 
 One can get away with less regularity, both on $\omega$ and $M$ (and
-$\partial M$) including ``corners.''
+$\partial M$), including ``corners.''
 In $\R^2$, it is easy to state
 in more generality, see Green's theorem (\thmref{thm:greens}).
 The classical Stokes' theorem is just the generalized
@@ -18802,7 +18805,7 @@ f(x_1,\ldots,x_{k-1}, \alpha_k(x'), x_{k+1}, \ldots, x_n)
 \int_{\partial U} \omega .
 \end{split}
 \end{equation*}
-The $(-1)^{k-1}$ disappears due to orientation on $\partial U$.
+The $(-1)^{k-1}$ disappears due to the orientation on $\partial U$.
 Any $(n-1)$-form can be written as a sum of forms like $\omega$ for various
 $k$.  Integrating each one of them in the correct direction provides the
 result.
@@ -18909,8 +18912,8 @@ there exists an inverse $\nicefrac{1}{u}$ as above are called
 If $R$ and $S$ are rings, a function $f \colon R \to S$ is a
 \emph{\myindex{ring homomorphism}}\index{homomorphism}
 if it respects the ring operations, that is,
-$f(a + b) = f(a) + f(b)$ and
-$f(ab) = f(a)f(b)$, and such that $f(1) = 1$.
+$f(a + b) = f(a) + f(b)$,
+$f(ab) = f(a)f(b)$, and $f(1) = 1$.
 If $f$ is
 bijective, then it is called a
 \emph{\myindex{ring isomorphism}}\index{isomorphism}.
@@ -18922,7 +18925,7 @@ $0$ for the respective identity), with multiplication thrown in.
 If the multiplication
 also defines a group on the set of nonzero elements, then the ring is a
 field.  A ring that is not commutative is one that does not satisfy
-commutativity of multiplication.  Some authors define ring
+commutativity of multiplication.  Some authors define a ring
 without asking for the existence of $1$.
 
 A ring that often comes up in this book is the ring of holomorphic
@@ -18958,7 +18961,8 @@ Let $R$ be a commutative ring.
 A subset $I \subset R$ is
 an \emph{\myindex{ideal}}
 if $f \in R$ and $g,h \in I$ implies
-that $fg \in I$ and $g+h \in I$.
+that $fg \in I$ and $g+h \in I$,
+and $0 \in I$.
 In short, $I \subset R$ is an additive subgroup such that $RI = I$.
 Given a set of elements
 $S \subset R$,
@@ -18978,7 +18982,7 @@ if every ideal in $R$ is finitely generated.
 \end{defn}
 
 It is not difficult to prove that ``an ideal generated by $S$'' really is
-an ideal, that is, the intersection of ideals is an ideal.
+an ideal.  That is, the intersection of ideals is an ideal.
 If an ideal $I$ is generated by $f_1,\ldots,f_k$, then every
 $g \in I$ can be written as
 \begin{equation*}
@@ -18997,22 +19001,23 @@ As the proof is rather short, we include it here.
 \begin{proof}
 Suppose $R$ is Noetherian, and
 $I \subset R[x]$ is an ideal.
-Starting with the polynomial $f_1$ of minimal degree in $I$,
+Assume $I \neq (0)$.
+Starting with a nonzero polynomial $f_1$ of minimal degree in $I$,
 construct a (possibly finite) sequence of polynomials $f_1,f_2,\ldots$
-such that $f_k$ is the polynomial of minimal degree
+such that $f_k$ is a nonzero polynomial of minimal degree
 from the set $I \setminus (f_1,\ldots,f_{k-1})$.
-The sequence of degrees $\deg(f_1),\deg(f_2),\ldots$ is by construction
-nondecreasing.
+The sequence of degrees $\deg(f_1),\deg(f_2),\ldots$ is
+nondecreasing by construction.
 Let $c_k$ be the leading coefficient of $f_k$.
 
 As $R$ is Noetherian, there exists a finite $k$ such
 that $(c_1,c_2,\ldots,c_m) \subset (c_1,c_2,\ldots,c_k)$ for all $m$.
-Suppose for contradiction there exists a $f_{k+1}$, that is, the sequence
+Suppose for contradiction there exists an $f_{k+1}$, that is, the sequence
 of polynomials
 did not end at $k$.  In particular,
 $(c_1,\ldots,c_{k+1}) \subset (c_1,\ldots,c_k)$ or
 \begin{equation*}
-c_{k+1} = a_1 c_1 + \cdots a_k c_k .
+c_{k+1} = a_1 c_1 + \cdots + a_k c_k .
 \end{equation*}
 As the degree of $f_{k+1}$ is at least the degree of $f_1$ through $f_k$,
 we can define the polynomial
@@ -19032,7 +19037,8 @@ $c_{k+1}$.  On the other hand, $g \in (f_1,\ldots,f_{k})$ while
 $f_{k+1} \notin (f_1,\ldots,f_k)$ by construction.  The polynomial
 $g-f_{k+1}$ is also not in
 $(f_1,\ldots,f_k)$, but as the leading terms canceled,
-$\deg(g-f_{k+1}) < \deg(f_{k+1})$, but that is a contradiction, so $f_{k+1}$
+$\deg(g-f_{k+1}) < \deg(f_{k+1})$.
+That is a contradiction, so $f_{k+1}$
 does not exist and
 $I = (f_1,\ldots,f_k)$.
 \end{proof}
@@ -19045,7 +19051,8 @@ $h$ is a unit.
 An integral domain $R$ is a
 \emph{\myindex{unique factorization domain}}\index{UFD}
 (UFD) if up to
-multiplication by a unit, every nonzero nonunit has a unique factorization into
+multiplication by a unit and permutation,
+every nonzero nonunit has a unique factorization into
 irreducible elements of $R$.
 \end{defn}
 
@@ -19097,7 +19104,7 @@ such that
 $\mu(\emptyset) = 0$ and $\mu$ is
 \emph{$\sigma$-additive}\index{sigma-additive@$\sigma$-additive},
 that is, the measure of a union of countably many disjoint sets is the
-sum of the measures.  If $X$ is the euclidean space $\R^n$, there always
+sum of the measures.  If $X$ is the Euclidean space $\R^n$, there always
 exists a measure called the \emph{\myindex{Lebesgue measure}} that will agree with the
 standard $n$-dimensional volume on simple sets such as rectangles.
 A complication is that not all subsets of $\R^n$ can then be measurable.
@@ -19151,7 +19158,7 @@ that is,
 \int_X f\, d \mu
 \overset{\text{def}}{=}
 \int_X u\, d \mu
--
++
 i
 \int_X v\, d \mu .
 \end{equation*}
@@ -19182,7 +19189,7 @@ are both defined.
 
 Second, many more functions (all measurable functions in fact)
 can be limits of simple functions, and the integral is defined as a limit of
-such integrals, one would, rightly, expect that limits can easily pass under
+such integrals.  One would, rightly, expect that limits can easily pass under
 the integral and we no longer need to worry about integrability of the
 limit.
 
@@ -19261,7 +19268,7 @@ and almost every $x \in X$.  Then for all $t \in U$,
 
 A measure space is \emph{$\sigma$-finite}\index{sigma-finite@$\sigma$-finite}
 if it is a countable union of sets of
-finite measure.  For example, the euclidean space with Lebesgue measure
+finite measure.  For example, the Euclidean space with Lebesgue measure
 is $\sigma$-finite because it is a union of balls, which are of finite
 measure.  We often want to write an integral over a product space as an
 iterated integral, such as writing an integral over a subset of $\R^n$ using
@@ -19282,16 +19289,16 @@ for almost every $y \in Y$, $x \mapsto f(x,y)$ is measurable.
 \item The functions $y \mapsto \int_X f(x,y) \, d\mu(x)$ and $x \mapsto
 \int_Y f(x,y) \, d\nu(y)$ are measurable.
 \item
-\begin{equation*}
-\begin{split}
+$
+\begin{aligned}[t]
 \int_{X \times Y} f(x,y) d(\mu\times \nu)
 & =
 \int_Y \left( \int_X f(x,y) \, d\mu(x) \right) d\nu(y)
 \\
 & =
 \int_X \left( \int_Y f(x,y) \, d\nu(y) \right) d\mu(x) .
-\end{split}
-\end{equation*}
+\end{aligned}
+$
 \end{enumerate}
 \end{thm}
 
@@ -19314,22 +19321,22 @@ and for almost every $y \in Y$, $x \mapsto f(x,y)$ is $L^1$-integrable.
 \item The functions $y \mapsto \int_X f(x,y) \, d\mu(x)$ and
 $x \mapsto \int_Y f(x,y) \, d\nu(y)$ are $L^1$-integrable.
 \item
-\begin{equation*}
-\begin{split}
+$
+\begin{aligned}[t]
 \int_{X \times Y} f(x,y) d(\mu\times \nu)
 & =
 \int_Y \left( \int_X f(x,y) \, d\mu(x) \right) d\nu(y)
 \\
 & =
 \int_X \left( \int_Y f(x,y) \, d\nu(y) \right) d\mu(x) .
-\end{split}
-\end{equation*}
+\end{aligned}
+$
 \end{enumerate}
 \end{thm}
 
-Tonelli theorem is often applied in tandem with the Fubini theorem.  Tonelli
+The Tonelli theorem is often applied in tandem with the Fubini theorem.  Tonelli
 establishes integrability and Fubini is used to write the integral we need
-as iterated integral, or swap the order of integrations.
+as an iterated integral, or swap the order of integrations.
 
 The Tonelli and Fubini theorems are useful in simplifying the
 development of the power series by using the counting measure as we
@@ -19367,7 +19374,7 @@ resulting from a convex combination of the values of a convex function.
 
 \begin{thm}[Jensen's inequality]
 Suppose $(X,\sM,\mu)$ is a probability measure space, that is, $\mu(X)=1$,
-$\varphi \colon \R \to \R$ is convex, and $f$ is measurable.  Then
+$\varphi \colon \R \to \R$ is convex, and $f \colon X \to \R$ is integrable.  Then
 \begin{equation*}
 \varphi \left(
 \int_X f d\mu
@@ -19386,21 +19393,21 @@ A set $S \subset \R^n$ is \emph{convex}\index{convex}
 \emph{\myindex{geometrically convex}}\index{convex!geometrically})
 if for every $x,y \in S$ and every $\lambda \in [0,1]$ the
 point $(1-\lambda) x + \lambda y$ is in $S$.
-Interior and closure of convex sets are convex.
+The interior and closure of convex sets are convex.
 Arbitrary intersection of convex sets is convex, and increasing unions
 are convex.  Given a set $S$ the \emph{\myindex{convex hull}} of $S$ is
 the intersection of all convex sets containing $S$.  The closed convex hull
 is the closure of that.
 
 A \emph{\myindex{hyperplane}} $H \subset \R^n$ is the set of solutions $x$ of the equation
-$x \cdot a = b$ for some $a \in \R^n$ and $b \in \R$.  A
+$x \cdot a = b$ for some nonzero $a \in \R^n$ and $b \in \R$.  A
 \emph{\myindex{closed half-space}} is the set of points defined by
 $x \cdot a \geq b$.  A function of the form $x \mapsto x \cdot a + b$
 is called a \emph{\myindex{real affine function}}.
 
 \begin{thm}[Supporting hyperplane theorem]
 If $S \subset \R^n$ is convex and $x_0 \in \partial S$, then there exists a
-supporting hyperplane through $x_0$.  That is, there exists an $a \in \R^n$
+supporting hyperplane through $x_0$.  That is, there exists a nonzero $a \in \R^n$
 and $b \in \R$ such that $x_0 \cdot a = b$ ($x_0$ is on the hyperplane),
 and $x \cdot a \geq b$ for all $x \in S$ ($S$ is in the closed half-space
 defined by that hyperplane).
@@ -19409,8 +19416,8 @@ defined by that hyperplane).
 Note that the supporting hyperplanes need not be unique.
 
 \begin{thm}[Minkowski]
-If $S,T \subset \R^n$ are two nonempty disjoint convex sets.  Then there is
-a separating hyperplane, that is, there exists an $a \in \R^n$ and a $b \in
+Suppose $S,T \subset \R^n$ are two nonempty disjoint convex sets.  Then there is
+a separating hyperplane, that is, there exists a nonzero $a \in \R^n$ and a $b \in
 \R$ such that $x \cdot a \geq b$ for all $x \in S$ and
 $x \cdot a \leq b$ for all $x \in T$.
 \end{thm}
@@ -19423,10 +19430,10 @@ containing~$S$.  More generally, for any set $S$, the closed convex hull of
 $S$ is the intersection of all closed half-spaces that contain $S$.
 \end{cor}
 
-A point $x_0 \in S$ is called an \emph{\myindex{extreme point}}
+A point $x_0 \in S$ is an \emph{\myindex{extreme point}}
 if for every $x,y \in S$ and $\lambda \in [0,1]$ such that
-$(1-\lambda) x + \lambda y = x_0$ we have $x_0 = x$ or $x_0 = y$.
-A point $x_0 \in S$ is called an \emph{\myindex{exposed point}}
+$(1-\lambda) x + \lambda y = x_0$, we have $x_0 = x$ or $x_0 = y$.
+A point $x_0 \in S$ is an \emph{\myindex{exposed point}}
 if there is an affine linear function whose restriction to
 $S$ achieves a strict maximum at $x_0$, in other words, if there is a
 supporting hyperplane which intersects $S$ at exactly one point.
@@ -19441,8 +19448,8 @@ If $K \subset \R^n$ is compact and convex, then it is the convex hull of
 its extreme points.
 \end{thm}
 
-What is useful a couple of times for us in this book is that a compact
-convex set has exposed points.  Or more generally, the convex hull of a
+What is useful a couple of times in this book is that a compact
+convex set has exposed points.  More generally, the convex hull of a
 compact set has exposed points.
 
 Given a convex set $S$, a function $f \colon S \to \R$ is
@@ -19467,10 +19474,14 @@ unique by considering a supporting hyperplane of the epigraph:
 
 \begin{prop}
 Suppose $S \subset \R^n$ is a convex set, $f \colon S \to \R$ a
-convex function, and $x_0 \in S$.  Then there exists an affine function
+convex function, and $x_0 \in S^\circ$.  Then there exists an affine function
 $g$ such that $g(x) \leq f(x)$ for all $x \in S$ and $g(x_0) = f(x_0)$.
 \end{prop}
 
+By $S^\circ$, we mean the interior of $S$, but it may as well be
+the so-called \emph{\myindex{relative interior}},
+that is, the interior relative to the smallest
+affine subspace containing $S$.
 This proposition has the following consequence:
 \begin{equation*}
 f(x_0) = \sup \bigl\{ g(x_0) : g \text{ is an affine function such that } g(x) \leq
@@ -19486,7 +19497,7 @@ a smooth ($C^\infty$) function that is zero for all $x \leq 0$ and positive
 (and less than $1$)
 for $x > 0$.  The function $g(x) = \frac{f(x)}{f(x)+f(1-x)}$ is a smooth
 function that is zero for all $x \leq 0$ and $1$ for all $x \geq 1$.
-By modifying such examples we obtain the following
+By modifying such examples, we obtain the following
 \emph{\myindex{bump function}}:
 
 \begin{thm}[Bump function]

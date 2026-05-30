@@ -57,7 +57,16 @@ geometry often being defined to be irreducible.
 (thanks to a suggestion by Richard Lärkäng)
 <li>In Theorem B.24, avoid saying "interior", it works when \(S\) simply
 avoids \(\gamma\text{.}\)
+<li>In example C.5, flip the orientation so that it is compatible with
+what we said the boundary orientation was and with the standard outward
+normal orientation.
+<li>In the proof of Theorem D.4, explicitly assume that I is nontrivial
+and that all the \(f_k\) are nonzero.
 <li>Use the correct umlaut on Szegő.
+<li>Add complement and interior to the notations list even though we use it
+just a couple of times.
+<li>A few improvements to typesetting.
+<li>A few improvements to wording.
 
 
 See https://www.jirka.org/scv/changes.html for older changes.
