@@ -16184,14 +16184,17 @@ see \exerciseref{exercise:hypersurfaceinhypervariety}.
 
 \pagebreak[2]
 We used infinitely many functions in $\sF$ to define
-$X_{\mathit{sing}}$.  It is possible to use finitely many near each point
-as the ideals $I_p(X_{\mathit{sing}})$ are Noetherian,
-but despite the temptation, it is not possible to do a single
+$X_{\mathit{sing}}$.  It is possible to find finitely many
+to generate $I_p(X_{\mathit{sing}})$
+as $\sO_p$ is Noetherian, and hence find finitely
+many functions cutting out $X_{\mathit{sing}}$ near $p$.
+But despite the temptation, it is not possible to do a single
 generic linear change of variables and use just the
 $n$ discriminant functions, one for each variable.
 More than $n$ functions
 may be necessary as situations like the one depicted in
-\figureref{fig:Xsingvariety} may occur for some $q$,
+\figureref{fig:Xsingvariety} may occur for some
+$q$ arbitrarily close to $p$,
 no matter how we change
 variables to start with.
 
@@ -16199,20 +16202,22 @@ variables to start with.
 \begin{exercise} \label{exercise:nonverticalintersections}
 \begin{exparts}
 \item
-Suppose $D \subset \C^n$ is a polydisc, $0 \in D$,
-$q = (0,1) \in \C^{n-1} \times \C$,
-and $P$ is a Weierstrass polynomial of degree $k$
+Suppose $D = D' \times D_n \subset \C^n$ is a polydisc, $0 \in D$,
+and $P$ is a Weierstrass polynomial of degree $k$ with
+coefficients in $\sO(D')$
 such that for a generic $z'$ (not in the discriminant set),
 $z_n \mapsto P(z',z_n)$ has $k$ simple zeros.
 Prove that there exists a ball $B \subset \C^{n-1}$ centered at the origin
 and a dense open set $W \subset B$
 such that
 for every $\epsilon' \in W$, the function
-$z_n \mapsto P\bigl( (1-z_n) \epsilon' , z_n \bigr)$
-has exactly $k$ geometrically distinct zeros.
+$z_n \in D_n \mapsto P\bigl( (1-z_n) \epsilon' , z_n \bigr)$
+has exactly $k$ geometrically distinct zeros in $D_n$.
 Hint: Change coordinates near the origin to make all these lines vertical.
 \item
 Show that part a) proves the claim in the proof of the theorem.
+Note that part a) corresponds to $q = (0,1) \in \C^{n-1} \times \C$
+in the proof.
 \end{exparts}
 \end{exercise}
 
@@ -16236,12 +16241,12 @@ of singular points is a subvariety of dimension $k$.
 
 \begin{defn}
 A germ of a subvariety $(X,p) \subset (\C^n,p)$ is
-\emph{\myindex{reducible}} at $p$ if there exist
-two germs $(X_1,p)$ and $(X_2,p)$ with
+\emph{\myindex{reducible}} at $p$ if there are
+two germs of subvarieties $(X_1,p)$ and $(X_2,p)$ with
 $(X_1,p) \not\subset (X_2,p)$ and
 $(X_2,p) \not\subset (X_1,p)$ such that
 $(X,p) = (X_1,p) \cup (X_2,p)$.
-Otherwise, the germ $(X,p)$ is \emph{\myindex{irreducible}} at $p$.
+Otherwise, the germ $(X,p)$ is \emph{\myindex{irreducible}} at~$p$.
 
 Similarly globally, a subvariety $X \subset U$ is
 \emph{reducible} in $U$ if there exist
@@ -16284,10 +16289,11 @@ $ab \in I$ implies either $a \in I$ or $b \in I$.
 \end{exercise}
 
 \begin{exercise}
-Suppose a germ of a subvariety $(X,p)$ is of pure codimension $1$.
-Prove $(X,p)$ is irreducible if and only if there
-exists a representative of $X$ where $X_{\mathit{reg}}$
-is connected.  %Hint: See the proof of \thmref{thm:codim1var}.
+Let $(X,p)$ be a germ of a hypervariety.
+Prove $(X,p)$ is irreducible if and only if
+for every representative $X$, there is
+a representative $X' \subset X$ so that
+$X'_{\mathit{reg}}$ is connected.
 \end{exercise}
 
 \begin{exercise}
@@ -16344,12 +16350,15 @@ Let $(X,0)$ be an irreducible germ of a subvariety of dimension $k$
 in $\C^n$.  Let $X$ denote a representative of the germ.
 Then after a possible linear change of coordinates, letting
 $\pi \colon \C^n \to \C^k$ be the projection onto the first $k$
-components, there exists a neighborhood $U \subset \C^n$
-of the origin, and a proper subvariety $E \subset \pi(U)$
+components, there exists a neighborhood $U = \pi(U) \times D \subset \C^k
+\times \C^{n-k}$
+of the origin such that $X \cap U$ is a subvariety of $U$
+and $X \cap U$ has no limit points on $\pi(U) \times \partial D$,
+and a proper subvariety $E \subset \pi(U)$
 (the \emph{\myindex{discriminant set}}) such that
 \begin{enumerate}[(i)]
 \item $X' = X \cap U \setminus \pi^{-1}(E)$ is a connected
-$k$-dimensional complex manifold that is dense in $X \cap U$.
+$k$-dimensional complex manifold dense in $X \cap U$.
 \item $\pi \colon X' \to \pi(U) \setminus E$ is an $m$-sheeted covering map
 for some integer $m$.
 \item $\pi \colon X \cap U \to \pi(U)$ is a proper mapping.
@@ -16371,7 +16380,7 @@ of pure codimension $1$.
 Let $(z_1,\ldots,z_n)$ be the coordinates.
 The linear change of coordinates needed in the theorem is
 to ensure that the set defined by $z_1=z_2=\cdots=z_k = 0$ intersected
-with $X$ is an isolated point at the origin.  This is precisely
+with $X$ is an isolated point at the origin.  It is
 the same condition needed to apply Weierstrass preparation theorem in the case
 when $X$ is the zero set of a single function.
 
@@ -16408,7 +16417,7 @@ is a holomorphic map such that
 $f(z,w) = 0$ defines a one-dimensional subvariety $X$ of $U$,
 $0 \in X$,
 and $w \mapsto f(0,w)$ has an isolated zero at the origin.
-Then there exists an integer $k$ and a holomorphic $\C^{n-1}$-valued $g$
+Then there exists a positive integer $k$ and a holomorphic $\C^{n-1}$-valued $g$
 defined near
 the origin in $\C$ such that
 for all $\xi$ near the origin
@@ -16436,7 +16445,7 @@ a permutation $\sigma$ on $m$ elements such that as $z$ moves
 counter-clockwise around the origin from the upper half-plane across $N$ to the
 lower half-plane,
 $\alpha_j(z)$ is continued as $\alpha_{\sigma(j)}(z)$.
-There exists some number $k$ such that $\sigma^k$ is the identity.
+There exists some positive integer $k$ such that $\sigma^k$ is the identity.
 As $\xi$ goes around
 a circle around the origin, $\xi^k$ goes around the origin $k$ times.
 Start at a positive real $\xi$ and start defining a

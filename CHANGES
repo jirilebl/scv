@@ -5,6 +5,7 @@ Note that 3 exercises have been fixed and necessarily changed somewhat
 Some pagination changed slightly due to some of the changes,
 but otherwise no major changes, no new material.
 
+<ol>
 <li>Be a bit more precise with how the radius
 of convergence is computed from the domain.
 <li>In Proposition 1.1.3, add the note that
@@ -73,10 +74,19 @@ structure sheaf, but do
 <li>Simplify slightly the wording in the proof of Lemma 6.5.10.
 <li>Reword the proof of Theorem 6.6.5 a little, to make it clearer and simpler to
 read.
+<li>In Exercise 6.6.7, move the \(q=(0,1)\) to part b) as it is
+irrelevant to part a), and make part a) be more precise.
+<li><b>Change Exercise 6.7.2 to fix an erratum</b>.
 <li>In the text after Proposition 6.7.3, give an explicit link to the
 exercise as "above" is a bit vague.
+<li>Make the neighborhood \(U\) in Theorem 6.7.4 a bit more precise.
+It slightly changes Exercise 6.7.4, but really all the new things
+that are asked for are trivially the output of Theorem 6.3.3 which the
+reader should use.
 <li>In the remark about the simplicity of dimension 1 subvarieties,
 be more precise and say that we are talking about the irreducible components.
+<li>In Theorem 6.7.6 explicitly state that \(k\) is positive to avoid
+a technicality, and really that is what we prove.
 <li>In the proof of Theorem 6.7.6, just don't say anything about for
 example \(k=m!\) working.  That is just the obvious thing, but not
 the most natural.  It is clear that some \(k\) works, no need to
@@ -93,6 +103,7 @@ and that all the \(f_k\) are nonzero.
 just a couple of times.
 <li>A few improvements to typesetting.
 <li>A few improvements to wording.
+</ol>
 
 
 See https://www.jirka.org/scv/changes.html for older changes.
