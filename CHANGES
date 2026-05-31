@@ -60,6 +60,20 @@ the \(P_1,\ldots,P_k\) are Weierstrass.
 <li>Add a note in 6.5 about (sub)varieties in algebraic
 geometry often being defined to be irreducible.
 (thanks to a suggestion by Richard Lärkäng)
+<li>Call \(\mathcal{O}_p/I_p(X)\) the "local ring" to avoid
+confusing algebraic geometers, and also mention the
+structure sheaf, but do 
+<li>Simplify slightly the wording in the proof of Lemma 6.5.10.
+<li>Reword the proof of Theorem 6.6.5, to make it clearer and simpler to
+read.
+<li>In the text after Proposition 6.7.3, give an explicit link to the
+exercise as "above" is a bit vague.
+<li>In the remark about the simplicity of dimension 1 subvarieties,
+be more precise and say that we are talking about the irreducible components.
+<li>In the proof of Theorem 6.7.6, just don't say anything about for
+example \(k=m!\) working.  That is just the obvious thing, but not
+the most natural.  It is clear that some \(k\) works, no need to
+confuse matters saying \(m!\) is somehow good.
 <li>In Theorem B.24, avoid saying "interior", it works when \(S\) simply
 avoids \(\gamma\text{.}\)
 <li>In example C.5, flip the orientation so that it is compatible with
