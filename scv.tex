@@ -997,8 +997,8 @@ then the function must be constant.  Another way to state the maximum
 principle is to say: If $f$ extends continuously to the boundary of a
 bounded
 domain, then the supremum of $\sabs{f(z)}$ is attained on the boundary.
-In
-one variable you learned that the maximum principle is really a
+In one-variable complex analysis,
+you learned that the maximum principle is really a
 property of harmonic functions.
 
 \begin{thm}[Maximum principle]
@@ -1965,8 +1965,6 @@ d \zeta
 \end{split}
 \end{equation*}
 The last equality follows by Fubini or uniform convergence just as it does in one variable.
-%because the convergence of the sum is uniform in
-%$\zeta \in \Gamma$ for a fixed $z$.
 Uniform absolute convergence (as $z$ moves) on compact subsets of the final
 series follows from the
 uniform absolute convergence of the geometric series.  It is also a direct
@@ -14386,7 +14384,7 @@ with coefficients holomorphic in $V'$ such that
 f(z',z_n) = u(z',z_n) \, P(z',z_n) ,
 \end{equation*}
 and such that all $k$ zeros (counting multiplicity)
-of $z_n \mapsto P(z',z_n)$ lie in $D$ for all $z' \in V'$
+of $z_n \mapsto P(z',z_n)$ lie in $D$ for all $z' \in V'$.
 \end{thm}
 
 \begin{proof}
@@ -14412,9 +14410,8 @@ thin dashed line.\label{fig:wpreppoly}}
 \caption{The zeros of $z_n \mapsto f(z',z_n)$.\label{fig:wprepdiv}}
 \end{myfig}
 
-By the one-variable argument principle (\thmref{thm:onevarargprinc}) the number of zeros (with
-multiplicity) of $z_n
-\mapsto f(z',z_n)$ in $D$ is
+By the one-variable argument principle (\thmref{thm:onevarargprinc}),
+the number of zeros (with multiplicity) of $z_n \mapsto f(z',z_n)$ in $D$ is
 \begin{equation*}
 \frac{1}{2\pi i}
 \int_{\partial D}
@@ -14499,7 +14496,7 @@ so $P$ is a Weierstrass polynomial.
 
 Finally, we wish to show that $P$ divides $f$ as claimed, that is,
 that $u$ is holomorphic.
-For each fixed $z'$, one variable theory says that
+For each fixed $z'$, one-variable theory says that
 $z_n \mapsto \frac{f(z',z_n)}{P(z',z_n)}$ has only removable singularities,
 and in fact, it has no zeros as we defined $P$
 to exactly cancel them all out.
@@ -14650,7 +14647,7 @@ of $z'$ near the origin.
 
 The hypotheses of the preparation theorem are not an obstacle.  If a holomorphic
 function $f$ is such that $z_n \mapsto f(0,z_n)$ vanishes identically,
-then we can make a small linear change of
+then we can make a linear change of
 coordinates $L$ ($L$ can be a matrix arbitrarily close to the identity) such
 that $f \circ L$ satisfies the hypotheses of the theorem.
 For example, $f(z_1,z_2,z_3) = z_1z_3+z_2z_3$ does not satisfy the
@@ -14939,7 +14936,7 @@ think $D=\C$ rather than a disc for simplicity.  Then $U'$ is not simply
 connected, and there do not exist continuous functions
 $\alpha_1(z_1)$ and
 $\alpha_2(z_1)$ defined in $U'$ that are zeros
-of the Weierstrass polynomial, that is
+of the Weierstrass polynomial, that is,
 $z_2^2 - z_1 =
 \bigl(z_2-\alpha_1(z_1) \bigr)
 \bigl(z_2-\alpha_2(z_1) \bigr)$.
@@ -14995,7 +14992,7 @@ open, and dense.
 We call $\Delta$ the \emph{\myindex{discriminant function}} and its zero set
 $E$ the \emph{\myindex{discriminant set}}.
 For the quadratic equation $a(z') z_n^2 + b(z') z_n + c(z') = 0$ (assuming
-$a$ never zero and 2 distinct zeros at some $z'$),
+$a$ is never zero and two distinct zeros at some $z'$),
 $\Delta$ is, up to a unit, the discriminant we learned about in high school:
 $b^2-4ac$.  To be precise, for the $\Delta$ from the proof below,
 $-a^2 \Delta = b^2-4ac$.
@@ -15041,7 +15038,7 @@ M(z') = \frac{1}{2\pi i}
 and so $M$ is constant in this neighborhood (it is an integer-valued
 continuous function).
 So $M$ is a locally constant function on $U'$,
-which is connected and so $M$ is constant.
+which is connected, and so $M$ is constant.
 The number of
 geometrically distinct zeros at any $z'$ is bounded by $M$,
 although the number of geometrically distinct zeros may not be constant.
@@ -15078,10 +15075,10 @@ That means $\Delta$ is well-defined as a function on the open set $U_m'$,
 and since $\alpha_k$ can locally be picked to be holomorphic,
 $\Delta$ is holomorphic.
 
-Let $p' \in E \cap \overline{U_m'}$,
-so there are fewer than $m$ zeros at $p'$.
-Suppose $\gamma$ and $\lambda$ are as above, so there are fewer than $m$
-components of $\gamma$.
+Let $p' \in E \cap \overline{U_m'}$ and let
+$\gamma$ and $\lambda$ be as above.
+There are fewer than $m$ zeros at $p'$
+and so fewer than $m$ components of $\gamma$.
 In each component $\gamma_j$ of $\gamma$, there is
 at least one zero for all $z'$ near $p'$ by the same argument as above.
 The path $\lambda$ goes around all the zeros of 
@@ -15099,7 +15096,7 @@ As $\lambda$ goes around all the zeros for $z'$ near $p'$,
 all zeros of $z_n \mapsto f(z',z_n)$
 lie inside $\gamma$ for $z'$ near $p'$.
 There exist such $z' \in U_m'$ arbitrarily near $p'$,
-in which case, by pigeonhole principle, some
+in which case, by the pigeonhole principle, some
 component $\gamma_j$ contains at least two geometrically distinct zeros of
 $z_n \mapsto f(z',z_n)$.
 Let $\{ z'_\ell \}$
@@ -15207,8 +15204,7 @@ functions.  Show that if $f(p) = 0$, then $f \in
 \mathfrak{m}_p$.
 \item
 Show that if $I \subsetneq \sO_p$ is a \emph{\myindex{proper ideal}}
-(ideal such that $I
-\neq \sO_0$), then
+(ideal such that $I \neq \sO_p$), then
 $I \subset \mathfrak{m}_p$, that is, $\mathfrak{m}_p$ is a \emph{\myindex{maximal ideal}}.
 \end{exparts}
 \end{exercise}
@@ -15224,11 +15220,12 @@ exists a $k=0,1,2,\ldots$, such that $I = \bigl( (z-p)^k \bigr)$.
 \end{exercise}
 
 \begin{exercise}\label{exercise:biholringiso}
-Suppose $U,V \subset \C^n$ are two neighborhoods of $p$
-and $h \colon U \to V$ is a biholomorphism.  First
-prove that it makes sense to talk about $f \circ h$
+Suppose $U,V \subset \C^n$ are two open sets,
+$h \colon U \to V$ is a biholomorphism, and $h(q)=p$.  First
+prove that it makes sense to talk about the germ $(f \circ h,q) \in \sO_q$
 for any $(f,p) \in \sO_p$.  Then
-prove that $f \mapsto f \circ h$ is a ring isomorphism.
+prove that $f \mapsto f \circ h$ gives a ring isomorphism
+of $\sO_q$ and $\sO_p$.
 \end{exercise}
 \end{exbox}
 
@@ -15310,7 +15307,7 @@ either $g$ or $h$ is a unit.
 \begin{thm}
 $\sO_p$ is a \emph{\myindex{unique factorization domain}}\index{UFD}
 (UFD)\@.  That is, up to
-multiplication by a unit, every nonzero nonunit has a unique factorization into
+multiplication by a unit and permutation, every nonzero nonunit has a unique factorization into
 irreducible elements of $\sO_p$.
 \end{thm}
 
@@ -15320,15 +15317,18 @@ The one-dimensional statement is an exercise below.  If ${}_{n-1}\sO_0$ is a UFD
 ${}_{n-1}\sO_0[z_n]$ is a UFD by the Gauss lemma
 (see \thmref{thm:gausslemma}).
 Take $f \in {}_n\sO_0$ such that $f(0)=0$ and $f \not\equiv 0$.
-After perhaps a linear change of coordinates
+After perhaps a linear change of coordinates,
 $f = qP$, for $q$ a unit in ${}_n\sO_0$,
 and $P$ a Weierstrass polynomial in $z_n$.
 As ${}_{n-1}\sO_0[z_n]$ is a UFD\@, $P$ has a unique
 factorization in ${}_{n-1}\sO_0[z_n]$ into $P = P_1 P_2 \cdots P_k$.
 So $f = q P_1 P_2 \cdots P_k$.
 We choose $P_1,\ldots,P_k$ to be monic.
-As $P$ has a geometrically unique zero at $z'=0$, $P_1,\ldots,P_k$
-do as well, and so they are Weierstrass polynomials.
+As $P(0,z_n) = z_n^d$ for some $d$,
+we find
+$P_1(0,z_n) = z_n^{d_1}$, \ldots,
+$P_k(0,z_n) = z_n^{d_k}$, and
+so they are Weierstrass polynomials.
 That $P_\ell$ are irreducible
 in ${}_n\sO_0$ is left as an exercise.
 
@@ -15735,22 +15735,23 @@ open and dense in $X$.
 \end{lemma}
 
 \begin{proof}
-In the same way that we proved \thmref{thm:regptsdense},
-by intersecting $X$ with arbitrary neighborhoods,
-it is sufficient to show the existence of one regular point.
-
-We will induct on dimension.  For $n=1$,
+%In the same way that we proved \thmref{thm:regptsdense},
+%by intersecting $X$ with arbitrary neighborhoods,
+%it is sufficient to show the existence of one regular point.
+%
+We induct on dimension.  For $n=1$,
 the only subvarieties are either isolated points or entire components of
 $U$, so all points are regular.
-Suppose the lemma is true in dimension $n-1$.
-It is enough to find one regular point on $X$ as 
-that means there is a regular point on
+Suppose the lemma holds in dimension $n-1$.
+It is enough to find one regular point on $X$, as 
+then there is a regular point on
 any neighborhood of any point of $X$.
 Suppose $0 \in X$ for simplicity.
-Either $X$ contains a whole neighborhood of $0$, in which case
-$0$ is a regular point, or there is some nontrivil holomorphic function
+If $X$ contains a whole neighborhood of $0$, then
+$0$ is a regular point. 
+Otherwise there is a nontrivial holomorphic function
 $f$ near $0$ that vanishes on $X$.
-After a small linear change of coordinates, the
+After a linear change of coordinates, the
 Weierstrass preparation theorem applies and we can assume that $f$ is a
 Weierstrass polynomial.  Write the variables as
 $(z_1,\ldots,z_{n-1},z_n) = (z',z_n)$.
@@ -15909,7 +15910,6 @@ it only vanishes at finitely
 many points for each fixed $z'$.
 Therefore, as $X_{\mathit{reg}}$ is dense in $X$ (\lemmaref{lemma:regdense}),
 the closure of $X \setminus (E \times D)$ contains $X$ and so $Z_f = X$.
-
 The fact that this $f$ generates $I_p(X)$ is left as
 \exerciseref{exercise:singlegenerator}.
 \end{proof}
@@ -16024,15 +16024,19 @@ closure $\overline{X'}$ is a subvariety of $U$ of pure codimension $1$.
 \begin{example} \label{example:discriminantnotsingset}
 If $X$ is a hypervariety, 
 the preparation theorem applies, and $E$ the corresponding discriminant set,
-it is tempting to say that the singular set of $X$ is the
-set $X \cap (E \times \C)$, which is a codimension-$2$ subvariety.  It is true that
-$X \cap (E \times \C)$ will contain the singular set, but in general the
+it is tempting to say that the singular set of $X$ is
+$X \cap (E \times \C)$, which is a codimension-$2$ subvariety.  The set
+$X \cap (E \times \C)$ does contain the singular set, but in general the
 singular set is smaller.
-A simple example of this behavior is the set defined by
-$z_2^2 - z_1 = 0$.  The defining function is a Weierstrass
+A simple example is given by
+$z_2^2 - z_1 = 0$.  This defining function is a Weierstrass
 polynomial in $z_2$ and the discriminant set is given by $z_1 = 0$.
-However, the subvariety has no singular points as it is the graph of $z_1$
+But the subvariety has no singular points as it is the graph of $z_1$
 over $z_2$.  See~\figureref{fig:sidewaysparabola}.
+A less trivial example $z_1^2+\cdots+z_k^2=0$,
+where the singular set is of any given dimension $n-k$
+is given in
+\exerciseref{exercise:morsesingularity}.
 
 \begin{myfig}
 \medskip
@@ -16043,11 +16047,6 @@ For each nonzero $z_1$, there are two solutions (for negative $z_1$ these
 are obviously not real).  But for each fixed $z_2$, there is exactly
 one solution.\label{fig:sidewaysparabola}}
 \end{myfig}
-
-A less trivial example $z_1^2+\cdots+z_k^2=0$,
-where the singular set is of any given dimension $n-k$
-is given in
-\exerciseref{exercise:morsesingularity}.
 \end{example}
 
 Let us prove the version of \thmref{thm:varietysingularity} for

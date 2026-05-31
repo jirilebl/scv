@@ -52,6 +52,11 @@ as that hopefully is clearer since we use \(r\) in the statement.
 <li><b>Change Exercise 6.1.5 part c)</b> to require that \(V\) is
 connected to fix a loophole.
 <li>In 5.2, correctly refer to the Riesz representation theorem.
+<li><b>Change Exercise 6.4.3 slightly</b> to fix an erratum.
+Really it was ambiguous, so make one interpretation be explicit,
+we have a second point \(q\) and \(h(q)=p\text{.}\)
+<li>In the proof of Theorem 6.4.2, explicitly write out why
+the \(P_1,\ldots,P_k\) are Weierstrass.
 <li>Add a note in 6.5 about (sub)varieties in algebraic
 geometry often being defined to be irreducible.
 (thanks to a suggestion by Richard Lärkäng)
