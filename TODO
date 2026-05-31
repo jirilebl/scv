@@ -5,6 +5,10 @@ Some major maybe things for next big version:
 
 Some more uncategorized bits:
 
+* Perhaps change our default from "(sub)variety" to "analytic set".  That should
+  make it more compatible for readers also taking algebraic geometry and being perhaps
+  tiny bit confused.
+
 Some remaining maybes from Richard Lärkäng / Elizabeth Wulcan (by now, lot has been added):
 
 * When discussing holomorphic convexity, we looked at a sketch of a proof that holo convexity is equivalent to being able to interpolate on any discrete sequence of distinct points, based on the proof in for example Demailly, see the end of https://canvas.gu.se/courses/35064/files/2891526/download?wrap=1.
