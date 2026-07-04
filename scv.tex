@@ -7735,12 +7735,14 @@ for all $z \in \overline{\Delta}$ and all $t > 0$.
 \caption{Proof of Rad\'o's theorem.\label{fig:radosthm}}
 \end{myfig}
 
-Taking the limit
+The limit
 $t \to 0$ shows that $Pu = u$ on $\Delta'$.
 Let $W = \Delta \setminus \overline{\Delta'}$.
-On $W$, $u=0$ and so $Pu-u$ is harmonic on $W$
-and continuous on $\widebar{W}$.  Furthermore,
-$Pu-u=0$ on $\overline{\Delta'} \cup \partial \Delta$,
+On $W$, $u=0$, and so $Pu-u$ is harmonic on $W$
+and continuous on $\widebar{W}$.
+On $\overline{\Delta'} \cup \partial \Delta$,
+we have
+$Pu-u=0$,
 and so $Pu-u=0$ on $\partial W$.  By the maximum principle, $Pu=u$ on $W$
 and therefore on all of $\overline{\Delta}$.
 Similarly, if $v$ is the imaginary part of $f$, then $Pv = v$ on
@@ -7748,10 +7750,10 @@ $\overline{\Delta}$.
 In other words, $u$ and $v$ are harmonic on $\Delta$.
 As $\Delta$ is simply connected,
 let $\tilde{v}$ be the harmonic conjugate of $u$ that equals $v$ at
-some point of $\Delta'$.  As $f$ is holomorphic on $\Delta'$,
+some point of $\Delta'$.  Because $f$ is holomorphic on $\Delta'$,
 the harmonic functions $\tilde{v}$ and $v$
-are equal on the nonempty open subset $\Delta'$ of $\Delta$ and so
-they are equal everywhere.  Consequently, $f = u +iv$ is holomorphic on
+are equal on one component of the nonempty open subset $\Delta'$ of $\Delta$ and so
+they are equal on $\Delta$.  Consequently, $f = u +iv = u + i \tilde{v}$ is holomorphic on
 $\Delta$.
 
 The extension of the proof to several variables is left as an exercise.
