@@ -43,8 +43,6 @@
 
 \usepackage[T1]{fontenc}
 
-\usepackage{perpage}
-
 %symmetric for web
 \usepackage[inner=1.2in,outer=1.2in,top=1in,bottom=1in]{geometry}
 %PRINT asymetric for book
@@ -112,6 +110,9 @@
 % however footmisc now has some sort of conflict with texlive 2026
 %\usepackage[perpage,symbol*]{footmisc}
 
+% footnotes per page using symbols
+\counterwithout{footnote}{chapter} % Fix footnotes starting at 2 on the first page of a chapter.
+\usepackage{perpage}
 \MakePerPage{footnote}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
