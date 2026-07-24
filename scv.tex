@@ -4094,8 +4094,8 @@ such that the inverse $f^{-1} \colon f(\R) \to \R$ is not continuous.
 \end{exbox}
 
 \pagebreak[1]
-This is an appropriate place to state a well-known and as yet unsolved conjecture (and most
-likely ridiculously hard to solve):
+This is an appropriate place to state a well-known and as yet not completely
+solved conjecture:
 the \emph{\myindex{Jacobian conjecture}}.
 This conjecture is a converse to the theorem above in a special case:
 \emph{If $F \colon \C^n \to \C^n$ is a polynomial map (each component is a
@@ -4104,6 +4104,20 @@ invertible with a polynomial inverse.}
 Clearly $F$ would be locally one-to-one, but proving (or
 disproving)
 the existence of a global polynomial inverse is the content of the conjecture.
+The conjecture is true for $n=1$ (exercise below).
+A simple counterexample\footnote{%
+$(z_1,z_2,z_3) \mapsto
+\bigl((1+z_1z_2)^3 z_3 + z_2^2 (1+z_1z_2) (4+3z_1z_2),
+z_2 + 3 z_1 (1+z_1z_2)^2  z_3 + 3 z_1 z_2^2 (4+3z_1z_2),
+2 z_1 - 3 z_1^2 z_2 - z_1^3 z_3\bigr)$
+has Jacobian determinant $-2$, but 
+takes $(0, 0, \nicefrac{-1}{4})$,
+$(1, \nicefrac{-3}{2}, \nicefrac{13}{2})$,
+and $(-1, \nicefrac{3}{2}, \nicefrac{13}{2})$ to $(\nicefrac{-1}{4}, 0, 0)$,
+so it is not even one-to-one.  It was found using Claude AI.}
+disproving the conjecture for
+$n \geq 3$ was recently found by Levent Alp\"oge.
+It remains open for $n=2$.
 
 \begin{exbox}
 \begin{exercise}
