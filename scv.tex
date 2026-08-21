@@ -4708,8 +4708,8 @@ that is, the $r$ is infinitely differentiable.
 \end{myfig}
 
 What we really defined is an \emph{\myindex{embedded hypersurface}}%
-\index{hypersurface!embedded}.  In
-particular, in this book the topology on the set $M$ will be the subset
+\index{hypersurface!embedded}.
+In this book, the topology on the set $M$ will always be the subspace
 topology.  Furthermore, in this book we generally deal with smooth
 (that is, $C^\infty$) functions and hypersurfaces.  Dealing with
 $C^k$-smooth functions for finite $k$ introduces technicalities that make
@@ -4788,8 +4788,8 @@ can be identified with an element of $T_0 \R^n$.
 
 \begin{defn}
 Let $M \subset \R^n$ be a smooth hypersurface,
-$p \in M$, and $r$ is a defining function at $p$,
-then a vector $X_p \in T_p \R^n$ is \emph{tangent}\index{tangent vector}
+$p \in M$, and $r$ be a defining function at $p$.
+A vector $X_p \in T_p \R^n$ is \emph{tangent}\index{tangent vector}
 to $M$ at $p$ if
 \begin{equation*}
 X_p r = 0, \qquad \text{or in other words} \qquad
@@ -4801,7 +4801,7 @@ called the \emph{\myindex{tangent space}} of $M$ at $p$.
 \end{defn}
 
 The space $T_pM$ is an $(n-1)$-dimensional real vector space---it is a subspace
-of an $n$-dimensional $T_p\R^n$ given by a single linear equation.
+of the $n$-dimensional real vector space $T_p\R^n$ given by a single linear equation.
 Recall from calculus that the gradient $\nabla r|_p$ is
 ``normal'' to $M$ at $p$, and
 the tangent space is given by all the $n$-vectors $a$
@@ -4964,7 +4964,7 @@ For instance, the derivative of the mapping $f(x_1,x_2) =
 (x_1+2x_2+x_1^2,3x_1+4x_2+x_1x_2)$ at the origin is given by the matrix
 $\left[ \begin{smallmatrix} 1 & 2 \\ 3 & 4 \end{smallmatrix} \right]$,
 and so the vector
-$X_p = a\frac{\partial}{\partial x_1}\big|_0
+$X_0 = a\frac{\partial}{\partial x_1}\big|_0
 +
 b\frac{\partial}{\partial x_2}\big|_0$
 gets taken to
@@ -5276,7 +5276,7 @@ where $H = \left[
 is the Hessian matrix of $\varphi$ at the origin,
 and $E$ is $O(3)$, namely, $E(0) = 0$, and
 all first and second order derivatives of $E$ vanish at $0$.
-In the context of the lemma above,
+In the context of the proposition above,
 the $\varphi$ is $O(2)$ at the origin, i.e.\ $\varphi(0) = 0$
 and $\nabla \varphi|_0 = 0$.  So we write the hypersurface
 $M$ as
@@ -5787,7 +5787,7 @@ the Hermitian matrix
 \frac{\partial^2 r}{\partial \bar{z}_n \partial \bar{z}_1}
 & \cdots &
 \frac{\partial^2 r}{\partial \bar{z}_n \partial \bar{z}_n}
-\\
+\\[4pt]
 %%%%%
 \frac{\partial^2 r}{\partial z_1 \partial z_1}
 & \cdots &
@@ -5834,19 +5834,19 @@ T =
 \qquad
 T^*
 \begin{bmatrix}
-\frac{\partial^2 r}{\partial x \partial x} &&
+\frac{\partial^2 r}{\partial x \partial x} &
 \frac{\partial^2 r}{\partial x \partial y}
-\\
-\frac{\partial^2 r}{\partial y \partial x} &&
+\\[4pt]
+\frac{\partial^2 r}{\partial y \partial x} &
 \frac{\partial^2 r}{\partial y \partial y}
 \end{bmatrix}
 T
 =
 \begin{bmatrix}
-\frac{\partial^2 r}{\partial \bar{z} \partial z} &&
+\frac{\partial^2 r}{\partial \bar{z} \partial z} &
 \frac{\partial^2 r}{\partial \bar{z} \partial \bar{z}}
-\\
-\frac{\partial^2 r}{\partial z \partial z} &&
+\\[4pt]
+\frac{\partial^2 r}{\partial z \partial z} &
 \frac{\partial^2 r}{\partial z \partial \bar{z}}
 \end{bmatrix}
 ,
@@ -5876,10 +5876,10 @@ Consider one dimension, $z = x+iy$, and the real Hessian
 in terms of $x$ and $y$:
 \begin{equation*}
 H=\begin{bmatrix}
-\frac{\partial^2 r}{\partial x\partial x} &&
+\frac{\partial^2 r}{\partial x\partial x} &
 \frac{\partial^2 r}{\partial x \partial y}
-\\
-\frac{\partial^2 r}{\partial y \partial x} &&
+\\[4pt]
+\frac{\partial^2 r}{\partial y \partial x} &
 \frac{\partial^2 r}{\partial y\partial y}
 \end{bmatrix} .
 \end{equation*}
@@ -5928,7 +5928,7 @@ the full Hessian as
 \begin{bmatrix} L & \widebar{Z} \\ Z & L^t \end{bmatrix}
 \begin{bmatrix} A & 0 \\ 0 & \widebar{A} \end{bmatrix}
 =
-\begin{bmatrix} A^*LA & \overline{A^tZA} \\ A^tZA & {(A^*LA)}^t \end{bmatrix} ,
+\begin{bmatrix} A^*LA & \overline{A^tZA} \\ A^tZA & {(A^*LA)}^t \end{bmatrix} .
 \end{equation*}
 Again by Sylvester's law of inertia,
 $L$ and $A^*LA$ have the same inertia, that is,
@@ -5965,7 +5965,7 @@ pseudoconvex at all nearby points.
 \end{exercise}
 \end{exbox}
 
-We are generally interested what happens under a holomorphic change of
+We are generally interested in what happens under a holomorphic change of
 coordinates, that is, a biholomorphic mapping.  And as far as pseudoconvexity
 is concerned we are interested in local changes of coordinates as
 pseudoconvexity is a local property.  Before proving
@@ -6535,8 +6535,9 @@ for all $k$ and $\ell$.
 \end{exbox}
 
 \begin{lemma}[Narasimhan's lemma\index{Narasimhan's lemma}%
-\footnote{A statement essentially of Narasimhan's lemma was already used by Helmut
-Knesser in 1936.}]
+\footnote{A statement essentially of Narasimhan's lemma was already used by
+Hellmuth
+Kneser in 1936.}]
 Let $U \subset \C^n$ be an open set with smooth boundary
 that is strongly pseudoconvex at $p \in \partial U$.  Then there exists a local biholomorphic change of
 coordinates fixing $p$ such that in these new coordinates, $U$ is strongly
@@ -13004,8 +13005,8 @@ $f_2 \in \sO(U_2)$ such that on $U_1 \cap U_2$, we have
 f_1 -f_2 = h_{12} = \frac{1}{zw} .
 \end{equation*}
 In other words, $f_1 = \frac{1}{zw}+f_2$ on $U_1 \cap U_2$.
-But that means that $zf_1$ is holomorphic in $U_2$ and
-therefore in $U$, and thus extends to $\C^2$.  Similarly, $wf_2$ extends to a
+But then $zf_1$ extends to be holomorphic in $U_2$ and
+hence to $U$, and consequently to $\C^2$.  Similarly, $wf_2$ extends to a
 holomorphic function on $\C^2$.  Thus
 $zwf_1 -zwf_2$ is a holomorphic function on $\C^2$ that vanishes at the
 origin, but $zwf_1 -zwf_2 = zw(h_{12}) \equiv 1$ on $U_1 \cap U_2$,
@@ -13102,7 +13103,7 @@ Cousin I problem is solvable on any possibly unbounded polydisc in~$\C^n$.
 
 \begin{exbox}
 \begin{exercise}
-Use the solution of the $\bar{\partial}$-problem in the disc to show that
+Use the solution of the $\bar{\partial}$-problem in the polydisc to show that
 if the Cousin I problem is solvable in a domain $U \subset \C^n$, then
 $H^{(0,1)}(U) = 0$.  Hint: Solve locally and then follow the same idea
 as trying to piece together the meromorphic function above.
