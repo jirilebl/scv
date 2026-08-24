@@ -9672,7 +9672,7 @@ a holomorphic function of $2n$ variables,
 and let $\sM$ be the set defined by
 $r(z,\zeta,w,\omega) = 0$.
 The derivative of $r$ in
-$\omega$ (that is $\bar{w}$) does not vanish near the origin.
+$\omega$ (that is, $\bar{w}$) does not vanish near the origin.
 Use the implicit function theorem for holomorphic functions to write $\sM$
 near the origin as
 \begin{equation*}
@@ -11139,7 +11139,7 @@ is integrable over all of $U$.  Therefore,
 \end{equation*}
 The second equality is simply swapping the order of $d\zeta$ and
 $d\bar{\zeta}$.
-By continuity of $f$, we finish the proof,
+By continuity of $f$, we finish the proof:
 \begin{equation*}
 \lim_{r \to 0}
 \frac{1}{2\pi i}
@@ -11474,7 +11474,7 @@ $K$ and is compactly supported in $U$ (exercise below).  Let
 $f_0 = (1-\varphi)f$ on $U \setminus K$ and $f_0 = 0$ on $K$.  The function $f_0$
 is smooth on $U$ and it is holomorphic
 and equal to $f$ near the boundary of $U$, where $\varphi$ is $0$.
-We let $g = \bar{\partial} f_0$ on $U$, that is $g_k = \frac{\partial
+We let $g = \bar{\partial} f_0$ on $U$, that is, $g_k = \frac{\partial
 f_0}{\partial \bar{z}_k}$,
 and we let $g=0$ outside $U$.
 As the $g_k$ are identically zero near $\partial U$, we find that each
@@ -11491,8 +11491,8 @@ automatically.  Note that $f$ is holomorphic on $U \setminus K$ and compute
 \frac{\partial }{\partial \bar{z}_k}
 \bigl((1-\varphi)f\bigr)
 =
+(1-\varphi)
 \frac{\partial f}{\partial \bar{z}_k}
-- \varphi \frac{\partial f}{\partial \bar{z}_k}
 - \frac{\partial \varphi}{\partial \bar{z}_k} f
 =
 - \frac{\partial \varphi}{\partial \bar{z}_k} f .
@@ -11553,10 +11553,11 @@ Find a counterexample to the conclusion to Hartogs.
 
 One of many consequences of the Hartogs phenomenon is
 that
-the zero set of a holomorphic function $f$ is never compact in
+the zero set of a holomorphic function $f$ (if nonempty) is never compact in
 dimension $2$ or higher, although there exist
-easier proofs of that fact, see \exerciseref{exercise:zerosetnotcompact}.  If it
-were compact, $\frac{1}{f}$ would provide a contradiction, see also
+easier proofs of that fact, see \exerciseref{exercise:zerosetnotcompact}.
+Were it compact, $\frac{1}{f}$ would provide a contradiction.
+See also
 \exerciseref{exercise:connectedcomplement}.
 
 \begin{cor}
@@ -12593,7 +12594,7 @@ we need $H^{(0,1)}(U) = 0$.
 \begin{proof}
 After a translation and a linear map, assume
 $L = \{ z \in \C^n : z_n = 0 \}$.  Write $z = (z',z_n)$ as usual.
-Let $\chi \colon U \to \R$ be the function that is identically $1$ in some
+Let $\chi \colon U \to \R$ be a smooth function that is identically $1$ in some
 neighborhood of $U \cap L$ and such that it is identically $0$ in some
 neighborhood of $\{ z \in U : (z',0) \notin U \cap L \}$.
 See \figureref{fig:extendingcutoff}.
@@ -12637,7 +12638,8 @@ $\bar{\partial}\chi$ is identically zero in a neighborhood of
 where $\psi$ is undefined.
 The form is
 $\bar{\partial}$-closed as $\bar{\partial}^2 = 0$, $\bar{\partial}\psi = 0$,
-and $\nicefrac{1}{z_n}$ is holomorphic.
+and $\nicefrac{1}{z_n}$ is holomorphic where $\bar{\partial} \chi$ is
+nonzero.
 By hypothesis, we find an $\eta$ such that
 $\bar{\partial} \eta = \frac{- \bar{\partial}\chi \wedge \psi}{z_n}$,
 and we are done.
@@ -14299,7 +14301,7 @@ Let $R$ be some ring of germs of complex-valued
 functions at $p \in X$ for some topological space $X$.
 \glsadd{not:Zf}%
 If $f$ is a complex-valued function,
-let $Z_f$ be the zero set of $f$, that is $f^{-1}(0)$.
+let $Z_f$ be the zero set of $f$, that is, $f^{-1}(0)$.
 When $(f,p) \in R$ is a germ of a function
 it makes sense to talk about the germ $(Z_f,p)$.  We take the zero
 set of some representative and look at its germ at $p$.

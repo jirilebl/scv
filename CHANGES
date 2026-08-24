@@ -1,4 +1,6 @@
 <li>Update the remarks on the Jacobian conjecture and add a footnote
 with the counterexample.
+<li>In the proof of Theorem 4.5.3, emphasize that \(\chi\) is smooth
+and be more precise in the language.
 
 See https://www.jirka.org/scv/changes.html for older changes.
