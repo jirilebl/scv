@@ -1,5 +1,9 @@
 <li>Update the remarks on the Jacobian conjecture and add a footnote
 with the counterexample.
+<li>In the proof of Severi (3.2.9), change the main computation
+to come from the chain rule rather than applying the CR vector field
+to \(F.\)  Hopefully this makes the computation a little clearer
+(and it emphasizes where the CR vector field comes from).
 <li>In the proof of Theorem 4.5.3, emphasize that \(\chi\) is smooth
 and be more precise in the language.
 <li>Add "proper subvariety" to the index.
