@@ -550,11 +550,11 @@ at github: \url{https://github.com/jirilebl/scv}
 This book is a polished version of my course notes for Math 6283, Several
 Complex Variables, given in
 Spring 2014, Spring 2016, Spring 2019, and Fall 2023 semesters
-at the Oklahoma State University.
-There is more material than can fit in a one-semester class
+at Oklahoma State University.
+There is more material than can fit in a one-semester class,
 allowing for several versions of the course.
 In fact, I did a different selection each semester I taught it.
-Quite a few exercises of various difficulty are
+Quite a few exercises of varying difficulty are
 sprinkled throughout the text, and I hope a reader is
 at least attempting or thinking about most of them.
 Many are required later in the text.
@@ -1756,7 +1756,7 @@ If $z \in \C^n$, then
 \qquad \text{or} \qquad
 z^{\alpha+1} = z_1^{\alpha_1+1}z_2^{\alpha_2+1} \cdots z_n^{\alpha_n+1} .
 \end{equation*}
-It goes without saying that when using this notation it is
+It goes without saying that when using this notation, it is
 important to be careful to always realize which symbol lives where,
 and most of all, to not get carried away.  For
 instance, we can interpret $\frac{1}{z}$ in different ways depending
@@ -2992,7 +2992,7 @@ Thus
 
 The regular (real) implicit function theorem and the chain rule
 give that the implicit function theorem holds in the holomorphic setting.
-The main thing to check is to verify that the solution given by the
+The main thing to check is that the solution given by the
 standard implicit function theorem is holomorphic, which follows by the
 chain rule.
 
@@ -3964,7 +3964,8 @@ is the zero set of a $C^\infty$-smooth function.
 
 Let us now prove that a one-to-one holomorphic
 mapping is biholomorphic, a result definitely not true in the
-smooth setting: $x \mapsto x^3$ is smooth, one-to-one, onto map
+smooth setting: $x \mapsto x^3$ is a smooth, one-to-one,
+and onto map
 of $\R$ to $\R$, but the inverse is not differentiable.
 
 \begin{thm} \label{thm:injective}
@@ -4287,7 +4288,7 @@ We can locally define an extension from one side through the boundary
 of the domain, but we cannot define an extension on an open set that
 contains $U$.  This one-dimensional example should be motivation for why we let $V$
 be a proper subset of $U \cap W$, and why $W$ need not contain all of $U$.
-This one dimensional intuition can be extended to an actual example in
+This one-dimensional intuition can be extended to an actual example in
 $\C^n$, see \exerciseref{exercise:notsimpledefofdoh}.
 \end{remark}
 
@@ -4717,7 +4718,7 @@ certain theorems and arguments unnecessarily difficult.
 
 As the derivative of $r$ is nonvanishing, a
 hypersurface $M$ is locally the graph of one variable over the rest
-using the implicit function theorem.  That is, $M$ is a smooth
+by the implicit function theorem.  That is, $M$ is a smooth
 hypersurface if it is locally a set defined by
 $x_k = \varphi(x_1,\ldots,x_{k-1},x_{k+1},\ldots,x_n)$ for some $k$ and some
 smooth function $\varphi$.
@@ -4976,7 +4977,7 @@ function, such as
 $\varphi(y_1,y_2) = \alpha y_1 + \beta y_2$, that the definition above is
 satisfied.
 
-Suppose that for a smooth map $f$ and smooth hypersurfaces $M$ and $M'$
+Suppose that for a smooth map $f$ and smooth hypersurfaces $M$ and $M'$,
 you have $f(M) \subset M'$.  Then you get the same containment for the
 tangent spaces.  Indeed, suppose that $r$ is a defining function for $M$
 near $p$ and $r'$ is a defining function for $M'$ near $f(p)$, and
@@ -8222,7 +8223,8 @@ the distance to $\partial U$.  The setup is illustrated in
 \end{myfig}
 
 The part of the boundary $\partial U$ in $W$ is marked by a thick
-black line, the part of the boundary of $\partial (W \cap U)$ that is
+black line.
+The part of the boundary of $\partial (W \cap U)$ that is
 the boundary of $W$ is marked by a thick gray line.  A point $q \in B$ is
 marked, and a ball of radius $\nicefrac{r}{2}$ around $q$ is dotted.
 No point of distance $\nicefrac{r}{2}$ from $q$ is in $\partial W$, and
@@ -10030,7 +10032,7 @@ p_\ell(z) \to f(z)
 \end{thm}
 
 A key point is that $K$ cannot be chosen arbitrarily---it depends on $p$ and $M$.
-On the other hand, $K$ does not depend on $f$.  Given $M$ and $p \in M$
+On the other hand, $K$ does not depend on $f$.  Given $M$ and $p \in M$,
 there is a $K$ such that \emph{every} CR function on $M$ is approximated
 uniformly on $K$ by holomorphic polynomials.  The theorem applies in one
 dimension, although in that case the theorem of Mergelyan
@@ -10081,7 +10083,7 @@ but diverge everywhere else.
 
 
 The proof is an ingenious
-use of the standard technique used to prove the Weierstrass approximation
+variation on the standard technique used to prove the Weierstrass approximation
 theorem.  Also, as we have seen mollifiers before, the technique will not be
 completely foreign even to the reader who does not know the Weierstrass
 approximation theorem.  Basically what we do is use the standard convolution
@@ -10131,7 +10133,7 @@ Next suppose $A$ is any matrix in $W$.
 There is some $\epsilon > 0$
 such that $\snorm{(\Im A) x}^2 \leq
 (1-\epsilon^2) \snorm{(\Re A) x}^2$ for all $x \in \R^n$.  That is because
-we only need to check this for $x$ in the unit sphere, which is compact
+we only need to check this for $x$ on the unit sphere, which is compact
 (exercise).  By reality of $\Re A$, $\Im A$, and $x$
 we get
 ${[(\Re A)x]}^2 = \snorm{(\Re A)x}^2$ and
@@ -10353,7 +10355,8 @@ of the cylinder $D$, so the integral over $\partial D$ only needs to
 consider the top and bottom of the cylinder.
 And because of $g$, the integral over the top and bottom
 can be taken over $\R^n$.
-As is usual in these sorts of arguments, we do the slight abuse of notation
+As is usual in these sorts of arguments, we employ a slight abuse of
+notation,
 ignoring that $f$ and $\varphi$ are undefined
 where $g$ is identically zero:
 \begin{multline} \label{eq:BTstokes}
@@ -11121,7 +11124,7 @@ and $\bar{\zeta}$,
 \bar{\zeta}}(\zeta)}{\zeta-z} \, d\bar{\zeta} \wedge d\zeta .
 \end{equation*}
 The second equality follows because the derivative in $\zeta$
-has a $d\zeta$ and when we wedge it with $d\zeta$ we get zero.
+has a $d\zeta$, and when we wedge it with $d\zeta$ we get zero.
 We now wish to let the radius $r$ go to zero.
 Via the exercise above,
 $\frac{\frac{\partial f}{\partial \bar{\zeta}}(\zeta)}{\zeta-z} \, d\bar{\zeta} \wedge d\zeta$
@@ -11403,7 +11406,7 @@ simply from its definition.  See \figureref{fig:dbarcpt-fig}.
 
 As $\bar{\partial} \psi = 0$ on the light gray and white areas in the
 diagram, $\psi$ is holomorphic there. As $\psi$ is zero on the light
-gray region, it is zero also on the white region by the identity theorem.
+gray region, it is also zero on the white region by the identity theorem.
 That is, $\psi$ is zero on the unbounded component of the set where $g=0$,
 and so $\psi$ has compact support.
 \end{proof}
